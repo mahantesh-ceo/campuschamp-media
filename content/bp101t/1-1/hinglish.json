@@ -1,6 +1,17 @@
 {
   "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
     "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "video",
     "animations"
   ],
   "walkthrough": {
@@ -25,6 +36,21 @@
       },
       {
         "say": "Bas, itna hi! Python ne chaar instructions, kram se, upar se neeche tak chalaye. Aapne abhi-abhi apna pehla program samajh liya hai."
+      }
+    ],
+    "intro": "Yeh raha aapka pehla program. Python ise line by line chalayega.",
+    "keyTerms": [
+      {
+        "meaning": "Insaanon ke liye ek note; Python ise ignore karta hai."
+      },
+      {
+        "meaning": "Text ya numbers ko screen par dikhata hai."
+      },
+      {
+        "meaning": "Quotes ke andar ka text, bilkul waisa hi dikhaya jaata hai jaisa likha hai."
+      },
+      {
+        "meaning": "Guna (multiply)."
       }
     ]
   },
@@ -54,5 +80,261 @@
         }
       ]
     }
+  ],
+  "hook": {
+    "title": "Aapka pehla program, sirf 10 minute mein",
+    "md": "Is lesson ke end tak aap apna **pehla Python program** likhenge aur chalayenge: ek chhota sa medicine label, jo dawa ka naam, uski strength aur poore din ki dose print karta hai.\n\nKoi installation nahi. Coding ka koi background nahi chahiye. Bas aapka phone."
+  },
+  "learn": [
+    "**Program** aur **programming language** kya hote hain",
+    "Pharmacy students **Python** hi kyun seekh rahe hain",
+    "Python ek **program kaise chalata hai**, line by line, upar se neeche tak"
+  ],
+  "explanation": [
+    {
+      "heading": "Program kya hai?",
+      "md": "Ek **prescription** ke baare mein sochiye. Yeh saaf nirdeshon ki ek list hai, jo kram se likhi hoti hai:",
+      "quote": "Paracetamol 500 mg ki 1 tablet, din mein teen baar, khaane ke baad lein.",
+      "mdAfter": "Patient in nirdeshon ko step by step follow karta hai.\n\nEk **program** bhi bilkul yahi hai, bas computer ke liye. Yeh nirdeshon ki ek list hai, jo kram se likhi hoti hai, aur computer inhe bilkul waise hi follow karta hai."
+    },
+    {
+      "heading": "Programming language kya hai?",
+      "md": "Computer English nahi samajhta. **Programming language** ek khaas bhasha hai, jise insaan aur computer dono samajh sakte hain. Hum isme nirdesh likhte hain, aur computer unhe poora karta hai.\n\nKai programming languages hain: C, Java, JavaScript, aur **Python**."
+    },
+    {
+      "heading": "Python hi kyun?",
+      "md": "Python ko **Guido van Rossum** ne banaya tha aur yeh pehli baar **1991** mein release hui. Aaj yeh duniya ki sabse popular languages mein se ek hai, aur aapke syllabus ke liye ise isliye chuna gaya kyunki:\n\n- **Yeh lagbhag English jaisi padhi jaati hai**, isliye beginners ke liye aasaan hai.\n- **Yeh sabke liye free hai.**\n- **Isme data, graphs aur science ke liye ready-made toolkits (libraries) hain.**\n- **Pharmacy aur healthcare mein iska bahut use hota hai**: clinical trial data analyse karna, drug concentration curves banana, adverse drug reaction (ADR) reports study karna, aur computer par nayi dawaiyan design karna."
+    },
+    {
+      "heading": "Python ek program kaise chalata hai?",
+      "md": "Sochiye, ek pharmacist prescription padh raha hai. Woh **pehli line, phir agli, phir agli** padhta hai, kram se, aur har line par kaam karta hai.\n\nPython bhi aise hi kaam karta hai. **Interpreter** naam ka ek khaas program aapka code padhta hai aur use **ek baar mein ek line, upar se neeche tak** chalata hai.",
+      "callout": {
+        "title": "Interpreter",
+        "md": "Python ka woh hissa jo aapka code padhta hai aur har instruction ko poora karta hai."
+      }
+    }
+  ],
+  "errors": {
+    "intro": "Galtiyan hona normal hai. Python aapko saaf batata hai ki woh kahan atka.",
+    "examples": [
+      {
+        "title": "Python us line par ruk jaata hai jo use samajh nahi aati",
+        "md": "Python ne line 1 sahi se chala di. Line 2 par use `weight` shabd mila, lekin kisi ne Python ko nahi bataya tha ki `weight` ka matlab kya hai. Isliye woh ruk gaya, bilkul us pharmacist ki tarah jo prescription ki kisi unclear line par ruk jaata hai. Line 3 kabhi chali hi nahi."
+      },
+      {
+        "title": "Ek missing bracket sab kuch rok deta hai",
+        "md": "Yahan **kuch bhi** print nahi hota, Line 1 bhi nahi. Kuch bhi chalane se pehle Python jaldi se check karta hai ki poora program sahi likha hai ya nahi. Missing bracket ek likhne ki galti hai (**syntax error**), isliye Python shuru hi nahi karta.",
+        "callout": {
+          "title": "Syntax",
+          "md": "Kisi programming language ke grammar ke niyam."
+        }
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "`Print` ko capital P se likhna",
+      "fix": "Python case-sensitive hai. `print` hamesha small letters mein likhein."
+    },
+    {
+      "mistake": "WhatsApp ya Word se code copy karna, jisme tedhe quotes “ ” hote hain",
+      "fix": "Seedhe quotes \" \" use karein. Editor mein quotes khud type karein."
+    },
+    {
+      "mistake": "Line ki shuruaat mein spaces daal dena",
+      "fix": "Abhi ke liye, har line bilkul left side se shuru karein."
+    },
+    {
+      "mistake": "Text ke chaaron taraf quotes bhool jaana, jaise `print(Paracetamol)`",
+      "fix": "Text ko quotes ke andar rakhein: `print(\"Paracetamol\")`."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Hello boliye",
+      "md": "Ek program likhiye jo bilkul yahi print kare:",
+      "hints": [
+        "print() use karein, aur sentence ko quotes ke andar rakhein."
+      ]
+    },
+    {
+      "title": "Ek medicine label banaiye",
+      "md": "Ek program likhiye jo yeh label print kare. Daily dose (250 × 4) Python se **calculate** karwaiye; 1000 khud type mat kijiye.",
+      "hints": [
+        "Har line ke liye ek print() use karein.",
+        "Strength wali line ke liye try karein: print(\"Strength  :\", 250, \"mg\")."
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "Is program mein ek galti hai. Ise theek kijiye taaki yeh `Drug: Amoxicillin` print kare.",
+      "hints": [
+        "Python case-sensitive hai."
+      ],
+      "solutionNote": "`print` small letters mein hona chahiye."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Python kisne banaya?",
+      "why": "Python ko Guido van Rossum ne banaya; yeh pehli baar 1991 mein release hui."
+    },
+    {
+      "q": "Python kisi program ki lines ko kis kram mein chalata hai?",
+      "options": [
+        "Randomly",
+        "Neeche se upar",
+        "Upar se neeche, ek baar mein ek line",
+        "Sirf aakhri line"
+      ],
+      "why": "Interpreter code ko upar se neeche, ek baar mein ek line chalata hai."
+    },
+    {
+      "q": "Kaunsi line screen par Hello sahi se dikhati hai?",
+      "why": "print small letters mein hona chahiye, aur text quotes ke andar hona chahiye."
+    },
+    {
+      "q": "Jo line # se shuru hoti hai, woh hai:",
+      "options": [
+        "Error",
+        "Comment, jise Python ignore karta hai",
+        "Heading",
+        "Library"
+      ],
+      "why": "Comments insaanon ke liye notes hain; Python inhe chhod deta hai."
+    },
+    {
+      "q": "print(\"Dose:\", 2 * 250, \"mg\") ka output kya hai?",
+      "options": [
+        "Dose: 2 * 250 mg",
+        "Dose: 500 mg",
+        "Dose:500mg",
+        "Error aayega"
+      ],
+      "why": "Python pehle 2 × 250 = 500 calculate karta hai, aur print har item ke beech space lagata hai."
+    }
+  ],
+  "exam": {
+    "note": "University exam English mein likha jaata hai, isliye model answers English mein hi rakhe gaye hain. Yeh practice ke liye important questions hain; asli university questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 1.1 · Python basics",
+    "children": [
+      {
+        "label": "Program",
+        "children": [
+          {
+            "label": "Nirdeshon ki list"
+          },
+          {
+            "label": "Kram se follow hoti hai"
+          },
+          {
+            "label": "Prescription jaisa"
+          }
+        ]
+      },
+      {
+        "label": "Programming language",
+        "children": [
+          {
+            "label": "Insaan aur computer dono samjhein"
+          },
+          {
+            "label": "Jaise: C, Java, Python"
+          }
+        ]
+      },
+      {
+        "label": "Python kyun",
+        "children": [
+          {
+            "label": "English jaisi padhi jaati hai"
+          },
+          {
+            "label": "Free"
+          },
+          {
+            "label": "Data aur graphs ke liye libraries"
+          },
+          {
+            "label": "Pharmacy mein use",
+            "children": [
+              {
+                "label": "Clinical trial data"
+              },
+              {
+                "label": "PK curves"
+              },
+              {
+                "label": "ADR reports"
+              },
+              {
+                "label": "Drug design"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Kaise chalta hai",
+        "children": [
+          {
+            "label": "Interpreter"
+          },
+          {
+            "label": "Ek baar mein ek line"
+          },
+          {
+            "label": "Upar se neeche"
+          }
+        ]
+      },
+      {
+        "label": "Pehla code",
+        "children": [
+          {
+            "label": "print() output dikhata hai"
+          },
+          {
+            "label": "# se comment shuru"
+          },
+          {
+            "label": "Quotes mein text = string"
+          },
+          {
+            "label": "* matlab guna"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError: anjaan shabd",
+            "children": [
+              {
+                "label": "Usi line par rukta hai"
+              }
+            ]
+          },
+          {
+            "label": "SyntaxError: likhne ki galti",
+            "children": [
+              {
+                "label": "Kuch bhi nahi chalta"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Program** nirdeshon ki ek list hai, jise computer kram se follow karta hai, bilkul prescription ki tarah.",
+    "**Python** ek free aur padhne mein aasaan programming language hai, jiska pharmacy aur healthcare mein bahut use hota hai.",
+    "**Interpreter** Python code ko **ek baar mein ek line, upar se neeche tak** chalata hai.",
+    "**print()** text aur numbers ko screen par dikhata hai; **#** se comment shuru hota hai.",
+    "**Errors** saaf batate hain ki Python kahan atka. Syntax error ho to program shuru hi nahi hota."
   ]
 }

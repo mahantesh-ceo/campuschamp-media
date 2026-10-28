@@ -1,6 +1,17 @@
 {
   "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
     "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "video",
     "animations"
   ],
   "walkthrough": {
@@ -25,6 +36,21 @@
       },
       {
         "say": "ಅಷ್ಟೇ! Python ನಾಲ್ಕು instructions ಅನ್ನು, ಕ್ರಮವಾಗಿ, ಮೇಲಿಂದ ಕೆಳಗೆ run ಮಾಡಿತು. ನೀವು ಈಗಷ್ಟೇ ನಿಮ್ಮ ಮೊದಲ program ಅನ್ನು ಅರ್ಥ ಮಾಡಿಕೊಂಡಿದ್ದೀರಿ."
+      }
+    ],
+    "intro": "ಇಲ್ಲಿದೆ ನಿಮ್ಮ ಮೊದಲ program. Python ಇದನ್ನು line by line run ಮಾಡುತ್ತೆ.",
+    "keyTerms": [
+      {
+        "meaning": "ಮನುಷ್ಯರಿಗಾಗಿ ಬರೆದ note; Python ಇದನ್ನು ignore ಮಾಡುತ್ತೆ."
+      },
+      {
+        "meaning": "Text ಅಥವಾ numbers ಅನ್ನು screen ಮೇಲೆ ತೋರಿಸುತ್ತೆ."
+      },
+      {
+        "meaning": "Quotes ಒಳಗಿನ text, ಬರೆದ ಹಾಗೆಯೇ ತೋರಿಸಲಾಗುತ್ತೆ."
+      },
+      {
+        "meaning": "ಗುಣಾಕಾರ (multiply)."
       }
     ]
   },
@@ -54,5 +80,261 @@
         }
       ]
     }
+  ],
+  "hook": {
+    "title": "ನಿಮ್ಮ ಮೊದಲ program, ಕೇವಲ 10 ನಿಮಿಷದಲ್ಲಿ",
+    "md": "ಈ lesson ಮುಗಿಯುವಷ್ಟರಲ್ಲಿ ನೀವು ನಿಮ್ಮ **ಮೊದಲ Python program** ಬರೆದು run ಮಾಡ್ತೀರಿ: ಔಷಧಿಯ ಹೆಸರು, ಅದರ strength ಮತ್ತು ದಿನದ ಒಟ್ಟು dose ಅನ್ನು print ಮಾಡುವ ಒಂದು ಚಿಕ್ಕ medicine label.\n\nಯಾವುದೇ installation ಬೇಡ. Coding background ಬೇಡ. ನಿಮ್ಮ phone ಸಾಕು."
+  },
+  "learn": [
+    "**Program** ಮತ್ತು **programming language** ಅಂದ್ರೆ ಏನು",
+    "Pharmacy students ಯಾಕೆ **Python** ಕಲಿಯುತ್ತಿದ್ದಾರೆ",
+    "Python ಒಂದು **program ಅನ್ನು ಹೇಗೆ run ಮಾಡುತ್ತೆ**, line by line, ಮೇಲಿಂದ ಕೆಳಗೆ"
+  ],
+  "explanation": [
+    {
+      "heading": "Program ಅಂದ್ರೆ ಏನು?",
+      "md": "ಒಂದು **prescription** ಬಗ್ಗೆ ಯೋಚಿಸಿ. ಅದು ಕ್ರಮವಾಗಿ ಬರೆದ ಸ್ಪಷ್ಟ ಸೂಚನೆಗಳ ಒಂದು list:",
+      "quote": "Paracetamol 500 mg ನ 1 tablet ಅನ್ನು, ದಿನಕ್ಕೆ ಮೂರು ಸಲ, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
+      "mdAfter": "Patient ಈ ಸೂಚನೆಗಳನ್ನು step by step ಪಾಲಿಸುತ್ತಾರೆ.\n\nಒಂದು **program** ಕೂಡ ಇದೇ idea, ಆದರೆ computer ಗಾಗಿ. ಅದು ಕ್ರಮವಾಗಿ ಬರೆದ ಸೂಚನೆಗಳ list, ಮತ್ತು computer ಅವನ್ನು ಬರೆದ ಹಾಗೆಯೇ ಪಾಲಿಸುತ್ತೆ."
+    },
+    {
+      "heading": "Programming language ಅಂದ್ರೆ ಏನು?",
+      "md": "Computer ಗೆ English ಅರ್ಥ ಆಗಲ್ಲ. **Programming language** ಅಂದ್ರೆ ಮನುಷ್ಯರು ಮತ್ತು computer ಇಬ್ಬರಿಗೂ ಅರ್ಥ ಆಗುವ ಒಂದು ವಿಶೇಷ ಭಾಷೆ. ನಾವು ಅದರಲ್ಲಿ ಸೂಚನೆಗಳನ್ನು ಬರೆಯುತ್ತೇವೆ, computer ಅವನ್ನು ಮಾಡಿ ಮುಗಿಸುತ್ತೆ.\n\nತುಂಬಾ programming languages ಇವೆ: C, Java, JavaScript, ಮತ್ತು **Python**."
+    },
+    {
+      "heading": "Python ಯಾಕೆ?",
+      "md": "Python ಅನ್ನು **Guido van Rossum** ತಯಾರಿಸಿದರು, ಮತ್ತು ಅದು ಮೊದಲ ಸಲ **1991** ರಲ್ಲಿ release ಆಯಿತು. ಇವತ್ತು ಇದು ಪ್ರಪಂಚದ ಅತ್ಯಂತ popular languages ಗಳಲ್ಲಿ ಒಂದು, ಮತ್ತು ನಿಮ್ಮ syllabus ಗೆ ಇದನ್ನೇ ಆಯ್ಕೆ ಮಾಡಿರುವುದಕ್ಕೆ ಕಾರಣ:\n\n- **ಇದು ಹೆಚ್ಚು ಕಡಿಮೆ English ತರಹ ಓದೋಕೆ ಆಗುತ್ತೆ**, ಹಾಗಾಗಿ beginners ಗೆ ಸುಲಭ.\n- **ಇದು ಎಲ್ಲರಿಗೂ free.**\n- **Data, graphs ಮತ್ತು science ಗಾಗಿ ready-made toolkits (libraries) ಇವೆ.**\n- **Pharmacy ಮತ್ತು healthcare ನಲ್ಲಿ ಇದನ್ನು ತುಂಬಾ use ಮಾಡ್ತಾರೆ**: clinical trial data analyse ಮಾಡೋಕೆ, drug concentration curves ಬರೆಯೋಕೆ, adverse drug reaction (ADR) reports study ಮಾಡೋಕೆ, ಮತ್ತು computer ನಲ್ಲಿ ಹೊಸ ಔಷಧಿಗಳನ್ನು design ಮಾಡೋಕೆ."
+    },
+    {
+      "heading": "Python ಒಂದು program ಅನ್ನು ಹೇಗೆ run ಮಾಡುತ್ತೆ?",
+      "md": "ಒಬ್ಬ pharmacist prescription ಓದುತ್ತಿದ್ದಾರೆ ಅಂತ ಕಲ್ಪಿಸಿಕೊಳ್ಳಿ. ಅವರು **ಮೊದಲ line, ಆಮೇಲೆ ಮುಂದಿನದು, ಆಮೇಲೆ ಮುಂದಿನದು** ಕ್ರಮವಾಗಿ ಓದಿ, ಪ್ರತಿ line ಪ್ರಕಾರ ಕೆಲಸ ಮಾಡ್ತಾರೆ.\n\nPython ಕೂಡ ಹೀಗೇ ಕೆಲಸ ಮಾಡುತ್ತೆ. **Interpreter** ಅನ್ನುವ ಒಂದು ವಿಶೇಷ program ನಿಮ್ಮ code ಓದಿ, ಅದನ್ನು **ಒಂದು ಸಲಕ್ಕೆ ಒಂದು line, ಮೇಲಿಂದ ಕೆಳಗೆ** run ಮಾಡುತ್ತೆ.",
+      "callout": {
+        "title": "Interpreter",
+        "md": "ನಿಮ್ಮ code ಓದಿ, ಪ್ರತಿ instruction ಅನ್ನು ಮಾಡಿ ಮುಗಿಸುವ Python ನ ಭಾಗ."
+      }
+    }
+  ],
+  "errors": {
+    "intro": "ತಪ್ಪುಗಳು ಆಗೋದು normal. Python ಎಲ್ಲಿ ಸಿಕ್ಕಿಹಾಕಿಕೊಂಡಿತು ಅಂತ ಸ್ಪಷ್ಟವಾಗಿ ಹೇಳುತ್ತೆ.",
+    "examples": [
+      {
+        "title": "Python ಗೆ ಅರ್ಥ ಆಗದ line ನಲ್ಲಿ ಅದು ನಿಲ್ಲುತ್ತೆ",
+        "md": "Python line 1 ಅನ್ನು ಸರಿಯಾಗಿ run ಮಾಡಿತು. Line 2 ನಲ್ಲಿ ಅದಕ್ಕೆ `weight` ಅನ್ನುವ ಪದ ಸಿಕ್ಕಿತು, ಆದರೆ `weight` ಅಂದ್ರೆ ಏನು ಅಂತ ಯಾರೂ Python ಗೆ ಹೇಳಿರಲಿಲ್ಲ. ಹಾಗಾಗಿ ಅದು ನಿಂತುಬಿಟ್ಟಿತು, prescription ನ ಅಸ್ಪಷ್ಟ line ನಲ್ಲಿ ನಿಲ್ಲುವ pharmacist ತರಹ. Line 3 run ಆಗಲೇ ಇಲ್ಲ."
+      },
+      {
+        "title": "ಒಂದು missing bracket ಎಲ್ಲವನ್ನೂ ನಿಲ್ಲಿಸುತ್ತೆ",
+        "md": "ಇಲ್ಲಿ **ಏನೂ** print ಆಗಲ್ಲ, Line 1 ಕೂಡ ಇಲ್ಲ. ಏನನ್ನಾದರೂ run ಮಾಡುವ ಮೊದಲು, ಇಡೀ program ಸರಿಯಾಗಿ ಬರೆದಿದೆಯಾ ಅಂತ Python ಬೇಗ check ಮಾಡುತ್ತೆ. Missing bracket ಒಂದು ಬರವಣಿಗೆಯ ತಪ್ಪು (**syntax error**), ಹಾಗಾಗಿ Python ಶುರುವೇ ಮಾಡಲ್ಲ.",
+        "callout": {
+          "title": "Syntax",
+          "md": "ಒಂದು programming language ನ grammar ನಿಯಮಗಳು."
+        }
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "`Print` ಅನ್ನು capital P ಇಂದ ಬರೆಯುವುದು",
+      "fix": "Python case-sensitive. `print` ಅನ್ನು ಯಾವಾಗಲೂ small letters ನಲ್ಲಿ ಬರೆಯಿರಿ."
+    },
+    {
+      "mistake": "WhatsApp ಅಥವಾ Word ಇಂದ curly quotes “ ” ಇರುವ code copy ಮಾಡುವುದು",
+      "fix": "ನೇರ quotes \" \" use ಮಾಡಿ. Editor ನಲ್ಲಿ quotes ಅನ್ನು ನೀವೇ type ಮಾಡಿ."
+    },
+    {
+      "mistake": "Line ನ ಶುರುವಿನಲ್ಲಿ spaces ಹಾಕುವುದು",
+      "fix": "ಸದ್ಯಕ್ಕೆ, ಪ್ರತಿ line ಅನ್ನು ಎಡಭಾಗದ ಅಂಚಿನಿಂದಲೇ ಶುರು ಮಾಡಿ."
+    },
+    {
+      "mistake": "Text ಸುತ್ತ quotes ಹಾಕಲು ಮರೆಯುವುದು, ಉದಾ: `print(Paracetamol)`",
+      "fix": "Text ಅನ್ನು quotes ಒಳಗೆ ಹಾಕಿ: `print(\"Paracetamol\")`."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Hello ಹೇಳಿ",
+      "md": "ಇದನ್ನೇ ನಿಖರವಾಗಿ print ಮಾಡುವ ಒಂದು program ಬರೆಯಿರಿ:",
+      "hints": [
+        "print() use ಮಾಡಿ, sentence ಅನ್ನು quotes ಒಳಗೆ ಹಾಕಿ."
+      ]
+    },
+    {
+      "title": "ಒಂದು medicine label ಮಾಡಿ",
+      "md": "ಈ label ಅನ್ನು print ಮಾಡುವ program ಬರೆಯಿರಿ. Daily dose (250 × 4) ಅನ್ನು Python ಇಂದಲೇ **calculate** ಮಾಡಿಸಿ; 1000 ಅನ್ನು ನೀವೇ type ಮಾಡಬೇಡಿ.",
+      "hints": [
+        "ಪ್ರತಿ line ಗೆ ಒಂದು print() use ಮಾಡಿ.",
+        "Strength line ಗೆ ಇದನ್ನು try ಮಾಡಿ: print(\"Strength  :\", 250, \"mg\")."
+      ]
+    },
+    {
+      "title": "Bug ಹುಡುಕಿ",
+      "md": "ಈ program ನಲ್ಲಿ ಒಂದು ತಪ್ಪಿದೆ. ಅದು `Drug: Amoxicillin` ಅಂತ print ಮಾಡುವ ಹಾಗೆ ಸರಿ ಮಾಡಿ.",
+      "hints": [
+        "Python case-sensitive."
+      ],
+      "solutionNote": "`print` small letters ನಲ್ಲಿ ಇರಬೇಕು."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Python ಅನ್ನು ಯಾರು ತಯಾರಿಸಿದರು?",
+      "why": "Python ಅನ್ನು Guido van Rossum ತಯಾರಿಸಿದರು; ಅದು ಮೊದಲ ಸಲ 1991 ರಲ್ಲಿ release ಆಯಿತು."
+    },
+    {
+      "q": "Python ಒಂದು program ನ lines ಅನ್ನು ಯಾವ ಕ್ರಮದಲ್ಲಿ run ಮಾಡುತ್ತೆ?",
+      "options": [
+        "Random ಆಗಿ",
+        "ಕೆಳಗಿನಿಂದ ಮೇಲೆ",
+        "ಮೇಲಿಂದ ಕೆಳಗೆ, ಒಂದು ಸಲಕ್ಕೆ ಒಂದು line",
+        "ಕೊನೆಯ line ಮಾತ್ರ"
+      ],
+      "why": "Interpreter code ಅನ್ನು ಮೇಲಿಂದ ಕೆಳಗೆ, ಒಂದು ಸಲಕ್ಕೆ ಒಂದು line run ಮಾಡುತ್ತೆ."
+    },
+    {
+      "q": "ಯಾವ line screen ಮೇಲೆ Hello ಅನ್ನು ಸರಿಯಾಗಿ ತೋರಿಸುತ್ತೆ?",
+      "why": "print small letters ನಲ್ಲಿ ಇರಬೇಕು, ಮತ್ತು text quotes ಒಳಗೆ ಇರಬೇಕು."
+    },
+    {
+      "q": "# ಇಂದ ಶುರುವಾಗುವ line ಅಂದ್ರೆ:",
+      "options": [
+        "Error",
+        "Comment, ಇದನ್ನು Python ignore ಮಾಡುತ್ತೆ",
+        "Heading",
+        "Library"
+      ],
+      "why": "Comments ಮನುಷ್ಯರಿಗಾಗಿ notes; Python ಅವನ್ನು skip ಮಾಡುತ್ತೆ."
+    },
+    {
+      "q": "print(\"Dose:\", 2 * 250, \"mg\") ನ output ಏನು?",
+      "options": [
+        "Dose: 2 * 250 mg",
+        "Dose: 500 mg",
+        "Dose:500mg",
+        "Error ಬರುತ್ತೆ"
+      ],
+      "why": "Python ಮೊದಲು 2 × 250 = 500 calculate ಮಾಡುತ್ತೆ, ಮತ್ತು print ಪ್ರತಿ item ನಡುವೆ space ಹಾಕುತ್ತೆ."
+    }
+  ],
+  "exam": {
+    "note": "University exam ಅನ್ನು English ನಲ್ಲಿ ಬರೆಯುತ್ತೀರಿ, ಹಾಗಾಗಿ model answers English ನಲ್ಲೇ ಇವೆ. ಇವು practice ಗಾಗಿ important questions; ನಿಜವಾದ university questions ಬೇರೆ ಇರಬಹುದು."
+  },
+  "mindmap": {
+    "label": "Lesson 1.1 · Python basics",
+    "children": [
+      {
+        "label": "Program",
+        "children": [
+          {
+            "label": "ಸೂಚನೆಗಳ list"
+          },
+          {
+            "label": "ಕ್ರಮವಾಗಿ ಪಾಲಿಸಲಾಗುತ್ತೆ"
+          },
+          {
+            "label": "Prescription ತರಹ"
+          }
+        ]
+      },
+      {
+        "label": "Programming language",
+        "children": [
+          {
+            "label": "ಮನುಷ್ಯರು, computer ಇಬ್ಬರಿಗೂ ಅರ್ಥ"
+          },
+          {
+            "label": "ಉದಾ: C, Java, Python"
+          }
+        ]
+      },
+      {
+        "label": "Python ಯಾಕೆ",
+        "children": [
+          {
+            "label": "English ತರಹ ಓದಬಹುದು"
+          },
+          {
+            "label": "Free"
+          },
+          {
+            "label": "Data, graphs ಗೆ libraries"
+          },
+          {
+            "label": "Pharmacy ಯಲ್ಲಿ use",
+            "children": [
+              {
+                "label": "Clinical trial data"
+              },
+              {
+                "label": "PK curves"
+              },
+              {
+                "label": "ADR reports"
+              },
+              {
+                "label": "Drug design"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "ಹೇಗೆ run ಆಗುತ್ತೆ",
+        "children": [
+          {
+            "label": "Interpreter"
+          },
+          {
+            "label": "ಒಂದು ಸಲಕ್ಕೆ ಒಂದು line"
+          },
+          {
+            "label": "ಮೇಲಿಂದ ಕೆಳಗೆ"
+          }
+        ]
+      },
+      {
+        "label": "ಮೊದಲ code",
+        "children": [
+          {
+            "label": "print() output ತೋರಿಸುತ್ತೆ"
+          },
+          {
+            "label": "# ಇಂದ comment ಶುರು"
+          },
+          {
+            "label": "Quotes ಒಳಗಿನ text = string"
+          },
+          {
+            "label": "* ಅಂದ್ರೆ ಗುಣಾಕಾರ"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError: ಗೊತ್ತಿಲ್ಲದ ಪದ",
+            "children": [
+              {
+                "label": "ಅದೇ line ನಲ್ಲಿ ನಿಲ್ಲುತ್ತೆ"
+              }
+            ]
+          },
+          {
+            "label": "SyntaxError: ಬರವಣಿಗೆಯ ತಪ್ಪು",
+            "children": [
+              {
+                "label": "ಏನೂ run ಆಗಲ್ಲ"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Program** ಅಂದ್ರೆ computer ಕ್ರಮವಾಗಿ ಪಾಲಿಸುವ ಸೂಚನೆಗಳ list, prescription ತರಹ.",
+    "**Python** ಒಂದು free, ಓದೋಕೆ ಸುಲಭವಾದ programming language; pharmacy ಮತ್ತು healthcare ನಲ್ಲಿ ತುಂಬಾ use ಆಗುತ್ತೆ.",
+    "**Interpreter** Python code ಅನ್ನು **ಒಂದು ಸಲಕ್ಕೆ ಒಂದು line, ಮೇಲಿಂದ ಕೆಳಗೆ** run ಮಾಡುತ್ತೆ.",
+    "**print()** text ಮತ್ತು numbers ಅನ್ನು screen ಮೇಲೆ ತೋರಿಸುತ್ತೆ; **#** ಇಂದ comment ಶುರುವಾಗುತ್ತೆ.",
+    "**Errors** Python ಎಲ್ಲಿ ಸಿಕ್ಕಿಹಾಕಿಕೊಂಡಿತು ಅಂತ ಸ್ಪಷ್ಟವಾಗಿ ಹೇಳುತ್ತವೆ. Syntax error ಇದ್ದರೆ program ಶುರುವೇ ಆಗಲ್ಲ."
   ]
 }

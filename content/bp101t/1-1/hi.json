@@ -1,6 +1,17 @@
 {
   "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
     "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "video",
     "animations"
   ],
   "walkthrough": {
@@ -25,6 +36,21 @@
       },
       {
         "say": "बस, इतना ही! Python ने चार instructions, क्रम से, ऊपर से नीचे तक चलाए। आपने अभी-अभी अपना पहला program समझ लिया है।"
+      }
+    ],
+    "intro": "यह रहा आपका पहला program। Python इसे line by line चलाएगा।",
+    "keyTerms": [
+      {
+        "meaning": "इंसानों के लिए एक note; Python इसे ignore करता है।"
+      },
+      {
+        "meaning": "Text या numbers को screen पर दिखाता है।"
+      },
+      {
+        "meaning": "Quotes के अंदर का text, बिल्कुल वैसा ही दिखाया जाता है जैसा लिखा है।"
+      },
+      {
+        "meaning": "गुणा (multiply)।"
       }
     ]
   },
@@ -54,5 +80,261 @@
         }
       ]
     }
+  ],
+  "hook": {
+    "title": "आपका पहला program, सिर्फ 10 मिनट में",
+    "md": "इस lesson के अंत तक आप अपना **पहला Python program** लिखेंगे और चलाएँगे: एक छोटा सा medicine label, जो दवा का नाम, उसकी strength और पूरे दिन की dose print करता है।\n\nकोई installation नहीं। Coding का कोई background नहीं चाहिए। बस आपका phone।"
+  },
+  "learn": [
+    "**Program** और **programming language** क्या होते हैं",
+    "Pharmacy students **Python** ही क्यों सीख रहे हैं",
+    "Python एक **program कैसे चलाता है**, line by line, ऊपर से नीचे तक"
+  ],
+  "explanation": [
+    {
+      "heading": "Program क्या है?",
+      "md": "एक **prescription** के बारे में सोचिए। यह साफ़ निर्देशों की एक list है, जो क्रम से लिखी होती है:",
+      "quote": "Paracetamol 500 mg की 1 tablet, दिन में तीन बार, खाने के बाद लें।",
+      "mdAfter": "Patient इन निर्देशों को step by step follow करता है।\n\nएक **program** भी बिल्कुल यही है, बस computer के लिए। यह निर्देशों की एक list है, जो क्रम से लिखी होती है, और computer इन्हें बिल्कुल वैसे ही follow करता है।"
+    },
+    {
+      "heading": "Programming language क्या है?",
+      "md": "Computer English नहीं समझता। **Programming language** एक खास भाषा है, जिसे इंसान और computer दोनों समझ सकते हैं। हम इसमें निर्देश लिखते हैं, और computer उन्हें पूरा करता है।\n\nकई programming languages हैं: C, Java, JavaScript, और **Python**।"
+    },
+    {
+      "heading": "Python ही क्यों?",
+      "md": "Python को **Guido van Rossum** ने बनाया था और यह पहली बार **1991** में release हुई। आज यह दुनिया की सबसे popular languages में से एक है, और आपके syllabus के लिए इसे इसलिए चुना गया क्योंकि:\n\n- **यह लगभग English जैसी पढ़ी जाती है**, इसलिए beginners के लिए आसान है।\n- **यह सबके लिए free है।**\n- **इसमें data, graphs और science के लिए ready-made toolkits (libraries) हैं।**\n- **Pharmacy और healthcare में इसका बहुत use होता है**: clinical trial data analyse करना, drug concentration curves बनाना, adverse drug reaction (ADR) reports study करना, और computer पर नई दवाएँ design करना।"
+    },
+    {
+      "heading": "Python एक program कैसे चलाता है?",
+      "md": "सोचिए, एक pharmacist prescription पढ़ रहा है। वह **पहली line, फिर अगली, फिर अगली** पढ़ता है, क्रम से, और हर line पर काम करता है।\n\nPython भी ऐसे ही काम करता है। **Interpreter** नाम का एक खास program आपका code पढ़ता है और उसे **एक बार में एक line, ऊपर से नीचे तक** चलाता है।",
+      "callout": {
+        "title": "Interpreter",
+        "md": "Python का वह हिस्सा जो आपका code पढ़ता है और हर instruction को पूरा करता है।"
+      }
+    }
+  ],
+  "errors": {
+    "intro": "गलतियाँ होना normal है। Python आपको साफ़ बताता है कि वह कहाँ अटका।",
+    "examples": [
+      {
+        "title": "Python उस line पर रुक जाता है जो उसे समझ नहीं आती",
+        "md": "Python ने line 1 सही से चला दी। Line 2 पर उसे `weight` शब्द मिला, लेकिन किसी ने Python को नहीं बताया था कि `weight` का मतलब क्या है। इसलिए वह रुक गया, बिल्कुल उस pharmacist की तरह जो prescription की किसी अस्पष्ट line पर रुक जाता है। Line 3 कभी चली ही नहीं।"
+      },
+      {
+        "title": "एक missing bracket सब कुछ रोक देता है",
+        "md": "यहाँ **कुछ भी** print नहीं होता, Line 1 भी नहीं। कुछ भी चलाने से पहले Python जल्दी से check करता है कि पूरा program सही लिखा है या नहीं। Missing bracket एक लिखने की गलती है (**syntax error**), इसलिए Python शुरू ही नहीं करता।",
+        "callout": {
+          "title": "Syntax",
+          "md": "किसी programming language के grammar के नियम।"
+        }
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "`Print` को capital P से लिखना",
+      "fix": "Python case-sensitive है। `print` हमेशा small letters में लिखें।"
+    },
+    {
+      "mistake": "WhatsApp या Word से code copy करना, जिसमें टेढ़े quotes “ ” होते हैं",
+      "fix": "सीधे quotes \" \" use करें। Editor में quotes खुद type करें।"
+    },
+    {
+      "mistake": "Line की शुरुआत में spaces डाल देना",
+      "fix": "अभी के लिए, हर line बिल्कुल बाईं तरफ से शुरू करें।"
+    },
+    {
+      "mistake": "Text के चारों ओर quotes भूल जाना, जैसे `print(Paracetamol)`",
+      "fix": "Text को quotes के अंदर रखें: `print(\"Paracetamol\")`।"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Hello बोलिए",
+      "md": "एक program लिखिए जो बिल्कुल यही print करे:",
+      "hints": [
+        "print() use करें, और sentence को quotes के अंदर रखें।"
+      ]
+    },
+    {
+      "title": "एक medicine label बनाइए",
+      "md": "एक program लिखिए जो यह label print करे। Daily dose (250 × 4) Python से **calculate** करवाइए; 1000 खुद type मत कीजिए।",
+      "hints": [
+        "हर line के लिए एक print() use करें।",
+        "Strength वाली line के लिए try करें: print(\"Strength  :\", 250, \"mg\")।"
+      ]
+    },
+    {
+      "title": "Bug ढूँढिए",
+      "md": "इस program में एक गलती है। इसे ठीक कीजिए ताकि यह `Drug: Amoxicillin` print करे।",
+      "hints": [
+        "Python case-sensitive है।"
+      ],
+      "solutionNote": "`print` small letters में होना चाहिए।"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Python किसने बनाया?",
+      "why": "Python को Guido van Rossum ने बनाया; यह पहली बार 1991 में release हुई।"
+    },
+    {
+      "q": "Python किसी program की lines को किस क्रम में चलाता है?",
+      "options": [
+        "Randomly",
+        "नीचे से ऊपर",
+        "ऊपर से नीचे, एक बार में एक line",
+        "सिर्फ आखिरी line"
+      ],
+      "why": "Interpreter code को ऊपर से नीचे, एक बार में एक line चलाता है।"
+    },
+    {
+      "q": "कौन सी line screen पर Hello सही से दिखाती है?",
+      "why": "print small letters में होना चाहिए, और text quotes के अंदर होना चाहिए।"
+    },
+    {
+      "q": "जो line # से शुरू होती है, वह है:",
+      "options": [
+        "Error",
+        "Comment, जिसे Python ignore करता है",
+        "Heading",
+        "Library"
+      ],
+      "why": "Comments इंसानों के लिए notes हैं; Python इन्हें छोड़ देता है।"
+    },
+    {
+      "q": "print(\"Dose:\", 2 * 250, \"mg\") का output क्या है?",
+      "options": [
+        "Dose: 2 * 250 mg",
+        "Dose: 500 mg",
+        "Dose:500mg",
+        "Error आएगा"
+      ],
+      "why": "Python पहले 2 × 250 = 500 calculate करता है, और print हर item के बीच space लगाता है।"
+    }
+  ],
+  "exam": {
+    "note": "University exam English में लिखा जाता है, इसलिए model answers English में ही रखे गए हैं। ये practice के लिए important questions हैं; असली university questions अलग हो सकते हैं।"
+  },
+  "mindmap": {
+    "label": "Lesson 1.1 · Python basics",
+    "children": [
+      {
+        "label": "Program",
+        "children": [
+          {
+            "label": "निर्देशों की list"
+          },
+          {
+            "label": "क्रम से follow होती है"
+          },
+          {
+            "label": "Prescription जैसा"
+          }
+        ]
+      },
+      {
+        "label": "Programming language",
+        "children": [
+          {
+            "label": "इंसान और computer दोनों समझें"
+          },
+          {
+            "label": "जैसे: C, Java, Python"
+          }
+        ]
+      },
+      {
+        "label": "Python क्यों",
+        "children": [
+          {
+            "label": "English जैसी पढ़ी जाती है"
+          },
+          {
+            "label": "Free"
+          },
+          {
+            "label": "Data और graphs के लिए libraries"
+          },
+          {
+            "label": "Pharmacy में use",
+            "children": [
+              {
+                "label": "Clinical trial data"
+              },
+              {
+                "label": "PK curves"
+              },
+              {
+                "label": "ADR reports"
+              },
+              {
+                "label": "Drug design"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "कैसे चलता है",
+        "children": [
+          {
+            "label": "Interpreter"
+          },
+          {
+            "label": "एक बार में एक line"
+          },
+          {
+            "label": "ऊपर से नीचे"
+          }
+        ]
+      },
+      {
+        "label": "पहला code",
+        "children": [
+          {
+            "label": "print() output दिखाता है"
+          },
+          {
+            "label": "# से comment शुरू"
+          },
+          {
+            "label": "Quotes में text = string"
+          },
+          {
+            "label": "* मतलब गुणा"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError: अनजान शब्द",
+            "children": [
+              {
+                "label": "उसी line पर रुकता है"
+              }
+            ]
+          },
+          {
+            "label": "SyntaxError: लिखने की गलती",
+            "children": [
+              {
+                "label": "कुछ भी नहीं चलता"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Program** निर्देशों की एक list है, जिसे computer क्रम से follow करता है, बिल्कुल prescription की तरह।",
+    "**Python** एक free और पढ़ने में आसान programming language है, जिसका pharmacy और healthcare में बहुत use होता है।",
+    "**Interpreter** Python code को **एक बार में एक line, ऊपर से नीचे तक** चलाता है।",
+    "**print()** text और numbers को screen पर दिखाता है; **#** से comment शुरू होता है।",
+    "**Errors** साफ़ बताते हैं कि Python कहाँ अटका। Syntax error हो तो program शुरू ही नहीं होता।"
   ]
 }
