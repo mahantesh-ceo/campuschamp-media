@@ -1,0 +1,384 @@
+{
+  "hook": {
+    "title": "Is patient ko kitni strips chahiye?",
+    "md": "Doctor ne likha hai: **2 tablets, din mein 3 baar, 7 din tak**. Tablets 10 ki strip mein aati hain. Aap kitni strips denge?\n\nIs lesson ke end tak Python aapke liye yeh answer nikalega. Aap values ko ek data type se doosre mein **badalna** seekhenge, aur Python ke **operators** se calculate aur compare karna seekhenge."
+  },
+  "learn": [
+    "Kisi value ko ek data type se doosre mein **badalna**, jise **type casting** kehte hain",
+    "Calculation ke liye **arithmetic operators**, `//` aur `%` ke saath",
+    "**Comparison** aur **logical** operators, jo **True** ya **False** answer dete hain",
+    "Python kis **kram** mein calculate karta hai, aur **brackets** use kaise badalte hain"
+  ],
+  "explanation": [
+    {
+      "heading": "Data types ke beech badalna",
+      "md": "Values aksar **text** ke roop mein aati hain, jaise label se padhi gayi strength: `\"500\"`. Python text se calculate nahi kar sakta, isliye pehle use number mein **badalna** padta hai. Ise **type casting** kehte hain.\n\n| Kya chahiye | Likhiye | Result |\n|---|---|---|\n| integer | `int(\"500\")` | `500` |\n| float | `float(\"52.5\")` | `52.5` |\n| string | `str(500)` | `\"500\"` |\n\n```python\nstrength = \"500\"\nprint(int(strength) * 3)\n```\n\nYeh `1500` print karta hai. `int()` ke bina aapko `500500500` milta.\n\nLesson 1.3 wala error yaad hai, jahan `+` text aur number ko nahi jod paaya tha? `str()` use theek karta hai:\n\n```python\nprint(\"Dose: \" + str(500) + \" mg\")\n```\n\nYeh `Dose: 500 mg` print karta hai.",
+      "callout": {
+        "title": "Type casting",
+        "md": "Kisi value ko ek data type se doosre mein badalna, int(), float() ya str() se."
+      }
+    },
+    {
+      "heading": "Badalte samay do baatein dhyan rakhiye",
+      "md": "**1. `int()` dashamlav wala hissa kaat deta hai. Round nahi karta.**\n\n```python\nprint(int(2.9))\n```\n\nYeh `2` print karta hai, 3 nahi.\n\n**2. Python kabhi-kabhi khud badal deta hai.** Jab aap integer aur float milaate hain, to answer float hota hai:\n\n```python\nprint(10 + 2.5)\n```\n\nYeh `12.5` print karta hai. Aise apne-aap badalne ko **implicit conversion** kehte hain. `int()`, `float()` ya `str()` se khud badalna **explicit conversion** hai."
+    },
+    {
+      "heading": "Arithmetic operators",
+      "md": "**Operator** ek symbol hai jo values ke saath kuch karta hai, jaise `+` ya `*`. Yeh Python ke **arithmetic operators** hain:\n\n| Operator | Matlab | Example | Result |\n|---|---|---|---|\n| `+` | Jodna | `500 + 250` | `750` |\n| `-` | Ghatana | `30 - 12` | `18` |\n| `*` | Guna | `500 * 3` | `1500` |\n| `/` | Bhaag | `10 / 4` | `2.5` |\n| `//` | Bhaag, sirf poori sankhya | `25 // 10` | `2` |\n| `%` | Sheshphal (remainder) | `25 % 10` | `5` |\n| `**` | Ghaat (power) | `2 ** 3` | `8` |\n\nPharmacy mein `//` aur `%` bahut kaam aate hain. **25 tablets** aur **10 per strip** ke saath:\n\n```python\nprint(25 // 10)\nprint(25 % 10)\n```\n\nYeh `2` (poori strips) aur `5` (khuli tablets) print karta hai.\n\nDhyan dijiye: `/` hamesha float deta hai, poora bhaag hone par bhi: `10 / 2` hai `5.0`.",
+      "callout": {
+        "title": "Operator",
+        "md": "Ek symbol jo values ke saath kuch karta hai, jaise + (jodna) ya > (bada hai)."
+      }
+    },
+    {
+      "heading": "Comparison operators: haan-ya-na wale sawaal",
+      "md": "**Comparison operators** do values ki tulna karte hain. Answer hamesha boolean hota hai: `True` ya `False`.\n\n| Operator | Kaun sa sawaal poochta hai |\n|---|---|\n| `==` | Barabar? |\n| `!=` | Barabar nahi? |\n| `>` | Bada hai? |\n| `<` | Chhota hai? |\n| `>=` | Bada ya barabar? |\n| `<=` | Chhota ya barabar? |\n\n```python\ndaily_dose_mg = 4500\nprint(daily_dose_mg > 4000)\n```\n\nYeh `True` print karta hai: dose 4000 mg se zyada hai.",
+      "callout": {
+        "title": "= aur == alag hain",
+        "md": "Ek = value rakhta hai. Do == do values ki tulna karte hain. Inhe mila dena beginners ki sabse aam galtiyon mein se ek hai."
+      }
+    },
+    {
+      "heading": "Logical operators: and, or, not",
+      "md": "**Logical operators** True/False answers ko jodte hain:\n\n- `and`: **True** sirf tab, jab **dono** taraf True ho\n- `or`: **True** tab, jab **kam se kam ek** taraf True ho\n- `not`: True ko False, aur False ko True kar deta hai\n\n```python\nage = 16\nweight_kg = 52\nprint(age >= 18 and weight_kg >= 50)\nprint(age >= 18 or weight_kg >= 50)\n```\n\nYeh pehle `False` print karta hai (patient 18 ya usse zyada ka nahi hai), phir `True` (wazan 50 kg ya usse zyada hai)."
+    },
+    {
+      "heading": "Shortcuts, aur calculation ka kram",
+      "md": "**Shortcut operators** kisi variable ko uski apni value se badalte hain:\n\n```python\nstock = 100\nstock -= 30\nprint(stock)\n```\n\nYeh `70` print karta hai. `stock -= 30`, `stock = stock - 30` likhne ka chhota tareeka hai. Isi tarah `+=` jodta hai aur `*=` guna karta hai.\n\n**Calculation ka kram:** maths ki tarah, Python pehle `**` karta hai, phir `*`, `/`, `//` aur `%`, phir `+` aur `-`. **Brackets sabse pehle.**\n\n```python\nprint(98 + 102 / 2)\nprint((98 + 102) / 2)\n```\n\nYeh pehle `149.0`, phir `100.0` print karta hai. Sirf doosra hi do readings, 98 aur 102, ka average hai.",
+      "callout": {
+        "title": "Shak ho to brackets lagaiye",
+        "md": "Brackets se dose formulas padhne wale har kisi ko saaf samajh aate hain, aur Python us kram mein calculate nahi karta jo aap nahi chahte the."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "Yeh program nikalta hai ki 7 din ke course mein kitni tablets lagengi, aur kitni strips deni hain. Har line chalte samay Variables panel dekhiye.",
+    "keyTerms": [
+      {
+        "meaning": "Text \"2\" ko number 2 mein badlo."
+      },
+      {
+        "meaning": "Bhaag dekar sirf poori sankhya rakho."
+      },
+      {
+        "meaning": "Bhaag dene ke baad bacha hua."
+      },
+      {
+        "meaning": "Bada ya barabar. True ya False deta hai."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Yeh program nikalta hai ki saat din ke course mein kitni tablets lagengi, aur kitni strips deni hain. Variables panel dekhiye."
+      },
+      {
+        "say": "Comment batata hai ki program kya karta hai."
+      },
+      {
+        "say": "int, text do ko number do mein badalta hai, taaki Python usse calculate kar sake."
+      },
+      {
+        "say": "doses_per_day mein teen rakha gaya hai."
+      },
+      {
+        "say": "days mein saat rakha gaya hai."
+      },
+      {
+        "say": "Star guna karta hai. Do guna teen guna saat, yaani bayaalees tablets."
+      },
+      {
+        "say": "Do slashes bhaag dekar sirf poori sankhya rakhte hain. Bayaalees ko das se bhaag dene par chaar poori strips."
+      },
+      {
+        "say": "Percent sign sheshphal deta hai. Bayaalees ko das se bhaag dene par do khuli tablets bachti hain."
+      },
+      {
+        "say": "Print kul tablets dikhata hai."
+      },
+      {
+        "say": "Phir strips aur khuli tablets."
+      },
+      {
+        "say": "Aakhir mein ek comparison. Chaar strips mein chaalees tablets aati hain. Chaalees, bayaalees se bada ya barabar nahi hai, isliye answer False hai. Patient ko ek aur strip chahiye."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Values badalte aur calculate karte samay yeh do errors aam hain.",
+    "examples": [
+      {
+        "title": "Aisa text badalna jo poori sankhya nahi hai",
+        "md": "`int()` sirf usi text ko badal sakta hai jo **poori sankhya** jaisa dikhe. `\"52.5\"` mein dashamlav hai, isliye `float(\"52.5\")` use kijiye. `\"fifty\"` jaisa text to badla hi nahi ja sakta.",
+        "callout": {
+          "title": "ValueError",
+          "md": "Error jiska matlab hai ki value ka data type sahi hai, lekin use use nahi kiya ja sakta, jaise int(\"52.5\")."
+        }
+      },
+      {
+        "title": "Shoonya se bhaag dena",
+        "md": "Kisi bhi cheez ko shoonya se bhaag nahi diya ja sakta, na maths mein, na Python mein. Check kijiye ki jis number se aap bhaag de rahe hain, woh kabhi 0 na ho, jaise dinon ki sankhya."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Compare karne ke liye `=` use karna, jaise `print(dose = 500)`",
+      "fix": "Do equals signs se compare kijiye: `print(dose == 500)`."
+    },
+    {
+      "mistake": "Text aur number ko `+` se jodna, jaise `\"Total: \" + 42`",
+      "fix": "Pehle number ko badliye: `\"Total: \" + str(42)`."
+    },
+    {
+      "mistake": "`int()` se round hone ki ummeed karna, jaise `int(2.9)`",
+      "see": "Koi error nahi, lekin result 2 hai",
+      "fix": "`int()` dashamlav wala hissa kaat deta hai. Round karne ke liye `round(2.9)` use kijiye, jo 3 deta hai."
+    },
+    {
+      "mistake": "`/` se poori sankhya ki ummeed karna, jaise `10 / 2`",
+      "see": "Koi error nahi, lekin result 5.0 hai",
+      "fix": "Poori sankhya chahiye to `//` use kijiye: `10 // 2` deta hai 5."
+    },
+    {
+      "mistake": "Average mein brackets bhool jaana, jaise `98 + 102 / 2`",
+      "see": "Koi error nahi, lekin result 149.0 hai",
+      "fix": "Brackets lagaiye: `(98 + 102) / 2` deta hai 100.0."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Pehle badliye, phir calculate kijiye",
+      "md": "Strength label se padhi gayi hai, isliye yeh text hai. Ise number mein badliye aur strength ka **dogna** print kijiye. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "int(strength) text ko number banata hai.",
+        "Try kijiye: print(int(strength) * 2)."
+      ]
+    },
+    {
+      "title": "Strips aur khuli tablets",
+      "md": "**45 tablets** hain, aur har strip mein **10** aati hain. `//` aur `%` use karke print kijiye:",
+      "hints": [
+        "total // 10 poori strips deta hai.",
+        "total % 10 bachi hui tablets deta hai.",
+        "print(\"Strips:\", total // 10, \"Loose:\", total % 10)"
+      ]
+    },
+    {
+      "title": "Kya dose limit se zyada hai?",
+      "md": "Maximum daily dose **4000 mg** hai. Print kijiye ki `daily_dose_mg` limit se **bada** hai ya nahi. Output bilkul yeh hona chahiye:\n\n*(Sirf seekhne ke liye: asli limits clinical guidelines ke anusaar hi honi chahiye.)*",
+      "hints": [
+        "> poochta hai \"bada hai?\" aur True ya False deta hai.",
+        "print(\"Over the limit:\", daily_dose_mg > limit_mg)"
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "Yeh program `Total: 42` print karna chahiye, lekin isme error hai. Ise **`str()` use karke** theek kijiye.",
+      "hints": [
+        "+ text aur number ko nahi jod sakta.",
+        "str(total) se number ko text mein badliye."
+      ],
+      "solutionNote": "str(total), 42 ko text \"42\" bana deta hai, isliye + dono strings ko jod paata hai."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "print(int(\"500\") + 5) kya dikhata hai?",
+      "why": "int(\"500\") text ko number 500 banata hai, isliye answer 505 hai."
+    },
+    {
+      "q": "17 // 5 kitna hai?",
+      "why": "// bhaag dekar sirf poori sankhya rakhta hai: 17 mein 5 teen baar jaata hai, kuch bach jaata hai."
+    },
+    {
+      "q": "17 % 5 kitna hai?",
+      "why": "% sheshphal deta hai: 17 mein 5 teen baar (15) jaata hai, 2 bachta hai."
+    },
+    {
+      "q": "print(4500 > 4000) kya dikhata hai?",
+      "why": "4500, 4000 se bada hai, isliye comparison True deta hai."
+    },
+    {
+      "q": "age = 16. print(age >= 18 and age <= 60) kya dikhata hai?",
+      "why": "and mein dono taraf True hona zaroori hai. 16, 18 ya usse zyada nahi hai, isliye answer False hai."
+    },
+    {
+      "q": "98 aur 102 ka average kaun sa deta hai?",
+      "why": "Brackets ki wajah se Python pehle jodta hai, phir bhaag deta hai: 200 / 2 = 100.0."
+    }
+  ],
+  "exam": {
+    "note": "University exam English mein likha jaata hai, isliye model answers English mein hi rakhe gaye hain. Yeh practice ke liye important questions hain; asli university questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 1.4 · Type casting aur operators",
+    "children": [
+      {
+        "label": "Type casting",
+        "children": [
+          {
+            "label": "int(\"500\") → 500"
+          },
+          {
+            "label": "float(\"52.5\") → 52.5"
+          },
+          {
+            "label": "str(500) → \"500\""
+          },
+          {
+            "label": "int(2.9) → 2"
+          }
+        ]
+      },
+      {
+        "label": "Arithmetic",
+        "children": [
+          {
+            "label": "+  -  *  /"
+          },
+          {
+            "label": "// poori sankhya"
+          },
+          {
+            "label": "% sheshphal"
+          },
+          {
+            "label": "** ghaat"
+          }
+        ]
+      },
+      {
+        "label": "Comparison",
+        "children": [
+          {
+            "label": "==  !="
+          },
+          {
+            "label": ">  <  >=  <="
+          },
+          {
+            "label": "True / False deta hai"
+          }
+        ]
+      },
+      {
+        "label": "Logical",
+        "children": [
+          {
+            "label": "and: dono True"
+          },
+          {
+            "label": "or: kam se kam ek"
+          },
+          {
+            "label": "not: ulat deta hai"
+          }
+        ]
+      },
+      {
+        "label": "Kram",
+        "children": [
+          {
+            "label": "Brackets pehle"
+          },
+          {
+            "label": "** phir * / // %"
+          },
+          {
+            "label": "phir + -"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "ValueError: int(\"52.5\")"
+          },
+          {
+            "label": "ZeroDivisionError"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Type casting** values badalta hai: `int(\"500\")` deta hai 500, `float(\"52.5\")` deta hai 52.5 aur `str(500)` deta hai \"500\".",
+    "`int()` dashamlav wala hissa **kaat** deta hai (round nahi karta), aur int ke saath float milaane par answer **float** hota hai.",
+    "**Arithmetic operators** calculate karte hain: `//` poori sankhya rakhta hai aur `%` sheshphal deta hai, strips aur khuli tablets ke liye ekdum sahi.",
+    "**Comparison operators** (`==`, `!=`, `>`, `<`, `>=`, `<=`) aur **logical operators** (`and`, `or`, `not`) **True** ya **False** dete hain.",
+    "Python pehle `**`, phir `* / // %`, phir `+ -` karta hai; **brackets** sabse pehle."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Bayaalees tablets ko das-das ki strips mein pack karna hai."
+        },
+        {
+          "say": "Do slashes poori strips ginte hain. Bayaalees ko das se bhaag dekar, sirf poori sankhya rakhne par, chaar."
+        },
+        {
+          "say": "Percent sign bacha hua ginta hai: do khuli tablets."
+        },
+        {
+          "say": "Chaar strips mein sirf chaalees tablets aati hain, isliye comparison kehta hai ki yeh kaafi nahi hain. Patient ko paanch strips chahiye."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "video",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Kisi value ko ek data type se doosre mein badalna, jaise text \"500\" ko number 500 banana."
+    },
+    {
+      "meaning": "Value ko integer, float ya string mein badalte hain. int(\"500\") deta hai 500; str(500) deta hai \"500\"."
+    },
+    {
+      "meaning": "Jab Python khud type badal deta hai, jaise 10 + 2.5 ka answer float 12.5. int(), float() ya str() se khud badalna explicit conversion hai."
+    },
+    {
+      "meaning": "Ek symbol jo values ke saath kuch karta hai, jaise + (jodna) ya > (bada hai)."
+    },
+    {
+      "meaning": "Calculation karne wale operators: + - * / // % **."
+    },
+    {
+      "meaning": "Bhaag dekar sirf poori sankhya rakhta hai. 42 // 10 deta hai 4, jaise poori strips ginna."
+    },
+    {
+      "meaning": "Bhaag dene ke baad bacha hua (sheshphal) deta hai. 42 % 10 deta hai 2, jaise khuli tablets ginna."
+    },
+    {
+      "meaning": "Do values ki tulna karke True ya False deta hai: == != > < >= <=."
+    },
+    {
+      "meaning": "True/False answers ko jodta hai: and (dono True), or (kam se kam ek True), not (answer ulat deta hai)."
+    },
+    {
+      "meaning": "Variable ko uski apni value se badalta hai. stock -= 30 matlab stock = stock - 30."
+    },
+    {
+      "meaning": "Error jiska matlab hai ki value ko is tarah use nahi kiya ja sakta, jaise int(\"52.5\")."
+    },
+    {
+      "meaning": "Shoonya se bhaag dene par Python yeh error dikhata hai."
+    }
+  ]
+}

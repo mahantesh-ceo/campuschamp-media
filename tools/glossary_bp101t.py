@@ -216,6 +216,68 @@ G = {
             "hinglish": "Error jiska matlab hai galat data type ki value use ki gayi, jaise text aur number jodna.",
             "kn": "ತಪ್ಪು data type ನ value use ಮಾಡಿದ್ದೀರಿ ಅನ್ನುವ error, ಉದಾ: text ಮತ್ತು number ಕೂಡಿಸೋದು."}),
     ],
+    "1-4": [
+        ("Type casting", {
+            "en": "Converting a value from one data type to another, like turning the text \"500\" into the number 500.",
+            "hi": "किसी value को एक data type से दूसरे में बदलना, जैसे text \"500\" को number 500 बनाना।",
+            "hinglish": "Kisi value ko ek data type se doosre mein badalna, jaise text \"500\" ko number 500 banana.",
+            "kn": "ಒಂದು value ಅನ್ನು ಒಂದು data type ಇಂದ ಇನ್ನೊಂದಕ್ಕೆ ಬದಲಾಯಿಸೋದು, ಉದಾ: text \"500\" ಅನ್ನು number 500 ಮಾಡೋದು."}),
+        ("int(), float(), str()", {
+            "en": "Convert a value to an integer, a float or a string. int(\"500\") gives 500; str(500) gives \"500\".",
+            "hi": "Value को integer, float या string में बदलते हैं। int(\"500\") देता है 500; str(500) देता है \"500\"।",
+            "hinglish": "Value ko integer, float ya string mein badalte hain. int(\"500\") deta hai 500; str(500) deta hai \"500\".",
+            "kn": "Value ಅನ್ನು integer, float ಅಥವಾ string ಆಗಿ ಬದಲಾಯಿಸುತ್ತವೆ. int(\"500\") ಕೊಡೋದು 500; str(500) ಕೊಡೋದು \"500\"."}),
+        ("Implicit conversion", {
+            "en": "When Python converts a type by itself, e.g. 10 + 2.5 gives the float 12.5. Converting with int(), float() or str() yourself is explicit conversion.",
+            "hi": "जब Python खुद type बदल देता है, जैसे 10 + 2.5 का answer float 12.5। int(), float() या str() से खुद बदलना explicit conversion है।",
+            "hinglish": "Jab Python khud type badal deta hai, jaise 10 + 2.5 ka answer float 12.5. int(), float() ya str() se khud badalna explicit conversion hai.",
+            "kn": "Python ತಾನೇ type ಬದಲಾಯಿಸಿದಾಗ, ಉದಾ: 10 + 2.5 ಉತ್ತರ float 12.5. int(), float() ಅಥವಾ str() ಇಂದ ನಾವೇ ಬದಲಾಯಿಸೋದು explicit conversion."}),
+        ("Operator", {
+            "en": "A symbol that does something with values, such as + (add) or > (greater than).",
+            "hi": "एक symbol जो values के साथ कुछ करता है, जैसे + (जोड़ना) या > (बड़ा है)।",
+            "hinglish": "Ek symbol jo values ke saath kuch karta hai, jaise + (jodna) ya > (bada hai).",
+            "kn": "Values ಜೊತೆ ಏನಾದರೂ ಮಾಡುವ symbol, ಉದಾ: + (ಕೂಡಿಸು) ಅಥವಾ > (ದೊಡ್ಡದು)."}),
+        ("Arithmetic operator", {
+            "en": "An operator for calculations: + - * / // % **.",
+            "hi": "Calculation करने वाले operators: + - * / // % **।",
+            "hinglish": "Calculation karne wale operators: + - * / // % **.",
+            "kn": "ಲೆಕ್ಕ ಮಾಡುವ operators: + - * / // % **."}),
+        ("Floor division (//)", {
+            "en": "Divides and keeps only the whole number. 42 // 10 gives 4, like counting full strips.",
+            "hi": "भाग देकर सिर्फ पूरी संख्या रखता है। 42 // 10 देता है 4, जैसे पूरी strips गिनना।",
+            "hinglish": "Bhaag dekar sirf poori sankhya rakhta hai. 42 // 10 deta hai 4, jaise poori strips ginna.",
+            "kn": "ಭಾಗಿಸಿ ಪೂರ್ಣ ಸಂಖ್ಯೆಯನ್ನು ಮಾತ್ರ ಇಡುತ್ತೆ. 42 // 10 ಕೊಡೋದು 4, ಪೂರ್ತಿ strips ಎಣಿಸಿದ ಹಾಗೆ."}),
+        ("Modulus (%)", {
+            "en": "Gives the remainder after dividing. 42 % 10 gives 2, like counting loose tablets.",
+            "hi": "भाग देने के बाद बचा हुआ (शेषफल) देता है। 42 % 10 देता है 2, जैसे खुली tablets गिनना।",
+            "hinglish": "Bhaag dene ke baad bacha hua (sheshphal) deta hai. 42 % 10 deta hai 2, jaise khuli tablets ginna.",
+            "kn": "ಭಾಗಿಸಿದ ನಂತರ ಉಳಿದದ್ದು (ಶೇಷ) ಕೊಡುತ್ತೆ. 42 % 10 ಕೊಡೋದು 2, ಬಿಡಿ tablets ಎಣಿಸಿದ ಹಾಗೆ."}),
+        ("Comparison operator", {
+            "en": "Compares two values and gives True or False: == != > < >= <=.",
+            "hi": "दो values की तुलना करके True या False देता है: == != > < >= <=।",
+            "hinglish": "Do values ki tulna karke True ya False deta hai: == != > < >= <=.",
+            "kn": "ಎರಡು values ಹೋಲಿಸಿ True ಅಥವಾ False ಕೊಡುತ್ತೆ: == != > < >= <=."}),
+        ("Logical operator", {
+            "en": "Combines True/False answers: and (both True), or (at least one True), not (flips the answer).",
+            "hi": "True/False answers को जोड़ता है: and (दोनों True), or (कम से कम एक True), not (answer उलट देता है)।",
+            "hinglish": "True/False answers ko jodta hai: and (dono True), or (kam se kam ek True), not (answer ulat deta hai).",
+            "kn": "True/False ಉತ್ತರಗಳನ್ನು ಜೋಡಿಸುತ್ತೆ: and (ಎರಡೂ True), or (ಕನಿಷ್ಠ ಒಂದು True), not (ಉತ್ತರ ತಿರುಗಿಸುತ್ತೆ)."}),
+        ("Shortcut operator (+=, -=)", {
+            "en": "Changes a variable using its own value. stock -= 30 means stock = stock - 30.",
+            "hi": "Variable को उसकी अपनी value से बदलता है। stock -= 30 मतलब stock = stock - 30।",
+            "hinglish": "Variable ko uski apni value se badalta hai. stock -= 30 matlab stock = stock - 30.",
+            "kn": "Variable ಅನ್ನು ಅದರದೇ value ಬಳಸಿ ಬದಲಾಯಿಸುತ್ತೆ. stock -= 30 ಅಂದ್ರೆ stock = stock - 30."}),
+        ("ValueError", {
+            "en": "An error that means the value can't be used that way, like int(\"52.5\").",
+            "hi": "Error जिसका मतलब है कि value को इस तरह use नहीं किया जा सकता, जैसे int(\"52.5\")।",
+            "hinglish": "Error jiska matlab hai ki value ko is tarah use nahi kiya ja sakta, jaise int(\"52.5\").",
+            "kn": "Value ಅನ್ನು ಆ ರೀತಿ use ಮಾಡಲು ಆಗಲ್ಲ ಅನ್ನುವ error, ಉದಾ: int(\"52.5\")."}),
+        ("ZeroDivisionError", {
+            "en": "The error Python shows when you divide by zero.",
+            "hi": "शून्य से भाग देने पर Python यह error दिखाता है।",
+            "hinglish": "Shoonya se bhaag dene par Python yeh error dikhata hai.",
+            "kn": "ಸೊನ್ನೆಯಿಂದ ಭಾಗಿಸಿದಾಗ Python ತೋರಿಸುವ error."}),
+    ],
 }
 
 

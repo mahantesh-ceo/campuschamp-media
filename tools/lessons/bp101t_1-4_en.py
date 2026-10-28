@@ -1,0 +1,229 @@
+"""Lesson 1.4 (English). Run to write content/bp101t/1-4/en.json."""
+import json
+import os
+
+L = {
+    "id": "1-4",
+    "course": "bp101t",
+    "unit": "Unit I",
+    "unitTitle": "Introduction to Python programming",
+    "number": "1.4",
+    "title": "Type casting and operators",
+    "minutes": 15,
+    "free": True,
+    "audioLanguages": ["en", "hi", "kn"],
+    "hook": {
+        "title": "How many strips does this patient need?",
+        "md": "A doctor prescribes **2 tablets, 3 times a day, for 7 days**. Tablets come in strips of 10. How many strips do you hand over?\n\nBy the end of this lesson, Python will answer that for you. You'll learn to **convert** values between data types, and to calculate and compare with Python's **operators**.",
+    },
+    "learn": [
+        "How to **convert** a value from one data type to another, called **type casting**",
+        "**Arithmetic operators** for calculations, including `//` and `%`",
+        "**Comparison** and **logical** operators that answer **True** or **False**",
+        "The **order** in which Python calculates, and how **brackets** change it",
+    ],
+    "explanation": [
+        {
+            "heading": "Converting between data types",
+            "md": "Values often arrive as **text**, for example a strength read from a label: `\"500\"`. Python can't calculate with text, so you first **convert** it to a number. This is called **type casting**.\n\n| To get | Write | Result |\n|---|---|---|\n| an integer | `int(\"500\")` | `500` |\n| a float | `float(\"52.5\")` | `52.5` |\n| a string | `str(500)` | `\"500\"` |\n\n```python\nstrength = \"500\"\nprint(int(strength) * 3)\n```\n\nThis prints `1500`. Without `int()`, you would get `500500500`.\n\nRemember the error from Lesson 1.3, where `+` couldn't join text and a number? `str()` fixes it:\n\n```python\nprint(\"Dose: \" + str(500) + \" mg\")\n```\n\nThis prints `Dose: 500 mg`.",
+            "callout": {"type": "definition", "title": "Type casting", "md": "Converting a value from one data type to another, using int(), float() or str()."},
+        },
+        {
+            "heading": "Two things to watch when converting",
+            "md": "**1. `int()` cuts off the decimal part. It doesn't round.**\n\n```python\nprint(int(2.9))\n```\n\nThis prints `2`, not 3.\n\n**2. Python sometimes converts by itself.** When you mix an integer and a float, the answer is a float:\n\n```python\nprint(10 + 2.5)\n```\n\nThis prints `12.5`. Converting automatically like this is called **implicit conversion**. Converting with `int()`, `float()` or `str()` yourself is **explicit conversion**.",
+        },
+        {
+            "heading": "Arithmetic operators",
+            "md": "An **operator** is a symbol that does something with values, like `+` or `*`. These are Python's **arithmetic operators**:\n\n| Operator | Meaning | Example | Result |\n|---|---|---|---|\n| `+` | Add | `500 + 250` | `750` |\n| `-` | Subtract | `30 - 12` | `18` |\n| `*` | Multiply | `500 * 3` | `1500` |\n| `/` | Divide | `10 / 4` | `2.5` |\n| `//` | Divide, keep the whole number | `25 // 10` | `2` |\n| `%` | Remainder | `25 % 10` | `5` |\n| `**` | Power | `2 ** 3` | `8` |\n\n`//` and `%` are very useful in a pharmacy. With **25 tablets** and **10 per strip**:\n\n```python\nprint(25 // 10)\nprint(25 % 10)\n```\n\nThis prints `2` (full strips) and `5` (loose tablets).\n\nNote: `/` always gives a float, even when it divides exactly: `10 / 2` is `5.0`.",
+            "callout": {"type": "definition", "title": "Operator", "md": "A symbol that does something with values, such as + (add) or > (greater than)."},
+        },
+        {
+            "heading": "Comparison operators: yes-or-no questions",
+            "md": "**Comparison operators** compare two values. The answer is always a boolean: `True` or `False`.\n\n| Operator | Question it asks |\n|---|---|\n| `==` | Equal? |\n| `!=` | Not equal? |\n| `>` | Greater than? |\n| `<` | Less than? |\n| `>=` | Greater than or equal? |\n| `<=` | Less than or equal? |\n\n```python\ndaily_dose_mg = 4500\nprint(daily_dose_mg > 4000)\n```\n\nThis prints `True`: the dose is above 4000 mg.",
+            "callout": {"type": "warning", "title": "= is not ==", "md": "One = stores a value. Two == compare two values. Mixing them up is one of the most common beginner mistakes."},
+        },
+        {
+            "heading": "Logical operators: and, or, not",
+            "md": "**Logical operators** combine True/False answers:\n\n- `and`: **True** only if **both** sides are True\n- `or`: **True** if **at least one** side is True\n- `not`: flips True to False, and False to True\n\n```python\nage = 16\nweight_kg = 52\nprint(age >= 18 and weight_kg >= 50)\nprint(age >= 18 or weight_kg >= 50)\n```\n\nThis prints `False` (the patient is not 18 or over), then `True` (the weight is 50 kg or more).",
+        },
+        {
+            "heading": "Shortcuts, and the order of calculation",
+            "md": "**Shortcut operators** change a variable using its own value:\n\n```python\nstock = 100\nstock -= 30\nprint(stock)\n```\n\nThis prints `70`. `stock -= 30` is a short way of writing `stock = stock - 30`. Similarly, `+=` adds and `*=` multiplies.\n\n**Order of calculation:** like in maths, Python does `**` first, then `*`, `/`, `//` and `%`, then `+` and `-`. **Brackets go first of all.**\n\n```python\nprint(98 + 102 / 2)\nprint((98 + 102) / 2)\n```\n\nThis prints `149.0`, then `100.0`. Only the second is the average of two readings, 98 and 102.",
+            "callout": {"type": "tip", "title": "When in doubt, use brackets", "md": "Brackets make dose formulas clear to anyone reading them, and stop Python from calculating in an order you didn't intend."},
+        },
+    ],
+    "walkthrough": {
+        "intro": "This program works out how many tablets a 7-day course needs, and how many strips to give. Watch the Variables panel as each line runs.",
+        "filename": "strips.py",
+        "code": "# Tablets for a 7-day course\ntablets_per_dose = int(\"2\")\ndoses_per_day = 3\ndays = 7\ntotal = tablets_per_dose * doses_per_day * days\nstrips = total // 10\nloose = total % 10\nprint(\"Total tablets:\", total)\nprint(\"Strips:\", strips, \"Loose:\", loose)\nprint(\"Enough with 4 strips?\", strips * 10 >= total)",
+        "output": "Total tablets: 42\nStrips: 4 Loose: 2\nEnough with 4 strips? False",
+        "steps": [
+            {"line": None, "say": "This program works out how many tablets a seven-day course needs, and how many strips to give. Watch the Variables panel.", "output": None, "audio": "step-01.mp3"},
+            {"line": 1, "say": "The comment says what the program does.", "output": None, "audio": "step-02.mp3"},
+            {"line": 2, "say": "int converts the text two into the number two, so Python can calculate with it.", "output": None, "audio": "step-03.mp3", "vars": {"tablets_per_dose": "2"}},
+            {"line": 3, "say": "doses_per_day stores three.", "output": None, "audio": "step-04.mp3", "vars": {"doses_per_day": "3"}},
+            {"line": 4, "say": "days stores seven.", "output": None, "audio": "step-05.mp3", "vars": {"days": "7"}},
+            {"line": 5, "say": "The star multiplies. Two times three times seven is forty-two tablets.", "output": None, "audio": "step-06.mp3", "vars": {"total": "42"}},
+            {"line": 6, "say": "Two slashes divide, and keep only the whole number. Forty-two divided by ten gives four full strips.", "output": None, "audio": "step-07.mp3", "vars": {"strips": "4"}},
+            {"line": 7, "say": "The percent sign gives the remainder. Forty-two divided by ten leaves two loose tablets.", "output": None, "audio": "step-08.mp3", "vars": {"loose": "2"}},
+            {"line": 8, "say": "Print shows the total number of tablets.", "output": "Total tablets: 42", "audio": "step-09.mp3"},
+            {"line": 9, "say": "Next, the number of strips and loose tablets.", "output": "Strips: 4 Loose: 2", "audio": "step-10.mp3"},
+            {"line": 10, "say": "Finally, a comparison. Four strips hold forty tablets. Forty is not greater than or equal to forty-two, so the answer is False. The patient needs one more strip.", "output": "Enough with 4 strips? False", "audio": "step-11.mp3"},
+        ],
+        "keyTerms": [
+            {"term": "int(\"2\")", "meaning": "Convert the text \"2\" into the number 2."},
+            {"term": "//", "meaning": "Divide and keep only the whole number."},
+            {"term": "%", "meaning": "The remainder after dividing."},
+            {"term": ">=", "meaning": "Greater than or equal to. Gives True or False."},
+        ],
+    },
+    "errors": {
+        "intro": "These two errors are common when you convert values and calculate.",
+        "examples": [
+            {
+                "title": "Converting text that isn't a whole number",
+                "code": "weight = int(\"52.5\")",
+                "output": "ValueError: invalid literal for int() with base 10: '52.5'",
+                "errorLine": 1,
+                "md": "`int()` can only convert text that looks like a **whole number**. `\"52.5\"` has a decimal point, so use `float(\"52.5\")` instead. Text such as `\"fifty\"` can't be converted at all.",
+                "callout": {"type": "definition", "title": "ValueError", "md": "An error that means the value has the right data type but can't be used, like int(\"52.5\")."},
+            },
+            {
+                "title": "Dividing by zero",
+                "code": "tablets = 30\ndays = 0\nprint(tablets / days)",
+                "output": "ZeroDivisionError: division by zero",
+                "errorLine": 3,
+                "md": "Nothing can be divided by zero, in maths or in Python. Check that the number you divide by can never be 0, for example a number of days.",
+            },
+        ],
+    },
+    "mistakes": [
+        {"mistake": "Using `=` to compare, e.g. `print(dose = 500)`", "see": "TypeError: 'dose' is an invalid keyword argument for print()", "fix": "Compare with two equals signs: `print(dose == 500)`."},
+        {"mistake": "Joining text and a number with `+`, e.g. `\"Total: \" + 42`", "see": "TypeError: can only concatenate str (not \"int\") to str", "fix": "Convert the number first: `\"Total: \" + str(42)`."},
+        {"mistake": "Expecting `int()` to round, e.g. `int(2.9)`", "see": "No error, but the result is 2", "fix": "`int()` cuts off the decimal part. To round, use `round(2.9)`, which gives 3."},
+        {"mistake": "Expecting `/` to give a whole number, e.g. `10 / 2`", "see": "No error, but the result is 5.0", "fix": "Use `//` when you want a whole number: `10 // 2` gives 5."},
+        {"mistake": "Forgetting brackets in an average, e.g. `98 + 102 / 2`", "see": "No error, but the result is 149.0", "fix": "Add brackets: `(98 + 102) / 2` gives 100.0."},
+    ],
+    "tasks": [
+        {
+            "id": "t1",
+            "title": "Convert, then calculate",
+            "md": "The strength was read from a label, so it is text. Convert it to a number and print **twice** the strength. The output should be exactly:",
+            "expectedOutput": "500",
+            "starterCode": "strength = \"250\"\n# Print twice the strength\n",
+            "hints": ["int(strength) turns the text into a number.", "Try print(int(strength) * 2)."],
+            "solution": "strength = \"250\"\n# Print twice the strength\nprint(int(strength) * 2)",
+            "check": {"type": "exactOutput", "mustContain": ["int(strength)"]},
+        },
+        {
+            "id": "t2",
+            "title": "Strips and loose tablets",
+            "md": "There are **45 tablets**, and each strip holds **10**. Use `//` and `%` to print:",
+            "expectedOutput": "Strips: 4 Loose: 5",
+            "starterCode": "total = 45\n# Work out the strips and loose tablets\n",
+            "hints": ["total // 10 gives the full strips.", "total % 10 gives what's left over.", "print(\"Strips:\", total // 10, \"Loose:\", total % 10)"],
+            "solution": "total = 45\n# Work out the strips and loose tablets\nprint(\"Strips:\", total // 10, \"Loose:\", total % 10)",
+            "check": {"type": "exactOutput", "mustContain": ["//", "%"]},
+        },
+        {
+            "id": "t3",
+            "title": "Is the dose over the limit?",
+            "md": "The maximum daily dose is **4000 mg**. Print whether `daily_dose_mg` is **greater than** the limit. The output should be exactly:\n\n*(For learning only: real limits must follow clinical guidelines.)*",
+            "expectedOutput": "Over the limit: True",
+            "starterCode": "daily_dose_mg = 4500\nlimit_mg = 4000\n# Compare the dose with the limit\n",
+            "hints": ["> asks \"greater than?\" and gives True or False.", "print(\"Over the limit:\", daily_dose_mg > limit_mg)"],
+            "solution": "daily_dose_mg = 4500\nlimit_mg = 4000\n# Compare the dose with the limit\nprint(\"Over the limit:\", daily_dose_mg > limit_mg)",
+            "check": {"type": "exactOutput", "mustContain": ["daily_dose_mg > limit_mg"]},
+        },
+        {
+            "id": "t4",
+            "title": "Find the bug",
+            "md": "This program should print `Total: 42`, but it has an error. Fix it **using `str()`**.",
+            "expectedOutput": "Total: 42",
+            "starterCode": "total = 42\nprint(\"Total: \" + total)",
+            "hints": ["+ can't join text and a number.", "Convert the number to text with str(total)."],
+            "solution": "total = 42\nprint(\"Total: \" + str(total))",
+            "solutionNote": "str(total) turns 42 into the text \"42\", so + can join the two strings.",
+            "check": {"type": "exactOutput", "mustContain": ["str(total)"]},
+        },
+    ],
+    "quiz": [
+        {"q": "What does print(int(\"500\") + 5) show?", "options": ["5005", "505", "Error", "500"], "answer": 1, "why": "int(\"500\") converts the text to the number 500, so the answer is 505.", "code": True},
+        {"q": "What is 17 // 5?", "options": ["3", "3.4", "2", "4"], "answer": 0, "why": "// divides and keeps only the whole number: 17 divided by 5 is 3, with some left over."},
+        {"q": "What is 17 % 5?", "options": ["3", "3.4", "2", "5"], "answer": 2, "why": "% gives the remainder: 5 goes into 17 three times (15), leaving 2."},
+        {"q": "What does print(4500 > 4000) show?", "options": ["4500", "False", "500", "True"], "answer": 3, "why": "4500 is greater than 4000, so the comparison gives True.", "code": True},
+        {"q": "age = 16. What does print(age >= 18 and age <= 60) show?", "options": ["True", "False", "16", "Error"], "answer": 1, "why": "and needs both sides to be True. 16 is not 18 or over, so the answer is False.", "code": True},
+        {"q": "Which gives the average of 98 and 102?", "options": ["98 + 102 / 2", "(98 + 102) / 2", "98 + (102 / 2)", "98 / 2 + 102"], "answer": 1, "why": "Brackets make Python add first, then divide: 200 / 2 = 100.0.", "code": True},
+    ],
+    "exam": {
+        "note": "Important questions for practice. Actual university questions may differ.",
+        "short": [
+            {"q": "What is type casting? Give two examples.", "marks": 2, "md": "**Type casting** is converting a value from one data type to another. Examples: `int(\"500\")` converts the string \"500\" to the integer 500; `str(250)` converts the integer 250 to the string \"250\"."},
+            {"q": "Differentiate between / and // with an example.", "marks": 2, "md": "`/` performs division and always gives a **float**, e.g. `10 / 4` gives `2.5`. `//` performs **floor division** and gives the result rounded down to a whole number, e.g. `10 // 4` gives `2`."},
+        ],
+        "long": [
+            {"q": "Explain arithmetic, comparison and logical operators in Python with examples.", "marks": 5, "md": "An **operator** is a symbol that performs an operation on values (operands).\n\n**1. Arithmetic operators:** `+` (addition), `-` (subtraction), `*` (multiplication), `/` (division, gives a float), `//` (floor division), `%` (modulus, gives the remainder) and `**` (exponent). Example: with 25 tablets and 10 per strip, `25 // 10` gives `2` full strips and `25 % 10` gives `5` loose tablets.\n\n**2. Comparison operators:** compare two values and return `True` or `False`: `==`, `!=`, `>`, `<`, `>=`, `<=`. Example: `4500 > 4000` gives `True`.\n\n**3. Logical operators:** combine conditions: `and` (True only if both are True), `or` (True if at least one is True) and `not` (reverses the result). Example: with `age = 16` and `weight_kg = 52`, `age >= 18 and weight_kg >= 50` gives `False`, while `age >= 18 or weight_kg >= 50` gives `True`.\n\n**Operator precedence:** `**` first, then `*`, `/`, `//`, `%`, then `+` and `-`; brackets are evaluated first. Example: `(98 + 102) / 2` gives `100.0`."},
+        ],
+    },
+    "mindmap": {
+        "label": "Lesson 1.4 · Type casting & operators",
+        "children": [
+            {"label": "Type casting", "children": [{"label": "int(\"500\") → 500"}, {"label": "float(\"52.5\") → 52.5"}, {"label": "str(500) → \"500\""}, {"label": "int(2.9) → 2"}]},
+            {"label": "Arithmetic", "children": [{"label": "+  -  *  /"}, {"label": "// whole number"}, {"label": "% remainder"}, {"label": "** power"}]},
+            {"label": "Comparison", "children": [{"label": "==  !="}, {"label": ">  <  >=  <="}, {"label": "Gives True / False"}]},
+            {"label": "Logical", "children": [{"label": "and: both True"}, {"label": "or: at least one"}, {"label": "not: flips"}]},
+            {"label": "Order", "children": [{"label": "Brackets first"}, {"label": "** then * / // %"}, {"label": "then + -"}]},
+            {"label": "Errors", "children": [{"label": "ValueError: int(\"52.5\")"}, {"label": "ZeroDivisionError"}]},
+        ],
+    },
+    "summary": [
+        "**Type casting** converts values: `int(\"500\")` gives 500, `float(\"52.5\")` gives 52.5 and `str(500)` gives \"500\".",
+        "`int()` **cuts off** the decimal part (it doesn't round), and an int mixed with a float gives a **float**.",
+        "**Arithmetic operators** calculate: `//` keeps the whole number and `%` gives the remainder, perfect for strips and loose tablets.",
+        "**Comparison operators** (`==`, `!=`, `>`, `<`, `>=`, `<=`) and **logical operators** (`and`, `or`, `not`) give **True** or **False**.",
+        "Python calculates `**` first, then `* / // %`, then `+ -`; **brackets** come before everything.",
+    ],
+    "video": {"videoUrl": None, "searchTerms": ["python type casting int float str for beginners", "python operators arithmetic comparison logical explained"]},
+    "animations": [
+        {
+            "id": "strips",
+            "title": "Splitting tablets into strips",
+            "afterExplanation": 2,
+            "canvas": {"desktop": {"w": 800, "h": 460}, "mobile": {"w": 360, "h": 600}},
+            "actors": [
+                {"id": "total", "type": "box", "label": "total", "value": "42", "color": "indigo",
+                 "desktop": {"x": 320, "y": 30, "w": 160, "h": 100}, "mobile": {"x": 100, "y": 16, "w": 160, "h": 96}},
+                {"id": "t_floor", "type": "text", "text": "42 // 10", "size": 20,
+                 "desktop": {"x": 110, "y": 160, "w": 200, "h": 30}, "mobile": {"x": 16, "y": 130, "w": 156, "h": 28}},
+                {"id": "t_mod", "type": "text", "text": "42 % 10", "size": 20,
+                 "desktop": {"x": 490, "y": 160, "w": 200, "h": 30}, "mobile": {"x": 188, "y": 130, "w": 156, "h": 28}},
+                {"id": "strips", "type": "box", "label": "strips", "value": "?", "color": "emerald",
+                 "desktop": {"x": 130, "y": 200, "w": 160, "h": 100}, "mobile": {"x": 16, "y": 166, "w": 156, "h": 96}},
+                {"id": "loose", "type": "box", "label": "loose", "value": "?", "color": "amber",
+                 "desktop": {"x": 510, "y": 200, "w": 160, "h": 100}, "mobile": {"x": 188, "y": 166, "w": 156, "h": 96}},
+                {"id": "out", "type": "terminal", "title": "Output",
+                 "desktop": {"x": 40, "y": 330, "w": 730, "h": 100}, "mobile": {"x": 16, "y": 300, "w": 328, "h": 150}},
+            ],
+            "steps": [
+                {"say": "Forty-two tablets need to be packed in strips of ten.", "audio": "anim-strips-01.mp3",
+                 "actions": [{"do": "show", "target": "total"}]},
+                {"say": "Two slashes count the full strips. Forty-two divided by ten, keeping only the whole number, is four.", "audio": "anim-strips-02.mp3",
+                 "actions": [{"do": "show", "target": "t_floor"}, {"do": "show", "target": "strips"}, {"do": "setValue", "target": "strips", "value": "4"}, {"do": "pulse", "target": "strips"}]},
+                {"say": "The percent sign counts what's left over: two loose tablets.", "audio": "anim-strips-03.mp3",
+                 "actions": [{"do": "show", "target": "t_mod"}, {"do": "show", "target": "loose"}, {"do": "setValue", "target": "loose", "value": "2"}, {"do": "pulse", "target": "loose"}]},
+                {"say": "Four strips hold only forty tablets, so a comparison says they are not enough. The patient needs five strips.", "audio": "anim-strips-04.mp3",
+                 "actions": [{"do": "show", "target": "out"}, {"do": "appendOutput", "target": "out", "text": "Enough with 4 strips? False"}]},
+            ],
+        }
+    ],
+}
+
+if __name__ == "__main__":
+    root = os.path.join(os.path.dirname(__file__), "..", "..")
+    out = os.path.join(root, "content", "bp101t", "1-4", "en.json")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    json.dump(L, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    print("wrote", out)
+    # keep the "Words to know" section after regenerating
+    import subprocess, sys
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "..", "glossary_bp101t.py")], check=True)

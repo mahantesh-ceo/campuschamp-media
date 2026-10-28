@@ -1,0 +1,384 @@
+{
+  "hook": {
+    "title": "ಈ patient ಗೆ ಎಷ್ಟು strips ಬೇಕು?",
+    "md": "Doctor ಬರೆದಿದ್ದಾರೆ: **2 tablets, ದಿನಕ್ಕೆ 3 ಸಲ, 7 ದಿನ**. Tablets 10 ರ strip ನಲ್ಲಿ ಬರುತ್ತವೆ. ನೀವು ಎಷ್ಟು strips ಕೊಡುತ್ತೀರಿ?\n\nಈ lesson ಮುಗಿಯುವಷ್ಟರಲ್ಲಿ Python ನಿಮಗಾಗಿ ಈ answer ಕಂಡುಹಿಡಿಯುತ್ತೆ. Values ಅನ್ನು ಒಂದು data type ಇಂದ ಇನ್ನೊಂದಕ್ಕೆ **ಬದಲಾಯಿಸೋದು**, ಮತ್ತು Python ನ **operators** ಇಂದ calculate ಮತ್ತು compare ಮಾಡೋದನ್ನು ಕಲಿಯುತ್ತೀರಿ."
+  },
+  "learn": [
+    "ಒಂದು value ಅನ್ನು ಒಂದು data type ಇಂದ ಇನ್ನೊಂದಕ್ಕೆ **ಬದಲಾಯಿಸೋದು**, ಇದಕ್ಕೆ **type casting** ಅಂತಾರೆ",
+    "ಲೆಕ್ಕಕ್ಕಾಗಿ **arithmetic operators**, `//` ಮತ್ತು `%` ಜೊತೆ",
+    "**True** ಅಥವಾ **False** ಉತ್ತರ ಕೊಡುವ **comparison** ಮತ್ತು **logical** operators",
+    "Python ಯಾವ **ಕ್ರಮದಲ್ಲಿ** ಲೆಕ್ಕ ಮಾಡುತ್ತೆ, ಮತ್ತು **brackets** ಅದನ್ನು ಹೇಗೆ ಬದಲಾಯಿಸುತ್ತವೆ"
+  ],
+  "explanation": [
+    {
+      "heading": "Data types ನಡುವೆ ಬದಲಾಯಿಸೋದು",
+      "md": "Values ಹೆಚ್ಚಾಗಿ **text** ಆಗಿ ಬರುತ್ತವೆ, ಉದಾ: label ಇಂದ ಓದಿದ strength: `\"500\"`. Python text ಇಂದ ಲೆಕ್ಕ ಮಾಡಲು ಆಗಲ್ಲ, ಹಾಗಾಗಿ ಮೊದಲು ಅದನ್ನು number ಆಗಿ **ಬದಲಾಯಿಸಬೇಕು**. ಇದಕ್ಕೆ **type casting** ಅಂತಾರೆ.\n\n| ಏನು ಬೇಕು | ಬರೆಯಿರಿ | Result |\n|---|---|---|\n| integer | `int(\"500\")` | `500` |\n| float | `float(\"52.5\")` | `52.5` |\n| string | `str(500)` | `\"500\"` |\n\n```python\nstrength = \"500\"\nprint(int(strength) * 3)\n```\n\nಇದು `1500` print ಮಾಡುತ್ತೆ. `int()` ಇಲ್ಲದಿದ್ದರೆ ನಿಮಗೆ `500500500` ಸಿಗುತ್ತಿತ್ತು.\n\nLesson 1.3 ರ error ನೆನಪಿದೆಯಾ, `+` text ಮತ್ತು number ಅನ್ನು ಜೋಡಿಸಲು ಆಗಿರಲಿಲ್ಲ? `str()` ಅದನ್ನು ಸರಿ ಮಾಡುತ್ತೆ:\n\n```python\nprint(\"Dose: \" + str(500) + \" mg\")\n```\n\nಇದು `Dose: 500 mg` print ಮಾಡುತ್ತೆ.",
+      "callout": {
+        "title": "Type casting",
+        "md": "ಒಂದು value ಅನ್ನು ಒಂದು data type ಇಂದ ಇನ್ನೊಂದಕ್ಕೆ ಬದಲಾಯಿಸೋದು, int(), float() ಅಥವಾ str() ಇಂದ."
+      }
+    },
+    {
+      "heading": "ಬದಲಾಯಿಸುವಾಗ ಗಮನಿಸಬೇಕಾದ ಎರಡು ವಿಷಯ",
+      "md": "**1. `int()` ದಶಮಾಂಶ ಭಾಗವನ್ನು ಕತ್ತರಿಸುತ್ತೆ. Round ಮಾಡಲ್ಲ.**\n\n```python\nprint(int(2.9))\n```\n\nಇದು `2` print ಮಾಡುತ್ತೆ, 3 ಅಲ್ಲ.\n\n**2. Python ಕೆಲವೊಮ್ಮೆ ತಾನೇ ಬದಲಾಯಿಸುತ್ತೆ.** Integer ಮತ್ತು float ಸೇರಿಸಿದಾಗ ಉತ್ತರ float ಆಗುತ್ತೆ:\n\n```python\nprint(10 + 2.5)\n```\n\nಇದು `12.5` print ಮಾಡುತ್ತೆ. ಹೀಗೆ ತಾನಾಗಿಯೇ ಬದಲಾಗೋದಕ್ಕೆ **implicit conversion** ಅಂತಾರೆ. `int()`, `float()` ಅಥವಾ `str()` ಇಂದ ನಾವೇ ಬದಲಾಯಿಸೋದು **explicit conversion**."
+    },
+    {
+      "heading": "Arithmetic operators",
+      "md": "**Operator** ಅಂದ್ರೆ values ಜೊತೆ ಏನಾದರೂ ಮಾಡುವ symbol, ಉದಾ: `+` ಅಥವಾ `*`. ಇವು Python ನ **arithmetic operators**:\n\n| Operator | ಅರ್ಥ | Example | Result |\n|---|---|---|---|\n| `+` | ಕೂಡಿಸು | `500 + 250` | `750` |\n| `-` | ಕಳೆ | `30 - 12` | `18` |\n| `*` | ಗುಣಿಸು | `500 * 3` | `1500` |\n| `/` | ಭಾಗಿಸು | `10 / 4` | `2.5` |\n| `//` | ಭಾಗಿಸಿ, ಪೂರ್ಣ ಸಂಖ್ಯೆ ಮಾತ್ರ | `25 // 10` | `2` |\n| `%` | ಶೇಷ (remainder) | `25 % 10` | `5` |\n| `**` | ಘಾತ (power) | `2 ** 3` | `8` |\n\nPharmacy ಯಲ್ಲಿ `//` ಮತ್ತು `%` ತುಂಬಾ ಉಪಯೋಗ. **25 tablets** ಮತ್ತು **ಒಂದು strip ಗೆ 10** ಇದ್ದರೆ:\n\n```python\nprint(25 // 10)\nprint(25 % 10)\n```\n\nಇದು `2` (ಪೂರ್ತಿ strips) ಮತ್ತು `5` (ಬಿಡಿ tablets) print ಮಾಡುತ್ತೆ.\n\nಗಮನಿಸಿ: `/` ಯಾವಾಗಲೂ float ಕೊಡುತ್ತೆ, ಸರಿಯಾಗಿ ಭಾಗ ಆದರೂ ಕೂಡ: `10 / 2` ಅಂದ್ರೆ `5.0`.",
+      "callout": {
+        "title": "Operator",
+        "md": "Values ಜೊತೆ ಏನಾದರೂ ಮಾಡುವ symbol, ಉದಾ: + (ಕೂಡಿಸು) ಅಥವಾ > (ದೊಡ್ಡದು)."
+      }
+    },
+    {
+      "heading": "Comparison operators: ಹೌದು-ಅಥವಾ-ಇಲ್ಲ ಪ್ರಶ್ನೆಗಳು",
+      "md": "**Comparison operators** ಎರಡು values ಅನ್ನು ಹೋಲಿಸುತ್ತವೆ. ಉತ್ತರ ಯಾವಾಗಲೂ boolean: `True` ಅಥವಾ `False`.\n\n| Operator | ಕೇಳುವ ಪ್ರಶ್ನೆ |\n|---|---|\n| `==` | ಸಮವಾ? |\n| `!=` | ಸಮ ಅಲ್ವಾ? |\n| `>` | ದೊಡ್ಡದಾ? |\n| `<` | ಚಿಕ್ಕದಾ? |\n| `>=` | ದೊಡ್ಡದು ಅಥವಾ ಸಮವಾ? |\n| `<=` | ಚಿಕ್ಕದು ಅಥವಾ ಸಮವಾ? |\n\n```python\ndaily_dose_mg = 4500\nprint(daily_dose_mg > 4000)\n```\n\nಇದು `True` print ಮಾಡುತ್ತೆ: dose 4000 mg ಗಿಂತ ಜಾಸ್ತಿ ಇದೆ.",
+      "callout": {
+        "title": "= ಮತ್ತು == ಬೇರೆ ಬೇರೆ",
+        "md": "ಒಂದು = value ಇಡುತ್ತೆ. ಎರಡು == ಎರಡು values ಅನ್ನು ಹೋಲಿಸುತ್ತೆ. ಇವನ್ನು mix ಮಾಡೋದು beginners ಮಾಡುವ ಅತಿ ಸಾಮಾನ್ಯ ತಪ್ಪುಗಳಲ್ಲಿ ಒಂದು."
+      }
+    },
+    {
+      "heading": "Logical operators: and, or, not",
+      "md": "**Logical operators** True/False ಉತ್ತರಗಳನ್ನು ಜೋಡಿಸುತ್ತವೆ:\n\n- `and`: **ಎರಡೂ** ಕಡೆ True ಇದ್ದಾಗ ಮಾತ್ರ **True**\n- `or`: **ಕನಿಷ್ಠ ಒಂದು** ಕಡೆ True ಇದ್ದರೆ **True**\n- `not`: True ಅನ್ನು False, False ಅನ್ನು True ಮಾಡುತ್ತೆ\n\n```python\nage = 16\nweight_kg = 52\nprint(age >= 18 and weight_kg >= 50)\nprint(age >= 18 or weight_kg >= 50)\n```\n\nಇದು ಮೊದಲು `False` print ಮಾಡುತ್ತೆ (patient ಗೆ 18 ಅಥವಾ ಹೆಚ್ಚು ವಯಸ್ಸಾಗಿಲ್ಲ), ನಂತರ `True` (ತೂಕ 50 kg ಅಥವಾ ಹೆಚ್ಚು ಇದೆ)."
+    },
+    {
+      "heading": "Shortcuts, ಮತ್ತು ಲೆಕ್ಕದ ಕ್ರಮ",
+      "md": "**Shortcut operators** ಒಂದು variable ಅನ್ನು ಅದರದೇ value ಬಳಸಿ ಬದಲಾಯಿಸುತ್ತವೆ:\n\n```python\nstock = 100\nstock -= 30\nprint(stock)\n```\n\nಇದು `70` print ಮಾಡುತ್ತೆ. `stock -= 30` ಅಂದ್ರೆ `stock = stock - 30` ಅನ್ನು ಚಿಕ್ಕದಾಗಿ ಬರೆಯೋ ರೀತಿ. ಹಾಗೆಯೇ `+=` ಕೂಡಿಸುತ್ತೆ, `*=` ಗುಣಿಸುತ್ತೆ.\n\n**ಲೆಕ್ಕದ ಕ್ರಮ:** ಗಣಿತದ ಹಾಗೆ, Python ಮೊದಲು `**`, ನಂತರ `*`, `/`, `//` ಮತ್ತು `%`, ನಂತರ `+` ಮತ್ತು `-` ಮಾಡುತ್ತೆ. **Brackets ಎಲ್ಲಕ್ಕಿಂತ ಮೊದಲು.**\n\n```python\nprint(98 + 102 / 2)\nprint((98 + 102) / 2)\n```\n\nಇದು ಮೊದಲು `149.0`, ನಂತರ `100.0` print ಮಾಡುತ್ತೆ. ಎರಡನೆಯದು ಮಾತ್ರ 98 ಮತ್ತು 102 ಅನ್ನುವ ಎರಡು readings ನ average.",
+      "callout": {
+        "title": "ಸಂಶಯ ಇದ್ದರೆ brackets ಹಾಕಿ",
+        "md": "Brackets ಇಂದ dose formulas ಓದುವ ಎಲ್ಲರಿಗೂ ಸ್ಪಷ್ಟವಾಗಿ ಅರ್ಥ ಆಗುತ್ತೆ, ಮತ್ತು ನೀವು ಬಯಸದ ಕ್ರಮದಲ್ಲಿ Python ಲೆಕ್ಕ ಮಾಡಲ್ಲ."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "ಈ program 7 ದಿನದ course ಗೆ ಎಷ್ಟು tablets ಬೇಕು, ಮತ್ತು ಎಷ್ಟು strips ಕೊಡಬೇಕು ಅಂತ ಲೆಕ್ಕ ಹಾಕುತ್ತೆ. ಪ್ರತಿ line run ಆಗುವಾಗ Variables panel ನೋಡಿ.",
+    "keyTerms": [
+      {
+        "meaning": "Text \"2\" ಅನ್ನು number 2 ಆಗಿ ಬದಲಾಯಿಸು."
+      },
+      {
+        "meaning": "ಭಾಗಿಸಿ ಪೂರ್ಣ ಸಂಖ್ಯೆ ಮಾತ್ರ ಇಡು."
+      },
+      {
+        "meaning": "ಭಾಗಿಸಿದ ನಂತರ ಉಳಿದದ್ದು."
+      },
+      {
+        "meaning": "ದೊಡ್ಡದು ಅಥವಾ ಸಮ. True ಅಥವಾ False ಕೊಡುತ್ತೆ."
+      }
+    ],
+    "steps": [
+      {
+        "say": "ಈ program ಏಳು ದಿನದ course ಗೆ ಎಷ್ಟು tablets ಬೇಕು, ಮತ್ತು ಎಷ್ಟು strips ಕೊಡಬೇಕು ಅಂತ ಲೆಕ್ಕ ಹಾಕುತ್ತೆ. Variables panel ನೋಡಿ."
+      },
+      {
+        "say": "Program ಏನು ಮಾಡುತ್ತೆ ಅಂತ comment ಹೇಳುತ್ತೆ."
+      },
+      {
+        "say": "int, ಎರಡು ಅನ್ನುವ text ಅನ್ನು ಎರಡು ಅನ್ನುವ number ಆಗಿ ಬದಲಾಯಿಸುತ್ತೆ, ಆಗ Python ಅದರಿಂದ ಲೆಕ್ಕ ಮಾಡಬಹುದು."
+      },
+      {
+        "say": "doses_per_day ನಲ್ಲಿ ಮೂರು ಇಡಲಾಗಿದೆ."
+      },
+      {
+        "say": "days ನಲ್ಲಿ ಏಳು ಇಡಲಾಗಿದೆ."
+      },
+      {
+        "say": "Star ಗುಣಿಸುತ್ತೆ. ಎರಡು ಗುಣಿಸು ಮೂರು ಗುಣಿಸು ಏಳು, ಅಂದ್ರೆ ನಲವತ್ತೆರಡು tablets."
+      },
+      {
+        "say": "ಎರಡು slashes ಭಾಗಿಸಿ ಪೂರ್ಣ ಸಂಖ್ಯೆ ಮಾತ್ರ ಇಡುತ್ತವೆ. ನಲವತ್ತೆರಡನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿದರೆ ನಾಲ್ಕು ಪೂರ್ತಿ strips."
+      },
+      {
+        "say": "Percent sign ಶೇಷ ಕೊಡುತ್ತೆ. ನಲವತ್ತೆರಡನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿದರೆ ಎರಡು ಬಿಡಿ tablets ಉಳಿಯುತ್ತವೆ."
+      },
+      {
+        "say": "Print ಒಟ್ಟು tablets ತೋರಿಸುತ್ತೆ."
+      },
+      {
+        "say": "ನಂತರ strips ಮತ್ತು ಬಿಡಿ tablets."
+      },
+      {
+        "say": "ಕೊನೆಗೆ ಒಂದು comparison. ನಾಲ್ಕು strips ನಲ್ಲಿ ನಲವತ್ತು tablets ಇರುತ್ತವೆ. ನಲವತ್ತು, ನಲವತ್ತೆರಡಕ್ಕಿಂತ ದೊಡ್ಡದು ಅಥವಾ ಸಮ ಅಲ್ಲ, ಹಾಗಾಗಿ ಉತ್ತರ False. Patient ಗೆ ಇನ್ನೊಂದು strip ಬೇಕು."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Values ಬದಲಾಯಿಸುವಾಗ ಮತ್ತು ಲೆಕ್ಕ ಮಾಡುವಾಗ ಈ ಎರಡು errors ಸಾಮಾನ್ಯ.",
+    "examples": [
+      {
+        "title": "ಪೂರ್ಣ ಸಂಖ್ಯೆ ಅಲ್ಲದ text ಅನ್ನು ಬದಲಾಯಿಸೋದು",
+        "md": "`int()` **ಪೂರ್ಣ ಸಂಖ್ಯೆ** ತರಹ ಕಾಣುವ text ಅನ್ನು ಮಾತ್ರ ಬದಲಾಯಿಸಬಹುದು. `\"52.5\"` ನಲ್ಲಿ ದಶಮಾಂಶ ಇದೆ, ಹಾಗಾಗಿ `float(\"52.5\")` use ಮಾಡಿ. `\"fifty\"` ತರಹದ text ಅನ್ನು ಬದಲಾಯಿಸಲು ಆಗೋದೇ ಇಲ್ಲ.",
+        "callout": {
+          "title": "ValueError",
+          "md": "Value ನ data type ಸರಿ ಇದೆ, ಆದರೆ ಅದನ್ನು use ಮಾಡಲು ಆಗಲ್ಲ ಅನ್ನುವ error, ಉದಾ: int(\"52.5\")."
+        }
+      },
+      {
+        "title": "ಸೊನ್ನೆಯಿಂದ ಭಾಗಿಸೋದು",
+        "md": "ಯಾವುದನ್ನೂ ಸೊನ್ನೆಯಿಂದ ಭಾಗಿಸಲು ಆಗಲ್ಲ, ಗಣಿತದಲ್ಲೂ ಇಲ್ಲ, Python ನಲ್ಲೂ ಇಲ್ಲ. ನೀವು ಭಾಗಿಸುವ number ಯಾವತ್ತೂ 0 ಆಗಬಾರದು ಅಂತ check ಮಾಡಿ, ಉದಾ: ದಿನಗಳ ಸಂಖ್ಯೆ."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Compare ಮಾಡಲು `=` use ಮಾಡೋದು, ಉದಾ: `print(dose = 500)`",
+      "fix": "ಎರಡು equals signs ಇಂದ compare ಮಾಡಿ: `print(dose == 500)`."
+    },
+    {
+      "mistake": "Text ಮತ್ತು number ಅನ್ನು `+` ಇಂದ ಜೋಡಿಸೋದು, ಉದಾ: `\"Total: \" + 42`",
+      "fix": "ಮೊದಲು number ಅನ್ನು ಬದಲಾಯಿಸಿ: `\"Total: \" + str(42)`."
+    },
+    {
+      "mistake": "`int()` round ಮಾಡುತ್ತೆ ಅಂತ ಅಂದುಕೊಳ್ಳೋದು, ಉದಾ: `int(2.9)`",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ result 2",
+      "fix": "`int()` ದಶಮಾಂಶ ಭಾಗ ಕತ್ತರಿಸುತ್ತೆ. Round ಮಾಡಲು `round(2.9)` use ಮಾಡಿ, ಅದು 3 ಕೊಡುತ್ತೆ."
+    },
+    {
+      "mistake": "`/` ಪೂರ್ಣ ಸಂಖ್ಯೆ ಕೊಡುತ್ತೆ ಅಂತ ಅಂದುಕೊಳ್ಳೋದು, ಉದಾ: `10 / 2`",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ result 5.0",
+      "fix": "ಪೂರ್ಣ ಸಂಖ್ಯೆ ಬೇಕಾದರೆ `//` use ಮಾಡಿ: `10 // 2` ಕೊಡೋದು 5."
+    },
+    {
+      "mistake": "Average ನಲ್ಲಿ brackets ಮರೆಯೋದು, ಉದಾ: `98 + 102 / 2`",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ result 149.0",
+      "fix": "Brackets ಹಾಕಿ: `(98 + 102) / 2` ಕೊಡೋದು 100.0."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "ಮೊದಲು ಬದಲಾಯಿಸಿ, ನಂತರ ಲೆಕ್ಕ ಮಾಡಿ",
+      "md": "Strength ಅನ್ನು label ಇಂದ ಓದಲಾಗಿದೆ, ಹಾಗಾಗಿ ಅದು text. ಅದನ್ನು number ಆಗಿ ಬದಲಾಯಿಸಿ, strength ನ **ಎರಡರಷ್ಟು** print ಮಾಡಿ. Output ಸರಿಯಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "int(strength) text ಅನ್ನು number ಮಾಡುತ್ತೆ.",
+        "Try ಮಾಡಿ: print(int(strength) * 2)."
+      ]
+    },
+    {
+      "title": "Strips ಮತ್ತು ಬಿಡಿ tablets",
+      "md": "**45 tablets** ಇವೆ, ಪ್ರತಿ strip ನಲ್ಲಿ **10**. `//` ಮತ್ತು `%` use ಮಾಡಿ print ಮಾಡಿ:",
+      "hints": [
+        "total // 10 ಪೂರ್ತಿ strips ಕೊಡುತ್ತೆ.",
+        "total % 10 ಉಳಿದ tablets ಕೊಡುತ್ತೆ.",
+        "print(\"Strips:\", total // 10, \"Loose:\", total % 10)"
+      ]
+    },
+    {
+      "title": "Dose limit ಗಿಂತ ಜಾಸ್ತಿ ಇದೆಯಾ?",
+      "md": "Maximum daily dose **4000 mg**. `daily_dose_mg` limit ಗಿಂತ **ದೊಡ್ಡದಾ** ಅಂತ print ಮಾಡಿ. Output ಸರಿಯಾಗಿ ಹೀಗಿರಬೇಕು:\n\n*(ಕಲಿಯಲು ಮಾತ್ರ: ನಿಜವಾದ limits clinical guidelines ಪ್ರಕಾರವೇ ಇರಬೇಕು.)*",
+      "hints": [
+        "> \"ದೊಡ್ಡದಾ?\" ಅಂತ ಕೇಳಿ True ಅಥವಾ False ಕೊಡುತ್ತೆ.",
+        "print(\"Over the limit:\", daily_dose_mg > limit_mg)"
+      ]
+    },
+    {
+      "title": "Bug ಹುಡುಕಿ",
+      "md": "ಈ program `Total: 42` print ಮಾಡಬೇಕು, ಆದರೆ ಇದರಲ್ಲಿ error ಇದೆ. **`str()` use ಮಾಡಿ** ಸರಿ ಮಾಡಿ.",
+      "hints": [
+        "+ text ಮತ್ತು number ಅನ್ನು ಜೋಡಿಸಲು ಆಗಲ್ಲ.",
+        "str(total) ಇಂದ number ಅನ್ನು text ಆಗಿ ಬದಲಾಯಿಸಿ."
+      ],
+      "solutionNote": "str(total), 42 ಅನ್ನು text \"42\" ಮಾಡುತ್ತೆ, ಹಾಗಾಗಿ + ಎರಡೂ strings ಅನ್ನು ಜೋಡಿಸುತ್ತೆ."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "print(int(\"500\") + 5) ಏನು ತೋರಿಸುತ್ತೆ?",
+      "why": "int(\"500\") text ಅನ್ನು number 500 ಮಾಡುತ್ತೆ, ಹಾಗಾಗಿ ಉತ್ತರ 505."
+    },
+    {
+      "q": "17 // 5 ಎಷ್ಟು?",
+      "why": "// ಭಾಗಿಸಿ ಪೂರ್ಣ ಸಂಖ್ಯೆ ಮಾತ್ರ ಇಡುತ್ತೆ: 17 ರಲ್ಲಿ 5 ಮೂರು ಸಲ ಹೋಗುತ್ತೆ, ಸ್ವಲ್ಪ ಉಳಿಯುತ್ತೆ."
+    },
+    {
+      "q": "17 % 5 ಎಷ್ಟು?",
+      "why": "% ಶೇಷ ಕೊಡುತ್ತೆ: 17 ರಲ್ಲಿ 5 ಮೂರು ಸಲ (15) ಹೋಗುತ್ತೆ, 2 ಉಳಿಯುತ್ತೆ."
+    },
+    {
+      "q": "print(4500 > 4000) ಏನು ತೋರಿಸುತ್ತೆ?",
+      "why": "4500, 4000 ಗಿಂತ ದೊಡ್ಡದು, ಹಾಗಾಗಿ comparison True ಕೊಡುತ್ತೆ."
+    },
+    {
+      "q": "age = 16. print(age >= 18 and age <= 60) ಏನು ತೋರಿಸುತ್ತೆ?",
+      "why": "and ಗೆ ಎರಡೂ ಕಡೆ True ಬೇಕು. 16, 18 ಅಥವಾ ಹೆಚ್ಚು ಅಲ್ಲ, ಹಾಗಾಗಿ ಉತ್ತರ False."
+    },
+    {
+      "q": "98 ಮತ್ತು 102 ರ average ಯಾವುದು ಕೊಡುತ್ತೆ?",
+      "why": "Brackets ಇರುವುದರಿಂದ Python ಮೊದಲು ಕೂಡಿಸಿ, ನಂತರ ಭಾಗಿಸುತ್ತೆ: 200 / 2 = 100.0."
+    }
+  ],
+  "exam": {
+    "note": "University exam English ನಲ್ಲಿ ಬರೆಯುವುದರಿಂದ model answers English ನಲ್ಲೇ ಇವೆ. ಇವು practice ಗಾಗಿ important questions; ನಿಜವಾದ university questions ಬೇರೆ ಇರಬಹುದು."
+  },
+  "mindmap": {
+    "label": "Lesson 1.4 · Type casting ಮತ್ತು operators",
+    "children": [
+      {
+        "label": "Type casting",
+        "children": [
+          {
+            "label": "int(\"500\") → 500"
+          },
+          {
+            "label": "float(\"52.5\") → 52.5"
+          },
+          {
+            "label": "str(500) → \"500\""
+          },
+          {
+            "label": "int(2.9) → 2"
+          }
+        ]
+      },
+      {
+        "label": "Arithmetic",
+        "children": [
+          {
+            "label": "+  -  *  /"
+          },
+          {
+            "label": "// ಪೂರ್ಣ ಸಂಖ್ಯೆ"
+          },
+          {
+            "label": "% ಶೇಷ"
+          },
+          {
+            "label": "** ಘಾತ"
+          }
+        ]
+      },
+      {
+        "label": "Comparison",
+        "children": [
+          {
+            "label": "==  !="
+          },
+          {
+            "label": ">  <  >=  <="
+          },
+          {
+            "label": "True / False ಕೊಡುತ್ತೆ"
+          }
+        ]
+      },
+      {
+        "label": "Logical",
+        "children": [
+          {
+            "label": "and: ಎರಡೂ True"
+          },
+          {
+            "label": "or: ಕನಿಷ್ಠ ಒಂದು"
+          },
+          {
+            "label": "not: ತಿರುಗಿಸುತ್ತೆ"
+          }
+        ]
+      },
+      {
+        "label": "ಕ್ರಮ",
+        "children": [
+          {
+            "label": "Brackets ಮೊದಲು"
+          },
+          {
+            "label": "** ನಂತರ * / // %"
+          },
+          {
+            "label": "ನಂತರ + -"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "ValueError: int(\"52.5\")"
+          },
+          {
+            "label": "ZeroDivisionError"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Type casting** values ಅನ್ನು ಬದಲಾಯಿಸುತ್ತೆ: `int(\"500\")` ಕೊಡೋದು 500, `float(\"52.5\")` ಕೊಡೋದು 52.5, `str(500)` ಕೊಡೋದು \"500\".",
+    "`int()` ದಶಮಾಂಶ ಭಾಗವನ್ನು **ಕತ್ತರಿಸುತ್ತೆ** (round ಮಾಡಲ್ಲ), ಮತ್ತು int ಜೊತೆ float ಸೇರಿಸಿದರೆ ಉತ್ತರ **float**.",
+    "**Arithmetic operators** ಲೆಕ್ಕ ಮಾಡುತ್ತವೆ: `//` ಪೂರ್ಣ ಸಂಖ್ಯೆ ಇಡುತ್ತೆ, `%` ಶೇಷ ಕೊಡುತ್ತೆ, strips ಮತ್ತು ಬಿಡಿ tablets ಗೆ ಸರಿಯಾದದ್ದು.",
+    "**Comparison operators** (`==`, `!=`, `>`, `<`, `>=`, `<=`) ಮತ್ತು **logical operators** (`and`, `or`, `not`) **True** ಅಥವಾ **False** ಕೊಡುತ್ತವೆ.",
+    "Python ಮೊದಲು `**`, ನಂತರ `* / // %`, ನಂತರ `+ -` ಮಾಡುತ್ತೆ; **brackets** ಎಲ್ಲಕ್ಕಿಂತ ಮೊದಲು."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "ನಲವತ್ತೆರಡು tablets ಅನ್ನು ಹತ್ತು ಹತ್ತರ strips ನಲ್ಲಿ pack ಮಾಡಬೇಕು."
+        },
+        {
+          "say": "ಎರಡು slashes ಪೂರ್ತಿ strips ಎಣಿಸುತ್ತವೆ. ನಲವತ್ತೆರಡನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿ, ಪೂರ್ಣ ಸಂಖ್ಯೆ ಮಾತ್ರ ಇಟ್ಟರೆ, ನಾಲ್ಕು."
+        },
+        {
+          "say": "Percent sign ಉಳಿದದ್ದನ್ನು ಎಣಿಸುತ್ತೆ: ಎರಡು ಬಿಡಿ tablets."
+        },
+        {
+          "say": "ನಾಲ್ಕು strips ನಲ್ಲಿ ನಲವತ್ತು tablets ಮಾತ್ರ ಇರುತ್ತವೆ, ಹಾಗಾಗಿ ಅವು ಸಾಕಾಗಲ್ಲ ಅಂತ comparison ಹೇಳುತ್ತೆ. Patient ಗೆ ಐದು strips ಬೇಕು."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "video",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "ಒಂದು value ಅನ್ನು ಒಂದು data type ಇಂದ ಇನ್ನೊಂದಕ್ಕೆ ಬದಲಾಯಿಸೋದು, ಉದಾ: text \"500\" ಅನ್ನು number 500 ಮಾಡೋದು."
+    },
+    {
+      "meaning": "Value ಅನ್ನು integer, float ಅಥವಾ string ಆಗಿ ಬದಲಾಯಿಸುತ್ತವೆ. int(\"500\") ಕೊಡೋದು 500; str(500) ಕೊಡೋದು \"500\"."
+    },
+    {
+      "meaning": "Python ತಾನೇ type ಬದಲಾಯಿಸಿದಾಗ, ಉದಾ: 10 + 2.5 ಉತ್ತರ float 12.5. int(), float() ಅಥವಾ str() ಇಂದ ನಾವೇ ಬದಲಾಯಿಸೋದು explicit conversion."
+    },
+    {
+      "meaning": "Values ಜೊತೆ ಏನಾದರೂ ಮಾಡುವ symbol, ಉದಾ: + (ಕೂಡಿಸು) ಅಥವಾ > (ದೊಡ್ಡದು)."
+    },
+    {
+      "meaning": "ಲೆಕ್ಕ ಮಾಡುವ operators: + - * / // % **."
+    },
+    {
+      "meaning": "ಭಾಗಿಸಿ ಪೂರ್ಣ ಸಂಖ್ಯೆಯನ್ನು ಮಾತ್ರ ಇಡುತ್ತೆ. 42 // 10 ಕೊಡೋದು 4, ಪೂರ್ತಿ strips ಎಣಿಸಿದ ಹಾಗೆ."
+    },
+    {
+      "meaning": "ಭಾಗಿಸಿದ ನಂತರ ಉಳಿದದ್ದು (ಶೇಷ) ಕೊಡುತ್ತೆ. 42 % 10 ಕೊಡೋದು 2, ಬಿಡಿ tablets ಎಣಿಸಿದ ಹಾಗೆ."
+    },
+    {
+      "meaning": "ಎರಡು values ಹೋಲಿಸಿ True ಅಥವಾ False ಕೊಡುತ್ತೆ: == != > < >= <=."
+    },
+    {
+      "meaning": "True/False ಉತ್ತರಗಳನ್ನು ಜೋಡಿಸುತ್ತೆ: and (ಎರಡೂ True), or (ಕನಿಷ್ಠ ಒಂದು True), not (ಉತ್ತರ ತಿರುಗಿಸುತ್ತೆ)."
+    },
+    {
+      "meaning": "Variable ಅನ್ನು ಅದರದೇ value ಬಳಸಿ ಬದಲಾಯಿಸುತ್ತೆ. stock -= 30 ಅಂದ್ರೆ stock = stock - 30."
+    },
+    {
+      "meaning": "Value ಅನ್ನು ಆ ರೀತಿ use ಮಾಡಲು ಆಗಲ್ಲ ಅನ್ನುವ error, ಉದಾ: int(\"52.5\")."
+    },
+    {
+      "meaning": "ಸೊನ್ನೆಯಿಂದ ಭಾಗಿಸಿದಾಗ Python ತೋರಿಸುವ error."
+    }
+  ]
+}

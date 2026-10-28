@@ -1,0 +1,174 @@
+{
+  "course": "bp101t",
+  "lesson": "1-4",
+  "voices": {
+    "en": "Mary",
+    "hi": "Rani",
+    "kn": "Anu"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program works out how many tablets a seven-day course needs, and how many strips to give. Watch the Variables panel.",
+        "The comment says what the program does.",
+        "int converts the text two into the number two, so Python can calculate with it.",
+        "doses per day stores three.",
+        "days stores seven.",
+        "The star multiplies. Two times three times seven is forty-two tablets.",
+        "Two slashes divide, and keep only the whole number. Forty-two divided by ten gives four full strips.",
+        "The percent sign gives the remainder. Forty-two divided by ten leaves two loose tablets.",
+        "Print shows the total number of tablets.",
+        "Next, the number of strips and loose tablets.",
+        "Finally, a comparison. Four strips hold forty tablets. Forty is not greater than or equal to forty-two, so the answer is False. The patient needs one more strip."
+      ],
+      "display": [
+        "This program works out how many tablets a seven-day course needs, and how many strips to give. Watch the Variables panel.",
+        "The comment says what the program does.",
+        "int converts the text two into the number two, so Python can calculate with it.",
+        "doses_per_day stores three.",
+        "days stores seven.",
+        "The star multiplies. Two times three times seven is forty-two tablets.",
+        "Two slashes divide, and keep only the whole number. Forty-two divided by ten gives four full strips.",
+        "The percent sign gives the remainder. Forty-two divided by ten leaves two loose tablets.",
+        "Print shows the total number of tablets.",
+        "Next, the number of strips and loose tablets.",
+        "Finally, a comparison. Four strips hold forty tablets. Forty is not greater than or equal to forty-two, so the answer is False. The patient needs one more strip."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह प्रोग्राम निकालता है कि सात दिन के कोर्स में कितनी टैबलेट्स लगेंगी, और कितनी स्ट्रिप्स देनी हैं। वेरिएबल्स पैनल देखिए।",
+        "कमेंट बताता है कि प्रोग्राम क्या करता है।",
+        "इंट, टेक्स्ट दो को नंबर दो में बदलता है, ताकि पाइथन उससे कैलकुलेट कर सके।",
+        "डोज़ेस पर डे में तीन रखा गया है।",
+        "डेज़ में सात रखा गया है।",
+        "स्टार गुणा करता है। दो गुणा तीन गुणा सात, यानी बयालीस टैबलेट्स।",
+        "दो स्लैशेस भाग देकर सिर्फ पूरी संख्या रखते हैं। बयालीस को दस से भाग देने पर चार पूरी स्ट्रिप्स।",
+        "परसेंट साइन शेषफल देता है। बयालीस को दस से भाग देने पर दो खुली टैबलेट्स बचती हैं।",
+        "प्रिंट कुल टैबलेट्स दिखाता है।",
+        "फिर स्ट्रिप्स और खुली टैबलेट्स।",
+        "आखिर में एक कम्पैरिज़न। चार स्ट्रिप्स में चालीस टैबलेट्स आती हैं। चालीस, बयालीस से बड़ा या बराबर नहीं है, इसलिए आंसर फॉल्स है। पेशेंट को एक और स्ट्रिप चाहिए।"
+      ],
+      "display": [
+        "यह program निकालता है कि सात दिन के course में कितनी tablets लगेंगी, और कितनी strips देनी हैं। Variables panel देखिए।",
+        "Comment बताता है कि program क्या करता है।",
+        "int, text दो को number दो में बदलता है, ताकि Python उससे calculate कर सके।",
+        "doses_per_day में तीन रखा गया है।",
+        "days में सात रखा गया है।",
+        "Star गुणा करता है। दो गुणा तीन गुणा सात, यानी बयालीस tablets।",
+        "दो slashes भाग देकर सिर्फ पूरी संख्या रखते हैं। बयालीस को दस से भाग देने पर चार पूरी strips।",
+        "Percent sign शेषफल देता है। बयालीस को दस से भाग देने पर दो खुली tablets बचती हैं।",
+        "Print कुल tablets दिखाता है।",
+        "फिर strips और खुली tablets।",
+        "आखिर में एक comparison। चार strips में चालीस tablets आती हैं। चालीस, बयालीस से बड़ा या बराबर नहीं है, इसलिए answer False है। Patient को एक और strip चाहिए।"
+      ],
+      "displayHinglish": [
+        "Yeh program nikalta hai ki saat din ke course mein kitni tablets lagengi, aur kitni strips deni hain. Variables panel dekhiye.",
+        "Comment batata hai ki program kya karta hai.",
+        "int, text do ko number do mein badalta hai, taaki Python usse calculate kar sake.",
+        "doses_per_day mein teen rakha gaya hai.",
+        "days mein saat rakha gaya hai.",
+        "Star guna karta hai. Do guna teen guna saat, yaani bayaalees tablets.",
+        "Do slashes bhaag dekar sirf poori sankhya rakhte hain. Bayaalees ko das se bhaag dene par chaar poori strips.",
+        "Percent sign sheshphal deta hai. Bayaalees ko das se bhaag dene par do khuli tablets bachti hain.",
+        "Print kul tablets dikhata hai.",
+        "Phir strips aur khuli tablets.",
+        "Aakhir mein ek comparison. Chaar strips mein chaalees tablets aati hain. Chaalees, bayaalees se bada ya barabar nahi hai, isliye answer False hai. Patient ko ek aur strip chahiye."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ ಪ್ರೋಗ್ರಾಮ್ ಏಳು ದಿನದ ಕೋರ್ಸ್ ಗೆ ಎಷ್ಟು ಟ್ಯಾಬ್ಲೆಟ್ಸ್ ಬೇಕು, ಮತ್ತು ಎಷ್ಟು ಸ್ಟ್ರಿಪ್ಸ್ ಕೊಡಬೇಕು ಅಂತ ಲೆಕ್ಕ ಹಾಕುತ್ತೆ. ವೇರಿಯಬಲ್ಸ್ ಪ್ಯಾನೆಲ್ ನೋಡಿ.",
+        "ಪ್ರೋಗ್ರಾಮ್ ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಕಾಮೆಂಟ್ ಹೇಳುತ್ತೆ.",
+        "ಇಂಟ್, ಎರಡು ಅನ್ನುವ ಟೆಕ್ಸ್ಟ್ ಅನ್ನು ಎರಡು ಅನ್ನುವ ನಂಬರ್ ಆಗಿ ಬದಲಾಯಿಸುತ್ತೆ, ಆಗ ಪೈಥಾನ್ ಅದರಿಂದ ಲೆಕ್ಕ ಮಾಡಬಹುದು.",
+        "ಡೋಸಸ್ ಪರ್ ಡೇ ನಲ್ಲಿ ಮೂರು ಇಡಲಾಗಿದೆ.",
+        "ಡೇಸ್ ನಲ್ಲಿ ಏಳು ಇಡಲಾಗಿದೆ.",
+        "ಸ್ಟಾರ್ ಗುಣಿಸುತ್ತೆ. ಎರಡು ಗುಣಿಸು ಮೂರು ಗುಣಿಸು ಏಳು, ಅಂದ್ರೆ ನಲವತ್ತೆರಡು ಟ್ಯಾಬ್ಲೆಟ್ಸ್.",
+        "ಎರಡು ಸ್ಲ್ಯಾಶಸ್ ಭಾಗಿಸಿ ಪೂರ್ಣ ಸಂಖ್ಯೆ ಮಾತ್ರ ಇಡುತ್ತವೆ. ನಲವತ್ತೆರಡನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿದರೆ ನಾಲ್ಕು ಪೂರ್ತಿ ಸ್ಟ್ರಿಪ್ಸ್.",
+        "ಪರ್ಸೆಂಟ್ ಸೈನ್ ಶೇಷ ಕೊಡುತ್ತೆ. ನಲವತ್ತೆರಡನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿದರೆ ಎರಡು ಬಿಡಿ ಟ್ಯಾಬ್ಲೆಟ್ಸ್ ಉಳಿಯುತ್ತವೆ.",
+        "ಪ್ರಿಂಟ್ ಒಟ್ಟು ಟ್ಯಾಬ್ಲೆಟ್ಸ್ ತೋರಿಸುತ್ತೆ.",
+        "ನಂತರ ಸ್ಟ್ರಿಪ್ಸ್ ಮತ್ತು ಬಿಡಿ ಟ್ಯಾಬ್ಲೆಟ್ಸ್.",
+        "ಕೊನೆಗೆ ಒಂದು ಕಂಪ್ಯಾರಿಸನ್. ನಾಲ್ಕು ಸ್ಟ್ರಿಪ್ಸ್ ನಲ್ಲಿ ನಲವತ್ತು ಟ್ಯಾಬ್ಲೆಟ್ಸ್ ಇರುತ್ತವೆ. ನಲವತ್ತು, ನಲವತ್ತೆರಡಕ್ಕಿಂತ ದೊಡ್ಡದು ಅಥವಾ ಸಮ ಅಲ್ಲ, ಹಾಗಾಗಿ ಉತ್ತರ ಫಾಲ್ಸ್. ಪೇಷೆಂಟ್ ಗೆ ಇನ್ನೊಂದು ಸ್ಟ್ರಿಪ್ ಬೇಕು."
+      ],
+      "display": [
+        "ಈ program ಏಳು ದಿನದ course ಗೆ ಎಷ್ಟು tablets ಬೇಕು, ಮತ್ತು ಎಷ್ಟು strips ಕೊಡಬೇಕು ಅಂತ ಲೆಕ್ಕ ಹಾಕುತ್ತೆ. Variables panel ನೋಡಿ.",
+        "Program ಏನು ಮಾಡುತ್ತೆ ಅಂತ comment ಹೇಳುತ್ತೆ.",
+        "int, ಎರಡು ಅನ್ನುವ text ಅನ್ನು ಎರಡು ಅನ್ನುವ number ಆಗಿ ಬದಲಾಯಿಸುತ್ತೆ, ಆಗ Python ಅದರಿಂದ ಲೆಕ್ಕ ಮಾಡಬಹುದು.",
+        "doses_per_day ನಲ್ಲಿ ಮೂರು ಇಡಲಾಗಿದೆ.",
+        "days ನಲ್ಲಿ ಏಳು ಇಡಲಾಗಿದೆ.",
+        "Star ಗುಣಿಸುತ್ತೆ. ಎರಡು ಗುಣಿಸು ಮೂರು ಗುಣಿಸು ಏಳು, ಅಂದ್ರೆ ನಲವತ್ತೆರಡು tablets.",
+        "ಎರಡು slashes ಭಾಗಿಸಿ ಪೂರ್ಣ ಸಂಖ್ಯೆ ಮಾತ್ರ ಇಡುತ್ತವೆ. ನಲವತ್ತೆರಡನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿದರೆ ನಾಲ್ಕು ಪೂರ್ತಿ strips.",
+        "Percent sign ಶೇಷ ಕೊಡುತ್ತೆ. ನಲವತ್ತೆರಡನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿದರೆ ಎರಡು ಬಿಡಿ tablets ಉಳಿಯುತ್ತವೆ.",
+        "Print ಒಟ್ಟು tablets ತೋರಿಸುತ್ತೆ.",
+        "ನಂತರ strips ಮತ್ತು ಬಿಡಿ tablets.",
+        "ಕೊನೆಗೆ ಒಂದು comparison. ನಾಲ್ಕು strips ನಲ್ಲಿ ನಲವತ್ತು tablets ಇರುತ್ತವೆ. ನಲವತ್ತು, ನಲವತ್ತೆರಡಕ್ಕಿಂತ ದೊಡ್ಡದು ಅಥವಾ ಸಮ ಅಲ್ಲ, ಹಾಗಾಗಿ ಉತ್ತರ False. Patient ಗೆ ಇನ್ನೊಂದು strip ಬೇಕು."
+      ]
+    },
+    {
+      "id": "anim-strips",
+      "prefix": "anim-strips-",
+      "lang": "en",
+      "tts": [
+        "Forty-two tablets need to be packed in strips of ten.",
+        "Two slashes count the full strips. Forty-two divided by ten, keeping only the whole number, is four.",
+        "The percent sign counts what's left over: two loose tablets.",
+        "Four strips hold only forty tablets, so a comparison says they are not enough. The patient needs five strips."
+      ],
+      "display": [
+        "Forty-two tablets need to be packed in strips of ten.",
+        "Two slashes count the full strips. Forty-two divided by ten, keeping only the whole number, is four.",
+        "The percent sign counts what's left over: two loose tablets.",
+        "Four strips hold only forty tablets, so a comparison says they are not enough. The patient needs five strips."
+      ]
+    },
+    {
+      "id": "anim-strips",
+      "prefix": "anim-strips-",
+      "lang": "hi",
+      "tts": [
+        "बयालीस टैबलेट्स को दस-दस की स्ट्रिप्स में पैक करना है।",
+        "दो स्लैशेस पूरी स्ट्रिप्स गिनते हैं। बयालीस को दस से भाग देकर, सिर्फ पूरी संख्या रखने पर, चार।",
+        "परसेंट साइन बचा हुआ गिनता है: दो खुली टैबलेट्स।",
+        "चार स्ट्रिप्स में सिर्फ चालीस टैबलेट्स आती हैं, इसलिए कम्पैरिज़न कहता है कि ये काफी नहीं हैं। पेशेंट को पाँच स्ट्रिप्स चाहिए।"
+      ],
+      "display": [
+        "बयालीस tablets को दस-दस की strips में pack करना है।",
+        "दो slashes पूरी strips गिनते हैं। बयालीस को दस से भाग देकर, सिर्फ पूरी संख्या रखने पर, चार।",
+        "Percent sign बचा हुआ गिनता है: दो खुली tablets।",
+        "चार strips में सिर्फ चालीस tablets आती हैं, इसलिए comparison कहता है कि ये काफी नहीं हैं। Patient को पाँच strips चाहिए।"
+      ],
+      "displayHinglish": [
+        "Bayaalees tablets ko das-das ki strips mein pack karna hai.",
+        "Do slashes poori strips ginte hain. Bayaalees ko das se bhaag dekar, sirf poori sankhya rakhne par, chaar.",
+        "Percent sign bacha hua ginta hai: do khuli tablets.",
+        "Chaar strips mein sirf chaalees tablets aati hain, isliye comparison kehta hai ki yeh kaafi nahi hain. Patient ko paanch strips chahiye."
+      ]
+    },
+    {
+      "id": "anim-strips",
+      "prefix": "anim-strips-",
+      "lang": "kn",
+      "tts": [
+        "ನಲವತ್ತೆರಡು ಟ್ಯಾಬ್ಲೆಟ್ಸ್ ಅನ್ನು ಹತ್ತು ಹತ್ತರ ಸ್ಟ್ರಿಪ್ಸ್ ನಲ್ಲಿ ಪ್ಯಾಕ್ ಮಾಡಬೇಕು.",
+        "ಎರಡು ಸ್ಲ್ಯಾಶಸ್ ಪೂರ್ತಿ ಸ್ಟ್ರಿಪ್ಸ್ ಎಣಿಸುತ್ತವೆ. ನಲವತ್ತೆರಡನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿ, ಪೂರ್ಣ ಸಂಖ್ಯೆ ಮಾತ್ರ ಇಟ್ಟರೆ, ನಾಲ್ಕು.",
+        "ಪರ್ಸೆಂಟ್ ಸೈನ್ ಉಳಿದದ್ದನ್ನು ಎಣಿಸುತ್ತೆ: ಎರಡು ಬಿಡಿ ಟ್ಯಾಬ್ಲೆಟ್ಸ್.",
+        "ನಾಲ್ಕು ಸ್ಟ್ರಿಪ್ಸ್ ನಲ್ಲಿ ನಲವತ್ತು ಟ್ಯಾಬ್ಲೆಟ್ಸ್ ಮಾತ್ರ ಇರುತ್ತವೆ, ಹಾಗಾಗಿ ಅವು ಸಾಕಾಗಲ್ಲ ಅಂತ ಕಂಪ್ಯಾರಿಸನ್ ಹೇಳುತ್ತೆ. ಪೇಷೆಂಟ್ ಗೆ ಐದು ಸ್ಟ್ರಿಪ್ಸ್ ಬೇಕು."
+      ],
+      "display": [
+        "ನಲವತ್ತೆರಡು tablets ಅನ್ನು ಹತ್ತು ಹತ್ತರ strips ನಲ್ಲಿ pack ಮಾಡಬೇಕು.",
+        "ಎರಡು slashes ಪೂರ್ತಿ strips ಎಣಿಸುತ್ತವೆ. ನಲವತ್ತೆರಡನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿ, ಪೂರ್ಣ ಸಂಖ್ಯೆ ಮಾತ್ರ ಇಟ್ಟರೆ, ನಾಲ್ಕು.",
+        "Percent sign ಉಳಿದದ್ದನ್ನು ಎಣಿಸುತ್ತೆ: ಎರಡು ಬಿಡಿ tablets.",
+        "ನಾಲ್ಕು strips ನಲ್ಲಿ ನಲವತ್ತು tablets ಮಾತ್ರ ಇರುತ್ತವೆ, ಹಾಗಾಗಿ ಅವು ಸಾಕಾಗಲ್ಲ ಅಂತ comparison ಹೇಳುತ್ತೆ. Patient ಗೆ ಐದು strips ಬೇಕು."
+      ]
+    }
+  ]
+}
