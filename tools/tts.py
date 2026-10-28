@@ -26,8 +26,9 @@ def load_model():
     from transformers import AutoTokenizer
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    dtype = torch.float16 if device == "cuda" else torch.float32
-    model = ParlerTTSForConditionalGeneration.from_pretrained(MODEL_ID, torch_dtype=dtype).to(device).eval()
+    # float32 everywhere: half precision can crash the audio decoder on T4 GPUs
+    model = ParlerTTSForConditionalGeneration.from_pretrained(MODEL_ID).to(device).eval()
+    print(f"Voice model loaded on {device.upper()}", flush=True)
     tok = AutoTokenizer.from_pretrained(MODEL_ID)
     desc_tok = AutoTokenizer.from_pretrained(model.config.text_encoder._name_or_path)
     return model, tok, desc_tok, device
@@ -87,7 +88,7 @@ def pending(repo, lessons=None, overwrite=False):
     return jobs
 
 
-def run(repo, lessons=None, overwrite=False, bundle=None, log=print):
+def run(repo, lessons=None, overwrite=False, bundle=None, log=lambda m: print(m, flush=True)):
     jobs = pending(repo, lessons, overwrite)
     log(f"{len(jobs)} clip(s) to generate")
     if not jobs:
