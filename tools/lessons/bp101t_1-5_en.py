@@ -60,7 +60,7 @@ L = {
             {"line": 3, "say": "Next, input asks for the weight. The answer is text, so float turns sixteen point one into a number.", "output": "Weight (kg): 16.1", "audio": "step-04.mp3", "vars": {"weight_kg": "16.1"}},
             {"line": 4, "say": "Python multiplies by fifteen. Look at the Variables panel: the answer has a long tail of decimals. That's a tiny rounding difference.", "output": None, "audio": "step-05.mp3", "vars": {"dose_mg": "241.50000000000003"}},
             {"line": 5, "say": "This f-string puts the value of name inside the text.", "output": "Patient: Ravi", "audio": "step-06.mp3"},
-            {"line": 6, "say": "Colon, point one, f shows exactly one decimal place. So the label reads two hundred and forty-one point five milligrams.", "output": "Dose: 241.5 mg", "audio": "step-07.mp3"},
+            {"line": 6, "say": "The code after the colon shows exactly one decimal place. So the label reads two hundred and forty-one point five milligrams.", "output": "Dose: 241.5 mg", "audio": "step-07.mp3"},
         ],
         "keyTerms": [
             {"term": "input(\"...\")", "meaning": "Show a question and wait for the user's answer. The answer is text."},
@@ -205,7 +205,7 @@ L = {
                  "actions": [{"do": "setValue", "target": "weight", "value": "16.1"}, {"do": "pulse", "target": "weight"}, {"do": "hide", "target": "t_type"}, {"do": "show", "target": "t_float"}]},
                 {"say": "Now Python can calculate the dose: sixteen point one times fifteen, with a tiny rounding tail.", "audio": "anim-input-04.mp3",
                  "actions": [{"do": "show", "target": "dose"}, {"do": "show", "target": "t_calc"}]},
-                {"say": "An f-string with colon, point one, f prints it neatly, with one decimal place.", "audio": "anim-input-05.mp3",
+                {"say": "An f-string with a one-decimal code prints it neatly, with one decimal place.", "audio": "anim-input-05.mp3",
                  "actions": [{"do": "appendOutput", "target": "term", "text": "Dose: 241.5 mg"}]},
             ],
         }

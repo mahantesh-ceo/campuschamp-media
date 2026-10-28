@@ -113,7 +113,7 @@
       },
       {
         "line": 6,
-        "say": "Colon, point one, f shows exactly one decimal place. So the label reads two hundred and forty-one point five milligrams.",
+        "say": "The code after the colon shows exactly one decimal place. So the label reads two hundred and forty-one point five milligrams.",
         "output": "Dose: 241.5 mg",
         "audio": "step-07.mp3"
       }
@@ -628,7 +628,7 @@
           ]
         },
         {
-          "say": "An f-string with colon, point one, f prints it neatly, with one decimal place.",
+          "say": "An f-string with a one-decimal code prints it neatly, with one decimal place.",
           "audio": "anim-input-05.mp3",
           "actions": [
             {

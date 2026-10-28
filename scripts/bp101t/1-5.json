@@ -18,7 +18,7 @@
         "Next, input asks for the weight. The answer is text, so float turns sixteen point one into a number.",
         "Python multiplies by fifteen. Look at the Variables panel: the answer has a long tail of decimals. That's a tiny rounding difference.",
         "This F string puts the value of name inside the text.",
-        "Colon, point one, F shows exactly one decimal place. So the label reads two hundred and forty-one point five milligrams."
+        "The code after the colon shows exactly one decimal place. So the label reads two hundred and forty-one point five milligrams."
       ],
       "display": [
         "This program asks for a patient's name and weight, and then prints the dose. Watch how the answers go into variables.",
@@ -27,7 +27,7 @@
         "Next, input asks for the weight. The answer is text, so float turns sixteen point one into a number.",
         "Python multiplies by fifteen. Look at the Variables panel: the answer has a long tail of decimals. That's a tiny rounding difference.",
         "This f-string puts the value of name inside the text.",
-        "Colon, point one, f shows exactly one decimal place. So the label reads two hundred and forty-one point five milligrams."
+        "The code after the colon shows exactly one decimal place. So the label reads two hundred and forty-one point five milligrams."
       ]
     },
     {
@@ -94,14 +94,14 @@
         "input always gives text. So, at first, the box holds the string sixteen point one, in quotes.",
         "float turns the text into a number. Now the quotes are gone.",
         "Now Python can calculate the dose: sixteen point one times fifteen, with a tiny rounding tail.",
-        "An F string with colon, point one, F prints it neatly, with one decimal place."
+        "An F string with a one-decimal code prints it neatly, with one decimal place."
       ],
       "display": [
         "The program shows a question and waits. The pharmacist types sixteen point one and presses Enter.",
         "input always gives text. So, at first, the box holds the string sixteen point one, in quotes.",
         "float turns the text into a number. Now the quotes are gone.",
         "Now Python can calculate the dose: sixteen point one times fifteen, with a tiny rounding tail.",
-        "An f-string with colon, point one, f prints it neatly, with one decimal place."
+        "An f-string with a one-decimal code prints it neatly, with one decimal place."
       ]
     },
     {
