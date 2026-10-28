@@ -1,0 +1,167 @@
+{
+  "course": "bp101t",
+  "lesson": "1-1",
+  "voices": {
+    "en": "Mary",
+    "hi": "Rani",
+    "kn": "Anu"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "Let's watch Python run this program. Remember, Python reads one line at a time, from top to bottom.",
+        "The first line starts with a hash sign. This is a comment. Comments are notes for humans. Python simply skips them.",
+        "Now Python reaches print. Print means: show this on the screen. The words inside the quotes are shown exactly as they are written.",
+        "Python moves to the next line, and prints the drug name. Notice that each print starts on a new line.",
+        "Here, print has three items, separated by commas. Python shows them one after another, and puts a space between each item.",
+        "This line has a small calculation. Python first works out five hundred times three, which is fifteen hundred, and then prints the answer. The star sign means multiply.",
+        "And that's it. Python ran four instructions, in order, from top to bottom. You have just understood your first program."
+      ],
+      "display": [
+        "Let's watch Python run this program. Remember, Python reads one line at a time, from top to bottom.",
+        "The first line starts with a hash sign. This is a comment. Comments are notes for humans. Python simply skips them.",
+        "Now Python reaches print. Print means: show this on the screen. The words inside the quotes are shown exactly as they are written.",
+        "Python moves to the next line, and prints the drug name. Notice that each print starts on a new line.",
+        "Here, print has three items, separated by commas. Python shows them one after another, and puts a space between each item.",
+        "This line has a small calculation. Python first works out five hundred times three, which is fifteen hundred, and then prints the answer. The star sign means multiply.",
+        "And that's it. Python ran four instructions, in order, from top to bottom. You have just understood your first program."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "चलिए, देखते हैं पाइथन इस प्रोग्राम को कैसे चलाता है। याद रखिए, पाइथन एक बार में एक लाइन पढ़ता है, ऊपर से नीचे तक।",
+        "पहली लाइन हैश साइन से शुरू होती है। यह एक कमेंट है। कमेंट्स इंसानों के लिए नोट्स होते हैं। पाइथन इन्हें बस छोड़ देता है।",
+        "अब पाइथन प्रिंट पर पहुँचता है। प्रिंट का मतलब है: इसे स्क्रीन पर दिखाओ। कोट्स के अंदर लिखे शब्द बिल्कुल वैसे ही दिखाए जाते हैं, जैसे लिखे गए हैं।",
+        "पाइथन अगली लाइन पर जाता है, और दवा का नाम प्रिंट करता है। ध्यान दीजिए, हर प्रिंट एक नई लाइन पर शुरू होता है।",
+        "यहाँ प्रिंट में तीन आइटम्स हैं, जो कॉमाज़ से अलग किए गए हैं। पाइथन इन्हें एक के बाद एक दिखाता है, और हर आइटम के बीच एक स्पेस लगाता है।",
+        "इस लाइन में एक छोटी सी कैलकुलेशन है। पाइथन पहले पाँच सौ गुणा तीन करता है, जो पंद्रह सौ होता है, और फिर आंसर प्रिंट करता है। स्टार साइन का मतलब है मल्टिप्लाई, यानी गुणा।",
+        "बस, इतना ही! पाइथन ने चार इंस्ट्रक्शन्स, क्रम से, ऊपर से नीचे तक चलाए। आपने अभी-अभी अपना पहला प्रोग्राम समझ लिया है।"
+      ],
+      "display": [
+        "चलिए, देखते हैं Python इस program को कैसे चलाता है। याद रखिए, Python एक बार में एक line पढ़ता है, ऊपर से नीचे तक।",
+        "पहली line hash sign से शुरू होती है। यह एक comment है। Comments इंसानों के लिए notes होते हैं। Python इन्हें बस छोड़ देता है।",
+        "अब Python print पर पहुँचता है। Print का मतलब है: इसे screen पर दिखाओ। Quotes के अंदर लिखे शब्द बिल्कुल वैसे ही दिखाए जाते हैं, जैसे लिखे गए हैं।",
+        "Python अगली line पर जाता है, और दवा का नाम print करता है। ध्यान दीजिए, हर print एक नई line पर शुरू होता है।",
+        "यहाँ print में तीन items हैं, जो commas से अलग किए गए हैं। Python इन्हें एक के बाद एक दिखाता है, और हर item के बीच एक space लगाता है।",
+        "इस line में एक छोटी सी calculation है। Python पहले पाँच सौ गुणा तीन करता है, जो पंद्रह सौ होता है, और फिर answer print करता है। Star sign का मतलब है multiply, यानी गुणा।",
+        "बस, इतना ही! Python ने चार instructions, क्रम से, ऊपर से नीचे तक चलाए। आपने अभी-अभी अपना पहला program समझ लिया है।"
+      ],
+      "displayHinglish": [
+        "Chaliye, dekhte hain Python is program ko kaise chalata hai. Yaad rakhiye, Python ek baar mein ek line padhta hai, upar se neeche tak.",
+        "Pehli line hash sign se shuru hoti hai. Yeh ek comment hai. Comments insaanon ke liye notes hote hain. Python inhe bas chhod deta hai.",
+        "Ab Python print par pahunchta hai. Print ka matlab hai: ise screen par dikhao. Quotes ke andar likhe shabd bilkul waise hi dikhaye jaate hain, jaise likhe gaye hain.",
+        "Python agli line par jaata hai, aur dawa ka naam print karta hai. Dhyaan dijiye, har print ek nayi line par shuru hota hai.",
+        "Yahan print mein teen items hain, jo commas se alag kiye gaye hain. Python inhe ek ke baad ek dikhata hai, aur har item ke beech ek space lagata hai.",
+        "Is line mein ek chhoti si calculation hai. Python pehle paanch sau guna teen karta hai, jo pandrah sau hota hai, aur phir answer print karta hai. Star sign ka matlab hai multiply, yaani guna.",
+        "Bas, itna hi! Python ne chaar instructions, kram se, upar se neeche tak chalaye. Aapne abhi-abhi apna pehla program samajh liya hai."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಬನ್ನಿ, ಪೈಥಾನ್ ಈ ಪ್ರೋಗ್ರಾಮ್ ಅನ್ನು ಹೇಗೆ ರನ್ ಮಾಡುತ್ತೆ ಅಂತ ನೋಡೋಣ. ನೆನಪಿಡಿ, ಪೈಥಾನ್ ಒಂದು ಸಲಕ್ಕೆ ಒಂದೇ ಲೈನ್ ಓದುತ್ತೆ, ಮೇಲಿಂದ ಕೆಳಗೆ.",
+        "ಮೊದಲ ಲೈನ್ ಹ್ಯಾಶ್ ಸೈನ್ ಇಂದ ಶುರು ಆಗುತ್ತೆ. ಇದು ಒಂದು ಕಾಮೆಂಟ್. ಕಾಮೆಂಟ್ಸ್ ಮನುಷ್ಯರಿಗಾಗಿ ಬರೆದ ನೋಟ್ಸ್. ಪೈಥಾನ್ ಅವನ್ನು ಸುಮ್ಮನೆ ಸ್ಕಿಪ್ ಮಾಡುತ್ತೆ.",
+        "ಈಗ ಪೈಥಾನ್ ಪ್ರಿಂಟ್ ಗೆ ಬರುತ್ತೆ. ಪ್ರಿಂಟ್ ಅಂದ್ರೆ: ಇದನ್ನು ಸ್ಕ್ರೀನ್ ಮೇಲೆ ತೋರಿಸು. ಕೋಟ್ಸ್ ಒಳಗಿರುವ ಪದಗಳು, ಬರೆದ ಹಾಗೆಯೇ ತೋರಿಸಲಾಗುತ್ತೆ.",
+        "ಪೈಥಾನ್ ಮುಂದಿನ ಲೈನ್ ಗೆ ಹೋಗಿ, ಔಷಧಿಯ ಹೆಸರನ್ನು ಪ್ರಿಂಟ್ ಮಾಡುತ್ತೆ. ಗಮನಿಸಿ, ಪ್ರತಿ ಪ್ರಿಂಟ್ ಹೊಸ ಲೈನ್ ನಲ್ಲಿ ಶುರು ಆಗುತ್ತೆ.",
+        "ಇಲ್ಲಿ ಪ್ರಿಂಟ್ ನಲ್ಲಿ ಮೂರು ಐಟಮ್ಸ್ ಇವೆ, ಕಾಮಾಸ್ ಇಂದ ಬೇರೆ ಮಾಡಲಾಗಿದೆ. ಪೈಥಾನ್ ಅವನ್ನು ಒಂದರ ನಂತರ ಒಂದು ತೋರಿಸುತ್ತೆ, ಮತ್ತು ಪ್ರತಿ ಐಟಮ್ ನಡುವೆ ಒಂದು ಸ್ಪೇಸ್ ಹಾಕುತ್ತೆ.",
+        "ಈ ಲೈನ್ ನಲ್ಲಿ ಒಂದು ಚಿಕ್ಕ ಕ್ಯಾಲ್ಕುಲೇಷನ್ ಇದೆ. ಪೈಥಾನ್ ಮೊದಲು ಐನೂರು ಗುಣಿಸು ಮೂರು ಮಾಡುತ್ತೆ, ಅಂದ್ರೆ ಸಾವಿರದ ಐನೂರು, ಆಮೇಲೆ ಆನ್ಸರ್ ಅನ್ನು ಪ್ರಿಂಟ್ ಮಾಡುತ್ತೆ. ಸ್ಟಾರ್ ಸೈನ್ ಅಂದ್ರೆ ಮಲ್ಟಿಪ್ಲೈ, ಅಂದ್ರೆ ಗುಣಾಕಾರ.",
+        "ಅಷ್ಟೇ! ಪೈಥಾನ್ ನಾಲ್ಕು ಇನ್ಸ್ಟ್ರಕ್ಷನ್ಸ್ ಅನ್ನು, ಕ್ರಮವಾಗಿ, ಮೇಲಿಂದ ಕೆಳಗೆ ರನ್ ಮಾಡಿತು. ನೀವು ಈಗಷ್ಟೇ ನಿಮ್ಮ ಮೊದಲ ಪ್ರೋಗ್ರಾಮ್ ಅನ್ನು ಅರ್ಥ ಮಾಡಿಕೊಂಡಿದ್ದೀರಿ."
+      ],
+      "display": [
+        "ಬನ್ನಿ, Python ಈ program ಅನ್ನು ಹೇಗೆ run ಮಾಡುತ್ತೆ ಅಂತ ನೋಡೋಣ. ನೆನಪಿಡಿ, Python ಒಂದು ಸಲಕ್ಕೆ ಒಂದೇ line ಓದುತ್ತೆ, ಮೇಲಿಂದ ಕೆಳಗೆ.",
+        "ಮೊದಲ line hash sign ಇಂದ ಶುರು ಆಗುತ್ತೆ. ಇದು ಒಂದು comment. Comments ಮನುಷ್ಯರಿಗಾಗಿ ಬರೆದ notes. Python ಅವನ್ನು ಸುಮ್ಮನೆ skip ಮಾಡುತ್ತೆ.",
+        "ಈಗ Python print ಗೆ ಬರುತ್ತೆ. Print ಅಂದ್ರೆ: ಇದನ್ನು screen ಮೇಲೆ ತೋರಿಸು. Quotes ಒಳಗಿರುವ ಪದಗಳು, ಬರೆದ ಹಾಗೆಯೇ ತೋರಿಸಲಾಗುತ್ತೆ.",
+        "Python ಮುಂದಿನ line ಗೆ ಹೋಗಿ, ಔಷಧಿಯ ಹೆಸರನ್ನು print ಮಾಡುತ್ತೆ. ಗಮನಿಸಿ, ಪ್ರತಿ print ಹೊಸ line ನಲ್ಲಿ ಶುರು ಆಗುತ್ತೆ.",
+        "ಇಲ್ಲಿ print ನಲ್ಲಿ ಮೂರು items ಇವೆ, commas ಇಂದ ಬೇರೆ ಮಾಡಲಾಗಿದೆ. Python ಅವನ್ನು ಒಂದರ ನಂತರ ಒಂದು ತೋರಿಸುತ್ತೆ, ಮತ್ತು ಪ್ರತಿ item ನಡುವೆ ಒಂದು space ಹಾಕುತ್ತೆ.",
+        "ಈ line ನಲ್ಲಿ ಒಂದು ಚಿಕ್ಕ calculation ಇದೆ. Python ಮೊದಲು ಐನೂರು ಗುಣಿಸು ಮೂರು ಮಾಡುತ್ತೆ, ಅಂದ್ರೆ ಸಾವಿರದ ಐನೂರು, ಆಮೇಲೆ answer ಅನ್ನು print ಮಾಡುತ್ತೆ. Star sign ಅಂದ್ರೆ multiply, ಅಂದ್ರೆ ಗುಣಾಕಾರ.",
+        "ಅಷ್ಟೇ! Python ನಾಲ್ಕು instructions ಅನ್ನು, ಕ್ರಮವಾಗಿ, ಮೇಲಿಂದ ಕೆಳಗೆ run ಮಾಡಿತು. ನೀವು ಈಗಷ್ಟೇ ನಿಮ್ಮ ಮೊದಲ program ಅನ್ನು ಅರ್ಥ ಮಾಡಿಕೊಂಡಿದ್ದೀರಿ."
+      ]
+    },
+    {
+      "id": "anim-interpreter",
+      "prefix": "anim-interpreter-",
+      "lang": "en",
+      "tts": [
+        "A prescription is a list of instructions, written in order.",
+        "The pharmacist reads it line by line, from top to bottom.",
+        "A Python program is also a list of instructions, written in order.",
+        "The interpreter reads the first line, and shows the drug name.",
+        "Then it moves to the next line, and shows the strength.",
+        "On the last line, it calculates five hundred times three, and shows fifteen hundred.",
+        "Same idea as a prescription: one line at a time, from top to bottom. That is how every Python program runs."
+      ],
+      "display": [
+        "A prescription is a list of instructions, written in order.",
+        "The pharmacist reads it line by line, from top to bottom.",
+        "A Python program is also a list of instructions, written in order.",
+        "The interpreter reads the first line, and shows the drug name.",
+        "Then it moves to the next line, and shows the strength.",
+        "On the last line, it calculates five hundred times three, and shows fifteen hundred.",
+        "Same idea as a prescription: one line at a time, from top to bottom. That is how every Python program runs."
+      ]
+    },
+    {
+      "id": "anim-interpreter",
+      "prefix": "anim-interpreter-",
+      "lang": "hi",
+      "tts": [
+        "प्रिस्क्रिप्शन निर्देशों की एक लिस्ट होती है, जो क्रम से लिखी जाती है।",
+        "फार्मासिस्ट इसे लाइन बाय लाइन पढ़ता है, ऊपर से नीचे तक।",
+        "पाइथन प्रोग्राम भी निर्देशों की एक लिस्ट है, जो क्रम से लिखी जाती है।",
+        "इंटरप्रेटर पहली लाइन पढ़ता है, और दवा का नाम दिखाता है।",
+        "फिर वह अगली लाइन पर जाता है, और स्ट्रेंथ दिखाता है।",
+        "आखिरी लाइन पर, वह पाँच सौ गुणा तीन कैलकुलेट करता है, और पंद्रह सौ दिखाता है।",
+        "बिल्कुल प्रिस्क्रिप्शन जैसा: एक बार में एक लाइन, ऊपर से नीचे तक। हर पाइथन प्रोग्राम ऐसे ही चलता है।"
+      ],
+      "display": [
+        "Prescription निर्देशों की एक list होती है, जो क्रम से लिखी जाती है।",
+        "Pharmacist इसे line by line पढ़ता है, ऊपर से नीचे तक।",
+        "Python program भी निर्देशों की एक list है, जो क्रम से लिखी जाती है।",
+        "Interpreter पहली line पढ़ता है, और दवा का नाम दिखाता है।",
+        "फिर वह अगली line पर जाता है, और strength दिखाता है।",
+        "आखिरी line पर, वह पाँच सौ गुणा तीन calculate करता है, और पंद्रह सौ दिखाता है।",
+        "बिल्कुल prescription जैसा: एक बार में एक line, ऊपर से नीचे तक। हर Python program ऐसे ही चलता है।"
+      ],
+      "displayHinglish": [
+        "Prescription nirdeshon ki ek list hoti hai, jo kram se likhi jaati hai.",
+        "Pharmacist ise line by line padhta hai, upar se neeche tak.",
+        "Python program bhi nirdeshon ki ek list hai, jo kram se likhi jaati hai.",
+        "Interpreter pehli line padhta hai, aur dawa ka naam dikhata hai.",
+        "Phir woh agli line par jaata hai, aur strength dikhata hai.",
+        "Aakhri line par, woh paanch sau guna teen calculate karta hai, aur pandrah sau dikhata hai.",
+        "Bilkul prescription jaisa: ek baar mein ek line, upar se neeche tak. Har Python program aise hi chalta hai."
+      ]
+    },
+    {
+      "id": "anim-interpreter",
+      "prefix": "anim-interpreter-",
+      "lang": "kn",
+      "tts": [
+        "ಪ್ರಿಸ್ಕ್ರಿಪ್ಷನ್ ಅಂದ್ರೆ, ಕ್ರಮವಾಗಿ ಬರೆದ ಸೂಚನೆಗಳ ಒಂದು ಲಿಸ್ಟ್.",
+        "ಫಾರ್ಮಸಿಸ್ಟ್ ಅದನ್ನು ಲೈನ್ ಬೈ ಲೈನ್ ಓದುತ್ತಾರೆ, ಮೇಲಿಂದ ಕೆಳಗೆ.",
+        "ಪೈಥಾನ್ ಪ್ರೋಗ್ರಾಮ್ ಕೂಡ, ಕ್ರಮವಾಗಿ ಬರೆದ ಸೂಚನೆಗಳ ಒಂದು ಲಿಸ್ಟ್.",
+        "ಇಂಟರ್ಪ್ರಿಟರ್ ಮೊದಲ ಲೈನ್ ಓದುತ್ತೆ, ಮತ್ತು ಔಷಧಿಯ ಹೆಸರು ತೋರಿಸುತ್ತೆ.",
+        "ಆಮೇಲೆ ಮುಂದಿನ ಲೈನ್ ಗೆ ಹೋಗಿ, ಸ್ಟ್ರೆಂತ್ ತೋರಿಸುತ್ತೆ.",
+        "ಕೊನೆಯ ಲೈನ್ ನಲ್ಲಿ, ಐನೂರು ಗುಣಿಸು ಮೂರು ಕ್ಯಾಲ್ಕುಲೇಟ್ ಮಾಡಿ, ಸಾವಿರದ ಐನೂರು ತೋರಿಸುತ್ತೆ.",
+        "ಥೇಟ್ ಪ್ರಿಸ್ಕ್ರಿಪ್ಷನ್ ತರಹನೇ: ಒಂದು ಸಲಕ್ಕೆ ಒಂದು ಲೈನ್, ಮೇಲಿಂದ ಕೆಳಗೆ. ಪ್ರತಿ ಪೈಥಾನ್ ಪ್ರೋಗ್ರಾಮ್ ಹೀಗೇ ರನ್ ಆಗುತ್ತೆ."
+      ],
+      "display": [
+        "Prescription ಅಂದ್ರೆ, ಕ್ರಮವಾಗಿ ಬರೆದ ಸೂಚನೆಗಳ ಒಂದು list.",
+        "Pharmacist ಅದನ್ನು line by line ಓದುತ್ತಾರೆ, ಮೇಲಿಂದ ಕೆಳಗೆ.",
+        "Python program ಕೂಡ, ಕ್ರಮವಾಗಿ ಬರೆದ ಸೂಚನೆಗಳ ಒಂದು list.",
+        "Interpreter ಮೊದಲ line ಓದುತ್ತೆ, ಮತ್ತು ಔಷಧಿಯ ಹೆಸರು ತೋರಿಸುತ್ತೆ.",
+        "ಆಮೇಲೆ ಮುಂದಿನ line ಗೆ ಹೋಗಿ, strength ತೋರಿಸುತ್ತೆ.",
+        "ಕೊನೆಯ line ನಲ್ಲಿ, ಐನೂರು ಗುಣಿಸು ಮೂರು calculate ಮಾಡಿ, ಸಾವಿರದ ಐನೂರು ತೋರಿಸುತ್ತೆ.",
+        "ಥೇಟ್ prescription ತರಹನೇ: ಒಂದು ಸಲಕ್ಕೆ ಒಂದು line, ಮೇಲಿಂದ ಕೆಳಗೆ. ಪ್ರತಿ Python program ಹೀಗೇ run ಆಗುತ್ತೆ."
+      ]
+    }
+  ]
+}
