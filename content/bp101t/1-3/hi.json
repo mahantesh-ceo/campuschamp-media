@@ -1,0 +1,363 @@
+{
+  "hook": {
+    "title": "Patient की details को label लगे boxes में रखिए",
+    "md": "Pharmacist दवाइयों को **label लगे boxes** में रखता है, ताकि सही दवा तुरंत मिल जाए। Python भी जानकारी ऐसे ही रखता है, **variables** में।\n\nइस lesson के अंत तक आप एक patient का नाम, वज़न और dose variables में रखेंगे, और उनसे dose calculate करेंगे।"
+  },
+  "learn": [
+    "**Variable** क्या है, और value कैसे रखें और बदलें",
+    "**Variables के नाम** रखने के नियम",
+    "चार basic **data types**: integers, floats, strings और booleans"
+  ],
+  "explanation": [
+    {
+      "heading": "Variable क्या है?",
+      "md": "Pharmacy की shelf पर रखे एक **label लगे box** के बारे में सोचिए। Label बताता है कि अंदर क्या है; box उस चीज़ को रखता है।\n\n**Variable** भी ऐसे ही काम करता है। इसका एक **नाम** (label) होता है और यह एक **value** (अंदर की चीज़) रखता है:\n\n```python\ndose_mg = 500\n```\n\n`=` को **\"रखो\"** पढ़िए: *500 को `dose_mg` नाम के box में रखो*। इसे **assignment** कहते हैं। इसका मतलब गणित वाला \"बराबर\" नहीं है।\n\nValue रखने के बाद आप उसे नाम से use कर सकते हैं, और कभी भी बदल सकते हैं:\n\n```python\ndose_mg = 500\ndose_mg = 650\nprint(\"Dose:\", dose_mg, \"mg\")\n```\n\nयह `Dose: 650 mg` print करता है, क्योंकि box में अब 650 है।",
+      "callout": {
+        "title": "Variable",
+        "md": "Computer की memory में एक नाम वाली जगह जो एक value रखती है, जैसे shelf पर label लगा box।"
+      }
+    },
+    {
+      "heading": "Variables के नाम रखना",
+      "md": "Variable के नाम कुछ नियम मानते हैं:\n\n- सिर्फ **letters, numbers और underscores** (`_`) use करें, जैसे `dose_mg`, `patient2`।\n- **Number से शुरू न करें**: `2nd_dose` नहीं चलेगा; `dose_2` ठीक है।\n- **Spaces नहीं**: `patient weight` नहीं, `patient_weight` लिखें।\n- नाम **case-sensitive** होते हैं: `weight` और `Weight` दो अलग variables हैं।\n- **Python के अपने शब्द use न करें**, जैसे `True`, `if` या `for`। ये खास मतलब वाले **keywords** हैं।\n\n**अच्छी आदत:** ऐसे नाम चुनें जो बताएँ कि अंदर क्या है, small letters और underscores के साथ, जैसे `patient_weight_kg`। `x` या `a1` जैसे नाम code को बाद में समझना मुश्किल बना देते हैं।"
+    },
+    {
+      "heading": "चार basic data types",
+      "md": "हर value का एक **data type** होता है, जो Python को बताता है कि value किस तरह की है।\n\n| Data type | Python नाम | क्या रखता है | Pharmacy example |\n|---|---|---|---|\n| **Integer** | `int` | पूरी संख्याएँ | `tablets = 30` |\n| **Float** | `float` | दशमलव वाली संख्याएँ | `weight_kg = 52.5` |\n| **String** | `str` | Quotes के अंदर text | `drug = \"Amoxicillin\"` |\n| **Boolean** | `bool` | सिर्फ `True` या `False` | `in_stock = True` |\n\nध्यान दीजिए: `True` और `False` **capital letter** से शुरू होते हैं, और इनमें **quotes नहीं** होते।",
+      "callout": {
+        "title": "Data type",
+        "md": "Value किस तरह की है: पूरी संख्या (int), दशमलव वाली संख्या (float), text (str) या True/False (bool)।"
+      }
+    },
+    {
+      "heading": "type() से type check करना",
+      "md": "पक्का नहीं कि value का type क्या है? `type()` से Python से पूछिए:\n\n```python\nprint(type(500))\nprint(type(52.5))\nprint(type(\"500\"))\nprint(type(True))\n```\n\nयह print करता है:\n\n```\n<class 'int'>\n<class 'float'>\n<class 'str'>\n<class 'bool'>\n```\n\nतीसरी line ध्यान से देखिए: `\"500\"` **quotes** में है, इसलिए यह **text** है, number नहीं।"
+    },
+    {
+      "heading": "Data types क्यों ज़रूरी हैं",
+      "md": "Python numbers और text के साथ बिल्कुल अलग तरह से काम करता है। इन्हें compare कीजिए:\n\n```python\ndose = 500\nprint(dose * 3)\n```\n\n`1500` print करता है, लेकिन\n\n```python\ndose = \"500\"\nprint(dose * 3)\n```\n\n`500500500` print करता है। Text के साथ `*` गुणा करने के बजाय text को **दोहराता** है।",
+      "callout": {
+        "title": "Pharmacy में यह बहुत मायने रखता है",
+        "md": "गलती से text के रूप में रखा गया number, 1500 mg की dose को बेमतलब 500500500 बना सकता है। हमेशा check कीजिए कि doses और वज़न numbers हों, strings नहीं।"
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "यह program एक patient की details variables में रखता है और फिर उन्हें use करता है। हर line चलते समय Variables panel देखिए।",
+    "keyTerms": [
+      {
+        "meaning": "दाईं तरफ की value को बाईं तरफ के variable में रखो।"
+      },
+      {
+        "meaning": "पूरी संख्या / दशमलव वाली संख्या।"
+      },
+      {
+        "meaning": "Quotes के अंदर text।"
+      },
+      {
+        "meaning": "True या False।"
+      }
+    ],
+    "steps": [
+      {
+        "say": "यह program एक patient की details variables में रखता है, और फिर उन्हें use करता है। हर line चलते समय Variables panel देखिए।"
+      },
+      {
+        "say": "पहली line एक comment है। यह बताती है कि program किस बारे में है।"
+      },
+      {
+        "say": "यहाँ equals sign का मतलब है रखो। Python, text Ananya को patient_name नाम के box में रखता है। यह quotes में है, इसलिए यह string है।"
+      },
+      {
+        "say": "weight_kg में बावन दशमलव पाँच रखा गया है। इसमें दशमलव है, इसलिए इसका data type float है।"
+      },
+      {
+        "say": "dose_mg_per_kg में दस रखा गया है, एक पूरी संख्या। इसका data type int है, यानी integer।"
+      },
+      {
+        "say": "in_stock में True रखा गया है, capital T के साथ। जो values सिर्फ True या False होती हैं, उन्हें booleans कहते हैं।"
+      },
+      {
+        "say": "अब print variables use करता है। Python हर box के अंदर देखकर values दिखाता है।"
+      },
+      {
+        "say": "Python बावन दशमलव पाँच को दस से गुणा करता है। इनमें से एक float है, इसलिए answer भी float है: पाँच सौ पच्चीस दशमलव शून्य।"
+      },
+      {
+        "say": "आखिर में Python boolean दिखाता है। आपने अभी चार अलग-अलग data types रखकर use किए।"
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Variables use करना शुरू करते समय ये दो errors सबसे आम हैं।",
+    "examples": [
+      {
+        "title": "ऐसा नाम use करना जो मौजूद ही नहीं",
+        "md": "Variable का नाम `dose_mg` है, लेकिन line 2 `dose` माँग रही है। Python सिर्फ वही नाम जानता है जो आपने बनाए हैं। Spelling check कीजिए, capital letters भी।"
+      },
+      {
+        "title": "Text और number को + से जोड़ना",
+        "md": "`+` दो strings को जोड़ सकता है, लेकिन **string** और **integer** को नहीं। सबसे आसान fix है + की जगह comma लगाना: `print(\"Dose:\", 500)`। दूसरा fix आप Lesson 1.4 में सीखेंगे।",
+        "callout": {
+          "title": "TypeError",
+          "md": "Error जिसका मतलब है कि उस काम के लिए गलत data type की value use की गई।"
+        }
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Variable के नाम में space डालना, जैसे `patient weight = 52`",
+      "fix": "Underscore use कीजिए: `patient_weight = 52`।"
+    },
+    {
+      "mistake": "नाम number से शुरू करना, जैसे `2nd_dose = 250`",
+      "fix": "Number बाद में लगाइए: `dose_2 = 250`।"
+    },
+    {
+      "mistake": "नाम में hyphen use करना, जैसे `dose-mg = 500`",
+      "fix": "Python `-` को minus समझता है। Underscore use कीजिए: `dose_mg = 500`।"
+    },
+    {
+      "mistake": "`true` small letters में लिखना",
+      "fix": "Booleans capital letter से शुरू होते हैं: `True`, `False`।"
+    },
+    {
+      "mistake": "Number को quotes में रखना, जैसे `dose = \"500\"`",
+      "see": "कोई error नहीं, लेकिन `dose * 3` देता है 500500500",
+      "fix": "Numbers को बिना quotes के लिखिए: `dose = 500`।"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Variables से label print कीजिए",
+      "md": "Variables तैयार हैं। एक line जोड़िए जो **variables use करके** दवा और उसकी strength print करे, ताकि output बिल्कुल यह हो:",
+      "hints": [
+        "print() commas से अलग किए कई items दिखा सकता है।",
+        "Try कीजिए: print(drug, strength_mg, \"mg\")।"
+      ]
+    },
+    {
+      "title": "बच्चे की dose calculate कीजिए",
+      "md": "Rohan का वज़न **18 kg** है, और dose **15 mg प्रति kg** है। नाम, वज़न और dose प्रति kg को `patient`, `weight_kg` और `dose_mg_per_kg` नाम के variables में रखिए, फिर print कीजिए:\n\n*(सिर्फ सीखने के लिए: असली doses clinical guidelines के अनुसार ही होनी चाहिए।)*",
+      "hints": [
+        "patient = \"Rohan\" नाम रखता है। weight_kg और dose_mg_per_kg के लिए भी ऐसा ही कीजिए।",
+        "Python से गुणा करवाइए: print(patient, \"needs\", weight_kg * dose_mg_per_kg, \"mg\")।"
+      ]
+    },
+    {
+      "title": "यह कौन सा type है?",
+      "md": "`type()` use करके value `52.5` का data type print कीजिए। Output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "Value को type() के अंदर रखिए, और type() को print() के अंदर।"
+      ]
+    },
+    {
+      "title": "Bug ढूँढिए",
+      "md": "यह program `In stock: True` print करना चाहिए, लेकिन इसमें error है। इसे ठीक कीजिए।",
+      "hints": [
+        "Python case-sensitive है।"
+      ],
+      "solutionNote": "Booleans True और False लिखे जाते हैं, capital letter के साथ।"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "52.5 का data type क्या है?",
+      "why": "52.5 में दशमलव है, इसलिए यह float है।"
+    },
+    {
+      "q": "इनमें से कौन सा सही variable नाम है?",
+      "why": "नाम में letters, numbers और underscores हो सकते हैं, spaces या hyphens नहीं, और नाम number से शुरू नहीं हो सकता।"
+    },
+    {
+      "q": "dose_mg = 500 क्या करता है?",
+      "options": [
+        "Check करता है कि dose_mg, 500 के बराबर है या नहीं",
+        "500 को dose_mg नाम के variable में रखता है",
+        "500 print करता है",
+        "dose_mg में 500 जोड़ता है"
+      ],
+      "why": "= मतलब रखो: दाईं तरफ की value बाईं तरफ के variable में जाती है।"
+    },
+    {
+      "q": "print(type(\"500\")) क्या दिखाता है?",
+      "why": "\"500\" quotes में है, इसलिए यह text (string) है, number नहीं।"
+    },
+    {
+      "q": "in_stock = True। in_stock का data type क्या है?",
+      "why": "True और False booleans (bool) हैं।"
+    }
+  ],
+  "exam": {
+    "note": "University exam English में लिखा जाता है, इसलिए model answers English में ही रखे गए हैं। ये practice के लिए important questions हैं; असली university questions अलग हो सकते हैं।"
+  },
+  "mindmap": {
+    "label": "Lesson 1.3 · Variables और data types",
+    "children": [
+      {
+        "label": "Variable",
+        "children": [
+          {
+            "label": "Label लगा box"
+          },
+          {
+            "label": "name = value"
+          },
+          {
+            "label": "= मतलब रखो"
+          },
+          {
+            "label": "Value बदल सकती है"
+          }
+        ]
+      },
+      {
+        "label": "नाम के नियम",
+        "children": [
+          {
+            "label": "Letters, numbers, _"
+          },
+          {
+            "label": "Number से शुरू नहीं"
+          },
+          {
+            "label": "Spaces नहीं"
+          },
+          {
+            "label": "Case-sensitive"
+          },
+          {
+            "label": "Keywords नहीं"
+          }
+        ]
+      },
+      {
+        "label": "Data types",
+        "children": [
+          {
+            "label": "int: 30 tablets"
+          },
+          {
+            "label": "float: 52.5 kg"
+          },
+          {
+            "label": "str: \"Amoxicillin\""
+          },
+          {
+            "label": "bool: True / False"
+          }
+        ]
+      },
+      {
+        "label": "type()",
+        "children": [
+          {
+            "label": "Data type दिखाता है"
+          },
+          {
+            "label": "\"500\" एक str है"
+          }
+        ]
+      },
+      {
+        "label": "क्यों ज़रूरी",
+        "children": [
+          {
+            "label": "500 * 3 = 1500"
+          },
+          {
+            "label": "\"500\" * 3 = 500500500"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError: गलत नाम"
+          },
+          {
+            "label": "TypeError: text + number"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Variable** एक label लगा box है जो **value** रखता है; `=` का मतलब **रखो** है, बराबर नहीं।",
+    "नामों में **letters, numbers और underscores** होते हैं, ये number से शुरू नहीं होते, इनमें spaces नहीं होते, और ये **case-sensitive** होते हैं।",
+    "चार basic **data types** हैं **int** (30), **float** (52.5), **str** (\"Amoxicillin\") और **bool** (True / False)।",
+    "**`type()`** value का data type दिखाता है; quotes में लिखी हर चीज़ **string** है, \"500\" भी।",
+    "Data types से result बदलता है: `500 * 3` है 1500, लेकिन `\"500\" * 3` है 500500500।"
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Variable, pharmacy की shelf पर रखे label लगे box जैसा है। Label उसका नाम है, और अंदर value है।"
+        },
+        {
+          "say": "अलग-अलग boxes अलग तरह की values रख सकते हैं: text, दशमलव वाली संख्या, या True या False।"
+        },
+        {
+          "say": "Python याद रखता है कि हर box में किस तरह की value है। इसे data type कहते हैं: int, str, float और bool।"
+        },
+        {
+          "say": "आप अंदर की चीज़ बदल सकते हैं। अब dose_mg box में पाँच सौ नहीं, साढ़े छह सौ है।"
+        },
+        {
+          "say": "जब आप नाम use करते हैं, Python box के अंदर देखकर अभी वाली value use करता है।"
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "video",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Computer की memory में एक नाम वाला box जो एक value रखता है, जैसे pharmacy की shelf पर label लगा box।"
+    },
+    {
+      "meaning": "Variable के अंदर रखी चीज़, जैसे 500 या \"Paracetamol\"।"
+    },
+    {
+      "meaning": "Variable में value रखना। Python में = का मतलब \"रखो\" है, \"बराबर\" नहीं।"
+    },
+    {
+      "meaning": "Python का अपना खास शब्द, जैसे True, if या for। इसे variable का नाम नहीं बना सकते।"
+    },
+    {
+      "meaning": "Value किस तरह की है: पूरी संख्या, दशमलव वाली संख्या, text, या True/False।"
+    },
+    {
+      "meaning": "बिना दशमलव वाली पूरी संख्या, जैसे 30 tablets।"
+    },
+    {
+      "meaning": "दशमलव वाली संख्या, जैसे 52.5 kg वज़न।"
+    },
+    {
+      "meaning": "ऐसी value जो सिर्फ True या False हो, जैसे दवा stock में है या नहीं।"
+    },
+    {
+      "meaning": "किसी value का data type दिखाता है। type(52.5) देता है <class 'float'>।"
+    },
+    {
+      "meaning": "Error जिसका मतलब है गलत data type की value use की गई, जैसे text और number जोड़ना।"
+    }
+  ]
+}

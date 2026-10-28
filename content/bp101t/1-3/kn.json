@@ -1,0 +1,363 @@
+{
+  "hook": {
+    "title": "Patient ನ details ಅನ್ನು label ಇರುವ boxes ನಲ್ಲಿ ಇಡಿ",
+    "md": "Pharmacist ಔಷಧಿಗಳನ್ನು **label ಇರುವ boxes** ನಲ್ಲಿ ಇಡ್ತಾರೆ, ಸರಿಯಾದ ಔಷಧಿ ತಕ್ಷಣ ಸಿಗಲಿ ಅಂತ. Python ಕೂಡ ಮಾಹಿತಿಯನ್ನು ಹೀಗೇ ಇಡುತ್ತೆ, **variables** ನಲ್ಲಿ.\n\nಈ lesson ಮುಗಿಯುವಷ್ಟರಲ್ಲಿ, ನೀವು ಒಬ್ಬ patient ನ ಹೆಸರು, ತೂಕ ಮತ್ತು dose ಅನ್ನು variables ನಲ್ಲಿ ಇಟ್ಟು, ಅವುಗಳಿಂದ dose calculate ಮಾಡ್ತೀರಿ."
+  },
+  "learn": [
+    "**Variable** ಅಂದ್ರೆ ಏನು, ಮತ್ತು value ಅನ್ನು ಹೇಗೆ ಇಡೋದು, ಬದಲಾಯಿಸೋದು",
+    "**Variables ಗೆ ಹೆಸರು** ಇಡುವ ನಿಯಮಗಳು",
+    "ನಾಲ್ಕು basic **data types**: integers, floats, strings ಮತ್ತು booleans"
+  ],
+  "explanation": [
+    {
+      "heading": "Variable ಅಂದ್ರೆ ಏನು?",
+      "md": "Pharmacy shelf ಮೇಲಿನ ಒಂದು **label ಇರುವ box** ಬಗ್ಗೆ ಯೋಚಿಸಿ. Label ಒಳಗೆ ಏನಿದೆ ಅಂತ ಹೇಳುತ್ತೆ; box ಆ ವಸ್ತುವನ್ನು ಇಟ್ಟುಕೊಳ್ಳುತ್ತೆ.\n\n**Variable** ಕೂಡ ಹೀಗೇ ಕೆಲಸ ಮಾಡುತ್ತೆ. ಅದಕ್ಕೆ ಒಂದು **ಹೆಸರು** (label) ಇರುತ್ತೆ, ಮತ್ತು ಅದು ಒಂದು **value** (ಒಳಗಿನ ವಸ್ತು) ಇಟ್ಟುಕೊಳ್ಳುತ್ತೆ:\n\n```python\ndose_mg = 500\n```\n\n`=` ಅನ್ನು **\"ಇಡು\"** ಅಂತ ಓದಿ: *500 ಅನ್ನು `dose_mg` ಅನ್ನುವ box ನಲ್ಲಿ ಇಡು*. ಇದನ್ನು **assignment** ಅಂತಾರೆ. ಇದು ಗಣಿತದ \"ಸಮ\" ಅಲ್ಲ.\n\nValue ಇಟ್ಟ ಮೇಲೆ, ಅದನ್ನು ಹೆಸರಿನಿಂದ use ಮಾಡಬಹುದು, ಮತ್ತು ಯಾವಾಗ ಬೇಕಾದರೂ ಬದಲಾಯಿಸಬಹುದು:\n\n```python\ndose_mg = 500\ndose_mg = 650\nprint(\"Dose:\", dose_mg, \"mg\")\n```\n\nಇದು `Dose: 650 mg` ಅಂತ print ಮಾಡುತ್ತೆ, ಯಾಕಂದ್ರೆ box ನಲ್ಲಿ ಈಗ 650 ಇದೆ.",
+      "callout": {
+        "title": "Variable",
+        "md": "Computer memory ಯಲ್ಲಿ ಒಂದು value ಇಡುವ ಹೆಸರಿರುವ ಜಾಗ, shelf ಮೇಲಿನ label ಇರುವ box ತರಹ."
+      }
+    },
+    {
+      "heading": "Variables ಗೆ ಹೆಸರು ಇಡೋದು",
+      "md": "Variable ಹೆಸರುಗಳು ಕೆಲವು ನಿಯಮ ಪಾಲಿಸುತ್ತವೆ:\n\n- **Letters, numbers ಮತ್ತು underscores** (`_`) ಮಾತ್ರ use ಮಾಡಿ, ಉದಾ: `dose_mg`, `patient2`.\n- **Number ಇಂದ ಶುರು ಮಾಡಬೇಡಿ**: `2nd_dose` ಆಗಲ್ಲ; `dose_2` ಸರಿ.\n- **Spaces ಬೇಡ**: `patient weight` ಅಲ್ಲ, `patient_weight` ಅಂತ ಬರೆಯಿರಿ.\n- ಹೆಸರುಗಳು **case-sensitive**: `weight` ಮತ್ತು `Weight` ಎರಡು ಬೇರೆ variables.\n- **Python ನ ಸ್ವಂತ ಪದಗಳನ್ನು use ಮಾಡಬೇಡಿ**, ಉದಾ: `True`, `if`, `for`. ಇವು ವಿಶೇಷ ಅರ್ಥ ಇರುವ **keywords**.\n\n**ಒಳ್ಳೆ ಅಭ್ಯಾಸ:** ಒಳಗೆ ಏನಿದೆ ಅಂತ ಹೇಳುವ ಹೆಸರುಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡಿ, small letters ಮತ್ತು underscores ಜೊತೆ, ಉದಾ: `patient_weight_kg`. `x` ಅಥವಾ `a1` ತರಹದ ಹೆಸರುಗಳು code ಅನ್ನು ಆಮೇಲೆ ಅರ್ಥ ಮಾಡಿಕೊಳ್ಳೋದನ್ನು ಕಷ್ಟ ಮಾಡುತ್ತವೆ."
+    },
+    {
+      "heading": "ನಾಲ್ಕು basic data types",
+      "md": "ಪ್ರತಿ value ಗೂ ಒಂದು **data type** ಇರುತ್ತೆ, ಅದು value ಯಾವ ರೀತಿಯದು ಅಂತ Python ಗೆ ಹೇಳುತ್ತೆ.\n\n| Data type | Python ಹೆಸರು | ಏನು ಇಡುತ್ತೆ | Pharmacy example |\n|---|---|---|---|\n| **Integer** | `int` | ಪೂರ್ಣ ಸಂಖ್ಯೆಗಳು | `tablets = 30` |\n| **Float** | `float` | ದಶಮಾಂಶ ಇರುವ ಸಂಖ್ಯೆಗಳು | `weight_kg = 52.5` |\n| **String** | `str` | Quotes ಒಳಗಿನ text | `drug = \"Amoxicillin\"` |\n| **Boolean** | `bool` | `True` ಅಥವಾ `False` ಮಾತ್ರ | `in_stock = True` |\n\nಗಮನಿಸಿ: `True` ಮತ್ತು `False` **capital letter** ಇಂದ ಶುರುವಾಗುತ್ತವೆ, ಮತ್ತು ಅವಕ್ಕೆ **quotes ಇಲ್ಲ**.",
+      "callout": {
+        "title": "Data type",
+        "md": "Value ಯಾವ ರೀತಿಯದು: ಪೂರ್ಣ ಸಂಖ್ಯೆ (int), ದಶಮಾಂಶ ಸಂಖ್ಯೆ (float), text (str) ಅಥವಾ True/False (bool)."
+      }
+    },
+    {
+      "heading": "type() ಇಂದ type check ಮಾಡೋದು",
+      "md": "Value ನ type ಏನು ಅಂತ ಖಚಿತ ಇಲ್ವಾ? `type()` ಇಂದ Python ಅನ್ನೇ ಕೇಳಿ:\n\n```python\nprint(type(500))\nprint(type(52.5))\nprint(type(\"500\"))\nprint(type(True))\n```\n\nಇದು print ಮಾಡೋದು:\n\n```\n<class 'int'>\n<class 'float'>\n<class 'str'>\n<class 'bool'>\n```\n\nಮೂರನೇ line ಅನ್ನು ಗಮನವಿಟ್ಟು ನೋಡಿ: `\"500\"` **quotes** ನಲ್ಲಿದೆ, ಹಾಗಾಗಿ ಅದು **text**, number ಅಲ್ಲ."
+    },
+    {
+      "heading": "Data types ಯಾಕೆ ಮುಖ್ಯ",
+      "md": "Python numbers ಮತ್ತು text ಜೊತೆ ತುಂಬಾ ಬೇರೆ ರೀತಿ ಕೆಲಸ ಮಾಡುತ್ತೆ. ಇವನ್ನು ಹೋಲಿಸಿ:\n\n```python\ndose = 500\nprint(dose * 3)\n```\n\n`1500` ಅಂತ print ಮಾಡುತ್ತೆ, ಆದರೆ\n\n```python\ndose = \"500\"\nprint(dose * 3)\n```\n\n`500500500` ಅಂತ print ಮಾಡುತ್ತೆ. Text ಜೊತೆ `*` ಗುಣಿಸುವ ಬದಲು text ಅನ್ನು **ಮತ್ತೆ ಮತ್ತೆ ಬರೆಯುತ್ತೆ**.",
+      "callout": {
+        "title": "Pharmacy ಯಲ್ಲಿ ಇದು ತುಂಬಾ ಮುಖ್ಯ",
+        "md": "ತಪ್ಪಾಗಿ text ಆಗಿ ಇಟ್ಟ number, 1500 mg dose ಅನ್ನು ಅರ್ಥವಿಲ್ಲದ 500500500 ಮಾಡಬಹುದು. Doses ಮತ್ತು ತೂಕಗಳು numbers ಆಗಿವೆಯಾ, strings ಅಲ್ಲವಾ ಅಂತ ಯಾವಾಗಲೂ check ಮಾಡಿ."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "ಈ program ಒಬ್ಬ patient ನ details ಅನ್ನು variables ನಲ್ಲಿ ಇಟ್ಟು, ಆಮೇಲೆ ಅವನ್ನು use ಮಾಡುತ್ತೆ. ಪ್ರತಿ line run ಆಗುವಾಗ Variables panel ನೋಡಿ.",
+    "keyTerms": [
+      {
+        "meaning": "ಬಲಭಾಗದ value ಅನ್ನು ಎಡಭಾಗದ variable ನಲ್ಲಿ ಇಡು."
+      },
+      {
+        "meaning": "ಪೂರ್ಣ ಸಂಖ್ಯೆ / ದಶಮಾಂಶ ಇರುವ ಸಂಖ್ಯೆ."
+      },
+      {
+        "meaning": "Quotes ಒಳಗಿನ text."
+      },
+      {
+        "meaning": "True ಅಥವಾ False."
+      }
+    ],
+    "steps": [
+      {
+        "say": "ಈ program ಒಬ್ಬ patient ನ details ಅನ್ನು variables ನಲ್ಲಿ ಇಟ್ಟು, ಆಮೇಲೆ ಅವನ್ನು use ಮಾಡುತ್ತೆ. ಪ್ರತಿ line run ಆಗುವಾಗ Variables panel ನೋಡಿ."
+      },
+      {
+        "say": "ಮೊದಲ line ಒಂದು comment. Program ಯಾವುದರ ಬಗ್ಗೆ ಅಂತ ಅದು ಹೇಳುತ್ತೆ."
+      },
+      {
+        "say": "ಇಲ್ಲಿ equals sign ಅಂದ್ರೆ ಇಡು. Python, Ananya ಅನ್ನುವ text ಅನ್ನು patient_name ಅನ್ನುವ box ನಲ್ಲಿ ಇಡುತ್ತೆ. ಅದು quotes ನಲ್ಲಿದೆ, ಹಾಗಾಗಿ ಅದು string."
+      },
+      {
+        "say": "weight_kg ನಲ್ಲಿ ಐವತ್ತೆರಡು ದಶಮಾಂಶ ಐದು ಇಡಲಾಗಿದೆ. ಅದರಲ್ಲಿ ದಶಮಾಂಶ ಇದೆ, ಹಾಗಾಗಿ ಅದರ data type float."
+      },
+      {
+        "say": "dose_mg_per_kg ನಲ್ಲಿ ಹತ್ತು ಇಡಲಾಗಿದೆ, ಒಂದು ಪೂರ್ಣ ಸಂಖ್ಯೆ. ಅದರ data type int, ಅಂದ್ರೆ integer."
+      },
+      {
+        "say": "in_stock ನಲ್ಲಿ True ಇಡಲಾಗಿದೆ, capital T ಜೊತೆ. True ಅಥವಾ False ಮಾತ್ರ ಆಗಿರುವ values ಗೆ booleans ಅಂತಾರೆ."
+      },
+      {
+        "say": "ಈಗ print variables ಅನ್ನು use ಮಾಡುತ್ತೆ. Python ಪ್ರತಿ box ಒಳಗೆ ನೋಡಿ values ತೋರಿಸುತ್ತೆ."
+      },
+      {
+        "say": "Python ಐವತ್ತೆರಡು ದಶಮಾಂಶ ಐದನ್ನು ಹತ್ತರಿಂದ ಗುಣಿಸುತ್ತೆ. ಅದರಲ್ಲಿ ಒಂದು float, ಹಾಗಾಗಿ answer ಕೂಡ float: ಐನೂರ ಇಪ್ಪತ್ತೈದು ದಶಮಾಂಶ ಸೊನ್ನೆ."
+      },
+      {
+        "say": "ಕೊನೆಗೆ Python boolean ತೋರಿಸುತ್ತೆ. ನೀವು ಈಗಷ್ಟೇ ನಾಲ್ಕು ಬೇರೆ ಬೇರೆ data types ಅನ್ನು ಇಟ್ಟು use ಮಾಡಿದ್ದೀರಿ."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Variables use ಮಾಡಲು ಶುರು ಮಾಡಿದಾಗ ಈ ಎರಡು errors ತುಂಬಾ ಸಾಮಾನ್ಯ.",
+    "examples": [
+      {
+        "title": "ಇಲ್ಲದ ಹೆಸರನ್ನು use ಮಾಡೋದು",
+        "md": "Variable ನ ಹೆಸರು `dose_mg`, ಆದರೆ line 2 `dose` ಅನ್ನು ಕೇಳುತ್ತಿದೆ. ನೀವು ತಯಾರಿಸಿದ ನಿಖರ ಹೆಸರುಗಳು ಮಾತ್ರ Python ಗೆ ಗೊತ್ತು. Spelling check ಮಾಡಿ, capital letters ಕೂಡ."
+      },
+      {
+        "title": "Text ಮತ್ತು number ಅನ್ನು + ಇಂದ ಸೇರಿಸೋದು",
+        "md": "`+` ಎರಡು strings ಅನ್ನು ಸೇರಿಸಬಹುದು, ಆದರೆ **string** ಮತ್ತು **integer** ಅನ್ನು ಅಲ್ಲ. ಸುಲಭದ fix: + ಬದಲು comma ಹಾಕಿ: `print(\"Dose:\", 500)`. ಇನ್ನೊಂದು fix ಅನ್ನು Lesson 1.4 ನಲ್ಲಿ ಕಲಿಯುತ್ತೀರಿ.",
+        "callout": {
+          "title": "TypeError",
+          "md": "ಆ ಕೆಲಸಕ್ಕೆ ತಪ್ಪು data type ನ value use ಮಾಡಿದ್ದೀರಿ ಅನ್ನುವ error."
+        }
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Variable ಹೆಸರಿನಲ್ಲಿ space ಹಾಕೋದು, ಉದಾ: `patient weight = 52`",
+      "fix": "Underscore use ಮಾಡಿ: `patient_weight = 52`."
+    },
+    {
+      "mistake": "ಹೆಸರನ್ನು number ಇಂದ ಶುರು ಮಾಡೋದು, ಉದಾ: `2nd_dose = 250`",
+      "fix": "Number ಅನ್ನು ಆಮೇಲೆ ಹಾಕಿ: `dose_2 = 250`."
+    },
+    {
+      "mistake": "ಹೆಸರಿನಲ್ಲಿ hyphen use ಮಾಡೋದು, ಉದಾ: `dose-mg = 500`",
+      "fix": "Python `-` ಅನ್ನು minus ಅಂತ ಓದುತ್ತೆ. Underscore use ಮಾಡಿ: `dose_mg = 500`."
+    },
+    {
+      "mistake": "`true` ಅನ್ನು small letters ನಲ್ಲಿ ಬರೆಯೋದು",
+      "fix": "Booleans capital letter ಇಂದ ಶುರುವಾಗುತ್ತವೆ: `True`, `False`."
+    },
+    {
+      "mistake": "Number ಅನ್ನು quotes ನಲ್ಲಿ ಇಡೋದು, ಉದಾ: `dose = \"500\"`",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ `dose * 3` ಕೊಡೋದು 500500500",
+      "fix": "Numbers ಅನ್ನು quotes ಇಲ್ಲದೆ ಬರೆಯಿರಿ: `dose = 500`."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Variables ಇಂದ label print ಮಾಡಿ",
+      "md": "Variables ಸಿದ್ಧ ಇವೆ. **Variables use ಮಾಡಿ** ಔಷಧಿ ಮತ್ತು ಅದರ strength ಅನ್ನು print ಮಾಡುವ ಒಂದು line ಸೇರಿಸಿ, output ನಿಖರವಾಗಿ ಇದು ಆಗಬೇಕು:",
+      "hints": [
+        "print() commas ಇಂದ ಬೇರ್ಪಡಿಸಿದ ಹಲವು items ತೋರಿಸಬಹುದು.",
+        "ಇದನ್ನು try ಮಾಡಿ: print(drug, strength_mg, \"mg\")."
+      ]
+    },
+    {
+      "title": "ಮಗುವಿನ dose calculate ಮಾಡಿ",
+      "md": "Rohan ನ ತೂಕ **18 kg**, ಮತ್ತು dose **ಪ್ರತಿ kg ಗೆ 15 mg**. ಹೆಸರು, ತೂಕ ಮತ್ತು ಪ್ರತಿ kg dose ಅನ್ನು `patient`, `weight_kg` ಮತ್ತು `dose_mg_per_kg` ಅನ್ನುವ variables ನಲ್ಲಿ ಇಟ್ಟು, ಆಮೇಲೆ print ಮಾಡಿ:\n\n*(ಕಲಿಕೆಗಾಗಿ ಮಾತ್ರ: ನಿಜವಾದ doses clinical guidelines ಪ್ರಕಾರವೇ ಇರಬೇಕು.)*",
+      "hints": [
+        "patient = \"Rohan\" ಹೆಸರನ್ನು ಇಡುತ್ತೆ. weight_kg ಮತ್ತು dose_mg_per_kg ಗೂ ಹೀಗೇ ಮಾಡಿ.",
+        "Python ಇಂದಲೇ ಗುಣಿಸಿ: print(patient, \"needs\", weight_kg * dose_mg_per_kg, \"mg\")."
+      ]
+    },
+    {
+      "title": "ಇದು ಯಾವ type?",
+      "md": "`type()` use ಮಾಡಿ value `52.5` ನ data type ಅನ್ನು print ಮಾಡಿ. Output ನಿಖರವಾಗಿ ಇದು ಆಗಬೇಕು:",
+      "hints": [
+        "Value ಅನ್ನು type() ಒಳಗೆ, ಮತ್ತು type() ಅನ್ನು print() ಒಳಗೆ ಹಾಕಿ."
+      ]
+    },
+    {
+      "title": "Bug ಹುಡುಕಿ",
+      "md": "ಈ program `In stock: True` ಅಂತ print ಮಾಡಬೇಕು, ಆದರೆ ಇದರಲ್ಲಿ error ಇದೆ. ಸರಿ ಮಾಡಿ.",
+      "hints": [
+        "Python case-sensitive."
+      ],
+      "solutionNote": "Booleans ಅನ್ನು True ಮತ್ತು False ಅಂತ, capital letter ಜೊತೆ ಬರೆಯುತ್ತಾರೆ."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "52.5 ನ data type ಏನು?",
+      "why": "52.5 ನಲ್ಲಿ ದಶಮಾಂಶ ಇದೆ, ಹಾಗಾಗಿ ಅದು float."
+    },
+    {
+      "q": "ಇವುಗಳಲ್ಲಿ ಯಾವುದು ಸರಿಯಾದ variable ಹೆಸರು?",
+      "why": "ಹೆಸರಿನಲ್ಲಿ letters, numbers ಮತ್ತು underscores ಇರಬಹುದು, spaces ಅಥವಾ hyphens ಇರಬಾರದು, ಮತ್ತು number ಇಂದ ಶುರುವಾಗಬಾರದು."
+    },
+    {
+      "q": "dose_mg = 500 ಏನು ಮಾಡುತ್ತೆ?",
+      "options": [
+        "dose_mg, 500 ಗೆ ಸಮವಾ ಅಂತ check ಮಾಡುತ್ತೆ",
+        "500 ಅನ್ನು dose_mg ಅನ್ನುವ variable ನಲ್ಲಿ ಇಡುತ್ತೆ",
+        "500 ಅನ್ನು print ಮಾಡುತ್ತೆ",
+        "dose_mg ಗೆ 500 ಸೇರಿಸುತ್ತೆ"
+      ],
+      "why": "= ಅಂದ್ರೆ ಇಡು: ಬಲಭಾಗದ value ಎಡಭಾಗದ variable ಗೆ ಹೋಗುತ್ತೆ."
+    },
+    {
+      "q": "print(type(\"500\")) ಏನು ತೋರಿಸುತ್ತೆ?",
+      "why": "\"500\" quotes ನಲ್ಲಿದೆ, ಹಾಗಾಗಿ ಅದು text (string), number ಅಲ್ಲ."
+    },
+    {
+      "q": "in_stock = True. in_stock ನ data type ಏನು?",
+      "why": "True ಮತ್ತು False booleans (bool)."
+    }
+  ],
+  "exam": {
+    "note": "University exam ಅನ್ನು English ನಲ್ಲಿ ಬರೆಯುತ್ತೀರಿ, ಹಾಗಾಗಿ model answers English ನಲ್ಲೇ ಇವೆ. ಇವು practice ಗಾಗಿ important questions; ನಿಜವಾದ university questions ಬೇರೆ ಇರಬಹುದು."
+  },
+  "mindmap": {
+    "label": "Lesson 1.3 · Variables ಮತ್ತು data types",
+    "children": [
+      {
+        "label": "Variable",
+        "children": [
+          {
+            "label": "Label ಇರುವ box"
+          },
+          {
+            "label": "name = value"
+          },
+          {
+            "label": "= ಅಂದ್ರೆ ಇಡು"
+          },
+          {
+            "label": "Value ಬದಲಾಗಬಹುದು"
+          }
+        ]
+      },
+      {
+        "label": "ಹೆಸರಿನ ನಿಯಮಗಳು",
+        "children": [
+          {
+            "label": "Letters, numbers, _"
+          },
+          {
+            "label": "Number ಇಂದ ಶುರು ಬೇಡ"
+          },
+          {
+            "label": "Spaces ಬೇಡ"
+          },
+          {
+            "label": "Case-sensitive"
+          },
+          {
+            "label": "Keywords ಬೇಡ"
+          }
+        ]
+      },
+      {
+        "label": "Data types",
+        "children": [
+          {
+            "label": "int: 30 tablets"
+          },
+          {
+            "label": "float: 52.5 kg"
+          },
+          {
+            "label": "str: \"Amoxicillin\""
+          },
+          {
+            "label": "bool: True / False"
+          }
+        ]
+      },
+      {
+        "label": "type()",
+        "children": [
+          {
+            "label": "Data type ತೋರಿಸುತ್ತೆ"
+          },
+          {
+            "label": "\"500\" ಒಂದು str"
+          }
+        ]
+      },
+      {
+        "label": "ಯಾಕೆ ಮುಖ್ಯ",
+        "children": [
+          {
+            "label": "500 * 3 = 1500"
+          },
+          {
+            "label": "\"500\" * 3 = 500500500"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError: ತಪ್ಪು ಹೆಸರು"
+          },
+          {
+            "label": "TypeError: text + number"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Variable** ಅಂದ್ರೆ **value** ಇಡುವ label ಇರುವ box; `=` ಅಂದ್ರೆ **ಇಡು**, ಸಮ ಅಲ್ಲ.",
+    "ಹೆಸರುಗಳಲ್ಲಿ **letters, numbers ಮತ್ತು underscores** ಇರುತ್ತವೆ, number ಇಂದ ಶುರುವಾಗಲ್ಲ, spaces ಇರಲ್ಲ, ಮತ್ತು ಅವು **case-sensitive**.",
+    "ನಾಲ್ಕು basic **data types**: **int** (30), **float** (52.5), **str** (\"Amoxicillin\") ಮತ್ತು **bool** (True / False).",
+    "**`type()`** value ನ data type ತೋರಿಸುತ್ತೆ; quotes ನಲ್ಲಿರುವ ಎಲ್ಲವೂ **string**, \"500\" ಕೂಡ.",
+    "Data types result ಅನ್ನು ಬದಲಾಯಿಸುತ್ತವೆ: `500 * 3` ಅಂದ್ರೆ 1500, ಆದರೆ `\"500\" * 3` ಅಂದ್ರೆ 500500500."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Variable, pharmacy shelf ಮೇಲಿನ label ಇರುವ box ತರಹ. Label ಅದರ ಹೆಸರು, ಮತ್ತು ಒಳಗಿರೋದು value."
+        },
+        {
+          "say": "ಬೇರೆ ಬೇರೆ boxes ಬೇರೆ ರೀತಿಯ values ಇಡಬಹುದು: text, ದಶಮಾಂಶ ಸಂಖ್ಯೆ, ಅಥವಾ True ಅಥವಾ False."
+        },
+        {
+          "say": "ಪ್ರತಿ box ನಲ್ಲಿ ಯಾವ ರೀತಿಯ value ಇದೆ ಅಂತ Python ನೆನಪಿಟ್ಟುಕೊಳ್ಳುತ್ತೆ. ಇದನ್ನು data type ಅಂತಾರೆ: int, str, float ಮತ್ತು bool."
+        },
+        {
+          "say": "ಒಳಗಿರುವುದನ್ನು ಬದಲಾಯಿಸಬಹುದು. ಈಗ dose_mg box ನಲ್ಲಿ ಐನೂರು ಅಲ್ಲ, ಆರುನೂರ ಐವತ್ತು ಇದೆ."
+        },
+        {
+          "say": "ನೀವು ಹೆಸರು use ಮಾಡಿದಾಗ, Python box ಒಳಗೆ ನೋಡಿ ಈಗ ಇರುವ value ಅನ್ನು use ಮಾಡುತ್ತೆ."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "video",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "ಒಂದು value ಅನ್ನು ಇಡುವ, computer memory ಯಲ್ಲಿನ ಹೆಸರಿರುವ box, pharmacy shelf ಮೇಲಿನ label ಇರುವ box ತರಹ."
+    },
+    {
+      "meaning": "Variable ಒಳಗೆ ಇಟ್ಟಿರುವುದು, ಉದಾ: 500 ಅಥವಾ \"Paracetamol\"."
+    },
+    {
+      "meaning": "Variable ನಲ್ಲಿ value ಇಡೋದು. Python ನಲ್ಲಿ = ಅಂದ್ರೆ \"ಇಡು\", \"ಸಮ\" ಅಲ್ಲ."
+    },
+    {
+      "meaning": "Python ತನಗಾಗಿ ಇಟ್ಟುಕೊಂಡಿರುವ ಪದ, ಉದಾ: True, if, for. ಇದನ್ನು variable ಹೆಸರಾಗಿ use ಮಾಡಲು ಆಗಲ್ಲ."
+    },
+    {
+      "meaning": "Value ಯಾವ ರೀತಿಯದು: ಪೂರ್ಣ ಸಂಖ್ಯೆ, ದಶಮಾಂಶ ಸಂಖ್ಯೆ, text, ಅಥವಾ True/False."
+    },
+    {
+      "meaning": "ದಶಮಾಂಶ ಇಲ್ಲದ ಪೂರ್ಣ ಸಂಖ್ಯೆ, ಉದಾ: 30 tablets."
+    },
+    {
+      "meaning": "ದಶಮಾಂಶ ಇರುವ ಸಂಖ್ಯೆ, ಉದಾ: 52.5 kg ತೂಕ."
+    },
+    {
+      "meaning": "True ಅಥವಾ False ಮಾತ್ರ ಆಗಿರುವ value, ಉದಾ: ಔಷಧಿ stock ನಲ್ಲಿ ಇದೆಯಾ ಇಲ್ವಾ."
+    },
+    {
+      "meaning": "ಒಂದು value ನ data type ತೋರಿಸುತ್ತೆ. type(52.5) ಕೊಡೋದು <class 'float'>."
+    },
+    {
+      "meaning": "ತಪ್ಪು data type ನ value use ಮಾಡಿದ್ದೀರಿ ಅನ್ನುವ error, ಉದಾ: text ಮತ್ತು number ಕೂಡಿಸೋದು."
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "course": "bp101t",
+  "lesson": "1-3",
+  "voices": {
+    "en": "Mary",
+    "hi": "Rani",
+    "kn": "Anu"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program stores a patient's details in variables, and then uses them. Watch the Variables panel as each line runs.",
+        "The first line is a comment. It tells us what the program is about.",
+        "Here, the equals sign means store. Python stores the text Ananya in a box called patient name. It's in quotes, so it's a string.",
+        "weight K G stores fifty-two point five. It has a decimal point, so its data type is float.",
+        "dose M G per K G stores ten, a whole number. Its data type is int, short for integer.",
+        "in stock stores True, with a capital T. Values that are only True or False are called booleans.",
+        "Now print uses the variables. Python looks inside each box and shows the values.",
+        "Python multiplies fifty-two point five by ten. One of them is a float, so the answer is a float too: five hundred and twenty-five point zero.",
+        "Finally, Python shows the boolean. You have just stored and used four different data types."
+      ],
+      "display": [
+        "This program stores a patient's details in variables, and then uses them. Watch the Variables panel as each line runs.",
+        "The first line is a comment. It tells us what the program is about.",
+        "Here, the equals sign means store. Python stores the text Ananya in a box called patient_name. It's in quotes, so it's a string.",
+        "weight_kg stores fifty-two point five. It has a decimal point, so its data type is float.",
+        "dose_mg_per_kg stores ten, a whole number. Its data type is int, short for integer.",
+        "in_stock stores True, with a capital T. Values that are only True or False are called booleans.",
+        "Now print uses the variables. Python looks inside each box and shows the values.",
+        "Python multiplies fifty-two point five by ten. One of them is a float, so the answer is a float too: five hundred and twenty-five point zero.",
+        "Finally, Python shows the boolean. You have just stored and used four different data types."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह प्रोग्राम एक पेशेंट की डिटेल्स वेरिएबल्स में रखता है, और फिर उन्हें यूज़ करता है। हर लाइन चलते समय वेरिएबल्स पैनल देखिए।",
+        "पहली लाइन एक कमेंट है। यह बताती है कि प्रोग्राम किस बारे में है।",
+        "यहाँ इक्वल्स साइन का मतलब है रखो। पाइथन, टेक्स्ट अनन्या को पेशेंट नेम नाम के बॉक्स में रखता है। यह कोट्स में है, इसलिए यह स्ट्रिंग है।",
+        "वेट के जी में बावन दशमलव पाँच रखा गया है। इसमें दशमलव है, इसलिए इसका डेटा टाइप फ्लोट है।",
+        "डोज़ एम जी पर के जी में दस रखा गया है, एक पूरी संख्या। इसका डेटा टाइप इंट है, यानी इंटीजर।",
+        "इन स्टॉक में ट्रू रखा गया है, कैपिटल टी के साथ। जो वैल्यूज़ सिर्फ ट्रू या फॉल्स होती हैं, उन्हें बूलियन्स कहते हैं।",
+        "अब प्रिंट वेरिएबल्स यूज़ करता है। पाइथन हर बॉक्स के अंदर देखकर वैल्यूज़ दिखाता है।",
+        "पाइथन बावन दशमलव पाँच को दस से गुणा करता है। इनमें से एक फ्लोट है, इसलिए आंसर भी फ्लोट है: पाँच सौ पच्चीस दशमलव शून्य।",
+        "आखिर में पाइथन बूलियन दिखाता है। आपने अभी चार अलग-अलग डेटा टाइप्स रखकर यूज़ किए।"
+      ],
+      "display": [
+        "यह program एक patient की details variables में रखता है, और फिर उन्हें use करता है। हर line चलते समय Variables panel देखिए।",
+        "पहली line एक comment है। यह बताती है कि program किस बारे में है।",
+        "यहाँ equals sign का मतलब है रखो। Python, text Ananya को patient_name नाम के box में रखता है। यह quotes में है, इसलिए यह string है।",
+        "weight_kg में बावन दशमलव पाँच रखा गया है। इसमें दशमलव है, इसलिए इसका data type float है।",
+        "dose_mg_per_kg में दस रखा गया है, एक पूरी संख्या। इसका data type int है, यानी integer।",
+        "in_stock में True रखा गया है, capital T के साथ। जो values सिर्फ True या False होती हैं, उन्हें booleans कहते हैं।",
+        "अब print variables use करता है। Python हर box के अंदर देखकर values दिखाता है।",
+        "Python बावन दशमलव पाँच को दस से गुणा करता है। इनमें से एक float है, इसलिए answer भी float है: पाँच सौ पच्चीस दशमलव शून्य।",
+        "आखिर में Python boolean दिखाता है। आपने अभी चार अलग-अलग data types रखकर use किए।"
+      ],
+      "displayHinglish": [
+        "Yeh program ek patient ki details variables mein rakhta hai, aur phir unhe use karta hai. Har line chalte samay Variables panel dekhiye.",
+        "Pehli line ek comment hai. Yeh batati hai ki program kis baare mein hai.",
+        "Yahan equals sign ka matlab hai rakho. Python, text Ananya ko patient_name naam ke box mein rakhta hai. Yeh quotes mein hai, isliye yeh string hai.",
+        "weight_kg mein baavan dashamlav paanch rakha gaya hai. Isme dashamlav hai, isliye iska data type float hai.",
+        "dose_mg_per_kg mein das rakha gaya hai, ek poori sankhya. Iska data type int hai, yaani integer.",
+        "in_stock mein True rakha gaya hai, capital T ke saath. Jo values sirf True ya False hoti hain, unhe booleans kehte hain.",
+        "Ab print variables use karta hai. Python har box ke andar dekhkar values dikhata hai.",
+        "Python baavan dashamlav paanch ko das se guna karta hai. Inme se ek float hai, isliye answer bhi float hai: paanch sau pachchees dashamlav shoonya.",
+        "Aakhir mein Python boolean dikhata hai. Aapne abhi chaar alag-alag data types rakhkar use kiye."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ ಪ್ರೋಗ್ರಾಮ್ ಒಬ್ಬ ಪೇಷೆಂಟ್ ನ ಡೀಟೇಲ್ಸ್ ಅನ್ನು ವೇರಿಯಬಲ್ಸ್ ನಲ್ಲಿ ಇಟ್ಟು, ಆಮೇಲೆ ಅವನ್ನು ಯೂಸ್ ಮಾಡುತ್ತೆ. ಪ್ರತಿ ಲೈನ್ ರನ್ ಆಗುವಾಗ ವೇರಿಯಬಲ್ಸ್ ಪ್ಯಾನೆಲ್ ನೋಡಿ.",
+        "ಮೊದಲ ಲೈನ್ ಒಂದು ಕಾಮೆಂಟ್. ಪ್ರೋಗ್ರಾಮ್ ಯಾವುದರ ಬಗ್ಗೆ ಅಂತ ಅದು ಹೇಳುತ್ತೆ.",
+        "ಇಲ್ಲಿ ಈಕ್ವಲ್ಸ್ ಸೈನ್ ಅಂದ್ರೆ ಇಡು. ಪೈಥಾನ್, ಅನನ್ಯಾ ಅನ್ನುವ ಟೆಕ್ಸ್ಟ್ ಅನ್ನು ಪೇಷೆಂಟ್ ನೇಮ್ ಅನ್ನುವ ಬಾಕ್ಸ್ ನಲ್ಲಿ ಇಡುತ್ತೆ. ಅದು ಕೋಟ್ಸ್ ನಲ್ಲಿದೆ, ಹಾಗಾಗಿ ಅದು ಸ್ಟ್ರಿಂಗ್.",
+        "ವೇಟ್ ಕೆ ಜಿ ನಲ್ಲಿ ಐವತ್ತೆರಡು ದಶಮಾಂಶ ಐದು ಇಡಲಾಗಿದೆ. ಅದರಲ್ಲಿ ದಶಮಾಂಶ ಇದೆ, ಹಾಗಾಗಿ ಅದರ ಡೇಟಾ ಟೈಪ್ ಫ್ಲೋಟ್.",
+        "ಡೋಸ್ ಎಮ್ ಜಿ ಪರ್ ಕೆ ಜಿ ನಲ್ಲಿ ಹತ್ತು ಇಡಲಾಗಿದೆ, ಒಂದು ಪೂರ್ಣ ಸಂಖ್ಯೆ. ಅದರ ಡೇಟಾ ಟೈಪ್ ಇಂಟ್, ಅಂದ್ರೆ ಇಂಟಿಜರ್.",
+        "ಇನ್ ಸ್ಟಾಕ್ ನಲ್ಲಿ ಟ್ರೂ ಇಡಲಾಗಿದೆ, ಕ್ಯಾಪಿಟಲ್ ಟಿ ಜೊತೆ. ಟ್ರೂ ಅಥವಾ ಫಾಲ್ಸ್ ಮಾತ್ರ ಆಗಿರುವ ವ್ಯಾಲ್ಯೂಸ್ ಗೆ ಬೂಲಿಯನ್ಸ್ ಅಂತಾರೆ.",
+        "ಈಗ ಪ್ರಿಂಟ್ ವೇರಿಯಬಲ್ಸ್ ಅನ್ನು ಯೂಸ್ ಮಾಡುತ್ತೆ. ಪೈಥಾನ್ ಪ್ರತಿ ಬಾಕ್ಸ್ ಒಳಗೆ ನೋಡಿ ವ್ಯಾಲ್ಯೂಸ್ ತೋರಿಸುತ್ತೆ.",
+        "ಪೈಥಾನ್ ಐವತ್ತೆರಡು ದಶಮಾಂಶ ಐದನ್ನು ಹತ್ತರಿಂದ ಗುಣಿಸುತ್ತೆ. ಅದರಲ್ಲಿ ಒಂದು ಫ್ಲೋಟ್, ಹಾಗಾಗಿ ಆನ್ಸರ್ ಕೂಡ ಫ್ಲೋಟ್: ಐನೂರ ಇಪ್ಪತ್ತೈದು ದಶಮಾಂಶ ಸೊನ್ನೆ.",
+        "ಕೊನೆಗೆ ಪೈಥಾನ್ ಬೂಲಿಯನ್ ತೋರಿಸುತ್ತೆ. ನೀವು ಈಗಷ್ಟೇ ನಾಲ್ಕು ಬೇರೆ ಬೇರೆ ಡೇಟಾ ಟೈಪ್ಸ್ ಅನ್ನು ಇಟ್ಟು ಯೂಸ್ ಮಾಡಿದ್ದೀರಿ."
+      ],
+      "display": [
+        "ಈ program ಒಬ್ಬ patient ನ details ಅನ್ನು variables ನಲ್ಲಿ ಇಟ್ಟು, ಆಮೇಲೆ ಅವನ್ನು use ಮಾಡುತ್ತೆ. ಪ್ರತಿ line run ಆಗುವಾಗ Variables panel ನೋಡಿ.",
+        "ಮೊದಲ line ಒಂದು comment. Program ಯಾವುದರ ಬಗ್ಗೆ ಅಂತ ಅದು ಹೇಳುತ್ತೆ.",
+        "ಇಲ್ಲಿ equals sign ಅಂದ್ರೆ ಇಡು. Python, Ananya ಅನ್ನುವ text ಅನ್ನು patient_name ಅನ್ನುವ box ನಲ್ಲಿ ಇಡುತ್ತೆ. ಅದು quotes ನಲ್ಲಿದೆ, ಹಾಗಾಗಿ ಅದು string.",
+        "weight_kg ನಲ್ಲಿ ಐವತ್ತೆರಡು ದಶಮಾಂಶ ಐದು ಇಡಲಾಗಿದೆ. ಅದರಲ್ಲಿ ದಶಮಾಂಶ ಇದೆ, ಹಾಗಾಗಿ ಅದರ data type float.",
+        "dose_mg_per_kg ನಲ್ಲಿ ಹತ್ತು ಇಡಲಾಗಿದೆ, ಒಂದು ಪೂರ್ಣ ಸಂಖ್ಯೆ. ಅದರ data type int, ಅಂದ್ರೆ integer.",
+        "in_stock ನಲ್ಲಿ True ಇಡಲಾಗಿದೆ, capital T ಜೊತೆ. True ಅಥವಾ False ಮಾತ್ರ ಆಗಿರುವ values ಗೆ booleans ಅಂತಾರೆ.",
+        "ಈಗ print variables ಅನ್ನು use ಮಾಡುತ್ತೆ. Python ಪ್ರತಿ box ಒಳಗೆ ನೋಡಿ values ತೋರಿಸುತ್ತೆ.",
+        "Python ಐವತ್ತೆರಡು ದಶಮಾಂಶ ಐದನ್ನು ಹತ್ತರಿಂದ ಗುಣಿಸುತ್ತೆ. ಅದರಲ್ಲಿ ಒಂದು float, ಹಾಗಾಗಿ answer ಕೂಡ float: ಐನೂರ ಇಪ್ಪತ್ತೈದು ದಶಮಾಂಶ ಸೊನ್ನೆ.",
+        "ಕೊನೆಗೆ Python boolean ತೋರಿಸುತ್ತೆ. ನೀವು ಈಗಷ್ಟೇ ನಾಲ್ಕು ಬೇರೆ ಬೇರೆ data types ಅನ್ನು ಇಟ್ಟು use ಮಾಡಿದ್ದೀರಿ."
+      ]
+    },
+    {
+      "id": "anim-boxes",
+      "prefix": "anim-boxes-",
+      "lang": "en",
+      "tts": [
+        "A variable is like a labelled box on a pharmacy shelf. The label is the name, and inside is the value.",
+        "Different boxes can hold different kinds of values: text, a decimal number, or True or False.",
+        "Python remembers the kind of value in each box. This is called its data type: int, string, float and bool.",
+        "You can change what's inside. Now the dose M G box holds six hundred and fifty, not five hundred.",
+        "When you use the name, Python looks inside the box and uses the value that's there now."
+      ],
+      "display": [
+        "A variable is like a labelled box on a pharmacy shelf. The label is the name, and inside is the value.",
+        "Different boxes can hold different kinds of values: text, a decimal number, or True or False.",
+        "Python remembers the kind of value in each box. This is called its data type: int, str, float and bool.",
+        "You can change what's inside. Now the dose_mg box holds six hundred and fifty, not five hundred.",
+        "When you use the name, Python looks inside the box and uses the value that's there now."
+      ]
+    },
+    {
+      "id": "anim-boxes",
+      "prefix": "anim-boxes-",
+      "lang": "hi",
+      "tts": [
+        "वेरिएबल, फार्मेसी की शेल्फ पर रखे लेबल लगे बॉक्स जैसा है। लेबल उसका नाम है, और अंदर वैल्यू है।",
+        "अलग-अलग बॉक्स अलग तरह की वैल्यूज़ रख सकते हैं: टेक्स्ट, दशमलव वाली संख्या, या ट्रू या फॉल्स।",
+        "पाइथन याद रखता है कि हर बॉक्स में किस तरह की वैल्यू है। इसे डेटा टाइप कहते हैं: इंट, स्ट्र, फ्लोट और बूल।",
+        "आप अंदर की चीज़ बदल सकते हैं। अब डोज़ एम जी बॉक्स में पाँच सौ नहीं, साढ़े छह सौ है।",
+        "जब आप नाम यूज़ करते हैं, पाइथन बॉक्स के अंदर देखकर अभी वाली वैल्यू यूज़ करता है।"
+      ],
+      "display": [
+        "Variable, pharmacy की shelf पर रखे label लगे box जैसा है। Label उसका नाम है, और अंदर value है।",
+        "अलग-अलग boxes अलग तरह की values रख सकते हैं: text, दशमलव वाली संख्या, या True या False।",
+        "Python याद रखता है कि हर box में किस तरह की value है। इसे data type कहते हैं: int, str, float और bool।",
+        "आप अंदर की चीज़ बदल सकते हैं। अब dose_mg box में पाँच सौ नहीं, साढ़े छह सौ है।",
+        "जब आप नाम use करते हैं, Python box के अंदर देखकर अभी वाली value use करता है।"
+      ],
+      "displayHinglish": [
+        "Variable, pharmacy ki shelf par rakhe label lage box jaisa hai. Label uska naam hai, aur andar value hai.",
+        "Alag-alag boxes alag tarah ki values rakh sakte hain: text, dashamlav wali sankhya, ya True ya False.",
+        "Python yaad rakhta hai ki har box mein kis tarah ki value hai. Ise data type kehte hain: int, str, float aur bool.",
+        "Aap andar ki cheez badal sakte hain. Ab dose_mg box mein paanch sau nahi, saadhe chhe sau hai.",
+        "Jab aap naam use karte hain, Python box ke andar dekhkar abhi wali value use karta hai."
+      ]
+    },
+    {
+      "id": "anim-boxes",
+      "prefix": "anim-boxes-",
+      "lang": "kn",
+      "tts": [
+        "ವೇರಿಯಬಲ್, ಫಾರ್ಮಸಿ ಶೆಲ್ಫ್ ಮೇಲಿನ ಲೇಬಲ್ ಇರುವ ಬಾಕ್ಸ್ ತರಹ. ಲೇಬಲ್ ಅದರ ಹೆಸರು, ಮತ್ತು ಒಳಗಿರೋದು ವ್ಯಾಲ್ಯೂ.",
+        "ಬೇರೆ ಬೇರೆ ಬಾಕ್ಸ್ ಗಳು ಬೇರೆ ರೀತಿಯ ವ್ಯಾಲ್ಯೂಸ್ ಇಡಬಹುದು: ಟೆಕ್ಸ್ಟ್, ದಶಮಾಂಶ ಸಂಖ್ಯೆ, ಅಥವಾ ಟ್ರೂ ಅಥವಾ ಫಾಲ್ಸ್.",
+        "ಪ್ರತಿ ಬಾಕ್ಸ್ ನಲ್ಲಿ ಯಾವ ರೀತಿಯ ವ್ಯಾಲ್ಯೂ ಇದೆ ಅಂತ ಪೈಥಾನ್ ನೆನಪಿಟ್ಟುಕೊಳ್ಳುತ್ತೆ. ಇದನ್ನು ಡೇಟಾ ಟೈಪ್ ಅಂತಾರೆ: ಇಂಟ್, ಸ್ಟ್ರ್, ಫ್ಲೋಟ್ ಮತ್ತು ಬೂಲ್.",
+        "ಒಳಗಿರುವುದನ್ನು ಬದಲಾಯಿಸಬಹುದು. ಈಗ ಡೋಸ್ ಎಮ್ ಜಿ ಬಾಕ್ಸ್ ನಲ್ಲಿ ಐನೂರು ಅಲ್ಲ, ಆರುನೂರ ಐವತ್ತು ಇದೆ.",
+        "ನೀವು ಹೆಸರು ಯೂಸ್ ಮಾಡಿದಾಗ, ಪೈಥಾನ್ ಬಾಕ್ಸ್ ಒಳಗೆ ನೋಡಿ ಈಗ ಇರುವ ವ್ಯಾಲ್ಯೂ ಅನ್ನು ಯೂಸ್ ಮಾಡುತ್ತೆ."
+      ],
+      "display": [
+        "Variable, pharmacy shelf ಮೇಲಿನ label ಇರುವ box ತರಹ. Label ಅದರ ಹೆಸರು, ಮತ್ತು ಒಳಗಿರೋದು value.",
+        "ಬೇರೆ ಬೇರೆ boxes ಬೇರೆ ರೀತಿಯ values ಇಡಬಹುದು: text, ದಶಮಾಂಶ ಸಂಖ್ಯೆ, ಅಥವಾ True ಅಥವಾ False.",
+        "ಪ್ರತಿ box ನಲ್ಲಿ ಯಾವ ರೀತಿಯ value ಇದೆ ಅಂತ Python ನೆನಪಿಟ್ಟುಕೊಳ್ಳುತ್ತೆ. ಇದನ್ನು data type ಅಂತಾರೆ: int, str, float ಮತ್ತು bool.",
+        "ಒಳಗಿರುವುದನ್ನು ಬದಲಾಯಿಸಬಹುದು. ಈಗ dose_mg box ನಲ್ಲಿ ಐನೂರು ಅಲ್ಲ, ಆರುನೂರ ಐವತ್ತು ಇದೆ.",
+        "ನೀವು ಹೆಸರು use ಮಾಡಿದಾಗ, Python box ಒಳಗೆ ನೋಡಿ ಈಗ ಇರುವ value ಅನ್ನು use ಮಾಡುತ್ತೆ."
+      ]
+    }
+  ]
+}

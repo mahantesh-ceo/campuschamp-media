@@ -1,0 +1,771 @@
+{
+  "id": "1-3",
+  "course": "bp101t",
+  "unit": "Unit I",
+  "unitTitle": "Introduction to Python programming",
+  "number": "1.3",
+  "title": "Variables and data types",
+  "minutes": 14,
+  "free": true,
+  "audioLanguages": [
+    "en",
+    "hi",
+    "kn"
+  ],
+  "hook": {
+    "title": "Store a patient's details in labelled boxes",
+    "md": "A pharmacist keeps medicines in **labelled boxes** so the right one can be found instantly. Python stores information the same way, in **variables**.\n\nBy the end of this lesson, you'll store a patient's name, weight and dose in variables, and calculate a dose from them."
+  },
+  "learn": [
+    "What a **variable** is, and how to store and change a value",
+    "The rules for **naming variables**",
+    "The four basic **data types**: integers, floats, strings and booleans"
+  ],
+  "explanation": [
+    {
+      "heading": "What is a variable?",
+      "md": "Think of a **labelled box** on a pharmacy shelf. The label tells you what's inside; the box holds the item.\n\nA **variable** works the same way. It has a **name** (the label) and holds a **value** (what's inside):\n\n```python\ndose_mg = 500\n```\n\nRead the `=` sign as **\"store\"**: *store 500 in a box called `dose_mg`*. This is called **assignment**. It does not mean \"equals\" as in maths.\n\nOnce a value is stored, you can use it by its name, and you can replace it any time:\n\n```python\ndose_mg = 500\ndose_mg = 650\nprint(\"Dose:\", dose_mg, \"mg\")\n```\n\nThis prints `Dose: 650 mg`, because the box now holds 650.",
+      "callout": {
+        "type": "definition",
+        "title": "Variable",
+        "md": "A named place in the computer's memory that stores a value, like a labelled box on a shelf."
+      }
+    },
+    {
+      "heading": "Naming your variables",
+      "md": "Variable names follow a few rules:\n\n- Use **letters, numbers and underscores** (`_`) only, e.g. `dose_mg`, `patient2`.\n- **Don't start with a number**: `2nd_dose` is not allowed; `dose_2` is fine.\n- **No spaces**: write `patient_weight`, not `patient weight`.\n- Names are **case-sensitive**: `weight` and `Weight` are two different variables.\n- **Don't use Python's own words**, like `True`, `if` or `for`. These are **keywords** with special meanings.\n\n**Good habit:** choose names that say what's inside, in small letters with underscores, like `patient_weight_kg`. Names like `x` or `a1` make code hard to understand later."
+    },
+    {
+      "heading": "The four basic data types",
+      "md": "Every value has a **data type**, which tells Python what kind of value it is.\n\n| Data type | Python name | What it holds | Pharmacy example |\n|---|---|---|---|\n| **Integer** | `int` | Whole numbers | `tablets = 30` |\n| **Float** | `float` | Numbers with a decimal point | `weight_kg = 52.5` |\n| **String** | `str` | Text, inside quotes | `drug = \"Amoxicillin\"` |\n| **Boolean** | `bool` | Only `True` or `False` | `in_stock = True` |\n\nNotice: `True` and `False` start with a **capital letter**, and have **no quotes**.",
+      "callout": {
+        "type": "definition",
+        "title": "Data type",
+        "md": "The kind of value something is: a whole number (int), a decimal number (float), text (str) or True/False (bool)."
+      }
+    },
+    {
+      "heading": "Checking the type with type()",
+      "md": "Not sure what type a value is? Ask Python with `type()`:\n\n```python\nprint(type(500))\nprint(type(52.5))\nprint(type(\"500\"))\nprint(type(True))\n```\n\nThis prints:\n\n```\n<class 'int'>\n<class 'float'>\n<class 'str'>\n<class 'bool'>\n```\n\nLook closely at the third line: `\"500\"` is in **quotes**, so it is **text**, not a number."
+    },
+    {
+      "heading": "Why data types matter",
+      "md": "Python treats numbers and text very differently. Compare these:\n\n```python\ndose = 500\nprint(dose * 3)\n```\n\nprints `1500`, but\n\n```python\ndose = \"500\"\nprint(dose * 3)\n```\n\nprints `500500500`. With text, `*` **repeats** the text instead of multiplying.",
+      "callout": {
+        "type": "warning",
+        "title": "In a pharmacy, this matters",
+        "md": "A number accidentally stored as text can turn a 1500 mg dose into a meaningless 500500500. Always check that doses and weights are numbers, not strings."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "This program stores a patient's details in variables and then uses them. Watch the Variables panel as each line runs.",
+    "filename": "patient_record.py",
+    "code": "# Patient record\npatient_name = \"Ananya\"\nweight_kg = 52.5\ndose_mg_per_kg = 10\nin_stock = True\nprint(patient_name, \"weighs\", weight_kg, \"kg\")\nprint(\"Dose:\", weight_kg * dose_mg_per_kg, \"mg\")\nprint(\"In stock:\", in_stock)",
+    "output": "Ananya weighs 52.5 kg\nDose: 525.0 mg\nIn stock: True",
+    "steps": [
+      {
+        "line": null,
+        "say": "This program stores a patient's details in variables, and then uses them. Watch the Variables panel as each line runs.",
+        "output": null,
+        "audio": "step-01.mp3"
+      },
+      {
+        "line": 1,
+        "say": "The first line is a comment. It tells us what the program is about.",
+        "output": null,
+        "audio": "step-02.mp3"
+      },
+      {
+        "line": 2,
+        "say": "Here, the equals sign means store. Python stores the text Ananya in a box called patient_name. It's in quotes, so it's a string.",
+        "output": null,
+        "audio": "step-03.mp3",
+        "vars": {
+          "patient_name": "\"Ananya\""
+        }
+      },
+      {
+        "line": 3,
+        "say": "weight_kg stores fifty-two point five. It has a decimal point, so its data type is float.",
+        "output": null,
+        "audio": "step-04.mp3",
+        "vars": {
+          "weight_kg": "52.5"
+        }
+      },
+      {
+        "line": 4,
+        "say": "dose_mg_per_kg stores ten, a whole number. Its data type is int, short for integer.",
+        "output": null,
+        "audio": "step-05.mp3",
+        "vars": {
+          "dose_mg_per_kg": "10"
+        }
+      },
+      {
+        "line": 5,
+        "say": "in_stock stores True, with a capital T. Values that are only True or False are called booleans.",
+        "output": null,
+        "audio": "step-06.mp3",
+        "vars": {
+          "in_stock": "True"
+        }
+      },
+      {
+        "line": 6,
+        "say": "Now print uses the variables. Python looks inside each box and shows the values.",
+        "output": "Ananya weighs 52.5 kg",
+        "audio": "step-07.mp3"
+      },
+      {
+        "line": 7,
+        "say": "Python multiplies fifty-two point five by ten. One of them is a float, so the answer is a float too: five hundred and twenty-five point zero.",
+        "output": "Dose: 525.0 mg",
+        "audio": "step-08.mp3"
+      },
+      {
+        "line": 8,
+        "say": "Finally, Python shows the boolean. You have just stored and used four different data types.",
+        "output": "In stock: True",
+        "audio": "step-09.mp3"
+      }
+    ],
+    "keyTerms": [
+      {
+        "term": "=",
+        "meaning": "Store the value on the right in the variable on the left."
+      },
+      {
+        "term": "int / float",
+        "meaning": "Whole number / number with a decimal point."
+      },
+      {
+        "term": "str",
+        "meaning": "Text inside quotes."
+      },
+      {
+        "term": "bool",
+        "meaning": "True or False."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "These two errors are the most common when you start using variables.",
+    "examples": [
+      {
+        "title": "Using a name that doesn't exist",
+        "code": "dose_mg = 500\nprint(dose)",
+        "output": "NameError: name 'dose' is not defined",
+        "errorLine": 2,
+        "md": "The variable is called `dose_mg`, but line 2 asks for `dose`. Python only knows the exact names you created. Check the spelling, including capital letters."
+      },
+      {
+        "title": "Joining text and a number with +",
+        "code": "print(\"Dose: \" + 500)",
+        "output": "TypeError: can only concatenate str (not \"int\") to str",
+        "errorLine": 1,
+        "md": "`+` can join two strings, but it can't join a **string** and an **integer**. The easiest fix is to separate them with a comma instead: `print(\"Dose:\", 500)`. You'll learn another fix in Lesson 1.4.",
+        "callout": {
+          "type": "definition",
+          "title": "TypeError",
+          "md": "An error that means you used a value of the wrong data type for that action."
+        }
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Putting a space in a variable name, e.g. `patient weight = 52`",
+      "see": "SyntaxError: invalid syntax",
+      "fix": "Use an underscore: `patient_weight = 52`."
+    },
+    {
+      "mistake": "Starting a name with a number, e.g. `2nd_dose = 250`",
+      "see": "SyntaxError: invalid decimal literal",
+      "fix": "Put the number later: `dose_2 = 250`."
+    },
+    {
+      "mistake": "Using a hyphen in a name, e.g. `dose-mg = 500`",
+      "see": "SyntaxError: cannot assign to expression here. Maybe you meant '==' instead of '='?",
+      "fix": "Python reads `-` as minus. Use an underscore: `dose_mg = 500`."
+    },
+    {
+      "mistake": "Writing `true` in small letters",
+      "see": "NameError: name 'true' is not defined. Did you mean: 'True'?",
+      "fix": "Booleans start with a capital letter: `True`, `False`."
+    },
+    {
+      "mistake": "Putting a number in quotes, e.g. `dose = \"500\"`",
+      "see": "No error, but `dose * 3` gives 500500500",
+      "fix": "Leave numbers without quotes: `dose = 500`."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1",
+      "title": "Print a label from variables",
+      "md": "The variables are ready. Add one line that prints the drug and its strength **using the variables**, so the output is exactly:",
+      "expectedOutput": "Paracetamol 500 mg",
+      "starterCode": "drug = \"Paracetamol\"\nstrength_mg = 500\n# Print the label using the two variables\n",
+      "hints": [
+        "print() can show several items separated by commas.",
+        "Try print(drug, strength_mg, \"mg\")."
+      ],
+      "solution": "drug = \"Paracetamol\"\nstrength_mg = 500\n# Print the label using the two variables\nprint(drug, strength_mg, \"mg\")",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "print(drug",
+          "strength_mg"
+        ]
+      }
+    },
+    {
+      "id": "t2",
+      "title": "Calculate a child's dose",
+      "md": "Rohan weighs **18 kg**, and the dose is **15 mg per kg**. Store the name, weight and dose per kg in variables called `patient`, `weight_kg` and `dose_mg_per_kg`, then print:\n\n*(For learning only: real doses must follow clinical guidelines.)*",
+      "expectedOutput": "Rohan needs 270 mg",
+      "starterCode": "# Store the details in three variables\n\n# Print the dose\n",
+      "hints": [
+        "patient = \"Rohan\" stores the name. Do the same for weight_kg and dose_mg_per_kg.",
+        "Let Python multiply: print(patient, \"needs\", weight_kg * dose_mg_per_kg, \"mg\")."
+      ],
+      "solution": "# Store the details in three variables\npatient = \"Rohan\"\nweight_kg = 18\ndose_mg_per_kg = 15\n# Print the dose\nprint(patient, \"needs\", weight_kg * dose_mg_per_kg, \"mg\")",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "weight_kg * dose_mg_per_kg"
+        ]
+      }
+    },
+    {
+      "id": "t3",
+      "title": "What type is it?",
+      "md": "Use `type()` to print the data type of the value `52.5`. The output should be exactly:",
+      "expectedOutput": "<class 'float'>",
+      "starterCode": "# Print the type of 52.5\n",
+      "hints": [
+        "Put the value inside type(), and type() inside print()."
+      ],
+      "solution": "# Print the type of 52.5\nprint(type(52.5))",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "type(52.5)"
+        ]
+      }
+    },
+    {
+      "id": "t4",
+      "title": "Find the bug",
+      "md": "This program should print `In stock: True`, but it has an error. Fix it.",
+      "expectedOutput": "In stock: True",
+      "starterCode": "in_stock = true\nprint(\"In stock:\", in_stock)",
+      "hints": [
+        "Python is case-sensitive."
+      ],
+      "solution": "in_stock = True\nprint(\"In stock:\", in_stock)",
+      "solutionNote": "Booleans are written True and False, with a capital letter.",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": []
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is the data type of 52.5?",
+      "options": [
+        "int",
+        "float",
+        "str",
+        "bool"
+      ],
+      "answer": 1,
+      "why": "52.5 has a decimal point, so it is a float."
+    },
+    {
+      "q": "Which of these is a valid variable name?",
+      "options": [
+        "patient_weight",
+        "patient weight",
+        "2nd_dose",
+        "dose-mg"
+      ],
+      "answer": 0,
+      "why": "Names can use letters, numbers and underscores, can't contain spaces or hyphens, and can't start with a number.",
+      "code": true
+    },
+    {
+      "q": "What does dose_mg = 500 do?",
+      "options": [
+        "Checks if dose_mg equals 500",
+        "Stores 500 in a variable called dose_mg",
+        "Prints 500",
+        "Adds 500 to dose_mg"
+      ],
+      "answer": 1,
+      "why": "= means store: the value on the right goes into the variable on the left."
+    },
+    {
+      "q": "What does print(type(\"500\")) show?",
+      "options": [
+        "<class 'int'>",
+        "<class 'float'>",
+        "<class 'str'>",
+        "<class 'bool'>"
+      ],
+      "answer": 2,
+      "why": "\"500\" is in quotes, so it is text (a string), not a number.",
+      "code": true
+    },
+    {
+      "q": "in_stock = True. What is the data type of in_stock?",
+      "options": [
+        "str",
+        "int",
+        "bool",
+        "float"
+      ],
+      "answer": 2,
+      "why": "True and False are booleans (bool)."
+    }
+  ],
+  "exam": {
+    "note": "Important questions for practice. Actual university questions may differ.",
+    "short": [
+      {
+        "q": "What is a variable? Give an example.",
+        "marks": 2,
+        "md": "A **variable** is a named location in memory used to store a value. A value is stored in it using `=`. Example: `dose_mg = 500` stores the integer 500 in the variable `dose_mg`."
+      },
+      {
+        "q": "List the four basic data types in Python with an example of each.",
+        "marks": 2,
+        "md": "1. **int** (integer): whole numbers, e.g. `tablets = 30`\n2. **float**: numbers with a decimal point, e.g. `weight_kg = 52.5`\n3. **str** (string): text in quotes, e.g. `drug = \"Amoxicillin\"`\n4. **bool** (boolean): `True` or `False`, e.g. `in_stock = True`"
+      }
+    ],
+    "long": [
+      {
+        "q": "Explain variables and the basic data types in Python with pharmaceutical examples. State the rules for naming variables.",
+        "marks": 5,
+        "md": "**Variables:** A variable is a named location in memory that stores a value. Values are assigned using `=`, e.g. `weight_kg = 52.5`. A variable's value can be changed by assigning a new value, and Python determines the data type automatically.\n\n**Basic data types:**\n1. **Integer (`int`)**: whole numbers without a decimal point. Example: `tablets_per_strip = 10`.\n2. **Float (`float`)**: numbers with a decimal point. Example: `weight_kg = 52.5`, `dose_mg_per_kg = 2.5`.\n3. **String (`str`)**: a sequence of characters enclosed in quotes. Example: `drug_name = \"Paracetamol\"`.\n4. **Boolean (`bool`)**: has only two values, `True` or `False`. Example: `prescription_verified = True`.\n`type()` returns the data type of a value, e.g. `type(52.5)` gives `<class 'float'>`.\n\n**Rules for naming variables:**\n1. Names may contain letters, digits and underscores only.\n2. Names must not begin with a digit.\n3. Spaces and special characters (such as `-`) are not allowed.\n4. Names are case-sensitive (`weight` and `Weight` are different).\n5. Python keywords (e.g. `True`, `if`, `for`) cannot be used as names.\n6. Names should be meaningful, e.g. `patient_weight_kg`."
+      }
+    ]
+  },
+  "mindmap": {
+    "label": "Lesson 1.3 · Variables & data types",
+    "children": [
+      {
+        "label": "Variable",
+        "children": [
+          {
+            "label": "Labelled box"
+          },
+          {
+            "label": "name = value"
+          },
+          {
+            "label": "= means store"
+          },
+          {
+            "label": "Value can change"
+          }
+        ]
+      },
+      {
+        "label": "Naming rules",
+        "children": [
+          {
+            "label": "Letters, numbers, _"
+          },
+          {
+            "label": "Not starting with a number"
+          },
+          {
+            "label": "No spaces"
+          },
+          {
+            "label": "Case-sensitive"
+          },
+          {
+            "label": "No keywords"
+          }
+        ]
+      },
+      {
+        "label": "Data types",
+        "children": [
+          {
+            "label": "int: 30 tablets"
+          },
+          {
+            "label": "float: 52.5 kg"
+          },
+          {
+            "label": "str: \"Amoxicillin\""
+          },
+          {
+            "label": "bool: True / False"
+          }
+        ]
+      },
+      {
+        "label": "type()",
+        "children": [
+          {
+            "label": "Shows the data type"
+          },
+          {
+            "label": "\"500\" is str"
+          }
+        ]
+      },
+      {
+        "label": "Why it matters",
+        "children": [
+          {
+            "label": "500 * 3 = 1500"
+          },
+          {
+            "label": "\"500\" * 3 = 500500500"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError: wrong name"
+          },
+          {
+            "label": "TypeError: text + number"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "A **variable** is a labelled box that stores a **value**; `=` means **store**, not equals.",
+    "Names use **letters, numbers and underscores**, can't start with a number or contain spaces, and are **case-sensitive**.",
+    "The four basic **data types** are **int** (30), **float** (52.5), **str** (\"Amoxicillin\") and **bool** (True / False).",
+    "**`type()`** shows a value's data type; anything in quotes is a **string**, even \"500\".",
+    "Data types change results: `500 * 3` is 1500, but `\"500\" * 3` is 500500500."
+  ],
+  "video": {
+    "videoUrl": null,
+    "searchTerms": [
+      "python variables and data types for beginners",
+      "python int float string boolean explained"
+    ]
+  },
+  "animations": [
+    {
+      "id": "boxes",
+      "title": "Variables are labelled boxes",
+      "afterExplanation": 0,
+      "canvas": {
+        "desktop": {
+          "w": 800,
+          "h": 460
+        },
+        "mobile": {
+          "w": 360,
+          "h": 600
+        }
+      },
+      "actors": [
+        {
+          "id": "dose",
+          "type": "box",
+          "label": "dose_mg",
+          "value": "500",
+          "color": "indigo",
+          "desktop": {
+            "x": 40,
+            "y": 50,
+            "w": 160,
+            "h": 110
+          },
+          "mobile": {
+            "x": 16,
+            "y": 16,
+            "w": 156,
+            "h": 100
+          }
+        },
+        {
+          "id": "drug",
+          "type": "box",
+          "label": "drug",
+          "value": "\"Paracetamol\"",
+          "color": "emerald",
+          "desktop": {
+            "x": 230,
+            "y": 50,
+            "w": 160,
+            "h": 110
+          },
+          "mobile": {
+            "x": 188,
+            "y": 16,
+            "w": 156,
+            "h": 100
+          }
+        },
+        {
+          "id": "weight",
+          "type": "box",
+          "label": "weight_kg",
+          "value": "52.5",
+          "color": "amber",
+          "desktop": {
+            "x": 420,
+            "y": 50,
+            "w": 160,
+            "h": 110
+          },
+          "mobile": {
+            "x": 16,
+            "y": 170,
+            "w": 156,
+            "h": 100
+          }
+        },
+        {
+          "id": "stock",
+          "type": "box",
+          "label": "in_stock",
+          "value": "True",
+          "color": "rose",
+          "desktop": {
+            "x": 610,
+            "y": 50,
+            "w": 160,
+            "h": 110
+          },
+          "mobile": {
+            "x": 188,
+            "y": 170,
+            "w": 156,
+            "h": 100
+          }
+        },
+        {
+          "id": "t_dose",
+          "type": "text",
+          "text": "int",
+          "size": 18,
+          "desktop": {
+            "x": 40,
+            "y": 175,
+            "w": 160,
+            "h": 28
+          },
+          "mobile": {
+            "x": 16,
+            "y": 124,
+            "w": 156,
+            "h": 26
+          }
+        },
+        {
+          "id": "t_drug",
+          "type": "text",
+          "text": "str",
+          "size": 18,
+          "desktop": {
+            "x": 230,
+            "y": 175,
+            "w": 160,
+            "h": 28
+          },
+          "mobile": {
+            "x": 188,
+            "y": 124,
+            "w": 156,
+            "h": 26
+          }
+        },
+        {
+          "id": "t_weight",
+          "type": "text",
+          "text": "float",
+          "size": 18,
+          "desktop": {
+            "x": 420,
+            "y": 175,
+            "w": 160,
+            "h": 28
+          },
+          "mobile": {
+            "x": 16,
+            "y": 278,
+            "w": 156,
+            "h": 26
+          }
+        },
+        {
+          "id": "t_stock",
+          "type": "text",
+          "text": "bool",
+          "size": 18,
+          "desktop": {
+            "x": 610,
+            "y": 175,
+            "w": 160,
+            "h": 28
+          },
+          "mobile": {
+            "x": 188,
+            "y": 278,
+            "w": 156,
+            "h": 26
+          }
+        },
+        {
+          "id": "out",
+          "type": "terminal",
+          "title": "Output",
+          "desktop": {
+            "x": 40,
+            "y": 300,
+            "w": 730,
+            "h": 120
+          },
+          "mobile": {
+            "x": 16,
+            "y": 330,
+            "w": 328,
+            "h": 150
+          }
+        }
+      ],
+      "steps": [
+        {
+          "say": "A variable is like a labelled box on a pharmacy shelf. The label is the name, and inside is the value.",
+          "audio": "anim-boxes-01.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "dose"
+            }
+          ]
+        },
+        {
+          "say": "Different boxes can hold different kinds of values: text, a decimal number, or True or False.",
+          "audio": "anim-boxes-02.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "drug"
+            },
+            {
+              "do": "show",
+              "target": "weight"
+            },
+            {
+              "do": "show",
+              "target": "stock"
+            }
+          ]
+        },
+        {
+          "say": "Python remembers the kind of value in each box. This is called its data type: int, str, float and bool.",
+          "audio": "anim-boxes-03.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "t_dose"
+            },
+            {
+              "do": "show",
+              "target": "t_drug"
+            },
+            {
+              "do": "show",
+              "target": "t_weight"
+            },
+            {
+              "do": "show",
+              "target": "t_stock"
+            }
+          ]
+        },
+        {
+          "say": "You can change what's inside. Now the dose_mg box holds six hundred and fifty, not five hundred.",
+          "audio": "anim-boxes-04.mp3",
+          "actions": [
+            {
+              "do": "setValue",
+              "target": "dose",
+              "value": "650"
+            },
+            {
+              "do": "pulse",
+              "target": "dose"
+            }
+          ]
+        },
+        {
+          "say": "When you use the name, Python looks inside the box and uses the value that's there now.",
+          "audio": "anim-boxes-05.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "out"
+            },
+            {
+              "do": "appendOutput",
+              "target": "out",
+              "text": "Dose: 650 mg"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Variable",
+      "meaning": "A named box in the computer's memory that stores a value, like a labelled box on a pharmacy shelf."
+    },
+    {
+      "term": "Value",
+      "meaning": "What is stored inside a variable, such as 500 or \"Paracetamol\"."
+    },
+    {
+      "term": "Assignment (=)",
+      "meaning": "Storing a value in a variable. In Python, = means \"store\", not \"equals\"."
+    },
+    {
+      "term": "Keyword",
+      "meaning": "A word Python keeps for itself, like True, if or for. You can't use it as a variable name."
+    },
+    {
+      "term": "Data type",
+      "meaning": "The kind of value something is: a whole number, a decimal number, text, or True/False."
+    },
+    {
+      "term": "Integer (int)",
+      "meaning": "A whole number with no decimal point, like 30 tablets."
+    },
+    {
+      "term": "Float",
+      "meaning": "A number with a decimal point, like a weight of 52.5 kg."
+    },
+    {
+      "term": "Boolean (bool)",
+      "meaning": "A value that is only True or False, like whether a medicine is in stock."
+    },
+    {
+      "term": "type()",
+      "meaning": "Shows the data type of a value. type(52.5) gives <class 'float'>."
+    },
+    {
+      "term": "TypeError",
+      "meaning": "An error that means you used a value of the wrong data type, such as adding text and a number."
+    }
+  ]
+}

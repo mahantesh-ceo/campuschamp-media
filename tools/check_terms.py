@@ -66,7 +66,7 @@ def main(ids):
         missing = {}
         for field, text in texts(lesson):
             for term, pattern in JARGON.items():
-                if term.lower() not in known and re.search(pattern, text, re.IGNORECASE if term != "PATH" else 0):
+                if not any(k == term.lower() or k.startswith(term.lower() + " ") for k in known) and re.search(pattern, text, re.IGNORECASE if term != "PATH" else 0):
                     missing.setdefault(term, field.split(".")[0])
         print(f"Lesson {lid}: glossary has {len(lesson.get('glossary', []))} words")
         for term, where in sorted(missing.items()):

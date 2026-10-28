@@ -164,6 +164,58 @@ G = {
             "hinglish": "Libraries install karne ka Python ka tool, jo terminal se chalta hai. Ise Lesson 1.7 mein use karenge.",
             "kn": "Libraries install ಮಾಡುವ Python ನ tool, terminal ಇಂದ use ಮಾಡ್ತಾರೆ. ಇದನ್ನು Lesson 1.7 ನಲ್ಲಿ use ಮಾಡ್ತೀರಿ."}),
     ],
+    "1-3": [
+        ("Variable", {
+            "en": "A named box in the computer's memory that stores a value, like a labelled box on a pharmacy shelf.",
+            "hi": "Computer की memory में एक नाम वाला box जो एक value रखता है, जैसे pharmacy की shelf पर label लगा box।",
+            "hinglish": "Computer ki memory mein ek naam wala box jo ek value rakhta hai, jaise pharmacy ki shelf par label laga box.",
+            "kn": "ಒಂದು value ಅನ್ನು ಇಡುವ, computer memory ಯಲ್ಲಿನ ಹೆಸರಿರುವ box, pharmacy shelf ಮೇಲಿನ label ಇರುವ box ತರಹ."}),
+        ("Value", {
+            "en": "What is stored inside a variable, such as 500 or \"Paracetamol\".",
+            "hi": "Variable के अंदर रखी चीज़, जैसे 500 या \"Paracetamol\"।",
+            "hinglish": "Variable ke andar rakhi cheez, jaise 500 ya \"Paracetamol\".",
+            "kn": "Variable ಒಳಗೆ ಇಟ್ಟಿರುವುದು, ಉದಾ: 500 ಅಥವಾ \"Paracetamol\"."}),
+        ("Assignment (=)", {
+            "en": "Storing a value in a variable. In Python, = means \"store\", not \"equals\".",
+            "hi": "Variable में value रखना। Python में = का मतलब \"रखो\" है, \"बराबर\" नहीं।",
+            "hinglish": "Variable mein value rakhna. Python mein = ka matlab \"rakho\" hai, \"barabar\" nahi.",
+            "kn": "Variable ನಲ್ಲಿ value ಇಡೋದು. Python ನಲ್ಲಿ = ಅಂದ್ರೆ \"ಇಡು\", \"ಸಮ\" ಅಲ್ಲ."}),
+        ("Keyword", {
+            "en": "A word Python keeps for itself, like True, if or for. You can't use it as a variable name.",
+            "hi": "Python का अपना खास शब्द, जैसे True, if या for। इसे variable का नाम नहीं बना सकते।",
+            "hinglish": "Python ka apna khaas shabd, jaise True, if ya for. Ise variable ka naam nahi bana sakte.",
+            "kn": "Python ತನಗಾಗಿ ಇಟ್ಟುಕೊಂಡಿರುವ ಪದ, ಉದಾ: True, if, for. ಇದನ್ನು variable ಹೆಸರಾಗಿ use ಮಾಡಲು ಆಗಲ್ಲ."}),
+        ("Data type", {
+            "en": "The kind of value something is: a whole number, a decimal number, text, or True/False.",
+            "hi": "Value किस तरह की है: पूरी संख्या, दशमलव वाली संख्या, text, या True/False।",
+            "hinglish": "Value kis tarah ki hai: poori sankhya, dashamlav wali sankhya, text, ya True/False.",
+            "kn": "Value ಯಾವ ರೀತಿಯದು: ಪೂರ್ಣ ಸಂಖ್ಯೆ, ದಶಮಾಂಶ ಸಂಖ್ಯೆ, text, ಅಥವಾ True/False."}),
+        ("Integer (int)", {
+            "en": "A whole number with no decimal point, like 30 tablets.",
+            "hi": "बिना दशमलव वाली पूरी संख्या, जैसे 30 tablets।",
+            "hinglish": "Bina dashamlav wali poori sankhya, jaise 30 tablets.",
+            "kn": "ದಶಮಾಂಶ ಇಲ್ಲದ ಪೂರ್ಣ ಸಂಖ್ಯೆ, ಉದಾ: 30 tablets."}),
+        ("Float", {
+            "en": "A number with a decimal point, like a weight of 52.5 kg.",
+            "hi": "दशमलव वाली संख्या, जैसे 52.5 kg वज़न।",
+            "hinglish": "Dashamlav wali sankhya, jaise 52.5 kg wazan.",
+            "kn": "ದಶಮಾಂಶ ಇರುವ ಸಂಖ್ಯೆ, ಉದಾ: 52.5 kg ತೂಕ."}),
+        ("Boolean (bool)", {
+            "en": "A value that is only True or False, like whether a medicine is in stock.",
+            "hi": "ऐसी value जो सिर्फ True या False हो, जैसे दवा stock में है या नहीं।",
+            "hinglish": "Aisi value jo sirf True ya False ho, jaise dawa stock mein hai ya nahi.",
+            "kn": "True ಅಥವಾ False ಮಾತ್ರ ಆಗಿರುವ value, ಉದಾ: ಔಷಧಿ stock ನಲ್ಲಿ ಇದೆಯಾ ಇಲ್ವಾ."}),
+        ("type()", {
+            "en": "Shows the data type of a value. type(52.5) gives <class 'float'>.",
+            "hi": "किसी value का data type दिखाता है। type(52.5) देता है <class 'float'>।",
+            "hinglish": "Kisi value ka data type dikhata hai. type(52.5) deta hai <class 'float'>.",
+            "kn": "ಒಂದು value ನ data type ತೋರಿಸುತ್ತೆ. type(52.5) ಕೊಡೋದು <class 'float'>."}),
+        ("TypeError", {
+            "en": "An error that means you used a value of the wrong data type, such as adding text and a number.",
+            "hi": "Error जिसका मतलब है गलत data type की value use की गई, जैसे text और number जोड़ना।",
+            "hinglish": "Error jiska matlab hai galat data type ki value use ki gayi, jaise text aur number jodna.",
+            "kn": "ತಪ್ಪು data type ನ value use ಮಾಡಿದ್ದೀರಿ ಅನ್ನುವ error, ಉದಾ: text ಮತ್ತು number ಕೂಡಿಸೋದು."}),
+    ],
 }
 
 
@@ -172,6 +224,8 @@ def apply():
         folder = os.path.join(ROOT, "content", "bp101t", lesson)
         for lang in ["en", "hi", "hinglish", "kn"]:
             path = os.path.join(folder, f"{lang}.json")
+            if not os.path.exists(path):  # translation not written yet
+                continue
             doc = json.load(open(path, encoding="utf-8"))
             if lang == "en":
                 doc["glossary"] = [{"term": t, "meaning": m["en"]} for t, m in entries]
