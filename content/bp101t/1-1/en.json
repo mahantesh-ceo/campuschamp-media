@@ -619,7 +619,8 @@
             }
           ]
         }
-      ]
+      ],
+      "afterExplanation": 3
     }
   ],
   "course": "bp101t",

@@ -168,6 +168,7 @@ L = {
         {
             "id": "ide",
             "title": "Text editor vs IDE",
+            "afterExplanation": 1,
             "canvas": {"desktop": {"w": 800, "h": 460}, "mobile": {"w": 360, "h": 600}},
             "actors": [
                 {"id": "editor", "type": "card", "title": "Text editor", "icon": "📝", "color": "amber", "mono": True,

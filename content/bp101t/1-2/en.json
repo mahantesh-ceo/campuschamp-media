@@ -421,6 +421,7 @@
     {
       "id": "ide",
       "title": "Text editor vs IDE",
+      "afterExplanation": 1,
       "canvas": {
         "desktop": {
           "w": 800,
