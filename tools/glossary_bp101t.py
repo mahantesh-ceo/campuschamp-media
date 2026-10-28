@@ -278,6 +278,43 @@ G = {
             "hinglish": "Shoonya se bhaag dene par Python yeh error dikhata hai.",
             "kn": "ಸೊನ್ನೆಯಿಂದ ಭಾಗಿಸಿದಾಗ Python ತೋರಿಸುವ error."}),
     ],
+    "1-5": [
+        ("Function", {
+            "en": "A named instruction that does a job when you add brackets after it, like print() or input(). You've been using functions since Lesson 1.1.",
+            "hi": "एक नाम वाला निर्देश जो brackets लगाने पर अपना काम करता है, जैसे print() या input()। आप Lesson 1.1 से functions use कर रहे हैं।",
+            "hinglish": "Ek naam wala nirdesh jo brackets lagane par apna kaam karta hai, jaise print() ya input(). Aap Lesson 1.1 se functions use kar rahe hain.",
+            "kn": "Brackets ಹಾಕಿದಾಗ ತನ್ನ ಕೆಲಸ ಮಾಡುವ ಹೆಸರಿರುವ ಸೂಚನೆ, ಉದಾ: print() ಅಥವಾ input(). Lesson 1.1 ಇಂದ ನೀವು functions use ಮಾಡುತ್ತಿದ್ದೀರಿ."}),
+        ("input()", {
+            "en": "Shows a question and waits for the user to type an answer and press Enter. The answer is always text.",
+            "hi": "एक सवाल दिखाता है और user के answer type करके Enter दबाने का इंतज़ार करता है। Answer हमेशा text होता है।",
+            "hinglish": "Ek sawaal dikhata hai aur user ke answer type karke Enter dabane ka intezaar karta hai. Answer hamesha text hota hai.",
+            "kn": "ಒಂದು ಪ್ರಶ್ನೆ ತೋರಿಸಿ, user answer type ಮಾಡಿ Enter ಒತ್ತುವವರೆಗೆ ಕಾಯುತ್ತೆ. Answer ಯಾವಾಗಲೂ text."}),
+        ("User", {
+            "en": "The person using your program, such as a pharmacist typing a patient's weight.",
+            "hi": "जो इंसान आपका program use कर रहा है, जैसे patient का वज़न type करने वाला pharmacist।",
+            "hinglish": "Jo insaan aapka program use kar raha hai, jaise patient ka wazan type karne wala pharmacist.",
+            "kn": "ನಿಮ್ಮ program use ಮಾಡುವ ವ್ಯಕ್ತಿ, ಉದಾ: patient ನ ತೂಕ type ಮಾಡುವ pharmacist."}),
+        ("Prompt", {
+            "en": "The question input() shows on screen, like \"Weight (kg): \".",
+            "hi": "वह सवाल जो input() screen पर दिखाता है, जैसे \"Weight (kg): \"।",
+            "hinglish": "Woh sawaal jo input() screen par dikhata hai, jaise \"Weight (kg): \".",
+            "kn": "input() screen ಮೇಲೆ ತೋರಿಸುವ ಪ್ರಶ್ನೆ, ಉದಾ: \"Weight (kg): \"."}),
+        ("sep and end", {
+            "en": "Settings for print(): sep goes between the items, end goes at the end of the line.",
+            "hi": "print() की settings: sep items के बीच आता है, end line के आखिर में।",
+            "hinglish": "print() ki settings: sep items ke beech aata hai, end line ke aakhir mein.",
+            "kn": "print() ನ settings: sep items ನಡುವೆ ಬರುತ್ತೆ, end line ಕೊನೆಯಲ್ಲಿ."}),
+        ("f-string", {
+            "en": "Text with f before the quotes, where {name} is replaced by the value of name.",
+            "hi": "Quotes से पहले f वाला text, जिसमें {name} की जगह name की value आ जाती है।",
+            "hinglish": "Quotes se pehle f wala text, jisme {name} ki jagah name ki value aa jaati hai.",
+            "kn": "Quotes ಮುಂದೆ f ಇರುವ text, ಅದರಲ್ಲಿ {name} ಜಾಗಕ್ಕೆ name ನ value ಬರುತ್ತೆ."}),
+        ("Decimal places (:.1f, :.2f)", {
+            "en": "Added inside { } in an f-string to show one or two digits after the decimal point.",
+            "hi": "f-string में { } के अंदर लगाते हैं, ताकि दशमलव के बाद एक या दो अंक दिखें।",
+            "hinglish": "f-string mein { } ke andar lagaate hain, taaki dashamlav ke baad ek ya do ank dikhein.",
+            "kn": "f-string ನಲ್ಲಿ { } ಒಳಗೆ ಹಾಕುತ್ತೇವೆ, ದಶಮಾಂಶದ ನಂತರ ಒಂದು ಅಥವಾ ಎರಡು ಅಂಕೆ ತೋರಿಸಲು."}),
+    ],
 }
 
 

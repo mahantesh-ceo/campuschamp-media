@@ -1,0 +1,320 @@
+{
+  "hook": {
+    "title": "सवाल पूछने वाला dose calculator",
+    "md": "अब तक आपके programs हर बार वही numbers use करते थे। असली pharmacy tool को **पूछना** पड़ता है: *Patient का नाम क्या है? वज़न कितना है?*\n\nइस lesson के अंत तक आप एक छोटा dose calculator बनाएँगे, जो ये details पूछता है, dose calculate करता है और एक साफ़ label print करता है।"
+  },
+  "learn": [
+    "**input()** से user से जानकारी कैसे पूछें",
+    "input() हमेशा **text** क्यों देता है, और उसे number कैसे बनाएँ",
+    "**sep**, **end** और **f-strings** से साफ़ output कैसे print करें",
+    "Number को तय **decimal places** के साथ कैसे दिखाएँ"
+  ],
+  "explanation": [
+    {
+      "heading": "input() से सवाल पूछना",
+      "md": "`input()` user से सवाल पूछता है और तब तक **इंतज़ार** करता है जब तक वो answer type करके Enter न दबाए। Brackets के अंदर का text **prompt** है, यानी screen पर दिखने वाला सवाल:\n\n```python\nname = input(\"Patient name: \")\nprint(\"Hello,\", name)\n```\n\nअगर user `Ravi` type करे, तो screen पर दिखता है:\n\n```\nPatient name: Ravi\nHello, Ravi\n```\n\nAnswer, variable `name` में रख लिया जाता है, ताकि program उसे बाद में use कर सके।\n\n**Champ Lab में:** पीछे कोई keyboard इंतज़ार नहीं कर रहा, इसलिए पहले **Input** box में अपने answers type कीजिए, हर line में एक, फिर Run दबाइए।",
+      "callout": {
+        "title": "Prompt के आखिर में space रखिए",
+        "md": "input(\"Weight (kg): \") लिखिए, closing quote से पहले space के साथ, ताकि answer सवाल से चिपके नहीं।"
+      }
+    },
+    {
+      "heading": "input() हमेशा text देता है",
+      "md": "User जो भी type करे, `input()` उसे **string** के रूप में देता है, चाहे वो number जैसा दिखे:\n\n```python\nweight = input(\"Weight (kg): \")\nprint(weight * 2)\n```\n\nअगर user `20` type करे, तो यह `2020` print करता है, 40 नहीं। Text `\"20\"` दोहराया गया, जैसा आपने Lesson 1.3 में देखा था।\n\nइसका fix है Lesson 1.4 वाला **type casting**। Answer को तुरंत बदलिए:\n\n```python\nweight = float(input(\"Weight (kg): \"))\nprint(weight * 2)\n```\n\nअब `20` type करने पर `40.0` print होता है। पूरी संख्या के लिए `int()` use कीजिए, जैसे tablets की गिनती, और दशमलव वाली संख्या के लिए `float()`, जैसे वज़न।",
+      "callout": {
+        "title": "input() से आए numbers को हमेशा बदलिए",
+        "md": "input() से पढ़ा गया वज़न या dose तब तक text है, जब तक आप उसे int() या float() से न बदलें।"
+      }
+    },
+    {
+      "heading": "sep और end के साथ print करना",
+      "md": "आप जानते हैं कि `print()` items के बीच space लगाता है। दो settings इसे बदलती हैं:\n\n- **`sep`** तय करता है कि items के **बीच** क्या आए (default में space)।\n- **`end`** तय करता है कि **आखिर** में क्या आए (default में नई line)।\n\n```python\nprint(\"12\", \"05\", \"2026\", sep=\"/\")\nprint(\"Dose\", end=\": \")\nprint(\"500 mg\")\n```\n\nयह print करता है:\n\n```\n12/05/2026\nDose: 500 mg\n```\n\nदूसरा `print()` उसी line पर आगे लिखता है, क्योंकि पहला नई line की जगह `\": \"` पर खत्म हुआ।"
+    },
+    {
+      "heading": "f-strings: text के अंदर values",
+      "md": "**f-string** वह string है जिसकी opening quote से पहले `f` लिखा हो। Curly brackets `{ }` के अंदर लिखी हर चीज़ की जगह उसकी value आ जाती है:\n\n```python\ndrug = \"Amoxicillin\"\ndose_mg = 500\nprint(f\"{drug}: {dose_mg} mg, three times a day\")\nprint(f\"Daily total: {dose_mg * 3} mg\")\n```\n\nयह print करता है:\n\n```\nAmoxicillin: 500 mg, three times a day\nDaily total: 1500 mg\n```\n\nन commas, न `str()`, और हर space आप खुद तय करते हैं।",
+      "callout": {
+        "title": "f-string",
+        "md": "Quotes से पहले f वाली string, जिसमें {name} की जगह name की value आ जाती है।"
+      }
+    },
+    {
+      "heading": "Decimal places तय करना",
+      "md": "Calculations से कभी-कभी लंबे decimals आते हैं। 16.1 kg का बच्चा, 15 mg प्रति kg के हिसाब से:\n\n```python\ndose_mg = 16.1 * 15\nprint(dose_mg)\n```\n\n`241.50000000000003` print करता है। Computer decimals को बहुत छोटे rounding फ़र्क के साथ रखता है, इसलिए यह normal है।\n\nCurly brackets के अंदर `:.1f` लगाइए, ताकि **एक** decimal place दिखे:\n\n```python\nprint(f\"Dose: {dose_mg:.1f} mg\")\n```\n\nयह `Dose: 241.5 mg` print करता है। दो decimal places के लिए `:.2f` use कीजिए, जैसे `f\"{100 / 3:.2f}\"` देता है `33.33`।"
+    }
+  ],
+  "walkthrough": {
+    "intro": "यह program patient का नाम और वज़न पूछता है, और 15 mg प्रति kg के हिसाब से dose print करता है। इस example में pharmacist Ravi और 16.1 type करता है।",
+    "keyTerms": [
+      {
+        "meaning": "सवाल दिखाओ और user के answer का इंतज़ार करो। Answer text होता है।"
+      },
+      {
+        "meaning": "Value पूछो और answer को number बनाओ।"
+      },
+      {
+        "meaning": "Variable की value को text के अंदर रखो।"
+      },
+      {
+        "meaning": "एक decimal place दिखाओ।"
+      }
+    ],
+    "steps": [
+      {
+        "say": "यह program patient का नाम और वज़न पूछता है, और फिर dose print करता है। देखिए answers variables में कैसे जाते हैं।"
+      },
+      {
+        "say": "Comment बताता है कि program क्या करता है।"
+      },
+      {
+        "say": "input सवाल दिखाता है, Patient name, और इंतज़ार करता है। Pharmacist Ravi type करके Enter दबाता है। Ravi, variable name में रख लिया जाता है।"
+      },
+      {
+        "say": "फिर input वज़न पूछता है। Answer text है, इसलिए float सोलह दशमलव एक को number बना देता है।"
+      },
+      {
+        "say": "Python पंद्रह से गुणा करता है। Variables panel देखिए: answer के पीछे decimals की लंबी पूँछ है। यह बहुत छोटा rounding फ़र्क है।"
+      },
+      {
+        "say": "यह f-string, name की value को text के अंदर रखती है।"
+      },
+      {
+        "say": "Colon, point एक, f ठीक एक decimal place दिखाता है। इसलिए label पढ़ता है, दो सौ इकतालीस दशमलव पाँच milligrams।"
+      }
+    ]
+  },
+  "errors": {
+    "intro": "ये दो errors तब आते हैं जब input() के answer को सही से handle नहीं किया जाता।",
+    "examples": [
+      {
+        "title": "input() के text से calculate करना",
+        "md": "`weight` में text है, और text को दशमलव वाली संख्या से गुणा नहीं किया जा सकता। पहले answer को बदलिए: `weight = float(input(\"Weight (kg): \"))`।"
+      },
+      {
+        "title": "User ने number नहीं, कुछ और type किया",
+        "md": "User ने `52 kg` type किया। `float()` सिर्फ number बदल सकता है, इसलिए unit की वजह से error आया। Prompt में ही unit पूछिए, जैसे `\"Weight (kg): \"`, ताकि user सिर्फ number type करे।"
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Answer को बदलना भूल जाना, जैसे `weight = input(\"Weight: \")` फिर `weight * 2`",
+      "see": "कोई error नहीं, लेकिन 20 type करने पर 2020 आता है",
+      "fix": "बदलिए: `weight = float(input(\"Weight: \"))`।"
+    },
+    {
+      "mistake": "f-string से पहले `f` भूल जाना, जैसे `print(\"Dose: {dose} mg\")`",
+      "see": "कोई error नहीं, लेकिन Dose: {dose} mg print होता है",
+      "fix": "Quote से पहले f लगाइए: `print(f\"Dose: {dose} mg\")`।"
+    },
+    {
+      "mistake": "Prompt के आखिर में space न रखना, जैसे `input(\"Weight:\")`",
+      "see": "कोई error नहीं, लेकिन answer सवाल से चिपक जाता है: Weight:52",
+      "fix": "Space लगाइए: `input(\"Weight: \")`।"
+    },
+    {
+      "mistake": "Text और number को `+` से जोड़ना, जैसे `print(\"Dose: \" + dose)`",
+      "fix": "f-string use कीजिए: `print(f\"Dose: {dose}\")`।"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Patient का स्वागत कीजिए",
+      "md": "Program patient का नाम पूछता है। एक line जोड़िए जो उनका स्वागत करे। नाम **Ananya** type होने पर output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "print() \"Hello,\" और variable name को comma से अलग करके दिखा सकता है।",
+        "Try कीजिए: print(\"Hello,\", name) या print(f\"Hello, {name}\")।"
+      ]
+    },
+    {
+      "title": "Answer को बदलिए",
+      "md": "Program पूछता है कि patient कितनी strips ले रहा है। हर strip में **10 tablets** हैं। Answer को पूरी संख्या में बदलकर कुल tablets print कीजिए। **4** type होने पर output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "strips में text है। int(strips) उसे number बनाता है।",
+        "print(\"Tablets:\", int(strips) * 10)"
+      ]
+    },
+    {
+      "title": "दो decimal places",
+      "md": "100 ml syrup 3 बच्चों में बराबर बाँटा जाता है। **f-string** और **`:.2f`** से हर बच्चे का volume print कीजिए, बिल्कुल ऐसे:",
+      "hints": [
+        "Quote से पहले f लगाइए: f\"Volume: ...\"",
+        "Curly brackets के अंदर लिखिए: volume_ml:.2f"
+      ]
+    },
+    {
+      "title": "Bug ढूँढिए",
+      "md": "यह program 15 mg प्रति kg के हिसाब से dose print करना चाहिए। **20** type होने पर output बिल्कुल नीचे वाला होना चाहिए, लेकिन dose 20s की लंबी string बनकर आती है। इसे ठीक कीजिए।",
+      "hints": [
+        "input() कौन सा data type देता है?",
+        "input(...) को float(...) के अंदर रखिए।"
+      ],
+      "solutionNote": "input() text देता है, इसलिए \"20\" * 15 text को दोहराता है। float() पहले उसे number 20.0 बनाता है।"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "input() हमेशा कौन सा data type देता है?",
+      "why": "input() हमेशा text (string) देता है, चाहे user number type करे।"
+    },
+    {
+      "q": "x = input(\"Number: \") और user 20 type करता है। print(x * 2) क्या दिखाता है?",
+      "why": "x में text \"20\" है, और * text को दोहराता है।"
+    },
+    {
+      "q": "print(\"A\", \"B\", sep=\"\") क्या दिखाता है?",
+      "why": "sep=\"\" items के बीच कुछ नहीं रखता।"
+    },
+    {
+      "q": "dose = 500। कौन सी line Dose: 500 mg print करती है?",
+      "why": "सिर्फ {dose} वाली f-string ही value को text के अंदर रखती है।"
+    },
+    {
+      "q": "print(f\"{2 / 3:.2f}\") क्या दिखाता है?",
+      "why": ":.2f दो decimal places दिखाता है, round करके: 0.67।"
+    },
+    {
+      "q": "print(\"Hi\", end=\"!\") क्या दिखाता है?",
+      "why": "end=\"!\" नई line की जगह आखिर में ! print करता है।"
+    }
+  ],
+  "exam": {
+    "note": "University exam English में लिखा जाता है, इसलिए model answers English में ही रखे गए हैं। ये practice के लिए important questions हैं; असली university questions अलग हो सकते हैं।"
+  },
+  "mindmap": {
+    "label": "Lesson 1.5 · Input और output",
+    "children": [
+      {
+        "label": "input()",
+        "children": [
+          {
+            "label": "Prompt दिखाता है"
+          },
+          {
+            "label": "Enter का इंतज़ार"
+          },
+          {
+            "label": "हमेशा str देता है"
+          }
+        ]
+      },
+      {
+        "label": "बदलना",
+        "children": [
+          {
+            "label": "int(input(...))"
+          },
+          {
+            "label": "float(input(...))"
+          },
+          {
+            "label": "\"20\" * 2 = 2020"
+          }
+        ]
+      },
+      {
+        "label": "print()",
+        "children": [
+          {
+            "label": "sep: items के बीच"
+          },
+          {
+            "label": "end: आखिर में"
+          }
+        ]
+      },
+      {
+        "label": "f-strings",
+        "children": [
+          {
+            "label": "f\"{name}\""
+          },
+          {
+            "label": "{x:.1f} एक decimal"
+          },
+          {
+            "label": "{x:.2f} दो decimals"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "TypeError: text × number"
+          },
+          {
+            "label": "ValueError: '52 kg'"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**`input()`** एक **prompt** दिखाता है और user के answer type करके Enter दबाने का इंतज़ार करता है।",
+    "Answer हमेशा **string** होता है, इसलिए numbers को **`int()`** या **`float()`** से बदलिए: `float(input(\"Weight (kg): \"))`।",
+    "**`sep`** तय करता है कि printed items के बीच क्या आए; **`end`** तय करता है कि line के आखिर में क्या आए।",
+    "**f-strings** values को text के अंदर रखती हैं: `f\"Dose: {dose} mg\"`।",
+    "**`:.1f`** और **`:.2f`** एक या दो decimal places दिखाते हैं, और 241.50000000000003 जैसे छोटे rounding फ़र्क छिपा देते हैं।"
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Program सवाल दिखाकर इंतज़ार करता है। Pharmacist सोलह दशमलव एक type करके Enter दबाता है।"
+        },
+        {
+          "say": "input हमेशा text देता है। इसलिए पहले box में string सोलह दशमलव एक है, quotes के साथ।"
+        },
+        {
+          "say": "float text को number बना देता है। अब quotes चले गए।"
+        },
+        {
+          "say": "अब Python dose calculate कर सकता है: सोलह दशमलव एक गुणा पंद्रह, एक छोटी rounding पूँछ के साथ।"
+        },
+        {
+          "say": "Colon, point एक, f वाली f-string इसे साफ़-साफ़, एक decimal place के साथ print करती है।"
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "video",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "एक नाम वाला निर्देश जो brackets लगाने पर अपना काम करता है, जैसे print() या input()। आप Lesson 1.1 से functions use कर रहे हैं।"
+    },
+    {
+      "meaning": "एक सवाल दिखाता है और user के answer type करके Enter दबाने का इंतज़ार करता है। Answer हमेशा text होता है।"
+    },
+    {
+      "meaning": "जो इंसान आपका program use कर रहा है, जैसे patient का वज़न type करने वाला pharmacist।"
+    },
+    {
+      "meaning": "वह सवाल जो input() screen पर दिखाता है, जैसे \"Weight (kg): \"।"
+    },
+    {
+      "meaning": "print() की settings: sep items के बीच आता है, end line के आखिर में।"
+    },
+    {
+      "meaning": "Quotes से पहले f वाला text, जिसमें {name} की जगह name की value आ जाती है।"
+    },
+    {
+      "meaning": "f-string में { } के अंदर लगाते हैं, ताकि दशमलव के बाद एक या दो अंक दिखें।"
+    }
+  ]
+}

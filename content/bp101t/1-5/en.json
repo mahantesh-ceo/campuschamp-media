@@ -1,0 +1,674 @@
+{
+  "id": "1-5",
+  "course": "bp101t",
+  "unit": "Unit I",
+  "unitTitle": "Introduction to Python programming",
+  "number": "1.5",
+  "title": "Input and output",
+  "minutes": 14,
+  "free": true,
+  "audioLanguages": [
+    "en",
+    "hi",
+    "kn"
+  ],
+  "hook": {
+    "title": "A dose calculator that asks questions",
+    "md": "So far, your programs used the same numbers every time. A real pharmacy tool has to **ask**: *What's the patient's name? What's their weight?*\n\nBy the end of this lesson, you'll build a small dose calculator that asks for these details, calculates the dose and prints a neat label."
+  },
+  "learn": [
+    "How to ask the user for information with **input()**",
+    "Why input() always gives **text**, and how to turn it into a number",
+    "How to print neatly with **sep**, **end** and **f-strings**",
+    "How to show a number with a fixed number of **decimal places**"
+  ],
+  "explanation": [
+    {
+      "heading": "Asking a question with input()",
+      "md": "`input()` asks the user a question and **waits** until they type an answer and press Enter. The text inside the brackets is the **prompt**, the question shown on screen:\n\n```python\nname = input(\"Patient name: \")\nprint(\"Hello,\", name)\n```\n\nIf the user types `Ravi`, the screen shows:\n\n```\nPatient name: Ravi\nHello, Ravi\n```\n\nThe answer is stored in the variable `name`, so the program can use it later.\n\n**In Champ Lab:** there's no keyboard waiting in the background, so type your answers in the **Input** box first, one per line, then press Run.",
+      "callout": {
+        "type": "tip",
+        "title": "End the prompt with a space",
+        "md": "Write input(\"Weight (kg): \") with a space before the closing quote, so the answer doesn't stick to the question."
+      }
+    },
+    {
+      "heading": "input() always gives text",
+      "md": "Whatever the user types, `input()` gives it back as a **string**, even if it looks like a number:\n\n```python\nweight = input(\"Weight (kg): \")\nprint(weight * 2)\n```\n\nIf the user types `20`, this prints `2020`, not 40. The text `\"20\"` was repeated, as you saw in Lesson 1.3.\n\nThe fix is the **type casting** from Lesson 1.4. Convert the answer straight away:\n\n```python\nweight = float(input(\"Weight (kg): \"))\nprint(weight * 2)\n```\n\nNow typing `20` prints `40.0`. Use `int()` for whole numbers, such as a number of tablets, and `float()` for numbers that may have a decimal point, such as a weight.",
+      "callout": {
+        "type": "warning",
+        "title": "Always convert numbers from input()",
+        "md": "A weight or dose read with input() is text until you convert it with int() or float()."
+      }
+    },
+    {
+      "heading": "Printing with sep and end",
+      "md": "You already know that `print()` puts a space between items. Two settings change this:\n\n- **`sep`** sets what goes **between** the items (a space by default).\n- **`end`** sets what goes **at the end** (a new line by default).\n\n```python\nprint(\"12\", \"05\", \"2026\", sep=\"/\")\nprint(\"Dose\", end=\": \")\nprint(\"500 mg\")\n```\n\nThis prints:\n\n```\n12/05/2026\nDose: 500 mg\n```\n\nThe second `print()` continues on the same line, because the first one ended with `\": \"` instead of a new line."
+    },
+    {
+      "heading": "f-strings: values inside text",
+      "md": "An **f-string** is a string with the letter `f` before the opening quote. Anything inside curly brackets `{ }` is replaced by its value:\n\n```python\ndrug = \"Amoxicillin\"\ndose_mg = 500\nprint(f\"{drug}: {dose_mg} mg, three times a day\")\nprint(f\"Daily total: {dose_mg * 3} mg\")\n```\n\nThis prints:\n\n```\nAmoxicillin: 500 mg, three times a day\nDaily total: 1500 mg\n```\n\nNo commas, no `str()`, and you control every space yourself.",
+      "callout": {
+        "type": "definition",
+        "title": "f-string",
+        "md": "A string with f before the quotes, where {name} is replaced by the value of name."
+      }
+    },
+    {
+      "heading": "Fixing the number of decimal places",
+      "md": "Calculations can give long decimals. A child weighing 16.1 kg, at 15 mg per kg:\n\n```python\ndose_mg = 16.1 * 15\nprint(dose_mg)\n```\n\nprints `241.50000000000003`. Computers store decimals with tiny rounding differences, so this is normal.\n\nAdd `:.1f` inside the curly brackets to show **one** decimal place:\n\n```python\nprint(f\"Dose: {dose_mg:.1f} mg\")\n```\n\nThis prints `Dose: 241.5 mg`. Use `:.2f` for two decimal places, for example `f\"{100 / 3:.2f}\"` gives `33.33`."
+    }
+  ],
+  "walkthrough": {
+    "intro": "This program asks for a patient's name and weight, and prints the dose at 15 mg per kg. In this example, the pharmacist types Ravi and 16.1.",
+    "filename": "dose_calculator.py",
+    "code": "# Dose calculator\nname = input(\"Patient name: \")\nweight_kg = float(input(\"Weight (kg): \"))\ndose_mg = weight_kg * 15\nprint(f\"Patient: {name}\")\nprint(f\"Dose: {dose_mg:.1f} mg\")",
+    "stdin": "Ravi\n16.1",
+    "output": "Patient name: Ravi\nWeight (kg): 16.1\nPatient: Ravi\nDose: 241.5 mg",
+    "steps": [
+      {
+        "line": null,
+        "say": "This program asks for a patient's name and weight, and then prints the dose. Watch how the answers go into variables.",
+        "output": null,
+        "audio": "step-01.mp3"
+      },
+      {
+        "line": 1,
+        "say": "The comment says what the program does.",
+        "output": null,
+        "audio": "step-02.mp3"
+      },
+      {
+        "line": 2,
+        "say": "input shows the question, Patient name, and waits. The pharmacist types Ravi and presses Enter. Ravi is stored in the variable name.",
+        "output": "Patient name: Ravi",
+        "audio": "step-03.mp3",
+        "vars": {
+          "name": "\"Ravi\""
+        }
+      },
+      {
+        "line": 3,
+        "say": "Next, input asks for the weight. The answer is text, so float turns sixteen point one into a number.",
+        "output": "Weight (kg): 16.1",
+        "audio": "step-04.mp3",
+        "vars": {
+          "weight_kg": "16.1"
+        }
+      },
+      {
+        "line": 4,
+        "say": "Python multiplies by fifteen. Look at the Variables panel: the answer has a long tail of decimals. That's a tiny rounding difference.",
+        "output": null,
+        "audio": "step-05.mp3",
+        "vars": {
+          "dose_mg": "241.50000000000003"
+        }
+      },
+      {
+        "line": 5,
+        "say": "This f-string puts the value of name inside the text.",
+        "output": "Patient: Ravi",
+        "audio": "step-06.mp3"
+      },
+      {
+        "line": 6,
+        "say": "Colon, point one, f shows exactly one decimal place. So the label reads two hundred and forty-one point five milligrams.",
+        "output": "Dose: 241.5 mg",
+        "audio": "step-07.mp3"
+      }
+    ],
+    "keyTerms": [
+      {
+        "term": "input(\"...\")",
+        "meaning": "Show a question and wait for the user's answer. The answer is text."
+      },
+      {
+        "term": "float(input(...))",
+        "meaning": "Ask for a value and turn the answer into a number."
+      },
+      {
+        "term": "f\"{name}\"",
+        "meaning": "Put the value of a variable inside text."
+      },
+      {
+        "term": ":.1f",
+        "meaning": "Show one decimal place."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "These two errors happen when the answer from input() isn't handled correctly.",
+    "examples": [
+      {
+        "title": "Calculating with text from input()",
+        "code": "weight = input(\"Weight (kg): \")\nprint(weight * 2.5)",
+        "output": "TypeError: can't multiply sequence by non-int of type 'float'",
+        "errorLine": 2,
+        "md": "`weight` holds text, and text can't be multiplied by a decimal number. Convert the answer first: `weight = float(input(\"Weight (kg): \"))`."
+      },
+      {
+        "title": "The user types something that isn't a number",
+        "code": "weight = float(input(\"Weight (kg): \"))",
+        "output": "ValueError: could not convert string to float: '52 kg'",
+        "errorLine": 1,
+        "md": "The user typed `52 kg`. `float()` can only convert a number, so the units cause an error. Ask for the unit in the prompt, like `\"Weight (kg): \"`, so users type only the number."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Forgetting to convert the answer, e.g. `weight = input(\"Weight: \")` then `weight * 2`",
+      "see": "No error, but typing 20 gives 2020",
+      "fix": "Convert it: `weight = float(input(\"Weight: \"))`."
+    },
+    {
+      "mistake": "Forgetting the `f` before an f-string, e.g. `print(\"Dose: {dose} mg\")`",
+      "see": "No error, but it prints Dose: {dose} mg",
+      "fix": "Add f before the quote: `print(f\"Dose: {dose} mg\")`."
+    },
+    {
+      "mistake": "No space at the end of the prompt, e.g. `input(\"Weight:\")`",
+      "see": "No error, but the answer sticks to the question: Weight:52",
+      "fix": "Add a space: `input(\"Weight: \")`."
+    },
+    {
+      "mistake": "Joining text and a number with `+`, e.g. `print(\"Dose: \" + dose)`",
+      "see": "TypeError: can only concatenate str (not \"int\") to str",
+      "fix": "Use an f-string: `print(f\"Dose: {dose}\")`."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1",
+      "title": "Greet the patient",
+      "md": "The program asks for the patient's name. Add one line that greets them. With the name **Ananya** typed in, the output should be exactly:",
+      "stdin": "Ananya",
+      "expectedOutput": "Patient name: Ananya\nHello, Ananya",
+      "starterCode": "name = input(\"Patient name: \")\n# Greet the patient\n",
+      "hints": [
+        "print() can show \"Hello,\" and the variable name, separated by a comma.",
+        "Try print(\"Hello,\", name) or print(f\"Hello, {name}\")."
+      ],
+      "solution": "name = input(\"Patient name: \")\n# Greet the patient\nprint(f\"Hello, {name}\")",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "print("
+        ]
+      }
+    },
+    {
+      "id": "t2",
+      "title": "Convert the answer",
+      "md": "The program asks how many strips the patient is buying. Each strip has **10 tablets**. Convert the answer to a whole number and print the total tablets. With **4** typed in, the output should be exactly:",
+      "stdin": "4",
+      "expectedOutput": "Strips: 4\nTablets: 40",
+      "starterCode": "strips = input(\"Strips: \")\n# Print the total number of tablets\n",
+      "hints": [
+        "strips holds text. int(strips) turns it into a number.",
+        "print(\"Tablets:\", int(strips) * 10)"
+      ],
+      "solution": "strips = input(\"Strips: \")\n# Print the total number of tablets\nprint(\"Tablets:\", int(strips) * 10)",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "int(strips)"
+        ]
+      }
+    },
+    {
+      "id": "t3",
+      "title": "Two decimal places",
+      "md": "100 ml of syrup is shared equally between 3 children. Use an **f-string** with **`:.2f`** to print the volume each child gets, exactly:",
+      "expectedOutput": "Volume: 33.33 ml",
+      "starterCode": "volume_ml = 100 / 3\n# Print the volume with two decimal places\n",
+      "hints": [
+        "Start with f before the quote: f\"Volume: ...\"",
+        "Inside the curly brackets, write volume_ml:.2f"
+      ],
+      "solution": "volume_ml = 100 / 3\n# Print the volume with two decimal places\nprint(f\"Volume: {volume_ml:.2f} ml\")",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          ":.2f"
+        ]
+      }
+    },
+    {
+      "id": "t4",
+      "title": "Find the bug",
+      "md": "This program should print the dose at 15 mg per kg. With **20** typed in, the output should be exactly the text below, but the dose comes out as a long string of 20s. Fix it.",
+      "stdin": "20",
+      "expectedOutput": "Weight (kg): 20\nDose: 300.0 mg",
+      "starterCode": "weight = input(\"Weight (kg): \")\nprint(\"Dose:\", weight * 15, \"mg\")",
+      "hints": [
+        "What data type does input() give?",
+        "Wrap input(...) in float(...)."
+      ],
+      "solution": "weight = float(input(\"Weight (kg): \"))\nprint(\"Dose:\", weight * 15, \"mg\")",
+      "solutionNote": "input() gives text, so \"20\" * 15 repeats the text. float() turns it into the number 20.0 first.",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "float("
+        ]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What data type does input() always give?",
+      "options": [
+        "int",
+        "float",
+        "str",
+        "bool"
+      ],
+      "answer": 2,
+      "why": "input() always gives text (a string), even when the user types a number."
+    },
+    {
+      "q": "x = input(\"Number: \") and the user types 20. What does print(x * 2) show?",
+      "options": [
+        "2020",
+        "40",
+        "40.0",
+        "Error"
+      ],
+      "answer": 0,
+      "why": "x is the text \"20\", and * repeats text.",
+      "code": true
+    },
+    {
+      "q": "What does print(\"A\", \"B\", sep=\"\") show?",
+      "options": [
+        "A B",
+        "A,B",
+        "AB",
+        "A\"\"B"
+      ],
+      "answer": 2,
+      "why": "sep=\"\" puts nothing between the items.",
+      "code": true
+    },
+    {
+      "q": "dose = 500. Which line prints Dose: 500 mg?",
+      "options": [
+        "print(\"Dose: {dose} mg\")",
+        "print(f\"Dose: dose mg\")",
+        "print(\"Dose: \" + dose + \" mg\")",
+        "print(f\"Dose: {dose} mg\")"
+      ],
+      "answer": 3,
+      "why": "Only the f-string with {dose} puts the value inside the text.",
+      "code": true
+    },
+    {
+      "q": "What does print(f\"{2 / 3:.2f}\") show?",
+      "options": [
+        "0.67",
+        "0.66",
+        "0.6666666666666666",
+        "2/3"
+      ],
+      "answer": 0,
+      "why": ":.2f shows two decimal places, rounded: 0.67.",
+      "code": true
+    },
+    {
+      "q": "What does print(\"Hi\", end=\"!\") show?",
+      "options": [
+        "Hi",
+        "Hi!",
+        "Hi !",
+        "!Hi"
+      ],
+      "answer": 1,
+      "why": "end=\"!\" prints ! at the end instead of a new line.",
+      "code": true
+    }
+  ],
+  "exam": {
+    "note": "Important questions for practice. Actual university questions may differ.",
+    "short": [
+      {
+        "q": "What is the use of the input() function? Give an example.",
+        "marks": 2,
+        "md": "The **input()** function reads a line typed by the user from the keyboard and returns it as a **string**. It can display a prompt. Example: `name = input(\"Enter patient name: \")`. For numbers, the value must be converted: `weight = float(input(\"Weight (kg): \"))`."
+      },
+      {
+        "q": "What is an f-string? Give an example.",
+        "marks": 2,
+        "md": "An **f-string** is a string prefixed with `f` in which expressions inside curly brackets `{}` are replaced by their values. Example: `dose = 500` and `print(f\"Dose: {dose} mg\")` prints `Dose: 500 mg`. A format specifier such as `{x:.2f}` displays two decimal places."
+      }
+    ],
+    "long": [
+      {
+        "q": "Explain the input() and print() functions in Python with an example program.",
+        "marks": 5,
+        "md": "**input() function:** reads a line of text typed by the user and returns it as a **string**. The text inside the brackets is displayed as a **prompt**. Because the result is always a string, numbers must be converted using `int()` or `float()` before calculations.\n\n**print() function:** displays output on the screen.\n1. Several items can be printed, separated by commas; a space is added between them.\n2. **sep** changes the separator: `print(\"12\", \"05\", \"2026\", sep=\"/\")` gives `12/05/2026`.\n3. **end** changes what is printed at the end (a new line by default): `print(\"Dose\", end=\": \")`.\n4. **f-strings** insert values into text: `print(f\"Dose: {dose} mg\")`; `{dose:.1f}` shows one decimal place.\n\n**Example program:**\n\n```python\nname = input(\"Patient name: \")\nweight_kg = float(input(\"Weight (kg): \"))\ndose_mg = weight_kg * 15\nprint(f\"Patient: {name}\")\nprint(f\"Dose: {dose_mg:.1f} mg\")\n```\n\n**Sample output:**\n\n```\nPatient name: Ravi\nWeight (kg): 16.1\nPatient: Ravi\nDose: 241.5 mg\n```"
+      }
+    ]
+  },
+  "mindmap": {
+    "label": "Lesson 1.5 · Input & output",
+    "children": [
+      {
+        "label": "input()",
+        "children": [
+          {
+            "label": "Shows a prompt"
+          },
+          {
+            "label": "Waits for Enter"
+          },
+          {
+            "label": "Always gives str"
+          }
+        ]
+      },
+      {
+        "label": "Convert",
+        "children": [
+          {
+            "label": "int(input(...))"
+          },
+          {
+            "label": "float(input(...))"
+          },
+          {
+            "label": "\"20\" * 2 = 2020"
+          }
+        ]
+      },
+      {
+        "label": "print()",
+        "children": [
+          {
+            "label": "sep: between items"
+          },
+          {
+            "label": "end: at the end"
+          }
+        ]
+      },
+      {
+        "label": "f-strings",
+        "children": [
+          {
+            "label": "f\"{name}\""
+          },
+          {
+            "label": "{x:.1f} one decimal"
+          },
+          {
+            "label": "{x:.2f} two decimals"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "TypeError: text × number"
+          },
+          {
+            "label": "ValueError: '52 kg'"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**`input()`** shows a **prompt** and waits for the user to type an answer and press Enter.",
+    "The answer is always a **string**, so convert numbers with **`int()`** or **`float()`**: `float(input(\"Weight (kg): \"))`.",
+    "**`sep`** sets what goes between printed items; **`end`** sets what goes at the end of the line.",
+    "**f-strings** put values inside text: `f\"Dose: {dose} mg\"`.",
+    "**`:.1f`** and **`:.2f`** show one or two decimal places, hiding tiny rounding differences like 241.50000000000003."
+  ],
+  "video": {
+    "videoUrl": null,
+    "searchTerms": [
+      "python input function for beginners",
+      "python f-strings formatting decimal places"
+    ]
+  },
+  "animations": [
+    {
+      "id": "input",
+      "title": "From the keyboard to a number",
+      "afterExplanation": 1,
+      "canvas": {
+        "desktop": {
+          "w": 800,
+          "h": 460
+        },
+        "mobile": {
+          "w": 360,
+          "h": 600
+        }
+      },
+      "actors": [
+        {
+          "id": "term",
+          "type": "terminal",
+          "title": "Screen",
+          "desktop": {
+            "x": 40,
+            "y": 30,
+            "w": 730,
+            "h": 110
+          },
+          "mobile": {
+            "x": 16,
+            "y": 16,
+            "w": 328,
+            "h": 130
+          }
+        },
+        {
+          "id": "weight",
+          "type": "box",
+          "label": "weight_kg",
+          "value": "\"16.1\"",
+          "color": "amber",
+          "desktop": {
+            "x": 120,
+            "y": 190,
+            "w": 200,
+            "h": 110
+          },
+          "mobile": {
+            "x": 16,
+            "y": 180,
+            "w": 156,
+            "h": 100
+          }
+        },
+        {
+          "id": "t_type",
+          "type": "text",
+          "text": "str (text)",
+          "size": 18,
+          "desktop": {
+            "x": 120,
+            "y": 310,
+            "w": 200,
+            "h": 28
+          },
+          "mobile": {
+            "x": 16,
+            "y": 288,
+            "w": 156,
+            "h": 26
+          }
+        },
+        {
+          "id": "t_float",
+          "type": "text",
+          "text": "float (number)",
+          "size": 18,
+          "desktop": {
+            "x": 120,
+            "y": 345,
+            "w": 200,
+            "h": 28
+          },
+          "mobile": {
+            "x": 16,
+            "y": 318,
+            "w": 156,
+            "h": 26
+          }
+        },
+        {
+          "id": "dose",
+          "type": "box",
+          "label": "dose_mg",
+          "value": "241.50000000000003",
+          "color": "emerald",
+          "desktop": {
+            "x": 480,
+            "y": 190,
+            "w": 240,
+            "h": 110
+          },
+          "mobile": {
+            "x": 188,
+            "y": 180,
+            "w": 156,
+            "h": 100
+          }
+        },
+        {
+          "id": "t_calc",
+          "type": "text",
+          "text": "16.1 * 15",
+          "size": 18,
+          "desktop": {
+            "x": 480,
+            "y": 310,
+            "w": 240,
+            "h": 28
+          },
+          "mobile": {
+            "x": 188,
+            "y": 288,
+            "w": 156,
+            "h": 26
+          }
+        }
+      ],
+      "steps": [
+        {
+          "say": "The program shows a question and waits. The pharmacist types sixteen point one and presses Enter.",
+          "audio": "anim-input-01.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "term"
+            },
+            {
+              "do": "appendOutput",
+              "target": "term",
+              "text": "Weight (kg): 16.1"
+            }
+          ]
+        },
+        {
+          "say": "input always gives text. So, at first, the box holds the string sixteen point one, in quotes.",
+          "audio": "anim-input-02.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "weight"
+            },
+            {
+              "do": "show",
+              "target": "t_type"
+            }
+          ]
+        },
+        {
+          "say": "float turns the text into a number. Now the quotes are gone.",
+          "audio": "anim-input-03.mp3",
+          "actions": [
+            {
+              "do": "setValue",
+              "target": "weight",
+              "value": "16.1"
+            },
+            {
+              "do": "pulse",
+              "target": "weight"
+            },
+            {
+              "do": "hide",
+              "target": "t_type"
+            },
+            {
+              "do": "show",
+              "target": "t_float"
+            }
+          ]
+        },
+        {
+          "say": "Now Python can calculate the dose: sixteen point one times fifteen, with a tiny rounding tail.",
+          "audio": "anim-input-04.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "dose"
+            },
+            {
+              "do": "show",
+              "target": "t_calc"
+            }
+          ]
+        },
+        {
+          "say": "An f-string with colon, point one, f prints it neatly, with one decimal place.",
+          "audio": "anim-input-05.mp3",
+          "actions": [
+            {
+              "do": "appendOutput",
+              "target": "term",
+              "text": "Dose: 241.5 mg"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Function",
+      "meaning": "A named instruction that does a job when you add brackets after it, like print() or input(). You've been using functions since Lesson 1.1."
+    },
+    {
+      "term": "input()",
+      "meaning": "Shows a question and waits for the user to type an answer and press Enter. The answer is always text."
+    },
+    {
+      "term": "User",
+      "meaning": "The person using your program, such as a pharmacist typing a patient's weight."
+    },
+    {
+      "term": "Prompt",
+      "meaning": "The question input() shows on screen, like \"Weight (kg): \"."
+    },
+    {
+      "term": "sep and end",
+      "meaning": "Settings for print(): sep goes between the items, end goes at the end of the line."
+    },
+    {
+      "term": "f-string",
+      "meaning": "Text with f before the quotes, where {name} is replaced by the value of name."
+    },
+    {
+      "term": "Decimal places (:.1f, :.2f)",
+      "meaning": "Added inside { } in an f-string to show one or two digits after the decimal point."
+    }
+  ]
+}

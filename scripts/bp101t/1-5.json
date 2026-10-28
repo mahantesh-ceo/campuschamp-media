@@ -1,0 +1,153 @@
+{
+  "course": "bp101t",
+  "lesson": "1-5",
+  "voices": {
+    "en": "Mary",
+    "hi": "Rani",
+    "kn": "Anu"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program asks for a patient's name and weight, and then prints the dose. Watch how the answers go into variables.",
+        "The comment says what the program does.",
+        "input shows the question, Patient name, and waits. The pharmacist types Ravi and presses Enter. Ravi is stored in the variable name.",
+        "Next, input asks for the weight. The answer is text, so float turns sixteen point one into a number.",
+        "Python multiplies by fifteen. Look at the Variables panel: the answer has a long tail of decimals. That's a tiny rounding difference.",
+        "This F string puts the value of name inside the text.",
+        "Colon, point one, F shows exactly one decimal place. So the label reads two hundred and forty-one point five milligrams."
+      ],
+      "display": [
+        "This program asks for a patient's name and weight, and then prints the dose. Watch how the answers go into variables.",
+        "The comment says what the program does.",
+        "input shows the question, Patient name, and waits. The pharmacist types Ravi and presses Enter. Ravi is stored in the variable name.",
+        "Next, input asks for the weight. The answer is text, so float turns sixteen point one into a number.",
+        "Python multiplies by fifteen. Look at the Variables panel: the answer has a long tail of decimals. That's a tiny rounding difference.",
+        "This f-string puts the value of name inside the text.",
+        "Colon, point one, f shows exactly one decimal place. So the label reads two hundred and forty-one point five milligrams."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह प्रोग्राम पेशेंट का नाम और वज़न पूछता है, और फिर डोज़ प्रिंट करता है। देखिए आंसर्स वेरिएबल्स में कैसे जाते हैं।",
+        "कमेंट बताता है कि प्रोग्राम क्या करता है।",
+        "इनपुट सवाल दिखाता है, पेशेंट नेम, और इंतज़ार करता है। फार्मासिस्ट रवि टाइप करके एंटर दबाता है। रवि, वेरिएबल नेम में रख लिया जाता है।",
+        "फिर इनपुट वज़न पूछता है। आंसर टेक्स्ट है, इसलिए फ्लोट सोलह दशमलव एक को नंबर बना देता है।",
+        "पाइथन पंद्रह से गुणा करता है। वेरिएबल्स पैनल देखिए: आंसर के पीछे डेसिमल्स की लंबी पूँछ है। यह बहुत छोटा राउंडिंग फ़र्क है।",
+        "यह एफ स्ट्रिंग, नेम की वैल्यू को टेक्स्ट के अंदर रखती है।",
+        "कोलन, पॉइंट वन, एफ, ठीक एक डेसिमल प्लेस दिखाता है। इसलिए लेबल पढ़ता है, दो सौ इकतालीस दशमलव पाँच मिलीग्राम।"
+      ],
+      "display": [
+        "यह program patient का नाम और वज़न पूछता है, और फिर dose print करता है। देखिए answers variables में कैसे जाते हैं।",
+        "Comment बताता है कि program क्या करता है।",
+        "input सवाल दिखाता है, Patient name, और इंतज़ार करता है। Pharmacist Ravi type करके Enter दबाता है। Ravi, variable name में रख लिया जाता है।",
+        "फिर input वज़न पूछता है। Answer text है, इसलिए float सोलह दशमलव एक को number बना देता है।",
+        "Python पंद्रह से गुणा करता है। Variables panel देखिए: answer के पीछे decimals की लंबी पूँछ है। यह बहुत छोटा rounding फ़र्क है।",
+        "यह f-string, name की value को text के अंदर रखती है।",
+        "Colon, point एक, f ठीक एक decimal place दिखाता है। इसलिए label पढ़ता है, दो सौ इकतालीस दशमलव पाँच milligrams।"
+      ],
+      "displayHinglish": [
+        "Yeh program patient ka naam aur wazan poochta hai, aur phir dose print karta hai. Dekhiye answers variables mein kaise jaate hain.",
+        "Comment batata hai ki program kya karta hai.",
+        "input sawaal dikhata hai, Patient name, aur intezaar karta hai. Pharmacist Ravi type karke Enter dabata hai. Ravi, variable name mein rakh liya jaata hai.",
+        "Phir input wazan poochta hai. Answer text hai, isliye float solah dashamlav ek ko number bana deta hai.",
+        "Python pandrah se guna karta hai. Variables panel dekhiye: answer ke peechhe decimals ki lambi poonchh hai. Yeh bahut chhota rounding farak hai.",
+        "Yeh f-string, name ki value ko text ke andar rakhti hai.",
+        "Colon, point ek, f theek ek decimal place dikhata hai. Isliye label padhta hai, do sau iktaalees dashamlav paanch milligrams."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ ಪ್ರೋಗ್ರಾಮ್ ಪೇಷೆಂಟ್ ನ ಹೆಸರು ಮತ್ತು ತೂಕ ಕೇಳಿ, ನಂತರ ಡೋಸ್ ಪ್ರಿಂಟ್ ಮಾಡುತ್ತೆ. ಆನ್ಸರ್ಸ್ ವೇರಿಯಬಲ್ಸ್ ಒಳಗೆ ಹೇಗೆ ಹೋಗುತ್ತವೆ ನೋಡಿ.",
+        "ಪ್ರೋಗ್ರಾಮ್ ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಕಾಮೆಂಟ್ ಹೇಳುತ್ತೆ.",
+        "ಇನ್ಪುಟ್, ಪೇಷೆಂಟ್ ನೇಮ್ ಅನ್ನುವ ಪ್ರಶ್ನೆ ತೋರಿಸಿ ಕಾಯುತ್ತೆ. ಫಾರ್ಮಸಿಸ್ಟ್ ರವಿ ಅಂತ ಟೈಪ್ ಮಾಡಿ ಎಂಟರ್ ಒತ್ತುತ್ತಾರೆ. ರವಿ, ವೇರಿಯಬಲ್ ನೇಮ್ ನಲ್ಲಿ ಇಡಲಾಗುತ್ತೆ.",
+        "ನಂತರ ಇನ್ಪುಟ್ ತೂಕ ಕೇಳುತ್ತೆ. ಆನ್ಸರ್ ಟೆಕ್ಸ್ಟ್, ಹಾಗಾಗಿ ಫ್ಲೋಟ್ ಹದಿನಾರು ದಶಮಾಂಶ ಒಂದನ್ನು ನಂಬರ್ ಮಾಡುತ್ತೆ.",
+        "ಪೈಥಾನ್ ಹದಿನೈದರಿಂದ ಗುಣಿಸುತ್ತೆ. ವೇರಿಯಬಲ್ಸ್ ಪ್ಯಾನೆಲ್ ನೋಡಿ: ಆನ್ಸರ್ ಹಿಂದೆ ಡೆಸಿಮಲ್ಸ್ ನ ಉದ್ದದ ಬಾಲ ಇದೆ. ಅದು ತುಂಬಾ ಚಿಕ್ಕ ರೌಂಡಿಂಗ್ ವ್ಯತ್ಯಾಸ.",
+        "ಈ ಎಫ್ ಸ್ಟ್ರಿಂಗ್, ನೇಮ್ ನ ವ್ಯಾಲ್ಯೂ ಅನ್ನು ಟೆಕ್ಸ್ಟ್ ಒಳಗೆ ಇಡುತ್ತೆ.",
+        "ಕೋಲನ್, ಪಾಯಿಂಟ್ ಒನ್, ಎಫ್, ಸರಿಯಾಗಿ ಒಂದು ಡೆಸಿಮಲ್ ಪ್ಲೇಸ್ ತೋರಿಸುತ್ತೆ. ಹಾಗಾಗಿ ಲೇಬಲ್, ಇನ್ನೂರ ನಲವತ್ತೊಂದು ದಶಮಾಂಶ ಐದು ಮಿಲಿಗ್ರಾಂ ಅಂತ ಓದುತ್ತೆ."
+      ],
+      "display": [
+        "ಈ program patient ನ ಹೆಸರು ಮತ್ತು ತೂಕ ಕೇಳಿ, ನಂತರ dose print ಮಾಡುತ್ತೆ. Answers variables ಒಳಗೆ ಹೇಗೆ ಹೋಗುತ್ತವೆ ನೋಡಿ.",
+        "Program ಏನು ಮಾಡುತ್ತೆ ಅಂತ comment ಹೇಳುತ್ತೆ.",
+        "input, Patient name ಅನ್ನುವ ಪ್ರಶ್ನೆ ತೋರಿಸಿ ಕಾಯುತ್ತೆ. Pharmacist Ravi ಅಂತ type ಮಾಡಿ Enter ಒತ್ತುತ್ತಾರೆ. Ravi, variable name ನಲ್ಲಿ ಇಡಲಾಗುತ್ತೆ.",
+        "ನಂತರ input ತೂಕ ಕೇಳುತ್ತೆ. Answer text, ಹಾಗಾಗಿ float ಹದಿನಾರು ದಶಮಾಂಶ ಒಂದನ್ನು number ಮಾಡುತ್ತೆ.",
+        "Python ಹದಿನೈದರಿಂದ ಗುಣಿಸುತ್ತೆ. Variables panel ನೋಡಿ: answer ಹಿಂದೆ decimals ನ ಉದ್ದದ ಬಾಲ ಇದೆ. ಅದು ತುಂಬಾ ಚಿಕ್ಕ rounding ವ್ಯತ್ಯಾಸ.",
+        "ಈ f-string, name ನ value ಅನ್ನು text ಒಳಗೆ ಇಡುತ್ತೆ.",
+        "Colon, point ಒಂದು, f ಸರಿಯಾಗಿ ಒಂದು decimal place ತೋರಿಸುತ್ತೆ. ಹಾಗಾಗಿ label, ಇನ್ನೂರ ನಲವತ್ತೊಂದು ದಶಮಾಂಶ ಐದು milligrams ಅಂತ ಓದುತ್ತೆ."
+      ]
+    },
+    {
+      "id": "anim-input",
+      "prefix": "anim-input-",
+      "lang": "en",
+      "tts": [
+        "The program shows a question and waits. The pharmacist types sixteen point one and presses Enter.",
+        "input always gives text. So, at first, the box holds the string sixteen point one, in quotes.",
+        "float turns the text into a number. Now the quotes are gone.",
+        "Now Python can calculate the dose: sixteen point one times fifteen, with a tiny rounding tail.",
+        "An F string with colon, point one, F prints it neatly, with one decimal place."
+      ],
+      "display": [
+        "The program shows a question and waits. The pharmacist types sixteen point one and presses Enter.",
+        "input always gives text. So, at first, the box holds the string sixteen point one, in quotes.",
+        "float turns the text into a number. Now the quotes are gone.",
+        "Now Python can calculate the dose: sixteen point one times fifteen, with a tiny rounding tail.",
+        "An f-string with colon, point one, f prints it neatly, with one decimal place."
+      ]
+    },
+    {
+      "id": "anim-input",
+      "prefix": "anim-input-",
+      "lang": "hi",
+      "tts": [
+        "प्रोग्राम सवाल दिखाकर इंतज़ार करता है। फार्मासिस्ट सोलह दशमलव एक टाइप करके एंटर दबाता है।",
+        "इनपुट हमेशा टेक्स्ट देता है। इसलिए पहले बॉक्स में स्ट्रिंग सोलह दशमलव एक है, कोट्स के साथ।",
+        "फ्लोट टेक्स्ट को नंबर बना देता है। अब कोट्स चले गए।",
+        "अब पाइथन डोज़ कैलकुलेट कर सकता है: सोलह दशमलव एक गुणा पंद्रह, एक छोटी राउंडिंग पूँछ के साथ।",
+        "कोलन, पॉइंट वन, एफ वाली एफ स्ट्रिंग इसे साफ़-साफ़, एक डेसिमल प्लेस के साथ प्रिंट करती है।"
+      ],
+      "display": [
+        "Program सवाल दिखाकर इंतज़ार करता है। Pharmacist सोलह दशमलव एक type करके Enter दबाता है।",
+        "input हमेशा text देता है। इसलिए पहले box में string सोलह दशमलव एक है, quotes के साथ।",
+        "float text को number बना देता है। अब quotes चले गए।",
+        "अब Python dose calculate कर सकता है: सोलह दशमलव एक गुणा पंद्रह, एक छोटी rounding पूँछ के साथ।",
+        "Colon, point एक, f वाली f-string इसे साफ़-साफ़, एक decimal place के साथ print करती है।"
+      ],
+      "displayHinglish": [
+        "Program sawaal dikhakar intezaar karta hai. Pharmacist solah dashamlav ek type karke Enter dabata hai.",
+        "input hamesha text deta hai. Isliye pehle box mein string solah dashamlav ek hai, quotes ke saath.",
+        "float text ko number bana deta hai. Ab quotes chale gaye.",
+        "Ab Python dose calculate kar sakta hai: solah dashamlav ek guna pandrah, ek chhoti rounding poonchh ke saath.",
+        "Colon, point ek, f wali f-string ise saaf-saaf, ek decimal place ke saath print karti hai."
+      ]
+    },
+    {
+      "id": "anim-input",
+      "prefix": "anim-input-",
+      "lang": "kn",
+      "tts": [
+        "ಪ್ರೋಗ್ರಾಮ್ ಪ್ರಶ್ನೆ ತೋರಿಸಿ ಕಾಯುತ್ತೆ. ಫಾರ್ಮಸಿಸ್ಟ್ ಹದಿನಾರು ದಶಮಾಂಶ ಒಂದು ಅಂತ ಟೈಪ್ ಮಾಡಿ ಎಂಟರ್ ಒತ್ತುತ್ತಾರೆ.",
+        "ಇನ್ಪುಟ್ ಯಾವಾಗಲೂ ಟೆಕ್ಸ್ಟ್ ಕೊಡುತ್ತೆ. ಹಾಗಾಗಿ ಮೊದಲು ಬಾಕ್ಸ್ ನಲ್ಲಿ ಕೋಟ್ಸ್ ಜೊತೆ ಸ್ಟ್ರಿಂಗ್ ಹದಿನಾರು ದಶಮಾಂಶ ಒಂದು ಇದೆ.",
+        "ಫ್ಲೋಟ್ ಟೆಕ್ಸ್ಟ್ ಅನ್ನು ನಂಬರ್ ಮಾಡುತ್ತೆ. ಈಗ ಕೋಟ್ಸ್ ಹೋದವು.",
+        "ಈಗ ಪೈಥಾನ್ ಡೋಸ್ ಲೆಕ್ಕ ಹಾಕಬಹುದು: ಹದಿನಾರು ದಶಮಾಂಶ ಒಂದು ಗುಣಿಸು ಹದಿನೈದು, ಒಂದು ಚಿಕ್ಕ ರೌಂಡಿಂಗ್ ಬಾಲದ ಜೊತೆ.",
+        "ಕೋಲನ್, ಪಾಯಿಂಟ್ ಒನ್, ಎಫ್ ಇರುವ ಎಫ್ ಸ್ಟ್ರಿಂಗ್ ಇದನ್ನು ಒಂದು ಡೆಸಿಮಲ್ ಪ್ಲೇಸ್ ಜೊತೆ ಚೆನ್ನಾಗಿ ಪ್ರಿಂಟ್ ಮಾಡುತ್ತೆ."
+      ],
+      "display": [
+        "Program ಪ್ರಶ್ನೆ ತೋರಿಸಿ ಕಾಯುತ್ತೆ. Pharmacist ಹದಿನಾರು ದಶಮಾಂಶ ಒಂದು ಅಂತ type ಮಾಡಿ Enter ಒತ್ತುತ್ತಾರೆ.",
+        "input ಯಾವಾಗಲೂ text ಕೊಡುತ್ತೆ. ಹಾಗಾಗಿ ಮೊದಲು box ನಲ್ಲಿ quotes ಜೊತೆ string ಹದಿನಾರು ದಶಮಾಂಶ ಒಂದು ಇದೆ.",
+        "float text ಅನ್ನು number ಮಾಡುತ್ತೆ. ಈಗ quotes ಹೋದವು.",
+        "ಈಗ Python dose ಲೆಕ್ಕ ಹಾಕಬಹುದು: ಹದಿನಾರು ದಶಮಾಂಶ ಒಂದು ಗುಣಿಸು ಹದಿನೈದು, ಒಂದು ಚಿಕ್ಕ rounding ಬಾಲದ ಜೊತೆ.",
+        "Colon, point ಒಂದು, f ಇರುವ f-string ಇದನ್ನು ಒಂದು decimal place ಜೊತೆ ಚೆನ್ನಾಗಿ print ಮಾಡುತ್ತೆ."
+      ]
+    }
+  ]
+}

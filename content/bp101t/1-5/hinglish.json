@@ -1,0 +1,320 @@
+{
+  "hook": {
+    "title": "Sawaal poochne wala dose calculator",
+    "md": "Ab tak aapke programs har baar wahi numbers use karte the. Asli pharmacy tool ko **poochna** padta hai: *Patient ka naam kya hai? Wazan kitna hai?*\n\nIs lesson ke end tak aap ek chhota dose calculator banayenge, jo yeh details poochta hai, dose calculate karta hai aur ek saaf label print karta hai."
+  },
+  "learn": [
+    "**input()** se user se jaankari kaise poochein",
+    "input() hamesha **text** kyon deta hai, aur use number kaise banayein",
+    "**sep**, **end** aur **f-strings** se saaf output kaise print karein",
+    "Number ko tay **decimal places** ke saath kaise dikhayein"
+  ],
+  "explanation": [
+    {
+      "heading": "input() se sawaal poochna",
+      "md": "`input()` user se sawaal poochta hai aur tab tak **intezaar** karta hai jab tak woh answer type karke Enter na dabaye. Brackets ke andar ka text **prompt** hai, yaani screen par dikhne wala sawaal:\n\n```python\nname = input(\"Patient name: \")\nprint(\"Hello,\", name)\n```\n\nAgar user `Ravi` type kare, to screen par dikhta hai:\n\n```\nPatient name: Ravi\nHello, Ravi\n```\n\nAnswer, variable `name` mein rakh liya jaata hai, taaki program use baad mein use kar sake.\n\n**Champ Lab mein:** peechhe koi keyboard intezaar nahi kar raha, isliye pehle **Input** box mein apne answers type kijiye, har line mein ek, phir Run dabaiye.",
+      "callout": {
+        "title": "Prompt ke aakhir mein space rakhiye",
+        "md": "input(\"Weight (kg): \") likhiye, closing quote se pehle space ke saath, taaki answer sawaal se chipke nahi."
+      }
+    },
+    {
+      "heading": "input() hamesha text deta hai",
+      "md": "User jo bhi type kare, `input()` use **string** ke roop mein deta hai, chahe woh number jaisa dikhe:\n\n```python\nweight = input(\"Weight (kg): \")\nprint(weight * 2)\n```\n\nAgar user `20` type kare, to yeh `2020` print karta hai, 40 nahi. Text `\"20\"` dohraya gaya, jaisa aapne Lesson 1.3 mein dekha tha.\n\nIska fix hai Lesson 1.4 wala **type casting**. Answer ko turant badliye:\n\n```python\nweight = float(input(\"Weight (kg): \"))\nprint(weight * 2)\n```\n\nAb `20` type karne par `40.0` print hota hai. Poori sankhya ke liye `int()` use kijiye, jaise tablets ki ginti, aur dashamlav wali sankhya ke liye `float()`, jaise wazan.",
+      "callout": {
+        "title": "input() se aaye numbers ko hamesha badliye",
+        "md": "input() se padha gaya wazan ya dose tab tak text hai, jab tak aap use int() ya float() se na badlein."
+      }
+    },
+    {
+      "heading": "sep aur end ke saath print karna",
+      "md": "Aap jaante hain ki `print()` items ke beech space lagata hai. Do settings ise badalti hain:\n\n- **`sep`** tay karta hai ki items ke **beech** kya aaye (default mein space).\n- **`end`** tay karta hai ki **aakhir** mein kya aaye (default mein nayi line).\n\n```python\nprint(\"12\", \"05\", \"2026\", sep=\"/\")\nprint(\"Dose\", end=\": \")\nprint(\"500 mg\")\n```\n\nYeh print karta hai:\n\n```\n12/05/2026\nDose: 500 mg\n```\n\nDoosra `print()` usi line par aage likhta hai, kyunki pehla nayi line ki jagah `\": \"` par khatam hua."
+    },
+    {
+      "heading": "f-strings: text ke andar values",
+      "md": "**f-string** woh string hai jiski opening quote se pehle `f` likha ho. Curly brackets `{ }` ke andar likhi har cheez ki jagah uski value aa jaati hai:\n\n```python\ndrug = \"Amoxicillin\"\ndose_mg = 500\nprint(f\"{drug}: {dose_mg} mg, three times a day\")\nprint(f\"Daily total: {dose_mg * 3} mg\")\n```\n\nYeh print karta hai:\n\n```\nAmoxicillin: 500 mg, three times a day\nDaily total: 1500 mg\n```\n\nNa commas, na `str()`, aur har space aap khud tay karte hain.",
+      "callout": {
+        "title": "f-string",
+        "md": "Quotes se pehle f wali string, jisme {name} ki jagah name ki value aa jaati hai."
+      }
+    },
+    {
+      "heading": "Decimal places tay karna",
+      "md": "Calculations se kabhi-kabhi lambe decimals aate hain. 16.1 kg ka bachcha, 15 mg per kg ke hisaab se:\n\n```python\ndose_mg = 16.1 * 15\nprint(dose_mg)\n```\n\n`241.50000000000003` print karta hai. Computer decimals ko bahut chhote rounding farak ke saath rakhta hai, isliye yeh normal hai.\n\nCurly brackets ke andar `:.1f` lagaiye, taaki **ek** decimal place dikhe:\n\n```python\nprint(f\"Dose: {dose_mg:.1f} mg\")\n```\n\nYeh `Dose: 241.5 mg` print karta hai. Do decimal places ke liye `:.2f` use kijiye, jaise `f\"{100 / 3:.2f}\"` deta hai `33.33`."
+    }
+  ],
+  "walkthrough": {
+    "intro": "Yeh program patient ka naam aur wazan poochta hai, aur 15 mg per kg ke hisaab se dose print karta hai. Is example mein pharmacist Ravi aur 16.1 type karta hai.",
+    "keyTerms": [
+      {
+        "meaning": "Sawaal dikhao aur user ke answer ka intezaar karo. Answer text hota hai."
+      },
+      {
+        "meaning": "Value poochho aur answer ko number banao."
+      },
+      {
+        "meaning": "Variable ki value ko text ke andar rakho."
+      },
+      {
+        "meaning": "Ek decimal place dikhao."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Yeh program patient ka naam aur wazan poochta hai, aur phir dose print karta hai. Dekhiye answers variables mein kaise jaate hain."
+      },
+      {
+        "say": "Comment batata hai ki program kya karta hai."
+      },
+      {
+        "say": "input sawaal dikhata hai, Patient name, aur intezaar karta hai. Pharmacist Ravi type karke Enter dabata hai. Ravi, variable name mein rakh liya jaata hai."
+      },
+      {
+        "say": "Phir input wazan poochta hai. Answer text hai, isliye float solah dashamlav ek ko number bana deta hai."
+      },
+      {
+        "say": "Python pandrah se guna karta hai. Variables panel dekhiye: answer ke peechhe decimals ki lambi poonchh hai. Yeh bahut chhota rounding farak hai."
+      },
+      {
+        "say": "Yeh f-string, name ki value ko text ke andar rakhti hai."
+      },
+      {
+        "say": "Colon, point ek, f theek ek decimal place dikhata hai. Isliye label padhta hai, do sau iktaalees dashamlav paanch milligrams."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Yeh do errors tab aate hain jab input() ke answer ko sahi se handle nahi kiya jaata.",
+    "examples": [
+      {
+        "title": "input() ke text se calculate karna",
+        "md": "`weight` mein text hai, aur text ko dashamlav wali sankhya se guna nahi kiya ja sakta. Pehle answer ko badliye: `weight = float(input(\"Weight (kg): \"))`."
+      },
+      {
+        "title": "User ne number nahi, kuch aur type kiya",
+        "md": "User ne `52 kg` type kiya. `float()` sirf number badal sakta hai, isliye unit ki wajah se error aaya. Prompt mein hi unit poochhiye, jaise `\"Weight (kg): \"`, taaki user sirf number type kare."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Answer ko badalna bhool jaana, jaise `weight = input(\"Weight: \")` phir `weight * 2`",
+      "see": "Koi error nahi, lekin 20 type karne par 2020 aata hai",
+      "fix": "Badliye: `weight = float(input(\"Weight: \"))`."
+    },
+    {
+      "mistake": "f-string se pehle `f` bhool jaana, jaise `print(\"Dose: {dose} mg\")`",
+      "see": "Koi error nahi, lekin Dose: {dose} mg print hota hai",
+      "fix": "Quote se pehle f lagaiye: `print(f\"Dose: {dose} mg\")`."
+    },
+    {
+      "mistake": "Prompt ke aakhir mein space na rakhna, jaise `input(\"Weight:\")`",
+      "see": "Koi error nahi, lekin answer sawaal se chipak jaata hai: Weight:52",
+      "fix": "Space lagaiye: `input(\"Weight: \")`."
+    },
+    {
+      "mistake": "Text aur number ko `+` se jodna, jaise `print(\"Dose: \" + dose)`",
+      "fix": "f-string use kijiye: `print(f\"Dose: {dose}\")`."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Patient ka swagat kijiye",
+      "md": "Program patient ka naam poochta hai. Ek line jodiye jo unka swagat kare. Naam **Ananya** type hone par output bilkul yeh hona chahiye:",
+      "hints": [
+        "print() \"Hello,\" aur variable name ko comma se alag karke dikha sakta hai.",
+        "Try kijiye: print(\"Hello,\", name) ya print(f\"Hello, {name}\")."
+      ]
+    },
+    {
+      "title": "Answer ko badliye",
+      "md": "Program poochta hai ki patient kitni strips le raha hai. Har strip mein **10 tablets** hain. Answer ko poori sankhya mein badalkar kul tablets print kijiye. **4** type hone par output bilkul yeh hona chahiye:",
+      "hints": [
+        "strips mein text hai. int(strips) use number banata hai.",
+        "print(\"Tablets:\", int(strips) * 10)"
+      ]
+    },
+    {
+      "title": "Do decimal places",
+      "md": "100 ml syrup 3 bachchon mein barabar baanta jaata hai. **f-string** aur **`:.2f`** se har bachche ka volume print kijiye, bilkul aise:",
+      "hints": [
+        "Quote se pehle f lagaiye: f\"Volume: ...\"",
+        "Curly brackets ke andar likhiye: volume_ml:.2f"
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "Yeh program 15 mg per kg ke hisaab se dose print karna chahiye. **20** type hone par output bilkul neeche wala hona chahiye, lekin dose 20s ki lambi string bankar aati hai. Ise theek kijiye.",
+      "hints": [
+        "input() kaun sa data type deta hai?",
+        "input(...) ko float(...) ke andar rakhiye."
+      ],
+      "solutionNote": "input() text deta hai, isliye \"20\" * 15 text ko dohraata hai. float() pehle use number 20.0 banata hai."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "input() hamesha kaun sa data type deta hai?",
+      "why": "input() hamesha text (string) deta hai, chahe user number type kare."
+    },
+    {
+      "q": "x = input(\"Number: \") aur user 20 type karta hai. print(x * 2) kya dikhata hai?",
+      "why": "x mein text \"20\" hai, aur * text ko dohraata hai."
+    },
+    {
+      "q": "print(\"A\", \"B\", sep=\"\") kya dikhata hai?",
+      "why": "sep=\"\" items ke beech kuch nahi rakhta."
+    },
+    {
+      "q": "dose = 500. Kaun si line Dose: 500 mg print karti hai?",
+      "why": "Sirf {dose} wali f-string hi value ko text ke andar rakhti hai."
+    },
+    {
+      "q": "print(f\"{2 / 3:.2f}\") kya dikhata hai?",
+      "why": ":.2f do decimal places dikhata hai, round karke: 0.67."
+    },
+    {
+      "q": "print(\"Hi\", end=\"!\") kya dikhata hai?",
+      "why": "end=\"!\" nayi line ki jagah aakhir mein ! print karta hai."
+    }
+  ],
+  "exam": {
+    "note": "University exam English mein likha jaata hai, isliye model answers English mein hi rakhe gaye hain. Yeh practice ke liye important questions hain; asli university questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 1.5 · Input aur output",
+    "children": [
+      {
+        "label": "input()",
+        "children": [
+          {
+            "label": "Prompt dikhata hai"
+          },
+          {
+            "label": "Enter ka intezaar"
+          },
+          {
+            "label": "Hamesha str deta hai"
+          }
+        ]
+      },
+      {
+        "label": "Badalna",
+        "children": [
+          {
+            "label": "int(input(...))"
+          },
+          {
+            "label": "float(input(...))"
+          },
+          {
+            "label": "\"20\" * 2 = 2020"
+          }
+        ]
+      },
+      {
+        "label": "print()",
+        "children": [
+          {
+            "label": "sep: items ke beech"
+          },
+          {
+            "label": "end: aakhir mein"
+          }
+        ]
+      },
+      {
+        "label": "f-strings",
+        "children": [
+          {
+            "label": "f\"{name}\""
+          },
+          {
+            "label": "{x:.1f} ek decimal"
+          },
+          {
+            "label": "{x:.2f} do decimals"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "TypeError: text × number"
+          },
+          {
+            "label": "ValueError: '52 kg'"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**`input()`** ek **prompt** dikhata hai aur user ke answer type karke Enter dabane ka intezaar karta hai.",
+    "Answer hamesha **string** hota hai, isliye numbers ko **`int()`** ya **`float()`** se badliye: `float(input(\"Weight (kg): \"))`.",
+    "**`sep`** tay karta hai ki printed items ke beech kya aaye; **`end`** tay karta hai ki line ke aakhir mein kya aaye.",
+    "**f-strings** values ko text ke andar rakhti hain: `f\"Dose: {dose} mg\"`.",
+    "**`:.1f`** aur **`:.2f`** ek ya do decimal places dikhate hain, aur 241.50000000000003 jaise chhote rounding farak chhipa dete hain."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Program sawaal dikhakar intezaar karta hai. Pharmacist solah dashamlav ek type karke Enter dabata hai."
+        },
+        {
+          "say": "input hamesha text deta hai. Isliye pehle box mein string solah dashamlav ek hai, quotes ke saath."
+        },
+        {
+          "say": "float text ko number bana deta hai. Ab quotes chale gaye."
+        },
+        {
+          "say": "Ab Python dose calculate kar sakta hai: solah dashamlav ek guna pandrah, ek chhoti rounding poonchh ke saath."
+        },
+        {
+          "say": "Colon, point ek, f wali f-string ise saaf-saaf, ek decimal place ke saath print karti hai."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "video",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Ek naam wala nirdesh jo brackets lagane par apna kaam karta hai, jaise print() ya input(). Aap Lesson 1.1 se functions use kar rahe hain."
+    },
+    {
+      "meaning": "Ek sawaal dikhata hai aur user ke answer type karke Enter dabane ka intezaar karta hai. Answer hamesha text hota hai."
+    },
+    {
+      "meaning": "Jo insaan aapka program use kar raha hai, jaise patient ka wazan type karne wala pharmacist."
+    },
+    {
+      "meaning": "Woh sawaal jo input() screen par dikhata hai, jaise \"Weight (kg): \"."
+    },
+    {
+      "meaning": "print() ki settings: sep items ke beech aata hai, end line ke aakhir mein."
+    },
+    {
+      "meaning": "Quotes se pehle f wala text, jisme {name} ki jagah name ki value aa jaati hai."
+    },
+    {
+      "meaning": "f-string mein { } ke andar lagaate hain, taaki dashamlav ke baad ek ya do ank dikhein."
+    }
+  ]
+}
