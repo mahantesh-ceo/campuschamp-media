@@ -1,12 +1,14 @@
 # Campus Champ media
 
-Audio and other media for campuschamp.in, served through jsDelivr:
+Lesson content and audio for campuschamp.in, served through GitHub Pages (changes go live within a few minutes):
 
-`https://cdn.jsdelivr.net/gh/mahantesh-ceo/campuschamp-media@main/<path>`
+`https://mahantesh-ceo.github.io/campuschamp-media/<path>`
 
 ## Layout
 
 ```
+content/<course>/course.json                     course outline
+content/<course>/<lesson>/<lang>.json             lesson text (en = full, others = translations)
 scripts/<course>/<lesson>.json                    what each clip says (English, Hindi, Kannada)
 audio/<course>/<lesson>/<lang>/step-NN.mp3        narrator steps
 audio/<course>/<lesson>/<lang>/anim-<id>-NN.mp3   animation steps
