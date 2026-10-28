@@ -202,3 +202,6 @@ if __name__ == "__main__":
     os.makedirs(os.path.dirname(out), exist_ok=True)
     json.dump(L, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     print("wrote", out)
+    # keep the "Words to know" section after regenerating
+    import subprocess, sys
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "..", "glossary_bp101t.py")], check=True)

@@ -319,6 +319,51 @@
     "mindmap",
     "summary",
     "video",
-    "animations"
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Plain text type ಮಾಡುವ ಒಂದು simple program, ಉದಾ: Notepad. ಇದು code run ಮಾಡಲ್ಲ."
+    },
+    {
+      "meaning": "Integrated Development Environment: code ಬರೆಯೋದು, run ಮಾಡೋದು, ಸರಿ ಮಾಡೋದು ಎಲ್ಲಾ ಒಂದೇ app ನಲ್ಲಿ."
+    },
+    {
+      "meaning": "Click ಮಾಡುವ ಬದಲು computer ಗೆ ಸೂಚನೆಗಳನ್ನು type ಮಾಡುವ window. Windows ನಲ್ಲಿ Command Prompt, Mac ನಲ್ಲಿ Terminal."
+    },
+    {
+      "meaning": "Terminal ನಲ್ಲಿ type ಮಾಡುವ ಒಂದು instruction, ಉದಾ: python --version."
+    },
+    {
+      "meaning": "Command type ಮಾಡಿದಾಗ Windows ಹುಡುಕುವ folders ನ list. Python ಅನ್ನು PATH ಗೆ ಸೇರಿಸಿದರೆ python ಅನ್ನು ಎಲ್ಲಿಂದ ಬೇಕಾದರೂ type ಮಾಡಬಹುದು."
+    },
+    {
+      "meaning": "Terminal ನಲ್ಲಿ python type ಮಾಡಿದ ಮೇಲೆ, Python ಒಂದು line code ಗಾಗಿ ಕಾಯುವ ಜಾಗ. ಹೊರಬರಲು exit() type ಮಾಡಿ."
+    },
+    {
+      "meaning": "File ಹೆಸರಿನಲ್ಲಿ dot ನಂತರದ letters. Python files .py ಇಂದ ಕೊನೆಯಾಗುತ್ತವೆ."
+    },
+    {
+      "meaning": "Jupyter ನಲ್ಲಿ ತಾನೇ run ಆಗಿ, result ಅನ್ನು ಕೆಳಗೇ ತೋರಿಸುವ code ನ ಚಿಕ್ಕ box."
+    },
+    {
+      "meaning": "Python, Jupyter Notebook ಮತ್ತು science libraries ಅನ್ನು ಒಟ್ಟಿಗೆ install ಮಾಡುವ free bundle."
+    },
+    {
+      "meaning": "App ಗೆ ಹೊಸ features ಕೊಡುವ add-on, ಉದಾ: VS Code ನ Python extension."
+    },
+    {
+      "meaning": "Code ನ ಬೇರೆ ಬೇರೆ ಭಾಗಗಳನ್ನು ಬೇರೆ ಬಣ್ಣಗಳಲ್ಲಿ ತೋರಿಸೋದು, ಓದೋಕೆ ಸುಲಭ ಆಗಲಿ ಅಂತ."
+    },
+    {
+      "meaning": "Type ಮಾಡುವಾಗ editor ಉಳಿದ ಪದವನ್ನು suggest ಮಾಡುತ್ತೆ, phone keyboard suggestions ತರಹ."
+    },
+    {
+      "meaning": "Import ಮಾಡಬಹುದಾದ ready-made Python code ನ file. ಸದ್ಯಕ್ಕೆ ಇದನ್ನು library ತರಹವೇ ಅಂದುಕೊಳ್ಳಿ."
+    },
+    {
+      "meaning": "Libraries install ಮಾಡುವ Python ನ tool, terminal ಇಂದ use ಮಾಡ್ತಾರೆ. ಇದನ್ನು Lesson 1.7 ನಲ್ಲಿ use ಮಾಡ್ತೀರಿ."
+    }
   ]
 }

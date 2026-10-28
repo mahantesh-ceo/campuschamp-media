@@ -12,7 +12,8 @@
     "mindmap",
     "summary",
     "video",
-    "animations"
+    "animations",
+    "glossary"
   ],
   "walkthrough": {
     "steps": [
@@ -336,5 +337,55 @@
     "**Interpreter** Python code ಅನ್ನು **ಒಂದು ಸಲಕ್ಕೆ ಒಂದು line, ಮೇಲಿಂದ ಕೆಳಗೆ** run ಮಾಡುತ್ತೆ.",
     "**print()** text ಮತ್ತು numbers ಅನ್ನು screen ಮೇಲೆ ತೋರಿಸುತ್ತೆ; **#** ಇಂದ comment ಶುರುವಾಗುತ್ತೆ.",
     "**Errors** Python ಎಲ್ಲಿ ಸಿಕ್ಕಿಹಾಕಿಕೊಂಡಿತು ಅಂತ ಸ್ಪಷ್ಟವಾಗಿ ಹೇಳುತ್ತವೆ. Syntax error ಇದ್ದರೆ program ಶುರುವೇ ಆಗಲ್ಲ."
+  ],
+  "glossary": [
+    {
+      "meaning": "Computer ಕ್ರಮವಾಗಿ ಪಾಲಿಸುವ ಸೂಚನೆಗಳ set, computer ಗಾಗಿ ಬರೆದ prescription ತರಹ."
+    },
+    {
+      "meaning": "Programming language ನಲ್ಲಿ type ಮಾಡುವ ಸೂಚನೆಗಳು. \"Code ಬರೆಯೋದು\" ಅಂದ್ರೆ ಈ ಸೂಚನೆಗಳನ್ನು ಬರೆಯೋದು."
+    },
+    {
+      "meaning": "ಮನುಷ್ಯರು ಮತ್ತು computer ಇಬ್ಬರಿಗೂ ಅರ್ಥ ಆಗುವ, programs ಬರೆಯಲು ಬಳಸುವ ಭಾಷೆ. Python ಅದರಲ್ಲಿ ಒಂದು."
+    },
+    {
+      "meaning": "ನಿಮ್ಮ program ಅನ್ನು computer ಇಂದ ಮಾಡಿಸೋದು. ಇದನ್ನು \"execute\" ಮಾಡೋದು ಅಂತಲೂ ಕರೆಯುತ್ತಾರೆ."
+    },
+    {
+      "meaning": "ನಿಮ್ಮ code ಓದಿ, ಒಂದೊಂದೇ line ಆಗಿ ಮಾಡಿ ಮುಗಿಸುವ Python ನ ಭಾಗ, pharmacist prescription ಓದುವ ತರಹ."
+    },
+    {
+      "meaning": "Python ಗೆ ಸೇರಿಸಿದರೆ ಹೊಸ ಸಾಮರ್ಥ್ಯ ಕೊಡುವ ready-made code, ಉದಾ: graphs ಬರೆಯೋದು. ಹೆಚ್ಚಿನದು Lesson 1.7 ನಲ್ಲಿ."
+    },
+    {
+      "meaning": "Text ಅಥವಾ numbers ಅನ್ನು screen ಮೇಲೆ ತೋರಿಸುವ Python instruction."
+    },
+    {
+      "meaning": "Program run ಆದಾಗ screen ಮೇಲೆ ಕಾಣುವುದೆಲ್ಲಾ."
+    },
+    {
+      "meaning": "Quotes ಒಳಗಿನ text, ಉದಾ: \"Paracetamol\". Python ಅದನ್ನು ಬರೆದ ಹಾಗೆಯೇ ತೋರಿಸುತ್ತೆ."
+    },
+    {
+      "meaning": "# ಇಂದ ಶುರುವಾಗುವ, ಮನುಷ್ಯರಿಗಾಗಿ ಬರೆದ note. Python ಅದನ್ನು skip ಮಾಡುತ್ತೆ."
+    },
+    {
+      "meaning": "ಏನನ್ನೋ ಅರ್ಥ ಮಾಡಿಕೊಳ್ಳಲು ಅಥವಾ ಮುಗಿಸಲು ಆಗಲಿಲ್ಲ ಅನ್ನುವ Python ನ message. ಅದು line ಮತ್ತು ಕಾರಣ ಎರಡನ್ನೂ ಹೇಳುತ್ತೆ."
+    },
+    {
+      "meaning": "Programming language ನ grammar ನಿಯಮಗಳು: brackets, quotes ಮತ್ತು commas ಎಲ್ಲಿ ಬರಬೇಕು ಅನ್ನೋದು."
+    },
+    {
+      "meaning": "ಈ ನಿಯಮ ಮುರಿಯುವ ಬರವಣಿಗೆಯ ತಪ್ಪು, ಉದಾ: missing bracket. ಅದನ್ನು ಸರಿ ಮಾಡುವವರೆಗೆ Python ಶುರುವೇ ಆಗಲ್ಲ."
+    },
+    {
+      "meaning": "Program ನಿಲ್ಲುವ ಅಥವಾ ತಪ್ಪು result ಕೊಡುವ ಹಾಗೆ ಮಾಡುವ code ನ ತಪ್ಪು."
+    },
+    {
+      "meaning": "Bugs ಹುಡುಕಿ ಸರಿ ಮಾಡೋದು. ತಪ್ಪು ಹುಡುಕಲು prescription ಅನ್ನು line by line check ಮಾಡುವ ತರಹ."
+    },
+    {
+      "meaning": "Capital ಮತ್ತು small letters ಬೇರೆ ಬೇರೆ ಅಂತ ಪರಿಗಣಿಸಲಾಗುತ್ತೆ. Python ನಲ್ಲಿ print ಕೆಲಸ ಮಾಡುತ್ತೆ, Print ಮಾಡಲ್ಲ."
+    }
   ]
 }

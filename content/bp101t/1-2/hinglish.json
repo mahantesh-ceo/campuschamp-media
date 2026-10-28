@@ -319,6 +319,51 @@
     "mindmap",
     "summary",
     "video",
-    "animations"
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Plain text type karne ka ek simple program, jaise Notepad. Yeh code nahi chala sakta."
+    },
+    {
+      "meaning": "Integrated Development Environment: ek app jisme code likhna, chalana aur theek karna sab hota hai."
+    },
+    {
+      "meaning": "Ek window jisme click karne ke bajaay computer ko nirdesh type karte hain. Windows mein Command Prompt, Mac mein Terminal."
+    },
+    {
+      "meaning": "Terminal mein type kiya gaya ek instruction, jaise python --version."
+    },
+    {
+      "meaning": "Folders ki woh list jisme Windows command dhoondhta hai. Python ko PATH mein jodne se python kahin se bhi type kar sakte hain."
+    },
+    {
+      "meaning": "Terminal mein python type karne ke baad, jahan Python ek line ke code ka intezaar karta hai. Bahar nikalne ke liye exit() type karein."
+    },
+    {
+      "meaning": "File ke naam mein dot ke baad ke letters. Python files .py par khatm hoti hain."
+    },
+    {
+      "meaning": "Jupyter mein code ka ek chhota box, jo alag se chalta hai aur result theek neeche dikhata hai."
+    },
+    {
+      "meaning": "Ek free bundle jo Python, Jupyter Notebook aur science libraries ek saath install karta hai."
+    },
+    {
+      "meaning": "Ek add-on jo app ko naye features deta hai, jaise VS Code ka Python extension."
+    },
+    {
+      "meaning": "Code ke alag-alag hisson ko alag rangon mein dikhana, taaki padhna aasaan ho."
+    },
+    {
+      "meaning": "Type karte samay editor baaki shabd suggest karta hai, jaise phone keyboard ke suggestions."
+    },
+    {
+      "meaning": "Ready-made Python code ki ek file jise import kar sakte hain. Abhi ke liye ise library jaisa hi samajhiye."
+    },
+    {
+      "meaning": "Libraries install karne ka Python ka tool, jo terminal se chalta hai. Ise Lesson 1.7 mein use karenge."
+    }
   ]
 }

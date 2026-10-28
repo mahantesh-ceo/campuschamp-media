@@ -420,3 +420,6 @@ if __name__ == "__main__":
     path = os.path.join(ROOT, "scripts", "bp101t", "1-2.json")
     json.dump(script, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     print("wrote", path)
+    # keep the "Words to know" section after regenerating
+    import subprocess, sys
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "..", "glossary_bp101t.py")], check=True)

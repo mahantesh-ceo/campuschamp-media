@@ -573,5 +573,63 @@
         }
       ]
     }
+  ],
+  "glossary": [
+    {
+      "term": "Text editor",
+      "meaning": "A simple program for typing plain text, such as Notepad. It can't run code."
+    },
+    {
+      "term": "IDE",
+      "meaning": "Integrated Development Environment: one app where you write, run and fix code."
+    },
+    {
+      "term": "Command Prompt / Terminal",
+      "meaning": "A window where you type instructions to the computer instead of clicking. Windows calls it Command Prompt; Mac calls it Terminal."
+    },
+    {
+      "term": "Command",
+      "meaning": "An instruction typed into the terminal, such as python --version."
+    },
+    {
+      "term": "PATH",
+      "meaning": "The list of folders Windows searches when you type a command. Adding Python to PATH lets you type python from anywhere."
+    },
+    {
+      "term": "Python prompt (>>>)",
+      "meaning": "Where Python waits for one line of code after you type python in the terminal. Type exit() to leave."
+    },
+    {
+      "term": "File extension (.py)",
+      "meaning": "The letters after the dot in a file name. Python files end in .py."
+    },
+    {
+      "term": "Cell",
+      "meaning": "A small box of code in Jupyter that runs on its own and shows its result just below it."
+    },
+    {
+      "term": "Anaconda",
+      "meaning": "A free bundle that installs Python, Jupyter Notebook and science libraries together."
+    },
+    {
+      "term": "Extension (add-on)",
+      "meaning": "An add-on that gives an app new features, like the Python extension for VS Code."
+    },
+    {
+      "term": "Syntax highlighting",
+      "meaning": "Showing different parts of code in different colours, so it's easier to read."
+    },
+    {
+      "term": "Auto-completion",
+      "meaning": "The editor suggests the rest of a word while you type, like phone keyboard suggestions."
+    },
+    {
+      "term": "Module",
+      "meaning": "A file of ready-made Python code you can import. For now, think of it as the same as a library."
+    },
+    {
+      "term": "pip",
+      "meaning": "Python's tool for installing libraries, used from the terminal. You'll use it in Lesson 1.7."
+    }
   ]
 }

@@ -12,7 +12,8 @@
     "mindmap",
     "summary",
     "video",
-    "animations"
+    "animations",
+    "glossary"
   ],
   "walkthrough": {
     "steps": [
@@ -336,5 +337,55 @@
     "**Interpreter** Python code ko **ek baar mein ek line, upar se neeche tak** chalata hai.",
     "**print()** text aur numbers ko screen par dikhata hai; **#** se comment shuru hota hai.",
     "**Errors** saaf batate hain ki Python kahan atka. Syntax error ho to program shuru hi nahi hota."
+  ],
+  "glossary": [
+    {
+      "meaning": "Nirdeshon ka ek set jise computer kram se follow karta hai, jaise computer ke liye likha gaya prescription."
+    },
+    {
+      "meaning": "Programming language mein type kiye gaye nirdesh. \"Code likhna\" matlab yeh nirdesh likhna."
+    },
+    {
+      "meaning": "Ek bhasha jise insaan aur computer dono samajhte hain, programs likhne ke liye. Python unme se ek hai."
+    },
+    {
+      "meaning": "Computer se aapka program poora karwana. Ise \"execute\" karna bhi kehte hain."
+    },
+    {
+      "meaning": "Python ka woh hissa jo aapka code padhkar use ek-ek line karke poora karta hai, jaise pharmacist prescription padhta hai."
+    },
+    {
+      "meaning": "Ready-made code jise Python mein jodkar nayi kshamtayein milti hain, jaise graphs banana. Zyaada Lesson 1.7 mein."
+    },
+    {
+      "meaning": "Python ka woh instruction jo text ya numbers ko screen par dikhata hai."
+    },
+    {
+      "meaning": "Program chalne par screen par jo kuch dikhta hai."
+    },
+    {
+      "meaning": "Quotes ke andar ka text, jaise \"Paracetamol\". Python ise bilkul waisa hi dikhata hai jaisa likha hai."
+    },
+    {
+      "meaning": "# se shuru hone wala, insaanon ke liye ek note. Python ise chhod deta hai."
+    },
+    {
+      "meaning": "Python ka message ki woh kuch samajh ya poora nahi kar paaya. Yeh line aur kaaran dono batata hai."
+    },
+    {
+      "meaning": "Programming language ke grammar ke niyam: brackets, quotes aur commas kahan lagte hain."
+    },
+    {
+      "meaning": "In niyamon ko todne wali likhne ki galti, jaise missing bracket. Ise theek kiye bina Python shuru nahi hota."
+    },
+    {
+      "meaning": "Code ki woh galti jisse program ruk jaaye ya galat result de."
+    },
+    {
+      "meaning": "Bugs dhoondhna aur theek karna. Jaise galti dhoondhne ke liye prescription ko line by line check karna."
+    },
+    {
+      "meaning": "Capital aur small letters alag maane jaate hain. Python mein print chalta hai, lekin Print nahi."
+    }
   ]
 }

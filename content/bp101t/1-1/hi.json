@@ -12,7 +12,8 @@
     "mindmap",
     "summary",
     "video",
-    "animations"
+    "animations",
+    "glossary"
   ],
   "walkthrough": {
     "steps": [
@@ -336,5 +337,55 @@
     "**Interpreter** Python code को **एक बार में एक line, ऊपर से नीचे तक** चलाता है।",
     "**print()** text और numbers को screen पर दिखाता है; **#** से comment शुरू होता है।",
     "**Errors** साफ़ बताते हैं कि Python कहाँ अटका। Syntax error हो तो program शुरू ही नहीं होता।"
+  ],
+  "glossary": [
+    {
+      "meaning": "निर्देशों का एक set जिसे computer क्रम से follow करता है, जैसे computer के लिए लिखा गया prescription।"
+    },
+    {
+      "meaning": "Programming language में type किए गए निर्देश। \"Code लिखना\" मतलब ये निर्देश लिखना।"
+    },
+    {
+      "meaning": "एक भाषा जिसे इंसान और computer दोनों समझते हैं, programs लिखने के लिए। Python उनमें से एक है।"
+    },
+    {
+      "meaning": "Computer से आपका program पूरा करवाना। इसे \"execute\" करना भी कहते हैं।"
+    },
+    {
+      "meaning": "Python का वह हिस्सा जो आपका code पढ़कर उसे एक-एक line करके पूरा करता है, जैसे pharmacist prescription पढ़ता है।"
+    },
+    {
+      "meaning": "Ready-made code जिसे Python में जोड़कर नई क्षमताएँ मिलती हैं, जैसे graphs बनाना। ज़्यादा Lesson 1.7 में।"
+    },
+    {
+      "meaning": "Python का वह instruction जो text या numbers को screen पर दिखाता है।"
+    },
+    {
+      "meaning": "Program चलने पर screen पर जो कुछ दिखता है।"
+    },
+    {
+      "meaning": "Quotes के अंदर का text, जैसे \"Paracetamol\"। Python इसे बिल्कुल वैसा ही दिखाता है जैसा लिखा है।"
+    },
+    {
+      "meaning": "# से शुरू होने वाला, इंसानों के लिए एक note। Python इसे छोड़ देता है।"
+    },
+    {
+      "meaning": "Python का message कि वह कुछ समझ या पूरा नहीं कर पाया। यह line और कारण दोनों बताता है।"
+    },
+    {
+      "meaning": "Programming language के grammar के नियम: brackets, quotes और commas कहाँ लगते हैं।"
+    },
+    {
+      "meaning": "इन नियमों को तोड़ने वाली लिखने की गलती, जैसे missing bracket। इसे ठीक किए बिना Python शुरू नहीं होता।"
+    },
+    {
+      "meaning": "Code की वह गलती जिससे program रुक जाए या गलत result दे।"
+    },
+    {
+      "meaning": "Bugs ढूँढना और ठीक करना। जैसे गलती ढूँढने के लिए prescription को line by line check करना।"
+    },
+    {
+      "meaning": "Capital और small letters अलग माने जाते हैं। Python में print चलता है, लेकिन Print नहीं।"
+    }
   ]
 }

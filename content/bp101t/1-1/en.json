@@ -282,7 +282,7 @@
       {
         "q": "Explain the features of Python and its applications in pharmaceutical sciences.",
         "marks": 5,
-        "md": "**Features of Python:**\n1. **Simple and readable**: its syntax is close to English, so it is easy to learn.\n2. **Interpreted**: code is executed statement by statement by the Python interpreter, which makes testing and debugging easy. (Internally, Python first converts code into bytecode, which the Python Virtual Machine runs.)\n3. **High-level**: the programmer does not need to manage computer memory or hardware details.\n4. **Free and open source**: anyone can use, share and modify it at no cost.\n5. **Portable (cross-platform)**: the same program runs on Windows, macOS and Linux.\n6. **Large standard library and third-party libraries**: for example NumPy, Pandas and Matplotlib for data analysis and graphs.\n7. **Dynamically typed**: the type of a variable does not need to be declared in advance.\n8. **Supports object-oriented programming** and has a large, active community.\n\n**Applications in pharmaceutical sciences:**\n1. **Clinical trial data analysis**: cleaning and summarising patient data.\n2. **Pharmacokinetics**: calculating Cmax and Tmax and plotting concentration–time curves.\n3. **Pharmacovigilance**: analysing adverse drug reaction (ADR) reports to find safety signals.\n4. **Computer-aided drug design (CADD) and cheminformatics**: studying molecules and predicting drug properties.\n5. **Automation**: generating lab reports, labels and dosage calculations.\n6. **Machine learning and AI**: predicting drug activity and supporting drug discovery."
+        "md": "**Features of Python:**\n1. **Simple and readable**: its syntax is close to English, so it is easy to learn.\n2. **Interpreted**: code is executed statement by statement by the Python interpreter, which makes testing and debugging easy. (Internally, Python first converts code into bytecode, which the Python Virtual Machine runs.)\n3. **High-level**: the programmer does not need to manage computer memory or hardware details.\n4. **Free and open source**: anyone can use, share and modify it at no cost.\n5. **Portable (cross-platform)**: the same program runs on Windows, macOS and Linux.\n6. **Large standard library and third-party libraries**: for example NumPy, Pandas and Matplotlib for data analysis and graphs.\n7. **Dynamically typed**: Python works out the kind of value (number or text) by itself, so it doesn't need to be declared in advance.\n8. **Supports object-oriented programming** and has a large, active community.\n\n**Applications in pharmaceutical sciences:**\n1. **Clinical trial data analysis**: cleaning and summarising patient data.\n2. **Pharmacokinetics**: calculating Cmax and Tmax and plotting concentration–time curves.\n3. **Pharmacovigilance**: analysing adverse drug reaction (ADR) reports to find safety signals.\n4. **Computer-aided drug design (CADD) and cheminformatics**: studying molecules and predicting drug properties.\n5. **Automation**: generating lab reports, labels and dosage calculations.\n6. **Machine learning and AI**: predicting drug activity and supporting drug discovery."
       }
     ]
   },
@@ -628,5 +628,71 @@
     "en",
     "hi",
     "kn"
+  ],
+  "glossary": [
+    {
+      "term": "Program",
+      "meaning": "A set of instructions the computer follows in order, like a prescription written for a computer."
+    },
+    {
+      "term": "Code",
+      "meaning": "The instructions we type in a programming language. \"Writing code\" means writing these instructions."
+    },
+    {
+      "term": "Programming language",
+      "meaning": "A language that both humans and computers understand, used to write programs. Python is one."
+    },
+    {
+      "term": "Run",
+      "meaning": "To make the computer carry out your program. Also called \"execute\"."
+    },
+    {
+      "term": "Interpreter",
+      "meaning": "The part of Python that reads your code and carries it out, one line at a time, like a pharmacist reading a prescription."
+    },
+    {
+      "term": "Library",
+      "meaning": "Ready-made code you can add to Python for extra abilities, such as drawing graphs. You'll learn more in Lesson 1.7."
+    },
+    {
+      "term": "print()",
+      "meaning": "The Python instruction that shows text or numbers on the screen."
+    },
+    {
+      "term": "Output",
+      "meaning": "Whatever your program shows on the screen when it runs."
+    },
+    {
+      "term": "String",
+      "meaning": "Text inside quotes, such as \"Paracetamol\". Python shows it exactly as written."
+    },
+    {
+      "term": "Comment",
+      "meaning": "A note for humans that starts with #. Python skips it."
+    },
+    {
+      "term": "Error",
+      "meaning": "A message from Python saying it couldn't understand or finish something. It tells you the line and the reason."
+    },
+    {
+      "term": "Syntax",
+      "meaning": "The grammar rules of a programming language: where brackets, quotes and commas go."
+    },
+    {
+      "term": "Syntax error",
+      "meaning": "A writing mistake that breaks those rules, like a missing bracket. Python won't start until you fix it."
+    },
+    {
+      "term": "Bug",
+      "meaning": "A mistake in your code that makes it stop or give the wrong result."
+    },
+    {
+      "term": "Debugging",
+      "meaning": "Finding and fixing bugs. Like checking a prescription line by line to find the error."
+    },
+    {
+      "term": "Case-sensitive",
+      "meaning": "Capital and small letters count as different. In Python, print works but Print doesn't."
+    }
   ]
 }

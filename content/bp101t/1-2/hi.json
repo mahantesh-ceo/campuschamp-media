@@ -319,6 +319,51 @@
     "mindmap",
     "summary",
     "video",
-    "animations"
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Plain text type करने का एक simple program, जैसे Notepad। यह code नहीं चला सकता।"
+    },
+    {
+      "meaning": "Integrated Development Environment: एक app जिसमें code लिखना, चलाना और ठीक करना सब होता है।"
+    },
+    {
+      "meaning": "एक window जिसमें click करने के बजाय computer को निर्देश type करते हैं। Windows में Command Prompt, Mac में Terminal।"
+    },
+    {
+      "meaning": "Terminal में type किया गया एक instruction, जैसे python --version।"
+    },
+    {
+      "meaning": "Folders की वह list जिसमें Windows command ढूँढता है। Python को PATH में जोड़ने से python कहीं से भी type कर सकते हैं।"
+    },
+    {
+      "meaning": "Terminal में python type करने के बाद, जहाँ Python एक line के code का इंतज़ार करता है। बाहर निकलने के लिए exit() type करें।"
+    },
+    {
+      "meaning": "File के नाम में dot के बाद के letters। Python files .py पर खत्म होती हैं।"
+    },
+    {
+      "meaning": "Jupyter में code का एक छोटा box, जो अलग से चलता है और result ठीक नीचे दिखाता है।"
+    },
+    {
+      "meaning": "एक free bundle जो Python, Jupyter Notebook और science libraries एक साथ install करता है।"
+    },
+    {
+      "meaning": "एक add-on जो app को नए features देता है, जैसे VS Code का Python extension।"
+    },
+    {
+      "meaning": "Code के अलग-अलग हिस्सों को अलग रंगों में दिखाना, ताकि पढ़ना आसान हो।"
+    },
+    {
+      "meaning": "Type करते समय editor बाकी शब्द suggest करता है, जैसे phone keyboard के suggestions।"
+    },
+    {
+      "meaning": "Ready-made Python code की एक file जिसे import कर सकते हैं। अभी के लिए इसे library जैसा ही समझिए।"
+    },
+    {
+      "meaning": "Libraries install करने का Python का tool, जो terminal से चलता है। इसे Lesson 1.7 में use करेंगे।"
+    }
   ]
 }
