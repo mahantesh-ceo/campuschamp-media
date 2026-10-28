@@ -17,7 +17,7 @@
         "Here, the equals sign means store. Python stores the text Ananya in a box called patient name. It's in quotes, so it's a string.",
         "weight K G stores fifty-two point five. It has a decimal point, so its data type is float.",
         "dose M G per K G stores ten, a whole number. Its data type is int, short for integer.",
-        "in stock stores True, with a capital T. Values that are only True or False are called booleans.",
+        "in stock stores True, with a capital T. Values that are only True or False are called boolean values.",
         "Now print uses the variables. Python looks inside each box and shows the values.",
         "Python multiplies fifty-two point five by ten. One of them is a float, so the answer is a float too: five hundred and twenty-five point zero.",
         "Finally, Python shows the boolean. You have just stored and used four different data types."
@@ -28,7 +28,7 @@
         "Here, the equals sign means store. Python stores the text Ananya in a box called patient_name. It's in quotes, so it's a string.",
         "weight_kg stores fifty-two point five. It has a decimal point, so its data type is float.",
         "dose_mg_per_kg stores ten, a whole number. Its data type is int, short for integer.",
-        "in_stock stores True, with a capital T. Values that are only True or False are called booleans.",
+        "in_stock stores True, with a capital T. Values that are only True or False are called boolean values.",
         "Now print uses the variables. Python looks inside each box and shows the values.",
         "Python multiplies fifty-two point five by ten. One of them is a float, so the answer is a float too: five hundred and twenty-five point zero.",
         "Finally, Python shows the boolean. You have just stored and used four different data types."

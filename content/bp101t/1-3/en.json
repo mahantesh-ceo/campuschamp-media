@@ -105,7 +105,7 @@
       },
       {
         "line": 5,
-        "say": "in_stock stores True, with a capital T. Values that are only True or False are called booleans.",
+        "say": "in_stock stores True, with a capital T. Values that are only True or False are called boolean values.",
         "output": null,
         "audio": "step-06.mp3",
         "vars": {

@@ -57,7 +57,7 @@ L = {
             {"line": 2, "say": "Here, the equals sign means store. Python stores the text Ananya in a box called patient_name. It's in quotes, so it's a string.", "output": None, "audio": "step-03.mp3", "vars": {"patient_name": "\"Ananya\""}},
             {"line": 3, "say": "weight_kg stores fifty-two point five. It has a decimal point, so its data type is float.", "output": None, "audio": "step-04.mp3", "vars": {"weight_kg": "52.5"}},
             {"line": 4, "say": "dose_mg_per_kg stores ten, a whole number. Its data type is int, short for integer.", "output": None, "audio": "step-05.mp3", "vars": {"dose_mg_per_kg": "10"}},
-            {"line": 5, "say": "in_stock stores True, with a capital T. Values that are only True or False are called booleans.", "output": None, "audio": "step-06.mp3", "vars": {"in_stock": "True"}},
+            {"line": 5, "say": "in_stock stores True, with a capital T. Values that are only True or False are called boolean values.", "output": None, "audio": "step-06.mp3", "vars": {"in_stock": "True"}},
             {"line": 6, "say": "Now print uses the variables. Python looks inside each box and shows the values.", "output": "Ananya weighs 52.5 kg", "audio": "step-07.mp3"},
             {"line": 7, "say": "Python multiplies fifty-two point five by ten. One of them is a float, so the answer is a float too: five hundred and twenty-five point zero.", "output": "Dose: 525.0 mg", "audio": "step-08.mp3"},
             {"line": 8, "say": "Finally, Python shows the boolean. You have just stored and used four different data types.", "output": "In stock: True", "audio": "step-09.mp3"},
