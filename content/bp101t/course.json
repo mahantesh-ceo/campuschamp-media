@@ -55,8 +55,12 @@
         {
           "id": "1-2",
           "title": "Installing Python and IDEs",
-          "available": false,
-          "translations": []
+          "available": true,
+          "translations": [
+            "hi",
+            "hinglish",
+            "kn"
+          ]
         },
         {
           "id": "1-3",

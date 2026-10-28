@@ -1,0 +1,324 @@
+{
+  "hook": {
+    "title": "अपना coding workspace तैयार कीजिए",
+    "md": "इस lesson के अंत तक आप जानेंगे कि laptop पर **Python कैसे install** करें, **कौन सा IDE चुनें** (Jupyter Notebook, PyCharm या VS Code), और **IDE, text editor से बेहतर क्यों है**, जो exam का एक favourite question है।\n\nLaptop नहीं है? कोई बात नहीं। इस course की हर चीज़ **Champ Lab** में आपके phone पर भी चलती है।"
+  },
+  "learn": [
+    "**Python install** कैसे करें और check कैसे करें कि वह काम कर रहा है",
+    "**IDE** क्या है, और तीन popular IDEs: **Jupyter Notebook, PyCharm और VS Code**",
+    "**Text editors के मुकाबले IDEs के फायदे**"
+  ],
+  "explanation": [
+    {
+      "heading": "\"Python install करना\" मतलब क्या?",
+      "md": "Lesson 1.1 में आपने सीखा कि **interpreter** आपका code पढ़ता और चलाता है। Python install करने का मतलब है इस interpreter को अपने computer पर रखना।\n\n**Steps (Windows):**\n1. **python.org → Downloads** पर जाइए और latest Python 3 installer download कीजिए।\n2. Installer खोलिए और पहली screen के नीचे **\"Add python.exe to PATH\" पर tick** कीजिए। यह एक checkbox बहुत सी परेशानी बचाता है।\n3. **Install Now** पर click कीजिए और पूरा होने दीजिए।\n4. **Command Prompt** खोलिए और `python --version` type कीजिए। अगर `Python 3.12.4` जैसा कुछ दिखे, तो Python तैयार है।\n\nMac पर python.org का installer use कीजिए और Terminal में `python3 --version` से check कीजिए।",
+      "callout": {
+        "title": "Tip",
+        "md": "हमेशा **Python 3** install कीजिए। पुराने tutorials Python 2 use करते हैं, जो अब supported नहीं है।"
+      }
+    },
+    {
+      "heading": "Text editor बनाम IDE",
+      "md": "आप Python किसी भी **text editor** में लिख सकते हैं, जैसे Notepad। लेकिन text editor सिर्फ plain text रखता है। वह आपका code न चला सकता है, न रंग दे सकता है, न गलतियाँ बता सकता है।\n\n**IDE** सब कुछ एक जगह देता है: editor, code चलाने का तरीका, error hints और bugs ढूँढने के tools।\n\nऐसे सोचिए: **सादे कागज़** पर prescription लिखना काम करता है, लेकिन **pharmacy software** spelling check करता है, interactions की warning देता है और label भी print कर देता है। Text editor कागज़ है; IDE software है।",
+      "callout": {
+        "title": "IDE",
+        "md": "**Integrated Development Environment**: एक application जिसमें code editor, programs चलाने का तरीका, error checking और debugging tools सब एक साथ होते हैं।"
+      }
+    },
+    {
+      "heading": "तीन popular IDEs",
+      "md": "| IDE | किसके लिए best | जानने लायक बात |\n|---|---|---|\n| **Jupyter Notebook** | Data analysis, graphs, step-by-step experiments | Code छोटे **cells** में चलता है, और हर cell का output या graph ठीक उसके नीचे दिखता है। **Anaconda** के साथ आता है, और **Google Colab** में online free चलता है। |\n| **PyCharm** | बड़े projects | **JetBrains** का full-featured Python IDE। **Community** edition free है। |\n| **VS Code** | हर तरह की coding | **Microsoft** का free, हल्का editor। **Python extension** जोड़ते ही यह powerful Python IDE बन जाता है। |\n\nइस course के लिए **Jupyter Notebook** (या Google Colab) सबसे useful है, क्योंकि pharmacy का काम ज़्यादातर data और graphs का होता है।",
+      "callout": {
+        "title": "Anaconda",
+        "md": "एक free bundle जो Python, Jupyter Notebook और popular science libraries एक साथ install कर देता है।"
+      }
+    },
+    {
+      "heading": "Text editors के मुकाबले IDEs के फायदे",
+      "md": "| Feature | Text editor | IDE |\n|---|---|---|\n| **Syntax highlighting** (रंगीन code) | ❌ | ✅ |\n| **Auto-completion** (type करते समय शब्द suggest करना) | ❌ | ✅ |\n| Type करते समय **error hints** | ❌ | ✅ |\n| **एक click में run** करके output देखना | ❌ | ✅ |\n| **Debugger** (bugs ढूँढने के लिए line by line चलाना) | ❌ | ✅ |\n| **Project और files संभालना** | ❌ | ✅ |\n| Libraries और extensions आसानी से **install करना** | ❌ | ✅ |\n\nसीधी बात: IDE आपकी मदद करता है **तेज़ी से लिखने, कम गलतियाँ करने और bugs जल्दी पकड़ने** में।"
+    },
+    {
+      "heading": "Laptop नहीं है? Browser use कीजिए",
+      "md": "यह course सीखने के लिए आपको कुछ भी install करने की ज़रूरत नहीं:\n\n- **Champ Lab** आपके browser में Python चलाता है, phone पर भी।\n- **Google Colab** आपके Google account से free online Jupyter Notebook देता है।\n\nजब हो सके, laptop पर Python install कीजिए, क्योंकि practical exams में laptop use हो सकता है।"
+    }
+  ],
+  "walkthrough": {
+    "intro": "Python और IDE install करने के बाद, programmers सब ठीक है या नहीं check करने के लिए एक छोटा program चलाते हैं। यह रहा हमारा।",
+    "keyTerms": [
+      {
+        "meaning": "Integrated Development Environment: code लिखना, चलाना और ठीक करना, सब एक जगह।"
+      },
+      {
+        "meaning": "आपका program चलाता है और output दिखाता है।"
+      },
+      {
+        "meaning": "Jupyter में code का एक छोटा block, जो अलग से चलता है।"
+      },
+      {
+        "meaning": "जगहों की वह list जहाँ Windows python जैसे programs ढूँढता है।"
+      }
+    ],
+    "steps": [
+      {
+        "say": "आपने Python install कर लिया है और एक IDE खोल लिया है। चलिए, एक quick setup check चलाते हैं।"
+      },
+      {
+        "say": "पहली line एक comment है, हमारे लिए एक note। IDE में comments अलग रंग में दिखते हैं, इसलिए आसानी से पहचान में आते हैं।"
+      },
+      {
+        "say": "यह print बताता है कि Python काम कर रहा है। IDE में आप Run button दबाते हैं, और output आपके code के नीचे एक panel में दिखता है।"
+      },
+      {
+        "say": "यहाँ Python ढाई सौ और ढाई सौ जोड़ता है। अगर पाँच सौ दिखे, तो calculations भी काम कर रही हैं।"
+      },
+      {
+        "say": "आखिरी line बताती है कि हम course के लिए तैयार हैं।"
+      },
+      {
+        "say": "यही code Jupyter Notebook, PyCharm, VS Code या Champ Lab में एक जैसा चलता है। बस buttons अलग दिखते हैं।"
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Setup की ज़्यादातर problems छोटी होती हैं, और message पहचानते ही आसानी से ठीक हो जाती हैं।",
+    "examples": [
+      {
+        "title": "Python के अंदर terminal command type कर देना",
+        "md": "`python --version` एक **terminal command** है। यह Command Prompt या Terminal में चलती है, लेकिन यहाँ इसे Python के अंदर ही (`>>>` prompt या code cell में) type कर दिया गया। Python `python` को एक अनजान नाम समझता है। Python prompt से बाहर निकलने के लिए `exit()` type कीजिए, फिर command terminal में चलाइए।"
+      },
+      {
+        "title": "ऐसी library जो install नहीं है (या spelling गलत है)",
+        "md": "Python ने `numpyy` नाम की library ढूँढी और उसे नहीं मिली। यहाँ बस spelling गलत है (सही है `numpy`)। अगर spelling सही है, तो library अभी install नहीं है। Libraries को **pip** से install करना आप Lesson 1.7 में सीखेंगे।",
+        "callout": {
+          "title": "Library",
+          "md": "Ready-made code जो Python को नई क्षमताएँ देता है, जैसे numbers के लिए NumPy या graphs के लिए Matplotlib।"
+        }
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Installation के समय **Add python.exe to PATH** पर tick न करना",
+      "fix": "Installer फिर से चलाइए, **Modify** चुनिए (या reinstall कीजिए) और **Add python.exe to PATH** पर tick कीजिए। आप `python` की जगह `py` command भी try कर सकते हैं।"
+    },
+    {
+      "mistake": "पुराने Python 2 tutorial से code copy करना",
+      "fix": "Python 3 में `print` को हमेशा brackets चाहिए: `print(\"Hello\")`।"
+    },
+    {
+      "mistake": "Notepad से file को `program.py.txt` नाम से save करना",
+      "see": "File Python की तरह चलने के बजाय Notepad में खुलती है",
+      "fix": "**Save as type: All Files** चुनिए और नाम `program.py` रखिए, या सीधे IDE use कीजिए।"
+    },
+    {
+      "mistake": "Python के अंदर (`>>>`) `python --version` type करना",
+      "fix": "पहले `exit()` type कीजिए, फिर command को Command Prompt या Terminal में चलाइए।"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "आपका पहला IDE message",
+      "md": "एक program लिखिए जो बिल्कुल यही print करे:",
+      "hints": [
+        "print() use कीजिए और message को quotes के अंदर रखिए।"
+      ]
+    },
+    {
+      "title": "Setup check report",
+      "md": "एक program लिखिए जो यह report print करे। Test sum (250 + 250) Python से **calculate** करवाइए; 500 खुद type मत कीजिए।",
+      "hints": [
+        "हर line के लिए एक print() use कीजिए।",
+        "आखिरी line के लिए try कीजिए: print(\"Test sum:\", 250 + 250)।"
+      ]
+    },
+    {
+      "title": "पुराने tutorial का code ठीक कीजिए",
+      "md": "यह line एक पुराने Python 2 tutorial से copy की गई है। इसे ठीक कीजिए ताकि यह `Python is ready` print करे।",
+      "hints": [
+        "Python 3 में print को brackets चाहिए।"
+      ],
+      "solutionNote": "Python 3 में जो print करना है, उसके चारों ओर brackets चाहिए।"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "IDE का full form क्या है?",
+      "why": "IDE यानी Integrated Development Environment: code लिखने, चलाने और ठीक करने की एक जगह।"
+    },
+    {
+      "q": "कौन सा tool code को छोटे cells में चलाता है और हर cell के ठीक नीचे output या graph दिखाता है?",
+      "why": "Jupyter Notebook code को cell by cell चलाता है और result ठीक नीचे दिखाता है, जो data और graphs के लिए बढ़िया है।"
+    },
+    {
+      "q": "Windows पर Python install करते समय कौन सा option \"'python' is not recognized\" error से बचाता है?",
+      "why": "python.exe को PATH में जोड़ने से Windows किसी भी folder से python command ढूँढ पाता है।"
+    },
+    {
+      "q": "इनमें से कौन सा text editor के मुकाबले IDE का फायदा नहीं है?",
+      "options": [
+        "Syntax highlighting",
+        "Auto-completion",
+        "Debugging tools",
+        "Python install किए बिना programs चलाना"
+      ],
+      "why": "IDE को भी Python install चाहिए। यह code लिखना, चलाना और ठीक करना आसान बनाता है, लेकिन interpreter की जगह नहीं लेता।"
+    },
+    {
+      "q": "Microsoft का बनाया free editor कौन सा है?",
+      "why": "VS Code (Visual Studio Code) Microsoft का free editor है। Python extension के साथ यह पूरा Python IDE बन जाता है।"
+    }
+  ],
+  "exam": {
+    "note": "University exam English में लिखा जाता है, इसलिए model answers English में ही रखे गए हैं। ये practice के लिए important questions हैं; असली university questions अलग हो सकते हैं।"
+  },
+  "mindmap": {
+    "label": "Lesson 1.2 · Setup",
+    "children": [
+      {
+        "label": "Python install",
+        "children": [
+          {
+            "label": "python.org"
+          },
+          {
+            "label": "Add to PATH पर tick"
+          },
+          {
+            "label": "Check: python --version"
+          }
+        ]
+      },
+      {
+        "label": "Text editor बनाम IDE",
+        "children": [
+          {
+            "label": "Editor: सिर्फ plain text"
+          },
+          {
+            "label": "IDE: सारे tools एक जगह"
+          }
+        ]
+      },
+      {
+        "label": "Popular IDEs",
+        "children": [
+          {
+            "label": "Jupyter Notebook",
+            "children": [
+              {
+                "label": "Cells + graphs"
+              },
+              {
+                "label": "Anaconda / Colab"
+              }
+            ]
+          },
+          {
+            "label": "PyCharm",
+            "children": [
+              {
+                "label": "Full-featured, JetBrains"
+              }
+            ]
+          },
+          {
+            "label": "VS Code",
+            "children": [
+              {
+                "label": "Free, Microsoft"
+              },
+              {
+                "label": "Python extension"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "IDE के फायदे",
+        "children": [
+          {
+            "label": "Syntax highlighting"
+          },
+          {
+            "label": "Auto-completion"
+          },
+          {
+            "label": "Error hints"
+          },
+          {
+            "label": "एक click में run"
+          },
+          {
+            "label": "Debugger"
+          }
+        ]
+      },
+      {
+        "label": "Laptop नहीं?",
+        "children": [
+          {
+            "label": "Champ Lab"
+          },
+          {
+            "label": "Google Colab"
+          }
+        ]
+      },
+      {
+        "label": "Setup errors",
+        "children": [
+          {
+            "label": "python not recognized: PATH"
+          },
+          {
+            "label": "ModuleNotFoundError: library नहीं है"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Python install करना** मतलब interpreter को अपने computer पर रखना; Windows पर **Add python.exe to PATH** पर tick कीजिए।",
+    "Installation check कीजिए: Command Prompt या Terminal में **`python --version`**।",
+    "**IDE** (Integrated Development Environment) में code लिखना, चलाना और ठीक करना, सब एक जगह होता है।",
+    "Popular IDEs: **Jupyter Notebook** (cells और graphs), **PyCharm** (full-featured) और **VS Code** (free, Microsoft का)।",
+    "IDEs text editors से बेहतर हैं: **syntax highlighting, auto-completion, error hints, एक click में run और debugging**।"
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Text editor, जैसे Notepad, बस एक खाली page है। यह आपका code सिर्फ plain text की तरह रखता है।"
+        },
+        {
+          "say": "IDE यानी Integrated Development Environment। यह code लिखने के लिए एक पूरा workspace है।"
+        },
+        {
+          "say": "यह आपके code को रंग देता है, type करते समय शब्द suggest करता है, गलतियों की warning देता है, और bugs ढूँढने में मदद करता है।"
+        },
+        {
+          "say": "और एक click में, यह आपका program चलाकर output वहीं दिखा देता है।"
+        },
+        {
+          "say": "इसीलिए programmers IDEs पसंद करते हैं। ये समय बचाते हैं और गलतियाँ जल्दी पकड़ते हैं।"
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "video",
+    "animations"
+  ]
+}

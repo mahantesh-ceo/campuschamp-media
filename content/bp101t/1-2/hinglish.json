@@ -1,0 +1,324 @@
+{
+  "hook": {
+    "title": "Apna coding workspace taiyaar kijiye",
+    "md": "Is lesson ke end tak aap jaanenge ki laptop par **Python kaise install** karein, **kaunsa IDE chunein** (Jupyter Notebook, PyCharm ya VS Code), aur **IDE, text editor se behtar kyun hai**, jo exam ka ek favourite question hai.\n\nLaptop nahi hai? Koi baat nahi. Is course ki har cheez **Champ Lab** mein aapke phone par bhi chalti hai."
+  },
+  "learn": [
+    "**Python install** kaise karein aur check kaise karein ki woh kaam kar raha hai",
+    "**IDE** kya hai, aur teen popular IDEs: **Jupyter Notebook, PyCharm aur VS Code**",
+    "**Text editors ke mukable IDEs ke fayde**"
+  ],
+  "explanation": [
+    {
+      "heading": "\"Python install karna\" matlab kya?",
+      "md": "Lesson 1.1 mein aapne seekha ki **interpreter** aapka code padhta aur chalata hai. Python install karne ka matlab hai is interpreter ko apne computer par rakhna.\n\n**Steps (Windows):**\n1. **python.org → Downloads** par jaiye aur latest Python 3 installer download kijiye.\n2. Installer kholiye aur pehli screen ke neeche **\"Add python.exe to PATH\" par tick** kijiye. Yeh ek checkbox bahut si pareshani bachata hai.\n3. **Install Now** par click kijiye aur poora hone dijiye.\n4. **Command Prompt** kholiye aur `python --version` type kijiye. Agar `Python 3.12.4` jaisa kuch dikhe, to Python taiyaar hai.\n\nMac par python.org ka installer use kijiye aur Terminal mein `python3 --version` se check kijiye.",
+      "callout": {
+        "title": "Tip",
+        "md": "Hamesha **Python 3** install kijiye. Purane tutorials Python 2 use karte hain, jo ab supported nahi hai."
+      }
+    },
+    {
+      "heading": "Text editor vs IDE",
+      "md": "Aap Python kisi bhi **text editor** mein likh sakte hain, jaise Notepad. Lekin text editor sirf plain text rakhta hai. Woh na aapka code chala sakta hai, na rang de sakta hai, na galtiyan bata sakta hai.\n\n**IDE** sab kuch ek jagah deta hai: editor, code chalane ka tareeka, error hints aur bugs dhoondhne ke tools.\n\nAise sochiye: **saade kaagaz** par prescription likhna kaam karta hai, lekin **pharmacy software** spelling check karta hai, interactions ki warning deta hai aur label bhi print kar deta hai. Text editor kaagaz hai; IDE software hai.",
+      "callout": {
+        "title": "IDE",
+        "md": "**Integrated Development Environment**: ek application jisme code editor, programs chalane ka tareeka, error checking aur debugging tools sab ek saath hote hain."
+      }
+    },
+    {
+      "heading": "Teen popular IDEs",
+      "md": "| IDE | Kiske liye best | Jaanne layak baat |\n|---|---|---|\n| **Jupyter Notebook** | Data analysis, graphs, step-by-step experiments | Code chhote **cells** mein chalta hai, aur har cell ka output ya graph theek uske neeche dikhta hai. **Anaconda** ke saath aata hai, aur **Google Colab** mein online free chalta hai. |\n| **PyCharm** | Bade projects | **JetBrains** ka full-featured Python IDE. **Community** edition free hai. |\n| **VS Code** | Har tarah ki coding | **Microsoft** ka free, halka editor. **Python extension** jodte hi yeh powerful Python IDE ban jaata hai. |\n\nIs course ke liye **Jupyter Notebook** (ya Google Colab) sabse useful hai, kyunki pharmacy ka kaam zyaadatar data aur graphs ka hota hai.",
+      "callout": {
+        "title": "Anaconda",
+        "md": "Ek free bundle jo Python, Jupyter Notebook aur popular science libraries ek saath install kar deta hai."
+      }
+    },
+    {
+      "heading": "Text editors ke mukable IDEs ke fayde",
+      "md": "| Feature | Text editor | IDE |\n|---|---|---|\n| **Syntax highlighting** (rangeen code) | ❌ | ✅ |\n| **Auto-completion** (type karte samay shabd suggest karna) | ❌ | ✅ |\n| Type karte samay **error hints** | ❌ | ✅ |\n| **Ek click mein run** karke output dekhna | ❌ | ✅ |\n| **Debugger** (bugs dhoondhne ke liye line by line chalana) | ❌ | ✅ |\n| **Project aur files sambhalna** | ❌ | ✅ |\n| Libraries aur extensions aasaani se **install karna** | ❌ | ✅ |\n\nSeedhi baat: IDE aapki madad karta hai **tezi se likhne, kam galtiyan karne aur bugs jaldi pakadne** mein."
+    },
+    {
+      "heading": "Laptop nahi hai? Browser use kijiye",
+      "md": "Yeh course seekhne ke liye aapko kuch bhi install karne ki zaroorat nahi:\n\n- **Champ Lab** aapke browser mein Python chalata hai, phone par bhi.\n- **Google Colab** aapke Google account se free online Jupyter Notebook deta hai.\n\nJab ho sake, laptop par Python install kijiye, kyunki practical exams mein laptop use ho sakta hai."
+    }
+  ],
+  "walkthrough": {
+    "intro": "Python aur IDE install karne ke baad, programmers sab theek hai ya nahi check karne ke liye ek chhota program chalate hain. Yeh raha hamara.",
+    "keyTerms": [
+      {
+        "meaning": "Integrated Development Environment: code likhna, chalana aur theek karna, sab ek jagah."
+      },
+      {
+        "meaning": "Aapka program chalata hai aur output dikhata hai."
+      },
+      {
+        "meaning": "Jupyter mein code ka ek chhota block, jo alag se chalta hai."
+      },
+      {
+        "meaning": "Jagahon ki woh list jahan Windows python jaise programs dhoondhta hai."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Aapne Python install kar liya hai aur ek IDE khol liya hai. Chaliye, ek quick setup check chalate hain."
+      },
+      {
+        "say": "Pehli line ek comment hai, hamare liye ek note. IDE mein comments alag rang mein dikhte hain, isliye aasaani se pehchaan mein aate hain."
+      },
+      {
+        "say": "Yeh print batata hai ki Python kaam kar raha hai. IDE mein aap Run button dabaate hain, aur output aapke code ke neeche ek panel mein dikhta hai."
+      },
+      {
+        "say": "Yahan Python dhaai sau aur dhaai sau jodta hai. Agar paanch sau dikhe, to calculations bhi kaam kar rahi hain."
+      },
+      {
+        "say": "Aakhri line batati hai ki hum course ke liye taiyaar hain."
+      },
+      {
+        "say": "Yahi code Jupyter Notebook, PyCharm, VS Code ya Champ Lab mein ek jaisa chalta hai. Bas buttons alag dikhte hain."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Setup ki zyaadatar problems chhoti hoti hain, aur message pehchaante hi aasaani se theek ho jaati hain.",
+    "examples": [
+      {
+        "title": "Python ke andar terminal command type kar dena",
+        "md": "`python --version` ek **terminal command** hai. Yeh Command Prompt ya Terminal mein chalti hai, lekin yahan ise Python ke andar hi (`>>>` prompt ya code cell mein) type kar diya gaya. Python `python` ko ek anjaan naam samajhta hai. Python prompt se bahar nikalne ke liye `exit()` type kijiye, phir command terminal mein chalaiye."
+      },
+      {
+        "title": "Aisi library jo install nahi hai (ya spelling galat hai)",
+        "md": "Python ne `numpyy` naam ki library dhoondhi aur use nahi mili. Yahan bas spelling galat hai (sahi hai `numpy`). Agar spelling sahi hai, to library abhi install nahi hai. Libraries ko **pip** se install karna aap Lesson 1.7 mein seekhenge.",
+        "callout": {
+          "title": "Library",
+          "md": "Ready-made code jo Python ko nayi kshamtayein deta hai, jaise numbers ke liye NumPy ya graphs ke liye Matplotlib."
+        }
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Installation ke samay **Add python.exe to PATH** par tick na karna",
+      "fix": "Installer phir se chalaiye, **Modify** chuniye (ya reinstall kijiye) aur **Add python.exe to PATH** par tick kijiye. Aap `python` ki jagah `py` command bhi try kar sakte hain."
+    },
+    {
+      "mistake": "Purane Python 2 tutorial se code copy karna",
+      "fix": "Python 3 mein `print` ko hamesha brackets chahiye: `print(\"Hello\")`."
+    },
+    {
+      "mistake": "Notepad se file ko `program.py.txt` naam se save karna",
+      "see": "File Python ki tarah chalne ke bajaay Notepad mein khulti hai",
+      "fix": "**Save as type: All Files** chuniye aur naam `program.py` rakhiye, ya seedhe IDE use kijiye."
+    },
+    {
+      "mistake": "Python ke andar (`>>>`) `python --version` type karna",
+      "fix": "Pehle `exit()` type kijiye, phir command ko Command Prompt ya Terminal mein chalaiye."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Aapka pehla IDE message",
+      "md": "Ek program likhiye jo bilkul yahi print kare:",
+      "hints": [
+        "print() use kijiye aur message ko quotes ke andar rakhiye."
+      ]
+    },
+    {
+      "title": "Setup check report",
+      "md": "Ek program likhiye jo yeh report print kare. Test sum (250 + 250) Python se **calculate** karwaiye; 500 khud type mat kijiye.",
+      "hints": [
+        "Har line ke liye ek print() use kijiye.",
+        "Aakhri line ke liye try kijiye: print(\"Test sum:\", 250 + 250)."
+      ]
+    },
+    {
+      "title": "Purane tutorial ka code theek kijiye",
+      "md": "Yeh line ek purane Python 2 tutorial se copy ki gayi hai. Ise theek kijiye taaki yeh `Python is ready` print kare.",
+      "hints": [
+        "Python 3 mein print ko brackets chahiye."
+      ],
+      "solutionNote": "Python 3 mein jo print karna hai, uske chaaron taraf brackets chahiye."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "IDE ka full form kya hai?",
+      "why": "IDE yaani Integrated Development Environment: code likhne, chalane aur theek karne ki ek jagah."
+    },
+    {
+      "q": "Kaunsa tool code ko chhote cells mein chalata hai aur har cell ke theek neeche output ya graph dikhata hai?",
+      "why": "Jupyter Notebook code ko cell by cell chalata hai aur result theek neeche dikhata hai, jo data aur graphs ke liye badhiya hai."
+    },
+    {
+      "q": "Windows par Python install karte samay kaunsa option \"'python' is not recognized\" error se bachata hai?",
+      "why": "python.exe ko PATH mein jodne se Windows kisi bhi folder se python command dhoondh paata hai."
+    },
+    {
+      "q": "Inme se kaunsa text editor ke mukable IDE ka fayda nahi hai?",
+      "options": [
+        "Syntax highlighting",
+        "Auto-completion",
+        "Debugging tools",
+        "Python install kiye bina programs chalana"
+      ],
+      "why": "IDE ko bhi Python install chahiye. Yeh code likhna, chalana aur theek karna aasaan banata hai, lekin interpreter ki jagah nahi leta."
+    },
+    {
+      "q": "Microsoft ka banaya free editor kaunsa hai?",
+      "why": "VS Code (Visual Studio Code) Microsoft ka free editor hai. Python extension ke saath yeh poora Python IDE ban jaata hai."
+    }
+  ],
+  "exam": {
+    "note": "University exam English mein likha jaata hai, isliye model answers English mein hi rakhe gaye hain. Yeh practice ke liye important questions hain; asli university questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 1.2 · Setup",
+    "children": [
+      {
+        "label": "Python install",
+        "children": [
+          {
+            "label": "python.org"
+          },
+          {
+            "label": "Add to PATH par tick"
+          },
+          {
+            "label": "Check: python --version"
+          }
+        ]
+      },
+      {
+        "label": "Text editor vs IDE",
+        "children": [
+          {
+            "label": "Editor: sirf plain text"
+          },
+          {
+            "label": "IDE: saare tools ek jagah"
+          }
+        ]
+      },
+      {
+        "label": "Popular IDEs",
+        "children": [
+          {
+            "label": "Jupyter Notebook",
+            "children": [
+              {
+                "label": "Cells + graphs"
+              },
+              {
+                "label": "Anaconda / Colab"
+              }
+            ]
+          },
+          {
+            "label": "PyCharm",
+            "children": [
+              {
+                "label": "Full-featured, JetBrains"
+              }
+            ]
+          },
+          {
+            "label": "VS Code",
+            "children": [
+              {
+                "label": "Free, Microsoft"
+              },
+              {
+                "label": "Python extension"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "IDE ke fayde",
+        "children": [
+          {
+            "label": "Syntax highlighting"
+          },
+          {
+            "label": "Auto-completion"
+          },
+          {
+            "label": "Error hints"
+          },
+          {
+            "label": "Ek click mein run"
+          },
+          {
+            "label": "Debugger"
+          }
+        ]
+      },
+      {
+        "label": "Laptop nahi?",
+        "children": [
+          {
+            "label": "Champ Lab"
+          },
+          {
+            "label": "Google Colab"
+          }
+        ]
+      },
+      {
+        "label": "Setup errors",
+        "children": [
+          {
+            "label": "python not recognized: PATH"
+          },
+          {
+            "label": "ModuleNotFoundError: library nahi hai"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Python install karna** matlab interpreter ko apne computer par rakhna; Windows par **Add python.exe to PATH** par tick kijiye.",
+    "Installation check kijiye: Command Prompt ya Terminal mein **`python --version`**.",
+    "**IDE** (Integrated Development Environment) mein code likhna, chalana aur theek karna, sab ek jagah hota hai.",
+    "Popular IDEs: **Jupyter Notebook** (cells aur graphs), **PyCharm** (full-featured) aur **VS Code** (free, Microsoft ka).",
+    "IDEs text editors se behtar hain: **syntax highlighting, auto-completion, error hints, ek click mein run aur debugging**."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Text editor, jaise Notepad, bas ek khaali page hai. Yeh aapka code sirf plain text ki tarah rakhta hai."
+        },
+        {
+          "say": "IDE yaani Integrated Development Environment. Yeh code likhne ke liye ek poora workspace hai."
+        },
+        {
+          "say": "Yeh aapke code ko rang deta hai, type karte samay shabd suggest karta hai, galtiyon ki warning deta hai, aur bugs dhoondhne mein madad karta hai."
+        },
+        {
+          "say": "Aur ek click mein, yeh aapka program chalakar output wahin dikha deta hai."
+        },
+        {
+          "say": "Isiliye programmers IDEs pasand karte hain. Yeh samay bachate hain aur galtiyan jaldi pakadte hain."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "video",
+    "animations"
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "course": "bp101t",
+  "lesson": "1-2",
+  "voices": {
+    "en": "Mary",
+    "hi": "Rani",
+    "kn": "Anu"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "You have installed Python and opened an IDE. Let's run a quick setup check.",
+        "The first line is a comment, a note for us. In an IDE, comments appear in a different colour, so they are easy to spot.",
+        "This print confirms that Python is working. In an IDE, you press the Run button, and the output appears in a panel below your code.",
+        "Here, Python adds two hundred and fifty and two hundred and fifty. If you see five hundred, calculations are working too.",
+        "The last line tells us we are ready for the course.",
+        "This same code runs the same way in Jupyter Notebook, PyCharm, VS Code, or Champ Lab. Only the buttons look different."
+      ],
+      "display": [
+        "You have installed Python and opened an IDE. Let's run a quick setup check.",
+        "The first line is a comment, a note for us. In an IDE, comments appear in a different colour, so they are easy to spot.",
+        "This print confirms that Python is working. In an IDE, you press the Run button, and the output appears in a panel below your code.",
+        "Here, Python adds two hundred and fifty and two hundred and fifty. If you see five hundred, calculations are working too.",
+        "The last line tells us we are ready for the course.",
+        "This same code runs the same way in Jupyter Notebook, PyCharm, VS Code, or Champ Lab. Only the buttons look different."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "आपने पाइथन इंस्टॉल कर लिया है और एक आई डी ई खोल लिया है। चलिए, एक क्विक सेटअप चेक चलाते हैं।",
+        "पहली लाइन एक कमेंट है, हमारे लिए एक नोट। आई डी ई में कमेंट्स अलग रंग में दिखते हैं, इसलिए आसानी से पहचान में आते हैं।",
+        "यह प्रिंट बताता है कि पाइथन काम कर रहा है। आई डी ई में आप रन बटन दबाते हैं, और आउटपुट आपके कोड के नीचे एक पैनल में दिखता है।",
+        "यहाँ पाइथन ढाई सौ और ढाई सौ जोड़ता है। अगर पाँच सौ दिखे, तो कैलकुलेशन्स भी काम कर रही हैं।",
+        "आखिरी लाइन बताती है कि हम कोर्स के लिए तैयार हैं।",
+        "यही कोड जुपिटर नोटबुक, पाइचार्म, वी एस कोड या चैम्प लैब में एक जैसा चलता है। बस बटन अलग दिखते हैं।"
+      ],
+      "display": [
+        "आपने Python install कर लिया है और एक IDE खोल लिया है। चलिए, एक quick setup check चलाते हैं।",
+        "पहली line एक comment है, हमारे लिए एक note। IDE में comments अलग रंग में दिखते हैं, इसलिए आसानी से पहचान में आते हैं।",
+        "यह print बताता है कि Python काम कर रहा है। IDE में आप Run button दबाते हैं, और output आपके code के नीचे एक panel में दिखता है।",
+        "यहाँ Python ढाई सौ और ढाई सौ जोड़ता है। अगर पाँच सौ दिखे, तो calculations भी काम कर रही हैं।",
+        "आखिरी line बताती है कि हम course के लिए तैयार हैं।",
+        "यही code Jupyter Notebook, PyCharm, VS Code या Champ Lab में एक जैसा चलता है। बस buttons अलग दिखते हैं।"
+      ],
+      "displayHinglish": [
+        "Aapne Python install kar liya hai aur ek IDE khol liya hai. Chaliye, ek quick setup check chalate hain.",
+        "Pehli line ek comment hai, hamare liye ek note. IDE mein comments alag rang mein dikhte hain, isliye aasaani se pehchaan mein aate hain.",
+        "Yeh print batata hai ki Python kaam kar raha hai. IDE mein aap Run button dabaate hain, aur output aapke code ke neeche ek panel mein dikhta hai.",
+        "Yahan Python dhaai sau aur dhaai sau jodta hai. Agar paanch sau dikhe, to calculations bhi kaam kar rahi hain.",
+        "Aakhri line batati hai ki hum course ke liye taiyaar hain.",
+        "Yahi code Jupyter Notebook, PyCharm, VS Code ya Champ Lab mein ek jaisa chalta hai. Bas buttons alag dikhte hain."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ನೀವು ಪೈಥಾನ್ ಇನ್‌ಸ್ಟಾಲ್ ಮಾಡಿ, ಒಂದು ಐ ಡಿ ಇ ಓಪನ್ ಮಾಡಿದ್ದೀರಿ. ಬನ್ನಿ, ಒಂದು ಕ್ವಿಕ್ ಸೆಟಪ್ ಚೆಕ್ ರನ್ ಮಾಡೋಣ.",
+        "ಮೊದಲ ಲೈನ್ ಒಂದು ಕಾಮೆಂಟ್, ನಮಗಾಗಿ ಒಂದು ನೋಟ್. ಐ ಡಿ ಇ ನಲ್ಲಿ ಕಾಮೆಂಟ್ಸ್ ಬೇರೆ ಬಣ್ಣದಲ್ಲಿ ಕಾಣುತ್ತವೆ, ಹಾಗಾಗಿ ಸುಲಭವಾಗಿ ಗುರುತಿಸಬಹುದು.",
+        "ಈ ಪ್ರಿಂಟ್, ಪೈಥಾನ್ ಕೆಲಸ ಮಾಡ್ತಿದೆ ಅಂತ ಖಚಿತ ಪಡಿಸುತ್ತೆ. ಐ ಡಿ ಇ ನಲ್ಲಿ ರನ್ ಬಟನ್ ಒತ್ತಿದರೆ, ಔಟ್‌ಪುಟ್ ನಿಮ್ಮ ಕೋಡ್ ನ ಕೆಳಗಿನ ಪ್ಯಾನೆಲ್ ನಲ್ಲಿ ಕಾಣುತ್ತೆ.",
+        "ಇಲ್ಲಿ ಪೈಥಾನ್ ಇನ್ನೂರ ಐವತ್ತು ಮತ್ತು ಇನ್ನೂರ ಐವತ್ತು ಕೂಡಿಸುತ್ತೆ. ಐನೂರು ಕಂಡರೆ, ಕ್ಯಾಲ್ಕುಲೇಷನ್ಸ್ ಕೂಡ ಕೆಲಸ ಮಾಡ್ತಿವೆ.",
+        "ಕೊನೆಯ ಲೈನ್, ನಾವು ಕೋರ್ಸ್ ಗೆ ಸಿದ್ಧ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "ಇದೇ ಕೋಡ್ ಜುಪಿಟರ್ ನೋಟ್‌ಬುಕ್, ಪೈಚಾರ್ಮ್, ವಿ ಎಸ್ ಕೋಡ್ ಅಥವಾ ಚ್ಯಾಂಪ್ ಲ್ಯಾಬ್ ನಲ್ಲಿ ಒಂದೇ ತರಹ ರನ್ ಆಗುತ್ತೆ. ಬಟನ್ಸ್ ಮಾತ್ರ ಬೇರೆ ಕಾಣುತ್ತವೆ."
+      ],
+      "display": [
+        "ನೀವು Python install ಮಾಡಿ, ಒಂದು IDE open ಮಾಡಿದ್ದೀರಿ. ಬನ್ನಿ, ಒಂದು quick setup check run ಮಾಡೋಣ.",
+        "ಮೊದಲ line ಒಂದು comment, ನಮಗಾಗಿ ಒಂದು note. IDE ನಲ್ಲಿ comments ಬೇರೆ ಬಣ್ಣದಲ್ಲಿ ಕಾಣುತ್ತವೆ, ಹಾಗಾಗಿ ಸುಲಭವಾಗಿ ಗುರುತಿಸಬಹುದು.",
+        "ಈ print, Python ಕೆಲಸ ಮಾಡ್ತಿದೆ ಅಂತ ಖಚಿತ ಪಡಿಸುತ್ತೆ. IDE ನಲ್ಲಿ Run button ಒತ್ತಿದರೆ, output ನಿಮ್ಮ code ನ ಕೆಳಗಿನ panel ನಲ್ಲಿ ಕಾಣುತ್ತೆ.",
+        "ಇಲ್ಲಿ Python ಇನ್ನೂರ ಐವತ್ತು ಮತ್ತು ಇನ್ನೂರ ಐವತ್ತು ಕೂಡಿಸುತ್ತೆ. ಐನೂರು ಕಂಡರೆ, calculations ಕೂಡ ಕೆಲಸ ಮಾಡ್ತಿವೆ.",
+        "ಕೊನೆಯ line, ನಾವು course ಗೆ ಸಿದ್ಧ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "ಇದೇ code Jupyter Notebook, PyCharm, VS Code ಅಥವಾ Champ Lab ನಲ್ಲಿ ಒಂದೇ ತರಹ run ಆಗುತ್ತೆ. Buttons ಮಾತ್ರ ಬೇರೆ ಕಾಣುತ್ತವೆ."
+      ]
+    },
+    {
+      "id": "anim-ide",
+      "prefix": "anim-ide-",
+      "lang": "en",
+      "tts": [
+        "A text editor, like Notepad, is just a blank page. It stores your code as plain text.",
+        "An IDE is an Integrated Development Environment. It is a complete workspace for writing code.",
+        "It colours your code, suggests words as you type, warns you about mistakes, and helps you find bugs.",
+        "And with one click, it runs your program and shows the output, right there.",
+        "That's why programmers prefer IDEs. They save time and catch mistakes early."
+      ],
+      "display": [
+        "A text editor, like Notepad, is just a blank page. It stores your code as plain text.",
+        "An IDE is an Integrated Development Environment. It is a complete workspace for writing code.",
+        "It colours your code, suggests words as you type, warns you about mistakes, and helps you find bugs.",
+        "And with one click, it runs your program and shows the output, right there.",
+        "That's why programmers prefer IDEs. They save time and catch mistakes early."
+      ]
+    },
+    {
+      "id": "anim-ide",
+      "prefix": "anim-ide-",
+      "lang": "hi",
+      "tts": [
+        "टेक्स्ट एडिटर, जैसे नोटपैड, बस एक खाली पेज है। यह आपका कोड सिर्फ प्लेन टेक्स्ट की तरह रखता है।",
+        "आई डी ई यानी इंटीग्रेटेड डेवलपमेंट एनवायरनमेंट। यह कोड लिखने के लिए एक पूरा वर्कस्पेस है।",
+        "यह आपके कोड को रंग देता है, टाइप करते समय शब्द सजेस्ट करता है, गलतियों की वॉर्निंग देता है, और बग्स ढूँढने में मदद करता है।",
+        "और एक क्लिक में, यह आपका प्रोग्राम चलाकर आउटपुट वहीं दिखा देता है।",
+        "इसीलिए प्रोग्रामर्स आई डी ई पसंद करते हैं। ये समय बचाते हैं और गलतियाँ जल्दी पकड़ते हैं।"
+      ],
+      "display": [
+        "Text editor, जैसे Notepad, बस एक खाली page है। यह आपका code सिर्फ plain text की तरह रखता है।",
+        "IDE यानी Integrated Development Environment। यह code लिखने के लिए एक पूरा workspace है।",
+        "यह आपके code को रंग देता है, type करते समय शब्द suggest करता है, गलतियों की warning देता है, और bugs ढूँढने में मदद करता है।",
+        "और एक click में, यह आपका program चलाकर output वहीं दिखा देता है।",
+        "इसीलिए programmers IDEs पसंद करते हैं। ये समय बचाते हैं और गलतियाँ जल्दी पकड़ते हैं।"
+      ],
+      "displayHinglish": [
+        "Text editor, jaise Notepad, bas ek khaali page hai. Yeh aapka code sirf plain text ki tarah rakhta hai.",
+        "IDE yaani Integrated Development Environment. Yeh code likhne ke liye ek poora workspace hai.",
+        "Yeh aapke code ko rang deta hai, type karte samay shabd suggest karta hai, galtiyon ki warning deta hai, aur bugs dhoondhne mein madad karta hai.",
+        "Aur ek click mein, yeh aapka program chalakar output wahin dikha deta hai.",
+        "Isiliye programmers IDEs pasand karte hain. Yeh samay bachate hain aur galtiyan jaldi pakadte hain."
+      ]
+    },
+    {
+      "id": "anim-ide",
+      "prefix": "anim-ide-",
+      "lang": "kn",
+      "tts": [
+        "ಟೆಕ್ಸ್ಟ್ ಎಡಿಟರ್, ಉದಾಹರಣೆಗೆ ನೋಟ್‌ಪ್ಯಾಡ್, ಒಂದು ಖಾಲಿ ಪೇಜ್ ಅಷ್ಟೇ. ಅದು ನಿಮ್ಮ ಕೋಡ್ ಅನ್ನು ಪ್ಲೇನ್ ಟೆಕ್ಸ್ಟ್ ಆಗಿ ಮಾತ್ರ ಇಡುತ್ತೆ.",
+        "ಐ ಡಿ ಇ ಅಂದ್ರೆ ಇಂಟಿಗ್ರೇಟೆಡ್ ಡೆವಲಪ್‌ಮೆಂಟ್ ಎನ್ವಿರಾನ್‌ಮೆಂಟ್. ಇದು ಕೋಡ್ ಬರೆಯಲು ಒಂದು ಪೂರ್ಣ ವರ್ಕ್‌ಸ್ಪೇಸ್.",
+        "ಇದು ನಿಮ್ಮ ಕೋಡ್ ಗೆ ಬಣ್ಣ ಕೊಡುತ್ತೆ, ಟೈಪ್ ಮಾಡುವಾಗ ಪದಗಳನ್ನು ಸಜೆಸ್ಟ್ ಮಾಡುತ್ತೆ, ತಪ್ಪುಗಳ ಬಗ್ಗೆ ವಾರ್ನಿಂಗ್ ಕೊಡುತ್ತೆ, ಮತ್ತು ಬಗ್ಸ್ ಹುಡುಕಲು ಸಹಾಯ ಮಾಡುತ್ತೆ.",
+        "ಮತ್ತು ಒಂದೇ ಕ್ಲಿಕ್ ನಲ್ಲಿ, ನಿಮ್ಮ ಪ್ರೋಗ್ರಾಮ್ ರನ್ ಮಾಡಿ ಔಟ್‌ಪುಟ್ ಅನ್ನು ಅಲ್ಲೇ ತೋರಿಸುತ್ತೆ.",
+        "ಅದಕ್ಕೇ ಪ್ರೋಗ್ರಾಮರ್ಸ್ ಐ ಡಿ ಇ ಗಳನ್ನು ಇಷ್ಟಪಡ್ತಾರೆ. ಅವು ಸಮಯ ಉಳಿಸುತ್ತವೆ ಮತ್ತು ತಪ್ಪುಗಳನ್ನು ಬೇಗ ಹಿಡಿಯುತ್ತವೆ."
+      ],
+      "display": [
+        "Text editor, ಉದಾ: Notepad, ಒಂದು ಖಾಲಿ page ಅಷ್ಟೇ. ಅದು ನಿಮ್ಮ code ಅನ್ನು plain text ಆಗಿ ಮಾತ್ರ ಇಡುತ್ತೆ.",
+        "IDE ಅಂದ್ರೆ Integrated Development Environment. ಇದು code ಬರೆಯಲು ಒಂದು ಪೂರ್ಣ workspace.",
+        "ಇದು ನಿಮ್ಮ code ಗೆ ಬಣ್ಣ ಕೊಡುತ್ತೆ, type ಮಾಡುವಾಗ ಪದಗಳನ್ನು suggest ಮಾಡುತ್ತೆ, ತಪ್ಪುಗಳ ಬಗ್ಗೆ warning ಕೊಡುತ್ತೆ, ಮತ್ತು bugs ಹುಡುಕಲು ಸಹಾಯ ಮಾಡುತ್ತೆ.",
+        "ಮತ್ತು ಒಂದೇ click ನಲ್ಲಿ, ನಿಮ್ಮ program run ಮಾಡಿ output ಅನ್ನು ಅಲ್ಲೇ ತೋರಿಸುತ್ತೆ.",
+        "ಅದಕ್ಕೇ programmers IDEs ಇಷ್ಟಪಡ್ತಾರೆ. ಅವು ಸಮಯ ಉಳಿಸುತ್ತವೆ ಮತ್ತು ತಪ್ಪುಗಳನ್ನು ಬೇಗ ಹಿಡಿಯುತ್ತವೆ."
+      ]
+    }
+  ]
+}

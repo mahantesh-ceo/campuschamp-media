@@ -1,0 +1,324 @@
+{
+  "hook": {
+    "title": "ನಿಮ್ಮ coding workspace ಸಿದ್ಧ ಮಾಡಿ",
+    "md": "ಈ lesson ಮುಗಿಯುವಷ್ಟರಲ್ಲಿ, laptop ನಲ್ಲಿ **Python ಹೇಗೆ install** ಮಾಡೋದು, **ಯಾವ IDE ಆಯ್ಕೆ ಮಾಡೋದು** (Jupyter Notebook, PyCharm ಅಥವಾ VS Code), ಮತ್ತು **IDE ಯಾಕೆ text editor ಗಿಂತ ಉತ್ತಮ** ಅಂತ ನಿಮಗೆ ಗೊತ್ತಾಗುತ್ತೆ. ಇದು exam ನ favourite question.\n\nLaptop ಇಲ್ವಾ? ತೊಂದರೆ ಇಲ್ಲ. ಈ course ನ ಎಲ್ಲವೂ **Champ Lab** ನಲ್ಲಿ, ನಿಮ್ಮ phone ನಲ್ಲೇ ಕೆಲಸ ಮಾಡುತ್ತೆ."
+  },
+  "learn": [
+    "**Python install** ಮಾಡೋದು ಮತ್ತು ಅದು ಕೆಲಸ ಮಾಡ್ತಿದೆಯಾ ಅಂತ check ಮಾಡೋದು",
+    "**IDE** ಅಂದ್ರೆ ಏನು, ಮತ್ತು ಮೂರು popular IDEs: **Jupyter Notebook, PyCharm ಮತ್ತು VS Code**",
+    "**Text editors ಗಿಂತ IDEs ನ ಅನುಕೂಲಗಳು**"
+  ],
+  "explanation": [
+    {
+      "heading": "\"Python install ಮಾಡೋದು\" ಅಂದ್ರೆ ಏನು?",
+      "md": "Lesson 1.1 ನಲ್ಲಿ, **interpreter** ನಿಮ್ಮ code ಓದಿ run ಮಾಡುತ್ತೆ ಅಂತ ಕಲಿತಿರಿ. Python install ಮಾಡೋದು ಅಂದ್ರೆ ಈ interpreter ಅನ್ನು ನಿಮ್ಮ computer ನಲ್ಲಿ ಇಡೋದು.\n\n**Steps (Windows):**\n1. **python.org → Downloads** ಗೆ ಹೋಗಿ, latest Python 3 installer download ಮಾಡಿ.\n2. Installer open ಮಾಡಿ, ಮೊದಲ screen ನ ಕೆಳಗೆ **\"Add python.exe to PATH\" ಗೆ tick** ಮಾಡಿ. ಈ ಒಂದು checkbox ತುಂಬಾ ತೊಂದರೆ ಉಳಿಸುತ್ತೆ.\n3. **Install Now** click ಮಾಡಿ, ಮುಗಿಯುವವರೆಗೆ ಕಾಯಿರಿ.\n4. **Command Prompt** open ಮಾಡಿ `python --version` ಅಂತ type ಮಾಡಿ. `Python 3.12.4` ತರಹ ಏನಾದರೂ ಕಂಡರೆ, Python ಸಿದ್ಧ.\n\nMac ನಲ್ಲಿ python.org ನ installer use ಮಾಡಿ, Terminal ನಲ್ಲಿ `python3 --version` ಇಂದ check ಮಾಡಿ.",
+      "callout": {
+        "title": "Tip",
+        "md": "ಯಾವಾಗಲೂ **Python 3** install ಮಾಡಿ. ಹಳೆಯ tutorials Python 2 use ಮಾಡ್ತವೆ, ಅದು ಈಗ supported ಅಲ್ಲ."
+      }
+    },
+    {
+      "heading": "Text editor vs IDE",
+      "md": "Python ಅನ್ನು ಯಾವುದೇ **text editor** ನಲ್ಲಿ ಬರೆಯಬಹುದು, ಉದಾ: Notepad. ಆದರೆ text editor ಕೇವಲ plain text ಇಟ್ಟುಕೊಳ್ಳುತ್ತೆ. ಅದು ನಿಮ್ಮ code run ಮಾಡಲ್ಲ, ಬಣ್ಣ ಕೊಡಲ್ಲ, ತಪ್ಪುಗಳನ್ನೂ ತೋರಿಸಲ್ಲ.\n\n**IDE** ಎಲ್ಲವನ್ನೂ ಒಂದೇ ಕಡೆ ಕೊಡುತ್ತೆ: editor, code run ಮಾಡುವ ದಾರಿ, error hints ಮತ್ತು bugs ಹುಡುಕುವ tools.\n\nಹೀಗೆ ಯೋಚಿಸಿ: **ಸಾದಾ ಕಾಗದದ** ಮೇಲೆ prescription ಬರೆಯೋದು ನಡೆಯುತ್ತೆ, ಆದರೆ **pharmacy software** spelling check ಮಾಡುತ್ತೆ, interactions ಬಗ್ಗೆ warning ಕೊಡುತ್ತೆ ಮತ್ತು label ಕೂಡ print ಮಾಡುತ್ತೆ. Text editor ಕಾಗದ; IDE software.",
+      "callout": {
+        "title": "IDE",
+        "md": "**Integrated Development Environment**: code editor, programs run ಮಾಡುವ ದಾರಿ, error checking ಮತ್ತು debugging tools ಎಲ್ಲಾ ಒಟ್ಟಿಗೆ ಇರುವ ಒಂದು application."
+      }
+    },
+    {
+      "heading": "ಮೂರು popular IDEs",
+      "md": "| IDE | ಯಾವುದಕ್ಕೆ best | ತಿಳಿದುಕೊಳ್ಳಬೇಕಾದ ವಿಷಯ |\n|---|---|---|\n| **Jupyter Notebook** | Data analysis, graphs, step-by-step experiments | Code ಚಿಕ್ಕ **cells** ನಲ್ಲಿ run ಆಗುತ್ತೆ, ಪ್ರತಿ cell ನ output ಅಥವಾ graph ಅದರ ಕೆಳಗೇ ಕಾಣುತ್ತೆ. **Anaconda** ಜೊತೆ ಬರುತ್ತೆ, ಮತ್ತು **Google Colab** ನಲ್ಲಿ online free ಆಗಿ run ಆಗುತ್ತೆ. |\n| **PyCharm** | ದೊಡ್ಡ projects | **JetBrains** ನ full-featured Python IDE. **Community** edition free. |\n| **VS Code** | ಎಲ್ಲಾ ರೀತಿಯ coding | **Microsoft** ನ free, ಹಗುರ editor. **Python extension** ಸೇರಿಸಿದರೆ ಇದು powerful Python IDE ಆಗುತ್ತೆ. |\n\nಈ course ಗೆ **Jupyter Notebook** (ಅಥವಾ Google Colab) ಅತ್ಯಂತ useful, ಯಾಕಂದ್ರೆ pharmacy ಕೆಲಸ ಹೆಚ್ಚಾಗಿ data ಮತ್ತು graphs ಬಗ್ಗೆ.",
+      "callout": {
+        "title": "Anaconda",
+        "md": "Python, Jupyter Notebook ಮತ್ತು popular science libraries ಅನ್ನು ಒಂದೇ ಸಲ install ಮಾಡುವ ಒಂದು free bundle."
+      }
+    },
+    {
+      "heading": "Text editors ಗಿಂತ IDEs ನ ಅನುಕೂಲಗಳು",
+      "md": "| Feature | Text editor | IDE |\n|---|---|---|\n| **Syntax highlighting** (ಬಣ್ಣದ code) | ❌ | ✅ |\n| **Auto-completion** (type ಮಾಡುವಾಗ ಪದಗಳ suggestion) | ❌ | ✅ |\n| Type ಮಾಡುವಾಗಲೇ **error hints** | ❌ | ✅ |\n| **ಒಂದು click ನಲ್ಲಿ run** ಮಾಡಿ output ನೋಡೋದು | ❌ | ✅ |\n| **Debugger** (bugs ಹುಡುಕಲು line by line run ಮಾಡೋದು) | ❌ | ✅ |\n| **Project ಮತ್ತು files ನಿರ್ವಹಣೆ** | ❌ | ✅ |\n| Libraries ಮತ್ತು extensions ಸುಲಭವಾಗಿ **install ಮಾಡೋದು** | ❌ | ✅ |\n\nಸರಳವಾಗಿ ಹೇಳಬೇಕಂದ್ರೆ, IDE ನಿಮಗೆ **ವೇಗವಾಗಿ ಬರೆಯಲು, ಕಡಿಮೆ ತಪ್ಪು ಮಾಡಲು ಮತ್ತು bugs ಬೇಗ ಹಿಡಿಯಲು** ಸಹಾಯ ಮಾಡುತ್ತೆ."
+    },
+    {
+      "heading": "Laptop ಇಲ್ವಾ? Browser use ಮಾಡಿ",
+      "md": "ಈ course ಕಲಿಯೋಕೆ ನೀವು ಏನನ್ನೂ install ಮಾಡಬೇಕಿಲ್ಲ:\n\n- **Champ Lab** ನಿಮ್ಮ browser ನಲ್ಲೇ Python run ಮಾಡುತ್ತೆ, phone ನಲ್ಲೂ.\n- **Google Colab** ನಿಮ್ಮ Google account ಇಂದ free online Jupyter Notebook ಕೊಡುತ್ತೆ.\n\nಸಾಧ್ಯವಾದಾಗ laptop ನಲ್ಲಿ Python install ಮಾಡಿ, ಯಾಕಂದ್ರೆ practical exams ನಲ್ಲಿ laptop use ಆಗಬಹುದು."
+    }
+  ],
+  "walkthrough": {
+    "intro": "Python ಮತ್ತು IDE install ಮಾಡಿದ ಮೇಲೆ, ಎಲ್ಲಾ ಸರಿಯಾಗಿದೆಯಾ ಅಂತ check ಮಾಡಲು programmers ಒಂದು ಚಿಕ್ಕ program run ಮಾಡ್ತಾರೆ. ಇಲ್ಲಿದೆ ನಮ್ಮದು.",
+    "keyTerms": [
+      {
+        "meaning": "Integrated Development Environment: code ಬರೆಯೋದು, run ಮಾಡೋದು, ಸರಿ ಮಾಡೋದು, ಎಲ್ಲಾ ಒಂದೇ ಕಡೆ."
+      },
+      {
+        "meaning": "ನಿಮ್ಮ program run ಮಾಡಿ output ತೋರಿಸುತ್ತೆ."
+      },
+      {
+        "meaning": "Jupyter ನಲ್ಲಿ ತಾನೇ ಪ್ರತ್ಯೇಕವಾಗಿ run ಆಗುವ code ನ ಚಿಕ್ಕ block."
+      },
+      {
+        "meaning": "python ತರಹದ programs ಅನ್ನು Windows ಹುಡುಕುವ ಜಾಗಗಳ list."
+      }
+    ],
+    "steps": [
+      {
+        "say": "ನೀವು Python install ಮಾಡಿ, ಒಂದು IDE open ಮಾಡಿದ್ದೀರಿ. ಬನ್ನಿ, ಒಂದು quick setup check run ಮಾಡೋಣ."
+      },
+      {
+        "say": "ಮೊದಲ line ಒಂದು comment, ನಮಗಾಗಿ ಒಂದು note. IDE ನಲ್ಲಿ comments ಬೇರೆ ಬಣ್ಣದಲ್ಲಿ ಕಾಣುತ್ತವೆ, ಹಾಗಾಗಿ ಸುಲಭವಾಗಿ ಗುರುತಿಸಬಹುದು."
+      },
+      {
+        "say": "ಈ print, Python ಕೆಲಸ ಮಾಡ್ತಿದೆ ಅಂತ ಖಚಿತ ಪಡಿಸುತ್ತೆ. IDE ನಲ್ಲಿ Run button ಒತ್ತಿದರೆ, output ನಿಮ್ಮ code ನ ಕೆಳಗಿನ panel ನಲ್ಲಿ ಕಾಣುತ್ತೆ."
+      },
+      {
+        "say": "ಇಲ್ಲಿ Python ಇನ್ನೂರ ಐವತ್ತು ಮತ್ತು ಇನ್ನೂರ ಐವತ್ತು ಕೂಡಿಸುತ್ತೆ. ಐನೂರು ಕಂಡರೆ, calculations ಕೂಡ ಕೆಲಸ ಮಾಡ್ತಿವೆ."
+      },
+      {
+        "say": "ಕೊನೆಯ line, ನಾವು course ಗೆ ಸಿದ್ಧ ಅಂತ ಹೇಳುತ್ತೆ."
+      },
+      {
+        "say": "ಇದೇ code Jupyter Notebook, PyCharm, VS Code ಅಥವಾ Champ Lab ನಲ್ಲಿ ಒಂದೇ ತರಹ run ಆಗುತ್ತೆ. Buttons ಮಾತ್ರ ಬೇರೆ ಕಾಣುತ್ತವೆ."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Setup ನ ಹೆಚ್ಚಿನ problems ಚಿಕ್ಕವು, message ಗುರುತಿಸಿದ ತಕ್ಷಣ ಸುಲಭವಾಗಿ ಸರಿ ಮಾಡಬಹುದು.",
+    "examples": [
+      {
+        "title": "Python ಒಳಗೇ terminal command type ಮಾಡೋದು",
+        "md": "`python --version` ಒಂದು **terminal command**. ಇದು Command Prompt ಅಥವಾ Terminal ನಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತೆ, ಆದರೆ ಇಲ್ಲಿ ಇದನ್ನು Python ಒಳಗೇ (`>>>` prompt ಅಥವಾ code cell ನಲ್ಲಿ) type ಮಾಡಲಾಗಿದೆ. Python `python` ಅನ್ನು ಗೊತ್ತಿಲ್ಲದ ಹೆಸರು ಅಂತ ತಿಳಿದುಕೊಳ್ಳುತ್ತೆ. Python prompt ಇಂದ ಹೊರಬರಲು `exit()` type ಮಾಡಿ, ಆಮೇಲೆ command ಅನ್ನು terminal ನಲ್ಲಿ run ಮಾಡಿ."
+      },
+      {
+        "title": "Install ಆಗಿರದ (ಅಥವಾ spelling ತಪ್ಪಾದ) library",
+        "md": "Python `numpyy` ಅನ್ನುವ library ಹುಡುಕಿತು, ಆದರೆ ಸಿಗಲಿಲ್ಲ. ಇಲ್ಲಿ spelling ತಪ್ಪಾಗಿದೆ ಅಷ್ಟೇ (ಸರಿಯಾದದ್ದು `numpy`). Spelling ಸರಿ ಇದ್ದರೆ, library ಇನ್ನೂ install ಆಗಿಲ್ಲ ಅಂತ ಅರ್ಥ. Libraries ಅನ್ನು **pip** ಇಂದ install ಮಾಡೋದು Lesson 1.7 ನಲ್ಲಿ ಕಲಿಯುತ್ತೀರಿ.",
+        "callout": {
+          "title": "Library",
+          "md": "Python ಗೆ ಹೊಸ ಸಾಮರ್ಥ್ಯ ಕೊಡುವ ready-made code, ಉದಾ: numbers ಗಾಗಿ NumPy, graphs ಗಾಗಿ Matplotlib."
+        }
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Installation ಸಮಯದಲ್ಲಿ **Add python.exe to PATH** ಗೆ tick ಮಾಡದೇ ಇರೋದು",
+      "fix": "Installer ಮತ್ತೆ run ಮಾಡಿ, **Modify** ಆಯ್ಕೆ ಮಾಡಿ (ಅಥವಾ reinstall ಮಾಡಿ) ಮತ್ತು **Add python.exe to PATH** ಗೆ tick ಮಾಡಿ. `python` ಬದಲು `py` command ಕೂಡ try ಮಾಡಬಹುದು."
+    },
+    {
+      "mistake": "ಹಳೆಯ Python 2 tutorial ಇಂದ code copy ಮಾಡೋದು",
+      "fix": "Python 3 ನಲ್ಲಿ `print` ಗೆ ಯಾವಾಗಲೂ brackets ಬೇಕು: `print(\"Hello\")`."
+    },
+    {
+      "mistake": "Notepad ಇಂದ file ಅನ್ನು `program.py.txt` ಅಂತ save ಮಾಡೋದು",
+      "see": "File Python ಆಗಿ run ಆಗುವ ಬದಲು Notepad ನಲ್ಲಿ open ಆಗುತ್ತೆ",
+      "fix": "**Save as type: All Files** ಆಯ್ಕೆ ಮಾಡಿ, ಹೆಸರನ್ನು `program.py` ಅಂತ ಇಡಿ, ಅಥವಾ ನೇರವಾಗಿ IDE use ಮಾಡಿ."
+    },
+    {
+      "mistake": "Python ಒಳಗೇ (`>>>`) `python --version` type ಮಾಡೋದು",
+      "fix": "ಮೊದಲು `exit()` type ಮಾಡಿ, ಆಮೇಲೆ command ಅನ್ನು Command Prompt ಅಥವಾ Terminal ನಲ್ಲಿ run ಮಾಡಿ."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "ನಿಮ್ಮ ಮೊದಲ IDE message",
+      "md": "ಇದನ್ನೇ ನಿಖರವಾಗಿ print ಮಾಡುವ ಒಂದು program ಬರೆಯಿರಿ:",
+      "hints": [
+        "print() use ಮಾಡಿ, message ಅನ್ನು quotes ಒಳಗೆ ಹಾಕಿ."
+      ]
+    },
+    {
+      "title": "Setup check report",
+      "md": "ಈ report ಅನ್ನು print ಮಾಡುವ program ಬರೆಯಿರಿ. Test sum (250 + 250) ಅನ್ನು Python ಇಂದಲೇ **calculate** ಮಾಡಿಸಿ; 500 ಅನ್ನು ನೀವೇ type ಮಾಡಬೇಡಿ.",
+      "hints": [
+        "ಪ್ರತಿ line ಗೆ ಒಂದು print() use ಮಾಡಿ.",
+        "ಕೊನೆಯ line ಗೆ ಇದನ್ನು try ಮಾಡಿ: print(\"Test sum:\", 250 + 250)."
+      ]
+    },
+    {
+      "title": "ಹಳೆಯ tutorial ನ code ಸರಿ ಮಾಡಿ",
+      "md": "ಈ line ಅನ್ನು ಹಳೆಯ Python 2 tutorial ಇಂದ copy ಮಾಡಲಾಗಿದೆ. ಅದು `Python is ready` ಅಂತ print ಮಾಡುವ ಹಾಗೆ ಸರಿ ಮಾಡಿ.",
+      "hints": [
+        "Python 3 ನಲ್ಲಿ print ಗೆ brackets ಬೇಕು."
+      ],
+      "solutionNote": "Python 3 ನಲ್ಲಿ print ಮಾಡುವುದರ ಸುತ್ತ brackets ಬೇಕು."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "IDE ನ full form ಏನು?",
+      "why": "IDE ಅಂದ್ರೆ Integrated Development Environment: code ಬರೆಯಲು, run ಮಾಡಲು ಮತ್ತು ಸರಿ ಮಾಡಲು ಒಂದೇ ಜಾಗ."
+    },
+    {
+      "q": "Code ಅನ್ನು ಚಿಕ್ಕ cells ನಲ್ಲಿ run ಮಾಡಿ, ಪ್ರತಿ cell ನ ಕೆಳಗೇ output ಅಥವಾ graph ತೋರಿಸುವ tool ಯಾವುದು?",
+      "why": "Jupyter Notebook code ಅನ್ನು cell by cell run ಮಾಡಿ, result ಅನ್ನು ಕೆಳಗೇ ತೋರಿಸುತ್ತೆ. Data ಮತ್ತು graphs ಗೆ ಇದು ಅದ್ಭುತ."
+    },
+    {
+      "q": "Windows ನಲ್ಲಿ Python install ಮಾಡುವಾಗ, ಯಾವ option \"'python' is not recognized\" error ತಪ್ಪಿಸುತ್ತೆ?",
+      "why": "python.exe ಅನ್ನು PATH ಗೆ ಸೇರಿಸಿದರೆ, Windows ಯಾವುದೇ folder ಇಂದ python command ಹುಡುಕಬಹುದು."
+    },
+    {
+      "q": "ಇವುಗಳಲ್ಲಿ ಯಾವುದು text editor ಗಿಂತ IDE ನ ಅನುಕೂಲ ಅಲ್ಲ?",
+      "options": [
+        "Syntax highlighting",
+        "Auto-completion",
+        "Debugging tools",
+        "Python install ಮಾಡದೇ programs run ಮಾಡೋದು"
+      ],
+      "why": "IDE ಗೂ Python install ಬೇಕು. ಅದು code ಬರೆಯೋದು, run ಮಾಡೋದು ಮತ್ತು ಸರಿ ಮಾಡೋದನ್ನು ಸುಲಭ ಮಾಡುತ್ತೆ, ಆದರೆ interpreter ಬದಲಿ ಆಗಲ್ಲ."
+    },
+    {
+      "q": "Microsoft ತಯಾರಿಸಿದ free editor ಯಾವುದು?",
+      "why": "VS Code (Visual Studio Code) Microsoft ನ free editor. Python extension ಜೊತೆ ಇದು ಪೂರ್ಣ Python IDE ಆಗುತ್ತೆ."
+    }
+  ],
+  "exam": {
+    "note": "University exam ಅನ್ನು English ನಲ್ಲಿ ಬರೆಯುತ್ತೀರಿ, ಹಾಗಾಗಿ model answers English ನಲ್ಲೇ ಇವೆ. ಇವು practice ಗಾಗಿ important questions; ನಿಜವಾದ university questions ಬೇರೆ ಇರಬಹುದು."
+  },
+  "mindmap": {
+    "label": "Lesson 1.2 · Setup",
+    "children": [
+      {
+        "label": "Python install",
+        "children": [
+          {
+            "label": "python.org"
+          },
+          {
+            "label": "Add to PATH ಗೆ tick"
+          },
+          {
+            "label": "Check: python --version"
+          }
+        ]
+      },
+      {
+        "label": "Text editor vs IDE",
+        "children": [
+          {
+            "label": "Editor: plain text ಮಾತ್ರ"
+          },
+          {
+            "label": "IDE: ಎಲ್ಲಾ tools ಒಂದೇ ಕಡೆ"
+          }
+        ]
+      },
+      {
+        "label": "Popular IDEs",
+        "children": [
+          {
+            "label": "Jupyter Notebook",
+            "children": [
+              {
+                "label": "Cells + graphs"
+              },
+              {
+                "label": "Anaconda / Colab"
+              }
+            ]
+          },
+          {
+            "label": "PyCharm",
+            "children": [
+              {
+                "label": "Full-featured, JetBrains"
+              }
+            ]
+          },
+          {
+            "label": "VS Code",
+            "children": [
+              {
+                "label": "Free, Microsoft"
+              },
+              {
+                "label": "Python extension"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "IDE ಅನುಕೂಲಗಳು",
+        "children": [
+          {
+            "label": "Syntax highlighting"
+          },
+          {
+            "label": "Auto-completion"
+          },
+          {
+            "label": "Error hints"
+          },
+          {
+            "label": "ಒಂದು click ನಲ್ಲಿ run"
+          },
+          {
+            "label": "Debugger"
+          }
+        ]
+      },
+      {
+        "label": "Laptop ಇಲ್ವಾ?",
+        "children": [
+          {
+            "label": "Champ Lab"
+          },
+          {
+            "label": "Google Colab"
+          }
+        ]
+      },
+      {
+        "label": "Setup errors",
+        "children": [
+          {
+            "label": "python not recognized: PATH"
+          },
+          {
+            "label": "ModuleNotFoundError: library ಇಲ್ಲ"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Python install ಮಾಡೋದು** ಅಂದ್ರೆ interpreter ಅನ್ನು ನಿಮ್ಮ computer ನಲ್ಲಿ ಇಡೋದು; Windows ನಲ್ಲಿ **Add python.exe to PATH** ಗೆ tick ಮಾಡಿ.",
+    "Installation check ಮಾಡಿ: Command Prompt ಅಥವಾ Terminal ನಲ್ಲಿ **`python --version`**.",
+    "**IDE** (Integrated Development Environment) ನಲ್ಲಿ code ಬರೆಯೋದು, run ಮಾಡೋದು ಮತ್ತು ಸರಿ ಮಾಡೋದು ಎಲ್ಲಾ ಒಂದೇ ಕಡೆ.",
+    "Popular IDEs: **Jupyter Notebook** (cells ಮತ್ತು graphs), **PyCharm** (full-featured) ಮತ್ತು **VS Code** (free, Microsoft ನದು).",
+    "IDEs text editors ಗಿಂತ ಉತ್ತಮ: **syntax highlighting, auto-completion, error hints, ಒಂದು click ನಲ್ಲಿ run ಮತ್ತು debugging**."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Text editor, ಉದಾ: Notepad, ಒಂದು ಖಾಲಿ page ಅಷ್ಟೇ. ಅದು ನಿಮ್ಮ code ಅನ್ನು plain text ಆಗಿ ಮಾತ್ರ ಇಡುತ್ತೆ."
+        },
+        {
+          "say": "IDE ಅಂದ್ರೆ Integrated Development Environment. ಇದು code ಬರೆಯಲು ಒಂದು ಪೂರ್ಣ workspace."
+        },
+        {
+          "say": "ಇದು ನಿಮ್ಮ code ಗೆ ಬಣ್ಣ ಕೊಡುತ್ತೆ, type ಮಾಡುವಾಗ ಪದಗಳನ್ನು suggest ಮಾಡುತ್ತೆ, ತಪ್ಪುಗಳ ಬಗ್ಗೆ warning ಕೊಡುತ್ತೆ, ಮತ್ತು bugs ಹುಡುಕಲು ಸಹಾಯ ಮಾಡುತ್ತೆ."
+        },
+        {
+          "say": "ಮತ್ತು ಒಂದೇ click ನಲ್ಲಿ, ನಿಮ್ಮ program run ಮಾಡಿ output ಅನ್ನು ಅಲ್ಲೇ ತೋರಿಸುತ್ತೆ."
+        },
+        {
+          "say": "ಅದಕ್ಕೇ programmers IDEs ಇಷ್ಟಪಡ್ತಾರೆ. ಅವು ಸಮಯ ಉಳಿಸುತ್ತವೆ ಮತ್ತು ತಪ್ಪುಗಳನ್ನು ಬೇಗ ಹಿಡಿಯುತ್ತವೆ."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "video",
+    "animations"
+  ]
+}
