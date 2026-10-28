@@ -1,0 +1,58 @@
+{
+  "translatedSections": [
+    "walkthrough",
+    "animations"
+  ],
+  "walkthrough": {
+    "steps": [
+      {
+        "say": "चलिए, देखते हैं Python इस program को कैसे चलाता है। याद रखिए, Python एक बार में एक line पढ़ता है, ऊपर से नीचे तक।"
+      },
+      {
+        "say": "पहली line hash sign से शुरू होती है। यह एक comment है। Comments इंसानों के लिए notes होते हैं। Python इन्हें बस छोड़ देता है।"
+      },
+      {
+        "say": "अब Python print पर पहुँचता है। Print का मतलब है: इसे screen पर दिखाओ। Quotes के अंदर लिखे शब्द बिल्कुल वैसे ही दिखाए जाते हैं, जैसे लिखे गए हैं।"
+      },
+      {
+        "say": "Python अगली line पर जाता है, और दवा का नाम print करता है। ध्यान दीजिए, हर print एक नई line पर शुरू होता है।"
+      },
+      {
+        "say": "यहाँ print में तीन items हैं, जो commas से अलग किए गए हैं। Python इन्हें एक के बाद एक दिखाता है, और हर item के बीच एक space लगाता है।"
+      },
+      {
+        "say": "इस line में एक छोटी सी calculation है। Python पहले पाँच सौ गुणा तीन करता है, जो पंद्रह सौ होता है, और फिर answer print करता है। Star sign का मतलब है multiply, यानी गुणा।"
+      },
+      {
+        "say": "बस, इतना ही! Python ने चार instructions, क्रम से, ऊपर से नीचे तक चलाए। आपने अभी-अभी अपना पहला program समझ लिया है।"
+      }
+    ]
+  },
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Prescription निर्देशों की एक list होती है, जो क्रम से लिखी जाती है।"
+        },
+        {
+          "say": "Pharmacist इसे line by line पढ़ता है, ऊपर से नीचे तक।"
+        },
+        {
+          "say": "Python program भी निर्देशों की एक list है, जो क्रम से लिखी जाती है।"
+        },
+        {
+          "say": "Interpreter पहली line पढ़ता है, और दवा का नाम दिखाता है।"
+        },
+        {
+          "say": "फिर वह अगली line पर जाता है, और strength दिखाता है।"
+        },
+        {
+          "say": "आखिरी line पर, वह पाँच सौ गुणा तीन calculate करता है, और पंद्रह सौ दिखाता है।"
+        },
+        {
+          "say": "बिल्कुल prescription जैसा: एक बार में एक line, ऊपर से नीचे तक। हर Python program ऐसे ही चलता है।"
+        }
+      ]
+    }
+  ]
+}

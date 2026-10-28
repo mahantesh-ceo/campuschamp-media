@@ -1,0 +1,58 @@
+{
+  "translatedSections": [
+    "walkthrough",
+    "animations"
+  ],
+  "walkthrough": {
+    "steps": [
+      {
+        "say": "ಬನ್ನಿ, Python ಈ program ಅನ್ನು ಹೇಗೆ run ಮಾಡುತ್ತೆ ಅಂತ ನೋಡೋಣ. ನೆನಪಿಡಿ, Python ಒಂದು ಸಲಕ್ಕೆ ಒಂದೇ line ಓದುತ್ತೆ, ಮೇಲಿಂದ ಕೆಳಗೆ."
+      },
+      {
+        "say": "ಮೊದಲ line hash sign ಇಂದ ಶುರು ಆಗುತ್ತೆ. ಇದು ಒಂದು comment. Comments ಮನುಷ್ಯರಿಗಾಗಿ ಬರೆದ notes. Python ಅವನ್ನು ಸುಮ್ಮನೆ skip ಮಾಡುತ್ತೆ."
+      },
+      {
+        "say": "ಈಗ Python print ಗೆ ಬರುತ್ತೆ. Print ಅಂದ್ರೆ: ಇದನ್ನು screen ಮೇಲೆ ತೋರಿಸು. Quotes ಒಳಗಿರುವ ಪದಗಳು, ಬರೆದ ಹಾಗೆಯೇ ತೋರಿಸಲಾಗುತ್ತೆ."
+      },
+      {
+        "say": "Python ಮುಂದಿನ line ಗೆ ಹೋಗಿ, ಔಷಧಿಯ ಹೆಸರನ್ನು print ಮಾಡುತ್ತೆ. ಗಮನಿಸಿ, ಪ್ರತಿ print ಹೊಸ line ನಲ್ಲಿ ಶುರು ಆಗುತ್ತೆ."
+      },
+      {
+        "say": "ಇಲ್ಲಿ print ನಲ್ಲಿ ಮೂರು items ಇವೆ, commas ಇಂದ ಬೇರೆ ಮಾಡಲಾಗಿದೆ. Python ಅವನ್ನು ಒಂದರ ನಂತರ ಒಂದು ತೋರಿಸುತ್ತೆ, ಮತ್ತು ಪ್ರತಿ item ನಡುವೆ ಒಂದು space ಹಾಕುತ್ತೆ."
+      },
+      {
+        "say": "ಈ line ನಲ್ಲಿ ಒಂದು ಚಿಕ್ಕ calculation ಇದೆ. Python ಮೊದಲು ಐನೂರು ಗುಣಿಸು ಮೂರು ಮಾಡುತ್ತೆ, ಅಂದ್ರೆ ಸಾವಿರದ ಐನೂರು, ಆಮೇಲೆ answer ಅನ್ನು print ಮಾಡುತ್ತೆ. Star sign ಅಂದ್ರೆ multiply, ಅಂದ್ರೆ ಗುಣಾಕಾರ."
+      },
+      {
+        "say": "ಅಷ್ಟೇ! Python ನಾಲ್ಕು instructions ಅನ್ನು, ಕ್ರಮವಾಗಿ, ಮೇಲಿಂದ ಕೆಳಗೆ run ಮಾಡಿತು. ನೀವು ಈಗಷ್ಟೇ ನಿಮ್ಮ ಮೊದಲ program ಅನ್ನು ಅರ್ಥ ಮಾಡಿಕೊಂಡಿದ್ದೀರಿ."
+      }
+    ]
+  },
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Prescription ಅಂದ್ರೆ, ಕ್ರಮವಾಗಿ ಬರೆದ ಸೂಚನೆಗಳ ಒಂದು list."
+        },
+        {
+          "say": "Pharmacist ಅದನ್ನು line by line ಓದುತ್ತಾರೆ, ಮೇಲಿಂದ ಕೆಳಗೆ."
+        },
+        {
+          "say": "Python program ಕೂಡ, ಕ್ರಮವಾಗಿ ಬರೆದ ಸೂಚನೆಗಳ ಒಂದು list."
+        },
+        {
+          "say": "Interpreter ಮೊದಲ line ಓದುತ್ತೆ, ಮತ್ತು ಔಷಧಿಯ ಹೆಸರು ತೋರಿಸುತ್ತೆ."
+        },
+        {
+          "say": "ಆಮೇಲೆ ಮುಂದಿನ line ಗೆ ಹೋಗಿ, strength ತೋರಿಸುತ್ತೆ."
+        },
+        {
+          "say": "ಕೊನೆಯ line ನಲ್ಲಿ, ಐನೂರು ಗುಣಿಸು ಮೂರು calculate ಮಾಡಿ, ಸಾವಿರದ ಐನೂರು ತೋರಿಸುತ್ತೆ."
+        },
+        {
+          "say": "ಥೇಟ್ prescription ತರಹನೇ: ಒಂದು ಸಲಕ್ಕೆ ಒಂದು line, ಮೇಲಿಂದ ಕೆಳಗೆ. ಪ್ರತಿ Python program ಹೀಗೇ run ಆಗುತ್ತೆ."
+        }
+      ]
+    }
+  ]
+}

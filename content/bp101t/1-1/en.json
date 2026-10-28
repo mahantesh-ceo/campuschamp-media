@@ -1,0 +1,631 @@
+{
+  "id": "1-1",
+  "unit": "Unit I",
+  "unitTitle": "Introduction to Python programming",
+  "number": "1.1",
+  "title": "What Python is and how a program runs",
+  "minutes": 10,
+  "free": true,
+  "hook": {
+    "title": "Your first program, in 10 minutes",
+    "md": "By the end of this lesson, you will write and run your **first Python program**: a small medicine label that prints the drug name, its strength, and the total daily dose.\n\nNo installation. No coding background. Just your phone."
+  },
+  "learn": [
+    "What a **program** and a **programming language** are",
+    "Why **Python** is the language pharmacy students are learning",
+    "How Python **runs a program**, line by line, from top to bottom"
+  ],
+  "explanation": [
+    {
+      "heading": "What is a program?",
+      "md": "Think about a **prescription**. It is a list of clear instructions, written in order:",
+      "quote": "Take 1 tablet of Paracetamol 500 mg, three times a day, after food.",
+      "mdAfter": "The patient follows these instructions step by step.\n\nA **program** is the same idea, but for a computer. It is a list of instructions, written in order, that the computer follows exactly."
+    },
+    {
+      "heading": "What is a programming language?",
+      "md": "Computers do not understand English. A **programming language** is a special language that both humans and computers can understand. We write instructions in it, and the computer carries them out.\n\nThere are many programming languages: C, Java, JavaScript, and **Python**."
+    },
+    {
+      "heading": "Why Python?",
+      "md": "Python was created by **Guido van Rossum** and first released in **1991**. Today it is one of the most popular languages in the world, and the one chosen for your syllabus, because:\n\n- **It reads almost like English**, so it is easy for beginners.\n- **It is free** for everyone to use.\n- **It has ready-made toolkits (libraries)** for data, graphs and science.\n- **It is widely used in pharmacy and healthcare**: analysing clinical trial data, plotting drug concentration curves, studying adverse drug reaction (ADR) reports, and designing new drugs on the computer."
+    },
+    {
+      "heading": "How does Python run a program?",
+      "md": "Imagine a pharmacist reading a prescription. They read **the first line, then the next, then the next**, in order, and act on each one.\n\nPython works the same way. A special program called the **interpreter** reads your code and runs it **one line at a time, from top to bottom**.",
+      "callout": {
+        "type": "definition",
+        "title": "Interpreter",
+        "md": "The part of Python that reads your code and carries out each instruction."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "Here is your first program. Python will run it line by line.",
+    "filename": "first_program.py",
+    "code": "# My first Python program\nprint(\"Welcome to Campus Champ!\")\nprint(\"Drug: Paracetamol\")\nprint(\"Strength:\", 500, \"mg\")\nprint(\"Daily dose:\", 500 * 3, \"mg\")",
+    "output": "Welcome to Campus Champ!\nDrug: Paracetamol\nStrength: 500 mg\nDaily dose: 1500 mg",
+    "steps": [
+      {
+        "line": null,
+        "say": "Let's watch Python run this program. Remember, Python reads one line at a time, from top to bottom.",
+        "output": null,
+        "audio": "step-01.mp3"
+      },
+      {
+        "line": 1,
+        "say": "The first line starts with a hash sign. This is a comment. Comments are notes for humans. Python simply skips them.",
+        "output": null,
+        "audio": "step-02.mp3"
+      },
+      {
+        "line": 2,
+        "say": "Now Python reaches print. Print means: show this on the screen. The words inside the quotes are shown exactly as they are written.",
+        "output": "Welcome to Campus Champ!",
+        "audio": "step-03.mp3"
+      },
+      {
+        "line": 3,
+        "say": "Python moves to the next line, and prints the drug name. Notice that each print starts on a new line.",
+        "output": "Drug: Paracetamol",
+        "audio": "step-04.mp3"
+      },
+      {
+        "line": 4,
+        "say": "Here, print has three items, separated by commas. Python shows them one after another, and puts a space between each item.",
+        "output": "Strength: 500 mg",
+        "audio": "step-05.mp3"
+      },
+      {
+        "line": 5,
+        "say": "This line has a small calculation. Python first works out five hundred times three, which is fifteen hundred, and then prints the answer. The star sign means multiply.",
+        "output": "Daily dose: 1500 mg",
+        "audio": "step-06.mp3"
+      },
+      {
+        "line": null,
+        "say": "And that's it. Python ran four instructions, in order, from top to bottom. You have just understood your first program.",
+        "output": null,
+        "audio": "step-07.mp3"
+      }
+    ],
+    "keyTerms": [
+      {
+        "term": "Comment (#)",
+        "meaning": "A note for humans; Python ignores it."
+      },
+      {
+        "term": "print()",
+        "meaning": "Shows text or numbers on the screen."
+      },
+      {
+        "term": "String (\"...\")",
+        "meaning": "Text in quotes, shown exactly as written."
+      },
+      {
+        "term": "*",
+        "meaning": "Multiply."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Mistakes are normal. Python tells you exactly where it got stuck.",
+    "examples": [
+      {
+        "title": "Python stops at a line it cannot understand",
+        "code": "print(\"Patient: Ravi\")\nprint(\"Weight:\", weight)\nprint(\"Dose calculated\")",
+        "output": "Patient: Ravi\nNameError: name 'weight' is not defined",
+        "errorLine": 2,
+        "md": "Python ran line 1 successfully. On line 2, it found the word `weight`, but nobody had told Python what `weight` means. So it stopped, like a pharmacist who stops at an unclear line on a prescription. Line 3 never ran."
+      },
+      {
+        "title": "A missing bracket stops everything",
+        "code": "print(\"Line 1\")\nprint(\"Line 2\"\nprint(\"Line 3\")",
+        "output": "SyntaxError: '(' was never closed",
+        "errorLine": 2,
+        "md": "Here, **nothing** is printed, not even Line 1. Before running anything, Python quickly checks that the whole program is written correctly. A missing bracket is a writing mistake (a **syntax error**), so Python refuses to start.",
+        "callout": {
+          "type": "definition",
+          "title": "Syntax",
+          "md": "The grammar rules of a programming language."
+        }
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Writing `Print` with a capital P",
+      "see": "NameError: name 'Print' is not defined. Did you mean: 'print'?",
+      "fix": "Python is case-sensitive. Always write `print` in lowercase."
+    },
+    {
+      "mistake": "Copying code from WhatsApp or Word with curly quotes “ ”",
+      "see": "SyntaxError: invalid character '“'",
+      "fix": "Use straight quotes \" \". Type the quotes yourself in the editor."
+    },
+    {
+      "mistake": "Adding spaces at the start of a line",
+      "see": "IndentationError: unexpected indent",
+      "fix": "Start each line at the left edge (for now)."
+    },
+    {
+      "mistake": "Forgetting the quotes around text, e.g. `print(Paracetamol)`",
+      "see": "NameError: name 'Paracetamol' is not defined",
+      "fix": "Put text inside quotes: `print(\"Paracetamol\")`."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1",
+      "title": "Say hello",
+      "md": "Write a program that prints exactly:",
+      "expectedOutput": "Hello, I am a future pharmacist!",
+      "starterCode": "# Write your code below\n",
+      "hints": [
+        "Use print() with the sentence inside quotes."
+      ],
+      "solution": "print(\"Hello, I am a future pharmacist!\")",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": []
+      }
+    },
+    {
+      "id": "t2",
+      "title": "Make a medicine label",
+      "md": "Write a program that prints this label. Let Python **calculate** the daily dose (250 × 4); don't type 1000 yourself.",
+      "expectedOutput": "===== CAMPUS CHAMP PHARMACY =====\nPatient   : Ananya\nDrug      : Amoxicillin\nStrength  : 250 mg\nFrequency : 4 times a day\nDaily dose: 1000 mg\n=================================",
+      "starterCode": "# Prescription label\n",
+      "hints": [
+        "Use one print() for each line.",
+        "For the strength line, try print(\"Strength  :\", 250, \"mg\")."
+      ],
+      "solution": "# Prescription label\nprint(\"===== CAMPUS CHAMP PHARMACY =====\")\nprint(\"Patient   : Ananya\")\nprint(\"Drug      : Amoxicillin\")\nprint(\"Strength  :\", 250, \"mg\")\nprint(\"Frequency : 4 times a day\")\nprint(\"Daily dose:\", 250 * 4, \"mg\")\nprint(\"=================================\")",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "250 * 4"
+        ]
+      }
+    },
+    {
+      "id": "t3",
+      "title": "Find the bug",
+      "md": "This program has one mistake. Fix it so it prints `Drug: Amoxicillin`.",
+      "expectedOutput": "Drug: Amoxicillin",
+      "starterCode": "Print(\"Drug: Amoxicillin\")",
+      "hints": [
+        "Python is case-sensitive."
+      ],
+      "solution": "print(\"Drug: Amoxicillin\")",
+      "solutionNote": "`print` must be lowercase.",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": []
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Who created Python?",
+      "options": [
+        "Dennis Ritchie",
+        "Guido van Rossum",
+        "James Gosling",
+        "Bjarne Stroustrup"
+      ],
+      "answer": 1,
+      "why": "Guido van Rossum created Python; it was first released in 1991."
+    },
+    {
+      "q": "In what order does Python run the lines of a program?",
+      "options": [
+        "Randomly",
+        "Bottom to top",
+        "Top to bottom, one line at a time",
+        "Only the last line"
+      ],
+      "answer": 2,
+      "why": "The interpreter runs code from top to bottom, one line at a time."
+    },
+    {
+      "q": "Which line correctly shows the word Hello on the screen?",
+      "options": [
+        "Print(\"Hello\")",
+        "print(\"Hello\")",
+        "print(Hello)",
+        "show \"Hello\""
+      ],
+      "answer": 1,
+      "why": "print must be lowercase, and text must be inside quotes.",
+      "code": true
+    },
+    {
+      "q": "A line that starts with # is a:",
+      "options": [
+        "Error",
+        "Comment, which Python ignores",
+        "Heading",
+        "Library"
+      ],
+      "answer": 1,
+      "why": "Comments are notes for humans; Python skips them."
+    },
+    {
+      "q": "What is the output of print(\"Dose:\", 2 * 250, \"mg\")?",
+      "options": [
+        "Dose: 2 * 250 mg",
+        "Dose: 500 mg",
+        "Dose:500mg",
+        "An error"
+      ],
+      "answer": 1,
+      "why": "Python calculates 2 × 250 = 500 first, and print adds spaces between items.",
+      "code": true
+    }
+  ],
+  "exam": {
+    "note": "Important questions for practice. Actual university questions may differ.",
+    "short": [
+      {
+        "q": "Define a program and a programming language.",
+        "marks": 2,
+        "md": "A **program** is a set of instructions, written in order, that a computer follows to perform a task. A **programming language** is a formal language, such as Python, used to write these instructions in a form both humans and computers can understand."
+      },
+      {
+        "q": "What is an interpreter?",
+        "marks": 2,
+        "md": "An **interpreter** is a program that reads source code and executes it statement by statement. Python uses an interpreter, which is why Python is called an **interpreted language**."
+      }
+    ],
+    "long": [
+      {
+        "q": "Explain the features of Python and its applications in pharmaceutical sciences.",
+        "marks": 5,
+        "md": "**Features of Python:**\n1. **Simple and readable**: its syntax is close to English, so it is easy to learn.\n2. **Interpreted**: code is executed statement by statement by the Python interpreter, which makes testing and debugging easy. (Internally, Python first converts code into bytecode, which the Python Virtual Machine runs.)\n3. **High-level**: the programmer does not need to manage computer memory or hardware details.\n4. **Free and open source**: anyone can use, share and modify it at no cost.\n5. **Portable (cross-platform)**: the same program runs on Windows, macOS and Linux.\n6. **Large standard library and third-party libraries**: for example NumPy, Pandas and Matplotlib for data analysis and graphs.\n7. **Dynamically typed**: the type of a variable does not need to be declared in advance.\n8. **Supports object-oriented programming** and has a large, active community.\n\n**Applications in pharmaceutical sciences:**\n1. **Clinical trial data analysis**: cleaning and summarising patient data.\n2. **Pharmacokinetics**: calculating Cmax and Tmax and plotting concentration–time curves.\n3. **Pharmacovigilance**: analysing adverse drug reaction (ADR) reports to find safety signals.\n4. **Computer-aided drug design (CADD) and cheminformatics**: studying molecules and predicting drug properties.\n5. **Automation**: generating lab reports, labels and dosage calculations.\n6. **Machine learning and AI**: predicting drug activity and supporting drug discovery."
+      }
+    ]
+  },
+  "mindmap": {
+    "label": "Lesson 1.1 · Python basics",
+    "children": [
+      {
+        "label": "Program",
+        "children": [
+          {
+            "label": "List of instructions"
+          },
+          {
+            "label": "Followed in order"
+          },
+          {
+            "label": "Like a prescription"
+          }
+        ]
+      },
+      {
+        "label": "Programming language",
+        "children": [
+          {
+            "label": "Humans and computers both understand"
+          },
+          {
+            "label": "Examples: C, Java, Python"
+          }
+        ]
+      },
+      {
+        "label": "Why Python",
+        "children": [
+          {
+            "label": "Reads like English"
+          },
+          {
+            "label": "Free"
+          },
+          {
+            "label": "Libraries for data and graphs"
+          },
+          {
+            "label": "Used in pharmacy",
+            "children": [
+              {
+                "label": "Clinical trial data"
+              },
+              {
+                "label": "PK curves"
+              },
+              {
+                "label": "ADR reports"
+              },
+              {
+                "label": "Drug design"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "How it runs",
+        "children": [
+          {
+            "label": "Interpreter"
+          },
+          {
+            "label": "One line at a time"
+          },
+          {
+            "label": "Top to bottom"
+          }
+        ]
+      },
+      {
+        "label": "First code",
+        "children": [
+          {
+            "label": "print() shows output"
+          },
+          {
+            "label": "# starts a comment"
+          },
+          {
+            "label": "Text in quotes is a string"
+          },
+          {
+            "label": "* means multiply"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError: unknown word",
+            "children": [
+              {
+                "label": "Stops at that line"
+              }
+            ]
+          },
+          {
+            "label": "SyntaxError: writing mistake",
+            "children": [
+              {
+                "label": "Nothing runs"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "A **program** is a list of instructions the computer follows in order, like a prescription.",
+    "**Python** is a free, easy-to-read programming language, widely used in pharmacy and healthcare.",
+    "The **interpreter** runs Python code **one line at a time, from top to bottom**.",
+    "**print()** shows text and numbers on the screen; **#** starts a comment.",
+    "**Errors** tell you exactly where Python got stuck. A syntax error stops the program before it starts."
+  ],
+  "video": {
+    "videoUrl": null,
+    "searchTerms": [
+      "what is python programming for beginners",
+      "how does python interpreter work simple explanation"
+    ]
+  },
+  "animations": [
+    {
+      "id": "interpreter",
+      "title": "How Python reads your program",
+      "canvas": {
+        "desktop": {
+          "w": 800,
+          "h": 460
+        },
+        "mobile": {
+          "w": 360,
+          "h": 600
+        }
+      },
+      "actors": [
+        {
+          "id": "rx",
+          "type": "card",
+          "title": "Prescription",
+          "icon": "📄",
+          "color": "emerald",
+          "lines": [
+            "1. Paracetamol 500 mg",
+            "2. Take 1 tablet",
+            "3. Three times a day"
+          ],
+          "desktop": {
+            "x": 40,
+            "y": 40,
+            "w": 320,
+            "h": 220
+          },
+          "mobile": {
+            "x": 16,
+            "y": 16,
+            "w": 328,
+            "h": 168
+          }
+        },
+        {
+          "id": "code",
+          "type": "card",
+          "title": "Python program",
+          "icon": "🐍",
+          "color": "indigo",
+          "mono": true,
+          "lines": [
+            "print(\"Drug: Paracetamol\")",
+            "print(\"Strength:\", 500, \"mg\")",
+            "print(\"Daily dose:\", 500 * 3, \"mg\")"
+          ],
+          "desktop": {
+            "x": 440,
+            "y": 40,
+            "w": 320,
+            "h": 220
+          },
+          "mobile": {
+            "x": 16,
+            "y": 204,
+            "w": 328,
+            "h": 168
+          }
+        },
+        {
+          "id": "out",
+          "type": "terminal",
+          "title": "Output",
+          "desktop": {
+            "x": 40,
+            "y": 300,
+            "w": 720,
+            "h": 130
+          },
+          "mobile": {
+            "x": 16,
+            "y": 392,
+            "w": 328,
+            "h": 150
+          }
+        },
+        {
+          "id": "reader",
+          "type": "pill",
+          "text": "Interpreter: one line at a time",
+          "color": "amber",
+          "desktop": {
+            "x": 470,
+            "y": 270,
+            "w": 240,
+            "h": 28
+          },
+          "mobile": {
+            "x": 60,
+            "y": 556,
+            "w": 240,
+            "h": 28
+          }
+        }
+      ],
+      "steps": [
+        {
+          "say": "A prescription is a list of instructions, written in order.",
+          "audio": "anim-interpreter-01.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "rx"
+            }
+          ]
+        },
+        {
+          "say": "The pharmacist reads it line by line, from top to bottom.",
+          "audio": "anim-interpreter-02.mp3",
+          "actions": [
+            {
+              "do": "scanLines",
+              "target": "rx",
+              "intervalMs": 800
+            }
+          ]
+        },
+        {
+          "say": "A Python program is also a list of instructions, written in order.",
+          "audio": "anim-interpreter-03.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "code"
+            },
+            {
+              "do": "show",
+              "target": "out"
+            }
+          ]
+        },
+        {
+          "say": "The interpreter reads the first line, and shows the drug name.",
+          "audio": "anim-interpreter-04.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "reader"
+            },
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 0
+            },
+            {
+              "do": "appendOutput",
+              "target": "out",
+              "text": "Drug: Paracetamol"
+            }
+          ]
+        },
+        {
+          "say": "Then it moves to the next line, and shows the strength.",
+          "audio": "anim-interpreter-05.mp3",
+          "actions": [
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 1
+            },
+            {
+              "do": "appendOutput",
+              "target": "out",
+              "text": "Strength: 500 mg"
+            }
+          ]
+        },
+        {
+          "say": "On the last line, it calculates five hundred times three, and shows fifteen hundred.",
+          "audio": "anim-interpreter-06.mp3",
+          "actions": [
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 2
+            },
+            {
+              "do": "appendOutput",
+              "target": "out",
+              "text": "Daily dose: 1500 mg"
+            }
+          ]
+        },
+        {
+          "say": "Same idea as a prescription: one line at a time, from top to bottom. That is how every Python program runs.",
+          "audio": "anim-interpreter-07.mp3",
+          "actions": [
+            {
+              "do": "connect",
+              "id": "same",
+              "from": "rx",
+              "to": "code",
+              "label": "Same idea",
+              "color": "amber"
+            },
+            {
+              "do": "pulse",
+              "target": "reader"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "course": "bp101t",
+  "audioLanguages": [
+    "en",
+    "hi",
+    "kn"
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "code": "BP101T",
+  "title": "Basics of Python Programming for Pharmaceutical Sciences",
+  "semester": "I",
+  "credits": 2,
+  "hours": 30,
+  "readLanguages": [
+    {
+      "code": "en",
+      "label": "English"
+    },
+    {
+      "code": "hi",
+      "label": "हिन्दी"
+    },
+    {
+      "code": "hinglish",
+      "label": "Hinglish"
+    },
+    {
+      "code": "kn",
+      "label": "ಕನ್ನಡ"
+    }
+  ],
+  "listenLanguages": [
+    {
+      "code": "en",
+      "label": "English"
+    },
+    {
+      "code": "hi",
+      "label": "हिन्दी"
+    },
+    {
+      "code": "kn",
+      "label": "ಕನ್ನಡ"
+    }
+  ],
+  "units": [
+    {
+      "unit": "Unit I",
+      "title": "Introduction to Python programming",
+      "hours": 6,
+      "lessons": [
+        {
+          "id": "1-1",
+          "title": "What Python is and how a program runs",
+          "available": true,
+          "translations": [
+            "hi",
+            "hinglish",
+            "kn"
+          ]
+        },
+        {
+          "id": "1-2",
+          "title": "Installing Python and IDEs",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "1-3",
+          "title": "Variables and data types",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "1-4",
+          "title": "Type casting and operators",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "1-5",
+          "title": "Input and output",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "1-6",
+          "title": "String operations",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "1-7",
+          "title": "Libraries and pip",
+          "available": false,
+          "translations": []
+        }
+      ]
+    },
+    {
+      "unit": "Unit II",
+      "title": "Control Structures & Functions",
+      "hours": 6,
+      "lessons": [
+        {
+          "id": "2-1",
+          "title": "if, if-else and if-elif-else",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "2-2",
+          "title": "Nested conditions",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "2-3",
+          "title": "for loops",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "2-4",
+          "title": "while loops, break and continue",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "2-5",
+          "title": "Functions",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "2-6",
+          "title": "Project: Dosage and BMI calculators",
+          "available": false,
+          "translations": []
+        }
+      ]
+    },
+    {
+      "unit": "Unit III",
+      "title": "Data Structures & File Handling",
+      "hours": 6,
+      "lessons": [
+        {
+          "id": "3-1",
+          "title": "Lists, indexing and slicing",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "3-2",
+          "title": "Tuples and dictionaries",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "3-3",
+          "title": "Operations on lists and dictionaries",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "3-4",
+          "title": "NumPy arrays",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "3-5",
+          "title": "Reading and writing CSV files",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "3-6",
+          "title": "Structured healthcare datasets",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "3-7",
+          "title": "Working with a pharmaceutical dataset",
+          "available": false,
+          "translations": []
+        }
+      ]
+    },
+    {
+      "unit": "Unit IV",
+      "title": "Data Handling with Pandas",
+      "hours": 6,
+      "lessons": [
+        {
+          "id": "4-1",
+          "title": "Series and DataFrames",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "4-2",
+          "title": "Reading CSV and Excel files",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "4-3",
+          "title": "Inspecting data",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "4-4",
+          "title": "Cleaning data and missing values",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "4-5",
+          "title": "Filtering and selecting data",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "4-6",
+          "title": "Grouping and aggregation",
+          "available": false,
+          "translations": []
+        }
+      ]
+    },
+    {
+      "unit": "Unit V",
+      "title": "Data Visualization with Matplotlib",
+      "hours": 6,
+      "lessons": [
+        {
+          "id": "5-1",
+          "title": "Line plots",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "5-2",
+          "title": "Histograms, scatter and box plots",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "5-3",
+          "title": "Labels, titles and legends",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "5-4",
+          "title": "Concentration–time curves",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "5-5",
+          "title": "ADR reporting rates",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "5-6",
+          "title": "Dissolution profiles",
+          "available": false,
+          "translations": []
+        },
+        {
+          "id": "5-7",
+          "title": "Interpreting plots scientifically",
+          "available": false,
+          "translations": []
+        }
+      ]
+    }
+  ]
+}

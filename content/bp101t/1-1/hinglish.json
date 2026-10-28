@@ -1,0 +1,58 @@
+{
+  "translatedSections": [
+    "walkthrough",
+    "animations"
+  ],
+  "walkthrough": {
+    "steps": [
+      {
+        "say": "Chaliye, dekhte hain Python is program ko kaise chalata hai. Yaad rakhiye, Python ek baar mein ek line padhta hai, upar se neeche tak."
+      },
+      {
+        "say": "Pehli line hash sign se shuru hoti hai. Yeh ek comment hai. Comments insaanon ke liye notes hote hain. Python inhe bas chhod deta hai."
+      },
+      {
+        "say": "Ab Python print par pahunchta hai. Print ka matlab hai: ise screen par dikhao. Quotes ke andar likhe shabd bilkul waise hi dikhaye jaate hain, jaise likhe gaye hain."
+      },
+      {
+        "say": "Python agli line par jaata hai, aur dawa ka naam print karta hai. Dhyaan dijiye, har print ek nayi line par shuru hota hai."
+      },
+      {
+        "say": "Yahan print mein teen items hain, jo commas se alag kiye gaye hain. Python inhe ek ke baad ek dikhata hai, aur har item ke beech ek space lagata hai."
+      },
+      {
+        "say": "Is line mein ek chhoti si calculation hai. Python pehle paanch sau guna teen karta hai, jo pandrah sau hota hai, aur phir answer print karta hai. Star sign ka matlab hai multiply, yaani guna."
+      },
+      {
+        "say": "Bas, itna hi! Python ne chaar instructions, kram se, upar se neeche tak chalaye. Aapne abhi-abhi apna pehla program samajh liya hai."
+      }
+    ]
+  },
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Prescription nirdeshon ki ek list hoti hai, jo kram se likhi jaati hai."
+        },
+        {
+          "say": "Pharmacist ise line by line padhta hai, upar se neeche tak."
+        },
+        {
+          "say": "Python program bhi nirdeshon ki ek list hai, jo kram se likhi jaati hai."
+        },
+        {
+          "say": "Interpreter pehli line padhta hai, aur dawa ka naam dikhata hai."
+        },
+        {
+          "say": "Phir woh agli line par jaata hai, aur strength dikhata hai."
+        },
+        {
+          "say": "Aakhri line par, woh paanch sau guna teen calculate karta hai, aur pandrah sau dikhata hai."
+        },
+        {
+          "say": "Bilkul prescription jaisa: ek baar mein ek line, upar se neeche tak. Har Python program aise hi chalta hai."
+        }
+      ]
+    }
+  ]
+}
