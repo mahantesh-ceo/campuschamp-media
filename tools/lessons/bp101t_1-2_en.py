@@ -189,7 +189,7 @@ L = {
                  "actions": [{"do": "scanLines", "target": "ide", "intervalMs": 900}]},
                 {"say": "And with one click, it runs your program and shows the output, right there.", "audio": "anim-ide-04.mp3",
                  "actions": [{"do": "highlightLine", "target": "ide", "line": 3}, {"do": "show", "target": "out"}, {"do": "appendOutput", "target": "out", "text": "Hello from my IDE!"}]},
-                {"say": "That's why programmers prefer IDEs. They save time and catch mistakes early.", "audio": "anim-ide-05.mp3",
+                {"say": "That's why programmers prefer to use an IDE. It saves time and catches mistakes early.", "audio": "anim-ide-05.mp3",
                  "actions": [{"do": "connect", "id": "upgrade", "from": "editor", "to": "ide", "label": "Upgrade", "color": "emerald"}, {"do": "pulse", "target": "ide"}]},
             ],
         }

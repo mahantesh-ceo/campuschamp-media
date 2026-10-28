@@ -554,7 +554,7 @@
           ]
         },
         {
-          "say": "That's why programmers prefer IDEs. They save time and catch mistakes early.",
+          "say": "That's why programmers prefer to use an IDE. It saves time and catches mistakes early.",
           "audio": "anim-ide-05.mp3",
           "actions": [
             {

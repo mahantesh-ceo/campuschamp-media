@@ -12,12 +12,12 @@
       "prefix": "step-",
       "lang": "en",
       "tts": [
-        "You have installed Python and opened an IDE. Let's run a quick setup check.",
-        "The first line is a comment, a note for us. In an IDE, comments appear in a different colour, so they are easy to spot.",
-        "This print confirms that Python is working. In an IDE, you press the Run button, and the output appears in a panel below your code.",
+        "You have installed Python and opened an I D E. Let's run a quick setup check.",
+        "The first line is a comment, a note for us. In an I D E, comments appear in a different colour, so they are easy to spot.",
+        "This print confirms that Python is working. In an I D E, you press the Run button, and the output appears in a panel below your code.",
         "Here, Python adds two hundred and fifty and two hundred and fifty. If you see five hundred, calculations are working too.",
         "The last line tells us we are ready for the course.",
-        "This same code runs the same way in Jupyter Notebook, PyCharm, VS Code, or Champ Lab. Only the buttons look different."
+        "This same code runs the same way in Jupyter Notebook, PyCharm, V S Code, or our Champ lab. Only the buttons look different."
       ],
       "display": [
         "You have installed Python and opened an IDE. Let's run a quick setup check.",
@@ -87,14 +87,14 @@
         "An IDE is an Integrated Development Environment. It is a complete workspace for writing code.",
         "It colours your code, suggests words as you type, warns you about mistakes, and helps you find bugs.",
         "And with one click, it runs your program and shows the output, right there.",
-        "That's why programmers prefer IDEs. They save time and catch mistakes early."
+        "That's why programmers prefer to use an I D E. It saves time and catches mistakes early."
       ],
       "display": [
         "A text editor, like Notepad, is just a blank page. It stores your code as plain text.",
         "An IDE is an Integrated Development Environment. It is a complete workspace for writing code.",
         "It colours your code, suggests words as you type, warns you about mistakes, and helps you find bugs.",
         "And with one click, it runs your program and shows the output, right there.",
-        "That's why programmers prefer IDEs. They save time and catch mistakes early."
+        "That's why programmers prefer to use an IDE. It saves time and catches mistakes early."
       ]
     },
     {

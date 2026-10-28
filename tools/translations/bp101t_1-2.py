@@ -402,14 +402,17 @@ if __name__ == "__main__":
 
     narr_en = [s["say"] for s in en["walkthrough"]["steps"]]
     anim_en = [s["say"] for s in en["animations"][0]["steps"]]
+    # Spellings that make the English voice pronounce these words correctly
+    say = lambda t: t.replace("an IDE", "an I D E").replace("IDEs", "I D Es").replace("VS Code", "V S Code").replace("or Champ Lab", "or our Champ lab")
+    narr_en_tts, anim_en_tts = [say(t) for t in narr_en], [say(t) for t in anim_en]
     script = {
         "course": "bp101t", "lesson": "1-2",
         "voices": {"en": "Mary", "hi": "Rani", "kn": "Anu"},
         "tracks": [
-            {"id": "narrator", "prefix": "step-", "lang": "en", "tts": narr_en, "display": narr_en},
+            {"id": "narrator", "prefix": "step-", "lang": "en", "tts": narr_en_tts, "display": narr_en},
             {"id": "narrator", "prefix": "step-", "lang": "hi", "tts": TTS["narrator"]["hi"], "display": NARR["hi"], "displayHinglish": NARR["hinglish"]},
             {"id": "narrator", "prefix": "step-", "lang": "kn", "tts": TTS["narrator"]["kn"], "display": NARR["kn"]},
-            {"id": "anim-ide", "prefix": "anim-ide-", "lang": "en", "tts": anim_en, "display": anim_en},
+            {"id": "anim-ide", "prefix": "anim-ide-", "lang": "en", "tts": anim_en_tts, "display": anim_en},
             {"id": "anim-ide", "prefix": "anim-ide-", "lang": "hi", "tts": TTS["anim-ide"]["hi"], "display": ANIM["hi"], "displayHinglish": ANIM["hinglish"]},
             {"id": "anim-ide", "prefix": "anim-ide-", "lang": "kn", "tts": TTS["anim-ide"]["kn"], "display": ANIM["kn"]},
         ],
