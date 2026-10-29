@@ -88,6 +88,7 @@ if __name__ == "__main__":
         token = access_token()
     except urllib.error.HTTPError as e:
         # Google's reason (e.g. invalid_client, invalid_grant) never includes the secrets themselves
+        why = {}
         try:
             why = json.loads(e.read().decode())
             reason = f"{why.get('error')}: {why.get('error_description', '')}"
@@ -102,7 +103,7 @@ if __name__ == "__main__":
         sys.exit(f"Google refused the YouTube credentials ({e.code} {reason}).\n"
                  f"Client ID looks {'right' if cid.endswith('.apps.googleusercontent.com') else 'WRONG (should end with .apps.googleusercontent.com)'}; "
                  f"secret length {len(os.environ.get('YT_CLIENT_SECRET', '').strip())}, refresh token length {len(os.environ.get('YT_REFRESH_TOKEN', '').strip())}.\n"
-                 + hints.get(str(why.get('error')) if 'why' in dir() and isinstance(why, dict) else '', "Check the three YT_ secrets."))
+                 + hints.get(str(why.get('error')), "Check the three YT_ secrets."))
     try:
         video_id = upload(meta, token)
     except urllib.error.HTTPError as e:
