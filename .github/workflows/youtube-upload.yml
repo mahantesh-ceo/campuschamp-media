@@ -1,0 +1,31 @@
+name: Upload episode to YouTube (private)
+
+on:
+  workflow_dispatch:
+    inputs:
+      meta:
+        description: "Episode metadata file, e.g. video/meta/bp101t-1-1-ep1-kn.json"
+        required: true
+        default: "video/meta/bp101t-1-1-ep1-kn.json"
+
+permissions:
+  contents: write
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload (private)
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python tools/youtube_upload.py "${{ inputs.meta }}"
+      - name: Save the YouTube id for the website
+        run: |
+          git config user.name "Campus Champ video bot"
+          git config user.email "video-bot@campuschamp.in"
+          git add content/bp101t/videos.json
+          git commit -m "YouTube id for ${{ inputs.meta }}" || echo "nothing to commit"
+          git push
