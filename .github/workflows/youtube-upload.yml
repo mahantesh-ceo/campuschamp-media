@@ -1,4 +1,4 @@
-name: Upload episode to YouTube
+name: Publish episode on YouTube
 
 on:
   workflow_dispatch:
@@ -8,9 +8,9 @@ on:
         required: true
         default: "video/meta/bp101t-1-1-ep1-kn.json"
       publish:
-        description: "private · public · or a time like 2026-11-02T18:30:00+05:30 (goes public then)"
+        description: "public (default) · private · or a time like 2026-11-02T18:30:00+05:30"
         required: true
-        default: "private"
+        default: "public"
 
 permissions:
   contents: write
@@ -32,5 +32,6 @@ jobs:
           git config user.name "Campus Champ video bot"
           git config user.email "video-bot@campuschamp.in"
           git add content/bp101t/videos.json
+          if [ -f video/playlists.json ]; then git add video/playlists.json; fi
           git commit -m "YouTube id for ${{ inputs.meta }}" || echo "nothing to commit"
           git push
