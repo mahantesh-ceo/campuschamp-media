@@ -58,21 +58,37 @@ if (flag === '--stills') {
     '-map', '[out]', '-c:a', 'aac', '-b:a', '160k', audioPath]);
   console.log('audio mixed');
 
-  // 2) frames → ffmpeg
+  // 2) frames → ffmpeg, in parallel: each worker draws one stretch of the video in its own browser
   const frames = Math.ceil(T.duration * T.fps);
-  const ff = spawn('ffmpeg', ['-loglevel', 'error', '-y', '-f', 'image2pipe', '-framerate', String(T.fps), '-i', '-', '-i', audioPath,
-    '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-pix_fmt', 'yuv420p', '-c:a', 'copy', '-shortest', '-movflags', '+faststart', out], { stdio: ['pipe', 'inherit', 'inherit'] });
-  const { browser, page } = await openPage();
+  const WORKERS = Math.max(1, Number(process.env.WORKERS || 3));
+  const per = Math.ceil(frames / WORKERS);
   const t0 = Date.now();
-  for (let f = 0; f < frames; f++) {
-    await page.evaluate((t) => window.renderAt(t), f / T.fps);
-    const buf = await page.screenshot({ type: 'jpeg', quality: 92 });
-    if (!ff.stdin.write(buf)) await new Promise((r) => ff.stdin.once('drain', r));
-    if (f % 250 === 0) console.log(`frame ${f}/${frames} · ${Math.round((Date.now() - t0) / 1000)}s`);
-  }
-  ff.stdin.end();
-  await new Promise((r) => ff.on('close', r));
-  await browser.close();
+  let done = 0;
+  const parts = [];
+  await Promise.all(Array.from({ length: WORKERS }, async (_, w) => {
+    const a = w * per, b = Math.min(frames, a + per);
+    if (a >= b) return;
+    const part = out.replace(/\.mp4$/, `.part${w}.mp4`);
+    parts[w] = part;
+    const ff = spawn('ffmpeg', ['-loglevel', 'error', '-y', '-f', 'image2pipe', '-framerate', String(T.fps), '-i', '-',
+      '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-pix_fmt', 'yuv420p', part], { stdio: ['pipe', 'inherit', 'inherit'] });
+    const { browser, page } = await openPage();
+    for (let f = a; f < b; f++) {
+      await page.evaluate((t) => window.renderAt(t), f / T.fps);
+      const buf = await page.screenshot({ type: 'jpeg', quality: 92 });
+      if (!ff.stdin.write(buf)) await new Promise((r) => ff.stdin.once('drain', r));
+      if (++done % 500 === 0) console.log(`frame ${done}/${frames} · ${Math.round((Date.now() - t0) / 1000)}s`);
+    }
+    ff.stdin.end();
+    await new Promise((r) => ff.on('close', r));
+    await browser.close();
+  }));
+  const list = out.replace(/\.mp4$/, '.parts.txt');
+  writeFileSync(list, parts.filter(Boolean).map((p) => `file '${p}'`).join('\n') + '\n');
+  execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', list, '-i', audioPath,
+    '-map', '0:v', '-map', '1:a', '-c', 'copy', '-shortest', '-movflags', '+faststart', out]);
+  parts.filter(Boolean).forEach((p) => execFileSync('rm', ['-f', p]));
+  console.log(`rendered in ${Math.round((Date.now() - t0) / 1000)}s with ${WORKERS} workers`);
 
   // 3) YouTube chapters
   const fmt = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
