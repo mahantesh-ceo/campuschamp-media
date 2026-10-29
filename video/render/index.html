@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="kn">
+<head>
+<meta charset="utf-8" />
+<title>Campus Champ video</title>
+<link rel="stylesheet" href="fonts/g.css" />
+<style>
+  :root {
+    --ink: #0f172a; --muted: #64748b; --indigo: #4f46e5; --indigo-2: #6366f1; --amber: #f59e0b; --emerald: #10b981; --rose: #e11d48;
+    --body: 'Inter', 'Noto Sans Kannada', 'Noto Color Emoji', sans-serif;
+    --head: 'Plus Jakarta Sans', 'Noto Sans Kannada', 'Noto Color Emoji', sans-serif;
+    --mono: 'JetBrains Mono', 'Noto Sans Kannada', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; }
+  body { font-family: var(--body); color: #fff; background: #0b1023; }
+  #bg { position: absolute; inset: 0; background:
+      radial-gradient(900px 600px at 85% -10%, rgba(99,102,241,.45), transparent 60%),
+      radial-gradient(700px 500px at -5% 110%, rgba(20,184,166,.22), transparent 60%),
+      linear-gradient(160deg, #0b1023, #111538 60%, #0b1023); }
+  #dots { position: absolute; inset: 0; opacity: .07; background-image: radial-gradient(#fff 1.2px, transparent 1.2px); background-size: 26px 26px; }
+
+  /* header */
+  #header { position: absolute; left: 80px; top: 38px; right: 80px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 14px; font-family: var(--head); font-weight: 800; font-size: 30px; letter-spacing: -.02em; }
+  .logo { width: 52px; height: 52px; border-radius: 16px; background: var(--indigo); display: grid; place-items: center; font-family: var(--mono); font-weight: 700; font-size: 22px; box-shadow: 0 10px 30px rgba(79,70,229,.45); }
+  .brand b { color: #a5b4fc; font-weight: 800; }
+  .chip { font-family: var(--mono); font-size: 18px; font-weight: 600; color: #c7d2fe; border: 1.5px solid rgba(199,210,254,.3); background: rgba(255,255,255,.05); border-radius: 999px; padding: 8px 16px; margin-left: 10px; }
+  #chapter { font-family: var(--head); font-weight: 700; font-size: 22px; color: #0b1023; background: #fde68a; border-radius: 999px; padding: 10px 22px; transition: none; }
+
+  /* stage + cast */
+  #stage { position: absolute; left: 80px; top: 128px; width: 1300px; height: 770px; }
+  #cast { position: absolute; left: 1424px; top: 128px; width: 416px; height: 770px; display: flex; flex-direction: column; gap: 22px; }
+  .person { position: relative; flex: 1; border-radius: 40px; overflow: hidden; transform-origin: center; }
+  .person.anu { background: linear-gradient(170deg, #ccfbf1, #99f6e4 70%, #5eead4); }
+  .person.champ { background: linear-gradient(170deg, #e0e7ff, #c7d2fe 70%, #a5b4fc); }
+  .person svg { position: absolute; left: 50%; bottom: -6px; width: 330px; height: 330px; transform: translateX(-50%); }
+  .person .tag { position: absolute; left: 18px; top: 16px; background: rgba(15,23,42,.85); color: #fff; border-radius: 14px; padding: 8px 14px; font-family: var(--head); font-weight: 700; font-size: 22px; }
+  .person .tag small { display: block; font-family: var(--body); font-weight: 500; font-size: 15px; color: #cbd5e1; }
+  .person .ring { position: absolute; inset: 0; border-radius: 40px; box-shadow: inset 0 0 0 7px var(--amber); opacity: 0; }
+  .person .wave { position: absolute; right: 20px; top: 22px; display: flex; gap: 5px; align-items: center; height: 30px; opacity: 0; }
+  .person .wave i { width: 6px; border-radius: 3px; background: var(--ink); }
+
+  /* subtitles */
+  #subs { position: absolute; left: 80px; right: 80px; bottom: 54px; height: 110px; display: flex; align-items: center; justify-content: center; }
+  #subs .box { max-width: 1640px; display: flex; align-items: center; gap: 18px; background: rgba(2,6,23,.78); border: 1.5px solid rgba(255,255,255,.08); border-radius: 22px; padding: 16px 28px; }
+  #subs .who { flex: none; font-family: var(--head); font-weight: 800; font-size: 22px; border-radius: 12px; padding: 6px 12px; color: #0b1023; }
+  #subs .who.anu { background: #5eead4; } #subs .who.champ { background: #a5b4fc; }
+  #subs .text { font-size: 38px; line-height: 1.35; font-weight: 500; color: #fff; }
+
+  /* progress */
+  #progress { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: rgba(255,255,255,.08); }
+  #progress .fill { position: absolute; left: 0; top: 0; bottom: 0; background: linear-gradient(90deg, var(--indigo-2), var(--amber)); }
+  #progress .tick { position: absolute; top: 0; bottom: 0; width: 3px; background: #0b1023; }
+
+  /* shared scene pieces */
+  .card { position: absolute; inset: 0; background: #fff; color: var(--ink); border-radius: 40px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+  .kicker { font-family: var(--head); font-weight: 800; letter-spacing: .14em; text-transform: uppercase; font-size: 20px; color: var(--indigo); }
+  .h1 { font-family: var(--head); font-weight: 800; letter-spacing: -.02em; line-height: 1.12; }
+  .muted { color: var(--muted); }
+  .pop { will-change: transform, opacity; }
+
+  /* code editor */
+  .editor { background: #0b1023; border-radius: 28px; overflow: hidden; border: 1.5px solid #1e293b; }
+  .editor .bar { display: flex; align-items: center; gap: 10px; padding: 18px 24px; background: #111633; border-bottom: 1.5px solid #1e293b; font-family: var(--mono); font-size: 20px; color: #94a3b8; }
+  .editor .bar i { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
+  .editor .bar .file { margin-left: 14px; color: #c7d2fe; background: rgba(99,102,241,.18); padding: 4px 12px; border-radius: 8px; }
+  .editor .bar .ver { margin-left: auto; }
+  .code { padding: 20px 0; font-family: var(--mono); font-size: 30px; line-height: 1.75; }
+  .code .ln { position: relative; display: flex; padding: 0 28px; white-space: pre; }
+  .code .ln .n { width: 46px; color: #475569; text-align: right; margin-right: 26px; flex: none; }
+  .code .ln.on { background: rgba(99,102,241,.22); box-shadow: inset 6px 0 0 #818cf8; }
+  .tok-c { color: #64748b; font-style: italic; } .tok-s { color: #86efac; } .tok-n { color: #fcd34d; } .tok-f { color: #93c5fd; } .tok-p { color: #e2e8f0; }
+  .term { background: #020617; border-radius: 24px; border: 1.5px solid #1e293b; font-family: var(--mono); color: #e2e8f0; overflow: hidden; }
+  .term .bar { padding: 14px 22px; font-size: 18px; color: #94a3b8; border-bottom: 1.5px solid #1e293b; display: flex; justify-content: space-between; }
+  .term .out { padding: 16px 24px; font-size: 28px; line-height: 1.6; white-space: pre; }
+  .term .out .ok { color: #6ee7b7; } .term .out .err { color: #fda4af; }
+</style>
+</head>
+<body>
+<div id="bg"></div><div id="dots"></div>
+<div id="header">
+  <div class="brand"><div class="logo">&lt;/&gt;</div><span>Campus<b>Champ</b></span><span class="chip" id="lessonChip"></span></div>
+  <div id="chapter"></div>
+</div>
+<div id="stage"></div>
+<div id="cast">
+  <div class="person anu" id="p-anu"><div class="tag">Anu<small>Teacher</small></div><div class="wave"><i></i><i></i><i></i><i></i></div><div class="ring"></div></div>
+  <div class="person champ" id="p-champ"><div class="tag">Champ<small>B.Pharm Sem I</small></div><div class="wave"><i></i><i></i><i></i><i></i></div><div class="ring"></div></div>
+</div>
+<div id="subs"></div>
+<div id="progress"><div class="fill"></div></div>
+
+<script src="characters.js"></script>
+<script src="scenes.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="kn">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="fonts/g.css" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 720px; overflow: hidden; }
+  body { font-family: 'Inter', 'Noto Sans Kannada', sans-serif; color: #fff; position: relative;
+    background: radial-gradient(700px 500px at 80% 10%, rgba(99,102,241,.6), transparent 60%), linear-gradient(150deg, #0b1023, #1e1b4b); }
+  .dots { position: absolute; inset: 0; opacity: .08; background-image: radial-gradient(#fff 1.4px, transparent 1.4px); background-size: 24px 24px; }
+  .left { position: absolute; left: 56px; top: 56px; width: 760px; }
+  .tag { display: inline-flex; gap: 10px; align-items: center; font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 24px; background: #fde68a; color: #0b1023; border-radius: 14px; padding: 8px 16px; }
+  h1 { margin-top: 26px; font-family: 'Plus Jakarta Sans', 'Noto Sans Kannada', sans-serif; font-weight: 800; font-size: 104px; line-height: 1.04; letter-spacing: -.02em; text-shadow: 0 6px 30px rgba(0,0,0,.4); }
+  h1 em { font-style: normal; color: #fde68a; }
+  .sub { margin-top: 26px; font-size: 40px; font-weight: 700; color: #c7d2fe; }
+  .lang { position: absolute; left: 56px; bottom: 50px; display: flex; gap: 12px; }
+  .lang span { font-size: 30px; font-weight: 800; border-radius: 16px; padding: 10px 20px; background: #14b8a6; color: #04201d; }
+  .lang span.alt { background: rgba(255,255,255,.12); color: #fff; }
+  .anu { position: absolute; right: -30px; bottom: -40px; width: 560px; height: 560px; border-radius: 50%; background: linear-gradient(170deg, #ccfbf1, #5eead4); overflow: hidden; border: 10px solid #fde68a; }
+  .anu svg { position: absolute; left: 50%; bottom: -10px; width: 520px; height: 520px; transform: translateX(-50%); }
+  .logo { position: absolute; right: 40px; top: 36px; display: flex; gap: 10px; align-items: center; font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 28px; }
+  .logo i { width: 44px; height: 44px; border-radius: 12px; background: #4f46e5; display: grid; place-items: center; font-style: normal; font-family: 'JetBrains Mono'; font-size: 18px; }
+</style>
+</head>
+<body>
+  <div class="dots"></div>
+  <div class="logo"><i>&lt;/&gt;</i> Campus Champ</div>
+  <div class="left">
+    <span class="tag" id="tag"></span>
+    <h1 id="title"></h1>
+    <p class="sub" id="sub"></p>
+  </div>
+  <div class="lang" id="lang"></div>
+  <div class="anu" id="anu"></div>
+  <script src="characters.js"></script>
+  <script>
+    window.setupThumb = ({ tag, title, sub, lang }) => {
+      document.getElementById('tag').textContent = tag;
+      document.getElementById('title').innerHTML = title;
+      document.getElementById('sub').textContent = sub;
+      document.getElementById('lang').innerHTML = lang.map((l, i) => `<span class="${i ? 'alt' : ''}">${l}</span>`).join('');
+      document.getElementById('anu').innerHTML = CHARACTERS.anu;
+    };
+  </script>
+</body>
+</html>
