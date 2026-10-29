@@ -15,9 +15,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def access_token():
     data = urllib.parse.urlencode({
-        "client_id": os.environ["YT_CLIENT_ID"],
-        "client_secret": os.environ["YT_CLIENT_SECRET"],
-        "refresh_token": os.environ["YT_REFRESH_TOKEN"],
+        "client_id": os.environ["YT_CLIENT_ID"].strip(),
+        "client_secret": os.environ["YT_CLIENT_SECRET"].strip(),
+        "refresh_token": os.environ["YT_REFRESH_TOKEN"].strip(),
         "grant_type": "refresh_token",
     }).encode()
     with urllib.request.urlopen("https://oauth2.googleapis.com/token", data) as r:
@@ -87,7 +87,22 @@ if __name__ == "__main__":
     try:
         token = access_token()
     except urllib.error.HTTPError as e:
-        sys.exit(f"Google refused the YouTube credentials ({e.code}). Check the three YT_ secrets.")
+        # Google's reason (e.g. invalid_client, invalid_grant) never includes the secrets themselves
+        try:
+            why = json.loads(e.read().decode())
+            reason = f"{why.get('error')}: {why.get('error_description', '')}"
+        except Exception:
+            reason = "no details"
+        cid = os.environ.get("YT_CLIENT_ID", "").strip()
+        hints = {
+            "invalid_client": "YT_CLIENT_ID or YT_CLIENT_SECRET doesn't match the OAuth client. Re-copy both from Google Auth Platform → Clients.",
+            "unauthorized_client": "The refresh token was made with a different Client ID than YT_CLIENT_ID.",
+            "invalid_grant": "The refresh token was revoked or is from another client. Make a new one in the OAuth Playground.",
+        }
+        sys.exit(f"Google refused the YouTube credentials ({e.code} {reason}).\n"
+                 f"Client ID looks {'right' if cid.endswith('.apps.googleusercontent.com') else 'WRONG (should end with .apps.googleusercontent.com)'}; "
+                 f"secret length {len(os.environ.get('YT_CLIENT_SECRET', '').strip())}, refresh token length {len(os.environ.get('YT_REFRESH_TOKEN', '').strip())}.\n"
+                 + hints.get(str(why.get('error')) if 'why' in dir() and isinstance(why, dict) else '', "Check the three YT_ secrets."))
     try:
         video_id = upload(meta, token)
     except urllib.error.HTTPError as e:
