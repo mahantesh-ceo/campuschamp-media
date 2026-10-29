@@ -13,10 +13,13 @@ if os.path.exists(env_path):
             os.environ.setdefault(name.strip(), value.strip())
 
 key = os.environ.get("SARVAM_API_KEY", "")
-if not key:
-    sys.exit("SARVAM_API_KEY is empty. Paste your key into .env and run again.")
+if not key and not os.environ.get("SARVAM_KEY_FROM_NETWORK"):
+    sys.exit("SARVAM_API_KEY is empty. Paste your key into .env and run again "
+             "(or set SARVAM_KEY_FROM_NETWORK=1 when a network secret adds the key to api.sarvam.ai requests).")
 
-client = SarvamAI(api_subscription_key=key)
+# With a network secret, the real key is added to every api.sarvam.ai request outside this program,
+# so the SDK only needs a non-empty value to build the request.
+client = SarvamAI(api_subscription_key=key or "set-by-network-secret")
 response = client.chat.completions(
     model="sarvam-105b-conversations",
     messages=[{"role": "user", "content": "Say hello in Kannada in one short sentence."}],
