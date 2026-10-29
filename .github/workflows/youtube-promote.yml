@@ -1,0 +1,22 @@
+name: Switch lessons to YouTube once videos are public
+
+on:
+  schedule:
+    - cron: "17 */3 * * *"   # every 3 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: python tools/promote_published.py
+      - run: |
+          git config user.name "Campus Champ video bot"
+          git config user.email "video-bot@campuschamp.in"
+          git add content/bp101t/videos.json
+          git commit -m "Lesson videos now public on YouTube" || echo "nothing new"
+          git push

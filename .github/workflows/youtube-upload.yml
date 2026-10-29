@@ -1,4 +1,4 @@
-name: Upload episode to YouTube (private)
+name: Upload episode to YouTube
 
 on:
   workflow_dispatch:
@@ -7,6 +7,10 @@ on:
         description: "Episode metadata file, e.g. video/meta/bp101t-1-1-ep1-kn.json"
         required: true
         default: "video/meta/bp101t-1-1-ep1-kn.json"
+      publish:
+        description: "private · public · or a time like 2026-11-02T18:30:00+05:30 (goes public then)"
+        required: true
+        default: "private"
 
 permissions:
   contents: write
@@ -16,11 +20,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - name: Upload (private)
+      - name: Upload
         env:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          PUBLISH: ${{ inputs.publish }}
         run: python tools/youtube_upload.py "${{ inputs.meta }}"
       - name: Save the YouTube id for the website
         run: |

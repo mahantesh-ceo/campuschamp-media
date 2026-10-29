@@ -1,4 +1,4 @@
-"""Uploads one episode to YouTube as a PRIVATE video and records its id in content/bp101t/videos.json.
+"""Uploads one episode to YouTube (private, public or scheduled) and records its id in content/bp101t/videos.json.
 
 Runs in GitHub Actions with secrets YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN.
 Usage: python tools/youtube_upload.py video/meta/<episode>.json
@@ -11,6 +11,10 @@ import urllib.parse
 import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# private (default) · public · or a scheduled time like 2026-11-02T18:30:00+05:30 (private until then)
+WHEN = os.environ.get("PUBLISH", "private").strip() or "private"
+PUBLISH_AT = WHEN if WHEN not in ("private", "public") else ""
+PRIVACY = "public" if WHEN == "public" else "private"
 
 
 def access_token():
@@ -38,11 +42,13 @@ def upload(meta, token):
             "defaultAudioLanguage": meta.get("language", "kn"),
         },
         "status": {
-            "privacyStatus": "private",
+            "privacyStatus": PRIVACY,
             "selfDeclaredMadeForKids": False,
             "containsSyntheticMedia": True,  # AI voice: YouTube's disclosure
         },
     }
+    if PUBLISH_AT:
+        body["status"]["publishAt"] = PUBLISH_AT  # goes public by itself at this time
     # Resumable upload: start a session, then send the file
     req = urllib.request.Request(
         "https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status",
@@ -78,8 +84,9 @@ def record(meta, video_id):
     data = json.load(open(path, encoding="utf-8"))
     for ep in data.get(meta["lesson"], []):
         if ep["episode"] == meta["episode"]:
-            # private until published, so the website keeps its own copy until then
-            ep["sources"].setdefault(meta["language"], {})["youtube_pending"] = video_id
+            # Public now: the website plays it from YouTube. Otherwise it waits as pending
+            # (tools/promote_published.py moves it once YouTube shows it publicly).
+            ep["sources"].setdefault(meta["language"], {})["youtube" if PRIVACY == "public" else "youtube_pending"] = video_id
     json.dump(data, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
 
@@ -109,7 +116,7 @@ if __name__ == "__main__":
         video_id = upload(meta, token)
     except urllib.error.HTTPError as e:
         sys.exit(f"Upload failed ({e.code}): {e.read().decode()[:500]}")
-    print(f"Uploaded as PRIVATE: https://youtu.be/{video_id}")
+    print(f"Uploaded ({'public' if PRIVACY == 'public' else 'scheduled for ' + PUBLISH_AT if PUBLISH_AT else 'private'}): https://youtu.be/{video_id}")
     if meta.get("thumbnail"):
         set_thumbnail(video_id, meta["thumbnail"], token)
     record(meta, video_id)
