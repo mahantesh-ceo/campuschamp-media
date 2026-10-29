@@ -48,6 +48,14 @@ if (flag === '--stills') {
   const delays = T.audio.map((a, i) => `[${i}]adelay=${Math.round(a.at * 1000)}|${Math.round(a.at * 1000)}[a${i}]`).join(';');
   const mix = `${delays};${T.audio.map((_, i) => `[a${i}]`).join('')}amix=inputs=${T.audio.length}:normalize=0,apad=whole_dur=${T.duration.toFixed(2)},atrim=0:${T.duration.toFixed(2)}[mix]`;
   execFileSync('ffmpeg', ['-loglevel', 'error', '-y', ...inputs, '-filter_complex', mix, '-map', '[mix]', '-ac', '2', '-ar', '44100', '-c:a', 'aac', '-b:a', '160k', audioPath]);
+  // soft original music bed, ducked under the voices
+  const bed = out.replace(/\.mp4$/, '.bed.wav');
+  const voices = out.replace(/\.mp4$/, '.voices.m4a');
+  execFileSync('python3', [join(HERE, 'music', 'make_bed.py'), String(Math.ceil(T.duration)), bed]);
+  execFileSync('mv', [audioPath, voices]);
+  execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-i', voices, '-i', bed, '-filter_complex',
+    '[1:a]volume=0.2[m];[m][0:a]sidechaincompress=threshold=0.02:ratio=8:attack=20:release=400[duck];[0:a][duck]amix=inputs=2:normalize=0[out]',
+    '-map', '[out]', '-c:a', 'aac', '-b:a', '160k', audioPath]);
   console.log('audio mixed');
 
   // 2) frames → ffmpeg
