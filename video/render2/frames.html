@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="kn">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="fonts/g.css" />
+<style>
+  :root {
+    --night: #0a0f24; --deep: #131a3d; --indigo: #5b5bf6; --violet: #7c5cff; --teal: #2dd4bf; --amber: #fbbf24; --coral: #fb7185; --cream: #fff6e5; --paper: #fffaf0;
+    --head: 'Plus Jakarta Sans', 'Noto Sans Kannada', sans-serif;
+    --body: 'Inter', 'Noto Sans Kannada', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+  .frame { position: absolute; inset: 0; display: none; overflow: hidden; font-family: var(--body); }
+  .frame.on { display: block; }
+  svg.art { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+
+  /* lesson overlay: subtitle + voice mark (teaching scenes) */
+  .sub { position: absolute; left: 0; right: 0; bottom: 0; height: 230px; background: linear-gradient(to top, rgba(5,8,22,.85), rgba(5,8,22,0)); }
+  .sub p { position: absolute; left: 50%; bottom: 66px; transform: translateX(-50%); width: 1500px; text-align: center; color: #fff; font-size: 44px; font-weight: 500; line-height: 1.35; text-shadow: 0 2px 18px rgba(0,0,0,.6); }
+  .voice { position: absolute; left: 64px; bottom: 58px; display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,.85); font-family: var(--head); font-weight: 700; font-size: 22px; }
+  .voice i { display: inline-flex; gap: 4px; align-items: center; }
+  .voice i b { width: 5px; border-radius: 3px; background: var(--teal); }
+  .mark { position: absolute; right: 64px; top: 54px; display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,.75); font-family: var(--head); font-weight: 700; font-size: 22px; letter-spacing: .02em; }
+  .mark .logo { width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,.12); border: 1.5px solid rgba(255,255,255,.25); display: grid; place-items: center; font-family: var(--mono); font-size: 16px; color: #fff; }
+  .chapter { position: absolute; left: 64px; top: 58px; color: rgba(255,255,255,.7); font-family: var(--head); font-weight: 700; font-size: 24px; }
+
+  /* brand moments (Apple-style) */
+  .brand { background: #fbfbfd; color: #1d1d1f; }
+  .brand .center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .brand .glyph { width: 132px; height: 132px; border-radius: 36px; background: linear-gradient(140deg, #6366f1, #7c3aed 55%, #2dd4bf); display: grid; place-items: center; color: #fff; font-family: var(--mono); font-weight: 700; font-size: 48px; box-shadow: 0 30px 80px rgba(99,102,241,.35); }
+  .brand .eyebrow { margin-top: 54px; font-family: var(--head); font-weight: 600; font-size: 28px; color: #6e6e73; letter-spacing: .01em; }
+  .brand h1 { margin-top: 14px; font-family: var(--head); font-weight: 800; font-size: 112px; letter-spacing: -.035em; line-height: 1.05; }
+  .grad { background: linear-gradient(90deg, #4f46e5, #7c3aed 50%, #0d9488); -webkit-background-clip: text; background-clip: text; color: transparent; }
+</style>
+</head>
+<body>
+
+<!-- 1 · COLD OPEN -->
+<section class="frame" id="cold">
+  <svg class="art" viewBox="0 0 1920 1080">
+    <defs>
+      <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1330"/><stop offset="1" stop-color="#1b2150"/></linearGradient>
+      <linearGradient id="dawn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26357f"/><stop offset=".55" stop-color="#8b6fd6"/><stop offset="1" stop-color="#ffb38a"/></linearGradient>
+      <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd27a" stop-opacity=".55"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></linearGradient>
+      <radialGradient id="pool" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd27a" stop-opacity=".45"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient>
+      <linearGradient id="counter" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3b5c"/><stop offset="1" stop-color="#0d1a2e"/></linearGradient>
+      <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="14"/></filter>
+      <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".45"/></filter>
+    </defs>
+    <rect width="1920" height="1080" fill="url(#wall)"/>
+    <!-- window -->
+    <g transform="translate(1100 110)">
+      <rect width="460" height="400" rx="30" fill="url(#dawn)"/>
+      <circle cx="300" cy="300" r="70" fill="#ffd9a0" opacity=".85"/>
+      <path d="M0 330 C 80 300, 150 320, 220 300 C 290 280, 360 310, 460 290 L460 400 L0 400 Z" fill="#3a2f6e" opacity=".9"/>
+      <path d="M0 360 C 100 340, 200 360, 300 345 C 380 335, 420 350, 460 345 L460 400 L0 400 Z" fill="#2a2257"/>
+      <rect x="222" width="16" height="400" fill="#0b1330"/><rect y="192" width="460" height="16" fill="#0b1330"/>
+      <rect width="460" height="400" rx="30" fill="none" stroke="#0b1330" stroke-width="18"/>
+    </g>
+    <!-- clock -->
+    <g transform="translate(1640 220)">
+      <circle r="78" fill="#f8fafc"/><circle r="78" fill="none" stroke="#334155" stroke-width="10"/>
+      <g stroke="#94a3b8" stroke-width="5" stroke-linecap="round"></g>
+      <line x1="0" y1="0" x2="-44" y2="0" stroke="#0f172a" stroke-width="9" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="0" y2="-58" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+      <circle r="8" fill="#fb7185"/>
+    </g>
+    <!-- shelves -->
+    <g transform="translate(1530 340)" opacity=".95">
+      <rect x="0" y="0" width="390" height="400" fill="#101a3f"/>
+      <g id="shelfrows"></g>
+    </g>
+    <!-- lamp -->
+    <path d="M930 0 L930 150 L1000 300" stroke="#2b3566" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <path d="M920 290 L1080 300 L1050 345 L950 338 Z" fill="#3b4680"/>
+    <polygon points="950,340 1050,346 1330,800 690,800" fill="url(#cone)"/>
+    <!-- counter -->
+    <rect x="0" y="790" width="1920" height="290" fill="url(#counter)"/>
+    <rect x="0" y="782" width="1920" height="14" fill="#2c5282"/>
+    <ellipse cx="1110" cy="800" rx="420" ry="60" fill="url(#pool)"/>
+    <!-- prescriptions stack -->
+    <g filter="url(#shadow)">
+      <g transform="translate(860 610) rotate(-9)"><rect width="300" height="220" rx="14" fill="#e9e2d0"/></g>
+      <g transform="translate(900 600) rotate(5)"><rect width="300" height="220" rx="14" fill="#f2ecdc"/></g>
+      <g transform="translate(940 580) rotate(-3)">
+        <rect width="300" height="230" rx="14" fill="#fffaf0"/>
+        <text x="26" y="62" font-family="Plus Jakarta Sans" font-weight="800" font-size="52" fill="#4f46e5">℞</text>
+        <rect x="26" y="96" width="210" height="12" rx="6" fill="#cbd5e1"/><rect x="26" y="128" width="170" height="12" rx="6" fill="#cbd5e1"/><rect x="26" y="160" width="230" height="12" rx="6" fill="#cbd5e1"/>
+      </g>
+    </g>
+    <!-- more prescriptions waiting, receding -->
+    <g opacity=".75">
+      <rect x="1290" y="700" width="150" height="90" rx="8" fill="#e9e2d0" transform="rotate(4 1365 745)"/>
+      <rect x="1310" y="680" width="150" height="90" rx="8" fill="#f2ecdc" transform="rotate(-6 1385 725)"/>
+      <rect x="1330" y="664" width="150" height="90" rx="8" fill="#fffaf0" transform="rotate(2 1405 709)"/>
+    </g>
+  </svg>
+  <div style="position:absolute;left:120px;top:250px;width:760px">
+    <p style="font-family:var(--head);font-weight:700;font-size:30px;color:#fbbf24">ಸೋಮವಾರ · 9:00 AM · ಬಾಗಲಕೋಟೆ</p>
+    <h1 style="margin-top:26px;font-family:var(--head);font-weight:800;font-size:76px;line-height:1.15;color:#fff6e5;letter-spacing:-.01em">ನೀವು ಈಗಾಗಲೇ <span style="color:#fbbf24">programmer</span> ತರಹ ಯೋಚಿಸ್ತೀರಿ.</h1>
+    <p style="margin-top:24px;font-size:38px;color:#c7cdf5">ಅದು ನಿಮಗೆ ಇನ್ನೂ ಗೊತ್ತಿಲ್ಲ ಅಷ್ಟೇ.</p>
+  </div>
+  <div class="mark"><span class="logo">&lt;/&gt;</span>Campus Champ</div>
+  <div class="sub"><p>ಇನ್ನೂರು prescriptions ಕಾಯ್ತಾ ಇವೆ.</p></div>
+  <div class="voice"><i><b style="height:12px"></b><b style="height:24px"></b><b style="height:16px"></b><b style="height:28px"></b><b style="height:10px"></b></i>Anu</div>
+</section>
+
+<!-- 2 · BRAND STING (Apple-style) -->
+<section class="frame brand" id="sting">
+  <div class="center">
+    <div class="glyph">&lt;/&gt;</div>
+    <p class="eyebrow">BP101T · Lesson 1.1 · Episode 1</p>
+    <h1>Program <span class="grad">ಅಂದ್ರೆ ಏನು?</span></h1>
+    <p style="margin-top:26px;font-size:30px;color:#6e6e73">Campus Champ · ಕನ್ನಡ</p>
+  </div>
+</section>
+
+<!-- 3 · PRESCRIPTION CLOSE-UP -->
+<section class="frame" id="rx">
+  <svg class="art" viewBox="0 0 1920 1080">
+    <defs>
+      <linearGradient id="rxbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d5c59"/><stop offset="1" stop-color="#0a2f3f"/></linearGradient>
+      <radialGradient id="rxglow" cx=".35" cy=".45" r=".6"><stop offset="0" stop-color="#5eead4" stop-opacity=".35"/><stop offset="1" stop-color="#5eead4" stop-opacity="0"/></radialGradient>
+      <filter id="paperShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="30" stdDeviation="28" flood-color="#021a1f" flood-opacity=".55"/></filter>
+      <pattern id="dots3" width="34" height="34" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="2" fill="#fff" opacity=".06"/></pattern>
+    </defs>
+    <rect width="1920" height="1080" fill="url(#rxbg)"/><rect width="1920" height="1080" fill="url(#dots3)"/><rect width="1920" height="1080" fill="url(#rxglow)"/>
+    <g transform="translate(250 130) rotate(-3)" filter="url(#paperShadow)">
+      <rect width="820" height="760" rx="28" fill="#fffaf0"/>
+      <rect width="820" height="120" rx="28" fill="#e6fffa"/><rect y="92" width="820" height="28" fill="#e6fffa"/>
+      <text x="48" y="74" font-family="Plus Jakarta Sans" font-weight="800" font-size="34" fill="#0f766e">City Clinic · Bagalkot</text>
+      <text x="48" y="230" font-family="Plus Jakarta Sans" font-weight="800" font-size="96" fill="#4f46e5">℞</text>
+      <!-- line 1 (being read) -->
+      <rect x="40" y="276" width="740" height="96" rx="18" fill="#fef3c7"/>
+      <circle cx="96" cy="324" r="30" fill="#f59e0b"/><text x="96" y="336" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="32" fill="#fff">1</text>
+      <text x="150" y="338" font-family="Inter" font-weight="700" font-size="42" fill="#0f172a">Paracetamol 500 mg</text>
+      <circle cx="96" cy="444" r="30" fill="#e2e8f0"/><text x="96" y="456" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="32" fill="#64748b">2</text>
+      <text x="150" y="458" font-family="Inter" font-weight="500" font-size="42" fill="#334155">Take 1 tablet</text>
+      <circle cx="96" cy="564" r="30" fill="#e2e8f0"/><text x="96" y="576" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="32" fill="#64748b">3</text>
+      <text x="150" y="578" font-family="Inter" font-weight="500" font-size="42" fill="#334155">3 times a day, after food</text>
+      <path d="M560 690 C 600 660, 640 700, 690 670 S 760 690, 780 664" fill="none" stroke="#334155" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <!-- connectors -->
+    <g stroke="#5eead4" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round" fill="none" opacity=".9">
+      <path d="M1040 320 C 1160 320, 1180 300, 1260 300"/>
+      <path d="M1040 470 C 1160 470, 1180 480, 1260 480"/>
+      <path d="M1040 620 C 1160 620, 1180 660, 1260 660"/>
+    </g>
+  </svg>
+  <div style="position:absolute;left:1260px;top:240px;display:flex;flex-direction:column;gap:56px">
+    
+  </div>
+  <div id="rxlabels" style="position:absolute;left:1260px;top:250px;display:flex;flex-direction:column;gap:64px"></div>
+  <div class="chapter">ಒಂದು prescription</div>
+  <div class="mark"><span class="logo">&lt;/&gt;</span>Campus Champ</div>
+  <div class="sub"><p>ಈ ಮೂರು ಪದಗಳನ್ನು ನೆನಪಿಟ್ಟುಕೊಳ್ಳಿ. Clear. In order. Followed exactly.</p></div>
+  <div class="voice"><i><b style="height:14px"></b><b style="height:26px"></b><b style="height:18px"></b><b style="height:30px"></b><b style="height:12px"></b></i>Anu</div>
+</section>
+
+<!-- 4 · THE COMPUTER -->
+<section class="frame" id="chip">
+  <svg class="art" viewBox="0 0 1920 1080">
+    <defs>
+      <radialGradient id="chipbg" cx=".5" cy=".45" r=".75"><stop offset="0" stop-color="#2a2370"/><stop offset=".6" stop-color="#141038"/><stop offset="1" stop-color="#07061a"/></radialGradient>
+      <linearGradient id="chipface" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b2f6b"/><stop offset="1" stop-color="#161a44"/></linearGradient>
+      <linearGradient id="chipedge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a5b4fc"/><stop offset=".5" stop-color="#7c5cff"/><stop offset="1" stop-color="#2dd4bf"/></linearGradient>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="glowS" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect width="1920" height="1080" fill="url(#chipbg)"/>
+    <g id="traces" stroke="#6d63ff" stroke-width="4" fill="none" opacity=".55" stroke-linecap="round"></g>
+    <g transform="translate(960 470)">
+      <ellipse rx="420" ry="120" fill="none" stroke="#a5b4fc" stroke-width="2" stroke-dasharray="4 14" opacity=".5" transform="rotate(-12)"/>
+      <g filter="url(#glow)"><rect x="-170" y="-170" width="340" height="340" rx="56" fill="url(#chipedge)"/></g>
+      <rect x="-158" y="-158" width="316" height="316" rx="48" fill="url(#chipface)"/>
+      <g fill="#a5b4fc"></g>
+      <rect x="-70" y="-40" width="34" height="56" rx="17" fill="#e0e7ff" filter="url(#glowS)"/>
+      <rect x="36" y="-40" width="34" height="56" rx="17" fill="#e0e7ff" filter="url(#glowS)"/>
+      <path d="M-40 70 Q 0 96 40 70" stroke="#e0e7ff" stroke-width="10" fill="none" stroke-linecap="round"/>
+    </g>
+  </svg>
+  <div id="pins"></div>
+  <div style="position:absolute;left:470px;top:190px" class="tagc">⚡ Super fast</div>
+  <div style="position:absolute;left:1270px;top:260px" class="tagc">🔋 Never tired</div>
+  <div style="position:absolute;left:600px;top:700px" class="tagc">🎯 Does exactly what it's told</div>
+  <div style="position:absolute;left:1300px;top:640px;background:#fde68a;color:#1f2937;border-radius:10px;padding:26px 30px;font-size:34px;font-weight:700;transform:rotate(4deg);box-shadow:0 24px 50px rgba(0,0,0,.4);font-family:var(--body)">Tablets count ಮಾಡು
+    <div style="position:absolute;right:-30px;top:-46px;width:76px;height:76px;border-radius:50%;background:#fb7185;color:#fff;font-family:var(--head);font-weight:800;font-size:46px;display:grid;place-items:center;box-shadow:0 10px 30px rgba(251,113,133,.6)">?</div>
+  </div>
+  <div class="chapter">Computer ಅನ್ನು ಭೇಟಿ ಮಾಡಿ</div>
+  <div class="mark"><span class="logo">&lt;/&gt;</span>Campus Champ</div>
+  <div class="sub"><p>ಆದ್ರೆ ಒಂದು surprise ಇದೆ. ಇದಕ್ಕೆ common sense ಸ್ವಲ್ಪನೂ ಇಲ್ಲ.</p></div>
+  <div class="voice"><i><b style="height:10px"></b><b style="height:22px"></b><b style="height:30px"></b><b style="height:16px"></b><b style="height:12px"></b></i>Anu</div>
+</section>
+
+<!-- 5 · PROGRAM (title moment) -->
+<section class="frame" id="program">
+  <svg class="art" viewBox="0 0 1920 1080">
+    <defs>
+      <radialGradient id="pbg" cx=".5" cy=".4" r=".8"><stop offset="0" stop-color="#4338ca"/><stop offset=".55" stop-color="#25207a"/><stop offset="1" stop-color="#0d0b2e"/></radialGradient>
+      <filter id="pglow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="30"/></filter>
+    </defs>
+    <rect width="1920" height="1080" fill="url(#pbg)"/>
+    <g opacity=".14" stroke="#fff" stroke-width="1.5"></g>
+    <text x="960" y="470" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="260" letter-spacing="18" fill="#a5b4fc" filter="url(#pglow)" opacity=".8">PROGRAM</text>
+  </svg>
+  <div style="position:absolute;left:0;right:0;top:190px;text-align:center">
+    <p style="font-family:var(--head);font-weight:700;font-size:34px;color:#c7d2fe">ಇದಕ್ಕೆ ಒಂದು ಹೆಸರಿದೆ</p>
+    <h1 style="margin-top:14px;font-family:var(--head);font-weight:800;font-size:260px;letter-spacing:.06em;line-height:1;color:#fff">PROGRAM</h1>
+    <p style="margin:34px auto 0;width:1240px;font-size:40px;line-height:1.45;color:#e0e7ff">Order ನಲ್ಲಿ ಬರೆದ, computer <b style="color:#fde68a">exactly</b> follow ಮಾಡುವ, <b style="color:#fde68a">clear instructions</b> ನ list.</p>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:720px;display:flex;justify-content:center;gap:40px">
+    <div class="cmp">
+      <span class="ic" style="background:#fef3c7;color:#b45309">℞</span><span>Prescription</span><span class="arr">→</span><span class="ic" style="background:#ccfbf1;color:#0f766e">🧑</span><span>Patient</span>
+    </div>
+    <div class="cmp">
+      <span class="ic" style="background:#e0e7ff;color:#4338ca;font-family:var(--mono);font-size:30px">{ }</span><span>Program</span><span class="arr">→</span><span class="ic" style="background:#ede9fe;color:#6d28d9">💻</span><span>Computer</span>
+    </div>
+  </div>
+  <div class="mark"><span class="logo">&lt;/&gt;</span>Campus Champ</div>
+  <div class="sub"><p>Prescription patient ಗಾಗಿ ಬರೆದದ್ದು. Program computer ಗಾಗಿ ಬರೆದದ್ದು.</p></div>
+  <div class="voice"><i><b style="height:16px"></b><b style="height:28px"></b><b style="height:12px"></b><b style="height:22px"></b><b style="height:14px"></b></i>Anu</div>
+</section>
+
+<!-- 6 · END CARD (Apple-style) -->
+<section class="frame brand" id="end">
+  <div style="position:absolute;left:150px;top:0;bottom:0;width:880px;display:flex;flex-direction:column;justify-content:center">
+    <p style="font-family:var(--head);font-weight:600;font-size:30px;color:#6e6e73">ಮುಂದಿನ episode</p>
+    <h1 style="margin-top:12px;font-family:var(--head);font-weight:800;font-size:108px;letter-spacing:-.035em;line-height:1.05">Python <span class="grad">ಯಾಕೆ?</span></h1>
+    <p style="margin-top:30px;font-size:34px;line-height:1.45;color:#424245">Computer ಗೆ ಅರ್ಥ ಆಗುವ ಭಾಷೆಯಲ್ಲಿ instructions ಹೇಗೆ ಬರೆಯೋದು.</p>
+    <div style="margin-top:56px;display:flex;gap:16px">
+      <span style="font-family:var(--head);font-weight:700;font-size:28px;background:#1d1d1f;color:#fff;border-radius:999px;padding:18px 34px">Practise free →</span>
+      <span style="font-family:var(--head);font-weight:600;font-size:28px;color:#4f46e5;border-radius:999px;padding:18px 10px">campuschamp.in</span>
+    </div>
+  </div>
+  <div style="position:absolute;right:170px;top:50%;transform:translateY(-50%);width:520px;height:520px;border-radius:56px;background:#fff;box-shadow:0 40px 100px rgba(0,0,0,.08),0 0 0 1px rgba(0,0,0,.04);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px">
+    <img id="qr" style="width:360px;height:360px" />
+    <p style="font-family:var(--head);font-weight:700;font-size:26px;color:#1d1d1f">Scan to practise Lesson 1.1</p>
+  </div>
+</section>
+
+<style>
+  .tagc { font-family: var(--head); font-weight: 700; font-size: 32px; color: #e0e7ff; background: rgba(124,92,255,.18); border: 1.5px solid rgba(165,180,252,.45); border-radius: 999px; padding: 14px 26px; backdrop-filter: blur(6px); }
+  .cmp { display: flex; align-items: center; gap: 18px; background: rgba(255,255,255,.08); border: 1.5px solid rgba(255,255,255,.18); border-radius: 28px; padding: 22px 30px; color: #fff; font-family: var(--head); font-weight: 700; font-size: 36px; }
+  .cmp .ic { width: 64px; height: 64px; border-radius: 18px; display: grid; place-items: center; font-size: 34px; font-weight: 800; }
+  .cmp .arr { color: #a5b4fc; }
+  .lbl { display: flex; align-items: center; gap: 22px; }
+  .lbl .n { width: 64px; height: 64px; border-radius: 50%; background: #2dd4bf; color: #04201d; display: grid; place-items: center; font-family: var(--head); font-weight: 800; font-size: 30px; box-shadow: 0 0 0 10px rgba(45,212,191,.18); }
+  .lbl .t { font-family: var(--head); font-weight: 800; font-size: 52px; color: #fff; line-height: 1.05; }
+  .lbl .k { display: block; font-family: var(--body); font-weight: 500; font-size: 30px; color: #99f6e4; margin-top: 6px; }
+</style>
+<script>
+  // shelves: rows of medicine bottles
+  (function () {
+    const g = document.getElementById('shelfrows');
+    const cols = ['#fb7185', '#2dd4bf', '#60a5fa', '#fbbf24', '#a78bfa', '#f472b6', '#34d399'];
+    let h = '';
+    for (let r = 0; r < 4; r++) {
+      const y = 90 + r * 100;
+      h += `<rect x="0" y="${y}" width="390" height="10" fill="#2a356e"/>`;
+      for (let c = 0; c < 7; c++) {
+        const bh = 42 + ((r * 5 + c * 3) % 4) * 9, x = 18 + c * 53;
+        h += `<rect x="${x}" y="${y - bh}" width="38" height="${bh}" rx="8" fill="${cols[(r + c) % 7]}" opacity=".55"/><rect x="${x + 6}" y="${y - bh + 12}" width="26" height="10" rx="3" fill="#fff" opacity=".35"/>`;
+      }
+    }
+    g.innerHTML = h;
+    // clock ticks
+    // chip traces + pins
+    const tr = document.getElementById('traces');
+    let t = '';
+    for (let i = 0; i < 14; i++) {
+      const a = (i / 14) * Math.PI * 2, r1 = 200, r2 = 520 + (i % 3) * 120;
+      const x1 = 960 + Math.cos(a) * r1, y1 = 470 + Math.sin(a) * r1, x2 = 960 + Math.cos(a) * r2, y2 = 470 + Math.sin(a) * r2 * 0.75;
+      const mx = (x1 + x2) / 2;
+      t += `<path d="M${x1} ${y1} L${mx} ${y1} L${x2} ${y2}"/><circle cx="${x2}" cy="${y2}" r="9" fill="#2dd4bf" stroke="none"/>`;
+    }
+    tr.innerHTML = t;
+    // prescription labels
+    document.getElementById('rxlabels').innerHTML = [['Clear', 'ಸ್ಪಷ್ಟವಾಗಿ'], ['In order', 'ಕ್ರಮವಾಗಿ'], ['Followed exactly', 'ಬರೆದ ಹಾಗೆಯೇ']]
+      .map(([e, k], i) => `<div class="lbl"><span class="n">${i + 1}</span><span class="t">${e}<span class="k">${k}</span></span></div>`).join('');
+  })();
+  window.show = (id, qr) => {
+    document.querySelectorAll('.frame').forEach((f) => f.classList.toggle('on', f.id === id));
+    if (qr) document.getElementById('qr').src = qr;
+  };
+</script>
+</body>
+</html>
