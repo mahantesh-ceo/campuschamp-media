@@ -1,0 +1,13 @@
+{
+  "_about": "Lesson videos. Each episode has a placement (top | explanation | walkthrough | tasks) and, per language, a YouTube id or (temporarily, until the channel is live) an mp4 + poster on this site.",
+  "1-1": [
+    {
+      "episode": 1,
+      "placement": "top",
+      "title": { "en": "What is a program?", "kn": "Program ಅಂದ್ರೆ ಏನು?", "hi": "Program क्या होता है?" },
+      "sources": {
+        "kn": { "youtube": null, "mp4": "media/bp101t/1-1/kn/ep1.mp4", "poster": "media/bp101t/1-1/kn/ep1.jpg", "seconds": 247 }
+      }
+    }
+  ]
+}
