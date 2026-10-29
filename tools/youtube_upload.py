@@ -78,7 +78,8 @@ def record(meta, video_id):
     data = json.load(open(path, encoding="utf-8"))
     for ep in data.get(meta["lesson"], []):
         if ep["episode"] == meta["episode"]:
-            ep["sources"].setdefault(meta["language"], {})["youtube"] = video_id
+            # private until published, so the website keeps its own copy until then
+            ep["sources"].setdefault(meta["language"], {})["youtube_pending"] = video_id
     json.dump(data, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
 
