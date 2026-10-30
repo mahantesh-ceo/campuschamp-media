@@ -4,7 +4,7 @@ name: Publish episode on YouTube
 on:
   push:
     branches: [main]
-    paths: ["video/meta/*.json"]
+    paths: ["video/meta/*.json", "video/trailer-*.json"]
   workflow_dispatch:
     inputs:
       meta:
@@ -36,7 +36,7 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "push" ]; then
             git fetch -q --depth=1 origin "$BEFORE" 2>/dev/null || true
-            files=$(git diff --name-only --diff-filter=AM "$BEFORE" HEAD -- 'video/meta/*.json' 2>/dev/null || ls video/meta/*.json)
+            files=$(git diff --name-only --diff-filter=AM "$BEFORE" HEAD -- 'video/meta/*.json' 'video/trailer-*.json' 2>/dev/null || ls video/meta/*.json)
           else
             files="$INPUT_META"
           fi
@@ -56,7 +56,11 @@ jobs:
           fail=0
           for f in $META; do
             echo "::group::$f"
-            python tools/youtube_upload.py "$f" || fail=1
+            # channel trailers (the brand film) and lesson episodes use different publishers
+            case "$f" in
+              video/trailer-*) python tools/youtube_trailer.py "$f" || fail=1 ;;
+              *) python tools/youtube_upload.py "$f" || fail=1 ;;
+            esac
             echo "::endgroup::"
           done
           exit $fail
@@ -67,5 +71,6 @@ jobs:
           git config user.email "video-bot@campuschamp.in"
           git add content/bp101t/videos.json
           if [ -f video/playlists.json ]; then git add video/playlists.json; fi
+          if [ -f video/trailers.json ]; then git add video/trailers.json; fi
           git commit -m "YouTube ids for ${{ steps.which.outputs.meta }}" || echo "nothing to commit"
           git pull -q --rebase origin main && git push
