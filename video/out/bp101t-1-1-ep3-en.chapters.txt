@@ -1,0 +1,9 @@
+0:00 Intro
+0:20 Your first program
+1:27 A NameError
+1:57 A SyntaxError
+2:24 3 beginner mistakes
+2:55 Quick check
+3:17 Recap
+3:36 Try it yourself
+4:00 Practise free

@@ -1,0 +1,9 @@
+0:00 Intro
+0:21 ನಿಮ್ಮ ಮೊದಲ program
+1:23 ಒಂದು NameError
+1:52 ಒಂದು SyntaxError
+2:18 Beginners ಮಾಡೋ 3 ತಪ್ಪು
+2:47 Quick check
+3:07 Recap
+3:28 ನೀವೇ try ಮಾಡಿ
+3:51 Practise free

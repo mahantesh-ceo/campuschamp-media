@@ -1,0 +1,22 @@
+{
+  "lesson": "1-1",
+  "episode": 3,
+  "language": "hi",
+  "file": "video/out/bp101t-1-1-ep3-hi.mp4",
+  "chapters": "video/out/bp101t-1-1-ep3-hi.chapters.txt",
+  "thumbnail": "video/out/bp101t-1-1-ep3-hi.png",
+  "description": "B.Pharm Sem I, BP101T Basics of Python Programming for Pharmaceutical Sciences, हिंदी में.\n\nइस episode में: आपका पहला Python program, line by line: comment (#), print(), string, और * (multiply). फिर NameError, SyntaxError, और beginners की 3 आम गलतियाँ.\n\n▶ इस lesson को अपने phone पर free practise कीजिए:\nhttps://www.campuschamp.in/learn/bp101t/1-1?utm_source=youtube&utm_medium=video&utm_campaign=bp101t-1-1-ep3-hi\n\n📄 BP101T Unit 1 important questions (free PDF):\nhttps://www.campuschamp.in/hi/bp101t/important-questions/unit-1?utm_source=youtube&utm_medium=video&utm_campaign=bp101t-1-1-ep3-hi\n\nChapters\n{{CHAPTERS}}\n\nNarration uses an AI voice. Practice questions only; university questions may differ.\n\n#BP101T #BPharm #PythonInHindi #PCI",
+  "tags": [
+    "BP101T",
+    "B.Pharm Python",
+    "Python in Hindi",
+    "print in python hindi",
+    "python first program hindi",
+    "Basics of Python Programming for Pharmaceutical Sciences",
+    "PCI syllabus",
+    "B.Pharm Sem 1",
+    "pharmacy students",
+    "Campus Champ"
+  ],
+  "topic": "आपका पहला program"
+}

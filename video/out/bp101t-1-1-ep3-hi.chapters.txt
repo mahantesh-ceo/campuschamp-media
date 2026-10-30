@@ -1,0 +1,9 @@
+0:00 Intro
+0:23 आपका पहला program
+1:29 एक NameError
+2:02 एक SyntaxError
+2:28 Beginners की 3 गलतियाँ
+2:59 Quick check
+3:21 Recap
+3:44 खुद try कीजिए
+4:08 Practise free

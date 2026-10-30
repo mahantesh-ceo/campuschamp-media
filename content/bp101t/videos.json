@@ -58,6 +58,34 @@
           "youtube": "ceqSRXohqyA"
         }
       }
+    },
+    {
+      "episode": 3,
+      "placement": "walkthrough",
+      "title": {
+        "en": "Your first program",
+        "kn": "ನಿಮ್ಮ ಮೊದಲ program",
+        "hi": "आपका पहला program"
+      },
+      "sources": {
+        "kn": {
+          "mp4": "media/bp101t/1-1/kn/ep3.mp4",
+          "poster": "media/bp101t/1-1/kn/ep3.jpg",
+          "seconds": 237
+        },
+        "hi": {
+          "mp4": "media/bp101t/1-1/hi/ep3.mp4",
+          "poster": "media/bp101t/1-1/hi/ep3.jpg",
+          "seconds": 254,
+          "youtube": "k-5dfLo5mgA"
+        },
+        "en": {
+          "mp4": "media/bp101t/1-1/en/ep3.mp4",
+          "poster": "media/bp101t/1-1/en/ep3.jpg",
+          "seconds": 246,
+          "youtube": "DtcYU3sC9JY"
+        }
+      }
     }
   ]
 }

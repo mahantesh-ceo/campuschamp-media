@@ -1,0 +1,22 @@
+{
+  "lesson": "1-1",
+  "episode": 3,
+  "language": "kn",
+  "file": "video/out/bp101t-1-1-ep3-kn.mp4",
+  "chapters": "video/out/bp101t-1-1-ep3-kn.chapters.txt",
+  "thumbnail": "video/out/bp101t-1-1-ep3-kn.png",
+  "description": "B.Pharm Sem I, BP101T Basics of Python Programming for Pharmaceutical Sciences, ಕನ್ನಡದಲ್ಲಿ.\n\nಈ episode ನಲ್ಲಿ: ನಿಮ್ಮ ಮೊದಲ Python program ಅನ್ನ line by line ಓದೋಣ: comment (#), print(), string, ಮತ್ತೆ * (multiply). ಆಮೇಲೆ NameError, SyntaxError, ಮತ್ತೆ beginners ಮಾಡೋ 3 ತಪ್ಪುಗಳು.\n\n▶ ಈ lesson ಅನ್ನು ನಿಮ್ಮ phone ನಲ್ಲಿ free ಆಗಿ practise ಮಾಡಿ:\nhttps://www.campuschamp.in/learn/bp101t/1-1?utm_source=youtube&utm_medium=video&utm_campaign=bp101t-1-1-ep3-kn\n\n📄 BP101T Unit 1 important questions (free PDF):\nhttps://www.campuschamp.in/kn/bp101t/important-questions/unit-1?utm_source=youtube&utm_medium=video&utm_campaign=bp101t-1-1-ep3-kn\n\nChapters\n{{CHAPTERS}}\n\nNarration uses an AI voice. Practice questions only; university questions may differ.\n\n#BP101T #BPharm #PythonInKannada #PCI",
+  "tags": [
+    "BP101T",
+    "B.Pharm Python",
+    "Python in Kannada",
+    "print in python kannada",
+    "python first program kannada",
+    "Basics of Python Programming for Pharmaceutical Sciences",
+    "PCI syllabus",
+    "B.Pharm Sem 1",
+    "pharmacy students",
+    "Campus Champ"
+  ],
+  "topic": "ನಿಮ್ಮ ಮೊದಲ program"
+}
