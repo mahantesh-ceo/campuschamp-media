@@ -12,6 +12,7 @@ Usage: python tools/youtube_upload.py video/meta/<episode>.json
 import json
 import os
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -55,19 +56,25 @@ def access_token():
         sys.exit(f"Google refused the YouTube credentials ({e.code} {why.get('error')}: {why.get('error_description', '')}). Check the three YT_ secrets.")
 
 
-def call(method, url, token, body=None):
-    req = urllib.request.Request(url, method=method, data=json.dumps(body).encode() if body is not None else None,
-                                 headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json; charset=UTF-8"})
-    try:
-        with urllib.request.urlopen(req) as r:
-            raw = r.read()
-            return json.loads(raw) if raw else {}
-    except urllib.error.HTTPError as e:
-        detail = e.read().decode()[:400]
-        if e.code == 403 and "insufficient" in detail.lower():
-            sys.exit("YouTube says the sign-in can only upload, not manage playlists. Make a new refresh token with the "
-                     "https://www.googleapis.com/auth/youtube scope and update YT_REFRESH_TOKEN.")
-        sys.exit(f"YouTube API error {e.code} on {url.split('?')[0]}: {detail}")
+def call(method, url, token, body=None, wait_for_new=False):
+    """wait_for_new: a just-created playlist can 404 for a short while, so retry those for up to ~1 minute."""
+    for attempt in range(7 if wait_for_new else 1):
+        req = urllib.request.Request(url, method=method, data=json.dumps(body).encode() if body is not None else None,
+                                     headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json; charset=UTF-8"})
+        try:
+            with urllib.request.urlopen(req) as r:
+                raw = r.read()
+                return json.loads(raw) if raw else {}
+        except urllib.error.HTTPError as e:
+            code, detail = e.code, e.read().decode()[:400]
+            if code == 404 and wait_for_new and attempt < 6:
+                time.sleep(2 ** attempt)
+                continue
+            break
+    if code == 403 and "insufficient" in detail.lower():
+        sys.exit("YouTube says the sign-in can only upload, not manage playlists. Make a new refresh token with the "
+                 "https://www.googleapis.com/auth/youtube scope and update YT_REFRESH_TOKEN.")
+    sys.exit(f"YouTube API error {code} on {url.split('?')[0]}: {detail}")
 
 
 def find_episode(videos, meta):
@@ -140,9 +147,23 @@ def playlist_id(meta, token):
     if lists.get(key):
         return lists[key]
     lang = LANG_NAME.get(meta["language"], meta["language"])
+    title = f"BP101T Python in {lang} | B.Pharm Sem I | Campus Champ"
+    # Already made on an earlier run whose id wasn't saved? Reuse it, never make a second one.
+    page = ""
+    while True:
+        r = call("GET", f"{API}/playlists?part=snippet&mine=true&maxResults=50{'&pageToken=' + page if page else ''}", token)
+        for p in r.get("items", []):
+            if p["snippet"]["title"] == title:
+                lists[key] = p["id"]
+                save(PLAYLISTS, lists)
+                print("Found playlist:", f"https://www.youtube.com/playlist?list={p['id']}")
+                return p["id"]
+        page = r.get("nextPageToken", "")
+        if not page:
+            break
     created = call("POST", f"{API}/playlists?part=snippet,status", token, {
         "snippet": {
-            "title": f"BP101T Python in {lang} | B.Pharm Sem I | Campus Champ",
+            "title": title,
             "description": "BP101T Basics of Python Programming for Pharmaceutical Sciences (PCI, B.Pharm Sem I), "
                            f"every lesson in order, in {lang}. Practise free: https://www.campuschamp.in/learn/bp101t",
             "defaultLanguage": meta["language"],
@@ -158,7 +179,7 @@ def playlist_id(meta, token):
 def ensure_in_playlist(pl, video_id, number, token):
     items, page = [], ""
     while True:
-        r = call("GET", f"{API}/playlistItems?part=snippet&maxResults=50&playlistId={pl}{'&pageToken=' + page if page else ''}", token)
+        r = call("GET", f"{API}/playlistItems?part=snippet&maxResults=50&playlistId={pl}{'&pageToken=' + page if page else ''}", token, wait_for_new=True)
         items += r.get("items", [])
         page = r.get("nextPageToken", "")
         if not page:
@@ -169,7 +190,7 @@ def ensure_in_playlist(pl, video_id, number, token):
     body = {"snippet": {"playlistId": pl, "resourceId": {"kind": "youtube#video", "videoId": video_id}}}
     if number - 1 <= len(items):
         body["snippet"]["position"] = number - 1  # keep course order
-    call("POST", f"{API}/playlistItems?part=snippet", token, body)
+    call("POST", f"{API}/playlistItems?part=snippet", token, body, wait_for_new=True)
     print(f"Added to the playlist at #{number}")
 
 

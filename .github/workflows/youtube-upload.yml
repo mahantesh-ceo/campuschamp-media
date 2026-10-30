@@ -28,6 +28,7 @@ jobs:
           PUBLISH: ${{ inputs.publish }}
         run: python tools/youtube_upload.py "${{ inputs.meta }}"
       - name: Save the YouTube id for the website
+        if: always()
         run: |
           git config user.name "Campus Champ video bot"
           git config user.email "video-bot@campuschamp.in"
