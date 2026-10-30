@@ -260,12 +260,13 @@ window.addScenes(({ $, $$, clamp, ease, ap, lerp, show, pop, S, E, T }) => {
           </div>`;
       },
       update: (el, t, s) => {
-        reveal($('#h', el), t, S(s, 0) + 0.2, 0.2);
-        const up = ap(t, S(s, 1) - 0.2, 0.6);
+        // no spoken opener in the short cut: the title lands, rises, and the four questions follow the voice
+        reveal($('#h', el), t, s.start + 0.05, 0.12);
+        const up = ap(t, s.start + 0.5, 0.5);
         $('#h', el).style.transform = `translateY(${-up * 300}px) scale(${1 - up * 0.55})`;
         $$('.pq', el).forEach((c, i) => {
-          const q = ap(t, S(s, i + 1) - 0.1, 0.5);
-          const on = t >= S(s, i + 1) - 0.1 && t < S(s, i + 2) - 0.1;
+          const q = ap(t, S(s, i) - 0.1, 0.5);
+          const on = t >= S(s, i) - 0.1 && t < S(s, i + 1) - 0.1;
           c.style.opacity = q * (on ? 1 : 0.45);
           c.style.borderColor = on ? '#fb7185' : 'rgba(255,255,255,.12)';
           c.style.boxShadow = on ? '0 0 60px rgba(251,113,133,.25)' : 'none';

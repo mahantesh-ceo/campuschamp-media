@@ -9,109 +9,93 @@
   {
    "id": "l01",
    "scene": "c-hook",
-   "say": "From 2026-27, the new PCI B.Pharm syllabus brings computing and AI into every year.",
-   "tts": "From twenty twenty-six, twenty-seven, the new PCI B.Pharm syllabus brings computing and AI into every year.",
+   "say": "From 2026-27, B.Pharm brings AI into every year:",
+   "tts": "From twenty twenty-six, twenty-seven, B.Pharm brings AI into every year:",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
   {
    "id": "l02",
    "scene": "c-hook",
-   "say": "Eight new subjects, from Python in semester one, to ethical AI in semester eight.",
-   "tts": "Eight new subjects, from Python in semester one, to ethical AI in semester eight.",
+   "say": "eight new subjects, from Python in semester one to ethical AI in semester eight.",
+   "tts": "eight new subjects, from Python in semester one to ethical AI in semester eight.",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
   {
    "id": "l03",
    "scene": "c-pains",
-   "say": "For most pharmacy colleges, this raises hard questions.",
-   "tts": "For most pharmacy colleges, this raises hard questions.",
+   "say": "Who will teach it? Most pharmacy faculty were never trained in programming.",
+   "tts": "Who will teach it? Most pharmacy faculty were never trained in programming.",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
   {
    "id": "l04",
    "scene": "c-pains",
-   "say": "Who will teach it? Pharmacy faculty were trained in pharmaceutics and pharmacology, not programming. Colleges are already running workshops just to train their own teachers.",
-   "tts": "Who will teach it? Pharmacy faculty were trained in pharmaceutics and pharmacology, not programming. Colleges are already running workshops just to train their own teachers.",
+   "say": "Where will students practise? Labs are limited, and thirty hours a semester isn't enough to learn to code.",
+   "tts": "Where will students practise? Labs are limited, and thirty hours a semester isn't enough to learn to code.",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
   {
    "id": "l05",
    "scene": "c-pains",
-   "say": "Where will students practise? Labs are limited, and thirty hours in a whole semester is not enough to learn to code.",
-   "tts": "Where will students practise? Labs are limited, and thirty hours in a whole semester is not enough to learn to code.",
+   "say": "Will students from a biology background, often in their second language, keep up?",
+   "tts": "Will students from a biology background, often in their second language, keep up?",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
   {
    "id": "l06",
    "scene": "c-pains",
-   "say": "How will students from a biology background, many studying in their second language, keep up?",
-   "tts": "How will students from a biology background, many studying in their second language, keep up?",
+   "say": "And when NAAC visits, how will you show real learning happened?",
+   "tts": "And when NAAC visits, how will you show real learning happened?",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
   {
    "id": "l07",
-   "scene": "c-pains",
-   "say": "And when the NAAC peer team visits, how will you show that real learning happened?",
-   "tts": "And when the NAAC peer team visits, how will you show that real learning happened?",
+   "scene": "c-book",
+   "say": "A textbook won't solve it.",
+   "tts": "A textbook won't solve it.",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
   {
    "id": "l08",
    "scene": "c-book",
-   "say": "The usual answer is a textbook. But programming and AI can't be learned by reading.",
-   "tts": "The usual answer is a textbook. But programming and AI can't be learned by reading.",
+   "say": "It can't run code, or tell a student what went wrong. So students memorise programs, and forget them after the exam.",
+   "tts": "It can't run code, or tell a student what went wrong. So students memorise programs, and forget them after the exam.",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
   {
    "id": "l09",
-   "scene": "c-book",
-   "say": "A textbook can't run code. It can't tell a student where they went wrong. So students memorise programs for the exam, and forget them a week later.",
-   "tts": "A textbook can't run code. It can't tell a student where they went wrong. So students memorise programs for the exam, and forget them a week later.",
+   "scene": "c-blend",
+   "say": "These subjects need blended learning:",
+   "tts": "These subjects need blended learning:",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
   {
    "id": "l10",
-   "scene": "c-book",
-   "say": "And in a field that changes every year, printed books fall behind.",
-   "tts": "And in a field that changes every year, printed books fall behind.",
+   "scene": "c-blend",
+   "say": "teacher-led classes, plus guided practice every day, with instant feedback.",
+   "tts": "teacher-led classes, plus guided practice every day, with instant feedback.",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
   {
    "id": "l11",
    "scene": "c-blend",
-   "say": "These subjects need blended learning: the teacher in the classroom, and guided practice every day in between.",
-   "tts": "These subjects need blended learning: the teacher in the classroom, and guided practice every day in between.",
+   "say": "It's what NEP 2020 encourages. And for coding, it works.",
+   "tts": "It's what N E P twenty twenty encourages. And for coding, it works.",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
   {
    "id": "l12",
-   "scene": "c-blend",
-   "say": "Students learn a concept in class, practise it on their phones the same day, get instant feedback, and come back with real questions.",
-   "tts": "Students learn a concept in class, practise it on their phones the same day, get instant feedback, and come back with real questions.",
-   "lang": "en",
-   "speaker": "ritu_en_edtech"
-  },
-  {
-   "id": "l13",
-   "scene": "c-blend",
-   "say": "It's the approach NEP 2020 encourages. And for coding, it's the one that works.",
-   "tts": "It's the approach N E P twenty twenty encourages. And for coding, it's the one that works.",
-   "lang": "en",
-   "speaker": "ritu_en_edtech"
-  },
-  {
-   "id": "l14",
    "scene": "c-intro",
    "say": "Introducing Campus Champ for Colleges.",
    "tts": "Introducing Campus Champ for Colleges.",
@@ -119,7 +103,7 @@
    "speaker": "ritu_en_edtech"
   },
   {
-   "id": "l15",
+   "id": "l13",
    "scene": "c-intro",
    "say": "India's first multilingual blended-learning platform for pharmacy's AI curriculum.",
    "tts": "India's first multilingual blended-learning platform for pharmacy's AI curriculum.",
@@ -127,39 +111,39 @@
    "speaker": "ritu_en_edtech"
   },
   {
-   "id": "l16",
+   "id": "l14",
    "scene": "c-trust",
-   "say": "Designed by pharmacy educators and software engineers from leading AI companies.",
-   "tts": "Designed by pharmacy educators and software engineers from leading AI companies.",
+   "say": "Designed by pharmacy educators and engineers from leading AI companies.",
+   "tts": "Designed by pharmacy educators and engineers from leading AI companies.",
+   "lang": "en",
+   "speaker": "ritu_en_edtech"
+  },
+  {
+   "id": "l15",
+   "scene": "c-trust",
+   "say": "Mapped unit by unit to the official PCI syllabus, and taught entirely through pharmacy.",
+   "tts": "Mapped unit by unit to the official PCI syllabus, and taught entirely through pharmacy.",
+   "lang": "en",
+   "speaker": "ritu_en_edtech"
+  },
+  {
+   "id": "l16",
+   "scene": "c-features",
+   "say": "In every lesson: narration in the student's language, animations, video lessons, real Python with instant checking, quizzes, mind maps,",
+   "tts": "In every lesson: narration in the student's language, animations, video lessons, real Python with instant checking, quizzes, mind maps,",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
   {
    "id": "l17",
-   "scene": "c-trust",
-   "say": "A complete curriculum for all eight subjects, mapped to the official PCI syllabus, unit by unit, with the same subject codes your university uses. Every concept taught through pharmacy.",
-   "tts": "A complete curriculum for all eight subjects, mapped to the official PCI syllabus, unit by unit, with the same subject codes your university uses. Every concept taught through pharmacy.",
+   "scene": "c-features",
+   "say": "and important questions with model answers.",
+   "tts": "and important questions with model answers.",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
   {
    "id": "l18",
-   "scene": "c-features",
-   "say": "Inside every lesson: voice narration in the student's language. Animated explanations. Video lessons. Real Python, right in the browser, with instant checking. A quiz. A mind map.",
-   "tts": "Inside every lesson: voice narration in the student's language. Animated explanations. Video lessons. Real Python, right in the browser, with instant checking. A quiz. A mind map.",
-   "lang": "en",
-   "speaker": "ritu_en_edtech"
-  },
-  {
-   "id": "l19",
-   "scene": "c-features",
-   "say": "And important questions for every unit, with model answers, built for university exams.",
-   "tts": "And important questions for every unit, with model answers, built for university exams.",
-   "lang": "en",
-   "speaker": "ritu_en_edtech"
-  },
-  {
-   "id": "l20",
    "scene": "c-features",
    "say": "Python is live today. Each next subject arrives ahead of your batch.",
    "tts": "Python is live today. Each next subject arrives ahead of your batch.",
@@ -167,39 +151,39 @@
    "speaker": "ritu_en_edtech"
   },
   {
-   "id": "l21",
+   "id": "l19",
    "scene": "c-teacher",
-   "say": "Your faculty lead the class. Campus Champ powers the practice: lessons in Kannada, Hindi or English, with voice, videos, and coding on any phone. No lab needed.",
-   "tts": "Your faculty lead the class. Campus Champ powers the practice: lessons in Kannada, Hindi or English, with voice, videos, and coding on any phone. No lab needed.",
+   "say": "Faculty lead the class. Campus Champ powers the practice, on any phone, no lab needed.",
+   "tts": "Faculty lead the class. Campus Champ powers the practice, on any phone, no lab needed.",
+   "lang": "en",
+   "speaker": "ritu_en_edtech"
+  },
+  {
+   "id": "l20",
+   "scene": "c-teacher",
+   "say": "Teachers see who's behind and the weakest topic, and nudge students on WhatsApp in one tap.",
+   "tts": "Teachers see who's behind and the weakest topic, and nudge students on WhatsApp in one tap.",
+   "lang": "en",
+   "speaker": "ritu_en_edtech"
+  },
+  {
+   "id": "l21",
+   "scene": "c-principal",
+   "say": "Every term, the principal gets a clear report of participation, progress and quiz scores:",
+   "tts": "Every term, the principal gets a clear report of participation, progress and quiz scores:",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
   {
    "id": "l22",
-   "scene": "c-teacher",
-   "say": "Teachers see who has started, who is behind, and the weakest topic, and nudge students on WhatsApp in one tap.",
-   "tts": "Teachers see who has started, who is behind, and the weakest topic, and nudge students on WhatsApp in one tap.",
+   "scene": "c-principal",
+   "say": "documented evidence for NAAC, ready for your Self-Study Report.",
+   "tts": "documented evidence for NAAC, ready for your Self-Study Report.",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
   {
    "id": "l23",
-   "scene": "c-principal",
-   "say": "Every term, the principal gets a clear report: participation, progress and quiz scores, lesson by lesson.",
-   "tts": "Every term, the principal gets a clear report: participation, progress and quiz scores, lesson by lesson.",
-   "lang": "en",
-   "speaker": "ritu_en_edtech"
-  },
-  {
-   "id": "l24",
-   "scene": "c-principal",
-   "say": "That's documented evidence for NAAC: ICT-enabled, student-centric teaching, and measurable learning outcomes, ready for your Self-Study Report and the peer team visit.",
-   "tts": "That's documented evidence for NAAC: ICT-enabled, student-centric teaching, and measurable learning outcomes, ready for your Self-Study Report and the peer team visit.",
-   "lang": "en",
-   "speaker": "ritu_en_edtech"
-  },
-  {
-   "id": "l25",
    "scene": "c-cta",
    "say": "Make your college AI-ready. One semester at a time.",
    "tts": "Make your college AI-ready. One semester at a time.",
@@ -207,7 +191,7 @@
    "speaker": "ritu_en_edtech"
   },
   {
-   "id": "l26",
+   "id": "l24",
    "scene": "c-cta",
    "say": "We're partnering with a small number of pilot colleges this year. Book a twenty-minute walkthrough at campuschamp.in/colleges.",
    "tts": "We're partnering with a small number of pilot colleges this year. Book a twenty-minute walkthrough at campuschamp dot in, slash colleges.",
