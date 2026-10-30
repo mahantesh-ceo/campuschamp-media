@@ -622,7 +622,7 @@
       build: () => `
         <div class="layer brand"></div>
         <div class="abs" style="left:150px;top:0;bottom:0;width:900px;display:flex;flex-direction:column;justify-content:center">
-          <p id="e1" style="font-family:var(--head);font-weight:600;font-size:30px;color:#6e6e73">${tx('nextEp')}</p>
+          <p id="e1" style="font-family:var(--head);font-weight:600;font-size:30px;color:#6e6e73">${T.next && T.next.label ? T.next.label : tx('nextEp')}</p>
           <h1 id="e2" class="h" style="margin-top:12px;font-size:110px;letter-spacing:-.035em;line-height:1.05;color:#1d1d1f">${T.next ? T.next.title : tx('whyBrand')}</h1>
           <p id="e3" style="margin-top:30px;font-size:34px;line-height:1.45;color:#424245">${T.next ? T.next.desc : tx('nextDesc')}</p>
           <div id="e4" style="margin-top:56px;display:flex;gap:16px;align-items:center">

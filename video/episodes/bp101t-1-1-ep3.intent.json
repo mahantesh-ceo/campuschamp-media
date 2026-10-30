@@ -1,0 +1,150 @@
+[
+ [
+  "hook",
+  "In the next four minutes, you'll understand your first real Python program."
+ ],
+ [
+  "hook",
+  "A program that prints a medicine label, like this one."
+ ],
+ [
+  "hook",
+  "And then, we'll break it on purpose, and see what Python does."
+ ],
+ [
+  "walk",
+  "Here's the program. Five lines. Let's run it the way Python does: one line at a time, from top to bottom."
+ ],
+ [
+  "walk",
+  "Line one starts with a hash sign. That's a comment: a note for humans. Python simply skips it."
+ ],
+ [
+  "walk",
+  "Line two: print. Print means: show this on the screen."
+ ],
+ [
+  "walk",
+  "The words inside the quotes are shown exactly as written. Text in quotes is called a string."
+ ],
+ [
+  "walk",
+  "Line three prints the drug name. Every print starts on a new line."
+ ],
+ [
+  "walk",
+  "Line four has three items, separated by commas. Python shows them one after another, with a space in between."
+ ],
+ [
+  "walk",
+  "Line five has a small calculation. The star sign means multiply."
+ ],
+ [
+  "walk",
+  "Python first works out 500 times 3, which is 1500, and then prints the answer."
+ ],
+ [
+  "walk",
+  "Four instructions, in order, from top to bottom. You've just understood your first program!"
+ ],
+ [
+  "errors",
+  "Now, let's break it. On purpose."
+ ],
+ [
+  "errors",
+  "In this program, line two uses a word Python has never heard of: weight."
+ ],
+ [
+  "errors",
+  "Python runs line one. Then it stops at line two, and tells you exactly what went wrong."
+ ],
+ [
+  "errors",
+  "Name error: name weight is not defined. And line three never runs."
+ ],
+ [
+  "errors",
+  "Just like a pharmacist who stops at an unclear line on a prescription."
+ ],
+ [
+  "syntax",
+  "Now look at this one. Line two is missing its closing bracket."
+ ],
+ [
+  "syntax",
+  "This time, nothing is printed. Not even line one."
+ ],
+ [
+  "syntax",
+  "Because before running anything, Python checks that the whole program is written correctly."
+ ],
+ [
+  "syntax",
+  "A writing mistake like this is called a syntax error. Syntax means the grammar rules of the language."
+ ],
+ [
+  "mistakes",
+  "Three mistakes almost every beginner makes."
+ ],
+ [
+  "mistakes",
+  "One: writing Print with a capital P. Python is case-sensitive, so always use small letters."
+ ],
+ [
+  "mistakes",
+  "Two: copying code from WhatsApp, with curly quotes. Type the quotes yourself."
+ ],
+ [
+  "mistakes",
+  "Three: forgetting the quotes around text."
+ ],
+ [
+  "mistakes",
+  "Remember, errors aren't failures. They're Python pointing at exactly where to look."
+ ],
+ [
+  "quiz",
+  "Quick check. What does this line print?"
+ ],
+ [
+  "quiz",
+  "Pause and think."
+ ],
+ [
+  "quiz-answer",
+  "The answer is B: Dose, 500 mg. Python did the multiplication first. Super!"
+ ],
+ [
+  "recap",
+  "Let's recap."
+ ],
+ [
+  "recap",
+  "Print shows text and numbers on the screen. A hash sign starts a comment."
+ ],
+ [
+  "recap",
+  "Python runs your code one line at a time, from top to bottom."
+ ],
+ [
+  "recap",
+  "And errors tell you exactly where Python got stuck."
+ ],
+ [
+  "cta",
+  "Now it's your turn. Open this lesson on Campus Champ."
+ ],
+ [
+  "cta",
+  "Write your first program, and make your own medicine label, right on your phone."
+ ],
+ [
+  "cta",
+  "It checks your answer instantly. And it's free."
+ ],
+ [
+  "cta",
+  "Next lesson: we'll install Python on a computer, and meet the tools programmers use. See you there!"
+ ]
+]

@@ -1,0 +1,129 @@
+{
+ "order": [
+  "hook",
+  "sting",
+  "walk",
+  "errors",
+  "syntax",
+  "mistakes",
+  "quiz",
+  "recap",
+  "cta",
+  "end"
+ ],
+ "hold": {
+  "hook": 2.6,
+  "sting": 2.8,
+  "walk": 1.4,
+  "errors": 1.0,
+  "syntax": 1.2,
+  "mistakes": 1.0,
+  "quiz": 1.2,
+  "recap": 1.4,
+  "cta": 0.6,
+  "end": 6
+ },
+ "chapters": {
+  "en": {
+   "hook": "Intro",
+   "walk": "Your first program",
+   "errors": "A NameError",
+   "syntax": "A SyntaxError",
+   "mistakes": "3 beginner mistakes",
+   "quiz": "Quick check",
+   "recap": "Recap",
+   "cta": "Try it yourself",
+   "end": "Practise free"
+  },
+  "kn": {
+   "hook": "Intro",
+   "walk": "ನಿಮ್ಮ ಮೊದಲ program",
+   "errors": "ಒಂದು NameError",
+   "syntax": "ಒಂದು SyntaxError",
+   "mistakes": "Beginners ಮಾಡೋ 3 ತಪ್ಪು",
+   "quiz": "Quick check",
+   "recap": "Recap",
+   "cta": "ನೀವೇ try ಮಾಡಿ",
+   "end": "Practise free"
+  },
+  "hi": {
+   "hook": "Intro",
+   "walk": "आपका पहला program",
+   "errors": "एक NameError",
+   "syntax": "एक SyntaxError",
+   "mistakes": "Beginners की 3 गलतियाँ",
+   "quiz": "Quick check",
+   "recap": "Recap",
+   "cta": "खुद try कीजिए",
+   "end": "Practise free"
+  }
+ },
+ "title": {
+  "en": "Your first <span class=\"grad\">program</span>",
+  "kn": "ನಿಮ್ಮ ಮೊದಲ <span class=\"grad\">program</span>",
+  "hi": "आपका पहला <span class=\"grad\">program</span>"
+ },
+ "next": {
+  "en": {
+   "label": "Next lesson · 1.2",
+   "title": "Installing Python <span class=\"grad\">&amp; IDEs</span>",
+   "desc": "Set up Python on a computer, and meet Jupyter, PyCharm and VS Code."
+  },
+  "kn": {
+   "label": "ಮುಂದಿನ lesson · 1.2",
+   "title": "Python install <span class=\"grad\">&amp; IDEs</span>",
+   "desc": "Computer ನಲ್ಲಿ Python setup, ಮತ್ತೆ Jupyter, PyCharm, VS Code ಪರಿಚಯ."
+  },
+  "hi": {
+   "label": "अगला lesson · 1.2",
+   "title": "Python install <span class=\"grad\">&amp; IDEs</span>",
+   "desc": "Computer पर Python setup, और Jupyter, PyCharm, VS Code से मुलाक़ात."
+  }
+ },
+ "quiz": {
+  "en": {
+   "q": "What does this line print?<code style=\"display:block;margin-top:14px;font-family:var(--mono);font-size:44px;font-weight:500;color:#fde68a\">print(\"Dose:\", 250 * 2, \"mg\")</code>",
+   "options": [
+    "Dose: 250 * 2 mg",
+    "Dose: 500 mg",
+    "An error"
+   ],
+   "answer": 1
+  },
+  "kn": {
+   "q": "ಈ line ಏನು print ಮಾಡುತ್ತೆ?<code style=\"display:block;margin-top:14px;font-family:var(--mono);font-size:44px;font-weight:500;color:#fde68a\">print(\"Dose:\", 250 * 2, \"mg\")</code>",
+   "options": [
+    "Dose: 250 * 2 mg",
+    "Dose: 500 mg",
+    "Error ಬರುತ್ತೆ"
+   ],
+   "answer": 1
+  },
+  "hi": {
+   "q": "ये line क्या print करेगी?<code style=\"display:block;margin-top:14px;font-family:var(--mono);font-size:44px;font-weight:500;color:#fde68a\">print(\"Dose:\", 250 * 2, \"mg\")</code>",
+   "options": [
+    "Dose: 250 * 2 mg",
+    "Dose: 500 mg",
+    "Error आएगी"
+   ],
+   "answer": 1
+  }
+ },
+ "recap": {
+  "en": [
+   "print() shows text and numbers. # starts a comment.",
+   "Python runs one line at a time, top to bottom.",
+   "Errors tell you exactly where Python got stuck."
+  ],
+  "kn": [
+   "print() text, numbers ತೋರಿಸುತ್ತೆ. # ಇಂದ comment.",
+   "Python ಒಂದೊಂದೇ line, ಮೇಲಿಂದ ಕೆಳಗೆ run ಮಾಡುತ್ತೆ.",
+   "Python ಎಲ್ಲಿ stuck ಆಯ್ತು ಅಂತ error ಹೇಳುತ್ತೆ."
+  ],
+  "hi": [
+   "print() text और numbers दिखाता है. # से comment.",
+   "Python एक-एक line, ऊपर से नीचे run करता है.",
+   "Error बताती है कि Python कहाँ अटका."
+  ]
+ }
+}

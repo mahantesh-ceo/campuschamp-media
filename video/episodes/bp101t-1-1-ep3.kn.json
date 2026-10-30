@@ -1,0 +1,232 @@
+{
+ "course": "bp101t",
+ "lesson": "1-1",
+ "episode": 3,
+ "lang": "kn",
+ "engine": "sarvam",
+ "speaker": "chaitra_kn_conversation",
+ "lines": [
+  {
+   "id": "l01",
+   "scene": "hook",
+   "say": "ಇನ್ನು ನಾಲ್ಕು ನಿಮಿಷದಲ್ಲಿ, ನಿಮ್ಮ ಮೊದಲ ನಿಜವಾದ Python program ಅರ್ಥ ಆಗುತ್ತೆ.",
+   "tts": "ಇನ್ನು ನಾಲ್ಕು ನಿಮಿಷದಲ್ಲಿ, ನಿಮ್ಮ ಮೊದಲ ನಿಜವಾದ ಪೈಥಾನ್ program ಅರ್ಥ ಆಗುತ್ತೆ."
+  },
+  {
+   "id": "l02",
+   "scene": "hook",
+   "say": "ಒಂದು medicine label print ಮಾಡೋ program. ಇದೇ ತರಹ.",
+   "tts": "ಒಂದು medicine label print ಮಾಡೋ program. ಇದೇ ತರಹ."
+  },
+  {
+   "id": "l03",
+   "scene": "hook",
+   "say": "ಆಮೇಲೆ, ಬೇಕಂತಲೇ ಅದನ್ನ ಹಾಳು ಮಾಡಿ, Python ಏನು ಮಾಡುತ್ತೆ ಅಂತ ನೋಡೋಣ.",
+   "tts": "ಆಮೇಲೆ, ಬೇಕಂತಲೇ ಅದನ್ನ ಹಾಳು ಮಾಡಿ, ಪೈಥಾನ್ ಏನು ಮಾಡುತ್ತೆ ಅಂತ ನೋಡೋಣ."
+  },
+  {
+   "id": "l04",
+   "scene": "walk",
+   "say": "ಇದೇ ಆ program. ಐದು lines. Python ತರಹಾನೇ run ಮಾಡೋಣ: ಒಂದೊಂದೇ line, ಮೇಲಿಂದ ಕೆಳಗೆ.",
+   "tts": "ಇದೇ ಆ program. ಐದು lines. ಪೈಥಾನ್ ತರಹಾನೇ run ಮಾಡೋಣ: ಒಂದೊಂದೇ line, ಮೇಲಿಂದ ಕೆಳಗೆ."
+  },
+  {
+   "id": "l05",
+   "scene": "walk",
+   "say": "ಮೊದಲ line hash sign ಇಂದ ಶುರು ಆಗುತ್ತೆ. ಅದು comment: ಮನುಷ್ಯರಿಗೋಸ್ಕರ ಬರೆದ note. Python ಅದನ್ನ skip ಮಾಡುತ್ತೆ.",
+   "tts": "ಮೊದಲ line hash sign ಇಂದ ಶುರು ಆಗುತ್ತೆ. ಅದು comment: ಮನುಷ್ಯರಿಗೋಸ್ಕರ ಬರೆದ note. ಪೈಥಾನ್ ಅದನ್ನ skip ಮಾಡುತ್ತೆ."
+  },
+  {
+   "id": "l06",
+   "scene": "walk",
+   "say": "ಎರಡನೇ line: print. Print ಅಂದ್ರೆ: ಇದನ್ನ screen ಮೇಲೆ ತೋರಿಸು.",
+   "tts": "ಎರಡನೇ line: print. Print ಅಂದ್ರೆ: ಇದನ್ನ screen ಮೇಲೆ ತೋರಿಸು."
+  },
+  {
+   "id": "l07",
+   "scene": "walk",
+   "say": "Quotes ಒಳಗೆ ಇರೋ ಪದಗಳು, ಬರೆದ ಹಾಗೇ exactly ಕಾಣುತ್ತೆ. Quotes ಒಳಗಿನ text ಅನ್ನ string ಅಂತಾರೆ.",
+   "tts": "Quotes ಒಳಗೆ ಇರೋ ಪದಗಳು, ಬರೆದ ಹಾಗೇ exactly ಕಾಣುತ್ತೆ. Quotes ಒಳಗಿನ text ಅನ್ನ string ಅಂತಾರೆ."
+  },
+  {
+   "id": "l08",
+   "scene": "walk",
+   "say": "ಮೂರನೇ line drug ಹೆಸರು print ಮಾಡುತ್ತೆ. ಪ್ರತಿ print ಹೊಸ line ನಲ್ಲಿ ಶುರು ಆಗುತ್ತೆ.",
+   "tts": "ಮೂರನೇ line drug ಹೆಸರು print ಮಾಡುತ್ತೆ. ಪ್ರತಿ print ಹೊಸ line ನಲ್ಲಿ ಶುರು ಆಗುತ್ತೆ."
+  },
+  {
+   "id": "l09",
+   "scene": "walk",
+   "say": "ನಾಲ್ಕನೇ line ನಲ್ಲಿ ಮೂರು items ಇವೆ, commas ಇಂದ ಬೇರೆ ಮಾಡಿದ್ದೀವಿ. Python ಅವನ್ನ ಒಂದಾದ ಮೇಲೊಂದು, ಮಧ್ಯೆ ಒಂದು space ಇಟ್ಟು ತೋರಿಸುತ್ತೆ.",
+   "tts": "ನಾಲ್ಕನೇ line ನಲ್ಲಿ ಮೂರು items ಇವೆ, commas ಇಂದ ಬೇರೆ ಮಾಡಿದ್ದೀವಿ. ಪೈಥಾನ್ ಅವನ್ನ ಒಂದಾದ ಮೇಲೊಂದು, ಮಧ್ಯೆ ಒಂದು space ಇಟ್ಟು ತೋರಿಸುತ್ತೆ."
+  },
+  {
+   "id": "l10",
+   "scene": "walk",
+   "say": "ಐದನೇ line ನಲ್ಲಿ ಒಂದು ಸಣ್ಣ calculation ಇದೆ. Star sign ಅಂದ್ರೆ multiply.",
+   "tts": "ಐದನೇ line ನಲ್ಲಿ ಒಂದು ಸಣ್ಣ calculation ಇದೆ. Star sign ಅಂದ್ರೆ multiply."
+  },
+  {
+   "id": "l11",
+   "scene": "walk",
+   "say": "Python ಮೊದಲು 500 into 3 ಮಾಡುತ್ತೆ, ಅಂದ್ರೆ 1500, ಆಮೇಲೆ answer print ಮಾಡುತ್ತೆ.",
+   "tts": "ಪೈಥಾನ್ ಮೊದಲು ಐನೂರು into ಮೂರು ಮಾಡುತ್ತೆ, ಅಂದ್ರೆ ಸಾವಿರದ ಐನೂರು, ಆಮೇಲೆ answer print ಮಾಡುತ್ತೆ."
+  },
+  {
+   "id": "l12",
+   "scene": "walk",
+   "say": "ನಾಲ್ಕು instructions, order ನಲ್ಲಿ, ಮೇಲಿಂದ ಕೆಳಗೆ. ನಿಮ್ಮ ಮೊದಲ program ನಿಮಗೆ ಅರ್ಥ ಆಯ್ತು!",
+   "tts": "ನಾಲ್ಕು instructions, order ನಲ್ಲಿ, ಮೇಲಿಂದ ಕೆಳಗೆ. ನಿಮ್ಮ ಮೊದಲ program ನಿಮಗೆ ಅರ್ಥ ಆಯ್ತು!"
+  },
+  {
+   "id": "l13",
+   "scene": "errors",
+   "say": "ಈಗ, ಬೇಕಂತಲೇ ಇದನ್ನ ಹಾಳು ಮಾಡೋಣ.",
+   "tts": "ಈಗ, ಬೇಕಂತಲೇ ಇದನ್ನ ಹಾಳು ಮಾಡೋಣ."
+  },
+  {
+   "id": "l14",
+   "scene": "errors",
+   "say": "ಈ program ನ ಎರಡನೇ line ನಲ್ಲಿ, Python ಯಾವತ್ತೂ ಕೇಳಿರದ ಒಂದು ಪದ ಇದೆ: weight.",
+   "tts": "ಈ program ನ ಎರಡನೇ line ನಲ್ಲಿ, ಪೈಥಾನ್ ಯಾವತ್ತೂ ಕೇಳಿರದ ಒಂದು ಪದ ಇದೆ: weight."
+  },
+  {
+   "id": "l15",
+   "scene": "errors",
+   "say": "Python ಮೊದಲ line run ಮಾಡುತ್ತೆ. ಆಮೇಲೆ ಎರಡನೇ line ನಲ್ಲಿ ನಿಂತು, ಏನು ತಪ್ಪಾಯ್ತು ಅಂತ exactly ಹೇಳುತ್ತೆ.",
+   "tts": "ಪೈಥಾನ್ ಮೊದಲ line run ಮಾಡುತ್ತೆ. ಆಮೇಲೆ ಎರಡನೇ line ನಲ್ಲಿ ನಿಂತು, ಏನು ತಪ್ಪಾಯ್ತು ಅಂತ exactly ಹೇಳುತ್ತೆ."
+  },
+  {
+   "id": "l16",
+   "scene": "errors",
+   "say": "Name error: weight ಅನ್ನೋ name define ಆಗಿಲ್ಲ. ಮೂರನೇ line run ಆಗೋದೇ ಇಲ್ಲ.",
+   "tts": "Name error: weight ಅನ್ನೋ name define ಆಗಿಲ್ಲ. ಮೂರನೇ line run ಆಗೋದೇ ಇಲ್ಲ."
+  },
+  {
+   "id": "l17",
+   "scene": "errors",
+   "say": "Prescription ನಲ್ಲಿ clear ಇಲ್ಲದ line ನೋಡಿ, pharmacist ನಿಲ್ಲಿಸ್ತಾರಲ್ಲ, ಹಾಗೇ.",
+   "tts": "Prescription ನಲ್ಲಿ clear ಇಲ್ಲದ line ನೋಡಿ, pharmacist ನಿಲ್ಲಿಸ್ತಾರಲ್ಲ, ಹಾಗೇ."
+  },
+  {
+   "id": "l18",
+   "scene": "syntax",
+   "say": "ಈಗ ಇದನ್ನ ನೋಡಿ. ಎರಡನೇ line ನಲ್ಲಿ closing bracket ಇಲ್ಲ.",
+   "tts": "ಈಗ ಇದನ್ನ ನೋಡಿ. ಎರಡನೇ line ನಲ್ಲಿ closing bracket ಇಲ್ಲ."
+  },
+  {
+   "id": "l19",
+   "scene": "syntax",
+   "say": "ಈ ಸಲ, ಏನೂ print ಆಗಲ್ಲ. ಮೊದಲ line ಕೂಡ.",
+   "tts": "ಈ ಸಲ, ಏನೂ print ಆಗಲ್ಲ. ಮೊದಲ line ಕೂಡ."
+  },
+  {
+   "id": "l20",
+   "scene": "syntax",
+   "say": "ಯಾಕಂದ್ರೆ, ಏನನ್ನೂ run ಮಾಡೋಕೆ ಮುಂಚೆ, ಪೂರ್ತಿ program ಸರಿಯಾಗಿ ಬರೆದಿದೆಯಾ ಅಂತ Python check ಮಾಡುತ್ತೆ.",
+   "tts": "ಯಾಕಂದ್ರೆ, ಏನನ್ನೂ run ಮಾಡೋಕೆ ಮುಂಚೆ, ಪೂರ್ತಿ program ಸರಿಯಾಗಿ ಬರೆದಿದೆಯಾ ಅಂತ ಪೈಥಾನ್ check ಮಾಡುತ್ತೆ."
+  },
+  {
+   "id": "l21",
+   "scene": "syntax",
+   "say": "ಇಂಥ ಬರವಣಿಗೆ ತಪ್ಪನ್ನ syntax error ಅಂತಾರೆ. Syntax ಅಂದ್ರೆ, ಆ language ನ grammar rules.",
+   "tts": "ಇಂಥ ಬರವಣಿಗೆ ತಪ್ಪನ್ನ syntax error ಅಂತಾರೆ. Syntax ಅಂದ್ರೆ, ಆ language ನ grammar rules."
+  },
+  {
+   "id": "l22",
+   "scene": "mistakes",
+   "say": "ಹೆಚ್ಚು ಕಡಿಮೆ ಎಲ್ಲಾ beginners ಮಾಡೋ ಮೂರು ತಪ್ಪುಗಳು.",
+   "tts": "ಹೆಚ್ಚು ಕಡಿಮೆ ಎಲ್ಲಾ beginners ಮಾಡೋ ಮೂರು ತಪ್ಪುಗಳು."
+  },
+  {
+   "id": "l23",
+   "scene": "mistakes",
+   "say": "ಒಂದು: Print ಅನ್ನ capital P ಇಂದ ಬರೆಯೋದು. Python case-sensitive, ಅದಕ್ಕೇ ಯಾವಾಗಲೂ small letters.",
+   "tts": "ಒಂದು: Print ಅನ್ನ capital P ಇಂದ ಬರೆಯೋದು. ಪೈಥಾನ್ case-sensitive, ಅದಕ್ಕೇ ಯಾವಾಗಲೂ small letters."
+  },
+  {
+   "id": "l24",
+   "scene": "mistakes",
+   "say": "ಎರಡು: WhatsApp ಇಂದ code copy ಮಾಡೋದು, curly quotes ಜೊತೆ. Quotes ಅನ್ನ ನೀವೇ type ಮಾಡಿ.",
+   "tts": "ಎರಡು: WhatsApp ಇಂದ code copy ಮಾಡೋದು, curly quotes ಜೊತೆ. Quotes ಅನ್ನ ನೀವೇ type ಮಾಡಿ."
+  },
+  {
+   "id": "l25",
+   "scene": "mistakes",
+   "say": "ಮೂರು: text ಸುತ್ತ quotes ಹಾಕೋದು ಮರೆಯೋದು.",
+   "tts": "ಮೂರು: text ಸುತ್ತ quotes ಹಾಕೋದು ಮರೆಯೋದು."
+  },
+  {
+   "id": "l26",
+   "scene": "mistakes",
+   "say": "ನೆನಪಿಡಿ, error ಅಂದ್ರೆ fail ಅಲ್ಲ. ಎಲ್ಲಿ ನೋಡಬೇಕು ಅಂತ Python ತೋರಿಸ್ತಾ ಇದೆ ಅಷ್ಟೇ.",
+   "tts": "ನೆನಪಿಡಿ, error ಅಂದ್ರೆ fail ಅಲ್ಲ. ಎಲ್ಲಿ ನೋಡಬೇಕು ಅಂತ ಪೈಥಾನ್ ತೋರಿಸ್ತಾ ಇದೆ ಅಷ್ಟೇ."
+  },
+  {
+   "id": "l27",
+   "scene": "quiz",
+   "say": "ಒಂದು quick check. ಈ line ಏನು print ಮಾಡುತ್ತೆ?",
+   "tts": "ಒಂದು quick check. ಈ line ಏನು print ಮಾಡುತ್ತೆ?"
+  },
+  {
+   "id": "l28",
+   "scene": "quiz",
+   "say": "Pause ಮಾಡಿ ಯೋಚಿಸಿ.",
+   "tts": "Pause ಮಾಡಿ ಯೋಚಿಸಿ."
+  },
+  {
+   "id": "l29",
+   "scene": "quiz-answer",
+   "say": "ಉತ್ತರ B. Dose, 500 mg. Python ಮೊದಲು multiply ಮಾಡ್ತು. Super!",
+   "tts": "ಉತ್ತರ B. Dose, ಐನೂರು milligram. ಪೈಥಾನ್ ಮೊದಲು multiply ಮಾಡ್ತು. Super!"
+  },
+  {
+   "id": "l30",
+   "scene": "recap",
+   "say": "ಒಂದ್ಸಲ recap ಮಾಡೋಣ.",
+   "tts": "ಒಂದ್ಸಲ recap ಮಾಡೋಣ."
+  },
+  {
+   "id": "l31",
+   "scene": "recap",
+   "say": "Print, text ಮತ್ತೆ numbers ಅನ್ನ screen ಮೇಲೆ ತೋರಿಸುತ್ತೆ. Hash sign ಇಂದ comment ಶುರು ಆಗುತ್ತೆ.",
+   "tts": "Print, text ಮತ್ತೆ numbers ಅನ್ನ screen ಮೇಲೆ ತೋರಿಸುತ್ತೆ. Hash sign ಇಂದ comment ಶುರು ಆಗುತ್ತೆ."
+  },
+  {
+   "id": "l32",
+   "scene": "recap",
+   "say": "Python ನಿಮ್ಮ code ಅನ್ನ ಒಂದೊಂದೇ line ಆಗಿ, ಮೇಲಿಂದ ಕೆಳಗೆ run ಮಾಡುತ್ತೆ.",
+   "tts": "ಪೈಥಾನ್ ನಿಮ್ಮ code ಅನ್ನ ಒಂದೊಂದೇ line ಆಗಿ, ಮೇಲಿಂದ ಕೆಳಗೆ run ಮಾಡುತ್ತೆ."
+  },
+  {
+   "id": "l33",
+   "scene": "recap",
+   "say": "Errors, Python ಎಲ್ಲಿ stuck ಆಯ್ತು ಅಂತ exactly ಹೇಳುತ್ತೆ.",
+   "tts": "Errors, ಪೈಥಾನ್ ಎಲ್ಲಿ stuck ಆಯ್ತು ಅಂತ exactly ಹೇಳುತ್ತೆ."
+  },
+  {
+   "id": "l34",
+   "scene": "cta",
+   "say": "ಈಗ ನಿಮ್ಮ turn. Campus Champ ನಲ್ಲಿ ಈ lesson open ಮಾಡಿ.",
+   "tts": "ಈಗ ನಿಮ್ಮ turn. Campus Champ ನಲ್ಲಿ ಈ lesson open ಮಾಡಿ."
+  },
+  {
+   "id": "l35",
+   "scene": "cta",
+   "say": "ನಿಮ್ಮ ಮೊದಲ program ಬರೆಯಿರಿ, ನಿಮ್ಮದೇ medicine label ಮಾಡಿ, ನಿಮ್ಮ phone ನಲ್ಲೇ.",
+   "tts": "ನಿಮ್ಮ ಮೊದಲ program ಬರೆಯಿರಿ, ನಿಮ್ಮದೇ medicine label ಮಾಡಿ, ನಿಮ್ಮ phone ನಲ್ಲೇ."
+  },
+  {
+   "id": "l36",
+   "scene": "cta",
+   "say": "ನಿಮ್ಮ answer ಅನ್ನ ತಕ್ಷಣ check ಮಾಡುತ್ತೆ. ಅದೂ free.",
+   "tts": "ನಿಮ್ಮ answer ಅನ್ನ ತಕ್ಷಣ check ಮಾಡುತ್ತೆ. ಅದೂ free."
+  },
+  {
+   "id": "l37",
+   "scene": "cta",
+   "say": "ಮುಂದಿನ lesson ನಲ್ಲಿ: computer ನಲ್ಲಿ Python install ಮಾಡಿ, programmers use ಮಾಡೋ tools ನೋಡೋಣ. ಅಲ್ಲಿ ಸಿಗೋಣ!",
+   "tts": "ಮುಂದಿನ lesson ನಲ್ಲಿ: computer ನಲ್ಲಿ ಪೈಥಾನ್ install ಮಾಡಿ, programmers use ಮಾಡೋ tools ನೋಡೋಣ. ಅಲ್ಲಿ ಸಿಗೋಣ!"
+  }
+ ]
+}

@@ -1,0 +1,232 @@
+{
+ "course": "bp101t",
+ "lesson": "1-1",
+ "episode": 3,
+ "lang": "en",
+ "engine": "sarvam",
+ "speaker": "ritu_en_edtech",
+ "lines": [
+  {
+   "id": "l01",
+   "scene": "hook",
+   "say": "In the next four minutes, you'll understand your first real Python program.",
+   "tts": "In the next four minutes, you'll understand your first real Python program."
+  },
+  {
+   "id": "l02",
+   "scene": "hook",
+   "say": "A program that prints a medicine label, like this one.",
+   "tts": "A program that prints a medicine label, like this one."
+  },
+  {
+   "id": "l03",
+   "scene": "hook",
+   "say": "And then, we'll break it on purpose, and see what Python does.",
+   "tts": "And then, we'll break it on purpose, and see what Python does."
+  },
+  {
+   "id": "l04",
+   "scene": "walk",
+   "say": "Here's the program. Five lines. Let's run it the way Python does: one line at a time, from top to bottom.",
+   "tts": "Here's the program. Five lines. Let's run it the way Python does: one line at a time, from top to bottom."
+  },
+  {
+   "id": "l05",
+   "scene": "walk",
+   "say": "Line one starts with a hash sign. That's a comment: a note for humans. Python simply skips it.",
+   "tts": "Line one starts with a hash sign. That's a comment: a note for humans. Python simply skips it."
+  },
+  {
+   "id": "l06",
+   "scene": "walk",
+   "say": "Line two: print. Print means: show this on the screen.",
+   "tts": "Line two: print. Print means: show this on the screen."
+  },
+  {
+   "id": "l07",
+   "scene": "walk",
+   "say": "The words inside the quotes are shown exactly as written. Text in quotes is called a string.",
+   "tts": "The words inside the quotes are shown exactly as written. Text in quotes is called a string."
+  },
+  {
+   "id": "l08",
+   "scene": "walk",
+   "say": "Line three prints the drug name. Every print starts on a new line.",
+   "tts": "Line three prints the drug name. Every print starts on a new line."
+  },
+  {
+   "id": "l09",
+   "scene": "walk",
+   "say": "Line four has three items, separated by commas. Python shows them one after another, with a space in between.",
+   "tts": "Line four has three items, separated by commas. Python shows them one after another, with a space in between."
+  },
+  {
+   "id": "l10",
+   "scene": "walk",
+   "say": "Line five has a small calculation. The star sign means multiply.",
+   "tts": "Line five has a small calculation. The star sign means multiply."
+  },
+  {
+   "id": "l11",
+   "scene": "walk",
+   "say": "Python first works out 500 times 3, which is 1500, and then prints the answer.",
+   "tts": "Python first works out five hundred times three, which is fifteen hundred, and then prints the answer."
+  },
+  {
+   "id": "l12",
+   "scene": "walk",
+   "say": "Four instructions, in order, from top to bottom. You've just understood your first program!",
+   "tts": "Four instructions, in order, from top to bottom. You've just understood your first program!"
+  },
+  {
+   "id": "l13",
+   "scene": "errors",
+   "say": "Now, let's break it. On purpose.",
+   "tts": "Now, let's break it. On purpose."
+  },
+  {
+   "id": "l14",
+   "scene": "errors",
+   "say": "In this program, line two uses a word Python has never heard of: weight.",
+   "tts": "In this program, line two uses a word Python has never heard of: weight."
+  },
+  {
+   "id": "l15",
+   "scene": "errors",
+   "say": "Python runs line one. Then it stops at line two, and tells you exactly what went wrong.",
+   "tts": "Python runs line one. Then it stops at line two, and tells you exactly what went wrong."
+  },
+  {
+   "id": "l16",
+   "scene": "errors",
+   "say": "Name error: name weight is not defined. And line three never runs.",
+   "tts": "Name error: name weight is not defined. And line three never runs."
+  },
+  {
+   "id": "l17",
+   "scene": "errors",
+   "say": "Just like a pharmacist who stops at an unclear line on a prescription.",
+   "tts": "Just like a pharmacist who stops at an unclear line on a prescription."
+  },
+  {
+   "id": "l18",
+   "scene": "syntax",
+   "say": "Now look at this one. Line two is missing its closing bracket.",
+   "tts": "Now look at this one. Line two is missing its closing bracket."
+  },
+  {
+   "id": "l19",
+   "scene": "syntax",
+   "say": "This time, nothing is printed. Not even line one.",
+   "tts": "This time, nothing is printed. Not even line one."
+  },
+  {
+   "id": "l20",
+   "scene": "syntax",
+   "say": "Because before running anything, Python checks that the whole program is written correctly.",
+   "tts": "Because before running anything, Python checks that the whole program is written correctly."
+  },
+  {
+   "id": "l21",
+   "scene": "syntax",
+   "say": "A writing mistake like this is called a syntax error. Syntax means the grammar rules of the language.",
+   "tts": "A writing mistake like this is called a syntax error. Syntax means the grammar rules of the language."
+  },
+  {
+   "id": "l22",
+   "scene": "mistakes",
+   "say": "Three mistakes almost every beginner makes.",
+   "tts": "Three mistakes almost every beginner makes."
+  },
+  {
+   "id": "l23",
+   "scene": "mistakes",
+   "say": "One: writing Print with a capital P. Python is case-sensitive, so always use small letters.",
+   "tts": "One: writing Print with a capital P. Python is case-sensitive, so always use small letters."
+  },
+  {
+   "id": "l24",
+   "scene": "mistakes",
+   "say": "Two: copying code from WhatsApp, with curly quotes. Type the quotes yourself.",
+   "tts": "Two: copying code from WhatsApp, with curly quotes. Type the quotes yourself."
+  },
+  {
+   "id": "l25",
+   "scene": "mistakes",
+   "say": "Three: forgetting the quotes around text.",
+   "tts": "Three: forgetting the quotes around text."
+  },
+  {
+   "id": "l26",
+   "scene": "mistakes",
+   "say": "Remember, errors aren't failures. They're Python pointing at exactly where to look.",
+   "tts": "Remember, errors aren't failures. They're Python pointing at exactly where to look."
+  },
+  {
+   "id": "l27",
+   "scene": "quiz",
+   "say": "Quick check. What does this line print?",
+   "tts": "Quick check. What does this line print?"
+  },
+  {
+   "id": "l28",
+   "scene": "quiz",
+   "say": "Pause and think.",
+   "tts": "Pause and think."
+  },
+  {
+   "id": "l29",
+   "scene": "quiz-answer",
+   "say": "The answer is B: Dose, 500 mg. Python did the multiplication first. Super!",
+   "tts": "The answer is B: Dose, five hundred milligrams. Python did the multiplication first. Super!"
+  },
+  {
+   "id": "l30",
+   "scene": "recap",
+   "say": "Let's recap.",
+   "tts": "Let's recap."
+  },
+  {
+   "id": "l31",
+   "scene": "recap",
+   "say": "Print shows text and numbers on the screen. A hash sign starts a comment.",
+   "tts": "Print shows text and numbers on the screen. A hash sign starts a comment."
+  },
+  {
+   "id": "l32",
+   "scene": "recap",
+   "say": "Python runs your code one line at a time, from top to bottom.",
+   "tts": "Python runs your code one line at a time, from top to bottom."
+  },
+  {
+   "id": "l33",
+   "scene": "recap",
+   "say": "And errors tell you exactly where Python got stuck.",
+   "tts": "And errors tell you exactly where Python got stuck."
+  },
+  {
+   "id": "l34",
+   "scene": "cta",
+   "say": "Now it's your turn. Open this lesson on Campus Champ.",
+   "tts": "Now it's your turn. Open this lesson on Campus Champ."
+  },
+  {
+   "id": "l35",
+   "scene": "cta",
+   "say": "Write your first program, and make your own medicine label, right on your phone.",
+   "tts": "Write your first program, and make your own medicine label, right on your phone."
+  },
+  {
+   "id": "l36",
+   "scene": "cta",
+   "say": "It checks your answer instantly. And it's free.",
+   "tts": "It checks your answer instantly. And it's free."
+  },
+  {
+   "id": "l37",
+   "scene": "cta",
+   "say": "Next lesson: we'll install Python on a computer, and meet the tools programmers use. See you there!",
+   "tts": "Next lesson: we'll install Python on a computer, and meet the tools programmers use. See you there!"
+  }
+ ]
+}

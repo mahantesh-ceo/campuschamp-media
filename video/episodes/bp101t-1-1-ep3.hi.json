@@ -1,0 +1,232 @@
+{
+ "course": "bp101t",
+ "lesson": "1-1",
+ "episode": 3,
+ "lang": "hi",
+ "engine": "sarvam",
+ "speaker": "ritu_hi_conversation",
+ "lines": [
+  {
+   "id": "l01",
+   "scene": "hook",
+   "say": "अगले चार मिनट में, आप अपना पहला असली Python program समझ जाएँगे.",
+   "tts": "अगले चार मिनट में, आप अपना पहला असली पाइथन program समझ जाएँगे."
+  },
+  {
+   "id": "l02",
+   "scene": "hook",
+   "say": "एक program, जो ऐसा medicine label print करता है.",
+   "tts": "एक program, जो ऐसा medicine label print करता है."
+  },
+  {
+   "id": "l03",
+   "scene": "hook",
+   "say": "और फिर, जान-बूझकर उसे तोड़ेंगे, और देखेंगे कि Python क्या करता है.",
+   "tts": "और फिर, जान-बूझकर उसे तोड़ेंगे, और देखेंगे कि पाइथन क्या करता है."
+  },
+  {
+   "id": "l04",
+   "scene": "walk",
+   "say": "ये रहा program. पाँच lines. चलिए इसे Python की तरह ही run करते हैं: एक-एक line, ऊपर से नीचे.",
+   "tts": "ये रहा program. पाँच lines. चलिए इसे पाइथन की तरह ही run करते हैं: एक-एक line, ऊपर से नीचे."
+  },
+  {
+   "id": "l05",
+   "scene": "walk",
+   "say": "पहली line hash sign से शुरू होती है. ये comment है: इंसानों के लिए एक note. Python इसे skip कर देता है.",
+   "tts": "पहली line hash sign से शुरू होती है. ये comment है: इंसानों के लिए एक note. पाइथन इसे skip कर देता है."
+  },
+  {
+   "id": "l06",
+   "scene": "walk",
+   "say": "दूसरी line: print. Print मतलब: इसे screen पर दिखाओ.",
+   "tts": "दूसरी line: print. Print मतलब: इसे screen पर दिखाओ."
+  },
+  {
+   "id": "l07",
+   "scene": "walk",
+   "say": "Quotes के अंदर के शब्द, बिल्कुल वैसे ही दिखते हैं जैसे लिखे हैं. Quotes वाले text को string कहते हैं.",
+   "tts": "Quotes के अंदर के शब्द, बिल्कुल वैसे ही दिखते हैं जैसे लिखे हैं. Quotes वाले text को string कहते हैं."
+  },
+  {
+   "id": "l08",
+   "scene": "walk",
+   "say": "तीसरी line drug का नाम print करती है. हर print नई line से शुरू होता है.",
+   "tts": "तीसरी line drug का नाम print करती है. हर print नई line से शुरू होता है."
+  },
+  {
+   "id": "l09",
+   "scene": "walk",
+   "say": "चौथी line में तीन items हैं, commas से अलग किए हुए. Python उन्हें एक के बाद एक, बीच में space देकर दिखाता है.",
+   "tts": "चौथी line में तीन items हैं, commas से अलग किए हुए. पाइथन उन्हें एक के बाद एक, बीच में space देकर दिखाता है."
+  },
+  {
+   "id": "l10",
+   "scene": "walk",
+   "say": "पाँचवीं line में एक छोटी सी calculation है. Star sign का मतलब है multiply.",
+   "tts": "पाँचवीं line में एक छोटी सी calculation है. Star sign का मतलब है multiply."
+  },
+  {
+   "id": "l11",
+   "scene": "walk",
+   "say": "Python पहले 500 गुणा 3 करता है, यानी 1500, और फिर answer print करता है.",
+   "tts": "पाइथन पहले पाँच सौ गुणा तीन करता है, यानी पंद्रह सौ, और फिर answer print करता है."
+  },
+  {
+   "id": "l12",
+   "scene": "walk",
+   "say": "चार instructions, order में, ऊपर से नीचे. आपने अपना पहला program समझ लिया!",
+   "tts": "चार instructions, order में, ऊपर से नीचे. आपने अपना पहला program समझ लिया!"
+  },
+  {
+   "id": "l13",
+   "scene": "errors",
+   "say": "अब, इसे जान-बूझकर तोड़ते हैं.",
+   "tts": "अब, इसे जान-बूझकर तोड़ते हैं."
+  },
+  {
+   "id": "l14",
+   "scene": "errors",
+   "say": "इस program की दूसरी line में, एक ऐसा शब्द है जो Python ने कभी सुना ही नहीं: weight.",
+   "tts": "इस program की दूसरी line में, एक ऐसा शब्द है जो पाइथन ने कभी सुना ही नहीं: weight."
+  },
+  {
+   "id": "l15",
+   "scene": "errors",
+   "say": "Python पहली line run करता है. फिर दूसरी line पर रुक जाता है, और ठीक-ठीक बताता है कि क्या गलत हुआ.",
+   "tts": "पाइथन पहली line run करता है. फिर दूसरी line पर रुक जाता है, और ठीक-ठीक बताता है कि क्या गलत हुआ."
+  },
+  {
+   "id": "l16",
+   "scene": "errors",
+   "say": "Name error: weight नाम define नहीं है. और तीसरी line कभी run ही नहीं होती.",
+   "tts": "Name error: weight नाम define नहीं है. और तीसरी line कभी run ही नहीं होती."
+  },
+  {
+   "id": "l17",
+   "scene": "errors",
+   "say": "बिल्कुल वैसे, जैसे pharmacist prescription की किसी unclear line पर रुक जाता है.",
+   "tts": "बिल्कुल वैसे, जैसे pharmacist prescription की किसी unclear line पर रुक जाता है."
+  },
+  {
+   "id": "l18",
+   "scene": "syntax",
+   "say": "अब इसे देखिए. दूसरी line में closing bracket नहीं है.",
+   "tts": "अब इसे देखिए. दूसरी line में closing bracket नहीं है."
+  },
+  {
+   "id": "l19",
+   "scene": "syntax",
+   "say": "इस बार, कुछ भी print नहीं होता. पहली line भी नहीं.",
+   "tts": "इस बार, कुछ भी print नहीं होता. पहली line भी नहीं."
+  },
+  {
+   "id": "l20",
+   "scene": "syntax",
+   "say": "क्योंकि कुछ भी run करने से पहले, Python check करता है कि पूरा program सही लिखा है या नहीं.",
+   "tts": "क्योंकि कुछ भी run करने से पहले, पाइथन check करता है कि पूरा program सही लिखा है या नहीं."
+  },
+  {
+   "id": "l21",
+   "scene": "syntax",
+   "say": "लिखने की ऐसी गलती को syntax error कहते हैं. Syntax मतलब, उस language के grammar rules.",
+   "tts": "लिखने की ऐसी गलती को syntax error कहते हैं. Syntax मतलब, उस language के grammar rules."
+  },
+  {
+   "id": "l22",
+   "scene": "mistakes",
+   "say": "तीन गलतियाँ, जो लगभग हर beginner करता है.",
+   "tts": "तीन गलतियाँ, जो लगभग हर beginner करता है."
+  },
+  {
+   "id": "l23",
+   "scene": "mistakes",
+   "say": "एक: Print को capital P से लिखना. Python case-sensitive है, इसलिए हमेशा small letters.",
+   "tts": "एक: Print को capital P से लिखना. पाइथन case-sensitive है, इसलिए हमेशा small letters."
+  },
+  {
+   "id": "l24",
+   "scene": "mistakes",
+   "say": "दो: WhatsApp से code copy करना, curly quotes के साथ. Quotes खुद type कीजिए.",
+   "tts": "दो: WhatsApp से code copy करना, curly quotes के साथ. Quotes खुद type कीजिए."
+  },
+  {
+   "id": "l25",
+   "scene": "mistakes",
+   "say": "तीन: text के चारों ओर quotes लगाना भूल जाना.",
+   "tts": "तीन: text के चारों ओर quotes लगाना भूल जाना."
+  },
+  {
+   "id": "l26",
+   "scene": "mistakes",
+   "say": "याद रखिए, error का मतलब fail होना नहीं है. Python बस बता रहा है कि कहाँ देखना है.",
+   "tts": "याद रखिए, error का मतलब fail होना नहीं है. पाइथन बस बता रहा है कि कहाँ देखना है."
+  },
+  {
+   "id": "l27",
+   "scene": "quiz",
+   "say": "एक quick check. ये line क्या print करेगी?",
+   "tts": "एक quick check. ये line क्या print करेगी?"
+  },
+  {
+   "id": "l28",
+   "scene": "quiz",
+   "say": "Pause करके सोचिए.",
+   "tts": "Pause करके सोचिए."
+  },
+  {
+   "id": "l29",
+   "scene": "quiz-answer",
+   "say": "जवाब है B. Dose, 500 mg. Python ने पहले multiply किया. Super!",
+   "tts": "जवाब है B. Dose, पाँच सौ milligram. पाइथन ने पहले multiply किया. Super!"
+  },
+  {
+   "id": "l30",
+   "scene": "recap",
+   "say": "चलिए, recap करते हैं.",
+   "tts": "चलिए, recap करते हैं."
+  },
+  {
+   "id": "l31",
+   "scene": "recap",
+   "say": "Print, text और numbers को screen पर दिखाता है. Hash sign से comment शुरू होता है.",
+   "tts": "Print, text और numbers को screen पर दिखाता है. Hash sign से comment शुरू होता है."
+  },
+  {
+   "id": "l32",
+   "scene": "recap",
+   "say": "Python आपका code एक-एक line करके, ऊपर से नीचे run करता है.",
+   "tts": "पाइथन आपका code एक-एक line करके, ऊपर से नीचे run करता है."
+  },
+  {
+   "id": "l33",
+   "scene": "recap",
+   "say": "और errors ठीक-ठीक बताती हैं कि Python कहाँ अटका.",
+   "tts": "और errors ठीक-ठीक बताती हैं कि पाइथन कहाँ अटका."
+  },
+  {
+   "id": "l34",
+   "scene": "cta",
+   "say": "अब आपकी बारी. Campus Champ पर ये lesson खोलिए.",
+   "tts": "अब आपकी बारी. Campus Champ पर ये lesson खोलिए."
+  },
+  {
+   "id": "l35",
+   "scene": "cta",
+   "say": "अपना पहला program लिखिए, और अपना खुद का medicine label बनाइए, अपने phone पर ही.",
+   "tts": "अपना पहला program लिखिए, और अपना खुद का medicine label बनाइए, अपने phone पर ही."
+  },
+  {
+   "id": "l36",
+   "scene": "cta",
+   "say": "ये आपका answer तुरंत check करता है. और ये free है.",
+   "tts": "ये आपका answer तुरंत check करता है. और ये free है."
+  },
+  {
+   "id": "l37",
+   "scene": "cta",
+   "say": "अगले lesson में: computer पर Python install करेंगे, और programmers के tools देखेंगे. वहीं मिलते हैं!",
+   "tts": "अगले lesson में: computer पर पाइथन install करेंगे, और programmers के tools देखेंगे. वहीं मिलते हैं!"
+  }
+ ]
+}
