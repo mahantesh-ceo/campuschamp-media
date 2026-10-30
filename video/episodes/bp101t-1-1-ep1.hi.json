@@ -1,0 +1,353 @@
+{
+ "course": "bp101t",
+ "lesson": "1-1",
+ "episode": 1,
+ "lang": "hi",
+ "voice": null,
+ "lines": [
+  {
+   "id": "l01",
+   "scene": "cold",
+   "say": "सोमवार की सुबह. लखनऊ की एक pharmacy.",
+   "tts": "सोमवार की सुबह. लखनऊ की एक pharmacy."
+  },
+  {
+   "id": "l02",
+   "scene": "cold",
+   "say": "दो सौ prescriptions इंतज़ार कर रहे हैं.",
+   "tts": "दो सौ prescriptions इंतज़ार कर रहे हैं."
+  },
+  {
+   "id": "l03",
+   "scene": "cold",
+   "say": "हर prescription छोटे-छोटे instructions की एक list है. Pharmacist उन्हें step by step follow करते हैं.",
+   "tts": "हर prescription छोटे-छोटे instructions की एक list है. Pharmacist उन्हें step by step follow करते हैं."
+  },
+  {
+   "id": "l04",
+   "scene": "rx",
+   "say": "चलिए, एक prescription को पास से देखते हैं.",
+   "tts": "चलिए, एक prescription को पास से देखते हैं."
+  },
+  {
+   "id": "l05",
+   "scene": "rx",
+   "say": "इसमें बस तीन lines हैं.",
+   "tts": "इसमें बस तीन lines हैं."
+  },
+  {
+   "id": "l06",
+   "scene": "rx",
+   "say": "Paracetamol, पाँच सौ milligram.",
+   "tts": "Paracetamol, पाँच सौ milligram."
+  },
+  {
+   "id": "l07",
+   "scene": "rx",
+   "say": "एक tablet लीजिए.",
+   "tts": "एक tablet लीजिए."
+  },
+  {
+   "id": "l08",
+   "scene": "rx",
+   "say": "दिन में तीन बार, खाने के बाद.",
+   "tts": "दिन में तीन बार, खाने के बाद."
+  },
+  {
+   "id": "l09",
+   "scene": "rx",
+   "say": "यहाँ तीन बातों पर ध्यान दीजिए.",
+   "tts": "यहाँ तीन बातों पर ध्यान दीजिए."
+  },
+  {
+   "id": "l10",
+   "scene": "rx",
+   "say": "पहली: हर line एक clear instruction है.",
+   "tts": "पहली: हर line एक clear instruction है."
+  },
+  {
+   "id": "l11",
+   "scene": "rx",
+   "say": "दूसरी: सारी lines एक order में लिखी हैं.",
+   "tts": "दूसरी: सारी lines एक order में लिखी हैं."
+  },
+  {
+   "id": "l12",
+   "scene": "rx",
+   "say": "तीसरी: patient उन्हें बिल्कुल वैसे ही follow करता है, जैसा लिखा है.",
+   "tts": "तीसरी: patient उन्हें बिल्कुल वैसे ही follow करता है, जैसा लिखा है."
+  },
+  {
+   "id": "l13",
+   "scene": "rx",
+   "say": "ये तीन शब्द याद रखिए: Clear. In order. Followed exactly.",
+   "tts": "ये तीन शब्द याद रखिए: Clear. In order. Followed exactly."
+  },
+  {
+   "id": "l14",
+   "scene": "rx",
+   "say": "ये पूरा lesson इन्हीं तीन बातों पर टिका है.",
+   "tts": "ये पूरा lesson इन्हीं तीन बातों पर टिका है."
+  },
+  {
+   "id": "l15",
+   "scene": "unclear",
+   "say": "अब सोचिए, अगर दूसरी line में बस इतना लिखा होता, \"tablet लीजिए\", तो?",
+   "tts": "अब सोचिए, अगर दूसरी line में बस इतना लिखा होता, \"tablet लीजिए\", तो?"
+  },
+  {
+   "id": "l16",
+   "scene": "unclear",
+   "say": "कौन सी tablet? कितनी tablets?",
+   "tts": "कौन सी tablet? कितनी tablets?"
+  },
+  {
+   "id": "l17",
+   "scene": "unclear",
+   "say": "हम तो doctor को call करके पूछ लेंगे.",
+   "tts": "हम तो doctor को call करके पूछ लेंगे."
+  },
+  {
+   "id": "l18",
+   "scene": "unclear",
+   "say": "और अगर lines आगे-पीछे हो जाएँ, तो मतलब ही बदल सकता है.",
+   "tts": "और अगर lines आगे-पीछे हो जाएँ, तो मतलब ही बदल सकता है."
+  },
+  {
+   "id": "l19",
+   "scene": "unclear",
+   "say": "दवाइयों के मामले में, छोटी सी confusion भी ख़तरनाक है.",
+   "tts": "दवाइयों के मामले में, छोटी सी confusion भी ख़तरनाक है."
+  },
+  {
+   "id": "l20",
+   "scene": "unclear",
+   "say": "इसीलिए prescription हमेशा clear और order में लिखा जाता है.",
+   "tts": "इसीलिए prescription हमेशा clear और order में लिखा जाता है."
+  },
+  {
+   "id": "l21",
+   "scene": "chip",
+   "say": "अब मिलते हैं हमारे computer से.",
+   "tts": "अब मिलते हैं हमारे computer से."
+  },
+  {
+   "id": "l22",
+   "scene": "chip",
+   "say": "ये बहुत fast है. एक second में लाखों steps कर देता है.",
+   "tts": "ये बहुत fast है. एक second में लाखों steps कर देता है."
+  },
+  {
+   "id": "l23",
+   "scene": "chip",
+   "say": "और ये कभी थकता नहीं.",
+   "tts": "और ये कभी थकता नहीं."
+  },
+  {
+   "id": "l24",
+   "scene": "chip",
+   "say": "लेकिन एक surprise है: इसमें common sense बिल्कुल नहीं है.",
+   "tts": "लेकिन एक surprise है: इसमें common sense बिल्कुल नहीं है."
+  },
+  {
+   "id": "l25",
+   "scene": "chip",
+   "say": "आप क्या कहना चाहते थे, ये guess नहीं कर सकता.",
+   "tts": "आप क्या कहना चाहते थे, ये guess नहीं कर सकता."
+  },
+  {
+   "id": "l26",
+   "scene": "chip",
+   "say": "Computer से कहिए: tablets count करो.",
+   "tts": "Computer से कहिए: tablets count करो."
+  },
+  {
+   "id": "l27",
+   "scene": "chip",
+   "say": "वो वहीं अटक जाएगा. कौन सी tablets? कहाँ? कैसे count करूँ?",
+   "tts": "वो वहीं अटक जाएगा. कौन सी tablets? कहाँ? कैसे count करूँ?"
+  },
+  {
+   "id": "l28",
+   "scene": "chip",
+   "say": "लेकिन उसे clear steps दीजिए, एक order में.",
+   "tts": "लेकिन उसे clear steps दीजिए, एक order में."
+  },
+  {
+   "id": "l29",
+   "scene": "chip",
+   "say": "Strip देखो. Zero से शुरू करो. हर tablet पर एक जोड़ो. Total दिखाओ.",
+   "tts": "Strip देखो. Zero से शुरू करो. हर tablet पर एक जोड़ो. Total दिखाओ."
+  },
+  {
+   "id": "l30",
+   "scene": "chip",
+   "say": "अब देखिए, हर बार एकदम perfect काम करता है.",
+   "tts": "अब देखिए, हर बार एकदम perfect काम करता है."
+  },
+  {
+   "id": "l31",
+   "scene": "program",
+   "say": "Order में लिखी, clear instructions की list, जिसे computer exactly follow करता है.",
+   "tts": "Order में लिखी, clear instructions की list, जिसे computer exactly follow करता है."
+  },
+  {
+   "id": "l32",
+   "scene": "program",
+   "say": "इसका एक नाम है.",
+   "tts": "इसका एक नाम है."
+  },
+  {
+   "id": "l33",
+   "scene": "program",
+   "say": "इसे program कहते हैं.",
+   "tts": "इसे program कहते हैं."
+  },
+  {
+   "id": "l34",
+   "scene": "program",
+   "say": "मतलब, program बिल्कुल prescription जैसा ही है.",
+   "tts": "मतलब, program बिल्कुल prescription जैसा ही है."
+  },
+  {
+   "id": "l35",
+   "scene": "program",
+   "say": "Prescription patient के लिए लिखा जाता है. Program computer के लिए.",
+   "tts": "Prescription patient के लिए लिखा जाता है. Program computer के लिए."
+  },
+  {
+   "id": "l36",
+   "scene": "exact",
+   "say": "याद रखिए, computer instructions को exactly follow करता है.",
+   "tts": "याद रखिए, computer instructions को exactly follow करता है."
+  },
+  {
+   "id": "l37",
+   "scene": "exact",
+   "say": "अगर आपने गलती से एक की जगह दस type कर दिया, तो वो आपसे पूछेगा नहीं.",
+   "tts": "अगर आपने गलती से एक की जगह दस type कर दिया, तो वो आपसे पूछेगा नहीं."
+  },
+  {
+   "id": "l38",
+   "scene": "exact",
+   "say": "आराम से दस ही दिखा देगा.",
+   "tts": "आराम से दस ही दिखा देगा."
+  },
+  {
+   "id": "l39",
+   "scene": "exact",
+   "say": "इसीलिए programming में भी, pharmacy की तरह, छोटी-छोटी details बहुत मायने रखती हैं.",
+   "tts": "इसीलिए programming में भी, pharmacy की तरह, छोटी-छोटी details बहुत मायने रखती हैं."
+  },
+  {
+   "id": "l40",
+   "scene": "exact",
+   "say": "घबराइए मत. Computer को कुछ समझ न आए, तो वो खुद हमें बता देता है.",
+   "tts": "घबराइए मत. Computer को कुछ समझ न आए, तो वो खुद हमें बता देता है."
+  },
+  {
+   "id": "l41",
+   "scene": "exact",
+   "say": "वो हम तीसरे episode में देखेंगे.",
+   "tts": "वो हम तीसरे episode में देखेंगे."
+  },
+  {
+   "id": "l42",
+   "scene": "around",
+   "say": "आपके phone का हर app एक program है.",
+   "tts": "आपके phone का हर app एक program है."
+  },
+  {
+   "id": "l43",
+   "scene": "around",
+   "say": "Medical shop का billing software.",
+   "tts": "Medical shop का billing software."
+  },
+  {
+   "id": "l44",
+   "scene": "around",
+   "say": "Sugar reading दिखाने वाला glucometer.",
+   "tts": "Sugar reading दिखाने वाला glucometer."
+  },
+  {
+   "id": "l45",
+   "scene": "around",
+   "say": "Hospital में patient records रखने वाला system.",
+   "tts": "Hospital में patient records रखने वाला system."
+  },
+  {
+   "id": "l46",
+   "scene": "around",
+   "say": "ये सब किसी की लिखी हुई instructions की lists हैं.",
+   "tts": "ये सब किसी की लिखी हुई instructions की lists हैं."
+  },
+  {
+   "id": "l47",
+   "scene": "around",
+   "say": "और बहुत जल्द, आप भी ऐसे programs लिखेंगे.",
+   "tts": "और बहुत जल्द, आप भी ऐसे programs लिखेंगे."
+  },
+  {
+   "id": "l48",
+   "scene": "quiz",
+   "say": "एक quick check. इनमें से program कौन सा है?",
+   "tts": "एक quick check. इनमें से program कौन सा है?"
+  },
+  {
+   "id": "l49",
+   "scene": "quiz",
+   "say": "सोचने के लिए time चाहिए, तो video pause कर लीजिए.",
+   "tts": "सोचने के लिए time चाहिए, तो video pause कर लीजिए."
+  },
+  {
+   "id": "l50",
+   "scene": "quiz-answer",
+   "say": "जवाब है B. Clear instructions की list, जिसे computer order में follow करता है. Super!",
+   "tts": "जवाब है B. Clear instructions की list, जिसे computer order में follow करता है. Super!"
+  },
+  {
+   "id": "l51",
+   "scene": "recap",
+   "say": "चलिए, एक बार recap करते हैं.",
+   "tts": "चलिए, एक बार recap करते हैं."
+  },
+  {
+   "id": "l52",
+   "scene": "recap",
+   "say": "Program मतलब, computer के लिए लिखी गई instructions की list.",
+   "tts": "Program मतलब, computer के लिए लिखी गई instructions की list."
+  },
+  {
+   "id": "l53",
+   "scene": "recap",
+   "say": "वो clear होनी चाहिए, और order में होनी चाहिए.",
+   "tts": "वो clear होनी चाहिए, और order में होनी चाहिए."
+  },
+  {
+   "id": "l54",
+   "scene": "recap",
+   "say": "और computer उन्हें exactly follow करता है.",
+   "tts": "और computer उन्हें exactly follow करता है."
+  },
+  {
+   "id": "l55",
+   "scene": "teaser",
+   "say": "लेकिन एक problem है. Computer को ना English समझ आती है, ना हिंदी.",
+   "tts": "लेकिन एक problem है. Computer को ना English समझ आती है, ना हिंदी."
+  },
+  {
+   "id": "l56",
+   "scene": "teaser",
+   "say": "तो फिर, उसे समझ आने वाली instructions हम लिखें कैसे?",
+   "tts": "तो फिर, उसे समझ आने वाली instructions हम लिखें कैसे?"
+  },
+  {
+   "id": "l57",
+   "scene": "teaser",
+   "say": "यही है हमारा अगला episode: Python क्यों? वहीं मिलते हैं!",
+   "tts": "यही है हमारा अगला episode: पाइथन क्यों? वहीं मिलते हैं!"
+  }
+ ],
+ "engine": "sarvam",
+ "speaker": "ritu_hi_conversation"
+}

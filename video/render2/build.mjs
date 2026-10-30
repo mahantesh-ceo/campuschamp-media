@@ -34,7 +34,12 @@ function envelope(f) {
 // Scenes in order; quiz-answer joins the quiz scene after a 5 s countdown
 const ORDER = ['cold', 'sting', 'rx', 'unclear', 'chip', 'program', 'exact', 'around', 'quiz', 'recap', 'teaser', 'end'];
 const HOLD = { cold: 3.2, sting: 2.8, rx: 0.8, unclear: 0.6, chip: 1.6, program: 1.2, exact: 0.6, around: 1.0, quiz: 1.2, recap: 1.4, teaser: 0.4, end: 6 };
-const CHAPTER = { cold: 'Intro', rx: 'ಒಂದು prescription', unclear: 'Clear ಆಗಿರದಿದ್ರೆ?', chip: 'Computer ಅನ್ನು ಭೇಟಿ ಮಾಡಿ', program: 'Program', exact: 'Exactly ಅಂದ್ರೆ exactly', around: 'ನಿಮ್ಮ ಸುತ್ತಾ programs', quiz: 'Quick check', recap: 'Recap', teaser: 'ಮುಂದೆ ಏನು?', end: 'Practise free' };
+const CHAPTERS = {
+  kn: { cold: 'Intro', rx: 'ಒಂದು prescription', unclear: 'Clear ಆಗಿರದಿದ್ರೆ?', chip: 'Computer ಅನ್ನು ಭೇಟಿ ಮಾಡಿ', program: 'Program', exact: 'Exactly ಅಂದ್ರೆ exactly', around: 'ನಿಮ್ಮ ಸುತ್ತಾ programs', quiz: 'Quick check', recap: 'Recap', teaser: 'ಮುಂದೆ ಏನು?', end: 'Practise free' },
+  hi: { cold: 'Intro', rx: 'एक prescription', unclear: 'Clear न हो तो?', chip: 'मिलिए computer से', program: 'Program', exact: 'Exactly मतलब exactly', around: 'आपके आस-पास programs', quiz: 'Quick check', recap: 'Recap', teaser: 'आगे क्या?', end: 'Practise free' },
+  en: { cold: 'Intro', rx: 'One prescription', unclear: "When it isn't clear", chip: 'Meet the computer', program: 'Program', exact: 'Exactly means exactly', around: 'Programs all around you', quiz: 'Quick check', recap: 'Recap', teaser: "What's next?", end: 'Practise free' },
+};
+const CHAPTER = CHAPTERS[E.lang] || CHAPTERS.en;
 
 let t = 0;
 const scenes = [];

@@ -1,0 +1,353 @@
+{
+ "course": "bp101t",
+ "lesson": "1-1",
+ "episode": 1,
+ "lang": "en",
+ "voice": null,
+ "lines": [
+  {
+   "id": "l01",
+   "scene": "cold",
+   "say": "Monday morning. A pharmacy in Bagalkot.",
+   "tts": "Monday morning. A pharmacy in Bagalkot."
+  },
+  {
+   "id": "l02",
+   "scene": "cold",
+   "say": "Two hundred prescriptions are waiting.",
+   "tts": "Two hundred prescriptions are waiting."
+  },
+  {
+   "id": "l03",
+   "scene": "cold",
+   "say": "Each one is a small list of instructions, and the pharmacist follows every one, step by step.",
+   "tts": "Each one is a small list of instructions, and the pharmacist follows every one, step by step."
+  },
+  {
+   "id": "l04",
+   "scene": "rx",
+   "say": "Come, let's look closely at one prescription.",
+   "tts": "Come, let's look closely at one prescription."
+  },
+  {
+   "id": "l05",
+   "scene": "rx",
+   "say": "It has just three lines.",
+   "tts": "It has just three lines."
+  },
+  {
+   "id": "l06",
+   "scene": "rx",
+   "say": "Paracetamol, five hundred milligrams.",
+   "tts": "Paracetamol, five hundred milligrams."
+  },
+  {
+   "id": "l07",
+   "scene": "rx",
+   "say": "Take one tablet.",
+   "tts": "Take one tablet."
+  },
+  {
+   "id": "l08",
+   "scene": "rx",
+   "say": "Three times a day, after food.",
+   "tts": "Three times a day, after food."
+  },
+  {
+   "id": "l09",
+   "scene": "rx",
+   "say": "Notice three things here.",
+   "tts": "Notice three things here."
+  },
+  {
+   "id": "l10",
+   "scene": "rx",
+   "say": "First: every line is a clear instruction.",
+   "tts": "First: every line is a clear instruction."
+  },
+  {
+   "id": "l11",
+   "scene": "rx",
+   "say": "Second: the lines are written in order.",
+   "tts": "Second: the lines are written in order."
+  },
+  {
+   "id": "l12",
+   "scene": "rx",
+   "say": "Third: the patient follows them exactly as written.",
+   "tts": "Third: the patient follows them exactly as written."
+  },
+  {
+   "id": "l13",
+   "scene": "rx",
+   "say": "Remember these three words: Clear. In order. Followed exactly.",
+   "tts": "Remember these three words: Clear. In order. Followed exactly."
+  },
+  {
+   "id": "l14",
+   "scene": "rx",
+   "say": "This whole lesson is built around them.",
+   "tts": "This whole lesson is built around them."
+  },
+  {
+   "id": "l15",
+   "scene": "unclear",
+   "say": "Now, what if the second line just said, \"take tablet\"?",
+   "tts": "Now, what if the second line just said, \"take tablet\"?"
+  },
+  {
+   "id": "l16",
+   "scene": "unclear",
+   "say": "Which tablet? How many?",
+   "tts": "Which tablet? How many?"
+  },
+  {
+   "id": "l17",
+   "scene": "unclear",
+   "say": "We would simply call the doctor and ask.",
+   "tts": "We would simply call the doctor and ask."
+  },
+  {
+   "id": "l18",
+   "scene": "unclear",
+   "say": "And if the lines got jumbled up, the meaning itself could change.",
+   "tts": "And if the lines got jumbled up, the meaning itself could change."
+  },
+  {
+   "id": "l19",
+   "scene": "unclear",
+   "say": "With medicines, even a small confusion is dangerous.",
+   "tts": "With medicines, even a small confusion is dangerous."
+  },
+  {
+   "id": "l20",
+   "scene": "unclear",
+   "say": "That's why prescriptions are written clearly, and in order.",
+   "tts": "That's why prescriptions are written clearly, and in order."
+  },
+  {
+   "id": "l21",
+   "scene": "chip",
+   "say": "Now, let's meet the computer.",
+   "tts": "Now, let's meet the computer."
+  },
+  {
+   "id": "l22",
+   "scene": "chip",
+   "say": "It is very fast. It can do lakhs of steps in a single second.",
+   "tts": "It is very fast. It can do lakhs of steps in a single second."
+  },
+  {
+   "id": "l23",
+   "scene": "chip",
+   "say": "And it never gets tired.",
+   "tts": "And it never gets tired."
+  },
+  {
+   "id": "l24",
+   "scene": "chip",
+   "say": "But here's a surprise: it has no common sense at all.",
+   "tts": "But here's a surprise: it has no common sense at all."
+  },
+  {
+   "id": "l25",
+   "scene": "chip",
+   "say": "It cannot guess what you meant.",
+   "tts": "It cannot guess what you meant."
+  },
+  {
+   "id": "l26",
+   "scene": "chip",
+   "say": "Tell the computer: count the tablets.",
+   "tts": "Tell the computer: count the tablets."
+  },
+  {
+   "id": "l27",
+   "scene": "chip",
+   "say": "It gets stuck right there. Which tablets? Where? Count how?",
+   "tts": "It gets stuck right there. Which tablets? Where? Count how?"
+  },
+  {
+   "id": "l28",
+   "scene": "chip",
+   "say": "But give it clear steps, in order.",
+   "tts": "But give it clear steps, in order."
+  },
+  {
+   "id": "l29",
+   "scene": "chip",
+   "say": "Look at the strip. Start from zero. Add one for each tablet. Show the total.",
+   "tts": "Look at the strip. Start from zero. Add one for each tablet. Show the total."
+  },
+  {
+   "id": "l30",
+   "scene": "chip",
+   "say": "Now it does the job perfectly, every single time.",
+   "tts": "Now it does the job perfectly, every single time."
+  },
+  {
+   "id": "l31",
+   "scene": "program",
+   "say": "A list of clear instructions, written in order, that the computer follows exactly.",
+   "tts": "A list of clear instructions, written in order, that the computer follows exactly."
+  },
+  {
+   "id": "l32",
+   "scene": "program",
+   "say": "This has a name.",
+   "tts": "This has a name."
+  },
+  {
+   "id": "l33",
+   "scene": "program",
+   "say": "It is called a program.",
+   "tts": "It is called a program."
+  },
+  {
+   "id": "l34",
+   "scene": "program",
+   "say": "So, a program is just like a prescription.",
+   "tts": "So, a program is just like a prescription."
+  },
+  {
+   "id": "l35",
+   "scene": "program",
+   "say": "A prescription is written for a patient. A program is written for a computer.",
+   "tts": "A prescription is written for a patient. A program is written for a computer."
+  },
+  {
+   "id": "l36",
+   "scene": "exact",
+   "say": "Remember, the computer follows instructions exactly.",
+   "tts": "Remember, the computer follows instructions exactly."
+  },
+  {
+   "id": "l37",
+   "scene": "exact",
+   "say": "If you type ten by mistake instead of one, it won't stop to ask you.",
+   "tts": "If you type ten by mistake instead of one, it won't stop to ask you."
+  },
+  {
+   "id": "l38",
+   "scene": "exact",
+   "say": "It will happily show ten.",
+   "tts": "It will happily show ten."
+  },
+  {
+   "id": "l39",
+   "scene": "exact",
+   "say": "That's why, in programming, just like in pharmacy, small details matter a lot.",
+   "tts": "That's why, in programming, just like in pharmacy, small details matter a lot."
+  },
+  {
+   "id": "l40",
+   "scene": "exact",
+   "say": "Don't worry. When the computer doesn't understand something, it tells us.",
+   "tts": "Don't worry. When the computer doesn't understand something, it tells us."
+  },
+  {
+   "id": "l41",
+   "scene": "exact",
+   "say": "We'll see that in Episode 3.",
+   "tts": "We'll see that in Episode 3."
+  },
+  {
+   "id": "l42",
+   "scene": "around",
+   "say": "Every app on your phone is a program.",
+   "tts": "Every app on your phone is a program."
+  },
+  {
+   "id": "l43",
+   "scene": "around",
+   "say": "The billing software at a medical shop.",
+   "tts": "The billing software at a medical shop."
+  },
+  {
+   "id": "l44",
+   "scene": "around",
+   "say": "The glucometer that shows a sugar reading.",
+   "tts": "The glucometer that shows a sugar reading."
+  },
+  {
+   "id": "l45",
+   "scene": "around",
+   "say": "The hospital system that keeps patient records.",
+   "tts": "The hospital system that keeps patient records."
+  },
+  {
+   "id": "l46",
+   "scene": "around",
+   "say": "All of these are lists of instructions that someone wrote.",
+   "tts": "All of these are lists of instructions that someone wrote."
+  },
+  {
+   "id": "l47",
+   "scene": "around",
+   "say": "And very soon, you will write programs like these too.",
+   "tts": "And very soon, you will write programs like these too."
+  },
+  {
+   "id": "l48",
+   "scene": "quiz",
+   "say": "Quick check. Which of these is a program?",
+   "tts": "Quick check. Which of these is a program?"
+  },
+  {
+   "id": "l49",
+   "scene": "quiz",
+   "say": "Pause the video if you need a moment to think.",
+   "tts": "Pause the video if you need a moment to think."
+  },
+  {
+   "id": "l50",
+   "scene": "quiz-answer",
+   "say": "The answer is B: a list of clear instructions the computer follows in order. Super!",
+   "tts": "The answer is B: a list of clear instructions the computer follows in order. Super!"
+  },
+  {
+   "id": "l51",
+   "scene": "recap",
+   "say": "Let's recap.",
+   "tts": "Let's recap."
+  },
+  {
+   "id": "l52",
+   "scene": "recap",
+   "say": "A program is a list of instructions written for a computer.",
+   "tts": "A program is a list of instructions written for a computer."
+  },
+  {
+   "id": "l53",
+   "scene": "recap",
+   "say": "They must be clear, and in order.",
+   "tts": "They must be clear, and in order."
+  },
+  {
+   "id": "l54",
+   "scene": "recap",
+   "say": "And the computer follows them exactly.",
+   "tts": "And the computer follows them exactly."
+  },
+  {
+   "id": "l55",
+   "scene": "teaser",
+   "say": "But there's a problem. A computer doesn't understand English, or any language we speak.",
+   "tts": "But there's a problem. A computer doesn't understand English, or any language we speak."
+  },
+  {
+   "id": "l56",
+   "scene": "teaser",
+   "say": "So how do we write instructions it can understand?",
+   "tts": "So how do we write instructions it can understand?"
+  },
+  {
+   "id": "l57",
+   "scene": "teaser",
+   "say": "That's our next episode: Why Python? See you there!",
+   "tts": "That's our next episode: Why Python? See you there!"
+  }
+ ],
+ "engine": "sarvam",
+ "speaker": "ritu_en_edtech"
+}

@@ -24,6 +24,8 @@ async function openPage() {
   await page.evaluate(async () => {
     window.renderAt(0);
     await document.fonts.load('700 40px "Noto Sans Kannada"', 'ಕನ್ನಡ');
+    await document.fonts.load('700 40px "Noto Sans Devanagari"', 'हिन्दी');
+    await document.fonts.load('500 40px "Noto Sans Devanagari"', 'हिन्दी');
     await document.fonts.load('800 40px "Plus Jakarta Sans"', 'Aa');
     await document.fonts.load('400 40px "JetBrains Mono"', 'Aa');
     await document.fonts.load('500 40px "Inter"', 'Aa');

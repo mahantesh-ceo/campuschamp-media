@@ -5,8 +5,9 @@
 - New episode: uploaded (public by default), numbered "#N" in course order for its language,
   added to the course playlist (created automatically), id saved for the website.
 
-Runs in GitHub Actions with secrets YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN
-(the refresh token needs the https://www.googleapis.com/auth/youtube scope for playlists).
+Runs in GitHub Actions with secrets YT_CLIENT_ID, YT_CLIENT_SECRET and one refresh token per channel:
+YT_REFRESH_TOKEN (Kannada channel), YT_REFRESH_TOKEN_HI (Hindi), YT_REFRESH_TOKEN_EN (English).
+Each token needs the https://www.googleapis.com/auth/youtube scope for playlists.
 Usage: python tools/youtube_upload.py video/meta/<episode>.json
 """
 import json
@@ -37,11 +38,22 @@ def save(path, data):
     json.dump(data, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
 
-def access_token():
+def refresh_token(lang):
+    """Each language has its own channel, so its own token. Never fall back to another channel's token."""
+    name = "YT_REFRESH_TOKEN" if lang == "kn" else f"YT_REFRESH_TOKEN_{lang.upper()}"
+    value = os.environ.get(name, "").strip()
+    if not value:
+        sys.exit(f"No {name} secret yet, so the {LANG_NAME.get(lang, lang)} channel can't be published to. "
+                 f"Add it in GitHub → Settings → Secrets and variables → Actions.")
+    return name, value
+
+
+def access_token(lang):
+    name, token = refresh_token(lang)
     data = urllib.parse.urlencode({
         "client_id": os.environ["YT_CLIENT_ID"].strip(),
         "client_secret": os.environ["YT_CLIENT_SECRET"].strip(),
-        "refresh_token": os.environ["YT_REFRESH_TOKEN"].strip(),
+        "refresh_token": token,
         "grant_type": "refresh_token",
     }).encode()
     try:
@@ -53,7 +65,7 @@ def access_token():
             why = json.loads(e.read().decode())
         except Exception:
             pass
-        sys.exit(f"Google refused the YouTube credentials ({e.code} {why.get('error')}: {why.get('error_description', '')}). Check the three YT_ secrets.")
+        sys.exit(f"Google refused the YouTube credentials ({e.code} {why.get('error')}: {why.get('error_description', '')}). Check YT_CLIENT_ID, YT_CLIENT_SECRET and {name}.")
 
 
 def call(method, url, token, body=None, wait_for_new=False):
@@ -200,7 +212,7 @@ if __name__ == "__main__":
     ep = find_episode(videos, meta)
     src = ep["sources"].setdefault(meta["language"], {})
     number = episode_number(videos, meta)
-    token = access_token()
+    token = access_token(meta["language"])
     snip = snippet(meta, number)
     existing = src.get("youtube") or src.get("youtube_pending")
 

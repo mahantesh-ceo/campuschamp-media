@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       meta:
-        description: "Episode metadata file, e.g. video/meta/bp101t-1-1-ep1-kn.json"
+        description: "Episode metadata file(s): all languages of an episode, e.g. video/meta/bp101t-1-1-ep1-*.json, or one file"
         required: true
-        default: "video/meta/bp101t-1-1-ep1-kn.json"
+        default: "video/meta/bp101t-1-1-ep1-*.json"
       publish:
         description: "public (default) · private · or a time like 2026-11-02T18:30:00+05:30"
         required: true
@@ -25,8 +25,19 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_REFRESH_TOKEN_HI: ${{ secrets.YT_REFRESH_TOKEN_HI }}
+          YT_REFRESH_TOKEN_EN: ${{ secrets.YT_REFRESH_TOKEN_EN }}
           PUBLISH: ${{ inputs.publish }}
-        run: python tools/youtube_upload.py "${{ inputs.meta }}"
+          META: ${{ inputs.meta }}
+        # every language of the episode; one language failing doesn't stop the others
+        run: |
+          fail=0
+          for f in $META; do
+            echo "::group::$f"
+            python tools/youtube_upload.py "$f" || fail=1
+            echo "::endgroup::"
+          done
+          exit $fail
       - name: Save the YouTube id for the website
         if: always()
         run: |
@@ -34,5 +45,5 @@ jobs:
           git config user.email "video-bot@campuschamp.in"
           git add content/bp101t/videos.json
           if [ -f video/playlists.json ]; then git add video/playlists.json; fi
-          git commit -m "YouTube id for ${{ inputs.meta }}" || echo "nothing to commit"
+          git commit -m "YouTube ids for ${{ inputs.meta }}" || echo "nothing to commit"
           git push

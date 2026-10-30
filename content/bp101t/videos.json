@@ -7,7 +7,7 @@
       "title": {
         "en": "What is a program?",
         "kn": "Program ಅಂದ್ರೆ ಏನು?",
-        "hi": "Program क्या होता है?"
+        "hi": "Program क्या है?"
       },
       "sources": {
         "kn": {
@@ -15,6 +15,16 @@
           "poster": "media/bp101t/1-1/kn/ep1.jpg",
           "seconds": 247,
           "youtube": "SpjgrEaNvJ4"
+        },
+        "hi": {
+          "mp4": "media/bp101t/1-1/hi/ep1.mp4",
+          "poster": "media/bp101t/1-1/hi/ep1.jpg",
+          "seconds": 266
+        },
+        "en": {
+          "mp4": "media/bp101t/1-1/en/ep1.mp4",
+          "poster": "media/bp101t/1-1/en/ep1.jpg",
+          "seconds": 264
         }
       }
     }
