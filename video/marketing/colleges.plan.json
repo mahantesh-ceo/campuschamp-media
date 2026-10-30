@@ -1,9 +1,12 @@
 {
  "order": [
   "c-hook",
-  "c-gap",
+  "c-pains",
+  "c-book",
+  "c-blend",
   "c-intro",
-  "c-solve",
+  "c-trust",
+  "c-features",
   "c-teacher",
   "c-principal",
   "c-cta",
@@ -11,13 +14,16 @@
  ],
  "hold": {
   "c-hook": 0.4,
-  "c-gap": 0.4,
-  "c-solve": 0.4,
+  "c-pains": 0.4,
+  "c-book": 0.4,
+  "c-blend": 0.4,
+  "c-intro": 1.0,
+  "c-trust": 0.4,
+  "c-features": 0.4,
   "c-teacher": 0.4,
   "c-principal": 0.4,
   "c-cta": 0.4,
-  "c-end": 3.0,
-  "c-intro": 1.2
+  "c-end": 3.0
  },
  "chapters": {
   "en": {}

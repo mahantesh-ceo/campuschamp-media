@@ -81,16 +81,16 @@
   {
    "id": "l10",
    "scene": "b-proof",
-   "say": "Every lesson in your language, with voice. Practice on your phone, with instant feedback.",
-   "tts": "Every lesson in your language, with voice. Practice on your phone, with instant feedback.",
+   "say": "Every lesson in your language, with voice. Animated explanations. Video lessons. Real code on your phone, with instant feedback.",
+   "tts": "Every lesson in your language, with voice. Animated explanations. Video lessons. Real code on your phone, with instant feedback.",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
   {
    "id": "l11",
    "scene": "b-proof",
-   "say": "And it's free.",
-   "tts": "And it's free.",
+   "say": "A quiz after every lesson. And important questions for every unit, mapped to your exams.",
+   "tts": "A quiz after every lesson. And important questions for every unit, mapped to your exams.",
    "lang": "en",
    "speaker": "ritu_en_edtech"
   },
