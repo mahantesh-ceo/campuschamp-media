@@ -19,12 +19,14 @@
         "hi": {
           "mp4": "media/bp101t/1-1/hi/ep1.mp4",
           "poster": "media/bp101t/1-1/hi/ep1.jpg",
-          "seconds": 266
+          "seconds": 266,
+          "youtube": "Evo4PKgHAxQ"
         },
         "en": {
           "mp4": "media/bp101t/1-1/en/ep1.mp4",
           "poster": "media/bp101t/1-1/en/ep1.jpg",
-          "seconds": 264
+          "seconds": 264,
+          "youtube": "4iSguiTigoI"
         }
       }
     }
