@@ -53,10 +53,12 @@ if (flag === '--stills') {
   // soft original music bed, ducked under the voices
   const bed = out.replace(/\.mp4$/, '.bed.wav');
   const voices = out.replace(/\.mp4$/, '.voices.m4a');
-  execFileSync('python3', [join(HERE, 'music', 'make_bed.py'), String(Math.ceil(T.duration)), bed]);
+  // lessons get the soft bed; launch films get a build, an impact on the reveal and a groove
+  if (T.music === 'launch') execFileSync('python3', [join(HERE, 'music', 'make_launch.py'), String(Math.ceil(T.duration)), String(T.reveal || 0), bed]);
+  else execFileSync('python3', [join(HERE, 'music', 'make_bed.py'), String(Math.ceil(T.duration)), bed]);
   execFileSync('mv', [audioPath, voices]);
   execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-i', voices, '-i', bed, '-filter_complex',
-    '[1:a]volume=0.2[m];[m][0:a]sidechaincompress=threshold=0.02:ratio=8:attack=20:release=400[duck];[0:a][duck]amix=inputs=2:normalize=0[out]',
+    `[1:a]volume=${T.music === 'launch' ? 0.45 : 0.2}[m];[m][0:a]sidechaincompress=threshold=0.02:ratio=8:attack=20:release=400[duck];[0:a][duck]amix=inputs=2:normalize=0[out]`,
     '-map', '[out]', '-c:a', 'aac', '-b:a', '160k', audioPath]);
   console.log('audio mixed');
 

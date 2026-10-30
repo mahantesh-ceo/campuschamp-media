@@ -1,0 +1,28 @@
+{
+ "order": [
+  "b-hook",
+  "b-fear",
+  "b-tongue",
+  "b-intro",
+  "b-proof",
+  "b-promise",
+  "b-end"
+ ],
+ "hold": {
+  "b-hook": 0.4,
+  "b-fear": 0.4,
+  "b-tongue": 0.4,
+  "b-proof": 0.4,
+  "b-promise": 0.4,
+  "b-end": 3.0,
+  "b-intro": 1.2
+ },
+ "chapters": {
+  "en": {}
+ },
+ "music": "launch",
+ "reveal": "b-intro",
+ "gap": 0.28,
+ "lead": 0.35,
+ "tail": 0.3
+}

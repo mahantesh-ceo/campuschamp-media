@@ -8,9 +8,9 @@ import { createRequire } from 'node:module';
 
 const QRCode = createRequire('/home/user/test/package.json')('qrcode');
 const FPS = 25;
-const GAP = 0.45; // pause between sentences (beginners need room to think)
-const LEAD = 0.7;
-const TAIL = 0.6;
+let GAP = 0.45; // pause between sentences (beginners need room to think)
+let LEAD = 0.7;
+let TAIL = 0.6;
 
 const [epPath, clipsDir, outPath] = process.argv.slice(2);
 const E = JSON.parse(readFileSync(epPath, 'utf8'));
@@ -36,6 +36,10 @@ function envelope(f) {
 const P = JSON.parse(readFileSync(epPath.replace(/\.[a-z]{2}\.json$/, '.plan.json'), 'utf8'));
 const ORDER = P.order;
 const HOLD = P.hold;
+// films can be paced tighter than lessons
+if (P.gap !== undefined) GAP = P.gap;
+if (P.lead !== undefined) LEAD = P.lead;
+if (P.tail !== undefined) TAIL = P.tail;
 const CHAPTER = P.chapters[E.lang] || P.chapters.en;
 const words = (k) => (P[k] ? P[k][E.lang] || P[k].en : undefined);
 
@@ -62,7 +66,7 @@ for (const type of ORDER) {
   scenes.push({ type, chapter: CHAPTER[type] || '', start, end: t, lines });
 }
 
-const qrUrl = `https://www.campuschamp.in/learn/${E.course}/${E.lesson}?utm_source=youtube&utm_medium=video&utm_campaign=${E.course}-${E.lesson}-ep${E.episode}-${E.lang}`;
+const qrUrl = E.qrUrl || `https://www.campuschamp.in/learn/${E.course}/${E.lesson}?utm_source=youtube&utm_medium=video&utm_campaign=${E.course}-${E.lesson}-ep${E.episode}-${E.lang}`;
 const timeline = {
   fps: FPS,
   duration: t,
@@ -73,6 +77,8 @@ const timeline = {
   next: words('next'),
   quiz: words('quiz'),
   recap: words('recap'),
+  music: P.music,
+  reveal: P.reveal ? (scenes.find((x) => x.type === P.reveal) || {}).start : undefined,
   qr: await QRCode.toDataURL(qrUrl, { margin: 1, width: 600, color: { dark: '#1d1d1f', light: '#ffffff' } }),
   scenes,
   audio,

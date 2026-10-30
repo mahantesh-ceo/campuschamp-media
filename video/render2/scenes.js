@@ -678,6 +678,9 @@
     const brand = !!SCENES[scene.type].brand;
     $('#overlay').style.display = brand ? 'none' : 'block';
     $('#chapter').textContent = scene.chapter;
+    // marketing films: subtitles only, no narrator badge or chapter label
+    const subsOnly = !!SCENES[scene.type].subsOnly;
+    ['#voice', '#mark', '#chapter'].forEach((q) => ($(q).style.visibility = subsOnly ? 'hidden' : 'visible'));
     const line = speaking(t);
     const p = $('#sub p');
     if (line) {

@@ -1,0 +1,115 @@
+{
+ "course": "bp101t",
+ "lesson": "1-1",
+ "episode": "brand",
+ "lang": "en",
+ "engine": "sarvam",
+ "qrUrl": "https://www.campuschamp.in/?utm_source=video&utm_medium=brand&utm_campaign=brand-film",
+ "lines": [
+  {
+   "id": "l01",
+   "scene": "b-hook",
+   "say": "AI is changing pharmacy.",
+   "tts": "AI is changing pharmacy.",
+   "lang": "en",
+   "speaker": "ritu_en_edtech"
+  },
+  {
+   "id": "l02",
+   "scene": "b-hook",
+   "say": "And now, it's part of your B.Pharm. Every year, from semester one to semester eight.",
+   "tts": "And now, it's part of your B.Pharm. Every year, from semester one to semester eight.",
+   "lang": "en",
+   "speaker": "ritu_en_edtech"
+  },
+  {
+   "id": "l03",
+   "scene": "b-hook",
+   "say": "Python. Statistics. Machine learning. AI in drug design. AI in the clinic.",
+   "tts": "Python. Statistics. Machine learning. AI in drug design. AI in the clinic.",
+   "lang": "en",
+   "speaker": "ritu_en_edtech"
+  },
+  {
+   "id": "l04",
+   "scene": "b-fear",
+   "say": "But when every word is new, everything feels hard.",
+   "tts": "But when every word is new, everything feels hard.",
+   "lang": "en",
+   "speaker": "ritu_en_edtech"
+  },
+  {
+   "id": "l05",
+   "scene": "b-tongue",
+   "say": "A program is just like a prescription.",
+   "tts": "A program is just like a prescription.",
+   "lang": "en",
+   "speaker": "ritu_en_edtech"
+  },
+  {
+   "id": "l06",
+   "scene": "b-tongue",
+   "say": "Program ಅಂದ್ರೆ, prescription ತರಹಾನೇ.",
+   "tts": "Program ಅಂದ್ರೆ, prescription ತರಹಾನೇ.",
+   "lang": "kn",
+   "speaker": "chaitra_kn_conversation"
+  },
+  {
+   "id": "l07",
+   "scene": "b-tongue",
+   "say": "Program बिल्कुल prescription जैसा है.",
+   "tts": "Program बिल्कुल prescription जैसा है.",
+   "lang": "hi",
+   "speaker": "ritu_hi_conversation"
+  },
+  {
+   "id": "l08",
+   "scene": "b-tongue",
+   "say": "Now, it makes sense.",
+   "tts": "Now, it makes sense.",
+   "lang": "en",
+   "speaker": "ritu_en_edtech"
+  },
+  {
+   "scene": "b-intro",
+   "say": "Introducing Campus Champ.",
+   "tts": "Introducing Campus Champ.",
+   "lang": "en",
+   "speaker": "ritu_en_edtech",
+   "id": "l09"
+  },
+  {
+   "id": "l10",
+   "scene": "b-proof",
+   "say": "Every lesson in your language, with voice. Practice on your phone, with instant feedback.",
+   "tts": "Every lesson in your language, with voice. Practice on your phone, with instant feedback.",
+   "lang": "en",
+   "speaker": "ritu_en_edtech"
+  },
+  {
+   "id": "l11",
+   "scene": "b-proof",
+   "say": "And it's free.",
+   "tts": "And it's free.",
+   "lang": "en",
+   "speaker": "ritu_en_edtech"
+  },
+  {
+   "id": "l12",
+   "scene": "b-promise",
+   "say": "From your first line of Python, to AI in semester eight, we'll be with you. Every semester.",
+   "tts": "From your first line of Python, to AI in semester eight, we'll be with you. Every semester.",
+   "lang": "en",
+   "speaker": "ritu_en_edtech"
+  },
+  {
+   "id": "l13",
+   "scene": "b-end",
+   "say": "Campus Champ. Pharmacy, in your language.",
+   "tts": "Campus Champ. Pharmacy, in your language.",
+   "lang": "en",
+   "speaker": "ritu_en_edtech"
+  }
+ ],
+ "pace": 1.1
+}

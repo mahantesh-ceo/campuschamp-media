@@ -1,0 +1,30 @@
+{
+ "order": [
+  "c-hook",
+  "c-gap",
+  "c-intro",
+  "c-solve",
+  "c-teacher",
+  "c-principal",
+  "c-cta",
+  "c-end"
+ ],
+ "hold": {
+  "c-hook": 0.4,
+  "c-gap": 0.4,
+  "c-solve": 0.4,
+  "c-teacher": 0.4,
+  "c-principal": 0.4,
+  "c-cta": 0.4,
+  "c-end": 3.0,
+  "c-intro": 1.2
+ },
+ "chapters": {
+  "en": {}
+ },
+ "music": "launch",
+ "reveal": "c-intro",
+ "gap": 0.28,
+ "lead": 0.35,
+ "tail": 0.3
+}
