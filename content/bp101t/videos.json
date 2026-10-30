@@ -29,6 +29,34 @@
           "youtube": "4iSguiTigoI"
         }
       }
+    },
+    {
+      "episode": 2,
+      "placement": "explanation",
+      "title": {
+        "en": "Why Python?",
+        "kn": "Python ಯಾಕೆ?",
+        "hi": "Python क्यों?"
+      },
+      "sources": {
+        "kn": {
+          "mp4": "media/bp101t/1-1/kn/ep2.mp4",
+          "poster": "media/bp101t/1-1/kn/ep2.jpg",
+          "seconds": 274
+        },
+        "hi": {
+          "mp4": "media/bp101t/1-1/hi/ep2.mp4",
+          "poster": "media/bp101t/1-1/hi/ep2.jpg",
+          "seconds": 289,
+          "youtube": "hNDkav-zjYc"
+        },
+        "en": {
+          "mp4": "media/bp101t/1-1/en/ep2.mp4",
+          "poster": "media/bp101t/1-1/en/ep2.jpg",
+          "seconds": 281,
+          "youtube": "ceqSRXohqyA"
+        }
+      }
     }
   ]
 }

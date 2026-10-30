@@ -1,0 +1,22 @@
+{
+  "lesson": "1-1",
+  "episode": 2,
+  "language": "en",
+  "file": "video/out/bp101t-1-1-ep2-en.mp4",
+  "chapters": "video/out/bp101t-1-1-ep2-en.chapters.txt",
+  "thumbnail": "video/out/bp101t-1-1-ep2-en.png",
+  "description": "B.Pharm Sem I, BP101T Basics of Python Programming for Pharmaceutical Sciences, explained simply in English.\n\nIn this episode: why computers don't understand our languages, what a programming language is, why Python was chosen for pharmacy students, and how Python runs your program one line at a time.\n\n▶ Practise this lesson free on your phone:\nhttps://www.campuschamp.in/learn/bp101t/1-1?utm_source=youtube&utm_medium=video&utm_campaign=bp101t-1-1-ep2-en\n\n📄 BP101T Unit 1 important questions (free PDF):\nhttps://www.campuschamp.in/bp101t/important-questions/unit-1?utm_source=youtube&utm_medium=video&utm_campaign=bp101t-1-1-ep2-en\n\nChapters\n{{CHAPTERS}}\n\nNarration uses an AI voice. Practice questions only; university questions may differ.\n\n#BP101T #BPharm #Python #PCI",
+  "tags": [
+    "BP101T",
+    "B.Pharm Python",
+    "Python for pharmacy students",
+    "why python",
+    "python interpreter",
+    "Basics of Python Programming for Pharmaceutical Sciences",
+    "PCI syllabus",
+    "B.Pharm Sem 1",
+    "pharmacy students",
+    "Campus Champ"
+  ],
+  "topic": "Why Python?"
+}

@@ -1,0 +1,136 @@
+{
+ "order": [
+  "binary",
+  "sting",
+  "bridge",
+  "langs",
+  "compare",
+  "reasons",
+  "pharma",
+  "interp",
+  "quiz",
+  "recap",
+  "teaser2",
+  "end"
+ ],
+ "hold": {
+  "binary": 2.4,
+  "sting": 2.8,
+  "bridge": 0.8,
+  "langs": 0.8,
+  "compare": 1.0,
+  "reasons": 0.8,
+  "pharma": 1.2,
+  "interp": 1.4,
+  "quiz": 1.2,
+  "recap": 1.4,
+  "teaser2": 0.4,
+  "end": 6
+ },
+ "chapters": {
+  "en": {
+   "binary": "Intro",
+   "bridge": "A common language",
+   "langs": "Meet Python",
+   "compare": "Reads like English",
+   "reasons": "Free, with libraries",
+   "pharma": "Python in pharmacy",
+   "interp": "Line by line",
+   "quiz": "Quick check",
+   "recap": "Recap",
+   "teaser2": "What's next?",
+   "end": "Practise free"
+  },
+  "kn": {
+   "binary": "Intro",
+   "bridge": "ಒಂದು common ಭಾಷೆ",
+   "langs": "Python ಪರಿಚಯ",
+   "compare": "English ತರಹ ಓದಬಹುದು",
+   "reasons": "Free, libraries ಜೊತೆ",
+   "pharma": "Pharmacy ಯಲ್ಲಿ Python",
+   "interp": "ಒಂದೊಂದೇ line",
+   "quiz": "Quick check",
+   "recap": "Recap",
+   "teaser2": "ಮುಂದೆ ಏನು?",
+   "end": "Practise free"
+  },
+  "hi": {
+   "binary": "Intro",
+   "bridge": "एक common भाषा",
+   "langs": "मिलिए Python से",
+   "compare": "English जैसी आसान",
+   "reasons": "Free, libraries के साथ",
+   "pharma": "Pharmacy में Python",
+   "interp": "एक-एक line",
+   "quiz": "Quick check",
+   "recap": "Recap",
+   "teaser2": "आगे क्या?",
+   "end": "Practise free"
+  }
+ },
+ "title": {
+  "en": "<span class=\"grad\">Why</span> Python?",
+  "kn": "Python <span class=\"grad\">ಯಾಕೆ?</span>",
+  "hi": "Python <span class=\"grad\">क्यों?</span>"
+ },
+ "next": {
+  "en": {
+   "title": "Your first <span class=\"grad\">program</span>",
+   "desc": "print(), comments, and your first error. Right on your phone."
+  },
+  "kn": {
+   "title": "ನಿಮ್ಮ ಮೊದಲ <span class=\"grad\">program</span>",
+   "desc": "print(), comments, ಮತ್ತೆ ನಿಮ್ಮ ಮೊದಲ error. ನಿಮ್ಮ phone ನಲ್ಲೇ."
+  },
+  "hi": {
+   "title": "आपका पहला <span class=\"grad\">program</span>",
+   "desc": "print(), comments, और आपकी पहली error. आपके phone पर ही."
+  }
+ },
+ "quiz": {
+  "en": {
+   "q": "How does Python run your program?",
+   "options": [
+    "All lines at the same time",
+    "One line at a time, from top to bottom",
+    "From the last line up"
+   ],
+   "answer": 1
+  },
+  "kn": {
+   "q": "Python ನಿಮ್ಮ program ಅನ್ನ ಹೇಗೆ run ಮಾಡುತ್ತೆ?",
+   "options": [
+    "ಎಲ್ಲಾ lines ಒಟ್ಟಿಗೆ",
+    "ಒಂದೊಂದೇ line, ಮೇಲಿಂದ ಕೆಳಗೆ",
+    "ಕೊನೆಯ line ಇಂದ ಮೇಲಕ್ಕೆ"
+   ],
+   "answer": 1
+  },
+  "hi": {
+   "q": "Python आपका program कैसे run करता है?",
+   "options": [
+    "सारी lines एक साथ",
+    "एक-एक line, ऊपर से नीचे",
+    "आख़िरी line से ऊपर की ओर"
+   ],
+   "answer": 1
+  }
+ },
+ "recap": {
+  "en": [
+   "Computers understand only 0 and 1, so we use programming languages.",
+   "Python: easy to read, free, ready-made libraries, used across pharmacy.",
+   "The interpreter runs Python one line at a time, top to bottom."
+  ],
+  "kn": [
+   "Computer ಗೆ 0, 1 ಮಾತ್ರ ಅರ್ಥ ಆಗುತ್ತೆ. ಅದಕ್ಕೇ programming languages.",
+   "Python: ಓದೋಕೆ ಸುಲಭ, free, ready-made libraries, pharmacy ಯಲ್ಲಿ ಎಲ್ಲಾ ಕಡೆ.",
+   "Interpreter ಒಂದೊಂದೇ line ಆಗಿ, ಮೇಲಿಂದ ಕೆಳಗೆ run ಮಾಡುತ್ತೆ."
+  ],
+  "hi": [
+   "Computer को सिर्फ़ 0 और 1 समझ आते हैं, इसलिए programming languages.",
+   "Python: पढ़ने में आसान, free, ready-made libraries, pharmacy में हर जगह.",
+   "Interpreter एक-एक line, ऊपर से नीचे run करता है."
+  ]
+ }
+}

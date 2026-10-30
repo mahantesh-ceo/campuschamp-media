@@ -1,0 +1,298 @@
+{
+ "course": "bp101t",
+ "lesson": "1-1",
+ "episode": 2,
+ "lang": "hi",
+ "engine": "sarvam",
+ "speaker": "ritu_hi_conversation",
+ "lines": [
+  {
+   "id": "l01",
+   "scene": "binary",
+   "say": "पिछली बार, हमें एक problem मिली थी.",
+   "tts": "पिछली बार, हमें एक problem मिली थी."
+  },
+  {
+   "id": "l02",
+   "scene": "binary",
+   "say": "Computer को ना English समझ आती है, ना हिंदी, ना कोई भी भाषा जो हम बोलते हैं.",
+   "tts": "Computer को ना English समझ आती है, ना हिंदी, ना कोई भी भाषा जो हम बोलते हैं."
+  },
+  {
+   "id": "l03",
+   "scene": "binary",
+   "say": "अंदर से, उसे बस दो ही चीज़ें समझ आती हैं: zero और one.",
+   "tts": "अंदर से, उसे बस दो ही चीज़ें समझ आती हैं: zero और one."
+  },
+  {
+   "id": "l04",
+   "scene": "binary",
+   "say": "\"500 दिखाओ\" जैसी छोटी सी instruction भी, computer को कुछ ऐसी दिखती है.",
+   "tts": "पाँच सौ दिखाओ जैसी छोटी सी instruction भी, computer को कुछ ऐसी दिखती है."
+  },
+  {
+   "id": "l05",
+   "scene": "binary",
+   "say": "सोचिए, पूरा prescription ऐसे लिखना पड़े. नामुमकिन!",
+   "tts": "सोचिए, पूरा prescription ऐसे लिखना पड़े. नामुमकिन!"
+  },
+  {
+   "id": "l06",
+   "scene": "bridge",
+   "say": "सोचिए, आपकी pharmacy में एक patient आता है, जो ऐसी भाषा बोलता है जो आपको नहीं आती.",
+   "tts": "सोचिए, आपकी pharmacy में एक patient आता है, जो ऐसी भाषा बोलता है जो आपको नहीं आती."
+  },
+  {
+   "id": "l07",
+   "scene": "bridge",
+   "say": "तब आप दोनों के बीच, एक ऐसी common भाषा चाहिए, जो दोनों को समझ आए.",
+   "tts": "तब आप दोनों के बीच, एक ऐसी common भाषा चाहिए, जो दोनों को समझ आए."
+  },
+  {
+   "id": "l08",
+   "scene": "bridge",
+   "say": "इंसानों और computers के बीच भी बिल्कुल यही problem है.",
+   "tts": "इंसानों और computers के बीच भी बिल्कुल यही problem है."
+  },
+  {
+   "id": "l09",
+   "scene": "bridge",
+   "say": "इसलिए ऐसी खास भाषाएँ बनाई गईं, जिन्हें इंसान लिख सकें, और computer समझ सके.",
+   "tts": "इसलिए ऐसी खास भाषाएँ बनाई गईं, जिन्हें इंसान लिख सकें, और computer समझ सके."
+  },
+  {
+   "id": "l10",
+   "scene": "bridge",
+   "say": "इन्हें programming languages कहते हैं.",
+   "tts": "इन्हें programming languages कहते हैं."
+  },
+  {
+   "id": "l11",
+   "scene": "langs",
+   "say": "ऐसी बहुत सारी भाषाएँ हैं.",
+   "tts": "ऐसी बहुत सारी भाषाएँ हैं."
+  },
+  {
+   "id": "l12",
+   "scene": "langs",
+   "say": "C. Java. JavaScript.",
+   "tts": "C. Java. JavaScript."
+  },
+  {
+   "id": "l13",
+   "scene": "langs",
+   "say": "और आपके syllabus वाली: Python.",
+   "tts": "और आपके syllabus वाली: पाइथन."
+  },
+  {
+   "id": "l14",
+   "scene": "langs",
+   "say": "Python को Guido van Rossum ने बनाया था, और ये पहली बार 1991 में release हुई.",
+   "tts": "पाइथन को Guido van Rossum ने बनाया था, और ये पहली बार nineteen ninety one में release हुई."
+  },
+  {
+   "id": "l15",
+   "scene": "langs",
+   "say": "एक मज़ेदार बात: इसका नाम साँप पर नहीं, बल्कि उनके पसंदीदा comedy show पर रखा गया था!",
+   "tts": "एक मज़ेदार बात: इसका नाम साँप पर नहीं, बल्कि उनके पसंदीदा comedy show पर रखा गया था!"
+  },
+  {
+   "id": "l16",
+   "scene": "compare",
+   "say": "तो pharmacy students के लिए Python ही क्यों चुनी गई?",
+   "tts": "तो pharmacy students के लिए पाइथन ही क्यों चुनी गई?"
+  },
+  {
+   "id": "l17",
+   "scene": "compare",
+   "say": "पहला कारण: ये लगभग English की तरह पढ़ी जाती है.",
+   "tts": "पहला कारण: ये लगभग English की तरह पढ़ी जाती है."
+  },
+  {
+   "id": "l18",
+   "scene": "compare",
+   "say": "C नाम की language में, एक दवा का नाम दिखाने के लिए इतना सब लिखना पड़ता है.",
+   "tts": "C नाम की language में, एक दवा का नाम दिखाने के लिए इतना सब लिखना पड़ता है."
+  },
+  {
+   "id": "l19",
+   "scene": "compare",
+   "say": "और Python में यही काम? बस एक line.",
+   "tts": "और पाइथन में यही काम? बस एक line."
+  },
+  {
+   "id": "l20",
+   "scene": "compare",
+   "say": "print, फिर दवा का नाम. बस.",
+   "tts": "print, फिर दवा का नाम. बस."
+  },
+  {
+   "id": "l21",
+   "scene": "compare",
+   "say": "कम typing मतलब कम गलतियाँ, और समझने के लिए ज़्यादा time.",
+   "tts": "कम typing मतलब कम गलतियाँ, और समझने के लिए ज़्यादा time."
+  },
+  {
+   "id": "l22",
+   "scene": "reasons",
+   "say": "दूसरा कारण: Python बिल्कुल free है. कोई भी download करके use कर सकता है.",
+   "tts": "दूसरा कारण: पाइथन बिल्कुल free है. कोई भी download करके use कर सकता है."
+  },
+  {
+   "id": "l23",
+   "scene": "reasons",
+   "say": "तीसरा कारण: इसमें ready-made toolkits मिलते हैं, जिन्हें libraries कहते हैं.",
+   "tts": "तीसरा कारण: इसमें ready-made toolkits मिलते हैं, जिन्हें libraries कहते हैं."
+  },
+  {
+   "id": "l24",
+   "scene": "reasons",
+   "say": "जैसे pharmacy में हर tablet हम खुद नहीं बनाते, वैसे ही यहाँ सब कुछ zero से नहीं लिखना पड़ता.",
+   "tts": "जैसे pharmacy में हर tablet हम खुद नहीं बनाते, वैसे ही यहाँ सब कुछ zero से नहीं लिखना पड़ता."
+  },
+  {
+   "id": "l25",
+   "scene": "reasons",
+   "say": "Calculations के लिए एक library, data tables के लिए एक, और graphs के लिए एक.",
+   "tts": "Calculations के लिए एक library, data tables के लिए एक, और graphs के लिए एक."
+  },
+  {
+   "id": "l26",
+   "scene": "reasons",
+   "say": "चौथा कारण, और सबसे exciting: Python का use pharmacy और healthcare में हर दिन होता है.",
+   "tts": "चौथा कारण, और सबसे exciting: पाइथन का use pharmacy और healthcare में हर दिन होता है."
+  },
+  {
+   "id": "l27",
+   "scene": "pharma",
+   "say": "हज़ारों patients वाले clinical trial data को analyse करने में.",
+   "tts": "हज़ारों patients वाले clinical trial data को analyse करने में."
+  },
+  {
+   "id": "l28",
+   "scene": "pharma",
+   "say": "किसी drug का blood concentration समय के साथ कैसे बढ़ता और घटता है, उसका graph बनाने में.",
+   "tts": "किसी drug का blood concentration समय के साथ कैसे बढ़ता और घटता है, उसका graph बनाने में."
+  },
+  {
+   "id": "l29",
+   "scene": "pharma",
+   "say": "Adverse drug reaction reports पढ़कर, किसी ख़तरनाक pattern को जल्दी पकड़ने में.",
+   "tts": "Adverse drug reaction reports पढ़कर, किसी ख़तरनाक pattern को जल्दी पकड़ने में."
+  },
+  {
+   "id": "l30",
+   "scene": "pharma",
+   "say": "और lab में कुछ भी बनाने से पहले, computer पर ही नए drug molecules design करने में भी.",
+   "tts": "और lab में कुछ भी बनाने से पहले, computer पर ही नए drug molecules design करने में भी."
+  },
+  {
+   "id": "l31",
+   "scene": "pharma",
+   "say": "मतलब Python सिर्फ़ computer का subject नहीं है. ये एक pharmacy skill है.",
+   "tts": "मतलब पाइथन सिर्फ़ computer का subject नहीं है. ये एक pharmacy skill है."
+  },
+  {
+   "id": "l32",
+   "scene": "interp",
+   "say": "अब आख़िरी बात: Python आपका program असल में run कैसे करता है?",
+   "tts": "अब आख़िरी बात: पाइथन आपका program असल में run कैसे करता है?"
+  },
+  {
+   "id": "l33",
+   "scene": "interp",
+   "say": "याद कीजिए, pharmacist prescription कैसे पढ़ता है: पहली line, फिर अगली, फिर उसके बाद वाली.",
+   "tts": "याद कीजिए, pharmacist prescription कैसे पढ़ता है: पहली line, फिर अगली, फिर उसके बाद वाली."
+  },
+  {
+   "id": "l34",
+   "scene": "interp",
+   "say": "Python भी बिल्कुल ऐसे ही काम करता है.",
+   "tts": "पाइथन भी बिल्कुल ऐसे ही काम करता है."
+  },
+  {
+   "id": "l35",
+   "scene": "interp",
+   "say": "Python का एक हिस्सा है, interpreter. वो आपका code एक-एक line करके, ऊपर से नीचे पढ़ता है.",
+   "tts": "पाइथन का एक हिस्सा है, interpreter. वो आपका code एक-एक line करके, ऊपर से नीचे पढ़ता है."
+  },
+  {
+   "id": "l36",
+   "scene": "interp",
+   "say": "पहली line चलती है. फिर दूसरी. फिर तीसरी.",
+   "tts": "पहली line चलती है. फिर दूसरी. फिर तीसरी."
+  },
+  {
+   "id": "l37",
+   "scene": "interp",
+   "say": "Lines का order बदल दीजिए, तो output भी बदल जाता है.",
+   "tts": "Lines का order बदल दीजिए, तो output भी बदल जाता है."
+  },
+  {
+   "id": "l38",
+   "scene": "quiz",
+   "say": "एक quick check. Python आपका program कैसे run करता है?",
+   "tts": "एक quick check. पाइथन आपका program कैसे run करता है?"
+  },
+  {
+   "id": "l39",
+   "scene": "quiz",
+   "say": "थोड़ा सोचिए.",
+   "tts": "थोड़ा सोचिए."
+  },
+  {
+   "id": "l40",
+   "scene": "quiz-answer",
+   "say": "जवाब है B. एक-एक line करके, ऊपर से नीचे. Super!",
+   "tts": "जवाब है B. एक-एक line करके, ऊपर से नीचे. Super!"
+  },
+  {
+   "id": "l41",
+   "scene": "recap",
+   "say": "चलिए, recap करते हैं.",
+   "tts": "चलिए, recap करते हैं."
+  },
+  {
+   "id": "l42",
+   "scene": "recap",
+   "say": "Computer को सिर्फ़ zero और one समझ आते हैं, इसलिए उससे बात करने के लिए हम programming languages use करते हैं.",
+   "tts": "Computer को सिर्फ़ zero और one समझ आते हैं, इसलिए उससे बात करने के लिए हम programming languages use करते हैं."
+  },
+  {
+   "id": "l43",
+   "scene": "recap",
+   "say": "Python पढ़ने में आसान है, free है, इसमें ढेर सारी ready-made libraries हैं, और pharmacy में हर जगह इसका use होता है.",
+   "tts": "पाइथन पढ़ने में आसान है, free है, इसमें ढेर सारी ready-made libraries हैं, और pharmacy में हर जगह इसका use होता है."
+  },
+  {
+   "id": "l44",
+   "scene": "recap",
+   "say": "और interpreter, Python code को एक-एक line करके, ऊपर से नीचे run करता है.",
+   "tts": "और interpreter, पाइथन code को एक-एक line करके, ऊपर से नीचे run करता है."
+  },
+  {
+   "id": "l45",
+   "scene": "teaser2",
+   "say": "अब, आपकी बारी.",
+   "tts": "अब, आपकी बारी."
+  },
+  {
+   "id": "l46",
+   "scene": "teaser2",
+   "say": "आप अपने phone पर ही, अपना पहला program लिखेंगे: एक medicine label.",
+   "tts": "आप अपने phone पर ही, अपना पहला program लिखेंगे: एक medicine label."
+  },
+  {
+   "id": "l47",
+   "scene": "teaser2",
+   "say": "और अपनी पहली error से भी मिलेंगे. और जानेंगे कि वो असल में आपकी दोस्त क्यों है.",
+   "tts": "और अपनी पहली error से भी मिलेंगे. और जानेंगे कि वो असल में आपकी दोस्त क्यों है."
+  },
+  {
+   "id": "l48",
+   "scene": "teaser2",
+   "say": "मिलते हैं Episode 3 में: आपका पहला program!",
+   "tts": "मिलते हैं Episode 3 में: आपका पहला program!"
+  }
+ ]
+}

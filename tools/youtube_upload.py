@@ -43,8 +43,10 @@ def refresh_token(lang):
     name = "YT_REFRESH_TOKEN" if lang == "kn" else f"YT_REFRESH_TOKEN_{lang.upper()}"
     value = os.environ.get(name, "").strip()
     if not value:
-        sys.exit(f"No {name} secret yet, so the {LANG_NAME.get(lang, lang)} channel can't be published to. "
-                 f"Add it in GitHub → Settings → Secrets and variables → Actions.")
+        # not an error: that channel is published from a Claude session until its secret is added
+        print(f"::warning::Skipped {LANG_NAME.get(lang, lang)}: no {name} secret here, so this channel is published from a "
+              f"Claude session instead (or add the secret in GitHub → Settings → Secrets and variables → Actions).")
+        sys.exit(0)
     return name, value
 
 

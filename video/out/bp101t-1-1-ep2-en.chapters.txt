@@ -1,0 +1,11 @@
+0:00 Intro
+0:29 A common language
+0:54 Meet Python
+1:17 Reads like English
+1:45 Free, with libraries
+2:21 Python in pharmacy
+2:51 Line by line
+3:28 Quick check
+3:49 Recap
+4:13 What's next?
+4:34 Practise free

@@ -1,0 +1,298 @@
+{
+ "course": "bp101t",
+ "lesson": "1-1",
+ "episode": 2,
+ "lang": "kn",
+ "engine": "sarvam",
+ "speaker": "chaitra_kn_conversation",
+ "lines": [
+  {
+   "id": "l01",
+   "scene": "binary",
+   "say": "ಹೋದ ಸಲ, ನಮಗೆ ಒಂದು problem ಸಿಕ್ತು.",
+   "tts": "ಹೋದ ಸಲ, ನಮಗೆ ಒಂದು problem ಸಿಕ್ತು."
+  },
+  {
+   "id": "l02",
+   "scene": "binary",
+   "say": "Computer ಗೆ English ಆಗಲಿ, ಕನ್ನಡ ಆಗಲಿ, ನಾವು ಮಾತಾಡೋ ಯಾವ ಭಾಷೆನೂ ಅರ್ಥ ಆಗಲ್ಲ.",
+   "tts": "Computer ಗೆ English ಆಗಲಿ, ಕನ್ನಡ ಆಗಲಿ, ನಾವು ಮಾತಾಡೋ ಯಾವ ಭಾಷೆನೂ ಅರ್ಥ ಆಗಲ್ಲ."
+  },
+  {
+   "id": "l03",
+   "scene": "binary",
+   "say": "ಅದರ ಒಳಗೆ, ಅದಕ್ಕೆ ಗೊತ್ತಿರೋದು ಎರಡೇ: zero ಮತ್ತು one.",
+   "tts": "ಅದರ ಒಳಗೆ, ಅದಕ್ಕೆ ಗೊತ್ತಿರೋದು ಎರಡೇ: zero ಮತ್ತು one."
+  },
+  {
+   "id": "l04",
+   "scene": "binary",
+   "say": "\"500 ತೋರಿಸು\" ಅನ್ನೋ ಸಣ್ಣ instruction ಕೂಡ, computer ಗೆ ಹೀಗೆ ಕಾಣುತ್ತೆ.",
+   "tts": "ಐನೂರು ತೋರಿಸು ಅನ್ನೋ ಸಣ್ಣ instruction ಕೂಡ, computer ಗೆ ಹೀಗೆ ಕಾಣುತ್ತೆ."
+  },
+  {
+   "id": "l05",
+   "scene": "binary",
+   "say": "ಒಂದು ಪೂರ್ತಿ prescription ಅನ್ನ ಹೀಗೆ ಬರೆಯೋದು ಊಹಿಸಿಕೊಳ್ಳಿ. ಸಾಧ್ಯನೇ ಇಲ್ಲ!",
+   "tts": "ಒಂದು ಪೂರ್ತಿ prescription ಅನ್ನ ಹೀಗೆ ಬರೆಯೋದು ಊಹಿಸಿಕೊಳ್ಳಿ. ಸಾಧ್ಯನೇ ಇಲ್ಲ!"
+  },
+  {
+   "id": "l06",
+   "scene": "bridge",
+   "say": "ಊಹಿಸಿಕೊಳ್ಳಿ, ನಿಮಗೆ ಗೊತ್ತಿಲ್ಲದ ಭಾಷೆ ಮಾತಾಡೋ ಒಬ್ಬ patient ನಿಮ್ಮ pharmacy ಗೆ ಬರ್ತಾರೆ.",
+   "tts": "ಊಹಿಸಿಕೊಳ್ಳಿ, ನಿಮಗೆ ಗೊತ್ತಿಲ್ಲದ ಭಾಷೆ ಮಾತಾಡೋ ಒಬ್ಬ patient ನಿಮ್ಮ pharmacy ಗೆ ಬರ್ತಾರೆ."
+  },
+  {
+   "id": "l07",
+   "scene": "bridge",
+   "say": "ಆಗ ನಿಮ್ಮಿಬ್ಬರ ಮಧ್ಯೆ, ಇಬ್ಬರಿಗೂ ಅರ್ಥ ಆಗೋ ಒಂದು common ಭಾಷೆ ಬೇಕು.",
+   "tts": "ಆಗ ನಿಮ್ಮಿಬ್ಬರ ಮಧ್ಯೆ, ಇಬ್ಬರಿಗೂ ಅರ್ಥ ಆಗೋ ಒಂದು common ಭಾಷೆ ಬೇಕು."
+  },
+  {
+   "id": "l08",
+   "scene": "bridge",
+   "say": "ಮನುಷ್ಯರಿಗೂ computer ಗೂ ಇದೇ problem.",
+   "tts": "ಮನುಷ್ಯರಿಗೂ computer ಗೂ ಇದೇ problem."
+  },
+  {
+   "id": "l09",
+   "scene": "bridge",
+   "say": "ಅದಕ್ಕೇ, ಮನುಷ್ಯರು ಬರೆಯೋಕೆ ಆಗೋ, computer ಗೆ ಅರ್ಥ ಆಗೋ, ವಿಶೇಷ ಭಾಷೆಗಳನ್ನ ಮಾಡಿದ್ರು.",
+   "tts": "ಅದಕ್ಕೇ, ಮನುಷ್ಯರು ಬರೆಯೋಕೆ ಆಗೋ, computer ಗೆ ಅರ್ಥ ಆಗೋ, ವಿಶೇಷ ಭಾಷೆಗಳನ್ನ ಮಾಡಿದ್ರು."
+  },
+  {
+   "id": "l10",
+   "scene": "bridge",
+   "say": "ಅವುಗಳನ್ನ programming languages ಅಂತಾರೆ.",
+   "tts": "ಅವುಗಳನ್ನ programming languages ಅಂತಾರೆ."
+  },
+  {
+   "id": "l11",
+   "scene": "langs",
+   "say": "ಇಂಥ ಭಾಷೆಗಳು ತುಂಬಾ ಇವೆ.",
+   "tts": "ಇಂಥ ಭಾಷೆಗಳು ತುಂಬಾ ಇವೆ."
+  },
+  {
+   "id": "l12",
+   "scene": "langs",
+   "say": "C. Java. JavaScript.",
+   "tts": "C. Java. JavaScript."
+  },
+  {
+   "id": "l13",
+   "scene": "langs",
+   "say": "ಮತ್ತೆ ನಿಮ್ಮ syllabus ನಲ್ಲಿ ಇರೋದು: Python.",
+   "tts": "ಮತ್ತೆ ನಿಮ್ಮ syllabus ನಲ್ಲಿ ಇರೋದು: ಪೈಥಾನ್."
+  },
+  {
+   "id": "l14",
+   "scene": "langs",
+   "say": "Python ಅನ್ನ Guido van Rossum ಅನ್ನೋರು ಮಾಡಿದ್ರು. ಮೊದಲ ಸಲ release ಆಗಿದ್ದು 1991 ರಲ್ಲಿ.",
+   "tts": "ಪೈಥಾನ್ ಅನ್ನ Guido van Rossum ಅನ್ನೋರು ಮಾಡಿದ್ರು. ಮೊದಲ ಸಲ release ಆಗಿದ್ದು nineteen ninety one ರಲ್ಲಿ."
+  },
+  {
+   "id": "l15",
+   "scene": "langs",
+   "say": "ಒಂದು ಮಜಾ ವಿಷಯ: ಈ ಹೆಸರು ಇಟ್ಟಿದ್ದು ಹಾವಿನ ನೆನಪಲ್ಲಿ ಅಲ್ಲ, ಅವರಿಗೆ ಇಷ್ಟವಾದ ಒಂದು comedy show ನೆನಪಲ್ಲಿ!",
+   "tts": "ಒಂದು ಮಜಾ ವಿಷಯ: ಈ ಹೆಸರು ಇಟ್ಟಿದ್ದು ಹಾವಿನ ನೆನಪಲ್ಲಿ ಅಲ್ಲ, ಅವರಿಗೆ ಇಷ್ಟವಾದ ಒಂದು comedy show ನೆನಪಲ್ಲಿ!"
+  },
+  {
+   "id": "l16",
+   "scene": "compare",
+   "say": "ಹಾಗಿದ್ರೆ, pharmacy students ಗೆ Python ಅನ್ನೇ ಯಾಕೆ ಆರಿಸಿದ್ರು?",
+   "tts": "ಹಾಗಿದ್ರೆ, pharmacy students ಗೆ ಪೈಥಾನ್ ಅನ್ನೇ ಯಾಕೆ ಆರಿಸಿದ್ರು?"
+  },
+  {
+   "id": "l17",
+   "scene": "compare",
+   "say": "ಮೊದಲ ಕಾರಣ: ಇದನ್ನ ಓದೋದು ಹೆಚ್ಚು ಕಡಿಮೆ English ಓದಿದ ಹಾಗೇ.",
+   "tts": "ಮೊದಲ ಕಾರಣ: ಇದನ್ನ ಓದೋದು ಹೆಚ್ಚು ಕಡಿಮೆ English ಓದಿದ ಹಾಗೇ."
+  },
+  {
+   "id": "l18",
+   "scene": "compare",
+   "say": "C ಅನ್ನೋ language ನಲ್ಲಿ, ಒಂದು medicine ಹೆಸರು ತೋರಿಸೋಕೆ ಇಷ್ಟೆಲ್ಲಾ ಬರೆಯಬೇಕು.",
+   "tts": "C ಅನ್ನೋ language ನಲ್ಲಿ, ಒಂದು medicine ಹೆಸರು ತೋರಿಸೋಕೆ ಇಷ್ಟೆಲ್ಲಾ ಬರೆಯಬೇಕು."
+  },
+  {
+   "id": "l19",
+   "scene": "compare",
+   "say": "ಅದೇ ಕೆಲಸ Python ನಲ್ಲಿ? ಒಂದೇ line.",
+   "tts": "ಅದೇ ಕೆಲಸ ಪೈಥಾನ್ ನಲ್ಲಿ? ಒಂದೇ line."
+  },
+  {
+   "id": "l20",
+   "scene": "compare",
+   "say": "print, ಆಮೇಲೆ medicine ಹೆಸರು. ಅಷ್ಟೇ.",
+   "tts": "print, ಆಮೇಲೆ medicine ಹೆಸರು. ಅಷ್ಟೇ."
+  },
+  {
+   "id": "l21",
+   "scene": "compare",
+   "say": "ಕಡಿಮೆ type ಮಾಡಿದಷ್ಟು, ತಪ್ಪುಗಳೂ ಕಡಿಮೆ. ಅರ್ಥ ಮಾಡ್ಕೊಳ್ಳೋಕೆ ಹೆಚ್ಚು ಸಮಯ.",
+   "tts": "ಕಡಿಮೆ type ಮಾಡಿದಷ್ಟು, ತಪ್ಪುಗಳೂ ಕಡಿಮೆ. ಅರ್ಥ ಮಾಡ್ಕೊಳ್ಳೋಕೆ ಹೆಚ್ಚು ಸಮಯ."
+  },
+  {
+   "id": "l22",
+   "scene": "reasons",
+   "say": "ಎರಡನೇ ಕಾರಣ: Python ಪೂರ್ತಿ free. ಯಾರು ಬೇಕಾದ್ರೂ download ಮಾಡಿ use ಮಾಡಬಹುದು.",
+   "tts": "ಎರಡನೇ ಕಾರಣ: ಪೈಥಾನ್ ಪೂರ್ತಿ free. ಯಾರು ಬೇಕಾದ್ರೂ download ಮಾಡಿ use ಮಾಡಬಹುದು."
+  },
+  {
+   "id": "l23",
+   "scene": "reasons",
+   "say": "ಮೂರನೇ ಕಾರಣ: ಇದರಲ್ಲಿ ready-made toolkits ಇವೆ. ಅವನ್ನ libraries ಅಂತಾರೆ.",
+   "tts": "ಮೂರನೇ ಕಾರಣ: ಇದರಲ್ಲಿ ready-made toolkits ಇವೆ. ಅವನ್ನ libraries ಅಂತಾರೆ."
+  },
+  {
+   "id": "l24",
+   "scene": "reasons",
+   "say": "Pharmacy ಯಲ್ಲಿ ಪ್ರತಿ tablet ಅನ್ನೂ ನಾವೇ ಮಾಡಲ್ಲ ಅಲ್ವಾ? ಹಾಗೇ, ಎಲ್ಲವನ್ನೂ zero ಇಂದ ಬರೆಯೋ ಅವಶ್ಯಕತೆ ಇಲ್ಲ.",
+   "tts": "Pharmacy ಯಲ್ಲಿ ಪ್ರತಿ tablet ಅನ್ನೂ ನಾವೇ ಮಾಡಲ್ಲ ಅಲ್ವಾ? ಹಾಗೇ, ಎಲ್ಲವನ್ನೂ zero ಇಂದ ಬರೆಯೋ ಅವಶ್ಯಕತೆ ಇಲ್ಲ."
+  },
+  {
+   "id": "l25",
+   "scene": "reasons",
+   "say": "Calculations ಗೆ ಒಂದು library, data tables ಗೆ ಒಂದು, graphs ಗೆ ಇನ್ನೊಂದು.",
+   "tts": "Calculations ಗೆ ಒಂದು library, data tables ಗೆ ಒಂದು, graphs ಗೆ ಇನ್ನೊಂದು."
+  },
+  {
+   "id": "l26",
+   "scene": "reasons",
+   "say": "ನಾಲ್ಕನೇ ಕಾರಣ, ಎಲ್ಲಕ್ಕಿಂತ interesting ಆದದ್ದು: Python ಅನ್ನ pharmacy ಮತ್ತು healthcare ನಲ್ಲಿ ಪ್ರತಿದಿನ use ಮಾಡ್ತಾರೆ.",
+   "tts": "ನಾಲ್ಕನೇ ಕಾರಣ, ಎಲ್ಲಕ್ಕಿಂತ interesting ಆದದ್ದು: ಪೈಥಾನ್ ಅನ್ನ pharmacy ಮತ್ತು healthcare ನಲ್ಲಿ ಪ್ರತಿದಿನ use ಮಾಡ್ತಾರೆ."
+  },
+  {
+   "id": "l27",
+   "scene": "pharma",
+   "say": "ಸಾವಿರಾರು patients ಇರೋ clinical trial data ಅನ್ನ analyse ಮಾಡೋಕೆ.",
+   "tts": "ಸಾವಿರಾರು patients ಇರೋ clinical trial data ಅನ್ನ analyse ಮಾಡೋಕೆ."
+  },
+  {
+   "id": "l28",
+   "scene": "pharma",
+   "say": "ಒಂದು drug ನ blood concentration, time ಜೊತೆ ಹೇಗೆ ಏರುತ್ತೆ, ಹೇಗೆ ಇಳಿಯುತ್ತೆ ಅಂತ graph ಹಾಕೋಕೆ.",
+   "tts": "ಒಂದು drug ನ blood concentration, time ಜೊತೆ ಹೇಗೆ ಏರುತ್ತೆ, ಹೇಗೆ ಇಳಿಯುತ್ತೆ ಅಂತ graph ಹಾಕೋಕೆ."
+  },
+  {
+   "id": "l29",
+   "scene": "pharma",
+   "say": "Adverse drug reaction reports ನೋಡಿ, ಅಪಾಯದ pattern ಅನ್ನ ಬೇಗ ಕಂಡುಹಿಡಿಯೋಕೆ.",
+   "tts": "Adverse drug reaction reports ನೋಡಿ, ಅಪಾಯದ pattern ಅನ್ನ ಬೇಗ ಕಂಡುಹಿಡಿಯೋಕೆ."
+  },
+  {
+   "id": "l30",
+   "scene": "pharma",
+   "say": "Lab ನಲ್ಲಿ ಏನೂ ಮಾಡೋಕೆ ಮುಂಚೆನೇ, computer ನಲ್ಲೇ ಹೊಸ drug molecules design ಮಾಡೋಕೆ ಕೂಡ.",
+   "tts": "Lab ನಲ್ಲಿ ಏನೂ ಮಾಡೋಕೆ ಮುಂಚೆನೇ, computer ನಲ್ಲೇ ಹೊಸ drug molecules design ಮಾಡೋಕೆ ಕೂಡ."
+  },
+  {
+   "id": "l31",
+   "scene": "pharma",
+   "say": "ಅಂದ್ರೆ Python ಬರೀ computer subject ಅಲ್ಲ. ಇದು ಒಂದು pharmacy skill.",
+   "tts": "ಅಂದ್ರೆ ಪೈಥಾನ್ ಬರೀ computer subject ಅಲ್ಲ. ಇದು ಒಂದು pharmacy skill."
+  },
+  {
+   "id": "l32",
+   "scene": "interp",
+   "say": "ಕೊನೆಯದಾಗಿ ಒಂದು ವಿಷಯ: Python ನಿಮ್ಮ program ಅನ್ನ ನಿಜವಾಗಲೂ ಹೇಗೆ run ಮಾಡುತ್ತೆ?",
+   "tts": "ಕೊನೆಯದಾಗಿ ಒಂದು ವಿಷಯ: ಪೈಥಾನ್ ನಿಮ್ಮ program ಅನ್ನ ನಿಜವಾಗಲೂ ಹೇಗೆ run ಮಾಡುತ್ತೆ?"
+  },
+  {
+   "id": "l33",
+   "scene": "interp",
+   "say": "Pharmacist prescription ಓದೋದನ್ನ ನೆನಪಿಸ್ಕೊಳ್ಳಿ: ಮೊದಲ line, ಆಮೇಲೆ ಮುಂದಿನದು, ಆಮೇಲೆ ಅದರ ಮುಂದಿನದು.",
+   "tts": "Pharmacist prescription ಓದೋದನ್ನ ನೆನಪಿಸ್ಕೊಳ್ಳಿ: ಮೊದಲ line, ಆಮೇಲೆ ಮುಂದಿನದು, ಆಮೇಲೆ ಅದರ ಮುಂದಿನದು."
+  },
+  {
+   "id": "l34",
+   "scene": "interp",
+   "say": "Python ಕೂಡ ಹಾಗೇ ಕೆಲಸ ಮಾಡುತ್ತೆ.",
+   "tts": "ಪೈಥಾನ್ ಕೂಡ ಹಾಗೇ ಕೆಲಸ ಮಾಡುತ್ತೆ."
+  },
+  {
+   "id": "l35",
+   "scene": "interp",
+   "say": "Python ನಲ್ಲಿ interpreter ಅನ್ನೋ ಒಂದು ಭಾಗ ಇದೆ. ಅದು ನಿಮ್ಮ code ಅನ್ನ ಒಂದೊಂದೇ line ಆಗಿ, ಮೇಲಿಂದ ಕೆಳಗೆ ಓದುತ್ತೆ.",
+   "tts": "ಪೈಥಾನ್ ನಲ್ಲಿ interpreter ಅನ್ನೋ ಒಂದು ಭಾಗ ಇದೆ. ಅದು ನಿಮ್ಮ code ಅನ್ನ ಒಂದೊಂದೇ line ಆಗಿ, ಮೇಲಿಂದ ಕೆಳಗೆ ಓದುತ್ತೆ."
+  },
+  {
+   "id": "l36",
+   "scene": "interp",
+   "say": "ಮೊದಲ line run ಆಗುತ್ತೆ. ಆಮೇಲೆ ಎರಡನೇದು. ಆಮೇಲೆ ಮೂರನೇದು.",
+   "tts": "ಮೊದಲ line run ಆಗುತ್ತೆ. ಆಮೇಲೆ ಎರಡನೇದು. ಆಮೇಲೆ ಮೂರನೇದು."
+  },
+  {
+   "id": "l37",
+   "scene": "interp",
+   "say": "Lines ನ order ಬದಲಾಯಿಸಿದ್ರೆ, output ಕೂಡ ಬದಲಾಗುತ್ತೆ.",
+   "tts": "Lines ನ order ಬದಲಾಯಿಸಿದ್ರೆ, output ಕೂಡ ಬದಲಾಗುತ್ತೆ."
+  },
+  {
+   "id": "l38",
+   "scene": "quiz",
+   "say": "ಒಂದು quick check. Python ನಿಮ್ಮ program ಅನ್ನ ಹೇಗೆ run ಮಾಡುತ್ತೆ?",
+   "tts": "ಒಂದು quick check. ಪೈಥಾನ್ ನಿಮ್ಮ program ಅನ್ನ ಹೇಗೆ run ಮಾಡುತ್ತೆ?"
+  },
+  {
+   "id": "l39",
+   "scene": "quiz",
+   "say": "ಸ್ವಲ್ಪ ಯೋಚನೆ ಮಾಡಿ.",
+   "tts": "ಸ್ವಲ್ಪ ಯೋಚನೆ ಮಾಡಿ."
+  },
+  {
+   "id": "l40",
+   "scene": "quiz-answer",
+   "say": "ಉತ್ತರ B. ಒಂದೊಂದೇ line, ಮೇಲಿಂದ ಕೆಳಗೆ. Super!",
+   "tts": "ಉತ್ತರ B. ಒಂದೊಂದೇ line, ಮೇಲಿಂದ ಕೆಳಗೆ. Super!"
+  },
+  {
+   "id": "l41",
+   "scene": "recap",
+   "say": "ಒಂದ್ಸಲ recap ಮಾಡೋಣ.",
+   "tts": "ಒಂದ್ಸಲ recap ಮಾಡೋಣ."
+  },
+  {
+   "id": "l42",
+   "scene": "recap",
+   "say": "Computer ಗೆ zero, one ಮಾತ್ರ ಅರ್ಥ ಆಗುತ್ತೆ. ಅದಕ್ಕೇ ಅದರ ಜೊತೆ ಮಾತಾಡೋಕೆ programming languages use ಮಾಡ್ತೀವಿ.",
+   "tts": "Computer ಗೆ zero, one ಮಾತ್ರ ಅರ್ಥ ಆಗುತ್ತೆ. ಅದಕ್ಕೇ ಅದರ ಜೊತೆ ಮಾತಾಡೋಕೆ programming languages use ಮಾಡ್ತೀವಿ."
+  },
+  {
+   "id": "l43",
+   "scene": "recap",
+   "say": "Python ಓದೋಕೆ ಸುಲಭ, free, ತುಂಬಾ ready-made libraries ಇವೆ, ಮತ್ತೆ pharmacy ಯಲ್ಲಿ ಎಲ್ಲಾ ಕಡೆ use ಆಗುತ್ತೆ.",
+   "tts": "ಪೈಥಾನ್ ಓದೋಕೆ ಸುಲಭ, free, ತುಂಬಾ ready-made libraries ಇವೆ, ಮತ್ತೆ pharmacy ಯಲ್ಲಿ ಎಲ್ಲಾ ಕಡೆ use ಆಗುತ್ತೆ."
+  },
+  {
+   "id": "l44",
+   "scene": "recap",
+   "say": "Interpreter, Python code ಅನ್ನ ಒಂದೊಂದೇ line ಆಗಿ, ಮೇಲಿಂದ ಕೆಳಗೆ run ಮಾಡುತ್ತೆ.",
+   "tts": "Interpreter, ಪೈಥಾನ್ code ಅನ್ನ ಒಂದೊಂದೇ line ಆಗಿ, ಮೇಲಿಂದ ಕೆಳಗೆ run ಮಾಡುತ್ತೆ."
+  },
+  {
+   "id": "l45",
+   "scene": "teaser2",
+   "say": "ಮುಂದೆ, ನಿಮ್ಮ turn.",
+   "tts": "ಮುಂದೆ, ನಿಮ್ಮ turn."
+  },
+  {
+   "id": "l46",
+   "scene": "teaser2",
+   "say": "ನಿಮ್ಮ phone ನಲ್ಲೇ, ನಿಮ್ಮ ಮೊದಲ program ಬರೀತೀರಿ: ಒಂದು medicine label.",
+   "tts": "ನಿಮ್ಮ phone ನಲ್ಲೇ, ನಿಮ್ಮ ಮೊದಲ program ಬರೀತೀರಿ: ಒಂದು medicine label."
+  },
+  {
+   "id": "l47",
+   "scene": "teaser2",
+   "say": "ನಿಮ್ಮ ಮೊದಲ error ಅನ್ನೂ ನೋಡ್ತೀರಿ. ಅದು ಯಾಕೆ ನಿಮ್ಮ friend ಅಂತಾನೂ ಗೊತ್ತಾಗುತ್ತೆ.",
+   "tts": "ನಿಮ್ಮ ಮೊದಲ error ಅನ್ನೂ ನೋಡ್ತೀರಿ. ಅದು ಯಾಕೆ ನಿಮ್ಮ friend ಅಂತಾನೂ ಗೊತ್ತಾಗುತ್ತೆ."
+  },
+  {
+   "id": "l48",
+   "scene": "teaser2",
+   "say": "ಮೂರನೇ episode ನಲ್ಲಿ ಸಿಗೋಣ: ನಿಮ್ಮ ಮೊದಲ program!",
+   "tts": "ಮೂರನೇ episode ನಲ್ಲಿ ಸಿಗೋಣ: ನಿಮ್ಮ ಮೊದಲ program!"
+  }
+ ]
+}

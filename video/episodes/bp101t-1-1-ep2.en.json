@@ -1,0 +1,298 @@
+{
+ "course": "bp101t",
+ "lesson": "1-1",
+ "episode": 2,
+ "lang": "en",
+ "engine": "sarvam",
+ "speaker": "ritu_en_edtech",
+ "lines": [
+  {
+   "id": "l01",
+   "scene": "binary",
+   "say": "Last time, we found a problem.",
+   "tts": "Last time, we found a problem."
+  },
+  {
+   "id": "l02",
+   "scene": "binary",
+   "say": "A computer doesn't understand English, or any language we speak.",
+   "tts": "A computer doesn't understand English, or any language we speak."
+  },
+  {
+   "id": "l03",
+   "scene": "binary",
+   "say": "Deep inside, it understands only two things: zero and one.",
+   "tts": "Deep inside, it understands only two things: zero and one."
+  },
+  {
+   "id": "l04",
+   "scene": "binary",
+   "say": "Even a tiny instruction like 'show 500' looks like this to a computer.",
+   "tts": "Even a tiny instruction like show five hundred looks like this to a computer."
+  },
+  {
+   "id": "l05",
+   "scene": "binary",
+   "say": "Imagine writing a whole prescription like that. Impossible!",
+   "tts": "Imagine writing a whole prescription like that. Impossible!"
+  },
+  {
+   "id": "l06",
+   "scene": "bridge",
+   "say": "Imagine a patient walks into your pharmacy, speaking a language you don't know.",
+   "tts": "Imagine a patient walks into your pharmacy, speaking a language you don't know."
+  },
+  {
+   "id": "l07",
+   "scene": "bridge",
+   "say": "You'd need something in between: a common language you both understand.",
+   "tts": "You'd need something in between: a common language you both understand."
+  },
+  {
+   "id": "l08",
+   "scene": "bridge",
+   "say": "People and computers have exactly the same problem.",
+   "tts": "People and computers have exactly the same problem."
+  },
+  {
+   "id": "l09",
+   "scene": "bridge",
+   "say": "So we created special languages that people can write, and computers can understand.",
+   "tts": "So we created special languages that people can write, and computers can understand."
+  },
+  {
+   "id": "l10",
+   "scene": "bridge",
+   "say": "These are called programming languages.",
+   "tts": "These are called programming languages."
+  },
+  {
+   "id": "l11",
+   "scene": "langs",
+   "say": "There are many of them.",
+   "tts": "There are many of them."
+  },
+  {
+   "id": "l12",
+   "scene": "langs",
+   "say": "C. Java. JavaScript.",
+   "tts": "C. Java. JavaScript."
+  },
+  {
+   "id": "l13",
+   "scene": "langs",
+   "say": "And the one in your syllabus: Python.",
+   "tts": "And the one in your syllabus: Python."
+  },
+  {
+   "id": "l14",
+   "scene": "langs",
+   "say": "Python was created by Guido van Rossum, and first released in 1991.",
+   "tts": "Python was created by Guido van Rossum, and first released in nineteen ninety-one."
+  },
+  {
+   "id": "l15",
+   "scene": "langs",
+   "say": "Fun fact: he didn't name it after the snake, but after a comedy show he loved!",
+   "tts": "Fun fact: he didn't name it after the snake, but after a comedy show he loved!"
+  },
+  {
+   "id": "l16",
+   "scene": "compare",
+   "say": "So why was Python chosen for pharmacy students?",
+   "tts": "So why was Python chosen for pharmacy students?"
+  },
+  {
+   "id": "l17",
+   "scene": "compare",
+   "say": "Reason one: it reads almost like English.",
+   "tts": "Reason one: it reads almost like English."
+  },
+  {
+   "id": "l18",
+   "scene": "compare",
+   "say": "In a language called C, showing one medicine name takes all this.",
+   "tts": "In a language called C, showing one medicine name takes all this."
+  },
+  {
+   "id": "l19",
+   "scene": "compare",
+   "say": "The same thing in Python? Just one line.",
+   "tts": "The same thing in Python? Just one line."
+  },
+  {
+   "id": "l20",
+   "scene": "compare",
+   "say": "Print, then the medicine name. That's it.",
+   "tts": "Print, then the medicine name. That's it."
+  },
+  {
+   "id": "l21",
+   "scene": "compare",
+   "say": "Less typing means fewer mistakes, and more time to understand.",
+   "tts": "Less typing means fewer mistakes, and more time to understand."
+  },
+  {
+   "id": "l22",
+   "scene": "reasons",
+   "say": "Reason two: Python is completely free. Anyone can download it and use it.",
+   "tts": "Reason two: Python is completely free. Anyone can download it and use it."
+  },
+  {
+   "id": "l23",
+   "scene": "reasons",
+   "say": "Reason three: it comes with ready-made toolkits, called libraries.",
+   "tts": "Reason three: it comes with ready-made toolkits, called libraries."
+  },
+  {
+   "id": "l24",
+   "scene": "reasons",
+   "say": "A pharmacy doesn't make every tablet from scratch. And you don't write everything from zero.",
+   "tts": "A pharmacy doesn't make every tablet from scratch. And you don't write everything from zero."
+  },
+  {
+   "id": "l25",
+   "scene": "reasons",
+   "say": "There's a library for calculations, one for tables of data, and one for graphs.",
+   "tts": "There's a library for calculations, one for tables of data, and one for graphs."
+  },
+  {
+   "id": "l26",
+   "scene": "reasons",
+   "say": "Reason four, and the most exciting: Python is used in pharmacy and healthcare, every single day.",
+   "tts": "Reason four, and the most exciting: Python is used in pharmacy and healthcare, every single day."
+  },
+  {
+   "id": "l27",
+   "scene": "pharma",
+   "say": "To analyse clinical trial data from thousands of patients.",
+   "tts": "To analyse clinical trial data from thousands of patients."
+  },
+  {
+   "id": "l28",
+   "scene": "pharma",
+   "say": "To plot how a drug's concentration in the blood rises and falls over time.",
+   "tts": "To plot how a drug's concentration in the blood rises and falls over time."
+  },
+  {
+   "id": "l29",
+   "scene": "pharma",
+   "say": "To study adverse drug reaction reports, and spot a dangerous pattern early.",
+   "tts": "To study adverse drug reaction reports, and spot a dangerous pattern early."
+  },
+  {
+   "id": "l30",
+   "scene": "pharma",
+   "say": "And even to design new drug molecules on a computer, before anything is made in a lab.",
+   "tts": "And even to design new drug molecules on a computer, before anything is made in a lab."
+  },
+  {
+   "id": "l31",
+   "scene": "pharma",
+   "say": "So Python isn't just a computer subject. It's a pharmacy skill.",
+   "tts": "So Python isn't just a computer subject. It's a pharmacy skill."
+  },
+  {
+   "id": "l32",
+   "scene": "interp",
+   "say": "Now, one last thing: how does Python actually run your program?",
+   "tts": "Now, one last thing: how does Python actually run your program?"
+  },
+  {
+   "id": "l33",
+   "scene": "interp",
+   "say": "Think of a pharmacist reading a prescription: the first line, then the next, then the next.",
+   "tts": "Think of a pharmacist reading a prescription: the first line, then the next, then the next."
+  },
+  {
+   "id": "l34",
+   "scene": "interp",
+   "say": "Python works the same way.",
+   "tts": "Python works the same way."
+  },
+  {
+   "id": "l35",
+   "scene": "interp",
+   "say": "A part of Python called the interpreter reads your code one line at a time, from top to bottom.",
+   "tts": "A part of Python called the interpreter reads your code one line at a time, from top to bottom."
+  },
+  {
+   "id": "l36",
+   "scene": "interp",
+   "say": "Line one runs. Then line two. Then line three.",
+   "tts": "Line one runs. Then line two. Then line three."
+  },
+  {
+   "id": "l37",
+   "scene": "interp",
+   "say": "Change the order of the lines, and the output changes too.",
+   "tts": "Change the order of the lines, and the output changes too."
+  },
+  {
+   "id": "l38",
+   "scene": "quiz",
+   "say": "Quick check. How does Python run your program?",
+   "tts": "Quick check. How does Python run your program?"
+  },
+  {
+   "id": "l39",
+   "scene": "quiz",
+   "say": "Take a moment to think.",
+   "tts": "Take a moment to think."
+  },
+  {
+   "id": "l40",
+   "scene": "quiz-answer",
+   "say": "The answer is B: one line at a time, from top to bottom. Super!",
+   "tts": "The answer is B: one line at a time, from top to bottom. Super!"
+  },
+  {
+   "id": "l41",
+   "scene": "recap",
+   "say": "Let's recap.",
+   "tts": "Let's recap."
+  },
+  {
+   "id": "l42",
+   "scene": "recap",
+   "say": "Computers understand only zero and one, so we talk to them through programming languages.",
+   "tts": "Computers understand only zero and one, so we talk to them through programming languages."
+  },
+  {
+   "id": "l43",
+   "scene": "recap",
+   "say": "Python is easy to read, free, full of ready-made libraries, and used all across pharmacy.",
+   "tts": "Python is easy to read, free, full of ready-made libraries, and used all across pharmacy."
+  },
+  {
+   "id": "l44",
+   "scene": "recap",
+   "say": "And the interpreter runs Python one line at a time, from top to bottom.",
+   "tts": "And the interpreter runs Python one line at a time, from top to bottom."
+  },
+  {
+   "id": "l45",
+   "scene": "teaser2",
+   "say": "Next, it's your turn.",
+   "tts": "Next, it's your turn."
+  },
+  {
+   "id": "l46",
+   "scene": "teaser2",
+   "say": "You'll write your very first program, a medicine label, right on your phone.",
+   "tts": "You'll write your very first program, a medicine label, right on your phone."
+  },
+  {
+   "id": "l47",
+   "scene": "teaser2",
+   "say": "And you'll meet your first error, and find out why it's actually your friend.",
+   "tts": "And you'll meet your first error, and find out why it's actually your friend."
+  },
+  {
+   "id": "l48",
+   "scene": "teaser2",
+   "say": "See you in Episode 3: Your first program!",
+   "tts": "See you in Episode 3: Your first program!"
+  }
+ ]
+}

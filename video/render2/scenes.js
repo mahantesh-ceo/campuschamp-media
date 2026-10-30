@@ -290,7 +290,7 @@
         <div class="abs" style="inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
           <div id="g" style="width:132px;height:132px;border-radius:36px;background:linear-gradient(140deg,#6366f1,#7c3aed 55%,#2dd4bf);display:grid;place-items:center;color:#fff;font-family:var(--mono);font-weight:700;font-size:48px;box-shadow:0 30px 80px rgba(99,102,241,.35)">&lt;/&gt;</div>
           <p id="e" style="margin-top:54px;font-family:var(--head);font-weight:600;font-size:28px;color:#6e6e73">BP101T · Lesson ${T.lessonNumber} · Episode ${T.episode}</p>
-          <h1 id="h" class="h" style="margin-top:14px;font-size:112px;letter-spacing:-.035em;line-height:1.05;color:#1d1d1f">${tx('title')}</h1>
+          <h1 id="h" class="h" style="margin-top:14px;font-size:112px;letter-spacing:-.035em;line-height:1.05;color:#1d1d1f">${T.title || tx('title')}</h1>
           <p id="f" style="margin-top:26px;font-size:30px;color:#6e6e73">Campus Champ · ${tx('langName')}</p>
         </div>`,
       update: (el, t, s) => {
@@ -551,9 +551,9 @@
     quiz: {
       build: () => `
         ${bg(['#4c1d95', '#2e1065', '#0f0727'])}
-        <h2 class="abs h" style="left:150px;top:170px;font-size:64px;color:#fff">${tx('quizQ')}</h2>
+        <h2 class="abs h" style="left:150px;top:170px;font-size:64px;color:#fff">${T.quiz ? T.quiz.q : tx('quizQ')}</h2>
         <div class="abs" style="left:150px;right:420px;top:330px;display:flex;flex-direction:column;gap:24px">
-          ${['Computer screen', tx('quizB'), 'Internet'].map((o, i) => `<div class="opt" data-i="${i}" style="opacity:0"><span class="l">${'ABC'[i]}</span><span>${o}</span></div>`).join('')}
+          ${(T.quiz ? T.quiz.options : ['Computer screen', tx('quizB'), 'Internet']).map((o, i) => `<div class="opt" data-i="${i}" style="opacity:0"><span class="l">${'ABC'[i]}</span><span>${o}</span></div>`).join('')}
         </div>
         <div id="ring" class="abs" style="right:150px;top:340px;width:240px;height:240px;opacity:0">
           <svg viewBox="0 0 100 100" style="width:100%;height:100%;transform:rotate(-90deg)"><circle cx="50" cy="50" r="44" fill="rgba(255,255,255,.08)"/><circle id="arc" cx="50" cy="50" r="44" fill="none" stroke="#c4b5fd" stroke-width="7" stroke-linecap="round" stroke-dasharray="276.5"/></svg>
@@ -564,7 +564,7 @@
         const ans = s.lines[s.lines.length - 1];
         $$('.opt', el).forEach((o, i) => {
           show(o, ap(t, S(s, 0) + 0.5 + i * 0.2, 0.5), 20, 0.97);
-          const right = i === 1, shown = t >= ans.start;
+          const right = i === (T.quiz ? T.quiz.answer : 1), shown = t >= ans.start;
           o.style.background = shown && right ? 'rgba(52,211,153,.2)' : 'rgba(255,255,255,.07)';
           o.style.borderColor = shown && right ? '#34d399' : 'rgba(255,255,255,.16)';
           o.style.opacity = shown && !right ? 0.4 : o.style.opacity;
@@ -585,7 +585,7 @@
         ${bg(['#065f46', '#053b33', '#03201d'])}
         <p class="abs h" id="rt" style="left:150px;top:160px;font-size:64px;color:#fff;opacity:0">Recap</p>
         <div class="abs" style="left:150px;right:150px;top:300px;display:flex;flex-direction:column;gap:30px">
-          ${tx('recap').map((p, i) => `<div class="rp" style="opacity:0;display:flex;gap:28px;align-items:center;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.16);border-radius:30px;padding:30px 36px">
+          ${(T.recap || tx('recap')).map((p, i) => `<div class="rp" style="opacity:0;display:flex;gap:28px;align-items:center;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.16);border-radius:30px;padding:30px 36px">
             <span style="flex:none;width:70px;height:70px;border-radius:50%;background:#34d399;color:#03201d;display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:34px">${i + 1}</span>
             <span style="font-size:44px;color:#fff;font-weight:600">${p}</span></div>`).join('')}
         </div>`,
@@ -623,8 +623,8 @@
         <div class="layer brand"></div>
         <div class="abs" style="left:150px;top:0;bottom:0;width:900px;display:flex;flex-direction:column;justify-content:center">
           <p id="e1" style="font-family:var(--head);font-weight:600;font-size:30px;color:#6e6e73">${tx('nextEp')}</p>
-          <h1 id="e2" class="h" style="margin-top:12px;font-size:110px;letter-spacing:-.035em;line-height:1.05;color:#1d1d1f">${tx('whyBrand')}</h1>
-          <p id="e3" style="margin-top:30px;font-size:34px;line-height:1.45;color:#424245">${tx('nextDesc')}</p>
+          <h1 id="e2" class="h" style="margin-top:12px;font-size:110px;letter-spacing:-.035em;line-height:1.05;color:#1d1d1f">${T.next ? T.next.title : tx('whyBrand')}</h1>
+          <p id="e3" style="margin-top:30px;font-size:34px;line-height:1.45;color:#424245">${T.next ? T.next.desc : tx('nextDesc')}</p>
           <div id="e4" style="margin-top:56px;display:flex;gap:16px;align-items:center">
             <span style="font-family:var(--head);font-weight:700;font-size:30px;background:#1d1d1f;color:#fff;border-radius:999px;padding:20px 36px">Practise free →</span>
             <span style="font-family:var(--head);font-weight:600;font-size:30px;color:#4f46e5;padding:0 10px">campuschamp.in</span>
@@ -639,6 +639,10 @@
       },
     },
   };
+
+  // Later episodes add their own scenes (scenes-ep2.js …) and reuse these helpers and the shared
+  // sting, quiz, recap and end card, which read the episode's words from the timeline.
+  window.addScenes = (make) => Object.assign(SCENES, make({ $, $$, clamp, ease, easeIO, ap, lerp, esc, show, pop, S, E, byId, prescription, chipSvg, chipFace, bg, T: () => T }));
 
   // ---------- frame ----------
   function speaking(t) {

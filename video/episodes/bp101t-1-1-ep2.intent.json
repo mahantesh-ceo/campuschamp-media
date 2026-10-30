@@ -1,0 +1,194 @@
+[
+ [
+  "binary",
+  "Last time, we found a problem."
+ ],
+ [
+  "binary",
+  "A computer doesn't understand English, or any language we speak."
+ ],
+ [
+  "binary",
+  "Deep inside, it understands only two things: zero and one."
+ ],
+ [
+  "binary",
+  "Even a tiny instruction like 'show 500' looks like this to a computer."
+ ],
+ [
+  "binary",
+  "Imagine writing a whole prescription like that. Impossible!"
+ ],
+ [
+  "bridge",
+  "Imagine a patient walks into your pharmacy, speaking a language you don't know."
+ ],
+ [
+  "bridge",
+  "You'd need something in between: a common language you both understand."
+ ],
+ [
+  "bridge",
+  "People and computers have exactly the same problem."
+ ],
+ [
+  "bridge",
+  "So we created special languages that people can write, and computers can understand."
+ ],
+ [
+  "bridge",
+  "These are called programming languages."
+ ],
+ [
+  "langs",
+  "There are many of them."
+ ],
+ [
+  "langs",
+  "C. Java. JavaScript."
+ ],
+ [
+  "langs",
+  "And the one in your syllabus: Python."
+ ],
+ [
+  "langs",
+  "Python was created by Guido van Rossum, and first released in 1991."
+ ],
+ [
+  "langs",
+  "Fun fact: he didn't name it after the snake, but after a comedy show he loved!"
+ ],
+ [
+  "compare",
+  "So why was Python chosen for pharmacy students?"
+ ],
+ [
+  "compare",
+  "Reason one: it reads almost like English."
+ ],
+ [
+  "compare",
+  "In a language called C, showing one medicine name takes all this."
+ ],
+ [
+  "compare",
+  "The same thing in Python? Just one line."
+ ],
+ [
+  "compare",
+  "Print, then the medicine name. That's it."
+ ],
+ [
+  "compare",
+  "Less typing means fewer mistakes, and more time to understand."
+ ],
+ [
+  "reasons",
+  "Reason two: Python is completely free. Anyone can download it and use it."
+ ],
+ [
+  "reasons",
+  "Reason three: it comes with ready-made toolkits, called libraries."
+ ],
+ [
+  "reasons",
+  "A pharmacy doesn't make every tablet from scratch. And you don't write everything from zero."
+ ],
+ [
+  "reasons",
+  "There's a library for calculations, one for tables of data, and one for graphs."
+ ],
+ [
+  "reasons",
+  "Reason four, and the most exciting: Python is used in pharmacy and healthcare, every single day."
+ ],
+ [
+  "pharma",
+  "To analyse clinical trial data from thousands of patients."
+ ],
+ [
+  "pharma",
+  "To plot how a drug's concentration in the blood rises and falls over time."
+ ],
+ [
+  "pharma",
+  "To study adverse drug reaction reports, and spot a dangerous pattern early."
+ ],
+ [
+  "pharma",
+  "And even to design new drug molecules on a computer, before anything is made in a lab."
+ ],
+ [
+  "pharma",
+  "So Python isn't just a computer subject. It's a pharmacy skill."
+ ],
+ [
+  "interp",
+  "Now, one last thing: how does Python actually run your program?"
+ ],
+ [
+  "interp",
+  "Think of a pharmacist reading a prescription: the first line, then the next, then the next."
+ ],
+ [
+  "interp",
+  "Python works the same way."
+ ],
+ [
+  "interp",
+  "A part of Python called the interpreter reads your code one line at a time, from top to bottom."
+ ],
+ [
+  "interp",
+  "Line one runs. Then line two. Then line three."
+ ],
+ [
+  "interp",
+  "Change the order of the lines, and the output changes too."
+ ],
+ [
+  "quiz",
+  "Quick check. How does Python run your program?"
+ ],
+ [
+  "quiz",
+  "Take a moment to think."
+ ],
+ [
+  "quiz-answer",
+  "The answer is B: one line at a time, from top to bottom. Super!"
+ ],
+ [
+  "recap",
+  "Let's recap."
+ ],
+ [
+  "recap",
+  "Computers understand only zero and one, so we talk to them through programming languages."
+ ],
+ [
+  "recap",
+  "Python is easy to read, free, full of ready-made libraries, and used all across pharmacy."
+ ],
+ [
+  "recap",
+  "And the interpreter runs Python one line at a time, from top to bottom."
+ ],
+ [
+  "teaser",
+  "Next, it's your turn."
+ ],
+ [
+  "teaser",
+  "You'll write your very first program, a medicine label, right on your phone."
+ ],
+ [
+  "teaser",
+  "And you'll meet your first error, and find out why it's actually your friend."
+ ],
+ [
+  "teaser",
+  "See you in Episode 3: Your first program!"
+ ]
+]

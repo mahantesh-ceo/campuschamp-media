@@ -1,0 +1,23 @@
+{
+  "lesson": "1-1",
+  "episode": 2,
+  "language": "hi",
+  "file": "video/out/bp101t-1-1-ep2-hi.mp4",
+  "chapters": "video/out/bp101t-1-1-ep2-hi.chapters.txt",
+  "thumbnail": "video/out/bp101t-1-1-ep2-hi.png",
+  "description": "B.Pharm Sem I, BP101T Basics of Python Programming for Pharmaceutical Sciences, हिंदी में.\n\nइस episode में: computer को हमारी भाषा क्यों समझ नहीं आती, programming language क्या होती है, pharmacy students के लिए Python ही क्यों, और Python आपका program एक-एक line करके कैसे run करता है.\n\n▶ इस lesson को अपने phone पर free practise कीजिए:\nhttps://www.campuschamp.in/learn/bp101t/1-1?utm_source=youtube&utm_medium=video&utm_campaign=bp101t-1-1-ep2-hi\n\n📄 BP101T Unit 1 important questions (free PDF):\nhttps://www.campuschamp.in/hi/bp101t/important-questions/unit-1?utm_source=youtube&utm_medium=video&utm_campaign=bp101t-1-1-ep2-hi\n\nChapters\n{{CHAPTERS}}\n\nNarration uses an AI voice. Practice questions only; university questions may differ.\n\n#BP101T #BPharm #PythonInHindi #PCI",
+  "tags": [
+    "BP101T",
+    "B.Pharm Python",
+    "Python in Hindi",
+    "Python हिंदी में",
+    "why python",
+    "python interpreter hindi",
+    "Basics of Python Programming for Pharmaceutical Sciences",
+    "PCI syllabus",
+    "B.Pharm Sem 1",
+    "pharmacy students",
+    "Campus Champ"
+  ],
+  "topic": "Python क्यों?"
+}

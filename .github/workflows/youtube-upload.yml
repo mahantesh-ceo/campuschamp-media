@@ -1,6 +1,10 @@
 name: Publish episode on YouTube
 
+# Runs by itself when new episode metadata (video/meta/*.json) is pushed, or by hand from the Actions tab.
 on:
+  push:
+    branches: [main]
+    paths: ["video/meta/*.json"]
   workflow_dispatch:
     inputs:
       meta:
@@ -15,11 +19,29 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: youtube-upload
+  cancel-in-progress: false
+
 jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - name: Which episodes
+        id: which
+        env:
+          INPUT_META: ${{ inputs.meta }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            git fetch -q --depth=1 origin "$BEFORE" 2>/dev/null || true
+            files=$(git diff --name-only --diff-filter=AM "$BEFORE" HEAD -- 'video/meta/*.json' 2>/dev/null || ls video/meta/*.json)
+          else
+            files="$INPUT_META"
+          fi
+          echo "meta=$(echo $files)" >> "$GITHUB_OUTPUT"
+          echo "Episodes: $files"
       - name: Upload
         env:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
@@ -27,8 +49,8 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           YT_REFRESH_TOKEN_HI: ${{ secrets.YT_REFRESH_TOKEN_HI }}
           YT_REFRESH_TOKEN_EN: ${{ secrets.YT_REFRESH_TOKEN_EN }}
-          PUBLISH: ${{ inputs.publish }}
-          META: ${{ inputs.meta }}
+          PUBLISH: ${{ inputs.publish || 'public' }}
+          META: ${{ steps.which.outputs.meta }}
         # every language of the episode; one language failing doesn't stop the others
         run: |
           fail=0
@@ -45,5 +67,5 @@ jobs:
           git config user.email "video-bot@campuschamp.in"
           git add content/bp101t/videos.json
           if [ -f video/playlists.json ]; then git add video/playlists.json; fi
-          git commit -m "YouTube ids for ${{ inputs.meta }}" || echo "nothing to commit"
-          git push
+          git commit -m "YouTube ids for ${{ steps.which.outputs.meta }}" || echo "nothing to commit"
+          git pull -q --rebase origin main && git push
