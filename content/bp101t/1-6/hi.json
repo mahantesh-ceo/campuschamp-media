@@ -1,0 +1,347 @@
+{
+  "hook": {
+    "title": "गड़बड़ drug entry को साफ़ कीजिए",
+    "md": "असली records अक्सर गड़बड़ होते हैं। कोई `  amoxicillin 250mg  ` type कर देता है: आगे-पीछे extra spaces, छोटा पहला अक्षर, और unit से पहले space नहीं। Clinical report में यह ऐसे print नहीं हो सकता।\n\nइस lesson के अंत तक आपका program ऐसी entries को साफ़ करेगा, batch code के हिस्से पढ़ेगा, और patient record को उसके हिस्सों में बाँटेगा।"
+  },
+  "learn": [
+    "**+**, **\\*** और **len()** से text को जोड़ना, दोहराना और नापना",
+    "**index** से एक character, और **slice** से text का एक हिस्सा कैसे निकालें",
+    "**strip()**, **upper()**, **lower()**, **capitalize()** और **replace()** से text कैसे साफ़ करें",
+    "**in**, **find()** और **count()** से text में कैसे खोजें, और **split()** से उसे कैसे तोड़ें"
+  ],
+  "explanation": [
+    {
+      "heading": "Strings: जोड़ना, दोहराना, नापना",
+      "md": "**String** quotes के अंदर लिखा text है, जैसा आपने Lesson 1.3 में देखा। तीन tools पूरी string पर काम करते हैं:\n\n```python\ndrug = \"Paracetamol\"\nprint(drug + \" 500 mg\")\nprint(\"-\" * 12)\nprint(len(drug))\n```\n\nयह print करता है:\n\n```\nParacetamol 500 mg\n------------\n11\n```\n\n`+` दो strings जोड़ता है, `*` string को दोहराता है, और `len()` उसके characters गिनता है। Spaces भी गिने जाते हैं: `len(\"500 mg\")` है 6।"
+    },
+    {
+      "heading": "Indexing: एक बार में एक character",
+      "md": "String के हर character का एक position number होता है, जिसे **index** कहते हैं। Python गिनती **0** से शुरू करता है, 1 से नहीं:\n\n```python\ndrug = \"Aspirin\"\nprint(drug[0])\nprint(drug[3])\nprint(drug[-1])\n```\n\nयह `A`, `i` और `n` print करता है। `\"Aspirin\"` में A index 0 पर है, s 1 पर, p 2 पर, i 3 पर, और इसी तरह n 6 पर।\n\n**Negative index** आखिर से गिनता है: `drug[-1]` आखिरी character है, `drug[-2]` उससे पहले वाला।",
+      "callout": {
+        "title": "गिनती 0 से शुरू होती है",
+        "md": "पहला character drug[0] है। drug[1] दूसरा है।"
+      }
+    },
+    {
+      "heading": "Slicing: string का एक हिस्सा",
+      "md": "**Slice** string का एक हिस्सा निकालता है: `text[start:end]`। यह `start` से शुरू होकर `end` से **ठीक पहले** रुकता है।\n\nMedicine strip के batch code में अक्सर काम के हिस्से छुपे होते हैं:\n\n```python\nbatch = \"AMX-2026-0457\"\nprint(batch[0:3])\nprint(batch[4:8])\nprint(batch[-4:])\n```\n\nयह print करता है:\n\n```\nAMX\n2026\n0457\n```\n\n`start` छोड़ दें तो शुरुआत से, और `end` छोड़ दें तो आखिर तक: `batch[:3]` है `AMX` और `batch[9:]` है `0457`।",
+      "callout": {
+        "title": "Slice",
+        "md": "text[start:end] index start से लेकर index end तक के characters देता है, end को छोड़कर।"
+      }
+    },
+    {
+      "heading": "String methods: text साफ़ करना",
+      "md": "**Method** वह function है जो किसी value का अपना होता है। Value के बाद dot लगाकर उसे call करते हैं। ये पाँच text साफ़ करते हैं:\n\n```python\nentry = \"  amoxicillin 250mg  \"\nprint(entry.strip())\nprint(entry.strip().upper())\nprint(entry.strip().capitalize())\nprint(\"250mg\".replace(\"mg\", \" mg\"))\n```\n\nयह print करता है:\n\n```\namoxicillin 250mg\nAMOXICILLIN 250MG\nAmoxicillin 250mg\n250 mg\n```\n\n- **`strip()`** दोनों सिरों से spaces हटाता है।\n- **`upper()`** और **`lower()`** हर अक्षर को capital या small बनाते हैं।\n- **`capitalize()`** सिर्फ़ पहले अक्षर को capital बनाता है।\n- **`replace(old, new)`** हर `old` की जगह `new` रख देता है।\n\nआप इन्हें जोड़कर लिख सकते हैं, जैसे `entry.strip().upper()`। Python इन्हें बाएँ से दाएँ चलाता है।",
+      "callout": {
+        "title": "Methods नई string देते हैं",
+        "md": "String को उसी जगह बदला नहीं जा सकता। drug.upper() नई string देता है, इसलिए उसे save कीजिए: drug = drug.upper()।"
+      }
+    },
+    {
+      "heading": "खोजना और तोड़ना",
+      "md": "कोई text string के अंदर है या नहीं, यह जानने के लिए **`in`** use कीजिए। यह `True` या `False` देता है:\n\n```python\nlabel = \"Store below 25 C. Keep away from children.\"\nprint(\"children\" in label)\nprint(label.find(\"25\"))\nprint(label.count(\"e\"))\n```\n\nयह `True`, `12` और `5` print करता है। `find()` वह index देता है जहाँ text शुरू होता है (न मिले तो `-1`), और `count()` गिनता है कि वह कितनी बार आया।\n\n**`split()`** जहाँ-जहाँ separator आए, वहाँ string को हिस्सों में तोड़ता है। एक line में save किया गया patient record अलग-अलग values बन जाता है:\n\n```python\nrecord = \"Ravi,45,Amoxicillin\"\nparts = record.split(\",\")\nprint(parts)\nprint(parts[2])\n```\n\nयह `['Ravi', '45', 'Amoxicillin']` और फिर `Amoxicillin` print करता है। Characters की तरह हिस्सों की गिनती भी 0 से होती है। इन lists के बारे में आप Unit III में और सीखेंगे।",
+      "callout": {
+        "title": "Search case-sensitive होती है",
+        "md": "\"aspirin\" in \"Aspirin 75 mg\" का जवाब False है। Capitals को ignore करने के लिए दोनों तरफ़ .lower() लगाकर compare कीजिए।"
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "यह program record की एक गड़बड़ drug entry को वैसे साफ़ करता है, जैसा clinical report में चाहिए।",
+    "keyTerms": [
+      {
+        "meaning": "दोनों सिरों से spaces हटाओ।"
+      },
+      {
+        "meaning": "पहले अक्षर को capital बनाओ।"
+      },
+      {
+        "meaning": "Characters गिनो, spaces समेत।"
+      },
+      {
+        "meaning": "पहले चार characters (एक slice)।"
+      },
+      {
+        "meaning": "पुराने text की जगह नया text रखो।"
+      }
+    ],
+    "steps": [
+      {
+        "say": "यह program एक गड़बड़ drug entry लेता है और उसे एक-एक string tool से साफ़ करता है।"
+      },
+      {
+        "say": "Comment बताता है कि program क्या करता है।"
+      },
+      {
+        "say": "Entry के दोनों सिरों पर extra spaces हैं, और पहला अक्षर छोटा है। Variables panel देखिए: spaces quotes के अंदर हैं।"
+      },
+      {
+        "say": "strip दोनों सिरों से spaces हटाता है। फिर capitalize पहले अक्षर को capital बनाता है। साफ़ text drug में save हो जाता है।"
+      },
+      {
+        "say": "print साफ़ entry दिखाता है।"
+      },
+      {
+        "say": "len हर character गिनता है, बीच वाले space समेत। कुल सत्रह।"
+      },
+      {
+        "say": "Slice पहले चार characters लेता है, A M O X, और upper उन्हें capitals बना देता है। Label के लिए यह एक छोटा code है।"
+      },
+      {
+        "say": "replace, दो सौ पचास M G की जगह दो सौ पचास, space, M G रखता है। ध्यान दीजिए, drug खुद नहीं बदला: replace ने नई string दी।"
+      }
+    ]
+  },
+  "errors": {
+    "intro": "ये दो errors तब आते हैं जब आप string के आखिर से आगे पहुँचते हैं, या उसे उसी जगह बदलने की कोशिश करते हैं।",
+    "examples": [
+      {
+        "title": "ऐसा index माँगना जो है ही नहीं",
+        "md": "`\"Aspirin\"` में 7 characters हैं, index 0 से 6 तक। Index 7 है ही नहीं। आखिरी character के लिए `drug[6]` या `drug[-1]` use कीजिए।"
+      },
+      {
+        "title": "एक character बदलने की कोशिश",
+        "md": "String को उसी जगह बदला नहीं जा सकता। इसकी जगह नई string बनाकर save कीजिए: `drug = drug.capitalize()`, या `drug = \"A\" + drug[1:]`।"
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Method call करके result save न करना, जैसे `drug.upper()` और फिर `print(drug)`",
+      "see": "कोई error नहीं, पर text वैसा ही रहता है",
+      "fix": "Save कीजिए: `drug = drug.upper()`।"
+    },
+    {
+      "mistake": "Characters 1 से गिनना, जैसे पहले अक्षर के लिए `drug[1]`",
+      "see": "कोई error नहीं, पर दूसरा अक्षर मिलता है",
+      "fix": "पहला character `drug[0]` है।"
+    },
+    {
+      "mistake": "Capitals मिलाए बिना खोजना, जैसे `\"aspirin\" in \"Aspirin 75 mg\"`",
+      "see": "कोई error नहीं, पर जवाब False आता है",
+      "fix": "एक ही case में compare कीजिए: `\"aspirin\" in label.lower()`।"
+    },
+    {
+      "mistake": "Text और number को `+` से जोड़ना, जैसे `\"Length: \" + len(drug)`",
+      "see": "TypeError: can only concatenate str (not \"int\") to str",
+      "fix": "f-string use कीजिए: `f\"Length: {len(drug)}\"`।"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Warning को उभारिए",
+      "md": "Labels पर warnings capital letters में छपती हैं। Warning को capitals में print कीजिए, बिल्कुल ऐसे:",
+      "hints": [
+        "एक string method हर अक्षर को capital बना देता है।",
+        "print(warning.upper())"
+      ]
+    },
+    {
+      "title": "Extra spaces हटाइए",
+      "md": "Drug का नाम दोनों तरफ़ spaces के साथ type हुआ था। उन्हें हटाइए, ताकि output बिल्कुल यह हो:",
+      "hints": [
+        "strip() दोनों सिरों से spaces हटाता है।",
+        "print(f\"[{entry.strip()}]\")"
+      ]
+    },
+    {
+      "title": "Batch code से साल पढ़िए",
+      "md": "Batch code **AMX-2026-0457** में साल index 4 से 7 पर है। **Slice** use करके बिल्कुल यह print कीजिए:",
+      "hints": [
+        "Slice अपने end index से ठीक पहले रुकता है।",
+        "print(\"Year:\", batch[4:8])"
+      ]
+    },
+    {
+      "title": "Bug ढूँढिए",
+      "md": "यह program patient record से drug print करना चाहिए, पर IndexError पर रुक जाता है। इसे ठीक कीजिए ताकि output बिल्कुल यह हो:",
+      "hints": [
+        "Record के कितने हिस्से हैं, और पहला index क्या है?",
+        "हिस्से index 0, 1 और 2 पर हैं।"
+      ],
+      "solutionNote": "split(\",\") तीन हिस्से देता है, जिनकी गिनती 0, 1 और 2 है। Drug तीसरा हिस्सा है, index 2 पर।"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "len(\"Aspirin\") क्या देता है?",
+      "why": "\"Aspirin\" में 7 characters हैं।"
+    },
+    {
+      "q": "drug = \"Paracetamol\"। drug[0] क्या है?",
+      "why": "Index 0 से शुरू होते हैं, इसलिए drug[0] पहला character है।"
+    },
+    {
+      "q": "\"Insulin\"[-1] क्या है?",
+      "why": "Negative index आखिर से गिनता है; -1 आखिरी character है।"
+    },
+    {
+      "q": "\"BP101T\"[2:5] क्या है?",
+      "why": "Slice index 2, 3 और 4 लेता है, और 5 से ठीक पहले रुकता है।"
+    },
+    {
+      "q": "\"  dose  \".strip() क्या देता है?",
+      "why": "strip() दोनों सिरों से spaces हटाता है।"
+    },
+    {
+      "q": "\"500,mg\".split(\",\") क्या देता है?",
+      "why": "split(\",\") text को comma पर दो हिस्सों में तोड़ता है।"
+    }
+  ],
+  "exam": {
+    "note": "Practice के लिए important questions। University के असली questions अलग हो सकते हैं।"
+  },
+  "mindmap": {
+    "label": "Lesson 1.6 · String operations",
+    "children": [
+      {
+        "label": "पूरी string",
+        "children": [
+          {
+            "label": "+ जोड़ता है"
+          },
+          {
+            "label": "* दोहराता है"
+          },
+          {
+            "label": "len() गिनता है"
+          }
+        ]
+      },
+      {
+        "label": "Index",
+        "children": [
+          {
+            "label": "0 से शुरू"
+          },
+          {
+            "label": "[-1] आखिरी"
+          }
+        ]
+      },
+      {
+        "label": "Slice",
+        "children": [
+          {
+            "label": "[start:end]"
+          },
+          {
+            "label": "end से पहले रुकता है"
+          },
+          {
+            "label": "[:3] और [9:]"
+          }
+        ]
+      },
+      {
+        "label": "साफ़ करना",
+        "children": [
+          {
+            "label": "strip()"
+          },
+          {
+            "label": "upper() / lower()"
+          },
+          {
+            "label": "capitalize()"
+          },
+          {
+            "label": "replace(old, new)"
+          }
+        ]
+      },
+      {
+        "label": "खोजना और तोड़ना",
+        "children": [
+          {
+            "label": "in → True/False"
+          },
+          {
+            "label": "find(), count()"
+          },
+          {
+            "label": "split(\",\")"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "IndexError"
+          },
+          {
+            "label": "TypeError: बदल नहीं सकते"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**`+`** strings जोड़ता है, **`*`** उन्हें दोहराता है और **`len()`** उनके characters गिनता है, spaces समेत।",
+    "**Index** एक character चुनता है; गिनती **0** से शुरू होती है, और **-1** आखिरी character है।",
+    "**Slice** `text[start:end]` एक हिस्सा लेता है, और `end` से **ठीक पहले** रुकता है।",
+    "**strip()**, **upper()**, **lower()**, **capitalize()** और **replace()** text साफ़ करते हैं। ये **नई** string देते हैं, इसलिए result save कीजिए।",
+    "**in**, **find()** और **count()** text में खोजते हैं; **split()** line को हिस्सों में तोड़ता है, जिनकी गिनती 0 से होती है।"
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "यह medicine strip का एक batch code है।"
+        },
+        {
+          "say": "हर character का एक index है, जो zero से शुरू होता है। साल index चार से शुरू होता है।"
+        },
+        {
+          "say": "Slice चार से आठ, index चार, पाँच, छह और सात लेता है। यह आठ से ठीक पहले रुकता है।"
+        },
+        {
+          "say": "ये चार characters मिलकर साल बनाते हैं: दो zero दो छह।"
+        },
+        {
+          "say": "और program इसे label पर print करता है।"
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "String में किसी character का position number। गिनती 0 से शुरू होती है, इसलिए text[0] पहला character है।"
+    },
+    {
+      "meaning": "String का एक हिस्सा, text[start:end] लिखकर। यह end index से ठीक पहले रुकता है।"
+    },
+    {
+      "meaning": "किसी value का अपना function, जिसे value के बाद dot लगाकर call करते हैं, जैसे drug.upper()।"
+    },
+    {
+      "meaning": "String के characters गिनता है, spaces भी।"
+    },
+    {
+      "meaning": "String के दोनों सिरों से spaces हटाता है।"
+    },
+    {
+      "meaning": "एक text की जगह दूसरा text रखकर नई string देता है: text.replace(old, new)।"
+    },
+    {
+      "meaning": "जहाँ-जहाँ separator आए, जैसे comma, वहाँ string को हिस्सों में तोड़ता है।"
+    }
+  ]
+}

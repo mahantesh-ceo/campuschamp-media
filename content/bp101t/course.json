@@ -95,14 +95,22 @@
         {
           "id": "1-6",
           "title": "String operations",
-          "available": false,
-          "translations": []
+          "available": true,
+          "translations": [
+            "hi",
+            "hinglish",
+            "kn"
+          ]
         },
         {
           "id": "1-7",
           "title": "Libraries and pip",
-          "available": false,
-          "translations": []
+          "available": true,
+          "translations": [
+            "hi",
+            "hinglish",
+            "kn"
+          ]
         }
       ]
     },

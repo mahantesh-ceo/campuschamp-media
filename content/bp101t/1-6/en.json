@@ -1,0 +1,664 @@
+{
+  "id": "1-6",
+  "course": "bp101t",
+  "unit": "Unit I",
+  "unitTitle": "Introduction to Python programming",
+  "number": "1.6",
+  "title": "String operations",
+  "minutes": 15,
+  "free": true,
+  "audioLanguages": [
+    "en",
+    "hi",
+    "kn"
+  ],
+  "hook": {
+    "title": "Clean up a messy drug entry",
+    "md": "Real records are messy. Someone types `  amoxicillin 250mg  ` with extra spaces, a small letter and no space before the unit. A clinical report can't print it like that.\n\nBy the end of this lesson, your program will tidy entries like this, read parts of a batch code, and split a patient record into its pieces."
+  },
+  "learn": [
+    "How to join, repeat and measure text with **+**, **\\*** and **len()**",
+    "How to pick one character by its **index**, and a piece of text with a **slice**",
+    "How to clean text with **strip()**, **upper()**, **lower()**, **capitalize()** and **replace()**",
+    "How to search text with **in**, **find()** and **count()**, and break it up with **split()**"
+  ],
+  "explanation": [
+    {
+      "heading": "Strings: joining, repeating, measuring",
+      "md": "A **string** is text inside quotes, as you saw in Lesson 1.3. Three tools work on whole strings:\n\n```python\ndrug = \"Paracetamol\"\nprint(drug + \" 500 mg\")\nprint(\"-\" * 12)\nprint(len(drug))\n```\n\nThis prints:\n\n```\nParacetamol 500 mg\n------------\n11\n```\n\n`+` joins two strings, `*` repeats a string, and `len()` counts its characters. Spaces count too: `len(\"500 mg\")` is 6."
+    },
+    {
+      "heading": "Indexing: one character at a time",
+      "md": "Every character in a string has a position number, called its **index**. Python starts counting from **0**, not 1:\n\n```python\ndrug = \"Aspirin\"\nprint(drug[0])\nprint(drug[3])\nprint(drug[-1])\n```\n\nThis prints `A`, `i` and `n`. In `\"Aspirin\"`, A is at index 0, s at 1, p at 2, i at 3, and so on up to n at 6.\n\nA **negative index** counts from the end: `drug[-1]` is the last character, `drug[-2]` the one before it.",
+      "callout": {
+        "type": "warning",
+        "title": "Counting starts at 0",
+        "md": "The first character is drug[0]. drug[1] is the second one."
+      }
+    },
+    {
+      "heading": "Slicing: a piece of a string",
+      "md": "A **slice** takes a piece of a string: `text[start:end]`. It starts at `start` and stops **just before** `end`.\n\nA batch code on a medicine strip often hides useful parts:\n\n```python\nbatch = \"AMX-2026-0457\"\nprint(batch[0:3])\nprint(batch[4:8])\nprint(batch[-4:])\n```\n\nThis prints:\n\n```\nAMX\n2026\n0457\n```\n\nLeave out `start` to begin at the start, and leave out `end` to go to the end: `batch[:3]` is `AMX` and `batch[9:]` is `0457`.",
+      "callout": {
+        "type": "definition",
+        "title": "Slice",
+        "md": "text[start:end] gives the characters from index start up to, but not including, index end."
+      }
+    },
+    {
+      "heading": "String methods: cleaning text",
+      "md": "A **method** is a function that belongs to a value. You call it with a dot after the value. These five clean up text:\n\n```python\nentry = \"  amoxicillin 250mg  \"\nprint(entry.strip())\nprint(entry.strip().upper())\nprint(entry.strip().capitalize())\nprint(\"250mg\".replace(\"mg\", \" mg\"))\n```\n\nThis prints:\n\n```\namoxicillin 250mg\nAMOXICILLIN 250MG\nAmoxicillin 250mg\n250 mg\n```\n\n- **`strip()`** removes spaces from both ends.\n- **`upper()`** and **`lower()`** change every letter to capitals or small letters.\n- **`capitalize()`** makes only the first letter a capital.\n- **`replace(old, new)`** swaps every `old` for `new`.\n\nYou can chain them, like `entry.strip().upper()`. Python runs them from left to right.",
+      "callout": {
+        "type": "warning",
+        "title": "Methods give you a new string",
+        "md": "Strings can't be changed in place. drug.upper() gives a new string, so save it: drug = drug.upper()."
+      }
+    },
+    {
+      "heading": "Searching and splitting",
+      "md": "To check whether some text appears inside a string, use **`in`**. It gives `True` or `False`:\n\n```python\nlabel = \"Store below 25 C. Keep away from children.\"\nprint(\"children\" in label)\nprint(label.find(\"25\"))\nprint(label.count(\"e\"))\n```\n\nThis prints `True`, `12` and `5`. `find()` gives the index where the text starts (or `-1` if it isn't there), and `count()` counts how many times it appears.\n\n**`split()`** breaks a string into parts wherever a separator appears. A patient record saved as one line becomes separate values:\n\n```python\nrecord = \"Ravi,45,Amoxicillin\"\nparts = record.split(\",\")\nprint(parts)\nprint(parts[2])\n```\n\nThis prints `['Ravi', '45', 'Amoxicillin']` and then `Amoxicillin`. The parts are numbered from 0, just like characters. You'll learn more about these lists in Unit III.",
+      "callout": {
+        "type": "tip",
+        "title": "Searches are case-sensitive",
+        "md": "\"aspirin\" in \"Aspirin 75 mg\" is False. Compare with .lower() on both sides to ignore capitals."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "This program tidies a messy drug entry from a record, the way a clinical report needs it.",
+    "filename": "clean_entry.py",
+    "code": "# Clean a messy drug entry\nentry = \"  amoxicillin 250mg  \"\ndrug = entry.strip().capitalize()\nprint(drug)\nprint(\"Length:\", len(drug))\nprint(\"Code:\", drug[:4].upper())\nprint(drug.replace(\"250mg\", \"250 mg\"))",
+    "output": "Amoxicillin 250mg\nLength: 17\nCode: AMOX\nAmoxicillin 250 mg",
+    "steps": [
+      {
+        "line": null,
+        "say": "This program takes a messy drug entry and cleans it, one string tool at a time.",
+        "output": null,
+        "audio": "step-01.mp3"
+      },
+      {
+        "line": 1,
+        "say": "The comment says what the program does.",
+        "output": null,
+        "audio": "step-02.mp3"
+      },
+      {
+        "line": 2,
+        "say": "The entry has extra spaces at both ends and a small first letter. Look at the Variables panel: the spaces are inside the quotes.",
+        "output": null,
+        "audio": "step-03.mp3",
+        "vars": {
+          "entry": "\"  amoxicillin 250mg  \""
+        }
+      },
+      {
+        "line": 3,
+        "say": "strip removes the spaces from both ends. Then capitalize makes the first letter a capital. The clean text is saved in drug.",
+        "output": null,
+        "audio": "step-04.mp3",
+        "vars": {
+          "drug": "\"Amoxicillin 250mg\""
+        }
+      },
+      {
+        "line": 4,
+        "say": "print shows the clean entry.",
+        "output": "Amoxicillin 250mg",
+        "audio": "step-05.mp3"
+      },
+      {
+        "line": 5,
+        "say": "len counts every character, including the space in the middle. That makes seventeen.",
+        "output": "Length: 17",
+        "audio": "step-06.mp3"
+      },
+      {
+        "line": 6,
+        "say": "The slice takes the first four characters, A M O X, and upper turns them into capitals. That's a short code for the label.",
+        "output": "Code: AMOX",
+        "audio": "step-07.mp3"
+      },
+      {
+        "line": 7,
+        "say": "replace swaps two fifty M G for two fifty, space, M G. Notice that drug itself didn't change: replace gave a new string.",
+        "output": "Amoxicillin 250 mg",
+        "audio": "step-08.mp3"
+      }
+    ],
+    "keyTerms": [
+      {
+        "term": ".strip()",
+        "meaning": "Remove spaces from both ends."
+      },
+      {
+        "term": ".capitalize()",
+        "meaning": "Make the first letter a capital."
+      },
+      {
+        "term": "len(text)",
+        "meaning": "Count the characters, spaces included."
+      },
+      {
+        "term": "text[:4]",
+        "meaning": "The first four characters (a slice)."
+      },
+      {
+        "term": ".replace(old, new)",
+        "meaning": "Swap old text for new text."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "These two errors happen when you reach past the end of a string, or try to change it in place.",
+    "examples": [
+      {
+        "title": "Asking for an index that doesn't exist",
+        "code": "drug = \"Aspirin\"\nprint(drug[7])",
+        "output": "IndexError: string index out of range",
+        "errorLine": 2,
+        "md": "`\"Aspirin\"` has 7 characters, at indexes 0 to 6. There is no index 7. Use `drug[6]` or `drug[-1]` for the last character."
+      },
+      {
+        "title": "Trying to change one character",
+        "code": "drug = \"aspirin\"\ndrug[0] = \"A\"",
+        "output": "TypeError: 'str' object does not support item assignment",
+        "errorLine": 2,
+        "md": "Strings can't be changed in place. Make a new string and save it instead: `drug = drug.capitalize()`, or `drug = \"A\" + drug[1:]`."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Calling a method without saving the result, e.g. `drug.upper()` and then `print(drug)`",
+      "see": "No error, but the text is unchanged",
+      "fix": "Save it: `drug = drug.upper()`."
+    },
+    {
+      "mistake": "Counting characters from 1, e.g. `drug[1]` for the first letter",
+      "see": "No error, but you get the second letter",
+      "fix": "The first character is `drug[0]`."
+    },
+    {
+      "mistake": "Searching without matching capitals, e.g. `\"aspirin\" in \"Aspirin 75 mg\"`",
+      "see": "No error, but the answer is False",
+      "fix": "Compare in one case: `\"aspirin\" in label.lower()`."
+    },
+    {
+      "mistake": "Joining text and a number with `+`, e.g. `\"Length: \" + len(drug)`",
+      "see": "TypeError: can only concatenate str (not \"int\") to str",
+      "fix": "Use an f-string: `f\"Length: {len(drug)}\"`."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1",
+      "title": "Make the warning stand out",
+      "md": "Labels print warnings in capital letters. Print the warning in capitals, exactly:",
+      "expectedOutput": "KEEP OUT OF REACH OF CHILDREN",
+      "starterCode": "warning = \"keep out of reach of children\"\n# Print the warning in capital letters\n",
+      "hints": [
+        "There's a string method that turns every letter into a capital.",
+        "print(warning.upper())"
+      ],
+      "solution": "warning = \"keep out of reach of children\"\n# Print the warning in capital letters\nprint(warning.upper())",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          ".upper()"
+        ]
+      }
+    },
+    {
+      "id": "t2",
+      "title": "Remove the extra spaces",
+      "md": "The drug name was typed with spaces at both ends. Remove them, so the output is exactly:",
+      "expectedOutput": "[Metformin]",
+      "starterCode": "entry = \"   Metformin  \"\n# Print the name inside square brackets, without the extra spaces\n",
+      "hints": [
+        "strip() removes spaces from both ends.",
+        "print(f\"[{entry.strip()}]\")"
+      ],
+      "solution": "entry = \"   Metformin  \"\n# Print the name inside square brackets, without the extra spaces\nprint(f\"[{entry.strip()}]\")",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          ".strip()"
+        ]
+      }
+    },
+    {
+      "id": "t3",
+      "title": "Read the year from a batch code",
+      "md": "In batch code **AMX-2026-0457**, the year sits at indexes 4 to 7. Use a **slice** to print exactly:",
+      "expectedOutput": "Year: 2026",
+      "starterCode": "batch = \"AMX-2026-0457\"\n# Print the year using a slice\n",
+      "hints": [
+        "A slice stops just before its end index.",
+        "print(\"Year:\", batch[4:8])"
+      ],
+      "solution": "batch = \"AMX-2026-0457\"\n# Print the year using a slice\nprint(\"Year:\", batch[4:8])",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "batch["
+        ]
+      }
+    },
+    {
+      "id": "t4",
+      "title": "Find the bug",
+      "md": "This program should print the drug from a patient record, but it stops with an IndexError. Fix it so the output is exactly:",
+      "expectedOutput": "Drug: Amoxicillin",
+      "starterCode": "record = \"Ravi,45,Amoxicillin\"\nparts = record.split(\",\")\nprint(\"Drug:\", parts[3])",
+      "hints": [
+        "How many parts does the record have, and what is the first index?",
+        "The parts are at indexes 0, 1 and 2."
+      ],
+      "solution": "record = \"Ravi,45,Amoxicillin\"\nparts = record.split(\",\")\nprint(\"Drug:\", parts[2])",
+      "solutionNote": "split(\",\") gives three parts, numbered 0, 1 and 2. The drug is the third part, at index 2.",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "split("
+        ]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does len(\"Aspirin\") give?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "Error"
+      ],
+      "answer": 1,
+      "why": "\"Aspirin\" has 7 characters.",
+      "code": true
+    },
+    {
+      "q": "drug = \"Paracetamol\". What is drug[0]?",
+      "options": [
+        "P",
+        "a",
+        "Para",
+        "Error"
+      ],
+      "answer": 0,
+      "why": "Indexes start at 0, so drug[0] is the first character.",
+      "code": true
+    },
+    {
+      "q": "What is \"Insulin\"[-1]?",
+      "options": [
+        "I",
+        "n",
+        "l",
+        "Error"
+      ],
+      "answer": 1,
+      "why": "A negative index counts from the end; -1 is the last character.",
+      "code": true
+    },
+    {
+      "q": "What is \"BP101T\"[2:5]?",
+      "options": [
+        "P10",
+        "101",
+        "1011",
+        "BP1"
+      ],
+      "answer": 1,
+      "why": "The slice takes indexes 2, 3 and 4, stopping just before 5.",
+      "code": true
+    },
+    {
+      "q": "What does \"  dose  \".strip() give?",
+      "options": [
+        "\"dose\"",
+        "\"  dose\"",
+        "\"dose  \"",
+        "\"  dose  \""
+      ],
+      "answer": 0,
+      "why": "strip() removes spaces from both ends.",
+      "code": true
+    },
+    {
+      "q": "What does \"500,mg\".split(\",\") give?",
+      "options": [
+        "['500', 'mg']",
+        "['500,mg']",
+        "500 mg",
+        "Error"
+      ],
+      "answer": 0,
+      "why": "split(\",\") breaks the text at the comma into two parts.",
+      "code": true
+    }
+  ],
+  "exam": {
+    "note": "Important questions for practice. Actual university questions may differ.",
+    "short": [
+      {
+        "q": "What is string slicing? Give an example.",
+        "marks": 2,
+        "md": "**Slicing** extracts a part of a string using `string[start:end]`. It includes the character at `start` and stops before `end`; indexes start at 0. Example: `batch = \"AMX-2026-0457\"` and `batch[4:8]` gives `\"2026\"`. Omitting `start` or `end` slices from the beginning or to the end: `batch[:3]` gives `\"AMX\"`."
+      },
+      {
+        "q": "Differentiate between upper(), lower() and strip() with examples.",
+        "marks": 2,
+        "md": "**upper()** returns the string with all letters in capitals: `\"aspirin\".upper()` gives `\"ASPIRIN\"`. **lower()** returns it in small letters: `\"ASPIRIN\".lower()` gives `\"aspirin\"`. **strip()** removes spaces (whitespace) from both ends: `\"  aspirin \".strip()` gives `\"aspirin\"`. All three return a **new** string; the original is unchanged because strings are immutable."
+      }
+    ],
+    "long": [
+      {
+        "q": "Explain string operations in Python: concatenation, repetition, indexing, slicing and any four string methods, with examples.",
+        "marks": 5,
+        "md": "A **string** is a sequence of characters enclosed in quotes. Strings are **immutable**: operations return new strings.\n\n1. **Concatenation (+)** joins strings: `\"Paracetamol\" + \" 500 mg\"` gives `\"Paracetamol 500 mg\"`.\n2. **Repetition (\\*)** repeats a string: `\"-\" * 5` gives `\"-----\"`.\n3. **len()** returns the number of characters: `len(\"Aspirin\")` is `7`.\n4. **Indexing** accesses one character; indexes start at 0 and negative indexes count from the end: `\"Aspirin\"[0]` is `\"A\"`, `\"Aspirin\"[-1]` is `\"n\"`.\n5. **Slicing** `s[start:end]` extracts a part, excluding `end`: `\"AMX-2026-0457\"[4:8]` is `\"2026\"`.\n\n**String methods:**\n- `upper()` / `lower()`: change case. `\"aspirin\".upper()` gives `\"ASPIRIN\"`.\n- `strip()`: removes spaces from both ends. `\"  dose \".strip()` gives `\"dose\"`.\n- `replace(old, new)`: replaces text. `\"250mg\".replace(\"mg\", \" mg\")` gives `\"250 mg\"`.\n- `split(sep)`: splits into parts. `\"Ravi,45\".split(\",\")` gives `['Ravi', '45']`.\n- `find(sub)`: index of the first occurrence, or -1. `\"Aspirin\".find(\"pi\")` gives `2`.\n\n**Example program:**\n\n```python\nentry = \"  amoxicillin 250mg  \"\ndrug = entry.strip().capitalize()\nprint(drug)\nprint(len(drug))\nprint(drug[:4].upper())\n```\n\n**Output:**\n\n```\nAmoxicillin 250mg\n17\nAMOX\n```"
+      }
+    ]
+  },
+  "mindmap": {
+    "label": "Lesson 1.6 · String operations",
+    "children": [
+      {
+        "label": "Whole strings",
+        "children": [
+          {
+            "label": "+ joins"
+          },
+          {
+            "label": "* repeats"
+          },
+          {
+            "label": "len() counts"
+          }
+        ]
+      },
+      {
+        "label": "Index",
+        "children": [
+          {
+            "label": "Starts at 0"
+          },
+          {
+            "label": "[-1] is the last"
+          }
+        ]
+      },
+      {
+        "label": "Slice",
+        "children": [
+          {
+            "label": "[start:end]"
+          },
+          {
+            "label": "Stops before end"
+          },
+          {
+            "label": "[:3] and [9:]"
+          }
+        ]
+      },
+      {
+        "label": "Clean",
+        "children": [
+          {
+            "label": "strip()"
+          },
+          {
+            "label": "upper() / lower()"
+          },
+          {
+            "label": "capitalize()"
+          },
+          {
+            "label": "replace(old, new)"
+          }
+        ]
+      },
+      {
+        "label": "Search & split",
+        "children": [
+          {
+            "label": "in → True/False"
+          },
+          {
+            "label": "find(), count()"
+          },
+          {
+            "label": "split(\",\")"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "IndexError"
+          },
+          {
+            "label": "TypeError: can't change"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**`+`** joins strings, **`*`** repeats them and **`len()`** counts their characters, spaces included.",
+    "An **index** picks one character; counting starts at **0**, and **-1** is the last character.",
+    "A **slice** `text[start:end]` takes a piece, stopping **just before** `end`.",
+    "**strip()**, **upper()**, **lower()**, **capitalize()** and **replace()** clean text. They give a **new** string, so save the result.",
+    "**in**, **find()** and **count()** search text; **split()** breaks a line into parts, numbered from 0."
+  ],
+  "video": {
+    "videoUrl": null,
+    "searchTerms": [
+      "python string methods for beginners",
+      "python string slicing and indexing"
+    ]
+  },
+  "animations": [
+    {
+      "id": "slice",
+      "title": "Slicing a batch code",
+      "afterExplanation": 2,
+      "canvas": {
+        "desktop": {
+          "w": 800,
+          "h": 460
+        },
+        "mobile": {
+          "w": 360,
+          "h": 600
+        }
+      },
+      "actors": [
+        {
+          "id": "batch",
+          "type": "box",
+          "label": "batch",
+          "value": "\"AMX-2026-0457\"",
+          "color": "amber",
+          "desktop": {
+            "x": 200,
+            "y": 30,
+            "w": 400,
+            "h": 110
+          },
+          "mobile": {
+            "x": 16,
+            "y": 16,
+            "w": 328,
+            "h": 100
+          }
+        },
+        {
+          "id": "t_idx",
+          "type": "text",
+          "text": "A=0  M=1  X=2  -=3  2=4  0=5  2=6  6=7",
+          "size": 18,
+          "desktop": {
+            "x": 120,
+            "y": 160,
+            "w": 560,
+            "h": 28
+          },
+          "mobile": {
+            "x": 16,
+            "y": 128,
+            "w": 328,
+            "h": 52
+          }
+        },
+        {
+          "id": "t_slice",
+          "type": "text",
+          "text": "batch[4:8] → indexes 4, 5, 6, 7",
+          "size": 18,
+          "desktop": {
+            "x": 120,
+            "y": 200,
+            "w": 560,
+            "h": 28
+          },
+          "mobile": {
+            "x": 16,
+            "y": 192,
+            "w": 328,
+            "h": 26
+          }
+        },
+        {
+          "id": "year",
+          "type": "box",
+          "label": "year",
+          "value": "\"2026\"",
+          "color": "emerald",
+          "desktop": {
+            "x": 300,
+            "y": 245,
+            "w": 200,
+            "h": 100
+          },
+          "mobile": {
+            "x": 100,
+            "y": 232,
+            "w": 160,
+            "h": 100
+          }
+        },
+        {
+          "id": "term",
+          "type": "terminal",
+          "title": "Screen",
+          "desktop": {
+            "x": 40,
+            "y": 365,
+            "w": 730,
+            "h": 75
+          },
+          "mobile": {
+            "x": 16,
+            "y": 350,
+            "w": 328,
+            "h": 90
+          }
+        }
+      ],
+      "steps": [
+        {
+          "say": "Here is a batch code from a medicine strip.",
+          "audio": "anim-slice-01.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "batch"
+            }
+          ]
+        },
+        {
+          "say": "Every character has an index, starting from zero. The year starts at index four.",
+          "audio": "anim-slice-02.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "t_idx"
+            }
+          ]
+        },
+        {
+          "say": "The slice four to eight takes indexes four, five, six and seven. It stops just before eight.",
+          "audio": "anim-slice-03.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "t_slice"
+            }
+          ]
+        },
+        {
+          "say": "Those four characters make the year: two zero two six.",
+          "audio": "anim-slice-04.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "year"
+            },
+            {
+              "do": "pulse",
+              "target": "year"
+            }
+          ]
+        },
+        {
+          "say": "And the program prints it on the label.",
+          "audio": "anim-slice-05.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "term"
+            },
+            {
+              "do": "appendOutput",
+              "target": "term",
+              "text": "Year: 2026"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Index",
+      "meaning": "The position number of a character in a string. Counting starts at 0, so text[0] is the first character."
+    },
+    {
+      "term": "Slice",
+      "meaning": "A piece of a string, written text[start:end]. It stops just before the end index."
+    },
+    {
+      "term": "Method",
+      "meaning": "A function that belongs to a value, called with a dot after it, like drug.upper()."
+    },
+    {
+      "term": "len()",
+      "meaning": "Counts the characters in a string, spaces included."
+    },
+    {
+      "term": "strip()",
+      "meaning": "Removes spaces from both ends of a string."
+    },
+    {
+      "term": "replace()",
+      "meaning": "Gives a new string with one piece of text swapped for another: text.replace(old, new)."
+    },
+    {
+      "term": "split()",
+      "meaning": "Breaks a string into parts wherever a separator appears, such as a comma."
+    }
+  ]
+}

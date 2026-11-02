@@ -1,0 +1,347 @@
+{
+  "hook": {
+    "title": "ಗೊಂದಲದ drug entry ಅನ್ನು ಸರಿ ಮಾಡಿ",
+    "md": "ನಿಜವಾದ records ಹೆಚ್ಚಾಗಿ ಗೊಂದಲವಾಗಿರುತ್ತೆ. ಯಾರೋ `  amoxicillin 250mg  ` ಅಂತ type ಮಾಡ್ತಾರೆ: ಮುಂದೆ-ಹಿಂದೆ extra spaces, ಚಿಕ್ಕ ಮೊದಲ ಅಕ್ಷರ, unit ಮುಂಚೆ space ಇಲ್ಲ. Clinical report ನಲ್ಲಿ ಇದನ್ನು ಹೀಗೇ print ಮಾಡೋಕೆ ಆಗಲ್ಲ.\n\nಈ lesson ಮುಗಿಯುವಷ್ಟರಲ್ಲಿ, ನಿಮ್ಮ program ಇಂಥ entries ಅನ್ನು ಸರಿ ಮಾಡುತ್ತೆ, batch code ನ ಭಾಗಗಳನ್ನು ಓದುತ್ತೆ, ಮತ್ತು patient record ಅನ್ನು ಅದರ ಭಾಗಗಳಾಗಿ ಒಡೆಯುತ್ತೆ."
+  },
+  "learn": [
+    "**+**, **\\*** ಮತ್ತು **len()** ಇಂದ text ಅನ್ನು ಸೇರಿಸೋದು, ಪುನರಾವರ್ತಿಸೋದು ಮತ್ತು ಅಳೆಯೋದು",
+    "**index** ಇಂದ ಒಂದು character, ಮತ್ತು **slice** ಇಂದ text ನ ಒಂದು ಭಾಗ ಹೇಗೆ ತೆಗೆಯೋದು",
+    "**strip()**, **upper()**, **lower()**, **capitalize()** ಮತ್ತು **replace()** ಇಂದ text ಅನ್ನು ಹೇಗೆ ಸರಿ ಮಾಡೋದು",
+    "**in**, **find()** ಮತ್ತು **count()** ಇಂದ text ನಲ್ಲಿ ಹೇಗೆ ಹುಡುಕೋದು, ಮತ್ತು **split()** ಇಂದ ಅದನ್ನು ಹೇಗೆ ಒಡೆಯೋದು"
+  ],
+  "explanation": [
+    {
+      "heading": "Strings: ಸೇರಿಸೋದು, ಪುನರಾವರ್ತಿಸೋದು, ಅಳೆಯೋದು",
+      "md": "**String** ಅಂದ್ರೆ quotes ಒಳಗೆ ಬರೆದ text, Lesson 1.3 ನಲ್ಲಿ ನೋಡಿದ ಹಾಗೆ. ಮೂರು tools ಪೂರ್ತಿ string ಮೇಲೆ ಕೆಲಸ ಮಾಡುತ್ತವೆ:\n\n```python\ndrug = \"Paracetamol\"\nprint(drug + \" 500 mg\")\nprint(\"-\" * 12)\nprint(len(drug))\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nParacetamol 500 mg\n------------\n11\n```\n\n`+` ಎರಡು strings ಸೇರಿಸುತ್ತೆ, `*` string ಅನ್ನು ಪುನರಾವರ್ತಿಸುತ್ತೆ, ಮತ್ತು `len()` ಅದರ characters ಎಣಿಸುತ್ತೆ. Spaces ಕೂಡ ಎಣಿಕೆಗೆ ಬರುತ್ತವೆ: `len(\"500 mg\")` ಅಂದ್ರೆ 6."
+    },
+    {
+      "heading": "Indexing: ಒಂದು ಸಲಕ್ಕೆ ಒಂದು character",
+      "md": "String ನ ಪ್ರತಿ character ಗೂ ಒಂದು position number ಇರುತ್ತೆ, ಅದನ್ನು **index** ಅಂತಾರೆ. Python ಎಣಿಕೆಯನ್ನು **0** ಇಂದ ಶುರು ಮಾಡುತ್ತೆ, 1 ಇಂದ ಅಲ್ಲ:\n\n```python\ndrug = \"Aspirin\"\nprint(drug[0])\nprint(drug[3])\nprint(drug[-1])\n```\n\nಇದು `A`, `i` ಮತ್ತು `n` print ಮಾಡುತ್ತೆ. `\"Aspirin\"` ನಲ್ಲಿ A index 0 ನಲ್ಲಿ, s 1 ನಲ್ಲಿ, p 2 ನಲ್ಲಿ, i 3 ನಲ್ಲಿ, ಹೀಗೇ n 6 ನಲ್ಲಿ ಇದೆ.\n\n**Negative index** ಕೊನೆಯಿಂದ ಎಣಿಸುತ್ತೆ: `drug[-1]` ಕೊನೆಯ character, `drug[-2]` ಅದರ ಹಿಂದಿನದು.",
+      "callout": {
+        "title": "ಎಣಿಕೆ 0 ಇಂದ ಶುರು",
+        "md": "ಮೊದಲ character drug[0]. drug[1] ಎರಡನೆಯದು."
+      }
+    },
+    {
+      "heading": "Slicing: string ನ ಒಂದು ಭಾಗ",
+      "md": "**Slice** string ನ ಒಂದು ಭಾಗ ತೆಗೆಯುತ್ತೆ: `text[start:end]`. ಇದು `start` ಇಂದ ಶುರು ಆಗಿ, `end` ಗೆ **ಸ್ವಲ್ಪ ಮುಂಚೆ** ನಿಲ್ಲುತ್ತೆ.\n\nMedicine strip ನ batch code ನಲ್ಲಿ ಉಪಯೋಗದ ಭಾಗಗಳು ಅಡಗಿರುತ್ತವೆ:\n\n```python\nbatch = \"AMX-2026-0457\"\nprint(batch[0:3])\nprint(batch[4:8])\nprint(batch[-4:])\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nAMX\n2026\n0457\n```\n\n`start` ಬಿಟ್ರೆ ಶುರುವಿನಿಂದ, `end` ಬಿಟ್ರೆ ಕೊನೆಯವರೆಗೆ: `batch[:3]` ಅಂದ್ರೆ `AMX`, `batch[9:]` ಅಂದ್ರೆ `0457`.",
+      "callout": {
+        "title": "Slice",
+        "md": "text[start:end] index start ಇಂದ index end ವರೆಗಿನ characters ಕೊಡುತ್ತೆ, end ಅನ್ನು ಬಿಟ್ಟು."
+      }
+    },
+    {
+      "heading": "String methods: text ಸರಿ ಮಾಡೋದು",
+      "md": "**Method** ಅಂದ್ರೆ ಒಂದು value ಗೆ ಸೇರಿದ function. Value ನಂತರ dot ಹಾಕಿ ಅದನ್ನು call ಮಾಡುತ್ತೇವೆ. ಈ ಐದು text ಸರಿ ಮಾಡುತ್ತವೆ:\n\n```python\nentry = \"  amoxicillin 250mg  \"\nprint(entry.strip())\nprint(entry.strip().upper())\nprint(entry.strip().capitalize())\nprint(\"250mg\".replace(\"mg\", \" mg\"))\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\namoxicillin 250mg\nAMOXICILLIN 250MG\nAmoxicillin 250mg\n250 mg\n```\n\n- **`strip()`** ಎರಡೂ ತುದಿಗಳಿಂದ spaces ತೆಗೆಯುತ್ತೆ.\n- **`upper()`** ಮತ್ತು **`lower()`** ಪ್ರತಿ ಅಕ್ಷರವನ್ನು capital ಅಥವಾ small ಮಾಡುತ್ತವೆ.\n- **`capitalize()`** ಮೊದಲ ಅಕ್ಷರವನ್ನು ಮಾತ್ರ capital ಮಾಡುತ್ತೆ.\n- **`replace(old, new)`** ಪ್ರತಿ `old` ಬದಲು `new` ಹಾಕುತ್ತೆ.\n\nಇವನ್ನು ಸೇರಿಸಿ ಬರೆಯಬಹುದು, ಉದಾ: `entry.strip().upper()`. Python ಇವನ್ನು ಎಡದಿಂದ ಬಲಕ್ಕೆ run ಮಾಡುತ್ತೆ.",
+      "callout": {
+        "title": "Methods ಹೊಸ string ಕೊಡುತ್ತವೆ",
+        "md": "String ಅನ್ನು ಅದೇ ಜಾಗದಲ್ಲಿ ಬದಲಾಯಿಸೋಕೆ ಆಗಲ್ಲ. drug.upper() ಹೊಸ string ಕೊಡುತ್ತೆ, ಅದಕ್ಕೇ ಅದನ್ನು save ಮಾಡಿ: drug = drug.upper()."
+      }
+    },
+    {
+      "heading": "ಹುಡುಕೋದು ಮತ್ತು ಒಡೆಯೋದು",
+      "md": "ಯಾವುದಾದರೂ text string ಒಳಗೆ ಇದೆಯಾ ಅಂತ ತಿಳಿಯೋಕೆ **`in`** ಬಳಸಿ. ಇದು `True` ಅಥವಾ `False` ಕೊಡುತ್ತೆ:\n\n```python\nlabel = \"Store below 25 C. Keep away from children.\"\nprint(\"children\" in label)\nprint(label.find(\"25\"))\nprint(label.count(\"e\"))\n```\n\nಇದು `True`, `12` ಮತ್ತು `5` print ಮಾಡುತ್ತೆ. `find()` text ಶುರು ಆಗುವ index ಕೊಡುತ್ತೆ (ಸಿಗದಿದ್ರೆ `-1`), ಮತ್ತು `count()` ಅದು ಎಷ್ಟು ಸಲ ಬಂದಿದೆ ಅಂತ ಎಣಿಸುತ್ತೆ.\n\n**`split()`** separator ಬಂದಲ್ಲೆಲ್ಲಾ string ಅನ್ನು ಭಾಗಗಳಾಗಿ ಒಡೆಯುತ್ತೆ. ಒಂದೇ line ನಲ್ಲಿ save ಮಾಡಿದ patient record ಬೇರೆ-ಬೇರೆ values ಆಗುತ್ತೆ:\n\n```python\nrecord = \"Ravi,45,Amoxicillin\"\nparts = record.split(\",\")\nprint(parts)\nprint(parts[2])\n```\n\nಇದು `['Ravi', '45', 'Amoxicillin']` ಮತ್ತು ನಂತರ `Amoxicillin` print ಮಾಡುತ್ತೆ. Characters ತರಹಾನೇ ಭಾಗಗಳ ಎಣಿಕೆಯೂ 0 ಇಂದ. ಈ lists ಬಗ್ಗೆ Unit III ನಲ್ಲಿ ಇನ್ನೂ ಕಲಿಯುತ್ತೀರಿ.",
+      "callout": {
+        "title": "ಹುಡುಕಾಟ case-sensitive",
+        "md": "\"aspirin\" in \"Aspirin 75 mg\" ಉತ್ತರ False. Capitals ಬಿಟ್ಟು ಹೋಲಿಸಲು ಎರಡೂ ಕಡೆ .lower() ಹಾಕಿ compare ಮಾಡಿ."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "ಈ program record ನ ಒಂದು ಗೊಂದಲದ drug entry ಅನ್ನು clinical report ಗೆ ಬೇಕಾದ ಹಾಗೆ ಸರಿ ಮಾಡುತ್ತೆ.",
+    "keyTerms": [
+      {
+        "meaning": "ಎರಡೂ ತುದಿಗಳಿಂದ spaces ತೆಗೆ."
+      },
+      {
+        "meaning": "ಮೊದಲ ಅಕ್ಷರವನ್ನು capital ಮಾಡು."
+      },
+      {
+        "meaning": "Characters ಎಣಿಸು, spaces ಸೇರಿ."
+      },
+      {
+        "meaning": "ಮೊದಲ ನಾಲ್ಕು characters (ಒಂದು slice)."
+      },
+      {
+        "meaning": "ಹಳೆಯ text ಬದಲು ಹೊಸ text ಹಾಕು."
+      }
+    ],
+    "steps": [
+      {
+        "say": "ಈ program ಒಂದು ಗೊಂದಲದ drug entry ತೆಗೆದುಕೊಂಡು, ಒಂದೊಂದೇ string tool ಇಂದ ಅದನ್ನು ಸರಿ ಮಾಡುತ್ತೆ."
+      },
+      {
+        "say": "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ."
+      },
+      {
+        "say": "Entry ನ ಎರಡೂ ತುದಿಗಳಲ್ಲಿ extra spaces ಇವೆ, ಮತ್ತು ಮೊದಲ ಅಕ್ಷರ ಚಿಕ್ಕದು. Variables panel ನೋಡಿ: spaces quotes ಒಳಗೆ ಇವೆ."
+      },
+      {
+        "say": "strip ಎರಡೂ ತುದಿಗಳಿಂದ spaces ತೆಗೆಯುತ್ತೆ. ಆಮೇಲೆ capitalize ಮೊದಲ ಅಕ್ಷರವನ್ನು capital ಮಾಡುತ್ತೆ. ಸರಿಯಾದ text drug ನಲ್ಲಿ save ಆಗುತ್ತೆ."
+      },
+      {
+        "say": "print ಸರಿಯಾದ entry ತೋರಿಸುತ್ತೆ."
+      },
+      {
+        "say": "len ಪ್ರತಿ character ಎಣಿಸುತ್ತೆ, ಮಧ್ಯದ space ಸೇರಿ. ಒಟ್ಟು ಹದಿನೇಳು."
+      },
+      {
+        "say": "Slice ಮೊದಲ ನಾಲ್ಕು characters ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ, A M O X, ಮತ್ತು upper ಅವನ್ನು capitals ಮಾಡುತ್ತೆ. Label ಗೆ ಇದು ಒಂದು ಚಿಕ್ಕ code."
+      },
+      {
+        "say": "replace, ಇನ್ನೂರ ಐವತ್ತು M G ಬದಲು ಇನ್ನೂರ ಐವತ್ತು, space, M G ಹಾಕುತ್ತೆ. ಗಮನಿಸಿ, drug ತಾನೇ ಬದಲಾಗಿಲ್ಲ: replace ಹೊಸ string ಕೊಟ್ಟಿದೆ."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "String ನ ಕೊನೆಯನ್ನು ದಾಟಿ ಹೋದಾಗ, ಅಥವಾ ಅದನ್ನು ಅದೇ ಜಾಗದಲ್ಲಿ ಬದಲಾಯಿಸೋಕೆ ಪ್ರಯತ್ನಿಸಿದಾಗ ಈ ಎರಡು errors ಬರುತ್ತವೆ.",
+    "examples": [
+      {
+        "title": "ಇಲ್ಲದ index ಕೇಳೋದು",
+        "md": "`\"Aspirin\"` ನಲ್ಲಿ 7 characters ಇವೆ, index 0 ಇಂದ 6 ವರೆಗೆ. Index 7 ಇಲ್ಲವೇ ಇಲ್ಲ. ಕೊನೆಯ character ಗೆ `drug[6]` ಅಥವಾ `drug[-1]` ಬಳಸಿ."
+      },
+      {
+        "title": "ಒಂದು character ಬದಲಾಯಿಸೋಕೆ ಪ್ರಯತ್ನ",
+        "md": "String ಅನ್ನು ಅದೇ ಜಾಗದಲ್ಲಿ ಬದಲಾಯಿಸೋಕೆ ಆಗಲ್ಲ. ಅದರ ಬದಲು ಹೊಸ string ಮಾಡಿ save ಮಾಡಿ: `drug = drug.capitalize()`, ಅಥವಾ `drug = \"A\" + drug[1:]`."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Method call ಮಾಡಿ result save ಮಾಡದಿರೋದು, ಉದಾ: `drug.upper()` ಆಮೇಲೆ `print(drug)`",
+      "see": "Error ಇಲ್ಲ, ಆದ್ರೆ text ಹಾಗೇ ಇರುತ್ತೆ",
+      "fix": "Save ಮಾಡಿ: `drug = drug.upper()`."
+    },
+    {
+      "mistake": "Characters ಅನ್ನು 1 ಇಂದ ಎಣಿಸೋದು, ಉದಾ: ಮೊದಲ ಅಕ್ಷರಕ್ಕೆ `drug[1]`",
+      "see": "Error ಇಲ್ಲ, ಆದ್ರೆ ಎರಡನೇ ಅಕ್ಷರ ಸಿಗುತ್ತೆ",
+      "fix": "ಮೊದಲ character `drug[0]`."
+    },
+    {
+      "mistake": "Capitals ಹೊಂದಿಸದೆ ಹುಡುಕೋದು, ಉದಾ: `\"aspirin\" in \"Aspirin 75 mg\"`",
+      "see": "Error ಇಲ್ಲ, ಆದ್ರೆ ಉತ್ತರ False",
+      "fix": "ಒಂದೇ case ನಲ್ಲಿ compare ಮಾಡಿ: `\"aspirin\" in label.lower()`."
+    },
+    {
+      "mistake": "Text ಮತ್ತು number ಅನ್ನು `+` ಇಂದ ಸೇರಿಸೋದು, ಉದಾ: `\"Length: \" + len(drug)`",
+      "see": "TypeError: can only concatenate str (not \"int\") to str",
+      "fix": "f-string ಬಳಸಿ: `f\"Length: {len(drug)}\"`."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Warning ಎದ್ದು ಕಾಣಿಸಲಿ",
+      "md": "Labels ನಲ್ಲಿ warnings capital letters ನಲ್ಲಿ ಇರುತ್ತವೆ. Warning ಅನ್ನು capitals ನಲ್ಲಿ print ಮಾಡಿ, ಹೀಗೇ:",
+      "hints": [
+        "ಒಂದು string method ಪ್ರತಿ ಅಕ್ಷರವನ್ನೂ capital ಮಾಡುತ್ತೆ.",
+        "print(warning.upper())"
+      ]
+    },
+    {
+      "title": "Extra spaces ತೆಗೆಯಿರಿ",
+      "md": "Drug ಹೆಸರು ಎರಡೂ ಕಡೆ spaces ಜೊತೆ type ಆಗಿತ್ತು. ಅವನ್ನು ತೆಗೆಯಿರಿ, output ಹೀಗೇ ಇರಬೇಕು:",
+      "hints": [
+        "strip() ಎರಡೂ ತುದಿಗಳಿಂದ spaces ತೆಗೆಯುತ್ತೆ.",
+        "print(f\"[{entry.strip()}]\")"
+      ]
+    },
+    {
+      "title": "Batch code ಇಂದ ವರ್ಷ ಓದಿ",
+      "md": "Batch code **AMX-2026-0457** ನಲ್ಲಿ ವರ್ಷ index 4 ಇಂದ 7 ರಲ್ಲಿ ಇದೆ. **Slice** ಬಳಸಿ ಹೀಗೇ print ಮಾಡಿ:",
+      "hints": [
+        "Slice ತನ್ನ end index ಗೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ.",
+        "print(\"Year:\", batch[4:8])"
+      ]
+    },
+    {
+      "title": "Bug ಹುಡುಕಿ",
+      "md": "ಈ program patient record ಇಂದ drug print ಮಾಡಬೇಕು, ಆದ್ರೆ IndexError ನಲ್ಲಿ ನಿಂತುಬಿಡುತ್ತೆ. Output ಹೀಗೇ ಬರುವ ಹಾಗೆ ಸರಿ ಮಾಡಿ:",
+      "hints": [
+        "Record ನಲ್ಲಿ ಎಷ್ಟು ಭಾಗಗಳಿವೆ, ಮತ್ತು ಮೊದಲ index ಯಾವುದು?",
+        "ಭಾಗಗಳು index 0, 1 ಮತ್ತು 2 ರಲ್ಲಿ ಇವೆ."
+      ],
+      "solutionNote": "split(\",\") ಮೂರು ಭಾಗಗಳನ್ನು ಕೊಡುತ್ತೆ, 0, 1 ಮತ್ತು 2 ಅಂತ ಎಣಿಕೆ. Drug ಮೂರನೇ ಭಾಗ, index 2 ರಲ್ಲಿ."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "len(\"Aspirin\") ಏನು ಕೊಡುತ್ತೆ?",
+      "why": "\"Aspirin\" ನಲ್ಲಿ 7 characters ಇವೆ."
+    },
+    {
+      "q": "drug = \"Paracetamol\". drug[0] ಏನು?",
+      "why": "Index 0 ಇಂದ ಶುರು, ಅದಕ್ಕೇ drug[0] ಮೊದಲ character."
+    },
+    {
+      "q": "\"Insulin\"[-1] ಏನು?",
+      "why": "Negative index ಕೊನೆಯಿಂದ ಎಣಿಸುತ್ತೆ; -1 ಕೊನೆಯ character."
+    },
+    {
+      "q": "\"BP101T\"[2:5] ಏನು?",
+      "why": "Slice index 2, 3 ಮತ್ತು 4 ತೆಗೆದುಕೊಂಡು, 5 ಗೆ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ."
+    },
+    {
+      "q": "\"  dose  \".strip() ಏನು ಕೊಡುತ್ತೆ?",
+      "why": "strip() ಎರಡೂ ತುದಿಗಳಿಂದ spaces ತೆಗೆಯುತ್ತೆ."
+    },
+    {
+      "q": "\"500,mg\".split(\",\") ಏನು ಕೊಡುತ್ತೆ?",
+      "why": "split(\",\") text ಅನ್ನು comma ಬಳಿ ಎರಡು ಭಾಗಗಳಾಗಿ ಒಡೆಯುತ್ತೆ."
+    }
+  ],
+  "exam": {
+    "note": "Practice ಗಾಗಿ important questions. University ನ ನಿಜವಾದ questions ಬೇರೆ ಇರಬಹುದು."
+  },
+  "mindmap": {
+    "label": "Lesson 1.6 · String operations",
+    "children": [
+      {
+        "label": "ಪೂರ್ತಿ string",
+        "children": [
+          {
+            "label": "+ ಸೇರಿಸುತ್ತೆ"
+          },
+          {
+            "label": "* ಪುನರಾವರ್ತಿಸುತ್ತೆ"
+          },
+          {
+            "label": "len() ಎಣಿಸುತ್ತೆ"
+          }
+        ]
+      },
+      {
+        "label": "Index",
+        "children": [
+          {
+            "label": "0 ಇಂದ ಶುರು"
+          },
+          {
+            "label": "[-1] ಕೊನೆಯದು"
+          }
+        ]
+      },
+      {
+        "label": "Slice",
+        "children": [
+          {
+            "label": "[start:end]"
+          },
+          {
+            "label": "end ಗೆ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ"
+          },
+          {
+            "label": "[:3] ಮತ್ತು [9:]"
+          }
+        ]
+      },
+      {
+        "label": "ಸರಿ ಮಾಡೋದು",
+        "children": [
+          {
+            "label": "strip()"
+          },
+          {
+            "label": "upper() / lower()"
+          },
+          {
+            "label": "capitalize()"
+          },
+          {
+            "label": "replace(old, new)"
+          }
+        ]
+      },
+      {
+        "label": "ಹುಡುಕು ಮತ್ತು ಒಡೆ",
+        "children": [
+          {
+            "label": "in → True/False"
+          },
+          {
+            "label": "find(), count()"
+          },
+          {
+            "label": "split(\",\")"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "IndexError"
+          },
+          {
+            "label": "TypeError: ಬದಲಾಯಿಸಲು ಆಗಲ್ಲ"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**`+`** strings ಸೇರಿಸುತ್ತೆ, **`*`** ಅವನ್ನು ಪುನರಾವರ್ತಿಸುತ್ತೆ ಮತ್ತು **`len()`** characters ಎಣಿಸುತ್ತೆ, spaces ಸೇರಿ.",
+    "**Index** ಒಂದು character ಆರಿಸುತ್ತೆ; ಎಣಿಕೆ **0** ಇಂದ ಶುರು, ಮತ್ತು **-1** ಕೊನೆಯ character.",
+    "**Slice** `text[start:end]` ಒಂದು ಭಾಗ ತೆಗೆಯುತ್ತೆ, `end` ಗೆ **ಸ್ವಲ್ಪ ಮುಂಚೆ** ನಿಲ್ಲುತ್ತೆ.",
+    "**strip()**, **upper()**, **lower()**, **capitalize()** ಮತ್ತು **replace()** text ಸರಿ ಮಾಡುತ್ತವೆ. ಇವು **ಹೊಸ** string ಕೊಡುತ್ತವೆ, ಅದಕ್ಕೇ result save ಮಾಡಿ.",
+    "**in**, **find()** ಮತ್ತು **count()** text ನಲ್ಲಿ ಹುಡುಕುತ್ತವೆ; **split()** line ಅನ್ನು ಭಾಗಗಳಾಗಿ ಒಡೆಯುತ್ತೆ, ಎಣಿಕೆ 0 ಇಂದ."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "ಇದು ಒಂದು medicine strip ನ batch code."
+        },
+        {
+          "say": "ಪ್ರತಿ character ಗೂ ಒಂದು index ಇದೆ, zero ಇಂದ ಶುರು. ವರ್ಷ index ನಾಲ್ಕರಿಂದ ಶುರು ಆಗುತ್ತೆ."
+        },
+        {
+          "say": "Slice ನಾಲ್ಕರಿಂದ ಎಂಟು, index ನಾಲ್ಕು, ಐದು, ಆರು ಮತ್ತು ಏಳು ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ. ಎಂಟಕ್ಕೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ."
+        },
+        {
+          "say": "ಈ ನಾಲ್ಕು characters ಸೇರಿ ವರ್ಷ ಆಗುತ್ತೆ: ಎರಡು zero ಎರಡು ಆರು."
+        },
+        {
+          "say": "ಮತ್ತು program ಇದನ್ನು label ಮೇಲೆ print ಮಾಡುತ್ತೆ."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "String ನಲ್ಲಿ ಒಂದು character ನ position number. ಎಣಿಕೆ 0 ಇಂದ ಶುರು, ಅದಕ್ಕೇ text[0] ಮೊದಲ character."
+    },
+    {
+      "meaning": "String ನ ಒಂದು ಭಾಗ, text[start:end] ಅಂತ ಬರೆಯುತ್ತೇವೆ. ಇದು end index ಗೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ."
+    },
+    {
+      "meaning": "ಒಂದು value ಗೆ ಸೇರಿದ function, value ನಂತರ dot ಹಾಕಿ call ಮಾಡುತ್ತೇವೆ, ಉದಾ: drug.upper()."
+    },
+    {
+      "meaning": "String ನಲ್ಲಿರುವ characters ಎಣಿಸುತ್ತೆ, spaces ಕೂಡ."
+    },
+    {
+      "meaning": "String ನ ಎರಡೂ ತುದಿಗಳಿಂದ spaces ತೆಗೆಯುತ್ತೆ."
+    },
+    {
+      "meaning": "ಒಂದು text ಬದಲು ಇನ್ನೊಂದು text ಹಾಕಿ ಹೊಸ string ಕೊಡುತ್ತೆ: text.replace(old, new)."
+    },
+    {
+      "meaning": "Separator ಬಂದಲ್ಲೆಲ್ಲಾ, ಉದಾ: comma, string ಅನ್ನು ಭಾಗಗಳಾಗಿ ಒಡೆಯುತ್ತೆ."
+    }
+  ]
+}

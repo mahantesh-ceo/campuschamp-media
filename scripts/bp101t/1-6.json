@@ -1,0 +1,160 @@
+{
+  "course": "bp101t",
+  "lesson": "1-6",
+  "voices": {
+    "en": "Ritu",
+    "hi": "Ritu",
+    "kn": "Chaitra"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program takes a messy drug entry and cleans it, one string tool at a time.",
+        "The comment says what the program does.",
+        "The entry has extra spaces at both ends and a small first letter. Look at the Variables panel: the spaces are inside the quotes.",
+        "strip removes the spaces from both ends. Then capitalize makes the first letter a capital. The clean text is saved in drug.",
+        "print shows the clean entry.",
+        "len counts every character, including the space in the middle. That makes seventeen.",
+        "The slice takes the first four characters, A M O X, and upper turns them into capitals. That's a short code for the label.",
+        "replace swaps two fifty M G for two fifty, space, M G. Notice that drug itself didn't change: replace gave a new string."
+      ],
+      "display": [
+        "This program takes a messy drug entry and cleans it, one string tool at a time.",
+        "The comment says what the program does.",
+        "The entry has extra spaces at both ends and a small first letter. Look at the Variables panel: the spaces are inside the quotes.",
+        "strip removes the spaces from both ends. Then capitalize makes the first letter a capital. The clean text is saved in drug.",
+        "print shows the clean entry.",
+        "len counts every character, including the space in the middle. That makes seventeen.",
+        "The slice takes the first four characters, A M O X, and upper turns them into capitals. That's a short code for the label.",
+        "replace swaps two fifty M G for two fifty, space, M G. Notice that drug itself didn't change: replace gave a new string."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह program एक गड़बड़ drug entry लेता है और उसे एक-एक string tool से साफ़ करता है।",
+        "Comment बताता है कि program क्या करता है।",
+        "Entry के दोनों सिरों पर extra spaces हैं, और पहला अक्षर छोटा है। Variables panel देखिए: spaces quotes के अंदर हैं।",
+        "strip दोनों सिरों से spaces हटाता है। फिर capitalize पहले अक्षर को capital बनाता है। साफ़ text drug में save हो जाता है।",
+        "print साफ़ entry दिखाता है।",
+        "len हर character गिनता है, बीच वाले space समेत। कुल सत्रह।",
+        "Slice पहले चार characters लेता है, A M O X, और upper उन्हें capitals बना देता है। Label के लिए यह एक छोटा code है।",
+        "replace, दो सौ पचास M G की जगह दो सौ पचास, space, M G रखता है। ध्यान दीजिए, drug खुद नहीं बदला: replace ने नई string दी।"
+      ],
+      "display": [
+        "यह program एक गड़बड़ drug entry लेता है और उसे एक-एक string tool से साफ़ करता है।",
+        "Comment बताता है कि program क्या करता है।",
+        "Entry के दोनों सिरों पर extra spaces हैं, और पहला अक्षर छोटा है। Variables panel देखिए: spaces quotes के अंदर हैं।",
+        "strip दोनों सिरों से spaces हटाता है। फिर capitalize पहले अक्षर को capital बनाता है। साफ़ text drug में save हो जाता है।",
+        "print साफ़ entry दिखाता है।",
+        "len हर character गिनता है, बीच वाले space समेत। कुल सत्रह।",
+        "Slice पहले चार characters लेता है, A M O X, और upper उन्हें capitals बना देता है। Label के लिए यह एक छोटा code है।",
+        "replace, दो सौ पचास M G की जगह दो सौ पचास, space, M G रखता है। ध्यान दीजिए, drug खुद नहीं बदला: replace ने नई string दी।"
+      ],
+      "displayHinglish": [
+        "Yeh program ek gadbad drug entry leta hai aur use ek-ek string tool se saaf karta hai.",
+        "Comment batata hai ki program kya karta hai.",
+        "Entry ke dono siron par extra spaces hain, aur pehla akshar chhota hai. Variables panel dekhiye: spaces quotes ke andar hain.",
+        "strip dono siron se spaces hatata hai. Phir capitalize pehle akshar ko capital banata hai. Saaf text drug mein save ho jaata hai.",
+        "print saaf entry dikhata hai.",
+        "len har character ginta hai, beech wale space samet. Kul satrah.",
+        "Slice pehle chaar characters leta hai, A M O X, aur upper unhe capitals bana deta hai. Label ke liye yeh ek chhota code hai.",
+        "replace, do sau pachaas M G ki jagah do sau pachaas, space, M G rakhta hai. Dhyaan dijiye, drug khud nahi badla: replace ne nayi string di."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ program ಒಂದು ಗೊಂದಲದ drug entry ತೆಗೆದುಕೊಂಡು, ಒಂದೊಂದೇ string tool ಇಂದ ಅದನ್ನು ಸರಿ ಮಾಡುತ್ತೆ.",
+        "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "Entry ನ ಎರಡೂ ತುದಿಗಳಲ್ಲಿ extra spaces ಇವೆ, ಮತ್ತು ಮೊದಲ ಅಕ್ಷರ ಚಿಕ್ಕದು. Variables panel ನೋಡಿ: spaces quotes ಒಳಗೆ ಇವೆ.",
+        "strip ಎರಡೂ ತುದಿಗಳಿಂದ spaces ತೆಗೆಯುತ್ತೆ. ಆಮೇಲೆ capitalize ಮೊದಲ ಅಕ್ಷರವನ್ನು capital ಮಾಡುತ್ತೆ. ಸರಿಯಾದ text drug ನಲ್ಲಿ save ಆಗುತ್ತೆ.",
+        "print ಸರಿಯಾದ entry ತೋರಿಸುತ್ತೆ.",
+        "len ಪ್ರತಿ character ಎಣಿಸುತ್ತೆ, ಮಧ್ಯದ space ಸೇರಿ. ಒಟ್ಟು ಹದಿನೇಳು.",
+        "Slice ಮೊದಲ ನಾಲ್ಕು characters ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ, A M O X, ಮತ್ತು upper ಅವನ್ನು capitals ಮಾಡುತ್ತೆ. Label ಗೆ ಇದು ಒಂದು ಚಿಕ್ಕ code.",
+        "replace, ಇನ್ನೂರ ಐವತ್ತು M G ಬದಲು ಇನ್ನೂರ ಐವತ್ತು, space, M G ಹಾಕುತ್ತೆ. ಗಮನಿಸಿ, drug ತಾನೇ ಬದಲಾಗಿಲ್ಲ: replace ಹೊಸ string ಕೊಟ್ಟಿದೆ."
+      ],
+      "display": [
+        "ಈ program ಒಂದು ಗೊಂದಲದ drug entry ತೆಗೆದುಕೊಂಡು, ಒಂದೊಂದೇ string tool ಇಂದ ಅದನ್ನು ಸರಿ ಮಾಡುತ್ತೆ.",
+        "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "Entry ನ ಎರಡೂ ತುದಿಗಳಲ್ಲಿ extra spaces ಇವೆ, ಮತ್ತು ಮೊದಲ ಅಕ್ಷರ ಚಿಕ್ಕದು. Variables panel ನೋಡಿ: spaces quotes ಒಳಗೆ ಇವೆ.",
+        "strip ಎರಡೂ ತುದಿಗಳಿಂದ spaces ತೆಗೆಯುತ್ತೆ. ಆಮೇಲೆ capitalize ಮೊದಲ ಅಕ್ಷರವನ್ನು capital ಮಾಡುತ್ತೆ. ಸರಿಯಾದ text drug ನಲ್ಲಿ save ಆಗುತ್ತೆ.",
+        "print ಸರಿಯಾದ entry ತೋರಿಸುತ್ತೆ.",
+        "len ಪ್ರತಿ character ಎಣಿಸುತ್ತೆ, ಮಧ್ಯದ space ಸೇರಿ. ಒಟ್ಟು ಹದಿನೇಳು.",
+        "Slice ಮೊದಲ ನಾಲ್ಕು characters ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ, A M O X, ಮತ್ತು upper ಅವನ್ನು capitals ಮಾಡುತ್ತೆ. Label ಗೆ ಇದು ಒಂದು ಚಿಕ್ಕ code.",
+        "replace, ಇನ್ನೂರ ಐವತ್ತು M G ಬದಲು ಇನ್ನೂರ ಐವತ್ತು, space, M G ಹಾಕುತ್ತೆ. ಗಮನಿಸಿ, drug ತಾನೇ ಬದಲಾಗಿಲ್ಲ: replace ಹೊಸ string ಕೊಟ್ಟಿದೆ."
+      ]
+    },
+    {
+      "id": "anim-slice",
+      "prefix": "anim-slice-",
+      "lang": "en",
+      "tts": [
+        "Here is a batch code from a medicine strip.",
+        "Every character has an index, starting from zero. The year starts at index four.",
+        "The slice four to eight takes indexes four, five, six and seven. It stops just before eight.",
+        "Those four characters make the year: two zero two six.",
+        "And the program prints it on the label."
+      ],
+      "display": [
+        "Here is a batch code from a medicine strip.",
+        "Every character has an index, starting from zero. The year starts at index four.",
+        "The slice four to eight takes indexes four, five, six and seven. It stops just before eight.",
+        "Those four characters make the year: two zero two six.",
+        "And the program prints it on the label."
+      ]
+    },
+    {
+      "id": "anim-slice",
+      "prefix": "anim-slice-",
+      "lang": "hi",
+      "tts": [
+        "यह medicine strip का एक batch code है।",
+        "हर character का एक index है, जो zero से शुरू होता है। साल index चार से शुरू होता है।",
+        "Slice चार से आठ, index चार, पाँच, छह और सात लेता है। यह आठ से ठीक पहले रुकता है।",
+        "ये चार characters मिलकर साल बनाते हैं: दो zero दो छह।",
+        "और program इसे label पर print करता है।"
+      ],
+      "display": [
+        "यह medicine strip का एक batch code है।",
+        "हर character का एक index है, जो zero से शुरू होता है। साल index चार से शुरू होता है।",
+        "Slice चार से आठ, index चार, पाँच, छह और सात लेता है। यह आठ से ठीक पहले रुकता है।",
+        "ये चार characters मिलकर साल बनाते हैं: दो zero दो छह।",
+        "और program इसे label पर print करता है।"
+      ],
+      "displayHinglish": [
+        "Yeh medicine strip ka ek batch code hai.",
+        "Har character ka ek index hai, jo zero se shuru hota hai. Saal index chaar se shuru hota hai.",
+        "Slice chaar se aath, index chaar, paanch, chhah aur saat leta hai. Yeh aath se theek pehle rukta hai.",
+        "Yeh chaar characters milkar saal banaate hain: do zero do chhah.",
+        "Aur program ise label par print karta hai."
+      ]
+    },
+    {
+      "id": "anim-slice",
+      "prefix": "anim-slice-",
+      "lang": "kn",
+      "tts": [
+        "ಇದು ಒಂದು medicine strip ನ batch code.",
+        "ಪ್ರತಿ character ಗೂ ಒಂದು index ಇದೆ, zero ಇಂದ ಶುರು. ವರ್ಷ index ನಾಲ್ಕರಿಂದ ಶುರು ಆಗುತ್ತೆ.",
+        "Slice ನಾಲ್ಕರಿಂದ ಎಂಟು, index ನಾಲ್ಕು, ಐದು, ಆರು ಮತ್ತು ಏಳು ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ. ಎಂಟಕ್ಕೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ.",
+        "ಈ ನಾಲ್ಕು characters ಸೇರಿ ವರ್ಷ ಆಗುತ್ತೆ: ಎರಡು zero ಎರಡು ಆರು.",
+        "ಮತ್ತು program ಇದನ್ನು label ಮೇಲೆ print ಮಾಡುತ್ತೆ."
+      ],
+      "display": [
+        "ಇದು ಒಂದು medicine strip ನ batch code.",
+        "ಪ್ರತಿ character ಗೂ ಒಂದು index ಇದೆ, zero ಇಂದ ಶುರು. ವರ್ಷ index ನಾಲ್ಕರಿಂದ ಶುರು ಆಗುತ್ತೆ.",
+        "Slice ನಾಲ್ಕರಿಂದ ಎಂಟು, index ನಾಲ್ಕು, ಐದು, ಆರು ಮತ್ತು ಏಳು ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ. ಎಂಟಕ್ಕೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ.",
+        "ಈ ನಾಲ್ಕು characters ಸೇರಿ ವರ್ಷ ಆಗುತ್ತೆ: ಎರಡು zero ಎರಡು ಆರು.",
+        "ಮತ್ತು program ಇದನ್ನು label ಮೇಲೆ print ಮಾಡುತ್ತೆ."
+      ]
+    }
+  ]
+}

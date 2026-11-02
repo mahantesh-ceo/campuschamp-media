@@ -1,0 +1,167 @@
+{
+  "course": "bp101t",
+  "lesson": "1-7",
+  "voices": {
+    "en": "Ritu",
+    "hi": "Ritu",
+    "kn": "Chaitra"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program uses Python's math library to work out how many strips to give.",
+        "The comment says what the program does.",
+        "import math brings in Python's math module. It comes with Python, so there's nothing to install.",
+        "The patient needs forty-five tablets.",
+        "Each strip has ten tablets.",
+        "Forty-five divided by ten is four point five. But you can't give half a strip.",
+        "math dot seal rounds up to the next whole number. So the pharmacist gives five strips.",
+        "This line imports only the square root tool, so it can be used without writing math and a dot.",
+        "The square root of eighty-one is nine. Python shows it as nine point zero."
+      ],
+      "display": [
+        "This program uses Python's math library to work out how many strips to give.",
+        "The comment says what the program does.",
+        "import math brings in Python's math module. It comes with Python, so there's nothing to install.",
+        "The patient needs forty-five tablets.",
+        "Each strip has ten tablets.",
+        "Forty-five divided by ten is four point five. But you can't give half a strip.",
+        "math dot ceil rounds up to the next whole number. So the pharmacist gives five strips.",
+        "This line imports only the square root tool, so it can be used without writing math and a dot.",
+        "The square root of eighty-one is nine. Python shows it as nine point zero."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह program, पाइथन की math library से बताता है कि कितनी strips देनी हैं।",
+        "Comment बताता है कि program क्या करता है।",
+        "import math, पाइथन का math module ले आता है। यह पाइथन के साथ आता है, इसलिए कुछ install नहीं करना।",
+        "Patient को पैंतालीस tablets चाहिए।",
+        "हर strip में दस tablets हैं।",
+        "पैंतालीस को दस से भाग दें तो चार दशमलव पाँच। पर आधी strip नहीं दे सकते।",
+        "math dot ceil अगली पूरी संख्या तक ऊपर round करता है। इसलिए pharmacist पाँच strips देता है।",
+        "यह line सिर्फ़ square root वाला tool import करती है, ताकि उसे math और dot लिखे बिना use किया जा सके।",
+        "इक्यासी का square root नौ है। पाइथन इसे नौ दशमलव zero दिखाता है।"
+      ],
+      "display": [
+        "यह program, Python की math library से बताता है कि कितनी strips देनी हैं।",
+        "Comment बताता है कि program क्या करता है।",
+        "import math, Python का math module ले आता है। यह Python के साथ आता है, इसलिए कुछ install नहीं करना।",
+        "Patient को पैंतालीस tablets चाहिए।",
+        "हर strip में दस tablets हैं।",
+        "पैंतालीस को दस से भाग दें तो चार दशमलव पाँच। पर आधी strip नहीं दे सकते।",
+        "math dot ceil अगली पूरी संख्या तक ऊपर round करता है। इसलिए pharmacist पाँच strips देता है।",
+        "यह line सिर्फ़ square root वाला tool import करती है, ताकि उसे math और dot लिखे बिना use किया जा सके।",
+        "इक्यासी का square root नौ है। Python इसे नौ दशमलव zero दिखाता है।"
+      ],
+      "displayHinglish": [
+        "Yeh program, Python ki math library se batata hai ki kitni strips deni hain.",
+        "Comment batata hai ki program kya karta hai.",
+        "import math, Python ka math module le aata hai. Yeh Python ke saath aata hai, isliye kuch install nahi karna.",
+        "Patient ko paintaalees tablets chahiye.",
+        "Har strip mein das tablets hain.",
+        "Paintaalees ko das se bhaag dein to chaar dashamlav paanch. Par aadhi strip nahi de sakte.",
+        "math dot ceil agli poori sankhya tak upar round karta hai. Isliye pharmacist paanch strips deta hai.",
+        "Yeh line sirf square root wala tool import karti hai, taaki use math aur dot likhe bina use kiya ja sake.",
+        "Ikyaasi ka square root nau hai. Python ise nau dashamlav zero dikhata hai."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ program ಪೈಥಾನ್ ನ math library ಬಳಸಿ ಎಷ್ಟು strips ಕೊಡಬೇಕು ಅಂತ ಲೆಕ್ಕ ಹಾಕುತ್ತೆ.",
+        "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "import math, ಪೈಥಾನ್ ನ math module ಅನ್ನು ತರುತ್ತೆ. ಇದು ಪೈಥಾನ್ ಜೊತೆಗೇ ಬರುತ್ತೆ, ಅದಕ್ಕೇ ಏನೂ install ಮಾಡಬೇಕಿಲ್ಲ.",
+        "Patient ಗೆ ನಲವತ್ತೈದು tablets ಬೇಕು.",
+        "ಪ್ರತಿ strip ನಲ್ಲಿ ಹತ್ತು tablets ಇವೆ.",
+        "ನಲವತ್ತೈದನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿದ್ರೆ ನಾಲ್ಕು ಪಾಯಿಂಟ್ ಐದು. ಆದ್ರೆ ಅರ್ಧ strip ಕೊಡೋಕೆ ಆಗಲ್ಲ.",
+        "math dot ceil ಮುಂದಿನ ಪೂರ್ಣ ಸಂಖ್ಯೆಗೆ ಮೇಲಕ್ಕೆ round ಮಾಡುತ್ತೆ. ಅದಕ್ಕೇ pharmacist ಐದು strips ಕೊಡುತ್ತಾರೆ.",
+        "ಈ line square root tool ಅನ್ನು ಮಾತ್ರ import ಮಾಡುತ್ತೆ, math ಮತ್ತು dot ಬರೆಯದೆ ಬಳಸಲು.",
+        "ಎಂಬತ್ತೊಂದರ square root ಒಂಬತ್ತು. ಪೈಥಾನ್ ಇದನ್ನು ಒಂಬತ್ತು ಪಾಯಿಂಟ್ zero ಅಂತ ತೋರಿಸುತ್ತೆ."
+      ],
+      "display": [
+        "ಈ program Python ನ math library ಬಳಸಿ ಎಷ್ಟು strips ಕೊಡಬೇಕು ಅಂತ ಲೆಕ್ಕ ಹಾಕುತ್ತೆ.",
+        "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "import math, Python ನ math module ಅನ್ನು ತರುತ್ತೆ. ಇದು Python ಜೊತೆಗೇ ಬರುತ್ತೆ, ಅದಕ್ಕೇ ಏನೂ install ಮಾಡಬೇಕಿಲ್ಲ.",
+        "Patient ಗೆ ನಲವತ್ತೈದು tablets ಬೇಕು.",
+        "ಪ್ರತಿ strip ನಲ್ಲಿ ಹತ್ತು tablets ಇವೆ.",
+        "ನಲವತ್ತೈದನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿದ್ರೆ ನಾಲ್ಕು ಪಾಯಿಂಟ್ ಐದು. ಆದ್ರೆ ಅರ್ಧ strip ಕೊಡೋಕೆ ಆಗಲ್ಲ.",
+        "math dot ceil ಮುಂದಿನ ಪೂರ್ಣ ಸಂಖ್ಯೆಗೆ ಮೇಲಕ್ಕೆ round ಮಾಡುತ್ತೆ. ಅದಕ್ಕೇ pharmacist ಐದು strips ಕೊಡುತ್ತಾರೆ.",
+        "ಈ line square root tool ಅನ್ನು ಮಾತ್ರ import ಮಾಡುತ್ತೆ, math ಮತ್ತು dot ಬರೆಯದೆ ಬಳಸಲು.",
+        "ಎಂಬತ್ತೊಂದರ square root ಒಂಬತ್ತು. Python ಇದನ್ನು ಒಂಬತ್ತು ಪಾಯಿಂಟ್ zero ಅಂತ ತೋರಿಸುತ್ತೆ."
+      ]
+    },
+    {
+      "id": "anim-pip",
+      "prefix": "anim-pip-",
+      "lang": "en",
+      "tts": [
+        "In the terminal, the student types: pip install numpy.",
+        "pip finds NumPy on PyPI, the online library of Python packages.",
+        "It downloads NumPy and installs it on the computer.",
+        "Now any program on this computer can use it, with import numpy as np.",
+        "And pip uninstall numpy removes it again."
+      ],
+      "display": [
+        "In the terminal, the student types: pip install numpy.",
+        "pip finds NumPy on PyPI, the online library of Python packages.",
+        "It downloads NumPy and installs it on the computer.",
+        "Now any program on this computer can use it, with import numpy as np.",
+        "And pip uninstall numpy removes it again."
+      ]
+    },
+    {
+      "id": "anim-pip",
+      "prefix": "anim-pip-",
+      "lang": "hi",
+      "tts": [
+        "Terminal में student type करता है: pip install numpy।",
+        "pip, NumPy को PyPI पर ढूँढता है, जो पाइथन packages की online library है।",
+        "यह NumPy download करके computer पर install कर देता है।",
+        "अब इस computer का कोई भी program इसे use कर सकता है, import numpy as np से।",
+        "और pip uninstall numpy इसे फिर से हटा देता है।"
+      ],
+      "display": [
+        "Terminal में student type करता है: pip install numpy।",
+        "pip, NumPy को PyPI पर ढूँढता है, जो Python packages की online library है।",
+        "यह NumPy download करके computer पर install कर देता है।",
+        "अब इस computer का कोई भी program इसे use कर सकता है, import numpy as np से।",
+        "और pip uninstall numpy इसे फिर से हटा देता है।"
+      ],
+      "displayHinglish": [
+        "Terminal mein student type karta hai: pip install numpy.",
+        "pip, NumPy ko PyPI par dhoondhta hai, jo Python packages ki online library hai.",
+        "Yeh NumPy download karke computer par install kar deta hai.",
+        "Ab is computer ka koi bhi program ise use kar sakta hai, import numpy as np se.",
+        "Aur pip uninstall numpy ise phir se hata deta hai."
+      ]
+    },
+    {
+      "id": "anim-pip",
+      "prefix": "anim-pip-",
+      "lang": "kn",
+      "tts": [
+        "Terminal ನಲ್ಲಿ student type ಮಾಡುತ್ತಾರೆ: pip install numpy.",
+        "pip, NumPy ಅನ್ನು PyPI ನಲ್ಲಿ ಹುಡುಕುತ್ತೆ, ಇದು ಪೈಥಾನ್ packages ನ online library.",
+        "ಇದು NumPy ಅನ್ನು download ಮಾಡಿ computer ನಲ್ಲಿ install ಮಾಡುತ್ತೆ.",
+        "ಈಗ ಈ computer ನ ಯಾವ program ಬೇಕಾದ್ರೂ ಇದನ್ನು ಬಳಸಬಹುದು, import numpy as np ಇಂದ.",
+        "ಮತ್ತು pip uninstall numpy ಇದನ್ನು ಮತ್ತೆ ತೆಗೆಯುತ್ತೆ."
+      ],
+      "display": [
+        "Terminal ನಲ್ಲಿ student type ಮಾಡುತ್ತಾರೆ: pip install numpy.",
+        "pip, NumPy ಅನ್ನು PyPI ನಲ್ಲಿ ಹುಡುಕುತ್ತೆ, ಇದು Python packages ನ online library.",
+        "ಇದು NumPy ಅನ್ನು download ಮಾಡಿ computer ನಲ್ಲಿ install ಮಾಡುತ್ತೆ.",
+        "ಈಗ ಈ computer ನ ಯಾವ program ಬೇಕಾದ್ರೂ ಇದನ್ನು ಬಳಸಬಹುದು, import numpy as np ಇಂದ.",
+        "ಮತ್ತು pip uninstall numpy ಇದನ್ನು ಮತ್ತೆ ತೆಗೆಯುತ್ತೆ."
+      ]
+    }
+  ]
+}

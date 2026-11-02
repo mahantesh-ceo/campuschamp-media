@@ -315,6 +315,80 @@ G = {
             "hinglish": "f-string mein { } ke andar lagaate hain, taaki dashamlav ke baad ek ya do ank dikhein.",
             "kn": "f-string ನಲ್ಲಿ { } ಒಳಗೆ ಹಾಕುತ್ತೇವೆ, ದಶಮಾಂಶದ ನಂತರ ಒಂದು ಅಥವಾ ಎರಡು ಅಂಕೆ ತೋರಿಸಲು."}),
     ],
+    "1-6": [
+        ("Index", {
+            "en": "The position number of a character in a string. Counting starts at 0, so text[0] is the first character.",
+            "hi": "String में किसी character का position number। गिनती 0 से शुरू होती है, इसलिए text[0] पहला character है।",
+            "hinglish": "String mein kisi character ka position number. Ginti 0 se shuru hoti hai, isliye text[0] pehla character hai.",
+            "kn": "String ನಲ್ಲಿ ಒಂದು character ನ position number. ಎಣಿಕೆ 0 ಇಂದ ಶುರು, ಅದಕ್ಕೇ text[0] ಮೊದಲ character."}),
+        ("Slice", {
+            "en": "A piece of a string, written text[start:end]. It stops just before the end index.",
+            "hi": "String का एक हिस्सा, text[start:end] लिखकर। यह end index से ठीक पहले रुकता है।",
+            "hinglish": "String ka ek hissa, text[start:end] likhkar. Yeh end index se theek pehle rukta hai.",
+            "kn": "String ನ ಒಂದು ಭಾಗ, text[start:end] ಅಂತ ಬರೆಯುತ್ತೇವೆ. ಇದು end index ಗೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ."}),
+        ("Method", {
+            "en": "A function that belongs to a value, called with a dot after it, like drug.upper().",
+            "hi": "किसी value का अपना function, जिसे value के बाद dot लगाकर call करते हैं, जैसे drug.upper()।",
+            "hinglish": "Kisi value ka apna function, jise value ke baad dot lagakar call karte hain, jaise drug.upper().",
+            "kn": "ಒಂದು value ಗೆ ಸೇರಿದ function, value ನಂತರ dot ಹಾಕಿ call ಮಾಡುತ್ತೇವೆ, ಉದಾ: drug.upper()."}),
+        ("len()", {
+            "en": "Counts the characters in a string, spaces included.",
+            "hi": "String के characters गिनता है, spaces भी।",
+            "hinglish": "String ke characters ginta hai, spaces bhi.",
+            "kn": "String ನಲ್ಲಿರುವ characters ಎಣಿಸುತ್ತೆ, spaces ಕೂಡ."}),
+        ("strip()", {
+            "en": "Removes spaces from both ends of a string.",
+            "hi": "String के दोनों सिरों से spaces हटाता है।",
+            "hinglish": "String ke dono siron se spaces hatata hai.",
+            "kn": "String ನ ಎರಡೂ ತುದಿಗಳಿಂದ spaces ತೆಗೆಯುತ್ತೆ."}),
+        ("replace()", {
+            "en": "Gives a new string with one piece of text swapped for another: text.replace(old, new).",
+            "hi": "एक text की जगह दूसरा text रखकर नई string देता है: text.replace(old, new)।",
+            "hinglish": "Ek text ki jagah doosra text rakhkar nayi string deta hai: text.replace(old, new).",
+            "kn": "ಒಂದು text ಬದಲು ಇನ್ನೊಂದು text ಹಾಕಿ ಹೊಸ string ಕೊಡುತ್ತೆ: text.replace(old, new)."}),
+        ("split()", {
+            "en": "Breaks a string into parts wherever a separator appears, such as a comma.",
+            "hi": "जहाँ-जहाँ separator आए, जैसे comma, वहाँ string को हिस्सों में तोड़ता है।",
+            "hinglish": "Jahan-jahan separator aaye, jaise comma, wahan string ko hisson mein todta hai.",
+            "kn": "Separator ಬಂದಲ್ಲೆಲ್ಲಾ, ಉದಾ: comma, string ಅನ್ನು ಭಾಗಗಳಾಗಿ ಒಡೆಯುತ್ತೆ."}),
+    ],
+    "1-7": [
+        ("Module", {
+            "en": "A Python file of ready-made code, such as functions and values, that you can import.",
+            "hi": "Ready-made code वाली एक Python file, जैसे functions और values, जिसे आप import कर सकते हैं।",
+            "hinglish": "Ready-made code wali ek Python file, jaise functions aur values, jise aap import kar sakte hain.",
+            "kn": "Ready-made code ಇರುವ ಒಂದು Python file, ಉದಾ: functions ಮತ್ತು values, ಇದನ್ನು import ಮಾಡಬಹುದು."}),
+        ("Standard library", {
+            "en": "The libraries that come with Python, such as math and datetime. Nothing to install.",
+            "hi": "Python के साथ आने वाली libraries, जैसे math और datetime। कुछ install नहीं करना पड़ता।",
+            "hinglish": "Python ke saath aane wali libraries, jaise math aur datetime. Kuch install nahi karna padta.",
+            "kn": "Python ಜೊತೆಗೇ ಬರುವ libraries, ಉದಾ: math ಮತ್ತು datetime. ಏನೂ install ಮಾಡಬೇಕಿಲ್ಲ."}),
+        ("Third-party library", {
+            "en": "A library made outside the Python team, such as NumPy, installed separately with pip.",
+            "hi": "Python team के बाहर बनी library, जैसे NumPy, जिसे pip से अलग से install करते हैं।",
+            "hinglish": "Python team ke bahar bani library, jaise NumPy, jise pip se alag se install karte hain.",
+            "kn": "Python team ಹೊರಗೆ ಮಾಡಿದ library, ಉದಾ: NumPy, ಇದನ್ನು pip ಇಂದ ಬೇರೆಯಾಗಿ install ಮಾಡುತ್ತೇವೆ."}),
+        ("PyPI", {
+            "en": "The Python Package Index: the free online store of third-party libraries that pip downloads from.",
+            "hi": "Python Package Index: third-party libraries का free online store, जहाँ से pip download करता है।",
+            "hinglish": "Python Package Index: third-party libraries ka free online store, jahan se pip download karta hai.",
+            "kn": "Python Package Index: third-party libraries ನ free online store, pip ಇಲ್ಲಿಂದ download ಮಾಡುತ್ತೆ."}),
+        ("pip", {
+            "en": "Python's installer. Typed in the terminal: pip install to add a library, pip uninstall to remove it.",
+            "hi": "Python का installer। Terminal में type करते हैं: library जोड़ने के लिए pip install, हटाने के लिए pip uninstall।",
+            "hinglish": "Python ka installer. Terminal mein type karte hain: library jodne ke liye pip install, hatane ke liye pip uninstall.",
+            "kn": "Python ನ installer. Terminal ನಲ್ಲಿ type ಮಾಡುತ್ತೇವೆ: library ಸೇರಿಸಲು pip install, ತೆಗೆಯಲು pip uninstall."}),
+        ("import", {
+            "en": "Brings a module or library into your program so you can use its tools, e.g. import math.",
+            "hi": "Module या library को आपके program में लाता है, ताकि उसके tools use कर सकें, जैसे import math।",
+            "hinglish": "Module ya library ko aapke program mein laata hai, taaki uske tools use kar sakein, jaise import math.",
+            "kn": "Module ಅಥವಾ library ಅನ್ನು ನಿಮ್ಮ program ಗೆ ತರುತ್ತೆ, ಅದರ tools ಬಳಸಲು, ಉದಾ: import math."}),
+        ("Alias (as)", {
+            "en": "A short name for a library, given with as, like import numpy as np.",
+            "hi": "Library का छोटा नाम, as से दिया जाता है, जैसे import numpy as np।",
+            "hinglish": "Library ka chhota naam, as se diya jaata hai, jaise import numpy as np.",
+            "kn": "Library ಗೆ ಕೊಡುವ ಚಿಕ್ಕ ಹೆಸರು, as ಇಂದ, ಉದಾ: import numpy as np."}),
+    ],
 }
 
 

@@ -1,0 +1,337 @@
+{
+  "hook": {
+    "title": "ಪ್ರತಿ tablet ಅನ್ನು ಶುರುವಿನಿಂದ ಮಾಡಬೇಡಿ",
+    "md": "Pharmacy ತಾನು ಕೊಡುವ ಪ್ರತಿ tablet ಅನ್ನೂ ತಾನೇ ತಯಾರಿಸಲ್ಲ. ನಂಬಿಕೆಯ companies ಮಾಡಿದ ready-made ಔಷಧಿಗಳನ್ನು ಬಳಸುತ್ತೆ.\n\nPython ಕೂಡ ಹಾಗೇ ಕೆಲಸ ಮಾಡುತ್ತೆ. ಪ್ರತಿ tool ಅನ್ನೂ ನೀವೇ ಬರೆಯುವ ಬದಲು **libraries** ಬಳಸುತ್ತೀರಿ: ಬೇರೆಯವರು ಬರೆದು test ಮಾಡಿದ ready-made code. ಈ lesson ಮುಗಿಯುವಷ್ಟರಲ್ಲಿ, Python ನ built-in libraries ಬಳಸುತ್ತೀರಿ, ಮತ್ತು **pip** ಇಂದ ಹೊಸ libraries install ಮಾಡೋದು ಗೊತ್ತಾಗುತ್ತೆ."
+  },
+  "learn": [
+    "**Module** ಮತ್ತು **library** ಅಂದ್ರೆ ಏನು",
+    "Python ಜೊತೆ ಬರುವ **standard library** ಹೇಗೆ ಬಳಸೋದು, ಉದಾ: **math**",
+    "Import ಮಾಡುವ ಮೂರು ವಿಧಾನಗಳು: `import math`, `from math import sqrt` ಮತ್ತು `import numpy as np`",
+    "**Third-party** libraries ಅಂದ್ರೆ ಏನು, ಮತ್ತು **pip** ಇಂದ ಅವನ್ನು install, uninstall ಮಾಡೋದು ಹೇಗೆ"
+  ],
+  "explanation": [
+    {
+      "heading": "Modules ಮತ್ತು libraries",
+      "md": "**Module** ಅಂದ್ರೆ ready-made code ತುಂಬಿರುವ ಒಂದು Python file, ಉದಾ: functions ಮತ್ತು values. **Library** ಒಂದು ರೀತಿಯ ಕೆಲಸಕ್ಕೆ ಬೇಕಾದ modules ನ collection.\n\nಇದನ್ನು ಬಳಸಲು program ನ ಶುರುವಿನಲ್ಲಿ **import** ಮಾಡಿ:\n\n```python\nimport math\nprint(math.sqrt(49))\nprint(math.pi)\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\n7.0\n3.141592653589793\n```\n\n`import math`, **math** module ಅನ್ನು ತರುತ್ತೆ. ಆಮೇಲೆ ಅದರ tools ಅನ್ನು dot ಜೊತೆ ಬಳಸುತ್ತೇವೆ: `math.sqrt()` square root ಕೊಡುತ್ತೆ, ಮತ್ತು `math.pi` pi ನ value.",
+      "callout": {
+        "title": "Library",
+        "md": "ನೀವೇ ಬರೆಯುವ ಬದಲು ನಿಮ್ಮ program ಗೆ import ಮಾಡಿಕೊಳ್ಳುವ ready-made, test ಆದ code."
+      }
+    },
+    {
+      "heading": "Standard library: Python ಒಳಗೇ ಇದೆ",
+      "md": "Python ಜೊತೆ ಒಂದು ದೊಡ್ಡ **standard library** ಬರುತ್ತೆ. ಏನೂ install ಮಾಡಬೇಕಿಲ್ಲ; import ಮಾಡಿದ್ರೆ ಸಾಕು. Pharmacy ಕೆಲಸದಲ್ಲಿ ಇವು ಸಿಗುತ್ತವೆ:\n\n- **math**: square roots, pi, ಮೇಲೆ ಮತ್ತು ಕೆಳಗೆ rounding\n- **statistics**: data ನ average ಮತ್ತು ಹರಡುವಿಕೆ\n- **random**: random numbers, ಉದಾ: sample ಆರಿಸಲು\n- **datetime**: ದಿನಾಂಕ ಮತ್ತು ಸಮಯ, ಉದಾ: expiry dates\n\nDispensing ನಲ್ಲಿ ಮೇಲಕ್ಕೆ round ಮಾಡೋದು ಸಾಮಾನ್ಯ. 45 tablets, ಪ್ರತಿ strip ನಲ್ಲಿ 10:\n\n```python\nimport math\nprint(45 / 10)\nprint(math.ceil(45 / 10))\n```\n\nಇದು `4.5` ಮತ್ತು ನಂತರ `5` print ಮಾಡುತ್ತೆ. ಅರ್ಧ strip ಕೊಡೋಕೆ ಆಗಲ್ಲ, ಅದಕ್ಕೇ `math.ceil()` ಮುಂದಿನ ಪೂರ್ಣ ಸಂಖ್ಯೆಗೆ **ಮೇಲಕ್ಕೆ** round ಮಾಡುತ್ತೆ. `math.floor()` **ಕೆಳಕ್ಕೆ** round ಮಾಡುತ್ತೆ."
+    },
+    {
+      "heading": "Import ಮಾಡುವ ಮೂರು ವಿಧಾನಗಳು",
+      "md": "**1. ಪೂರ್ತಿ module import ಮಾಡಿ**, ಆಮೇಲೆ module ಹೆಸರು ಮತ್ತು dot ಬಳಸಿ:\n\n```python\nimport math\nprint(math.ceil(4.5))\n```\n\n**2. ಬೇಕಾದ tool ಮಾತ್ರ import ಮಾಡಿ**, ಆಮೇಲೆ dot ಇಲ್ಲದೆ ಬಳಸಿ:\n\n```python\nfrom math import sqrt\nprint(sqrt(81))\n```\n\n**3. ಚಿಕ್ಕ ಹೆಸರು (ಒಂದು **alias**) ಜೊತೆ import ಮಾಡಿ**, `as` ಹಾಕಿ:\n\n```python\nimport statistics as st\nprint(st.mean([250, 500, 375]))\n```\n\nಈ ಮೂರು programs `5`, `9.0` ಮತ್ತು `375` print ಮಾಡುತ್ತವೆ. ದೊಡ್ಡ libraries ಗೆ ಎಲ್ಲರೂ ಬಳಸುವ standard aliases ಇವೆ, ಉದಾ: `import numpy as np` ಮತ್ತು `import pandas as pd`.",
+      "callout": {
+        "title": "Imports ಮೇಲ್ಗಡೆ ಬರೆಯಿರಿ",
+        "md": "Import lines ಅನ್ನು program ನ ಶುರುವಿನಲ್ಲಿ ಬರೆಯಿರಿ, ಕೆಳಗಿನ ಪ್ರತಿ line ಅವನ್ನು ಬಳಸಲು."
+      }
+    },
+    {
+      "heading": "Third-party libraries",
+      "md": "**Third-party** libraries ಅನ್ನು Python team ಹೊರಗಿನವರು ಬರೆದು **PyPI**, ಅಂದ್ರೆ Python Package Index ನಲ್ಲಿ free ಆಗಿ share ಮಾಡುತ್ತಾರೆ. ನಿಮ್ಮ syllabus ನಲ್ಲಿ ಇವುಗಳಲ್ಲಿ ಮೂರು ಇವೆ:\n\n- **NumPy**: ತುಂಬಾ numbers ಮೇಲೆ ವೇಗದ calculations (Unit IV)\n- **Pandas**: data tables, ಉದಾ: patient results ನ spreadsheet (Unit IV)\n- **Matplotlib**: graphs, ಉದಾ: drug concentration curve (Unit V)\n\nಇವು Python ಜೊತೆ ಬರಲ್ಲ. ನಿಮ್ಮ computer ನಲ್ಲಿ ಒಮ್ಮೆ **install** ಮಾಡಿ, ಆಮೇಲೆ ಬೇರೆ libraries ತರಹಾನೇ import ಮಾಡಿ.\n\n**Champ Lab ನಲ್ಲಿ:** NumPy, Pandas ಮತ್ತು Matplotlib ಈಗಾಗಲೇ install ಆಗಿವೆ, ಅದಕ್ಕೇ ನೇರವಾಗಿ import ಮಾಡಬಹುದು."
+    },
+    {
+      "heading": "pip ಇಂದ install ಮತ್ತು uninstall",
+      "md": "**pip** Python ನ installer. ಇದು PyPI ಇಂದ library download ಮಾಡಿ set up ಮಾಡುತ್ತೆ. pip **commands** ಅನ್ನು **terminal** (Windows ನಲ್ಲಿ Command Prompt) ನಲ್ಲಿ type ಮಾಡುತ್ತೀರಿ, Python program ಒಳಗೆ ಅಲ್ಲ:\n\n```\npip install numpy\npip uninstall numpy\npip list\npip show numpy\npip install --upgrade numpy\n```\n\n- **`pip install`** library download ಮಾಡಿ install ಮಾಡುತ್ತೆ.\n- **`pip uninstall`** ಅದನ್ನು ತೆಗೆಯುತ್ತೆ (confirm ಮಾಡಲು `y` type ಮಾಡಿ).\n- **`pip list`** install ಆಗಿರುವ ಎಲ್ಲಾ libraries ತೋರಿಸುತ್ತೆ.\n- **`pip show`** ಒಂದು library ನ details ತೋರಿಸುತ್ತೆ, ಉದಾ: version.\n- **`pip install --upgrade`** library ಅನ್ನು ಹೊಸ version ಗೆ update ಮಾಡುತ್ತೆ.\n\n**Jupyter Notebook** ನಲ್ಲಿ cell ಒಳಗೆ percent sign ಜೊತೆ run ಮಾಡಿ: `%pip install numpy`.",
+      "callout": {
+        "title": "pip, Python code ಅಲ್ಲ",
+        "md": ".py file ಒಳಗೆ ಅಥವಾ >>> prompt ನಲ್ಲಿ pip install numpy type ಮಾಡಿದ್ರೆ SyntaxError ಬರುತ್ತೆ. ಇದನ್ನು terminal ನಲ್ಲಿ type ಮಾಡಿ."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "ಒಬ್ಬ patient ಗೆ 45 tablets ಬೇಕು, ಮತ್ತು ಪ್ರತಿ strip ನಲ್ಲಿ 10 ಇವೆ. Pharmacist ಎಷ್ಟು strips ಕೊಡಬೇಕು ಅಂತ ಈ program ಲೆಕ್ಕ ಹಾಕುತ್ತೆ.",
+    "keyTerms": [
+      {
+        "meaning": "math module ತಾ; ಅದರ tools ಅನ್ನು math ಮತ್ತು dot ಜೊತೆ ಬಳಸು."
+      },
+      {
+        "meaning": "ಮುಂದಿನ ಪೂರ್ಣ ಸಂಖ್ಯೆಗೆ ಮೇಲಕ್ಕೆ round ಮಾಡು."
+      },
+      {
+        "meaning": "ಒಂದು tool ತಾ, module ಹೆಸರಿಲ್ಲದೆ ಬಳಸಲು."
+      },
+      {
+        "meaning": "Library install ಮಾಡು. Terminal ನಲ್ಲಿ type ಮಾಡೋದು, Python ನಲ್ಲಿ ಅಲ್ಲ."
+      }
+    ],
+    "steps": [
+      {
+        "say": "ಈ program Python ನ math library ಬಳಸಿ ಎಷ್ಟು strips ಕೊಡಬೇಕು ಅಂತ ಲೆಕ್ಕ ಹಾಕುತ್ತೆ."
+      },
+      {
+        "say": "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ."
+      },
+      {
+        "say": "import math, Python ನ math module ಅನ್ನು ತರುತ್ತೆ. ಇದು Python ಜೊತೆಗೇ ಬರುತ್ತೆ, ಅದಕ್ಕೇ ಏನೂ install ಮಾಡಬೇಕಿಲ್ಲ."
+      },
+      {
+        "say": "Patient ಗೆ ನಲವತ್ತೈದು tablets ಬೇಕು."
+      },
+      {
+        "say": "ಪ್ರತಿ strip ನಲ್ಲಿ ಹತ್ತು tablets ಇವೆ."
+      },
+      {
+        "say": "ನಲವತ್ತೈದನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿದ್ರೆ ನಾಲ್ಕು ಪಾಯಿಂಟ್ ಐದು. ಆದ್ರೆ ಅರ್ಧ strip ಕೊಡೋಕೆ ಆಗಲ್ಲ."
+      },
+      {
+        "say": "math dot ceil ಮುಂದಿನ ಪೂರ್ಣ ಸಂಖ್ಯೆಗೆ ಮೇಲಕ್ಕೆ round ಮಾಡುತ್ತೆ. ಅದಕ್ಕೇ pharmacist ಐದು strips ಕೊಡುತ್ತಾರೆ."
+      },
+      {
+        "say": "ಈ line square root tool ಅನ್ನು ಮಾತ್ರ import ಮಾಡುತ್ತೆ, math ಮತ್ತು dot ಬರೆಯದೆ ಬಳಸಲು."
+      },
+      {
+        "say": "ಎಂಬತ್ತೊಂದರ square root ಒಂಬತ್ತು. Python ಇದನ್ನು ಒಂಬತ್ತು ಪಾಯಿಂಟ್ zero ಅಂತ ತೋರಿಸುತ್ತೆ."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Python ಗೆ library ಸಿಗದಿದ್ದಾಗ, ಅಥವಾ ಅದರ ಒಳಗಿನ tool ಸಿಗದಿದ್ದಾಗ ಈ ಎರಡು errors ಬರುತ್ತವೆ.",
+    "examples": [
+      {
+        "title": "Library install ಆಗಿಲ್ಲ, ಅಥವಾ ಹೆಸರಿನ spelling ತಪ್ಪು",
+        "md": "Python `numpi` ಅನ್ನೋ library ಹುಡುಕಿತು, ಸಿಗಲಿಲ್ಲ. Spelling check ಮಾಡಿ (`numpy`). Spelling ಸರಿ ಇದ್ರೆ, library ಇನ್ನೂ install ಆಗಿಲ್ಲ: terminal ನಲ್ಲಿ `pip install numpy` run ಮಾಡಿ."
+      },
+      {
+        "title": "Module ಹೆಸರಿಲ್ಲದೆ tool ಬಳಸೋದು",
+        "md": "`import math` module ಅನ್ನು ತರುತ್ತೆ, ಅದಕ್ಕೇ ಅದರ tools ಗೆ module ಹೆಸರು ಬೇಕು: `math.sqrt(16)`. ಅಥವಾ ಮೊದಲು tool ಅನ್ನೇ import ಮಾಡಿ: `from math import sqrt`."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Python program ಒಳಗೆ ಅಥವಾ `>>>` prompt ನಲ್ಲಿ `pip install numpy` type ಮಾಡೋದು",
+      "see": "SyntaxError: invalid syntax",
+      "fix": "ಇದನ್ನು terminal ನಲ್ಲಿ type ಮಾಡಿ. Jupyter ನಲ್ಲಿ `%pip install numpy` ಬಳಸಿ."
+    },
+    {
+      "mistake": "Import ಮಾಡದೆ module ಬಳಸೋದು, ಉದಾ: import ಇಲ್ಲದೆ `math.ceil(4.5)`",
+      "see": "NameError: name 'math' is not defined",
+      "fix": "ಮೇಲ್ಗಡೆ `import math` ಸೇರಿಸಿ."
+    },
+    {
+      "mistake": "Alias ಜೊತೆ import ಮಾಡಿ ಪೂರ್ತಿ ಹೆಸರು ಬಳಸೋದು, ಉದಾ: `import numpy as np` ಆಮೇಲೆ `numpy.mean(...)`",
+      "see": "NameError: name 'numpy' is not defined",
+      "fix": "Alias ಬಳಸಿ: `np.mean(...)`."
+    },
+    {
+      "mistake": "ನಿಮ್ಮ file ಗೆ `math.py` ಅಥವಾ `numpy.py` ಅಂತ ಹೆಸರಿಡೋದು",
+      "see": "Import errors, ಯಾಕಂದ್ರೆ Python library ಬದಲು ನಿಮ್ಮ file ಅನ್ನು import ಮಾಡುತ್ತೆ",
+      "fix": "File ಹೆಸರು ಬದಲಾಯಿಸಿ, ಉದಾ: `strips.py`."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Strips ಅನ್ನು ಮೇಲಕ್ಕೆ round ಮಾಡಿ",
+      "md": "ಒಬ್ಬ patient ಗೆ **23 tablets** ಬೇಕು, ಮತ್ತು ಪ್ರತಿ strip ನಲ್ಲಿ **10** ಇವೆ. **math.ceil()** ಬಳಸಿ strips ಸಂಖ್ಯೆ print ಮಾಡಿ, ಹೀಗೇ:",
+      "hints": [
+        "23 / 10 ಅಂದ್ರೆ 2.3. ಇದನ್ನು ಮೇಲಕ್ಕೆ round ಮಾಡಿ.",
+        "print(\"Strips:\", math.ceil(23 / 10))"
+      ]
+    },
+    {
+      "title": "ಒಂದೇ tool import ಮಾಡಿ",
+      "md": "math module ಇಂದ **sqrt** ಮಾತ್ರ import ಮಾಡಿ, ಮತ್ತು 144 ರ square root print ಮಾಡಿ, ಹೀಗೇ:",
+      "hints": [
+        "Import line from math import ... ಇಂದ ಶುರು ಆಗುತ್ತೆ.",
+        "from math import sqrt, ಆಮೇಲೆ print(sqrt(144))"
+      ]
+    },
+    {
+      "title": "pi ಬಳಸಿ",
+      "md": "ಒಂದು ದುಂಡು tablet ನ radius **4 mm**. ಅದರ face area = pi × radius × radius. **math.pi** ಮತ್ತು ಎರಡು decimal places ಇರುವ f-string ಬಳಸಿ ಹೀಗೇ print ಮಾಡಿ:",
+      "hints": [
+        "Area ಅಂದ್ರೆ math.pi * radius_mm * radius_mm.",
+        "print(f\"Area: {math.pi * radius_mm * radius_mm:.2f} sq mm\")"
+      ]
+    },
+    {
+      "title": "Bug ಹುಡುಕಿ",
+      "md": "ಈ program 45 tablets ಗೆ strips ಸಂಖ್ಯೆ print ಮಾಡಬೇಕು, ಆದ್ರೆ NameError ನಲ್ಲಿ ನಿಂತುಬಿಡುತ್ತೆ. Output ಹೀಗೇ ಬರುವ ಹಾಗೆ ಸರಿ ಮಾಡಿ:",
+      "hints": [
+        "Program math ಅನ್ನು import ಮಾಡಿದೆ, ceil ಅನ್ನು ಅಲ್ಲ.",
+        "ceil ಬದಲು math.ceil ಬರೆಯಿರಿ."
+      ],
+      "solutionNote": "import math module ಅನ್ನು ತರುತ್ತೆ, ಅದಕ್ಕೇ ಅದರ tools ಗೆ module ಹೆಸರು ಮತ್ತು dot ಬೇಕು: math.ceil."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "ಯಾವ command NumPy install ಮಾಡುತ್ತೆ?",
+      "why": "pip install library download ಮಾಡಿ install ಮಾಡುತ್ತೆ. import ಈಗಾಗಲೇ install ಆದ library ಅನ್ನು ಮಾತ್ರ ಬಳಸುತ್ತೆ."
+    },
+    {
+      "q": "ಇವುಗಳಲ್ಲಿ ಯಾವುದು Python ಜೊತೆಗೇ ಬರುತ್ತೆ, ಏನೂ install ಮಾಡದೆ?",
+      "why": "math standard library ನ ಭಾಗ. ಉಳಿದವು third-party libraries."
+    },
+    {
+      "q": "import math. print(math.ceil(4.1)) ಏನು ತೋರಿಸುತ್ತೆ?",
+      "why": "ceil ಮುಂದಿನ ಪೂರ್ಣ ಸಂಖ್ಯೆಗೆ ಮೇಲಕ್ಕೆ round ಮಾಡುತ್ತೆ."
+    },
+    {
+      "q": "import numpy as np ನಂತರ NumPy ಹೇಗೆ ಬಳಸೋದು?",
+      "why": "Alias np, numpy ಹೆಸರಿನ ಜಾಗ ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ."
+    },
+    {
+      "q": "ಯಾವ command library ತೆಗೆಯುತ್ತೆ?",
+      "why": "pip uninstall library ತೆಗೆಯುತ್ತೆ."
+    },
+    {
+      "q": "pip install numpy ಎಲ್ಲಿ type ಮಾಡೋದು?",
+      "why": "pip terminal ನ command, Python code ಅಲ್ಲ."
+    }
+  ],
+  "exam": {
+    "note": "Practice ಗಾಗಿ important questions. University ನ ನಿಜವಾದ questions ಬೇರೆ ಇರಬಹುದು."
+  },
+  "mindmap": {
+    "label": "Lesson 1.7 · Libraries & pip",
+    "children": [
+      {
+        "label": "Library",
+        "children": [
+          {
+            "label": "Ready-made, test ಆದ code"
+          },
+          {
+            "label": "Module = ಒಂದು file"
+          }
+        ]
+      },
+      {
+        "label": "Standard",
+        "children": [
+          {
+            "label": "math, statistics"
+          },
+          {
+            "label": "random, datetime"
+          },
+          {
+            "label": "Install ಬೇಕಿಲ್ಲ"
+          }
+        ]
+      },
+      {
+        "label": "Third-party",
+        "children": [
+          {
+            "label": "NumPy, Pandas, Matplotlib"
+          },
+          {
+            "label": "PyPI ಇಂದ"
+          }
+        ]
+      },
+      {
+        "label": "import",
+        "children": [
+          {
+            "label": "import math"
+          },
+          {
+            "label": "from math import sqrt"
+          },
+          {
+            "label": "import numpy as np"
+          }
+        ]
+      },
+      {
+        "label": "pip (terminal)",
+        "children": [
+          {
+            "label": "pip install"
+          },
+          {
+            "label": "pip uninstall"
+          },
+          {
+            "label": "pip list / show"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "ModuleNotFoundError"
+          },
+          {
+            "label": "NameError: sqrt"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Library** ಅಂದ್ರೆ ready-made, test ಆದ code; **module** ಅದರ ಒಂದು file. ಇದನ್ನು **import** ಇಂದ ತರುತ್ತೇವೆ.",
+    "**Standard library** Python ಜೊತೆ ಬರುತ್ತೆ, ಉದಾ: **math**: `math.ceil()` ಮೇಲಕ್ಕೆ round ಮಾಡುತ್ತೆ, `math.sqrt()` square root ಕೊಡುತ್ತೆ.",
+    "ಪೂರ್ತಿ module (`import math`), ಒಂದು tool (`from math import sqrt`) import ಮಾಡಿ, ಅಥವಾ ಚಿಕ್ಕ **alias** ಬಳಸಿ (`import numpy as np`).",
+    "**NumPy**, **Pandas** ಮತ್ತು **Matplotlib** ತರಹದ **third-party** libraries **PyPI** ಇಂದ ಬರುತ್ತವೆ, **pip** ಇಂದ install ಆಗುತ್ತವೆ.",
+    "**pip install**, **pip uninstall**, **pip list** ಮತ್ತು **pip show** ಅನ್ನು **terminal** ನಲ್ಲಿ type ಮಾಡುತ್ತೇವೆ, Python ಒಳಗೆ ಅಲ್ಲ."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Terminal ನಲ್ಲಿ student type ಮಾಡುತ್ತಾರೆ: pip install numpy."
+        },
+        {
+          "say": "pip, NumPy ಅನ್ನು PyPI ನಲ್ಲಿ ಹುಡುಕುತ್ತೆ, ಇದು Python packages ನ online library."
+        },
+        {
+          "say": "ಇದು NumPy ಅನ್ನು download ಮಾಡಿ computer ನಲ್ಲಿ install ಮಾಡುತ್ತೆ."
+        },
+        {
+          "say": "ಈಗ ಈ computer ನ ಯಾವ program ಬೇಕಾದ್ರೂ ಇದನ್ನು ಬಳಸಬಹುದು, import numpy as np ಇಂದ."
+        },
+        {
+          "say": "ಮತ್ತು pip uninstall numpy ಇದನ್ನು ಮತ್ತೆ ತೆಗೆಯುತ್ತೆ."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Ready-made code ಇರುವ ಒಂದು Python file, ಉದಾ: functions ಮತ್ತು values, ಇದನ್ನು import ಮಾಡಬಹುದು."
+    },
+    {
+      "meaning": "Python ಜೊತೆಗೇ ಬರುವ libraries, ಉದಾ: math ಮತ್ತು datetime. ಏನೂ install ಮಾಡಬೇಕಿಲ್ಲ."
+    },
+    {
+      "meaning": "Python team ಹೊರಗೆ ಮಾಡಿದ library, ಉದಾ: NumPy, ಇದನ್ನು pip ಇಂದ ಬೇರೆಯಾಗಿ install ಮಾಡುತ್ತೇವೆ."
+    },
+    {
+      "meaning": "Python Package Index: third-party libraries ನ free online store, pip ಇಲ್ಲಿಂದ download ಮಾಡುತ್ತೆ."
+    },
+    {
+      "meaning": "Python ನ installer. Terminal ನಲ್ಲಿ type ಮಾಡುತ್ತೇವೆ: library ಸೇರಿಸಲು pip install, ತೆಗೆಯಲು pip uninstall."
+    },
+    {
+      "meaning": "Module ಅಥವಾ library ಅನ್ನು ನಿಮ್ಮ program ಗೆ ತರುತ್ತೆ, ಅದರ tools ಬಳಸಲು, ಉದಾ: import math."
+    },
+    {
+      "meaning": "Library ಗೆ ಕೊಡುವ ಚಿಕ್ಕ ಹೆಸರು, as ಇಂದ, ಉದಾ: import numpy as np."
+    }
+  ]
+}

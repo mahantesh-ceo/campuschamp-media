@@ -1,0 +1,347 @@
+{
+  "hook": {
+    "title": "Gadbad drug entry ko saaf kijiye",
+    "md": "Asli records aksar gadbad hote hain. Koi `  amoxicillin 250mg  ` type kar deta hai: aage-peeche extra spaces, chhota pehla akshar, aur unit se pehle space nahi. Clinical report mein yeh aise print nahi ho sakta.\n\nIs lesson ke ant tak aapka program aisi entries ko saaf karega, batch code ke hisse padhega, aur patient record ko uske hisson mein baantega."
+  },
+  "learn": [
+    "**+**, **\\*** aur **len()** se text ko jodna, dohrana aur naapna",
+    "**index** se ek character, aur **slice** se text ka ek hissa kaise nikaalein",
+    "**strip()**, **upper()**, **lower()**, **capitalize()** aur **replace()** se text kaise saaf karein",
+    "**in**, **find()** aur **count()** se text mein kaise khojein, aur **split()** se use kaise todein"
+  ],
+  "explanation": [
+    {
+      "heading": "Strings: jodna, dohrana, naapna",
+      "md": "**String** quotes ke andar likha text hai, jaisa aapne Lesson 1.3 mein dekha. Teen tools poori string par kaam karte hain:\n\n```python\ndrug = \"Paracetamol\"\nprint(drug + \" 500 mg\")\nprint(\"-\" * 12)\nprint(len(drug))\n```\n\nYeh print karta hai:\n\n```\nParacetamol 500 mg\n------------\n11\n```\n\n`+` do strings jodta hai, `*` string ko dohrata hai, aur `len()` uske characters ginta hai. Spaces bhi gine jaate hain: `len(\"500 mg\")` hai 6."
+    },
+    {
+      "heading": "Indexing: ek baar mein ek character",
+      "md": "String ke har character ka ek position number hota hai, jise **index** kehte hain. Python ginti **0** se shuru karta hai, 1 se nahi:\n\n```python\ndrug = \"Aspirin\"\nprint(drug[0])\nprint(drug[3])\nprint(drug[-1])\n```\n\nYeh `A`, `i` aur `n` print karta hai. `\"Aspirin\"` mein A index 0 par hai, s 1 par, p 2 par, i 3 par, aur isi tarah n 6 par.\n\n**Negative index** aakhir se ginta hai: `drug[-1]` aakhri character hai, `drug[-2]` usse pehle wala.",
+      "callout": {
+        "title": "Ginti 0 se shuru hoti hai",
+        "md": "Pehla character drug[0] hai. drug[1] doosra hai."
+      }
+    },
+    {
+      "heading": "Slicing: string ka ek hissa",
+      "md": "**Slice** string ka ek hissa nikaalta hai: `text[start:end]`. Yeh `start` se shuru hokar `end` se **theek pehle** rukta hai.\n\nMedicine strip ke batch code mein aksar kaam ke hisse chhupe hote hain:\n\n```python\nbatch = \"AMX-2026-0457\"\nprint(batch[0:3])\nprint(batch[4:8])\nprint(batch[-4:])\n```\n\nYeh print karta hai:\n\n```\nAMX\n2026\n0457\n```\n\n`start` chhod dein to shuruaat se, aur `end` chhod dein to aakhir tak: `batch[:3]` hai `AMX` aur `batch[9:]` hai `0457`.",
+      "callout": {
+        "title": "Slice",
+        "md": "text[start:end] index start se lekar index end tak ke characters deta hai, end ko chhodkar."
+      }
+    },
+    {
+      "heading": "String methods: text saaf karna",
+      "md": "**Method** woh function hai jo kisi value ka apna hota hai. Value ke baad dot lagakar use call karte hain. Yeh paanch text saaf karte hain:\n\n```python\nentry = \"  amoxicillin 250mg  \"\nprint(entry.strip())\nprint(entry.strip().upper())\nprint(entry.strip().capitalize())\nprint(\"250mg\".replace(\"mg\", \" mg\"))\n```\n\nYeh print karta hai:\n\n```\namoxicillin 250mg\nAMOXICILLIN 250MG\nAmoxicillin 250mg\n250 mg\n```\n\n- **`strip()`** dono siron se spaces hatata hai.\n- **`upper()`** aur **`lower()`** har akshar ko capital ya small banate hain.\n- **`capitalize()`** sirf pehle akshar ko capital banata hai.\n- **`replace(old, new)`** har `old` ki jagah `new` rakh deta hai.\n\nAap inhe jodkar likh sakte hain, jaise `entry.strip().upper()`. Python inhe baayein se daayein chalaata hai.",
+      "callout": {
+        "title": "Methods nayi string dete hain",
+        "md": "String ko usi jagah badla nahi ja sakta. drug.upper() nayi string deta hai, isliye use save kijiye: drug = drug.upper()."
+      }
+    },
+    {
+      "heading": "Khojna aur todna",
+      "md": "Koi text string ke andar hai ya nahi, yeh jaanne ke liye **`in`** use kijiye. Yeh `True` ya `False` deta hai:\n\n```python\nlabel = \"Store below 25 C. Keep away from children.\"\nprint(\"children\" in label)\nprint(label.find(\"25\"))\nprint(label.count(\"e\"))\n```\n\nYeh `True`, `12` aur `5` print karta hai. `find()` woh index deta hai jahan text shuru hota hai (na mile to `-1`), aur `count()` ginta hai ki woh kitni baar aaya.\n\n**`split()`** jahan-jahan separator aaye, wahan string ko hisson mein todta hai. Ek line mein save kiya gaya patient record alag-alag values ban jaata hai:\n\n```python\nrecord = \"Ravi,45,Amoxicillin\"\nparts = record.split(\",\")\nprint(parts)\nprint(parts[2])\n```\n\nYeh `['Ravi', '45', 'Amoxicillin']` aur phir `Amoxicillin` print karta hai. Characters ki tarah hisson ki ginti bhi 0 se hoti hai. In lists ke baare mein aap Unit III mein aur seekhenge.",
+      "callout": {
+        "title": "Search case-sensitive hoti hai",
+        "md": "\"aspirin\" in \"Aspirin 75 mg\" ka jawaab False hai. Capitals ko ignore karne ke liye dono taraf .lower() lagaakar compare kijiye."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "Yeh program record ki ek gadbad drug entry ko waise saaf karta hai, jaisa clinical report mein chahiye.",
+    "keyTerms": [
+      {
+        "meaning": "Dono siron se spaces hatao."
+      },
+      {
+        "meaning": "Pehle akshar ko capital banao."
+      },
+      {
+        "meaning": "Characters gino, spaces samet."
+      },
+      {
+        "meaning": "Pehle chaar characters (ek slice)."
+      },
+      {
+        "meaning": "Purane text ki jagah naya text rakho."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Yeh program ek gadbad drug entry leta hai aur use ek-ek string tool se saaf karta hai."
+      },
+      {
+        "say": "Comment batata hai ki program kya karta hai."
+      },
+      {
+        "say": "Entry ke dono siron par extra spaces hain, aur pehla akshar chhota hai. Variables panel dekhiye: spaces quotes ke andar hain."
+      },
+      {
+        "say": "strip dono siron se spaces hatata hai. Phir capitalize pehle akshar ko capital banata hai. Saaf text drug mein save ho jaata hai."
+      },
+      {
+        "say": "print saaf entry dikhata hai."
+      },
+      {
+        "say": "len har character ginta hai, beech wale space samet. Kul satrah."
+      },
+      {
+        "say": "Slice pehle chaar characters leta hai, A M O X, aur upper unhe capitals bana deta hai. Label ke liye yeh ek chhota code hai."
+      },
+      {
+        "say": "replace, do sau pachaas M G ki jagah do sau pachaas, space, M G rakhta hai. Dhyaan dijiye, drug khud nahi badla: replace ne nayi string di."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Yeh do errors tab aate hain jab aap string ke aakhir se aage pahunchte hain, ya use usi jagah badalne ki koshish karte hain.",
+    "examples": [
+      {
+        "title": "Aisa index maangna jo hai hi nahi",
+        "md": "`\"Aspirin\"` mein 7 characters hain, index 0 se 6 tak. Index 7 hai hi nahi. Aakhri character ke liye `drug[6]` ya `drug[-1]` use kijiye."
+      },
+      {
+        "title": "Ek character badalne ki koshish",
+        "md": "String ko usi jagah badla nahi ja sakta. Iski jagah nayi string banakar save kijiye: `drug = drug.capitalize()`, ya `drug = \"A\" + drug[1:]`."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Method call karke result save na karna, jaise `drug.upper()` aur phir `print(drug)`",
+      "see": "Koi error nahi, par text waisa hi rehta hai",
+      "fix": "Save kijiye: `drug = drug.upper()`."
+    },
+    {
+      "mistake": "Characters 1 se ginna, jaise pehle akshar ke liye `drug[1]`",
+      "see": "Koi error nahi, par doosra akshar milta hai",
+      "fix": "Pehla character `drug[0]` hai."
+    },
+    {
+      "mistake": "Capitals milaaye bina khojna, jaise `\"aspirin\" in \"Aspirin 75 mg\"`",
+      "see": "Koi error nahi, par jawaab False aata hai",
+      "fix": "Ek hi case mein compare kijiye: `\"aspirin\" in label.lower()`."
+    },
+    {
+      "mistake": "Text aur number ko `+` se jodna, jaise `\"Length: \" + len(drug)`",
+      "see": "TypeError: can only concatenate str (not \"int\") to str",
+      "fix": "f-string use kijiye: `f\"Length: {len(drug)}\"`."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Warning ko ubhaariye",
+      "md": "Labels par warnings capital letters mein chhapti hain. Warning ko capitals mein print kijiye, bilkul aise:",
+      "hints": [
+        "Ek string method har akshar ko capital bana deta hai.",
+        "print(warning.upper())"
+      ]
+    },
+    {
+      "title": "Extra spaces hataaiye",
+      "md": "Drug ka naam dono taraf spaces ke saath type hua tha. Unhe hataaiye, taaki output bilkul yeh ho:",
+      "hints": [
+        "strip() dono siron se spaces hatata hai.",
+        "print(f\"[{entry.strip()}]\")"
+      ]
+    },
+    {
+      "title": "Batch code se saal padhiye",
+      "md": "Batch code **AMX-2026-0457** mein saal index 4 se 7 par hai. **Slice** use karke bilkul yeh print kijiye:",
+      "hints": [
+        "Slice apne end index se theek pehle rukta hai.",
+        "print(\"Year:\", batch[4:8])"
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "Yeh program patient record se drug print karna chahiye, par IndexError par ruk jaata hai. Ise theek kijiye taaki output bilkul yeh ho:",
+      "hints": [
+        "Record ke kitne hisse hain, aur pehla index kya hai?",
+        "Hisse index 0, 1 aur 2 par hain."
+      ],
+      "solutionNote": "split(\",\") teen hisse deta hai, jinki ginti 0, 1 aur 2 hai. Drug teesra hissa hai, index 2 par."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "len(\"Aspirin\") kya deta hai?",
+      "why": "\"Aspirin\" mein 7 characters hain."
+    },
+    {
+      "q": "drug = \"Paracetamol\". drug[0] kya hai?",
+      "why": "Index 0 se shuru hote hain, isliye drug[0] pehla character hai."
+    },
+    {
+      "q": "\"Insulin\"[-1] kya hai?",
+      "why": "Negative index aakhir se ginta hai; -1 aakhri character hai."
+    },
+    {
+      "q": "\"BP101T\"[2:5] kya hai?",
+      "why": "Slice index 2, 3 aur 4 leta hai, aur 5 se theek pehle rukta hai."
+    },
+    {
+      "q": "\"  dose  \".strip() kya deta hai?",
+      "why": "strip() dono siron se spaces hatata hai."
+    },
+    {
+      "q": "\"500,mg\".split(\",\") kya deta hai?",
+      "why": "split(\",\") text ko comma par do hisson mein todta hai."
+    }
+  ],
+  "exam": {
+    "note": "Practice ke liye important questions. University ke asli questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 1.6 · String operations",
+    "children": [
+      {
+        "label": "Poori string",
+        "children": [
+          {
+            "label": "+ jodta hai"
+          },
+          {
+            "label": "* dohrata hai"
+          },
+          {
+            "label": "len() ginta hai"
+          }
+        ]
+      },
+      {
+        "label": "Index",
+        "children": [
+          {
+            "label": "0 se shuru"
+          },
+          {
+            "label": "[-1] aakhri"
+          }
+        ]
+      },
+      {
+        "label": "Slice",
+        "children": [
+          {
+            "label": "[start:end]"
+          },
+          {
+            "label": "end se pehle rukta hai"
+          },
+          {
+            "label": "[:3] aur [9:]"
+          }
+        ]
+      },
+      {
+        "label": "Saaf karna",
+        "children": [
+          {
+            "label": "strip()"
+          },
+          {
+            "label": "upper() / lower()"
+          },
+          {
+            "label": "capitalize()"
+          },
+          {
+            "label": "replace(old, new)"
+          }
+        ]
+      },
+      {
+        "label": "Khojna aur todna",
+        "children": [
+          {
+            "label": "in → True/False"
+          },
+          {
+            "label": "find(), count()"
+          },
+          {
+            "label": "split(\",\")"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "IndexError"
+          },
+          {
+            "label": "TypeError: badal nahi sakte"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**`+`** strings jodta hai, **`*`** unhe dohrata hai aur **`len()`** unke characters ginta hai, spaces samet.",
+    "**Index** ek character chunta hai; ginti **0** se shuru hoti hai, aur **-1** aakhri character hai.",
+    "**Slice** `text[start:end]` ek hissa leta hai, aur `end` se **theek pehle** rukta hai.",
+    "**strip()**, **upper()**, **lower()**, **capitalize()** aur **replace()** text saaf karte hain. Yeh **nayi** string dete hain, isliye result save kijiye.",
+    "**in**, **find()** aur **count()** text mein khojte hain; **split()** line ko hisson mein todta hai, jinki ginti 0 se hoti hai."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Yeh medicine strip ka ek batch code hai."
+        },
+        {
+          "say": "Har character ka ek index hai, jo zero se shuru hota hai. Saal index chaar se shuru hota hai."
+        },
+        {
+          "say": "Slice chaar se aath, index chaar, paanch, chhah aur saat leta hai. Yeh aath se theek pehle rukta hai."
+        },
+        {
+          "say": "Yeh chaar characters milkar saal banaate hain: do zero do chhah."
+        },
+        {
+          "say": "Aur program ise label par print karta hai."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "String mein kisi character ka position number. Ginti 0 se shuru hoti hai, isliye text[0] pehla character hai."
+    },
+    {
+      "meaning": "String ka ek hissa, text[start:end] likhkar. Yeh end index se theek pehle rukta hai."
+    },
+    {
+      "meaning": "Kisi value ka apna function, jise value ke baad dot lagakar call karte hain, jaise drug.upper()."
+    },
+    {
+      "meaning": "String ke characters ginta hai, spaces bhi."
+    },
+    {
+      "meaning": "String ke dono siron se spaces hatata hai."
+    },
+    {
+      "meaning": "Ek text ki jagah doosra text rakhkar nayi string deta hai: text.replace(old, new)."
+    },
+    {
+      "meaning": "Jahan-jahan separator aaye, jaise comma, wahan string ko hisson mein todta hai."
+    }
+  ]
+}

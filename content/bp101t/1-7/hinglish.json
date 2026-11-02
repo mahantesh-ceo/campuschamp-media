@@ -1,0 +1,337 @@
+{
+  "hook": {
+    "title": "Har tablet shuru se mat banaiye",
+    "md": "Pharmacy har tablet khud nahi banati jo woh deti hai. Woh bharosemand companies ki ready-made dawaiyaan use karti hai.\n\nPython bhi aise hi kaam karta hai. Har tool khud likhne ki jagah aap **libraries** use karte hain: doosron ka likha aur test kiya hua ready-made code. Is lesson ke ant tak aap Python ki built-in libraries use karenge, aur **pip** se nayi libraries install karna jaanenge."
+  },
+  "learn": [
+    "**Module** aur **library** kya hote hain",
+    "Python ke saath aane wali **standard library** kaise use karein, jaise **math**",
+    "Import karne ke teen tareeke: `import math`, `from math import sqrt` aur `import numpy as np`",
+    "**Third-party** libraries kya hain, aur **pip** se unhe install aur uninstall kaise karein"
+  ],
+  "explanation": [
+    {
+      "heading": "Modules aur libraries",
+      "md": "**Module** ready-made code se bhari ek Python file hai, jaise functions aur values. **Library** ek tarah ke kaam ke liye modules ka collection hai.\n\nIse use karne ke liye program ki shuruaat mein ise **import** kijiye:\n\n```python\nimport math\nprint(math.sqrt(49))\nprint(math.pi)\n```\n\nYeh print karta hai:\n\n```\n7.0\n3.141592653589793\n```\n\n`import math`, **math** module ko le aata hai. Phir uske tools dot ke saath use hote hain: `math.sqrt()` square root nikaalta hai, aur `math.pi` pi ki value hai.",
+      "callout": {
+        "title": "Library",
+        "md": "Ready-made, test kiya hua code, jise khud likhne ki jagah aap apne program mein import karte hain."
+      }
+    },
+    {
+      "heading": "Standard library: Python ke andar pehle se",
+      "md": "Python ke saath ek badi **standard library** aati hai. Kuch install nahi karna padta; bas import kijiye. Pharmacy ke kaam mein yeh milengi:\n\n- **math**: square roots, pi, upar aur neeche rounding\n- **statistics**: data ka average aur phailaav\n- **random**: random numbers, jaise sample chunne ke liye\n- **datetime**: taareekh aur samay, jaise expiry dates\n\nDispensing mein upar ki or round karna aam hai. 45 tablets, har strip mein 10:\n\n```python\nimport math\nprint(45 / 10)\nprint(math.ceil(45 / 10))\n```\n\nYeh `4.5` aur phir `5` print karta hai. Aadhi strip nahi de sakte, isliye `math.ceil()` agli poori sankhya tak **upar** round karta hai. `math.floor()` **neeche** round karta hai."
+    },
+    {
+      "heading": "Import karne ke teen tareeke",
+      "md": "**1. Poora module import kijiye**, phir module ke naam ke saath dot use kijiye:\n\n```python\nimport math\nprint(math.ceil(4.5))\n```\n\n**2. Sirf zaroori tool import kijiye**, phir use bina dot ke use kijiye:\n\n```python\nfrom math import sqrt\nprint(sqrt(81))\n```\n\n**3. Chhote naam (ek **alias**) ke saath import kijiye**, `as` lagakar:\n\n```python\nimport statistics as st\nprint(st.mean([250, 500, 375]))\n```\n\nYeh teeno programs `5`, `9.0` aur `375` print karte hain. Badi libraries ke standard alias hote hain jo sab use karte hain, jaise `import numpy as np` aur `import pandas as pd`.",
+      "callout": {
+        "title": "Imports sabse upar likhiye",
+        "md": "Import wali lines program ki shuruaat mein likhiye, taaki neeche ki har line unhe use kar sake."
+      }
+    },
+    {
+      "heading": "Third-party libraries",
+      "md": "**Third-party** libraries Python team ke bahar ke log likhte hain aur **PyPI**, yaani Python Package Index par free mein share karte hain. Aapke syllabus mein inme se teen hain:\n\n- **NumPy**: bahut saare numbers par tez calculations (Unit IV)\n- **Pandas**: data ki tables, jaise patient results ki spreadsheet (Unit IV)\n- **Matplotlib**: graphs, jaise drug concentration curve (Unit V)\n\nYeh Python ke saath nahi aatin. Inhe apne computer par ek baar **install** kijiye, phir kisi bhi library ki tarah import kijiye.\n\n**Champ Lab mein:** NumPy, Pandas aur Matplotlib pehle se install hain, isliye aap inhe seedhe import kar sakte hain."
+    },
+    {
+      "heading": "pip se install aur uninstall karna",
+      "md": "**pip** Python ka installer hai. Yeh PyPI se library download karke set up karta hai. pip **commands** aap **terminal** (Windows par Command Prompt) mein type karte hain, Python program ke andar nahi:\n\n```\npip install numpy\npip uninstall numpy\npip list\npip show numpy\npip install --upgrade numpy\n```\n\n- **`pip install`** library download karke install karta hai.\n- **`pip uninstall`** use hataata hai (confirm karne ke liye `y` type kijiye).\n- **`pip list`** install hui har library dikhata hai.\n- **`pip show`** ek library ki details dikhata hai, jaise uska version.\n- **`pip install --upgrade`** library ko naye version par update karta hai.\n\n**Jupyter Notebook** mein ise cell ke andar percent sign ke saath chalaiye: `%pip install numpy`.",
+      "callout": {
+        "title": "pip, Python code nahi hai",
+        "md": ".py file ke andar ya >>> prompt par pip install numpy type karne se SyntaxError aata hai. Ise terminal mein type kijiye."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "Ek patient ko 45 tablets chahiye, aur har strip mein 10 hain. Yeh program batata hai ki pharmacist kitni strips de.",
+    "keyTerms": [
+      {
+        "meaning": "math module ko lao; uske tools math aur dot ke saath use karo."
+      },
+      {
+        "meaning": "Agli poori sankhya tak upar round karo."
+      },
+      {
+        "meaning": "Ek tool lao, taaki module ke naam ke bina use ho."
+      },
+      {
+        "meaning": "Library install karo. Terminal mein type hota hai, Python mein nahi."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Yeh program, Python ki math library se batata hai ki kitni strips deni hain."
+      },
+      {
+        "say": "Comment batata hai ki program kya karta hai."
+      },
+      {
+        "say": "import math, Python ka math module le aata hai. Yeh Python ke saath aata hai, isliye kuch install nahi karna."
+      },
+      {
+        "say": "Patient ko paintaalees tablets chahiye."
+      },
+      {
+        "say": "Har strip mein das tablets hain."
+      },
+      {
+        "say": "Paintaalees ko das se bhaag dein to chaar dashamlav paanch. Par aadhi strip nahi de sakte."
+      },
+      {
+        "say": "math dot ceil agli poori sankhya tak upar round karta hai. Isliye pharmacist paanch strips deta hai."
+      },
+      {
+        "say": "Yeh line sirf square root wala tool import karti hai, taaki use math aur dot likhe bina use kiya ja sake."
+      },
+      {
+        "say": "Ikyaasi ka square root nau hai. Python ise nau dashamlav zero dikhata hai."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Yeh do errors tab aate hain jab Python ko library nahi milti, ya uske andar ka tool nahi milta.",
+    "examples": [
+      {
+        "title": "Library install nahi hai, ya naam ki spelling galat hai",
+        "md": "Python ne `numpi` naam ki library dhoondhi aur nahi mili. Spelling check kijiye (`numpy`). Spelling sahi hai to library abhi install nahi hai: terminal mein `pip install numpy` chalaiye."
+      },
+      {
+        "title": "Module ke naam ke bina tool use karna",
+        "md": "`import math` module ko laata hai, isliye uske tools ko module ka naam chahiye: `math.sqrt(16)`. Ya pehle tool ko hi import kijiye: `from math import sqrt`."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Python program ke andar ya `>>>` prompt par `pip install numpy` type karna",
+      "see": "SyntaxError: invalid syntax",
+      "fix": "Ise terminal mein type kijiye. Jupyter mein `%pip install numpy` use kijiye."
+    },
+    {
+      "mistake": "Import kiye bina module use karna, jaise bina import ke `math.ceil(4.5)`",
+      "see": "NameError: name 'math' is not defined",
+      "fix": "Sabse upar `import math` jodiye."
+    },
+    {
+      "mistake": "Alias se import karke poora naam use karna, jaise `import numpy as np` phir `numpy.mean(...)`",
+      "see": "NameError: name 'numpy' is not defined",
+      "fix": "Alias use kijiye: `np.mean(...)`."
+    },
+    {
+      "mistake": "Apni file ka naam `math.py` ya `numpy.py` rakhna",
+      "see": "Import errors, kyunki Python library ki jagah aapki file import karta hai",
+      "fix": "File ka naam badaliye, jaise `strips.py`."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Strips upar round kijiye",
+      "md": "Ek patient ko **23 tablets** chahiye, aur har strip mein **10** hain. **math.ceil()** use karke strips ki sankhya print kijiye, bilkul aise:",
+      "hints": [
+        "23 / 10 hai 2.3. Ise upar round kijiye.",
+        "print(\"Strips:\", math.ceil(23 / 10))"
+      ]
+    },
+    {
+      "title": "Sirf ek tool import kijiye",
+      "md": "math module se sirf **sqrt** import kijiye, aur 144 ka square root print kijiye, bilkul aise:",
+      "hints": [
+        "Import wali line from math import ... se shuru hoti hai.",
+        "from math import sqrt, phir print(sqrt(144))"
+      ]
+    },
+    {
+      "title": "pi use kijiye",
+      "md": "Ek gol tablet ki radius **4 mm** hai. Uski face area hai pi × radius × radius. **math.pi** aur do decimal places wali f-string use karke bilkul yeh print kijiye:",
+      "hints": [
+        "Area hai math.pi * radius_mm * radius_mm.",
+        "print(f\"Area: {math.pi * radius_mm * radius_mm:.2f} sq mm\")"
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "Yeh program 45 tablets ke liye strips ki sankhya print karna chahiye, par NameError par ruk jaata hai. Ise theek kijiye taaki output bilkul yeh ho:",
+      "hints": [
+        "Program ne math import kiya hai, ceil nahi.",
+        "ceil ki jagah math.ceil likhiye."
+      ],
+      "solutionNote": "import math module ko laata hai, isliye uske tools ko module ka naam aur dot chahiye: math.ceil."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Kaun sa command NumPy install karta hai?",
+      "why": "pip install library download karke install karta hai. import sirf pehle se install library use karta hai."
+    },
+    {
+      "q": "Inme se kaun Python ke saath aati hai, bina kuch install kiye?",
+      "why": "math, standard library ka hissa hai. Baaki third-party libraries hain."
+    },
+    {
+      "q": "import math. print(math.ceil(4.1)) kya dikhata hai?",
+      "why": "ceil agli poori sankhya tak upar round karta hai."
+    },
+    {
+      "q": "import numpy as np ke baad NumPy kaise use karte hain?",
+      "why": "Alias np, naam numpy ki jagah le leta hai."
+    },
+    {
+      "q": "Kaun sa command library hataata hai?",
+      "why": "pip uninstall library hataata hai."
+    },
+    {
+      "q": "pip install numpy kahan type karte hain?",
+      "why": "pip terminal ka command hai, Python code nahi."
+    }
+  ],
+  "exam": {
+    "note": "Practice ke liye important questions. University ke asli questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 1.7 · Libraries & pip",
+    "children": [
+      {
+        "label": "Library",
+        "children": [
+          {
+            "label": "Ready-made, test kiya code"
+          },
+          {
+            "label": "Module = ek file"
+          }
+        ]
+      },
+      {
+        "label": "Standard",
+        "children": [
+          {
+            "label": "math, statistics"
+          },
+          {
+            "label": "random, datetime"
+          },
+          {
+            "label": "Kuch install nahi"
+          }
+        ]
+      },
+      {
+        "label": "Third-party",
+        "children": [
+          {
+            "label": "NumPy, Pandas, Matplotlib"
+          },
+          {
+            "label": "PyPI se"
+          }
+        ]
+      },
+      {
+        "label": "import",
+        "children": [
+          {
+            "label": "import math"
+          },
+          {
+            "label": "from math import sqrt"
+          },
+          {
+            "label": "import numpy as np"
+          }
+        ]
+      },
+      {
+        "label": "pip (terminal)",
+        "children": [
+          {
+            "label": "pip install"
+          },
+          {
+            "label": "pip uninstall"
+          },
+          {
+            "label": "pip list / show"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "ModuleNotFoundError"
+          },
+          {
+            "label": "NameError: sqrt"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Library** ready-made, test kiya hua code hai; **module** uski ek file hai. Ise **import** se laate hain.",
+    "**Standard library** Python ke saath aati hai, jaise **math**: `math.ceil()` upar round karta hai, `math.sqrt()` square root nikaalta hai.",
+    "Poora module (`import math`), ek tool (`from math import sqrt`) import kijiye, ya chhota **alias** use kijiye (`import numpy as np`).",
+    "**NumPy**, **Pandas** aur **Matplotlib** jaisi **third-party** libraries **PyPI** se aati hain aur **pip** se install hoti hain.",
+    "**pip install**, **pip uninstall**, **pip list** aur **pip show** **terminal** mein type hote hain, Python ke andar nahi."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Terminal mein student type karta hai: pip install numpy."
+        },
+        {
+          "say": "pip, NumPy ko PyPI par dhoondhta hai, jo Python packages ki online library hai."
+        },
+        {
+          "say": "Yeh NumPy download karke computer par install kar deta hai."
+        },
+        {
+          "say": "Ab is computer ka koi bhi program ise use kar sakta hai, import numpy as np se."
+        },
+        {
+          "say": "Aur pip uninstall numpy ise phir se hata deta hai."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Ready-made code wali ek Python file, jaise functions aur values, jise aap import kar sakte hain."
+    },
+    {
+      "meaning": "Python ke saath aane wali libraries, jaise math aur datetime. Kuch install nahi karna padta."
+    },
+    {
+      "meaning": "Python team ke bahar bani library, jaise NumPy, jise pip se alag se install karte hain."
+    },
+    {
+      "meaning": "Python Package Index: third-party libraries ka free online store, jahan se pip download karta hai."
+    },
+    {
+      "meaning": "Python ka installer. Terminal mein type karte hain: library jodne ke liye pip install, hatane ke liye pip uninstall."
+    },
+    {
+      "meaning": "Module ya library ko aapke program mein laata hai, taaki uske tools use kar sakein, jaise import math."
+    },
+    {
+      "meaning": "Library ka chhota naam, as se diya jaata hai, jaise import numpy as np."
+    }
+  ]
+}
