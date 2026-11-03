@@ -389,6 +389,43 @@ G = {
             "hinglish": "Library ka chhota naam, as se diya jaata hai, jaise import numpy as np.",
             "kn": "Library ಗೆ ಕೊಡುವ ಚಿಕ್ಕ ಹೆಸರು, as ಇಂದ, ಉದಾ: import numpy as np."}),
     ],
+    "2-1": [
+        ("Condition", {
+            "en": "An expression that is either True or False, like temp >= 38.0. It decides whether a block runs.",
+            "hi": "ऐसा expression जो True या False हो, जैसे temp >= 38.0। यही तय करता है कि block चलेगा या नहीं।",
+            "hinglish": "Aisa expression jo True ya False ho, jaise temp >= 38.0. Yahi tay karta hai ki block chalega ya nahi.",
+            "kn": "True ಅಥವಾ False ಆಗುವ expression, ಉದಾ. temp >= 38.0. Block run ಆಗಬೇಕಾ ಬೇಡವಾ ಅಂತ ಇದೇ ತೀರ್ಮಾನಿಸುತ್ತೆ."}),
+        ("if statement", {
+            "en": "Runs its block only when its condition is True; otherwise Python skips the block.",
+            "hi": "अपना block तभी चलाता है जब उसकी condition True हो; वरना Python block छोड़ देता है।",
+            "hinglish": "Apna block tabhi chalaata hai jab uski condition True ho; warna Python block chhod deta hai.",
+            "kn": "ತನ್ನ condition True ಆದಾಗ ಮಾತ್ರ block run ಮಾಡುತ್ತೆ; ಇಲ್ಲದಿದ್ದರೆ Python block ಬಿಟ್ಟುಬಿಡುತ್ತೆ."}),
+        ("else", {
+            "en": "The block that runs when none of the conditions above it were True. It has no condition of its own.",
+            "hi": "वह block जो तब चलता है जब ऊपर की कोई condition True न हो। इसकी अपनी कोई condition नहीं होती।",
+            "hinglish": "Woh block jo tab chalta hai jab upar ki koi condition True na ho. Iski apni koi condition nahi hoti.",
+            "kn": "ಮೇಲಿನ ಯಾವ condition ಕೂಡ True ಆಗದಿದ್ದಾಗ run ಆಗುವ block. ಇದಕ್ಕೆ ತನ್ನದೇ condition ಇಲ್ಲ."}),
+        ("elif", {
+            "en": "Short for \"else if\": checks another condition when the conditions above were False.",
+            "hi": "\"Else if\" का छोटा रूप: ऊपर की conditions False हों तो एक और condition जाँचता है।",
+            "hinglish": "\"Else if\" ka chhota roop: upar ki conditions False hon to ek aur condition jaanchta hai.",
+            "kn": "\"Else if\" ನ ಚಿಕ್ಕ ರೂಪ: ಮೇಲಿನ conditions False ಆದರೆ ಇನ್ನೊಂದು condition check ಮಾಡುತ್ತೆ."}),
+        ("Block", {
+            "en": "A group of indented lines that belong together, such as the lines under an if.",
+            "hi": "Indent की हुई lines का group जो साथ में आती हैं, जैसे if के नीचे की lines।",
+            "hinglish": "Indent ki hui lines ka group jo saath mein aati hain, jaise if ke neeche ki lines.",
+            "kn": "ಒಟ್ಟಿಗೆ ಸೇರುವ indent ಮಾಡಿದ lines ನ ಗುಂಪು, ಉದಾ. if ಕೆಳಗಿನ lines."}),
+        ("Indentation", {
+            "en": "The spaces at the start of a line. Python uses 4 spaces to show which lines belong to a block.",
+            "hi": "Line की शुरुआत के spaces। कौन-सी lines block में हैं, यह दिखाने के लिए Python 4 spaces use करता है।",
+            "hinglish": "Line ki shuruaat ke spaces. Kaun-si lines block mein hain, yeh dikhaane ke liye Python 4 spaces use karta hai.",
+            "kn": "Line ಶುರುವಿನ spaces. ಯಾವ lines block ಗೆ ಸೇರಿವೆ ಅಂತ ತೋರಿಸಲು Python 4 spaces ಬಳಸುತ್ತೆ."}),
+        ("IndentationError", {
+            "en": "The error Python gives when the indentation is missing or uneven, for example no indented line after a colon.",
+            "hi": "Indentation न हो या ऊँची-नीची हो तो Python यह error देता है, जैसे colon के बाद indent की हुई line न हो।",
+            "hinglish": "Indentation na ho ya oonchi-neechi ho to Python yeh error deta hai, jaise colon ke baad indent ki hui line na ho.",
+            "kn": "Indentation ಇಲ್ಲದಿದ್ದಾಗ ಅಥವಾ ಸರಿಯಾಗಿ ಸಾಲಿನಲ್ಲಿ ಇಲ್ಲದಿದ್ದಾಗ Python ಕೊಡುವ error, ಉದಾ. colon ಆದಮೇಲೆ indent ಮಾಡಿದ line ಇಲ್ಲದಿದ್ದಾಗ."}),
+    ],
 }
 
 

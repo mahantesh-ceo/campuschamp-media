@@ -1,0 +1,160 @@
+{
+  "course": "bp101t",
+  "lesson": "2-1",
+  "voices": {
+    "en": "Ritu",
+    "hi": "Ritu",
+    "kn": "Chaitra"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program reads a temperature and decides which message to show. Only one of the three messages will print.",
+        "The comment says what the program does.",
+        "temp stores thirty-eight point six.",
+        "The if asks: is temp at least thirty-nine point five? Thirty-eight point six is not, so the condition is False. Python skips the indented line under it.",
+        "Now elif asks the next question: is temp at least thirty-eight? Yes. This condition is True.",
+        "So Python runs the block under elif, and prints Fever.",
+        "One block has already run, so Python skips else and the line under it.",
+        "The last line is not indented. It is outside the if chain, so it always runs."
+      ],
+      "display": [
+        "This program reads a temperature and decides which message to show. Only one of the three messages will print.",
+        "The comment says what the program does.",
+        "temp stores thirty-eight point six.",
+        "The if asks: is temp at least thirty-nine point five? Thirty-eight point six is not, so the condition is False. Python skips the indented line under it.",
+        "Now elif asks the next question: is temp at least thirty-eight? Yes. This condition is True.",
+        "So Python runs the block under elif, and prints Fever.",
+        "One block has already run, so Python skips else and the line under it.",
+        "The last line is not indented. It is outside the if chain, so it always runs."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह program temperature पढ़ता है और तय करता है कि कौन-सा message दिखाना है। तीन में से सिर्फ़ एक message print होगा।",
+        "Comment बताता है कि program क्या करता है।",
+        "temp में अड़तीस दशमलव छह store होता है।",
+        "if पूछता है: क्या temp कम से कम उनतालीस दशमलव पाँच है? अड़तीस दशमलव छह नहीं है, इसलिए condition False है। पाइथन नीचे की indent की हुई line छोड़ देता है।",
+        "अब elif अगला सवाल पूछता है: क्या temp कम से कम अड़तीस है? हाँ। यह condition True है।",
+        "इसलिए पाइथन elif के नीचे का block चलाता है, और Fever print करता है।",
+        "एक block चल चुका है, इसलिए पाइथन else और उसके नीचे की line छोड़ देता है।",
+        "आखिरी line indent नहीं है। यह if chain के बाहर है, इसलिए हमेशा चलती है।"
+      ],
+      "display": [
+        "यह program temperature पढ़ता है और तय करता है कि कौन-सा message दिखाना है। तीन में से सिर्फ़ एक message print होगा।",
+        "Comment बताता है कि program क्या करता है।",
+        "temp में अड़तीस दशमलव छह store होता है।",
+        "if पूछता है: क्या temp कम से कम उनतालीस दशमलव पाँच है? अड़तीस दशमलव छह नहीं है, इसलिए condition False है। Python नीचे की indent की हुई line छोड़ देता है।",
+        "अब elif अगला सवाल पूछता है: क्या temp कम से कम अड़तीस है? हाँ। यह condition True है।",
+        "इसलिए Python elif के नीचे का block चलाता है, और Fever print करता है।",
+        "एक block चल चुका है, इसलिए Python else और उसके नीचे की line छोड़ देता है।",
+        "आखिरी line indent नहीं है। यह if chain के बाहर है, इसलिए हमेशा चलती है।"
+      ],
+      "displayHinglish": [
+        "Yeh program temperature padhta hai aur tay karta hai ki kaun-sa message dikhaana hai. Teen mein se sirf ek message print hoga.",
+        "Comment batata hai ki program kya karta hai.",
+        "temp mein adtees dashamlav chhah store hota hai.",
+        "if poochhta hai: kya temp kam se kam untaalis dashamlav paanch hai? Adtees dashamlav chhah nahi hai, isliye condition False hai. Python neeche ki indent ki hui line chhod deta hai.",
+        "Ab elif agla sawaal poochhta hai: kya temp kam se kam adtees hai? Haan. Yeh condition True hai.",
+        "Isliye Python elif ke neeche ka block chalaata hai, aur Fever print karta hai.",
+        "Ek block chal chuka hai, isliye Python else aur uske neeche ki line chhod deta hai.",
+        "Aakhri line indent nahi hai. Yeh if chain ke bahar hai, isliye hamesha chalti hai."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ program temperature ಓದಿ, ಯಾವ message ತೋರಿಸಬೇಕು ಅಂತ ತೀರ್ಮಾನಿಸುತ್ತೆ. ಮೂರರಲ್ಲಿ ಒಂದೇ message print ಆಗುತ್ತೆ.",
+        "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "temp ನಲ್ಲಿ ಮೂವತ್ತೆಂಟು ಪಾಯಿಂಟ್ ಆರು store ಆಗುತ್ತೆ.",
+        "if ಕೇಳುತ್ತೆ: temp ಕನಿಷ್ಠ ಮೂವತ್ತೊಂಬತ್ತು ಪಾಯಿಂಟ್ ಐದು ಇದೆಯಾ? ಮೂವತ್ತೆಂಟು ಪಾಯಿಂಟ್ ಆರು ಇಲ್ಲ, ಅದಕ್ಕೇ condition False. ಪೈಥಾನ್ ಕೆಳಗಿನ indent ಮಾಡಿದ line ಬಿಟ್ಟುಬಿಡುತ್ತೆ.",
+        "ಈಗ elif ಮುಂದಿನ ಪ್ರಶ್ನೆ ಕೇಳುತ್ತೆ: temp ಕನಿಷ್ಠ ಮೂವತ್ತೆಂಟು ಇದೆಯಾ? ಹೌದು. ಈ condition True.",
+        "ಅದಕ್ಕೇ ಪೈಥಾನ್ elif ಕೆಳಗಿನ block run ಮಾಡಿ, Fever print ಮಾಡುತ್ತೆ.",
+        "ಒಂದು block ಈಗಾಗಲೇ run ಆಗಿದೆ, ಅದಕ್ಕೇ ಪೈಥಾನ್ else ಮತ್ತು ಅದರ ಕೆಳಗಿನ line ಬಿಟ್ಟುಬಿಡುತ್ತೆ.",
+        "ಕೊನೆಯ line indent ಆಗಿಲ್ಲ. ಇದು if chain ನ ಹೊರಗಿದೆ, ಅದಕ್ಕೇ ಯಾವಾಗಲೂ run ಆಗುತ್ತೆ."
+      ],
+      "display": [
+        "ಈ program temperature ಓದಿ, ಯಾವ message ತೋರಿಸಬೇಕು ಅಂತ ತೀರ್ಮಾನಿಸುತ್ತೆ. ಮೂರರಲ್ಲಿ ಒಂದೇ message print ಆಗುತ್ತೆ.",
+        "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "temp ನಲ್ಲಿ ಮೂವತ್ತೆಂಟು ಪಾಯಿಂಟ್ ಆರು store ಆಗುತ್ತೆ.",
+        "if ಕೇಳುತ್ತೆ: temp ಕನಿಷ್ಠ ಮೂವತ್ತೊಂಬತ್ತು ಪಾಯಿಂಟ್ ಐದು ಇದೆಯಾ? ಮೂವತ್ತೆಂಟು ಪಾಯಿಂಟ್ ಆರು ಇಲ್ಲ, ಅದಕ್ಕೇ condition False. Python ಕೆಳಗಿನ indent ಮಾಡಿದ line ಬಿಟ್ಟುಬಿಡುತ್ತೆ.",
+        "ಈಗ elif ಮುಂದಿನ ಪ್ರಶ್ನೆ ಕೇಳುತ್ತೆ: temp ಕನಿಷ್ಠ ಮೂವತ್ತೆಂಟು ಇದೆಯಾ? ಹೌದು. ಈ condition True.",
+        "ಅದಕ್ಕೇ Python elif ಕೆಳಗಿನ block run ಮಾಡಿ, Fever print ಮಾಡುತ್ತೆ.",
+        "ಒಂದು block ಈಗಾಗಲೇ run ಆಗಿದೆ, ಅದಕ್ಕೇ Python else ಮತ್ತು ಅದರ ಕೆಳಗಿನ line ಬಿಟ್ಟುಬಿಡುತ್ತೆ.",
+        "ಕೊನೆಯ line indent ಆಗಿಲ್ಲ. ಇದು if chain ನ ಹೊರಗಿದೆ, ಅದಕ್ಕೇ ಯಾವಾಗಲೂ run ಆಗುತ್ತೆ."
+      ]
+    },
+    {
+      "id": "anim-branch",
+      "prefix": "anim-branch-",
+      "lang": "en",
+      "tts": [
+        "Here is the temperature, thirty-eight point six, and a chain of three branches.",
+        "Python asks the first question. Is it at least thirty-nine point five? No, so it skips this branch.",
+        "It moves to elif. Is it at least thirty-eight? Yes.",
+        "So it runs this block, and prints Fever.",
+        "One branch has run, so else is skipped. Only one branch ever runs."
+      ],
+      "display": [
+        "Here is the temperature, thirty-eight point six, and a chain of three branches.",
+        "Python asks the first question. Is it at least thirty-nine point five? No, so it skips this branch.",
+        "It moves to elif. Is it at least thirty-eight? Yes.",
+        "So it runs this block, and prints Fever.",
+        "One branch has run, so else is skipped. Only one branch ever runs."
+      ]
+    },
+    {
+      "id": "anim-branch",
+      "prefix": "anim-branch-",
+      "lang": "hi",
+      "tts": [
+        "यह temperature है, अड़तीस दशमलव छह, और तीन branches की एक chain।",
+        "पाइथन पहला सवाल पूछता है। क्या यह कम से कम उनतालीस दशमलव पाँच है? नहीं, इसलिए यह branch छूट जाती है।",
+        "वह elif पर जाता है। क्या यह कम से कम अड़तीस है? हाँ।",
+        "इसलिए वह यह block चलाता है, और Fever print करता है।",
+        "एक branch चल चुकी है, इसलिए else छूट जाता है। हमेशा सिर्फ़ एक branch चलती है।"
+      ],
+      "display": [
+        "यह temperature है, अड़तीस दशमलव छह, और तीन branches की एक chain।",
+        "Python पहला सवाल पूछता है। क्या यह कम से कम उनतालीस दशमलव पाँच है? नहीं, इसलिए यह branch छूट जाती है।",
+        "वह elif पर जाता है। क्या यह कम से कम अड़तीस है? हाँ।",
+        "इसलिए वह यह block चलाता है, और Fever print करता है।",
+        "एक branch चल चुकी है, इसलिए else छूट जाता है। हमेशा सिर्फ़ एक branch चलती है।"
+      ],
+      "displayHinglish": [
+        "Yeh temperature hai, adtees dashamlav chhah, aur teen branches ki ek chain.",
+        "Python pehla sawaal poochhta hai. Kya yeh kam se kam untaalis dashamlav paanch hai? Nahi, isliye yeh branch chhoot jaati hai.",
+        "Woh elif par jaata hai. Kya yeh kam se kam adtees hai? Haan.",
+        "Isliye woh yeh block chalaata hai, aur Fever print karta hai.",
+        "Ek branch chal chuki hai, isliye else chhoot jaata hai. Hamesha sirf ek branch chalti hai."
+      ]
+    },
+    {
+      "id": "anim-branch",
+      "prefix": "anim-branch-",
+      "lang": "kn",
+      "tts": [
+        "ಇದು temperature, ಮೂವತ್ತೆಂಟು ಪಾಯಿಂಟ್ ಆರು, ಮತ್ತು ಮೂರು branches ಇರುವ ಒಂದು chain.",
+        "ಪೈಥಾನ್ ಮೊದಲ ಪ್ರಶ್ನೆ ಕೇಳುತ್ತೆ. ಇದು ಕನಿಷ್ಠ ಮೂವತ್ತೊಂಬತ್ತು ಪಾಯಿಂಟ್ ಐದು ಇದೆಯಾ? ಇಲ್ಲ, ಅದಕ್ಕೇ ಈ branch ಬಿಟ್ಟುಹೋಗುತ್ತೆ.",
+        "ಅದು elif ಗೆ ಹೋಗುತ್ತೆ. ಇದು ಕನಿಷ್ಠ ಮೂವತ್ತೆಂಟು ಇದೆಯಾ? ಹೌದು.",
+        "ಅದಕ್ಕೇ ಈ block run ಮಾಡಿ, Fever print ಮಾಡುತ್ತೆ.",
+        "ಒಂದು branch run ಆಗಿದೆ, ಅದಕ್ಕೇ else ಬಿಟ್ಟುಹೋಗುತ್ತೆ. ಯಾವಾಗಲೂ ಒಂದೇ branch run ಆಗುತ್ತೆ."
+      ],
+      "display": [
+        "ಇದು temperature, ಮೂವತ್ತೆಂಟು ಪಾಯಿಂಟ್ ಆರು, ಮತ್ತು ಮೂರು branches ಇರುವ ಒಂದು chain.",
+        "Python ಮೊದಲ ಪ್ರಶ್ನೆ ಕೇಳುತ್ತೆ. ಇದು ಕನಿಷ್ಠ ಮೂವತ್ತೊಂಬತ್ತು ಪಾಯಿಂಟ್ ಐದು ಇದೆಯಾ? ಇಲ್ಲ, ಅದಕ್ಕೇ ಈ branch ಬಿಟ್ಟುಹೋಗುತ್ತೆ.",
+        "ಅದು elif ಗೆ ಹೋಗುತ್ತೆ. ಇದು ಕನಿಷ್ಠ ಮೂವತ್ತೆಂಟು ಇದೆಯಾ? ಹೌದು.",
+        "ಅದಕ್ಕೇ ಈ block run ಮಾಡಿ, Fever print ಮಾಡುತ್ತೆ.",
+        "ಒಂದು branch run ಆಗಿದೆ, ಅದಕ್ಕೇ else ಬಿಟ್ಟುಹೋಗುತ್ತೆ. ಯಾವಾಗಲೂ ಒಂದೇ branch run ಆಗುತ್ತೆ."
+      ]
+    }
+  ]
+}

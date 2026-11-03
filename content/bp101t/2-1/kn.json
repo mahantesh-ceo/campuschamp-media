@@ -1,0 +1,337 @@
+{
+  "hook": {
+    "title": "ಇದು ಜ್ವರನಾ?",
+    "md": "Nurse thermometer ಓದುತ್ತಾರೆ: **38.6 °C**. ಇದು ಜ್ವರನಾ? ಜೋರು ಜ್ವರನಾ? ಅಥವಾ normal ಆ?\n\nPharmacist ದಿನವಿಡೀ ಇಂಥ ತೀರ್ಮಾನಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳುತ್ತಾರೆ: stock ಕಡಿಮೆ ಇದೆಯಾ, dose ಜಾಸ್ತಿ ಇದೆಯಾ, patient ಮಗುನಾ? ಇಲ್ಲಿವರೆಗೆ ನಿಮ್ಮ programs ಪ್ರತಿ line ಅನ್ನು ಮೇಲಿಂದ ಕೆಳಗೆ run ಮಾಡುತ್ತಿದ್ದವು. ಈ lesson ನಲ್ಲಿ ಯಾವ lines run ಮಾಡಬೇಕು ಅಂತ ನಿಮ್ಮ program **ತಾನೇ ತೀರ್ಮಾನಿಸುತ್ತೆ**."
+  },
+  "learn": [
+    "Condition **True** ಆದಾಗ ಮಾತ್ರ **if** ಕೆಲವು lines ಅನ್ನು ಹೇಗೆ run ಮಾಡುತ್ತೆ",
+    "Python ನಲ್ಲಿ **colon** ಮತ್ತು **indentation** ಯಾಕೆ ಮುಖ್ಯ",
+    "**if-else** ಎರಡು ದಾರಿಗಳಲ್ಲಿ ಒಂದನ್ನು ಹೇಗೆ ಆರಿಸುತ್ತೆ",
+    "**if-elif-else** ಹಲವು ದಾರಿಗಳಲ್ಲಿ ಒಂದನ್ನು ಹೇಗೆ ಆರಿಸುತ್ತೆ, ಮತ್ತು ಕ್ರಮ ಯಾಕೆ ಮುಖ್ಯ"
+  ],
+  "explanation": [
+    {
+      "heading": "if: ಬೇಕಾದಾಗ ಮಾತ್ರ ಕೆಲವು lines run ಮಾಡಿ",
+      "md": "**if statement** ಹೌದು-ಅಥವಾ-ಇಲ್ಲ ಪ್ರಶ್ನೆ ಕೇಳುತ್ತೆ. ಉತ್ತರ `True` ಆದ್ರೆ, Python ಅದರ ಕೆಳಗಿನ lines run ಮಾಡುತ್ತೆ. `False` ಆದ್ರೆ, ಅವನ್ನು ಬಿಟ್ಟುಬಿಡುತ್ತೆ.\n\n```python\ntemp = 38.6\nif temp >= 38.0:\n    print(\"Fever\")\nprint(\"Check done\")\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nFever\nCheck done\n```\n\n`temp >= 38.0` ಎಂಬ ಪ್ರಶ್ನೆಗೆ **condition** ಅಂತಾರೆ. ಈ comparison operators ಅನ್ನು Lesson 1.4 ನಲ್ಲಿ ನೋಡಿದ್ದೀರಿ: `==`, `!=`, `<`, `>`, `<=` ಮತ್ತು `>=`. ಪ್ರತಿಯೊಂದೂ `True` ಅಥವಾ `False` ಕೊಡುತ್ತೆ.\n\n`temp = 37.0` ಹಾಕಿ ನೋಡಿ. Condition `False`, ಅದಕ್ಕೇ `Fever` ಬಿಟ್ಟುಹೋಗುತ್ತೆ, `Check done` ಮಾತ್ರ print ಆಗುತ್ತೆ.",
+      "callout": {
+        "title": "Condition",
+        "md": "True ಅಥವಾ False ಆಗುವ expression, ಉದಾಹರಣೆಗೆ temp >= 38.0. if ಕೆಳಗಿನ lines run ಆಗಬೇಕಾ ಬೇಡವಾ ಅಂತ ಇದೇ ತೀರ್ಮಾನಿಸುತ್ತೆ."
+      }
+    },
+    {
+      "heading": "Colon ಮತ್ತು indentation",
+      "md": "`if` ಗೆ ಯಾವುದೆಲ್ಲಾ ಸೇರುತ್ತೆ ಅಂತ ಎರಡು ಚಿಕ್ಕ ವಿಷಯಗಳು Python ಗೆ ಹೇಳುತ್ತವೆ:\n\n1. `if` line ನ ಕೊನೆಯಲ್ಲಿ **colon** `:`.\n2. **Indentation**: `if` ಗೆ ಸೇರಿದ lines **4 spaces** ಇಂದ ಶುರುವಾಗುತ್ತವೆ.\n\nIndent ಮಾಡಿದ lines ಗೆ **block** ಅಂತಾರೆ. Indentation ಎಲ್ಲಿ ಮುಗಿಯುತ್ತೋ, block ಅಲ್ಲೇ ಮುಗಿಯುತ್ತೆ. ಮೇಲಿನ example ನಲ್ಲಿ `print(\"Fever\")` block ಒಳಗಿದೆ, `print(\"Check done\")` ಹೊರಗಿದೆ, ಅದಕ್ಕೇ ಅದು ಯಾವಾಗಲೂ run ಆಗುತ್ತೆ.\n\nColon ಆದಮೇಲೆ Enter ಒತ್ತಿದಾಗ ಹೆಚ್ಚಿನ IDEs 4 spaces ತಾವೇ ಹಾಕುತ್ತವೆ.",
+      "callout": {
+        "title": "Indentation ಅಲಂಕಾರ ಅಲ್ಲ",
+        "md": "Python ನಲ್ಲಿ line ಶುರುವಿನ spaces program ಮಾಡುವ ಕೆಲಸವನ್ನೇ ಬದಲಾಯಿಸುತ್ತವೆ. 4 spaces ಬಳಸಿ, block ನ ಪ್ರತಿ line ಒಂದೇ ಸಾಲಿನಲ್ಲಿ ಇರಲಿ."
+      }
+    },
+    {
+      "heading": "if-else: ಎರಡರಲ್ಲಿ ಒಂದು ದಾರಿ",
+      "md": "ಹಲವು ಸಲ ಎರಡೂ ಸಂದರ್ಭಗಳಲ್ಲಿ ಏನಾದರೂ ಆಗಬೇಕು. **else** ಎರಡನೇ ದಾರಿ ಕೊಡುತ್ತೆ: condition `False` ಆದಾಗ ಇದು run ಆಗುತ್ತೆ.\n\nಒಂದು ಔಷಧದ stock reorder level ಗಿಂತ ಕೆಳಗೆ ಹೋದಾಗ pharmacy ಅದನ್ನು ಮತ್ತೆ order ಮಾಡುತ್ತೆ:\n\n```python\nstock = 12\nreorder_level = 20\nif stock < reorder_level:\n    print(\"Reorder now\")\nelse:\n    print(\"Stock OK\")\n```\n\nಇದು `Reorder now` print ಮಾಡುತ್ತೆ, ಯಾಕೆಂದರೆ 12, 20 ಕ್ಕಿಂತ ಕಡಿಮೆ. `stock = 35` ಆಗಿದ್ದರೆ `Stock OK` print ಆಗುತ್ತಿತ್ತು.\n\nಎರಡರಲ್ಲಿ ಸರಿಯಾಗಿ ಒಂದು block ಮಾತ್ರ run ಆಗುತ್ತೆ: ಎರಡೂ ಅಲ್ಲ, ಯಾವುದೂ ಇಲ್ಲದೆಯೂ ಅಲ್ಲ. `else` ಗೆ ತನ್ನದೇ condition ಇಲ್ಲ; ಇದೂ colon ಇಂದ ಮುಗಿಯುತ್ತೆ."
+    },
+    {
+      "heading": "if-elif-else: ಹಲವರಲ್ಲಿ ಒಂದು ದಾರಿ",
+      "md": "ಎರಡಕ್ಕಿಂತ ಹೆಚ್ಚು ಸಂದರ್ಭಗಳಿದ್ದಾಗ **elif** ಬಳಸಿ, ಅಂದರೆ \"else if\". ಮೇಲಿನ number (systolic, mmHg ನಲ್ಲಿ) ಬಳಸಿ blood pressure ನ ಒಂದು ಸರಳ check ಇಲ್ಲಿದೆ:\n\n```python\nsystolic = 134\nif systolic < 120:\n    print(\"Normal\")\nelif systolic < 130:\n    print(\"Elevated\")\nelif systolic < 140:\n    print(\"High BP, stage 1\")\nelse:\n    print(\"High BP, stage 2\")\n```\n\nಇದು `High BP, stage 1` print ಮಾಡುತ್ತೆ.\n\nPython conditions ಅನ್ನು **ಮೇಲಿಂದ ಕೆಳಗೆ** check ಮಾಡಿ, condition `True` ಆಗಿರುವ **ಮೊದಲ** block ಅನ್ನು run ಮಾಡುತ್ತೆ. ಆಮೇಲೆ chain ನ ಉಳಿದದ್ದೆಲ್ಲಾ ಬಿಟ್ಟುಬಿಡುತ್ತೆ. 134, 120 ಕ್ಕಿಂತ ಕಡಿಮೆ ಇಲ್ಲ, 130 ಕ್ಕಿಂತಲೂ ಇಲ್ಲ, ಆದರೆ 140 ಕ್ಕಿಂತ ಕಡಿಮೆ, ಅದಕ್ಕೇ ಮೂರನೇ block run ಆಗುತ್ತೆ.\n\nಎಷ್ಟು ಬೇಕೋ ಅಷ್ಟು `elif` ಇಡಬಹುದು. ಕೊನೆಯ `else` ಕಡ್ಡಾಯ ಅಲ್ಲ; ಮೇಲಿನ conditions ಹಿಡಿಯದೇ ಇರುವುದನ್ನೆಲ್ಲಾ ಇದು ಹಿಡಿಯುತ್ತೆ.",
+      "callout": {
+        "title": "ಕ್ರಮ ಮುಖ್ಯ",
+        "md": "ಮೊದಲ True condition ಸಿಕ್ಕ ತಕ್ಷಣ Python ನಿಲ್ಲುತ್ತೆ, ಅದಕ್ಕೇ ಅತ್ಯಂತ narrow case ಅನ್ನು ಮೊದಲು check ಮಾಡಿ. systolic < 140 ಮೊದಲು ಇದ್ದಿದ್ದರೆ, 110 ಕೂಡ stage 1 ಅಂತ print ಆಗುತ್ತಿತ್ತು."
+      }
+    },
+    {
+      "heading": "and, or, not ಇಂದ conditions ಜೋಡಿಸುವುದು",
+      "md": "Lesson 1.4 ನ logical operators ಹಲವು conditions ಅನ್ನು ಒಂದಾಗಿ ಜೋಡಿಸುತ್ತವೆ:\n\n- **`and`** **ಎರಡೂ** ಕಡೆ `True` ಆದಾಗ ಮಾತ್ರ `True`.\n- **`or`** **ಕನಿಷ್ಠ ಒಂದು** ಕಡೆ `True` ಆದರೆ `True`.\n- **`not`** `True` ಅನ್ನು `False` ಮಾಡುತ್ತೆ, `False` ಅನ್ನು `True` ಮಾಡುತ್ತೆ.\n\nಮಕ್ಕಳು ಮತ್ತು ವಯಸ್ಸಾದ patients ನ dose ಗೆ ಹೆಚ್ಚು ಗಮನ ಬೇಕು:\n\n```python\nage = 70\nif age < 12 or age >= 65:\n    print(\"Extra care: check the dose\")\nelse:\n    print(\"Standard adult dose\")\n```\n\nಇದು `Extra care: check the dose` print ಮಾಡುತ್ತೆ, ಯಾಕೆಂದರೆ `age >= 65` `True`, ಮತ್ತು `or` ಗೆ ಒಂದು ಕಡೆ `True` ಆದರೆ ಸಾಕು."
+    }
+  ],
+  "walkthrough": {
+    "intro": "ಈ program ದೇಹದ temperature ಓದಿ ಸರಿಯಾದ message print ಮಾಡುತ್ತೆ. ಮೂರರಲ್ಲಿ ಒಂದೇ message print ಆಗಬಹುದು.",
+    "keyTerms": [
+      {
+        "meaning": "Condition True ಆದಾಗ ಮಾತ್ರ block run ಮಾಡು."
+      },
+      {
+        "meaning": "\"Else if\": ಮೇಲಿನ conditions False ಆದರೆ ಇನ್ನೊಂದು condition check ಮಾಡು."
+      },
+      {
+        "meaning": "ಮೇಲಿನ ಯಾವ condition ಕೂಡ True ಆಗದಿದ್ದಾಗ ಈ block run ಮಾಡು."
+      },
+      {
+        "meaning": "ಪ್ರತಿ if, elif ಮತ್ತು else line ಇದರಿಂದಲೇ ಮುಗಿಯುತ್ತೆ."
+      },
+      {
+        "meaning": "Block ಗೆ ಸೇರಿದ lines ಅನ್ನು ಗುರುತಿಸುತ್ತವೆ."
+      }
+    ],
+    "steps": [
+      {
+        "say": "ಈ program temperature ಓದಿ, ಯಾವ message ತೋರಿಸಬೇಕು ಅಂತ ತೀರ್ಮಾನಿಸುತ್ತೆ. ಮೂರರಲ್ಲಿ ಒಂದೇ message print ಆಗುತ್ತೆ."
+      },
+      {
+        "say": "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ."
+      },
+      {
+        "say": "temp ನಲ್ಲಿ ಮೂವತ್ತೆಂಟು ಪಾಯಿಂಟ್ ಆರು store ಆಗುತ್ತೆ."
+      },
+      {
+        "say": "if ಕೇಳುತ್ತೆ: temp ಕನಿಷ್ಠ ಮೂವತ್ತೊಂಬತ್ತು ಪಾಯಿಂಟ್ ಐದು ಇದೆಯಾ? ಮೂವತ್ತೆಂಟು ಪಾಯಿಂಟ್ ಆರು ಇಲ್ಲ, ಅದಕ್ಕೇ condition False. Python ಕೆಳಗಿನ indent ಮಾಡಿದ line ಬಿಟ್ಟುಬಿಡುತ್ತೆ."
+      },
+      {
+        "say": "ಈಗ elif ಮುಂದಿನ ಪ್ರಶ್ನೆ ಕೇಳುತ್ತೆ: temp ಕನಿಷ್ಠ ಮೂವತ್ತೆಂಟು ಇದೆಯಾ? ಹೌದು. ಈ condition True."
+      },
+      {
+        "say": "ಅದಕ್ಕೇ Python elif ಕೆಳಗಿನ block run ಮಾಡಿ, Fever print ಮಾಡುತ್ತೆ."
+      },
+      {
+        "say": "ಒಂದು block ಈಗಾಗಲೇ run ಆಗಿದೆ, ಅದಕ್ಕೇ Python else ಮತ್ತು ಅದರ ಕೆಳಗಿನ line ಬಿಟ್ಟುಬಿಡುತ್ತೆ."
+      },
+      {
+        "say": "ಕೊನೆಯ line indent ಆಗಿಲ್ಲ. ಇದು if chain ನ ಹೊರಗಿದೆ, ಅದಕ್ಕೇ ಯಾವಾಗಲೂ run ಆಗುತ್ತೆ."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "if ನ ಹೆಚ್ಚಿನ errors colon ಅಥವಾ indentation ಬಿಟ್ಟುಹೋದಾಗ ಬರುತ್ತವೆ.",
+    "examples": [
+      {
+        "title": "Colon ಮರೆಯುವುದು",
+        "md": "ಪ್ರತಿ `if`, `elif` ಮತ್ತು `else` line colon ಇಂದ ಮುಗಿಯಬೇಕು. `if temp >= 38.0:` ಅಂತ ಬರೆಯಿರಿ."
+      },
+      {
+        "title": "Block ಅನ್ನು indent ಮಾಡಲು ಮರೆಯುವುದು",
+        "md": "Colon ಆದಮೇಲೆ Python ಗೆ ಕನಿಷ್ಠ ಒಂದು indent ಮಾಡಿದ line ಬೇಕು. `print(\"Fever\")` ಮುಂಚೆ 4 spaces ಹಾಕಿ."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Condition ನಲ್ಲಿ `==` ಬದಲು `=` ಬರೆಯುವುದು, ಉದಾ. `if dose = 500:`",
+      "see": "SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?",
+      "fix": "`=` value store ಮಾಡುತ್ತೆ; `==` ಹೋಲಿಸುತ್ತೆ. `if dose == 500:` ಅಂತ ಬರೆಯಿರಿ."
+    },
+    {
+      "mistake": "ದೊಡ್ಡ condition ಅನ್ನು ಮೊದಲು ಇಡುವುದು, ಉದಾ. `elif temp >= 39.5` ಗಿಂತ ಮುಂಚೆ `if temp >= 38.0`",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ ಜೋರು ಜ್ವರಕ್ಕೂ \"Fever\" ಮಾತ್ರ print ಆಗುತ್ತೆ",
+      "fix": "ಅತ್ಯಂತ narrow case ಮೊದಲು: `temp >= 39.5`, ಆಮೇಲೆ `temp >= 38.0`."
+    },
+    {
+      "mistake": "`else` ಗೆ condition ಕೊಡುವುದು, ಉದಾ. `else temp < 38.0:`",
+      "see": "SyntaxError: expected ':'",
+      "fix": "`else` ಯಾವ condition ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಲ್ಲ. `elif temp < 38.0:` ಅಥವಾ `else:` ಮಾತ್ರ ಬರೆಯಿರಿ."
+    },
+    {
+      "mistake": "ಬೇರೆ capitals ಇರುವ text ಹೋಲಿಸುವುದು, ಉದಾ. drug \"Aspirin\" ಇದ್ದು `if drug == \"aspirin\"`",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ condition False ಆಗುತ್ತೆ",
+      "fix": "ಒಂದೇ case ನಲ್ಲಿ ಹೋಲಿಸಿ: `if drug.lower() == \"aspirin\":`."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Reorder ಮಾಡಬೇಕಾ ಬೇಡವಾ?",
+      "md": "10 strips ಗಿಂತ ಕಡಿಮೆ stock ಅಂದರೆ pharmacy reorder ಮಾಡಬೇಕು. Output ಸರಿಯಾಗಿ ಹೀಗೇ ಬರುವ ಹಾಗೆ **if-else** ಬಳಸಿ:",
+      "hints": [
+        "ಹೀಗೆ ಶುರು ಮಾಡಿ: if stock < 10:",
+        "if stock < 10:\n    print(\"Reorder\")\nelse:\n    print(\"In stock\")"
+      ]
+    },
+    {
+      "title": "Dose limit check ಮಾಡಿ",
+      "md": "ಬರೆದ ಒಂದು ಸಲದ dose limit ಗಿಂತ ಜಾಸ್ತಿ ಇದೆ. Dose ಜೊತೆ warning print ಮಾಡಿ, ಸರಿಯಾಗಿ ಹೀಗೆ:",
+      "hints": [
+        "> ಇಂದ ಹೋಲಿಸಿ: if dose > max_dose:",
+        "f-string ಬಳಸಿ: print(f\"Too high: {dose} mg\")"
+      ]
+    },
+    {
+      "title": "Result ನ class",
+      "md": "**if-elif-else** ಬಳಸಿ: 75 ಅಥವಾ ಹೆಚ್ಚು \"Distinction\", 60 ಅಥವಾ ಹೆಚ್ಚು \"First class\", 50 ಅಥವಾ ಹೆಚ್ಚು \"Second class\", ಅದಕ್ಕಿಂತ ಕಡಿಮೆ \"Fail\". 72 marks ಗೆ output ಸರಿಯಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "ಅತಿ ಎತ್ತರದ limit ಮೊದಲು check ಮಾಡಿ: if marks >= 75:",
+        "if marks >= 75:\n    print(\"Distinction\")\nelif marks >= 60:\n    print(\"First class\")\nelif marks >= 50:\n    print(\"Second class\")\nelse:\n    print(\"Fail\")"
+      ]
+    },
+    {
+      "title": "Bug ಹುಡುಕಿ",
+      "md": "40.1 temperature ಗೆ \"High fever\" print ಆಗಬೇಕು, ಆದರೆ ಈ program \"Fever\" print ಮಾಡುತ್ತೆ. Error message ಇಲ್ಲ. Output ಸರಿಯಾಗಿ ಹೀಗೇ ಬರುವ ಹಾಗೆ ಸರಿ ಮಾಡಿ:",
+      "hints": [
+        "Condition True ಆಗಿರುವ ಮೊದಲ block ಅನ್ನು Python run ಮಾಡುತ್ತೆ. 40.1 >= 38.0 ಆ?",
+        "ಮೊದಲು temp >= 39.5 check ಮಾಡಿ, ಆಮೇಲೆ temp >= 38.0."
+      ],
+      "solutionNote": "40.1 >= 38.0 True, ಅದಕ್ಕೇ ಮೊದಲ block run ಆಯ್ತು, ಉಳಿದವು ಬಿಟ್ಟುಹೋದವು. Narrow check (39.5) ಮೊದಲು ಇಟ್ಟರೆ ಸರಿಯಾಗುತ್ತೆ."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "x = 5\nif x > 3:\n    print(\"A\")\nelse:\n    print(\"B\")\n\nಇದು ಏನು print ಮಾಡುತ್ತೆ?",
+      "why": "5 > 3 True, ಅದಕ್ಕೇ if block run ಆಗುತ್ತೆ, else ಬಿಟ್ಟುಹೋಗುತ್ತೆ."
+    },
+    {
+      "q": "if line ನ ಕೊನೆಯಲ್ಲಿ ಏನು ಬರಬೇಕು?",
+      "why": "if, elif ಮತ್ತು else ಮೂರೂ lines colon ಇಂದ ಮುಗಿಯುತ್ತವೆ."
+    },
+    {
+      "q": "if-elif-else chain ನಲ್ಲಿ ಎಷ್ಟು blocks run ಆಗುತ್ತವೆ?",
+      "why": "Python ಮೊದಲ True condition ಇರುವ block (ಅಥವಾ else) run ಮಾಡಿ, ಉಳಿದದ್ದನ್ನು ಬಿಟ್ಟುಬಿಡುತ್ತೆ."
+    },
+    {
+      "q": "temp = 37.0\nif temp >= 38.0:\n    print(\"Fever\")\nelse:\n    print(\"Normal\")\n\nಇದು ಏನು print ಮಾಡುತ್ತೆ?",
+      "why": "37.0 >= 38.0 False, ಅದಕ್ಕೇ else block run ಆಗುತ್ತೆ."
+    },
+    {
+      "q": "elif ಅಂದರೆ ಏನು?",
+      "why": "elif ಅಂದರೆ \"else if\" ನ ಚಿಕ್ಕ ರೂಪ: ಇನ್ನೊಂದು condition check ಮಾಡು."
+    },
+    {
+      "q": "if: ನಂತರದ line indent ಆಗಿಲ್ಲದಿದ್ದರೆ ಯಾವ error ಬರುತ್ತೆ?",
+      "why": "Colon ಆದಮೇಲೆ Python indent ಮಾಡಿದ block ನಿರೀಕ್ಷಿಸುತ್ತೆ."
+    }
+  ],
+  "exam": {
+    "note": "Practice ಗಾಗಿ important questions. University ನ ನಿಜವಾದ questions ಬೇರೆ ಇರಬಹುದು."
+  },
+  "mindmap": {
+    "label": "Lesson 2.1 · if, if-else, if-elif-else",
+    "children": [
+      {
+        "label": "Condition",
+        "children": [
+          {
+            "label": "True ಅಥವಾ False"
+          },
+          {
+            "label": "== != < > <= >="
+          },
+          {
+            "label": "and / or / not"
+          }
+        ]
+      },
+      {
+        "label": "if",
+        "children": [
+          {
+            "label": "True ಆದರೆ block run"
+          },
+          {
+            "label": "False ಆದರೆ skip"
+          }
+        ]
+      },
+      {
+        "label": "if-else",
+        "children": [
+          {
+            "label": "ಎರಡು ದಾರಿ"
+          },
+          {
+            "label": "ಸರಿಯಾಗಿ ಒಂದು run"
+          }
+        ]
+      },
+      {
+        "label": "if-elif-else",
+        "children": [
+          {
+            "label": "ಹಲವು ದಾರಿ"
+          },
+          {
+            "label": "ಮೇಲಿಂದ ಕೆಳಗೆ"
+          },
+          {
+            "label": "ಮೊದಲ True ಗೆಲ್ಲುತ್ತೆ"
+          }
+        ]
+      },
+      {
+        "label": "Syntax",
+        "children": [
+          {
+            "label": "Colon :"
+          },
+          {
+            "label": "4-space indent"
+          },
+          {
+            "label": "Block"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "SyntaxError: expected ':'"
+          },
+          {
+            "label": "IndentationError"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**if statement** ತನ್ನ **condition** `True` ಆದಾಗ ಮಾತ್ರ block run ಮಾಡುತ್ತೆ.",
+    "ಪ್ರತಿ `if`, `elif` ಮತ್ತು `else` line **colon** ಇಂದ ಮುಗಿಯುತ್ತೆ, ಅದರ ಕೆಳಗಿನ block **4 spaces ಇಂದ indent** ಆಗಿರುತ್ತೆ.",
+    "**if-else** ಎರಡರಲ್ಲಿ ಒಂದು ದಾರಿ ಆರಿಸುತ್ತೆ; ಸರಿಯಾಗಿ ಒಂದು block run ಆಗುತ್ತೆ.",
+    "**if-elif-else** conditions ಅನ್ನು **ಮೇಲಿಂದ ಕೆಳಗೆ** check ಮಾಡಿ **ಮೊದಲ** `True` ಒಂದನ್ನೇ run ಮಾಡುತ್ತೆ, ಅದಕ್ಕೇ narrow check ಮೊದಲು ಇಡಿ.",
+    "**and**, **or** ಮತ್ತು **not** ಹಲವು conditions ಅನ್ನು ಒಂದಾಗಿ ಜೋಡಿಸುತ್ತವೆ."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "ಇದು temperature, ಮೂವತ್ತೆಂಟು ಪಾಯಿಂಟ್ ಆರು, ಮತ್ತು ಮೂರು branches ಇರುವ ಒಂದು chain."
+        },
+        {
+          "say": "Python ಮೊದಲ ಪ್ರಶ್ನೆ ಕೇಳುತ್ತೆ. ಇದು ಕನಿಷ್ಠ ಮೂವತ್ತೊಂಬತ್ತು ಪಾಯಿಂಟ್ ಐದು ಇದೆಯಾ? ಇಲ್ಲ, ಅದಕ್ಕೇ ಈ branch ಬಿಟ್ಟುಹೋಗುತ್ತೆ."
+        },
+        {
+          "say": "ಅದು elif ಗೆ ಹೋಗುತ್ತೆ. ಇದು ಕನಿಷ್ಠ ಮೂವತ್ತೆಂಟು ಇದೆಯಾ? ಹೌದು."
+        },
+        {
+          "say": "ಅದಕ್ಕೇ ಈ block run ಮಾಡಿ, Fever print ಮಾಡುತ್ತೆ."
+        },
+        {
+          "say": "ಒಂದು branch run ಆಗಿದೆ, ಅದಕ್ಕೇ else ಬಿಟ್ಟುಹೋಗುತ್ತೆ. ಯಾವಾಗಲೂ ಒಂದೇ branch run ಆಗುತ್ತೆ."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "True ಅಥವಾ False ಆಗುವ expression, ಉದಾ. temp >= 38.0. Block run ಆಗಬೇಕಾ ಬೇಡವಾ ಅಂತ ಇದೇ ತೀರ್ಮಾನಿಸುತ್ತೆ."
+    },
+    {
+      "meaning": "ತನ್ನ condition True ಆದಾಗ ಮಾತ್ರ block run ಮಾಡುತ್ತೆ; ಇಲ್ಲದಿದ್ದರೆ Python block ಬಿಟ್ಟುಬಿಡುತ್ತೆ."
+    },
+    {
+      "meaning": "ಮೇಲಿನ ಯಾವ condition ಕೂಡ True ಆಗದಿದ್ದಾಗ run ಆಗುವ block. ಇದಕ್ಕೆ ತನ್ನದೇ condition ಇಲ್ಲ."
+    },
+    {
+      "meaning": "\"Else if\" ನ ಚಿಕ್ಕ ರೂಪ: ಮೇಲಿನ conditions False ಆದರೆ ಇನ್ನೊಂದು condition check ಮಾಡುತ್ತೆ."
+    },
+    {
+      "meaning": "ಒಟ್ಟಿಗೆ ಸೇರುವ indent ಮಾಡಿದ lines ನ ಗುಂಪು, ಉದಾ. if ಕೆಳಗಿನ lines."
+    },
+    {
+      "meaning": "Line ಶುರುವಿನ spaces. ಯಾವ lines block ಗೆ ಸೇರಿವೆ ಅಂತ ತೋರಿಸಲು Python 4 spaces ಬಳಸುತ್ತೆ."
+    },
+    {
+      "meaning": "Indentation ಇಲ್ಲದಿದ್ದಾಗ ಅಥವಾ ಸರಿಯಾಗಿ ಸಾಲಿನಲ್ಲಿ ಇಲ್ಲದಿದ್ದಾಗ Python ಕೊಡುವ error, ಉದಾ. colon ಆದಮೇಲೆ indent ಮಾಡಿದ line ಇಲ್ಲದಿದ್ದಾಗ."
+    }
+  ]
+}

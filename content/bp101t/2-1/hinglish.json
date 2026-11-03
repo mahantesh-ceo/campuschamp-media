@@ -1,0 +1,337 @@
+{
+  "hook": {
+    "title": "Kya yeh bukhaar hai?",
+    "md": "Nurse thermometer padhti hai: **38.6 °C**. Kya yeh bukhaar hai? Tez bukhaar? Ya normal?\n\nPharmacist din bhar aise faisle leta hai: stock kam hai kya, dose zyada hai kya, patient bachcha hai kya? Ab tak aapke programs har line upar se neeche chalaate the. Is lesson mein aapka program **tay karega** ki kaun-si lines chalaani hain."
+  },
+  "learn": [
+    "**if** kuch lines tabhi kaise chalaata hai jab condition **True** ho",
+    "Python mein **colon** aur **indentation** kyon zaroori hain",
+    "**if-else** do raaston mein se ek kaise chunta hai",
+    "**if-elif-else** kai raaston mein se ek kaise chunta hai, aur order kyon matter karta hai"
+  ],
+  "explanation": [
+    {
+      "heading": "if: kuch lines tabhi chalao jab zaroorat ho",
+      "md": "**if statement** haan-ya-na wala sawaal poochhta hai. Jawaab `True` ho to Python uske neeche ki lines chalaata hai. `False` ho to unhe chhod deta hai.\n\n```python\ntemp = 38.6\nif temp >= 38.0:\n    print(\"Fever\")\nprint(\"Check done\")\n```\n\nYeh print karta hai:\n\n```\nFever\nCheck done\n```\n\nSawaal `temp >= 38.0` ko **condition** kehte hain. Yeh comparison operators aapne Lesson 1.4 mein dekhe the: `==`, `!=`, `<`, `>`, `<=` aur `>=`. Har ek `True` ya `False` deta hai.\n\n`temp = 37.0` karke dekhiye. Condition `False` hai, isliye `Fever` chhoot jaata hai, aur sirf `Check done` print hota hai.",
+      "callout": {
+        "title": "Condition",
+        "md": "Aisa expression jo True ya False ho, jaise temp >= 38.0. Yahi tay karta hai ki if ke neeche ki lines chalengi ya nahi."
+      }
+    },
+    {
+      "heading": "Colon aur indentation",
+      "md": "Do chhoti cheezein Python ko batati hain ki `if` mein kya-kya aata hai:\n\n1. `if` line ke aakhir mein **colon** `:`.\n2. **Indentation**: `if` ki lines **4 spaces** se shuru hoti hain.\n\nIndent ki hui lines ko **block** kehte hain. Jahaan indentation khatam, wahaan block khatam. Upar ke example mein `print(\"Fever\")` block ke andar hai, aur `print(\"Check done\")` bahar hai, isliye woh hamesha chalta hai.\n\nZyadatar IDEs colon ke baad Enter dabaane par 4 spaces apne-aap daal dete hain.",
+      "callout": {
+        "title": "Indentation sajaavat nahi hai",
+        "md": "Python mein line ki shuruaat ke spaces program ka kaam badal dete hain. 4 spaces use kijiye, aur block ki har line ek seedh mein rakhiye."
+      }
+    },
+    {
+      "heading": "if-else: do mein se ek raasta",
+      "md": "Aksar dono haalaat mein kuch hona chahiye. **else** doosra raasta deta hai: yeh tab chalta hai jab condition `False` ho.\n\nJab kisi dawa ka stock reorder level se neeche jaata hai, pharmacy use phir se mangaati hai:\n\n```python\nstock = 12\nreorder_level = 20\nif stock < reorder_level:\n    print(\"Reorder now\")\nelse:\n    print(\"Stock OK\")\n```\n\nYeh `Reorder now` print karta hai, kyonki 12, 20 se kam hai. `stock = 35` hota to `Stock OK` print hota.\n\nDono mein se theek ek block chalta hai: na dono, na koi nahi. `else` ki apni koi condition nahi hoti; yeh bhi colon par khatam hota hai."
+    },
+    {
+      "heading": "if-elif-else: kai mein se ek raasta",
+      "md": "Jab do se zyada haalaat hon, **elif** use kijiye, yaani \"else if\". Yeh upar wale number (systolic, mmHg mein) se blood pressure ki ek aasaan jaanch hai:\n\n```python\nsystolic = 134\nif systolic < 120:\n    print(\"Normal\")\nelif systolic < 130:\n    print(\"Elevated\")\nelif systolic < 140:\n    print(\"High BP, stage 1\")\nelse:\n    print(\"High BP, stage 2\")\n```\n\nYeh `High BP, stage 1` print karta hai.\n\nPython conditions ko **upar se neeche** jaanchta hai aur **pehla** block chalaata hai jiski condition `True` ho. Phir chain ka baaki sab chhod deta hai. 134 na 120 se kam hai, na 130 se, par 140 se kam hai, isliye teesra block chalta hai.\n\nJitne chahiye utne `elif` rakh sakte hain. Aakhir ka `else` zaroori nahi; yeh woh sab pakadta hai jo upar ki conditions ne nahi pakda.",
+      "callout": {
+        "title": "Order matter karta hai",
+        "md": "Python pehli True condition par ruk jaata hai, isliye sabse narrow case pehle jaanchiye. Agar systolic < 140 pehle hota, to 110 bhi stage 1 print karta."
+      }
+    },
+    {
+      "heading": "and, or, not se conditions jodna",
+      "md": "Lesson 1.4 ke logical operators kai conditions ko ek mein jodte hain:\n\n- **`and`** tabhi `True` hai jab **dono** taraf `True` ho.\n- **`or`** tab `True` hai jab **kam se kam ek** taraf `True` ho.\n- **`not`** `True` ko `False` aur `False` ko `True` kar deta hai.\n\nBachchon aur buzurg patients ke dose mein aksar zyada dhyaan chahiye:\n\n```python\nage = 70\nif age < 12 or age >= 65:\n    print(\"Extra care: check the dose\")\nelse:\n    print(\"Standard adult dose\")\n```\n\nYeh `Extra care: check the dose` print karta hai, kyonki `age >= 65` `True` hai, aur `or` ko sirf ek taraf `True` chahiye."
+    }
+  ],
+  "walkthrough": {
+    "intro": "Yeh program shareer ka temperature padhkar sahi message print karta hai. Teen mein se sirf ek message print ho sakta hai.",
+    "keyTerms": [
+      {
+        "meaning": "Block tabhi chalao jab condition True ho."
+      },
+      {
+        "meaning": "\"Else if\": upar ki conditions False hon to ek aur condition jaancho."
+      },
+      {
+        "meaning": "Jab upar ki koi condition True na ho, yeh block chalao."
+      },
+      {
+        "meaning": "Har if, elif aur else line isi par khatam hoti hai."
+      },
+      {
+        "meaning": "Block mein aane wali lines ko dikhaate hain."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Yeh program temperature padhta hai aur tay karta hai ki kaun-sa message dikhaana hai. Teen mein se sirf ek message print hoga."
+      },
+      {
+        "say": "Comment batata hai ki program kya karta hai."
+      },
+      {
+        "say": "temp mein adtees dashamlav chhah store hota hai."
+      },
+      {
+        "say": "if poochhta hai: kya temp kam se kam untaalis dashamlav paanch hai? Adtees dashamlav chhah nahi hai, isliye condition False hai. Python neeche ki indent ki hui line chhod deta hai."
+      },
+      {
+        "say": "Ab elif agla sawaal poochhta hai: kya temp kam se kam adtees hai? Haan. Yeh condition True hai."
+      },
+      {
+        "say": "Isliye Python elif ke neeche ka block chalaata hai, aur Fever print karta hai."
+      },
+      {
+        "say": "Ek block chal chuka hai, isliye Python else aur uske neeche ki line chhod deta hai."
+      },
+      {
+        "say": "Aakhri line indent nahi hai. Yeh if chain ke bahar hai, isliye hamesha chalti hai."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "if ki zyadatar errors colon ya indentation chhootne se aati hain.",
+    "examples": [
+      {
+        "title": "Colon bhool jaana",
+        "md": "Har `if`, `elif` aur `else` line colon par khatam honi chahiye. `if temp >= 38.0:` likhiye."
+      },
+      {
+        "title": "Block ko indent karna bhool jaana",
+        "md": "Colon ke baad Python ko kam se kam ek indent ki hui line chahiye. `print(\"Fever\")` se pehle 4 spaces lagaiye."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Condition mein `==` ki jagah `=` likhna, jaise `if dose = 500:`",
+      "see": "SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?",
+      "fix": "`=` value store karta hai; `==` compare karta hai. `if dose == 500:` likhiye."
+    },
+    {
+      "mistake": "Badi condition pehle rakhna, jaise `elif temp >= 39.5` se pehle `if temp >= 38.0`",
+      "see": "Koi error nahi, par tez bukhaar par bhi sirf \"Fever\" print hota hai",
+      "fix": "Sabse narrow case pehle: `temp >= 39.5`, phir `temp >= 38.0`."
+    },
+    {
+      "mistake": "`else` ko condition dena, jaise `else temp < 38.0:`",
+      "see": "SyntaxError: expected ':'",
+      "fix": "`else` koi condition nahi leta. `elif temp < 38.0:` ya sirf `else:` likhiye."
+    },
+    {
+      "mistake": "Alag capitals wala text compare karna, jaise drug \"Aspirin\" ho aur `if drug == \"aspirin\"`",
+      "see": "Koi error nahi, par condition False aati hai",
+      "fix": "Ek hi case mein compare kijiye: `if drug.lower() == \"aspirin\":`."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Reorder karein ya nahi?",
+      "md": "10 strips se kam stock ka matlab hai pharmacy ko reorder karna hoga. **if-else** use kijiye taaki output bilkul yeh ho:",
+      "hints": [
+        "Aise shuru kijiye: if stock < 10:",
+        "if stock < 10:\n    print(\"Reorder\")\nelse:\n    print(\"In stock\")"
+      ]
+    },
+    {
+      "title": "Dose ki limit jaanchiye",
+      "md": "Likha gaya ek baar ka dose limit se zyada hai. Dose ke saath warning print kijiye, bilkul aise:",
+      "hints": [
+        "> se compare kijiye: if dose > max_dose:",
+        "f-string use kijiye: print(f\"Too high: {dose} mg\")"
+      ]
+    },
+    {
+      "title": "Result ki class",
+      "md": "**if-elif-else** use kijiye: 75 ya zyada \"Distinction\", 60 ya zyada \"First class\", 50 ya zyada \"Second class\", aur usse kam \"Fail\". 72 marks ke liye output bilkul yeh hona chahiye:",
+      "hints": [
+        "Sabse oonchi limit pehle jaanchiye: if marks >= 75:",
+        "if marks >= 75:\n    print(\"Distinction\")\nelif marks >= 60:\n    print(\"First class\")\nelif marks >= 50:\n    print(\"Second class\")\nelse:\n    print(\"Fail\")"
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "40.1 temperature par \"High fever\" print hona chahiye, par yeh program \"Fever\" print karta hai. Koi error message nahi hai. Ise theek kijiye taaki output bilkul yeh ho:",
+      "hints": [
+        "Python pehla woh block chalaata hai jiski condition True ho. Kya 40.1 >= 38.0 hai?",
+        "Pehle temp >= 39.5 jaanchiye, phir temp >= 38.0."
+      ],
+      "solutionNote": "40.1 >= 38.0 True hai, isliye pehla block chal gaya aur baaki chhoot gaye. Narrow check (39.5) pehle rakhne se yeh theek ho jaata hai."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "x = 5\nif x > 3:\n    print(\"A\")\nelse:\n    print(\"B\")\n\nYeh kya print karta hai?",
+      "why": "5 > 3 True hai, isliye if block chalta hai aur else chhoot jaata hai."
+    },
+    {
+      "q": "if line ke aakhir mein kya aana chahiye?",
+      "why": "if, elif aur else, teenon lines colon par khatam hoti hain."
+    },
+    {
+      "q": "if-elif-else chain mein kitne blocks chalte hain?",
+      "why": "Python pehla True condition wala block (ya else) chalaata hai, phir baaki chhod deta hai."
+    },
+    {
+      "q": "temp = 37.0\nif temp >= 38.0:\n    print(\"Fever\")\nelse:\n    print(\"Normal\")\n\nYeh kya print karta hai?",
+      "why": "37.0 >= 38.0 False hai, isliye else block chalta hai."
+    },
+    {
+      "q": "elif ka matlab kya hai?",
+      "why": "elif \"else if\" ka chhota roop hai: ek aur condition jaancho."
+    },
+    {
+      "q": "Jab if: ke baad wali line indent na ho, to kaun-si error aati hai?",
+      "why": "Colon ke baad Python indent kiya hua block chahta hai."
+    }
+  ],
+  "exam": {
+    "note": "Practice ke liye important questions. University ke asli questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 2.1 · if, if-else, if-elif-else",
+    "children": [
+      {
+        "label": "Condition",
+        "children": [
+          {
+            "label": "True ya False"
+          },
+          {
+            "label": "== != < > <= >="
+          },
+          {
+            "label": "and / or / not"
+          }
+        ]
+      },
+      {
+        "label": "if",
+        "children": [
+          {
+            "label": "True ho to block chalta hai"
+          },
+          {
+            "label": "False ho to chhoot-ta hai"
+          }
+        ]
+      },
+      {
+        "label": "if-else",
+        "children": [
+          {
+            "label": "Do raaste"
+          },
+          {
+            "label": "Theek ek chalta hai"
+          }
+        ]
+      },
+      {
+        "label": "if-elif-else",
+        "children": [
+          {
+            "label": "Kai raaste"
+          },
+          {
+            "label": "Upar se neeche"
+          },
+          {
+            "label": "Pehla True jeet-ta hai"
+          }
+        ]
+      },
+      {
+        "label": "Syntax",
+        "children": [
+          {
+            "label": "Colon :"
+          },
+          {
+            "label": "4-space indent"
+          },
+          {
+            "label": "Block"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "SyntaxError: expected ':'"
+          },
+          {
+            "label": "IndentationError"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**if statement** apna block tabhi chalaata hai jab uski **condition** `True` ho.",
+    "Har `if`, `elif` aur `else` line **colon** par khatam hoti hai, aur uske neeche ka block **4 spaces se indent** hota hai.",
+    "**if-else** do mein se ek raasta chunta hai; theek ek block chalta hai.",
+    "**if-elif-else** conditions ko **upar se neeche** jaanchta hai aur sirf **pehli** `True` wali chalaata hai, isliye sabse narrow check pehle rakhiye.",
+    "**and**, **or** aur **not** kai conditions ko ek mein jodte hain."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Yeh temperature hai, adtees dashamlav chhah, aur teen branches ki ek chain."
+        },
+        {
+          "say": "Python pehla sawaal poochhta hai. Kya yeh kam se kam untaalis dashamlav paanch hai? Nahi, isliye yeh branch chhoot jaati hai."
+        },
+        {
+          "say": "Woh elif par jaata hai. Kya yeh kam se kam adtees hai? Haan."
+        },
+        {
+          "say": "Isliye woh yeh block chalaata hai, aur Fever print karta hai."
+        },
+        {
+          "say": "Ek branch chal chuki hai, isliye else chhoot jaata hai. Hamesha sirf ek branch chalti hai."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Aisa expression jo True ya False ho, jaise temp >= 38.0. Yahi tay karta hai ki block chalega ya nahi."
+    },
+    {
+      "meaning": "Apna block tabhi chalaata hai jab uski condition True ho; warna Python block chhod deta hai."
+    },
+    {
+      "meaning": "Woh block jo tab chalta hai jab upar ki koi condition True na ho. Iski apni koi condition nahi hoti."
+    },
+    {
+      "meaning": "\"Else if\" ka chhota roop: upar ki conditions False hon to ek aur condition jaanchta hai."
+    },
+    {
+      "meaning": "Indent ki hui lines ka group jo saath mein aati hain, jaise if ke neeche ki lines."
+    },
+    {
+      "meaning": "Line ki shuruaat ke spaces. Kaun-si lines block mein hain, yeh dikhaane ke liye Python 4 spaces use karta hai."
+    },
+    {
+      "meaning": "Indentation na ho ya oonchi-neechi ho to Python yeh error deta hai, jaise colon ke baad indent ki hui line na ho."
+    }
+  ]
+}
