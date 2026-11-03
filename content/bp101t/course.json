@@ -172,8 +172,12 @@
         {
           "id": "2-6",
           "title": "Project: Dosage and BMI calculators",
-          "available": false,
-          "translations": []
+          "available": true,
+          "translations": [
+            "hi",
+            "hinglish",
+            "kn"
+          ]
         }
       ]
     },

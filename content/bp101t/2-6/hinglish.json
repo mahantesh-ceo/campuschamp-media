@@ -1,0 +1,334 @@
+{
+  "hook": {
+    "title": "Pharmacy mein use hone wale do tools banaaiye",
+    "md": "Ab aap **if**, **loops** aur **functions** jaante hain. Inhe saath jodiye, aur aap asli tools bana sakte hain.\n\nIs project mein aap do calculators banaayenge jo aapko pharmacy subjects mein phir milenge:\n\n1. Ek **BMI calculator**, jo yeh bhi bataaye ki number ka matlab kya hai.\n2. **Bachchon ke dose calculators**, **Young's rule** aur **Clark's rule** se.\n\n*Yeh calculators Python seekhne aur pharmacology ke hisaab jaanchne ke liye hain. Asli dose hamesha prescriber, label aur official references se aati hai.*"
+  },
+  "learn": [
+    "Code likhne se pehle program ko chhote functions mein **plan** karna",
+    "**BMI** calculator banaana jo **if-elif-else** se category return kare",
+    "**Young's rule** aur **Clark's rule** ko functions mein badalna",
+    "**Safety checks** jodna aur kai patients ke liye **loop** use karna"
+  ],
+  "explanation": [
+    {
+      "heading": "Code se pehle plan",
+      "md": "Professional programmers problem ko chhote kaamon mein baant-te hain, aur **har kaam ke liye ek function** likhte hain. BMI tool ke liye:\n\n1. Weight aur height se BMI **nikaalna**: `bmi(weight_kg, height_m)`.\n2. Number ko category mein **baantna**: `bmi_category(value)`.\n3. Nateeja user ko `print()` se **dikhaana**.\n\nHar function chhota hai, uska naam saaf hai, aur use alag se test kar sakte hain. Agar category ki limits badlein, to aap **ek** function badalte hain, aur program ka har hissa jo use use karta hai, apne-aap update ho jaata hai.",
+      "callout": {
+        "title": "Ek function, ek kaam",
+        "md": "Agar kisi function ka kaam ek chhote vaakya mein na bata paayein, to use do mein baant dijiye."
+      }
+    },
+    {
+      "heading": "Calculator 1: BMI",
+      "md": "**Body Mass Index** hai kilograms mein weight bhaag metres mein height ka square: BMI = weight ÷ height². Python mein `**` ka matlab \"ki power\" hai (Lesson 1.4), isliye height² hai `height_m ** 2`.\n\n```python\ndef bmi(weight_kg, height_m):\n    return weight_kg / height_m ** 2\n\ndef bmi_category(value):\n    if value < 18.5:\n        return \"Underweight\"\n    elif value < 25:\n        return \"Normal\"\n    elif value < 30:\n        return \"Overweight\"\n    else:\n        return \"Obese\"\n\nb = bmi(68, 1.70)\nprint(f\"BMI: {b:.1f} ({bmi_category(b)})\")\n```\n\nYeh `BMI: 23.5 (Normal)` print karta hai, kyonki 68 ÷ 1.70² = 68 ÷ 2.89 ≈ 23.5.\n\nDhyaan dijiye, `bmi_category` text ko print karne ki jagah **return** karta hai. Isse woh dobara use ho sakta hai: wahi function label, report ya screen bhar sakta hai.",
+      "callout": {
+        "title": "Indian cut-offs",
+        "md": "Yeh WHO ki categories hain. Indian guidelines adults ke liye neechi limits use karti hain: 23 se overweight, 25 se obese. Bas ek function badalna hoga."
+      }
+    },
+    {
+      "heading": "Calculator 2: bachchon ke doses",
+      "md": "Pharmacology ke do puraane niyam adult dose se bachche ka dose andaaza lagaate hain:\n\n- **Young's rule** (umar se, 1 se 12 saal ke bachchon ke liye): child dose = age ÷ (age + 12) × adult dose.\n- **Clark's rule** (wazan se): child dose = kg mein weight ÷ 70 × adult dose. (Asli niyam pounds aur 150 use karta hai; 70 kg aam metric roop hai.)\n\nHar niyam ek line ka function ban jaata hai:\n\n```python\ndef youngs_rule(age, adult_dose):\n    return age / (age + 12) * adult_dose\n\ndef clarks_rule(weight_kg, adult_dose):\n    return weight_kg / 70 * adult_dose\n\nprint(\"Young's rule:\", round(youngs_rule(6, 500)), \"mg\")\nprint(\"Clark's rule:\", round(clarks_rule(20, 500)), \"mg\")\n```\n\nYeh print karta hai:\n\n```\nYoung's rule: 167 mg\nClark's rule: 143 mg\n```\n\n6 ÷ 18 × 500 = 166.67, aur 20 ÷ 70 × 500 = 142.86. **round()** sabse paas ke poore number par round karta hai, jo label par padhne mein aasaan hai.",
+      "callout": {
+        "title": "round()",
+        "md": "round(x) sabse paas ka poora number deta hai; round(x, 1) ek decimal place rakhta hai. round(166.67) hai 167."
+      }
+    },
+    {
+      "heading": "Safety checks jodna",
+      "md": "Dose wale calculator ko betuki values mana karni chahiye aur limits maanni chahiye. Checks ko function ke **andar** rakhiye, taaki har call karne wale ko woh muft milein:\n\n```python\ndef safe_dose(weight_kg, mg_per_kg, max_mg):\n    if weight_kg <= 0:\n        return 0\n    dose = weight_kg * mg_per_kg\n    if dose > max_mg:\n        dose = max_mg\n    return dose\n```\n\nFunction bematlab weight par 0 return karta hai, mg-per-kg dose nikaalta hai, aur use maximum par rok deta hai. `if` ke andar ka `return` function ko jaldi khatam kar deta hai, isliye neeche ki lines nahi chalti."
+    },
+    {
+      "heading": "Ek loop se kai patients",
+      "md": "Hisaab function mein hai, isliye ek **loop** use poore ward ke patients ke liye use kar sakta hai:\n\n```python\nfor w in [10, 20, 40]:\n    print(f\"{w} kg: {safe_dose(w, 15, 500)} mg\")\n```\n\nYeh print karta hai:\n\n```\n10 kg: 150 mg\n20 kg: 300 mg\n40 kg: 500 mg\n```\n\n40 kg ke bachche ko 15 × 40 = 600 mg milta, par function ne use 500 par rok diya. Functions, `if` aur loops saath mein: chaar lines mein poora Unit II."
+    }
+  ],
+  "walkthrough": {
+    "intro": "Yeh program do functions aur ek loop se teen patients ka BMI aur category nikaalta hai, jinki height 1.70 m hai.",
+    "keyTerms": [
+      {
+        "meaning": "Height ka square (2 ki power)."
+      },
+      {
+        "meaning": "Category wapas bhejo aur function khatam karo."
+      },
+      {
+        "meaning": "Tabhi pahunchte hain jab upar ki koi condition True na ho."
+      },
+      {
+        "meaning": "BMI ko ek decimal place ke saath dikhaao."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Yeh ek chhota, poora program hai: do functions kaam karte hain, aur ek loop unhe teen patients ke liye chalaata hai."
+      },
+      {
+        "say": "Comment program ka naam batata hai."
+      },
+      {
+        "say": "def, bmi function banaata hai: weight bhaag height ka square. Python use baad ke liye yaad rakhta hai."
+      },
+      {
+        "say": "def, category function banaata hai, jo number ke liye ek shabd return karta hai. Abhi kuch nahi chalta."
+      },
+      {
+        "say": "Loop pehle weight se shuru hota hai, pachaas kilogram."
+      },
+      {
+        "say": "bmi ko pachaas aur ek dashamlav saat ke saath call kiya jaata hai. Yeh lagbhag satrah dashamlav teen return karta hai."
+      },
+      {
+        "say": "Category function mein satrah dashamlav teen, athaarah dashamlav paanch se kam hai, isliye yeh Underweight return karta hai, aur function wahin khatam."
+      },
+      {
+        "say": "print sab kuch ek decimal place ke saath jodkar dikhaata hai."
+      },
+      {
+        "say": "Agla, adsath kilogram: BMI teis dashamlav paanch. Yeh athaarah dashamlav paanch se kam nahi, par pachchees se kam hai, isliye: Normal."
+      },
+      {
+        "say": "Aakhir mein, nabbe kilogram: BMI iktees dashamlav ek. Teenon mein se koi condition True nahi, isliye aakhri return Obese deta hai."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Inputs galat hon to calculators fail hote hain. Yeh do sabse aam errors hain.",
+    "examples": [
+      {
+        "title": "Zero height",
+        "md": "Zero se bhaag dena sambhav nahi. Pehle input jaanchiye, jaise `if height_m <= 0: return 0`, ya user se phir poochhiye."
+      },
+      {
+        "title": "Aisa number jo ab bhi text hai",
+        "md": "`input()` hamesha text deta hai. Hisaab se pehle badaliye: `weight = float(input(\"Weight (kg): \"))`."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Height centimetres mein daalna, jaise `bmi(68, 170)`",
+      "see": "Koi error nahi, par BMI 0.0024 aata hai",
+      "fix": "BMI ko metres chahiye: 170 cm yaani 1.70 m. Pehle 100 se bhaag dijiye."
+    },
+    {
+      "mistake": "`height_m ** 2` ki jagah `height_m * 2` likhna",
+      "see": "Koi error nahi, par BMI bahut zyada aata hai",
+      "fix": "`* 2` dugna karta hai; `** 2` square karta hai."
+    },
+    {
+      "mistake": "Clark's rule mein units milaana, jaise kg wale roop (÷ 70) ke saath pounds",
+      "see": "Koi error nahi, par dose dugne se bhi zyada aata hai",
+      "fix": "Ek unit rakhiye: kg ke saath 70, ya pounds ke saath 150. Unit ko parameter ke naam mein rakhiye: `weight_kg`."
+    },
+    {
+      "mistake": "Calculator function mein return ki jagah print karna",
+      "see": "Pehle koi error nahi, par nateeja label ya loop mein use nahi ho sakta",
+      "fix": "Number return kijiye; jahaan chahiye wahaan print kijiye."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "BMI function poora kijiye",
+      "md": "**bmi()** se weight bhaag height ka square return karwaaiye. Print pehle se likha hai; output bilkul yeh hona chahiye:",
+      "hints": [
+        "Height ka square hai height_m ** 2.",
+        "    return weight_kg / height_m ** 2"
+      ]
+    },
+    {
+      "title": "Category return kijiye",
+      "md": "**bmi_category()** ko **if-elif-else** se poora kijiye: 18.5 se kam \"Underweight\", 25 se kam \"Normal\", 30 se kam \"Overweight\", warna \"Obese\". 26.1 ke liye output bilkul yeh hona chahiye:",
+      "hints": [
+        "Har branch ek shabd return karti hai: return \"Normal\"",
+        "    if value < 18.5:\n        return \"Underweight\"\n    elif value < 25:\n        return \"Normal\"\n    elif value < 30:\n        return \"Overweight\"\n    else:\n        return \"Obese\""
+      ]
+    },
+    {
+      "title": "Young's rule",
+      "md": "**youngs_rule(age, adult_dose)** likhiye jo age ÷ (age + 12) × adult dose return kare. 4 saal ke bachche aur 500 mg adult dose ke liye output bilkul yeh hona chahiye:",
+      "hints": [
+        "Brackets zaroori hain: age / (age + 12) * adult_dose",
+        "def youngs_rule(age, adult_dose):\n    return age / (age + 12) * adult_dose"
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "Clark's rule se 35 kg ke bachche ko, 400 mg adult dose par, 35 ÷ 70 × 400 = 200 mg milna chahiye. Yeh program 0 mg batata hai, aur koi error nahi. Ise theek kijiye taaki output bilkul yeh ho:",
+      "hints": [
+        "Dekhiye ki brackets ki wajah se Python kisse bhaag de raha hai.",
+        "Brackets se yeh 28000 se bhaag deta hai. weight_kg / 70 * adult_dose likhiye."
+      ],
+      "solutionNote": "Brackets ke saath Python ne 35 ko 70 × 400 = 28000 se bhaag diya, jisse 0.00125 mila, jo round hokar 0 hua. Brackets ke bina woh pehle 70 se bhaag deta hai, phir 400 se guna karta hai."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Ek patient ka weight 72 kg aur height 1.80 m hai. BMI kya hai?",
+      "why": "72 ÷ 1.80² = 72 ÷ 3.24 ≈ 22.2."
+    },
+    {
+      "q": "Young's rule ka formula kaun-sa hai?",
+      "why": "Young's rule umar use karta hai: age ÷ (age + 12) × adult dose."
+    },
+    {
+      "q": "Is lesson ke bmi_category function se bmi_category(30) kya return karta hai?",
+      "why": "30 < 30 False hai, isliye koi condition True nahi, aur else branch Obese return karti hai."
+    },
+    {
+      "q": "round(166.67) kya hai?",
+      "why": "round() sabse paas ka poora number deta hai: 167."
+    },
+    {
+      "q": "Yeh lesson har hisaab ko alag function mein kyon rakhta hai?",
+      "why": "Chhote naam wale functions dobara use hote hain, test karna aasaan hai, aur har call karne wale ke liye ek baar mein theek hote hain."
+    },
+    {
+      "q": "1.70 ** 2 kya nikaalta hai?",
+      "why": "** power operator hai: 1.70 ka square."
+    }
+  ],
+  "exam": {
+    "note": "Practice ke liye important questions. University ke asli questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 2.6 · Dosage aur BMI calculators",
+    "children": [
+      {
+        "label": "Plan",
+        "children": [
+          {
+            "label": "Ek function, ek kaam"
+          },
+          {
+            "label": "Nikaalo → baanto → dikhaao"
+          }
+        ]
+      },
+      {
+        "label": "BMI",
+        "children": [
+          {
+            "label": "weight / height ** 2"
+          },
+          {
+            "label": "if-elif-else category"
+          },
+          {
+            "label": "Return karo, print nahi"
+          }
+        ]
+      },
+      {
+        "label": "Bachchon ka dose",
+        "children": [
+          {
+            "label": "Young's: age/(age+12) × adult"
+          },
+          {
+            "label": "Clark's: kg/70 × adult"
+          },
+          {
+            "label": "round()"
+          }
+        ]
+      },
+      {
+        "label": "Safety",
+        "children": [
+          {
+            "label": "weight <= 0 mana"
+          },
+          {
+            "label": "Maximum par rok"
+          },
+          {
+            "label": "Jaldi return"
+          }
+        ]
+      },
+      {
+        "label": "Loop",
+        "children": [
+          {
+            "label": "Kai patients"
+          },
+          {
+            "label": "while True wala menu"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "ZeroDivisionError"
+          },
+          {
+            "label": "TypeError: str input"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "Program ko **chhote functions** mein plan kijiye, har ek ka ek kaam: nikaalna, baantna, dikhaana.",
+    "**BMI** = weight (kg) ÷ height (m)², likha jaata hai `weight_kg / height_m ** 2`; ek **if-elif-else** function uski category return karta hai.",
+    "**Young's rule** (age ÷ (age + 12) × adult dose) aur **Clark's rule** (kg ÷ 70 × adult dose) ek-ek line ke functions bante hain; **round()** nateeja saaf karta hai.",
+    "**Safety checks** function ke andar rakhiye: asambhav inputs mana kijiye aur doses par limit lagaaiye, jaldi `return` se.",
+    "Ek **loop** wahi functions kai patients ke liye chala sakta hai, ya `while True` aur `break` se **menu** dikha sakta hai."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Do inputs: adsath kilogram, aur ek dashamlav saat metre."
+        },
+        {
+          "say": "Yeh bmi function mein jaate hain, jo weight ko height ke square se bhaag deta hai."
+        },
+        {
+          "say": "Yeh teis dashamlav paanch return karta hai."
+        },
+        {
+          "say": "Woh number category function mein jaata hai. Yeh athaarah dashamlav paanch se kam nahi, par pachchees se kam hai."
+        },
+        {
+          "say": "Isliye yeh Normal return karta hai, aur program jawaab print karta hai. Do chhote functions, ek saaf nateeja."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "kg mein weight bhaag metres mein height ka square. Yeh jaanchne ke liye use hota hai ki height ke hisaab se weight theek hai ya nahi."
+    },
+    {
+      "meaning": "Child dose = age ÷ (age + 12) × adult dose, 1 se 12 saal ke bachchon ke liye."
+    },
+    {
+      "meaning": "Child dose = kg mein weight ÷ 70 × adult dose (ya pounds mein weight ÷ 150 × adult dose)."
+    },
+    {
+      "meaning": "Number ko sabse paas ke poore number par, ya kuch decimal places tak round karta hai: round(142.86) hai 143."
+    },
+    {
+      "meaning": "Aisa program jo loop mein choices ki list dikhaata hai, user ki chuni hui chalaata hai, aur exit chunne tak dohraata hai."
+    }
+  ]
+}

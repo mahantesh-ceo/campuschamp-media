@@ -1,0 +1,236 @@
+"""Lesson 2.6 (English). Run to write content/bp101t/2-6/en.json."""
+import json
+import os
+import subprocess
+import sys
+
+C_BMI = "```python\ndef bmi(weight_kg, height_m):\n    return weight_kg / height_m ** 2\n\ndef bmi_category(value):\n    if value < 18.5:\n        return \"Underweight\"\n    elif value < 25:\n        return \"Normal\"\n    elif value < 30:\n        return \"Overweight\"\n    else:\n        return \"Obese\"\n\nb = bmi(68, 1.70)\nprint(f\"BMI: {b:.1f} ({bmi_category(b)})\")\n```"
+C_CHILD = "```python\ndef youngs_rule(age, adult_dose):\n    return age / (age + 12) * adult_dose\n\ndef clarks_rule(weight_kg, adult_dose):\n    return weight_kg / 70 * adult_dose\n\nprint(\"Young's rule:\", round(youngs_rule(6, 500)), \"mg\")\nprint(\"Clark's rule:\", round(clarks_rule(20, 500)), \"mg\")\n```"
+O_CHILD = "```\nYoung's rule: 167 mg\nClark's rule: 143 mg\n```"
+C_SAFE = "```python\ndef safe_dose(weight_kg, mg_per_kg, max_mg):\n    if weight_kg <= 0:\n        return 0\n    dose = weight_kg * mg_per_kg\n    if dose > max_mg:\n        dose = max_mg\n    return dose\n```"
+C_TABLE = "```python\nfor w in [10, 20, 40]:\n    print(f\"{w} kg: {safe_dose(w, 15, 500)} mg\")\n```"
+O_TABLE = "```\n10 kg: 150 mg\n20 kg: 300 mg\n40 kg: 500 mg\n```"
+MENU = "```python\ndef bmi(weight_kg, height_m):\n    return weight_kg / height_m ** 2\n\ndef youngs_rule(age, adult_dose):\n    return age / (age + 12) * adult_dose\n\ndef clarks_rule(weight_kg, adult_dose):\n    return weight_kg / 70 * adult_dose\n\nwhile True:\n    print(\"1. BMI  2. Young's rule  3. Clark's rule  4. Exit\")\n    choice = input(\"Choose: \")\n    if choice == \"1\":\n        w = float(input(\"Weight (kg): \"))\n        h = float(input(\"Height (m): \"))\n        print(f\"BMI = {bmi(w, h):.1f}\")\n    elif choice == \"2\":\n        age = int(input(\"Age (years): \"))\n        adult = float(input(\"Adult dose (mg): \"))\n        print(\"Child dose =\", round(youngs_rule(age, adult)), \"mg\")\n    elif choice == \"3\":\n        w = float(input(\"Weight (kg): \"))\n        adult = float(input(\"Adult dose (mg): \"))\n        print(\"Child dose =\", round(clarks_rule(w, adult)), \"mg\")\n    elif choice == \"4\":\n        break\n    else:\n        print(\"Invalid choice\")\n```"
+
+L = {
+    "id": "2-6",
+    "course": "bp101t",
+    "unit": "Unit II",
+    "unitTitle": "Control Structures & Functions",
+    "number": "2.6",
+    "title": "Project: Dosage and BMI calculators",
+    "minutes": 20,
+    "free": False,
+    "audioLanguages": ["en", "hi", "kn"],
+    "hook": {
+        "title": "Build two tools a pharmacy uses",
+        "md": "You now know **if**, **loops** and **functions**. Put them together, and you can build real tools.\n\nIn this project you'll build two calculators you'll meet again in your pharmacy subjects:\n\n1. A **BMI calculator** that also says what the number means.\n2. **Children's dose calculators** using **Young's rule** and **Clark's rule**.\n\n*These calculators are for learning Python and checking your pharmacology sums. Real doses always come from the prescriber, the label and official references.*",
+    },
+    "learn": [
+        "How to **plan** a program as small functions before writing code",
+        "How to build a **BMI** calculator that returns a category with **if-elif-else**",
+        "How to turn **Young's rule** and **Clark's rule** into functions",
+        "How to add **safety checks** and use a **loop** to handle many patients",
+    ],
+    "explanation": [
+        {
+            "heading": "Plan before you code",
+            "md": "Professional programmers split a problem into small jobs, and write **one function per job**. For a BMI tool:\n\n1. **Calculate** the BMI from weight and height: `bmi(weight_kg, height_m)`.\n2. **Classify** the number into a category: `bmi_category(value)`.\n3. **Show** the result to the user with `print()`.\n\nEach function is short, has a clear name, and can be tested on its own. If the category limits change, you edit **one** function, and every part of the program that uses it is updated.",
+            "callout": {"type": "tip", "title": "One function, one job", "md": "If you can't describe what a function does in one short sentence, split it into two."},
+        },
+        {
+            "heading": "Calculator 1: BMI",
+            "md": "**Body Mass Index** is weight in kilograms divided by the square of height in metres: BMI = weight ÷ height². In Python, `**` means \"to the power of\" (Lesson 1.4), so height² is `height_m ** 2`.\n\n" + C_BMI + "\n\nThis prints `BMI: 23.5 (Normal)`, because 68 ÷ 1.70² = 68 ÷ 2.89 ≈ 23.5.\n\nNotice that `bmi_category` **returns** text instead of printing it. That makes it reusable: the same function could fill a label, a report or a screen.",
+            "callout": {"type": "tip", "title": "Indian cut-offs", "md": "These are the WHO categories. Indian guidelines use lower limits for adults: overweight from 23, obese from 25. Changing one function is all it would take."},
+        },
+        {
+            "heading": "Calculator 2: children's doses",
+            "md": "Two classic rules from pharmacology estimate a child's dose from the adult dose:\n\n- **Young's rule** (by age, for children 1 to 12 years): child dose = age ÷ (age + 12) × adult dose.\n- **Clark's rule** (by weight): child dose = weight in kg ÷ 70 × adult dose. (The original rule uses pounds and 150; 70 kg is the usual metric version.)\n\nEach rule becomes a one-line function:\n\n" + C_CHILD + "\n\nThis prints:\n\n" + O_CHILD + "\n\n6 ÷ 18 × 500 = 166.67, and 20 ÷ 70 × 500 = 142.86. **round()** rounds to the nearest whole number, which is easier to read on a label.",
+            "callout": {"type": "definition", "title": "round()", "md": "round(x) gives the nearest whole number; round(x, 1) keeps one decimal place. round(166.67) is 167."},
+        },
+        {
+            "heading": "Adding safety checks",
+            "md": "A calculator used for doses must refuse nonsense and respect limits. Put the checks **inside** the function, so every caller gets them for free:\n\n" + C_SAFE + "\n\nThe function returns 0 for a weight that makes no sense, works out the mg-per-kg dose, and caps it at the maximum. A `return` inside an `if` ends the function early, so the lines below it don't run.",
+        },
+        {
+            "heading": "Many patients with one loop",
+            "md": "Because the calculation lives in a function, a **loop** can use it for a whole ward of patients:\n\n" + C_TABLE + "\n\nThis prints:\n\n" + O_TABLE + "\n\nThe 40 kg child would get 15 × 40 = 600 mg, but the function capped it at 500. Functions, `if` and loops together: that is the whole of Unit II in four lines.",
+        },
+    ],
+    "walkthrough": {
+        "intro": "This program uses two functions and a loop to work out the BMI and category for three patients who are all 1.70 m tall.",
+        "filename": "bmi_calculator.py",
+        "code": "# BMI calculator\ndef bmi(weight_kg, height_m):\n    return weight_kg / height_m ** 2\n\ndef category(value):\n    if value < 18.5:\n        return \"Underweight\"\n    elif value < 25:\n        return \"Normal\"\n    elif value < 30:\n        return \"Overweight\"\n    return \"Obese\"\n\nfor weight in [50, 68, 90]:\n    b = bmi(weight, 1.70)\n    print(f\"{weight} kg: BMI {b:.1f}, {category(b)}\")",
+        "output": "50 kg: BMI 17.3, Underweight\n68 kg: BMI 23.5, Normal\n90 kg: BMI 31.1, Obese",
+        "steps": [
+            {"line": None, "say": "This is a small, complete program: two functions do the work, and a loop runs them for three patients.", "output": None, "audio": "step-01.mp3"},
+            {"line": 1, "say": "The comment names the program.", "output": None, "audio": "step-02.mp3"},
+            {"line": 2, "say": "def creates the bmi function: weight divided by height squared. Python remembers it for later.", "output": None, "audio": "step-03.mp3"},
+            {"line": 5, "say": "def creates the category function, which returns a word for the number. Nothing runs yet.", "output": None, "audio": "step-04.mp3"},
+            {"line": 14, "say": "The loop starts with the first weight, fifty kilograms.", "output": None, "audio": "step-05.mp3", "vars": {"weight": "50"}},
+            {"line": 15, "say": "bmi is called with fifty and one point seven. It returns about seventeen point three.", "output": None, "audio": "step-06.mp3", "vars": {"b": "17.30"}},
+            {"line": 6, "say": "In the category function, seventeen point three is less than eighteen point five, so it returns Underweight, and the function ends there.", "output": None, "audio": "step-07.mp3"},
+            {"line": 16, "say": "print puts it all together, with one decimal place.", "output": "50 kg: BMI 17.3, Underweight", "audio": "step-08.mp3"},
+            {"line": 16, "say": "Next, sixty-eight kilograms: BMI twenty-three point five. It is not under eighteen point five, but it is under twenty-five, so: Normal.", "output": "68 kg: BMI 23.5, Normal", "audio": "step-09.mp3", "vars": {"weight": "68", "b": "23.53"}},
+            {"line": 16, "say": "Last, ninety kilograms: BMI thirty-one point one. None of the three conditions is True, so the last return gives Obese.", "output": "90 kg: BMI 31.1, Obese", "audio": "step-10.mp3", "vars": {"weight": "90", "b": "31.14"}},
+        ],
+        "keyTerms": [
+            {"term": "height_m ** 2", "meaning": "Height squared (to the power of 2)."},
+            {"term": "return \"Normal\"", "meaning": "Send back the category and end the function."},
+            {"term": "return \"Obese\"", "meaning": "Reached only when no condition above was True."},
+            {"term": "{b:.1f}", "meaning": "Show the BMI with one decimal place."},
+        ],
+    },
+    "errors": {
+        "intro": "Calculators fail when the inputs are wrong. These are the two most common errors.",
+        "examples": [
+            {
+                "title": "A height of zero",
+                "code": "def bmi(weight_kg, height_m):\n    return weight_kg / height_m ** 2\n\nprint(bmi(68, 0))",
+                "output": "ZeroDivisionError: division by zero",
+                "errorLine": 2,
+                "md": "Dividing by zero is impossible. Check the input first, for example `if height_m <= 0: return 0`, or ask the user again.",
+            },
+            {
+                "title": "A number that is still text",
+                "code": "def bmi(weight_kg, height_m):\n    return weight_kg / height_m ** 2\n\nweight = \"68\"  # typed by the user\nprint(bmi(weight, 1.70))",
+                "output": "TypeError: unsupported operand type(s) for /: 'str' and 'float'",
+                "errorLine": 2,
+                "md": "`input()` always gives text. Convert it before calculating: `weight = float(input(\"Weight (kg): \"))`.",
+            },
+        ],
+    },
+    "mistakes": [
+        {"mistake": "Typing the height in centimetres, e.g. `bmi(68, 170)`", "see": "No error, but the BMI is 0.0024", "fix": "BMI needs metres: 170 cm is 1.70 m. Divide by 100 first."},
+        {"mistake": "Writing `height_m * 2` instead of `height_m ** 2`", "see": "No error, but the BMI is far too high", "fix": "`* 2` doubles; `** 2` squares."},
+        {"mistake": "Mixing units in Clark's rule, e.g. pounds with the kg version (÷ 70)", "see": "No error, but the dose is more than twice too high", "fix": "Keep one unit: kg with 70, or pounds with 150. Put the unit in the parameter name: `weight_kg`."},
+        {"mistake": "Printing inside a calculator function instead of returning", "see": "No error at first, but the result can't be used in a label or a loop", "fix": "Return the number; print it where you need it."},
+    ],
+    "tasks": [
+        {
+            "id": "t1",
+            "title": "Complete the BMI function",
+            "md": "Make **bmi()** return weight divided by height squared. The print is already written; the output must be exactly:",
+            "expectedOutput": "BMI: 26.1",
+            "starterCode": "def bmi(weight_kg, height_m):\n    pass  # replace with a return\n\nprint(f\"BMI: {bmi(80, 1.75):.1f}\")",
+            "hints": ["Height squared is height_m ** 2.", "    return weight_kg / height_m ** 2"],
+            "solution": "def bmi(weight_kg, height_m):\n    return weight_kg / height_m ** 2\n\nprint(f\"BMI: {bmi(80, 1.75):.1f}\")",
+            "check": {"type": "exactOutput", "mustContain": ["return", "** 2"]},
+        },
+        {
+            "id": "t2",
+            "title": "Return the category",
+            "md": "Complete **bmi_category()** with **if-elif-else**: under 18.5 \"Underweight\", under 25 \"Normal\", under 30 \"Overweight\", otherwise \"Obese\". For 26.1, the output must be exactly:",
+            "expectedOutput": "Overweight",
+            "starterCode": "def bmi_category(value):\n    pass  # replace with if-elif-else and returns\n\nprint(bmi_category(26.1))",
+            "hints": ["Each branch returns a word: return \"Normal\"", "    if value < 18.5:\n        return \"Underweight\"\n    elif value < 25:\n        return \"Normal\"\n    elif value < 30:\n        return \"Overweight\"\n    else:\n        return \"Obese\""],
+            "solution": "def bmi_category(value):\n    if value < 18.5:\n        return \"Underweight\"\n    elif value < 25:\n        return \"Normal\"\n    elif value < 30:\n        return \"Overweight\"\n    else:\n        return \"Obese\"\n\nprint(bmi_category(26.1))",
+            "check": {"type": "exactOutput", "mustContain": ["elif", "return"]},
+        },
+        {
+            "id": "t3",
+            "title": "Young's rule",
+            "md": "Write **youngs_rule(age, adult_dose)** that returns age ÷ (age + 12) × adult dose. For a 4-year-old and an adult dose of 500 mg, the output must be exactly:",
+            "expectedOutput": "Child dose: 125 mg",
+            "starterCode": "# Define youngs_rule(age, adult_dose) here\n\n\ndose = youngs_rule(4, 500)\nprint(f\"Child dose: {round(dose)} mg\")",
+            "hints": ["Brackets matter: age / (age + 12) * adult_dose", "def youngs_rule(age, adult_dose):\n    return age / (age + 12) * adult_dose"],
+            "solution": "# Define youngs_rule(age, adult_dose) here\ndef youngs_rule(age, adult_dose):\n    return age / (age + 12) * adult_dose\n\ndose = youngs_rule(4, 500)\nprint(f\"Child dose: {round(dose)} mg\")",
+            "check": {"type": "exactOutput", "mustContain": ["def youngs_rule", "return"]},
+        },
+        {
+            "id": "t4",
+            "title": "Find the bug",
+            "md": "By Clark's rule, a 35 kg child with an adult dose of 400 mg should get 35 ÷ 70 × 400 = 200 mg. This program says 0 mg, and there is no error. Fix it so the output is exactly:",
+            "expectedOutput": "Dose: 200 mg",
+            "starterCode": "def clarks_rule(weight_kg, adult_dose):\n    return weight_kg / (70 * adult_dose)\n\nprint(\"Dose:\", round(clarks_rule(35, 400)), \"mg\")",
+            "hints": ["Work out what the brackets make Python divide by.", "The brackets make it divide by 28000. Write weight_kg / 70 * adult_dose."],
+            "solution": "def clarks_rule(weight_kg, adult_dose):\n    return weight_kg / 70 * adult_dose\n\nprint(\"Dose:\", round(clarks_rule(35, 400)), \"mg\")",
+            "solutionNote": "With the brackets, Python divided 35 by 70 × 400 = 28000, giving 0.00125, which rounds to 0. Without them it divides by 70 first, then multiplies by 400.",
+            "check": {"type": "exactOutput", "mustContain": ["def clarks_rule"]},
+        },
+    ],
+    "quiz": [
+        {"q": "A patient weighs 72 kg and is 1.80 m tall. What is the BMI?", "options": ["40.0", "22.2", "20.0", "25.9"], "answer": 1, "why": "72 ÷ 1.80² = 72 ÷ 3.24 ≈ 22.2.", "code": False},
+        {"q": "Which formula is Young's rule?", "options": ["weight ÷ 70 × adult dose", "age ÷ (age + 12) × adult dose", "age × 12 ÷ adult dose", "adult dose ÷ age"], "answer": 1, "why": "Young's rule uses age: age ÷ (age + 12) × adult dose.", "code": False},
+        {"q": "Using the bmi_category function from this lesson, what does bmi_category(30) return?", "options": ["Normal", "Overweight", "Obese", "Error"], "answer": 2, "why": "30 < 30 is False, so none of the conditions is True and the else branch returns Obese.", "code": True},
+        {"q": "What is round(166.67)?", "options": ["166", "167", "166.7", "170"], "answer": 1, "why": "round() gives the nearest whole number: 167.", "code": True},
+        {"q": "Why does this lesson put each calculation in its own function?", "options": ["Python requires it", "It runs faster", "It can be reused, tested and fixed in one place", "To avoid using if"], "answer": 2, "why": "Small named functions are reusable, easy to test, and fixed once for every caller.", "code": False},
+        {"q": "What does 1.70 ** 2 calculate?", "options": ["1.70 × 2", "1.70 × 1.70", "1.70 ÷ 2", "1.70 + 2"], "answer": 1, "why": "** is the power operator: 1.70 squared.", "code": True},
+    ],
+    "exam": {
+        "note": "Important questions for practice. Actual university questions may differ.",
+        "short": [
+            {"q": "Write a Python function to calculate BMI and print its category.", "marks": 2,
+             "md": "```python\ndef bmi(weight_kg, height_m):\n    return weight_kg / height_m ** 2\n\nb = bmi(68, 1.70)\nif b < 18.5:\n    print(\"Underweight\")\nelif b < 25:\n    print(\"Normal\")\nelif b < 30:\n    print(\"Overweight\")\nelse:\n    print(\"Obese\")\n```\n\nBMI = weight (kg) ÷ height (m)². For 68 kg and 1.70 m, BMI ≈ 23.5, so the output is `Normal`."},
+            {"q": "Write a program to calculate a child's dose using Young's rule.", "marks": 2,
+             "md": "Young's rule: child dose = age ÷ (age + 12) × adult dose.\n\n```python\ndef youngs_rule(age, adult_dose):\n    return age / (age + 12) * adult_dose\n\nage = int(input(\"Age of child: \"))\nadult = float(input(\"Adult dose (mg): \"))\nprint(\"Child dose =\", round(youngs_rule(age, adult)), \"mg\")\n```\n\nFor age 6 and an adult dose of 500 mg: 6 ÷ 18 × 500 ≈ 167 mg."},
+        ],
+        "long": [
+            {"q": "Write a menu-driven Python program using functions and a while loop to calculate (a) BMI, (b) a child's dose by Young's rule and (c) a child's dose by Clark's rule.", "marks": 5,
+             "md": MENU + "\n\n**Explanation:**\n\n1. **Functions:** `bmi()` returns weight ÷ height²; `youngs_rule()` returns age ÷ (age + 12) × adult dose; `clarks_rule()` returns weight (kg) ÷ 70 × adult dose. Each does one job and returns its result.\n2. **while True loop:** shows the menu again after every calculation, until the user chooses 4, when `break` ends the loop.\n3. **if-elif-else:** chooses the calculation from the user's choice; `else` handles an invalid choice.\n4. **input() with float()/int():** converts the typed text to numbers before calculating.\n5. **round()** and the `:.1f` format make the results easy to read.\n\nSample: choice 2, age 6, adult dose 500 → `Child dose = 167 mg`."},
+        ],
+    },
+    "mindmap": {
+        "label": "Lesson 2.6 · Dosage and BMI calculators",
+        "children": [
+            {"label": "Plan", "children": [{"label": "One function, one job"}, {"label": "Calculate → classify → show"}]},
+            {"label": "BMI", "children": [{"label": "weight / height ** 2"}, {"label": "if-elif-else category"}, {"label": "Return, don't print"}]},
+            {"label": "Children's dose", "children": [{"label": "Young's: age/(age+12) × adult"}, {"label": "Clark's: kg/70 × adult"}, {"label": "round()"}]},
+            {"label": "Safety", "children": [{"label": "Reject weight <= 0"}, {"label": "Cap at maximum"}, {"label": "Early return"}]},
+            {"label": "Loop", "children": [{"label": "Many patients"}, {"label": "Menu with while True"}]},
+            {"label": "Errors", "children": [{"label": "ZeroDivisionError"}, {"label": "TypeError: str input"}]},
+        ],
+    },
+    "summary": [
+        "Plan a program as **small functions**, one job each: calculate, classify, show.",
+        "**BMI** = weight (kg) ÷ height (m)², written `weight_kg / height_m ** 2`; an **if-elif-else** function returns its category.",
+        "**Young's rule** (age ÷ (age + 12) × adult dose) and **Clark's rule** (kg ÷ 70 × adult dose) each become a one-line function; **round()** tidies the result.",
+        "Put **safety checks** inside the function: reject impossible inputs and cap doses, using early `return`.",
+        "A **loop** can run the same functions for many patients, or show a **menu** with `while True` and `break`.",
+    ],
+    "video": {"videoUrl": None, "searchTerms": ["python bmi calculator functions", "young's rule clark's rule pediatric dose calculation"]},
+    "animations": [
+        {
+            "id": "pipeline",
+            "title": "From inputs to an answer",
+            "afterExplanation": 1,
+            "canvas": {"desktop": {"w": 800, "h": 460}, "mobile": {"w": 360, "h": 600}},
+            "actors": [
+                {"id": "weight", "type": "box", "label": "weight_kg", "value": "68", "color": "amber",
+                 "desktop": {"x": 40, "y": 40, "w": 200, "h": 90}, "mobile": {"x": 16, "y": 12, "w": 156, "h": 90}},
+                {"id": "height", "type": "box", "label": "height_m", "value": "1.70", "color": "amber",
+                 "desktop": {"x": 40, "y": 160, "w": 200, "h": 90}, "mobile": {"x": 188, "y": 12, "w": 156, "h": 90}},
+                {"id": "fbmi", "type": "card", "title": "bmi()", "icon": "⚖️", "color": "indigo", "mono": True,
+                 "lines": ["return weight_kg / height_m ** 2"],
+                 "desktop": {"x": 300, "y": 90, "w": 260, "h": 110}, "mobile": {"x": 16, "y": 130, "w": 328, "h": 100}},
+                {"id": "b", "type": "box", "label": "b", "value": "23.5", "color": "emerald",
+                 "desktop": {"x": 610, "y": 100, "w": 150, "h": 90}, "mobile": {"x": 100, "y": 250, "w": 160, "h": 90}},
+                {"id": "fcat", "type": "card", "title": "bmi_category()", "icon": "🏷️", "color": "indigo", "mono": True,
+                 "lines": ["< 18.5 → Underweight", "< 25 → Normal", "< 30 → Overweight", "else → Obese"],
+                 "desktop": {"x": 300, "y": 230, "w": 260, "h": 150}, "mobile": {"x": 16, "y": 360, "w": 328, "h": 140}},
+                {"id": "out", "type": "terminal", "title": "Output",
+                 "desktop": {"x": 40, "y": 395, "w": 720, "h": 50}, "mobile": {"x": 16, "y": 516, "w": 328, "h": 70}},
+            ],
+            "steps": [
+                {"say": "Two inputs: sixty-eight kilograms, and one point seven metres.", "audio": "anim-pipeline-01.mp3",
+                 "actions": [{"do": "show", "target": "weight"}, {"do": "show", "target": "height"}]},
+                {"say": "They go into the bmi function, which divides the weight by the height squared.", "audio": "anim-pipeline-02.mp3",
+                 "actions": [{"do": "show", "target": "fbmi"}, {"do": "connect", "id": "c1", "from": "weight", "to": "fbmi", "label": "", "color": "amber"}, {"do": "connect", "id": "c2", "from": "height", "to": "fbmi", "label": "", "color": "amber"}]},
+                {"say": "It returns twenty-three point five.", "audio": "anim-pipeline-03.mp3",
+                 "actions": [{"do": "show", "target": "b"}, {"do": "connect", "id": "c3", "from": "fbmi", "to": "b", "label": "return", "color": "emerald"}, {"do": "pulse", "target": "b"}]},
+                {"say": "That number goes into the category function. It is not under eighteen point five, but it is under twenty-five.", "audio": "anim-pipeline-04.mp3",
+                 "actions": [{"do": "show", "target": "fcat"}, {"do": "connect", "id": "c4", "from": "b", "to": "fcat", "label": "", "color": "emerald"}, {"do": "highlightLine", "target": "fcat", "line": 1}]},
+                {"say": "So it returns Normal, and the program prints the answer. Two small functions, one clear result.", "audio": "anim-pipeline-05.mp3",
+                 "actions": [{"do": "show", "target": "out"}, {"do": "appendOutput", "target": "out", "text": "BMI: 23.5 (Normal)"}]},
+            ],
+        }
+    ],
+}
+
+if __name__ == "__main__":
+    root = os.path.join(os.path.dirname(__file__), "..", "..")
+    out = os.path.join(root, "content", "bp101t", "2-6", "en.json")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    json.dump(L, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    print("wrote", out)
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "..", "glossary_bp101t.py")], check=True, stdout=subprocess.DEVNULL)

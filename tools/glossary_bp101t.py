@@ -554,6 +554,33 @@ G = {
             "hinglish": "Function ke andar bana variable. Yeh sirf function chalne tak rehta hai.",
             "kn": "Function ಒಳಗೆ ಮಾಡಿದ variable. Function run ಆಗುವವರೆಗೆ ಮಾತ್ರ ಇರುತ್ತೆ."}),
     ],
+    "2-6": [
+        ("BMI (Body Mass Index)", {
+            "en": "Weight in kg divided by the square of height in metres. It is used to screen whether body weight is healthy for a person's height.",
+            "hi": "kg में weight भाग metres में height का square। यह जाँचने के लिए use होता है कि height के हिसाब से weight ठीक है या नहीं।",
+            "hinglish": "kg mein weight bhaag metres mein height ka square. Yeh jaanchne ke liye use hota hai ki height ke hisaab se weight theek hai ya nahi.",
+            "kn": "kg ನ weight ಭಾಗಿಸು metres ನ height ನ square. Height ಗೆ ತಕ್ಕಂತೆ weight ಆರೋಗ್ಯಕರವಾಗಿದೆಯಾ ಅಂತ ನೋಡಲು ಬಳಸುತ್ತಾರೆ."}),
+        ("Young's rule", {
+            "en": "Child dose = age ÷ (age + 12) × adult dose, for children aged 1 to 12.",
+            "hi": "Child dose = age ÷ (age + 12) × adult dose, 1 से 12 साल के बच्चों के लिए।",
+            "hinglish": "Child dose = age ÷ (age + 12) × adult dose, 1 se 12 saal ke bachchon ke liye.",
+            "kn": "Child dose = age ÷ (age + 12) × adult dose, 1 ರಿಂದ 12 ವರ್ಷದ ಮಕ್ಕಳಿಗೆ."}),
+        ("Clark's rule", {
+            "en": "Child dose = weight in kg ÷ 70 × adult dose (or weight in pounds ÷ 150 × adult dose).",
+            "hi": "Child dose = kg में weight ÷ 70 × adult dose (या pounds में weight ÷ 150 × adult dose)।",
+            "hinglish": "Child dose = kg mein weight ÷ 70 × adult dose (ya pounds mein weight ÷ 150 × adult dose).",
+            "kn": "Child dose = kg ನಲ್ಲಿ weight ÷ 70 × adult dose (ಅಥವಾ pounds ನಲ್ಲಿ weight ÷ 150 × adult dose)."}),
+        ("round()", {
+            "en": "Rounds a number to the nearest whole number, or to a number of decimal places: round(142.86) is 143.",
+            "hi": "Number को सबसे पास के पूरे number पर, या कुछ decimal places तक round करता है: round(142.86) है 143।",
+            "hinglish": "Number ko sabse paas ke poore number par, ya kuch decimal places tak round karta hai: round(142.86) hai 143.",
+            "kn": "Number ಅನ್ನು ಹತ್ತಿರದ ಪೂರ್ಣ number ಗೆ, ಅಥವಾ ಕೆಲವು decimal places ಗೆ round ಮಾಡುತ್ತೆ: round(142.86) ಅಂದರೆ 143."}),
+        ("Menu-driven program", {
+            "en": "A program that shows a list of choices in a loop, runs the one the user picks, and repeats until the user chooses to exit.",
+            "hi": "ऐसा program जो loop में choices की list दिखाता है, user की चुनी हुई चलाता है, और exit चुनने तक दोहराता है।",
+            "hinglish": "Aisa program jo loop mein choices ki list dikhaata hai, user ki chuni hui chalaata hai, aur exit chunne tak dohraata hai.",
+            "kn": "Loop ನಲ್ಲಿ choices ನ list ತೋರಿಸಿ, user ಆರಿಸಿದ್ದನ್ನು run ಮಾಡಿ, user exit ಆರಿಸುವವರೆಗೆ ಪುನರಾವರ್ತಿಸುವ program."}),
+    ],
 }
 
 

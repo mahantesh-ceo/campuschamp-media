@@ -1,0 +1,334 @@
+{
+  "hook": {
+    "title": "Pharmacy ಬಳಸುವ ಎರಡು tools ಮಾಡಿ",
+    "md": "ಈಗ ನಿಮಗೆ **if**, **loops** ಮತ್ತು **functions** ಗೊತ್ತು. ಇವನ್ನು ಒಟ್ಟಿಗೆ ಸೇರಿಸಿದರೆ ನಿಜವಾದ tools ಮಾಡಬಹುದು.\n\nಈ project ನಲ್ಲಿ ನಿಮ್ಮ pharmacy subjects ನಲ್ಲಿ ಮತ್ತೆ ಸಿಗುವ ಎರಡು calculators ಮಾಡುತ್ತೀರಿ:\n\n1. ಒಂದು **BMI calculator**, number ನ ಅರ್ಥವನ್ನೂ ಹೇಳುವಂಥದ್ದು.\n2. **Young's rule** ಮತ್ತು **Clark's rule** ಬಳಸುವ **ಮಕ್ಕಳ dose calculators**.\n\n*ಈ calculators Python ಕಲಿಯಲು ಮತ್ತು pharmacology ಲೆಕ್ಕ check ಮಾಡಲು ಮಾತ್ರ. ನಿಜವಾದ dose ಯಾವಾಗಲೂ prescriber, label ಮತ್ತು official references ಇಂದ ಬರುತ್ತೆ.*"
+  },
+  "learn": [
+    "Code ಬರೆಯುವ ಮುಂಚೆ program ಅನ್ನು ಚಿಕ್ಕ functions ಆಗಿ **plan** ಮಾಡುವುದು",
+    "**if-elif-else** ಇಂದ category return ಮಾಡುವ **BMI** calculator ಮಾಡುವುದು",
+    "**Young's rule** ಮತ್ತು **Clark's rule** ಅನ್ನು functions ಆಗಿ ಬದಲಾಯಿಸುವುದು",
+    "**Safety checks** ಸೇರಿಸಿ, ಹಲವು patients ಗೆ **loop** ಬಳಸುವುದು"
+  ],
+  "explanation": [
+    {
+      "heading": "Code ಗಿಂತ ಮುಂಚೆ plan",
+      "md": "Professional programmers ಒಂದು problem ಅನ್ನು ಚಿಕ್ಕ ಕೆಲಸಗಳಾಗಿ ವಿಭಾಗಿಸಿ, **ಪ್ರತಿ ಕೆಲಸಕ್ಕೆ ಒಂದು function** ಬರೆಯುತ್ತಾರೆ. BMI tool ಗೆ:\n\n1. Weight ಮತ್ತು height ಇಂದ BMI **ಲೆಕ್ಕ ಹಾಕುವುದು**: `bmi(weight_kg, height_m)`.\n2. Number ಅನ್ನು category ಗೆ **ವರ್ಗೀಕರಿಸುವುದು**: `bmi_category(value)`.\n3. ಫಲಿತಾಂಶವನ್ನು user ಗೆ `print()` ಇಂದ **ತೋರಿಸುವುದು**.\n\nಪ್ರತಿ function ಚಿಕ್ಕದು, ಸ್ಪಷ್ಟ ಹೆಸರು ಇದೆ, ಬೇರೆಯಾಗಿ test ಮಾಡಬಹುದು. Category limits ಬದಲಾದರೆ **ಒಂದೇ** function ಬದಲಾಯಿಸುತ್ತೀರಿ, ಅದನ್ನು ಬಳಸುವ program ನ ಪ್ರತಿ ಭಾಗ ತಾನಾಗಿ update ಆಗುತ್ತೆ.",
+      "callout": {
+        "title": "ಒಂದು function, ಒಂದು ಕೆಲಸ",
+        "md": "ಒಂದು function ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಒಂದು ಚಿಕ್ಕ ವಾಕ್ಯದಲ್ಲಿ ಹೇಳಲಾಗದಿದ್ದರೆ, ಅದನ್ನು ಎರಡಾಗಿ ಒಡೆಯಿರಿ."
+      }
+    },
+    {
+      "heading": "Calculator 1: BMI",
+      "md": "**Body Mass Index** ಅಂದರೆ kilograms ನ weight ಭಾಗಿಸು metres ನ height ನ square: BMI = weight ÷ height². Python ನಲ್ಲಿ `**` ಅಂದರೆ \"ಘಾತ\" (Lesson 1.4), ಅದಕ್ಕೇ height² ಅಂದರೆ `height_m ** 2`.\n\n```python\ndef bmi(weight_kg, height_m):\n    return weight_kg / height_m ** 2\n\ndef bmi_category(value):\n    if value < 18.5:\n        return \"Underweight\"\n    elif value < 25:\n        return \"Normal\"\n    elif value < 30:\n        return \"Overweight\"\n    else:\n        return \"Obese\"\n\nb = bmi(68, 1.70)\nprint(f\"BMI: {b:.1f} ({bmi_category(b)})\")\n```\n\nಇದು `BMI: 23.5 (Normal)` print ಮಾಡುತ್ತೆ, ಯಾಕೆಂದರೆ 68 ÷ 1.70² = 68 ÷ 2.89 ≈ 23.5.\n\nಗಮನಿಸಿ, `bmi_category` text ಅನ್ನು print ಮಾಡುವ ಬದಲು **return** ಮಾಡುತ್ತೆ. ಅದರಿಂದ ಅದನ್ನು ಮತ್ತೆ ಬಳಸಬಹುದು: ಅದೇ function label, report ಅಥವಾ screen ತುಂಬಬಹುದು.",
+      "callout": {
+        "title": "Indian cut-offs",
+        "md": "ಇವು WHO categories. Indian guidelines adults ಗೆ ಕಡಿಮೆ limits ಬಳಸುತ್ತವೆ: 23 ಇಂದ overweight, 25 ಇಂದ obese. ಒಂದು function ಬದಲಾಯಿಸಿದರೆ ಸಾಕು."
+      }
+    },
+    {
+      "heading": "Calculator 2: ಮಕ್ಕಳ doses",
+      "md": "Pharmacology ನ ಎರಡು ಹಳೆಯ ನಿಯಮಗಳು adult dose ಇಂದ ಮಗುವಿನ dose ಅಂದಾಜು ಮಾಡುತ್ತವೆ:\n\n- **Young's rule** (ವಯಸ್ಸಿನಿಂದ, 1 ರಿಂದ 12 ವರ್ಷದ ಮಕ್ಕಳಿಗೆ): child dose = age ÷ (age + 12) × adult dose.\n- **Clark's rule** (ತೂಕದಿಂದ): child dose = kg ನಲ್ಲಿ weight ÷ 70 × adult dose. (ಮೂಲ ನಿಯಮ pounds ಮತ್ತು 150 ಬಳಸುತ್ತೆ; 70 kg ಸಾಮಾನ್ಯ metric ರೂಪ.)\n\nಪ್ರತಿ ನಿಯಮ ಒಂದು line ನ function ಆಗುತ್ತೆ:\n\n```python\ndef youngs_rule(age, adult_dose):\n    return age / (age + 12) * adult_dose\n\ndef clarks_rule(weight_kg, adult_dose):\n    return weight_kg / 70 * adult_dose\n\nprint(\"Young's rule:\", round(youngs_rule(6, 500)), \"mg\")\nprint(\"Clark's rule:\", round(clarks_rule(20, 500)), \"mg\")\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nYoung's rule: 167 mg\nClark's rule: 143 mg\n```\n\n6 ÷ 18 × 500 = 166.67, ಮತ್ತು 20 ÷ 70 × 500 = 142.86. **round()** ಹತ್ತಿರದ ಪೂರ್ಣ number ಗೆ round ಮಾಡುತ್ತೆ, label ಮೇಲೆ ಓದಲು ಸುಲಭ.",
+      "callout": {
+        "title": "round()",
+        "md": "round(x) ಹತ್ತಿರದ ಪೂರ್ಣ number ಕೊಡುತ್ತೆ; round(x, 1) ಒಂದು decimal place ಇಡುತ್ತೆ. round(166.67) ಅಂದರೆ 167."
+      }
+    },
+    {
+      "heading": "Safety checks ಸೇರಿಸುವುದು",
+      "md": "Doses ಗೆ ಬಳಸುವ calculator ಅರ್ಥವಿಲ್ಲದ values ಅನ್ನು ತಿರಸ್ಕರಿಸಬೇಕು, limits ಪಾಲಿಸಬೇಕು. Checks ಅನ್ನು function **ಒಳಗೆ** ಇಡಿ, ಆಗ call ಮಾಡುವ ಎಲ್ಲರಿಗೂ ಅವು ಸಿಗುತ್ತವೆ:\n\n```python\ndef safe_dose(weight_kg, mg_per_kg, max_mg):\n    if weight_kg <= 0:\n        return 0\n    dose = weight_kg * mg_per_kg\n    if dose > max_mg:\n        dose = max_mg\n    return dose\n```\n\nFunction ಅರ್ಥವಿಲ್ಲದ weight ಗೆ 0 return ಮಾಡುತ್ತೆ, mg-per-kg dose ಲೆಕ್ಕ ಹಾಕುತ್ತೆ, ಮತ್ತು maximum ನಲ್ಲಿ ನಿಲ್ಲಿಸುತ್ತೆ. `if` ಒಳಗಿನ `return` function ಅನ್ನು ಬೇಗ ಮುಗಿಸುತ್ತೆ, ಅದಕ್ಕೇ ಕೆಳಗಿನ lines run ಆಗಲ್ಲ."
+    },
+    {
+      "heading": "ಒಂದು loop ಇಂದ ಹಲವು patients",
+      "md": "ಲೆಕ್ಕ function ನಲ್ಲಿದೆ, ಅದಕ್ಕೇ ಒಂದು **loop** ಇಡೀ ward ನ patients ಗೆ ಅದನ್ನು ಬಳಸಬಹುದು:\n\n```python\nfor w in [10, 20, 40]:\n    print(f\"{w} kg: {safe_dose(w, 15, 500)} mg\")\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\n10 kg: 150 mg\n20 kg: 300 mg\n40 kg: 500 mg\n```\n\n40 kg ಮಗುವಿಗೆ 15 × 40 = 600 mg ಸಿಗುತ್ತಿತ್ತು, ಆದರೆ function ಅದನ್ನು 500 ಕ್ಕೆ ನಿಲ್ಲಿಸಿತು. Functions, `if` ಮತ್ತು loops ಒಟ್ಟಿಗೆ: ನಾಲ್ಕು lines ನಲ್ಲಿ ಇಡೀ Unit II."
+    }
+  ],
+  "walkthrough": {
+    "intro": "ಈ program ಎರಡು functions ಮತ್ತು ಒಂದು loop ಬಳಸಿ, 1.70 m height ಇರುವ ಮೂರು patients ನ BMI ಮತ್ತು category ಲೆಕ್ಕ ಹಾಕುತ್ತೆ.",
+    "keyTerms": [
+      {
+        "meaning": "Height ನ square (2 ರ ಘಾತ)."
+      },
+      {
+        "meaning": "Category ಹಿಂದೆ ಕಳಿಸಿ function ಮುಗಿಸು."
+      },
+      {
+        "meaning": "ಮೇಲಿನ ಯಾವ condition ಕೂಡ True ಆಗದಿದ್ದಾಗ ಮಾತ್ರ ಇಲ್ಲಿಗೆ ಬರುತ್ತೆ."
+      },
+      {
+        "meaning": "BMI ಅನ್ನು ಒಂದು decimal place ಜೊತೆ ತೋರಿಸು."
+      }
+    ],
+    "steps": [
+      {
+        "say": "ಇದು ಒಂದು ಚಿಕ್ಕ, ಪೂರ್ಣ program: ಎರಡು functions ಕೆಲಸ ಮಾಡುತ್ತವೆ, ಒಂದು loop ಅವನ್ನು ಮೂರು patients ಗೆ run ಮಾಡುತ್ತೆ."
+      },
+      {
+        "say": "Comment program ನ ಹೆಸರು ಹೇಳುತ್ತೆ."
+      },
+      {
+        "say": "def, bmi function ಮಾಡುತ್ತೆ: weight ಭಾಗಿಸು height ನ square. Python ಅದನ್ನು ಆಮೇಲೆಗಾಗಿ ನೆನಪಿಟ್ಟುಕೊಳ್ಳುತ್ತೆ."
+      },
+      {
+        "say": "def, category function ಮಾಡುತ್ತೆ, ಅದು number ಗೆ ಒಂದು ಪದ return ಮಾಡುತ್ತೆ. ಇನ್ನೂ ಏನೂ run ಆಗಲ್ಲ."
+      },
+      {
+        "say": "Loop ಮೊದಲ weight ಇಂದ ಶುರುವಾಗುತ್ತೆ, ಐವತ್ತು kilogram."
+      },
+      {
+        "say": "bmi ಅನ್ನು ಐವತ್ತು ಮತ್ತು ಒಂದು ಪಾಯಿಂಟ್ ಏಳು ಜೊತೆ call ಮಾಡಲಾಗುತ್ತೆ. ಅದು ಸುಮಾರು ಹದಿನೇಳು ಪಾಯಿಂಟ್ ಮೂರು return ಮಾಡುತ್ತೆ."
+      },
+      {
+        "say": "Category function ನಲ್ಲಿ ಹದಿನೇಳು ಪಾಯಿಂಟ್ ಮೂರು, ಹದಿನೆಂಟು ಪಾಯಿಂಟ್ ಐದಕ್ಕಿಂತ ಕಡಿಮೆ, ಅದಕ್ಕೇ ಅದು Underweight return ಮಾಡುತ್ತೆ, function ಅಲ್ಲೇ ಮುಗಿಯುತ್ತೆ."
+      },
+      {
+        "say": "print ಎಲ್ಲವನ್ನೂ ಒಂದು decimal place ಜೊತೆ ಸೇರಿಸಿ ತೋರಿಸುತ್ತೆ."
+      },
+      {
+        "say": "ಮುಂದೆ, ಅರವತ್ತೆಂಟು kilogram: BMI ಇಪ್ಪತ್ಮೂರು ಪಾಯಿಂಟ್ ಐದು. ಇದು ಹದಿನೆಂಟು ಪಾಯಿಂಟ್ ಐದಕ್ಕಿಂತ ಕಡಿಮೆ ಇಲ್ಲ, ಆದರೆ ಇಪ್ಪತ್ತೈದಕ್ಕಿಂತ ಕಡಿಮೆ, ಅದಕ್ಕೇ: Normal."
+      },
+      {
+        "say": "ಕೊನೆಗೆ, ತೊಂಬತ್ತು kilogram: BMI ಮೂವತ್ತೊಂದು ಪಾಯಿಂಟ್ ಒಂದು. ಮೂರರಲ್ಲಿ ಯಾವ condition ಕೂಡ True ಇಲ್ಲ, ಅದಕ್ಕೇ ಕೊನೆಯ return Obese ಕೊಡುತ್ತೆ."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Inputs ತಪ್ಪಾಗಿದ್ದರೆ calculators fail ಆಗುತ್ತವೆ. ಇವು ಅತ್ಯಂತ ಸಾಮಾನ್ಯ ಎರಡು errors.",
+    "examples": [
+      {
+        "title": "Zero height",
+        "md": "Zero ಇಂದ ಭಾಗಿಸುವುದು ಅಸಾಧ್ಯ. ಮೊದಲು input check ಮಾಡಿ, ಉದಾ. `if height_m <= 0: return 0`, ಅಥವಾ user ಗೆ ಮತ್ತೆ ಕೇಳಿ."
+      },
+      {
+        "title": "ಇನ್ನೂ text ಆಗಿರುವ number",
+        "md": "`input()` ಯಾವಾಗಲೂ text ಕೊಡುತ್ತೆ. ಲೆಕ್ಕಕ್ಕೆ ಮುಂಚೆ ಬದಲಾಯಿಸಿ: `weight = float(input(\"Weight (kg): \"))`."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Height ಅನ್ನು centimetres ನಲ್ಲಿ ಹಾಕುವುದು, ಉದಾ. `bmi(68, 170)`",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ BMI 0.0024 ಬರುತ್ತೆ",
+      "fix": "BMI ಗೆ metres ಬೇಕು: 170 cm ಅಂದರೆ 1.70 m. ಮೊದಲು 100 ಇಂದ ಭಾಗಿಸಿ."
+    },
+    {
+      "mistake": "`height_m ** 2` ಬದಲು `height_m * 2` ಬರೆಯುವುದು",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ BMI ತುಂಬಾ ಜಾಸ್ತಿ ಬರುತ್ತೆ",
+      "fix": "`* 2` ದ್ವಿಗುಣ ಮಾಡುತ್ತೆ; `** 2` square ಮಾಡುತ್ತೆ."
+    },
+    {
+      "mistake": "Clark's rule ನಲ್ಲಿ units ಬೆರೆಸುವುದು, ಉದಾ. kg ರೂಪದ (÷ 70) ಜೊತೆ pounds",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ dose ಎರಡು ಪಟ್ಟಿಗಿಂತ ಜಾಸ್ತಿ ಬರುತ್ತೆ",
+      "fix": "ಒಂದೇ unit ಇಡಿ: kg ಜೊತೆ 70, ಅಥವಾ pounds ಜೊತೆ 150. Unit ಅನ್ನು parameter ಹೆಸರಿನಲ್ಲಿ ಇಡಿ: `weight_kg`."
+    },
+    {
+      "mistake": "Calculator function ನಲ್ಲಿ return ಬದಲು print ಮಾಡುವುದು",
+      "see": "ಮೊದಲು error ಇಲ್ಲ, ಆದರೆ ಫಲಿತಾಂಶವನ್ನು label ಅಥವಾ loop ನಲ್ಲಿ ಬಳಸಲಾಗಲ್ಲ",
+      "fix": "Number return ಮಾಡಿ; ಬೇಕಾದ ಕಡೆ print ಮಾಡಿ."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "BMI function ಪೂರ್ಣಗೊಳಿಸಿ",
+      "md": "**bmi()** weight ಭಾಗಿಸು height ನ square ಅನ್ನು return ಮಾಡಲಿ. Print ಮೊದಲೇ ಬರೆದಿದೆ; output ಸರಿಯಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "Height ನ square ಅಂದರೆ height_m ** 2.",
+        "    return weight_kg / height_m ** 2"
+      ]
+    },
+    {
+      "title": "Category return ಮಾಡಿ",
+      "md": "**bmi_category()** ಅನ್ನು **if-elif-else** ಇಂದ ಪೂರ್ಣಗೊಳಿಸಿ: 18.5 ಕ್ಕಿಂತ ಕಡಿಮೆ \"Underweight\", 25 ಕ್ಕಿಂತ ಕಡಿಮೆ \"Normal\", 30 ಕ್ಕಿಂತ ಕಡಿಮೆ \"Overweight\", ಇಲ್ಲದಿದ್ದರೆ \"Obese\". 26.1 ಕ್ಕೆ output ಸರಿಯಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "ಪ್ರತಿ branch ಒಂದು ಪದ return ಮಾಡುತ್ತೆ: return \"Normal\"",
+        "    if value < 18.5:\n        return \"Underweight\"\n    elif value < 25:\n        return \"Normal\"\n    elif value < 30:\n        return \"Overweight\"\n    else:\n        return \"Obese\""
+      ]
+    },
+    {
+      "title": "Young's rule",
+      "md": "age ÷ (age + 12) × adult dose ಅನ್ನು return ಮಾಡುವ **youngs_rule(age, adult_dose)** ಬರೆಯಿರಿ. 4 ವರ್ಷದ ಮಗು ಮತ್ತು 500 mg adult dose ಗೆ output ಸರಿಯಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "Brackets ಮುಖ್ಯ: age / (age + 12) * adult_dose",
+        "def youngs_rule(age, adult_dose):\n    return age / (age + 12) * adult_dose"
+      ]
+    },
+    {
+      "title": "Bug ಹುಡುಕಿ",
+      "md": "Clark's rule ಪ್ರಕಾರ, 400 mg adult dose ಇರುವ 35 kg ಮಗುವಿಗೆ 35 ÷ 70 × 400 = 200 mg ಸಿಗಬೇಕು. ಈ program 0 mg ಅಂತ ಹೇಳುತ್ತೆ, error ಇಲ್ಲ. Output ಸರಿಯಾಗಿ ಹೀಗೇ ಬರುವ ಹಾಗೆ ಸರಿ ಮಾಡಿ:",
+      "hints": [
+        "Brackets ಇಂದ Python ಯಾವುದರಿಂದ ಭಾಗಿಸುತ್ತಿದೆ ಅಂತ ಲೆಕ್ಕ ಹಾಕಿ.",
+        "Brackets ಇಂದ ಅದು 28000 ಇಂದ ಭಾಗಿಸುತ್ತೆ. weight_kg / 70 * adult_dose ಅಂತ ಬರೆಯಿರಿ."
+      ],
+      "solutionNote": "Brackets ಜೊತೆ Python 35 ಅನ್ನು 70 × 400 = 28000 ಇಂದ ಭಾಗಿಸಿ 0.00125 ಕೊಟ್ಟಿತು, ಅದು round ಆಗಿ 0. Brackets ಇಲ್ಲದೆ ಅದು ಮೊದಲು 70 ಇಂದ ಭಾಗಿಸಿ, ಆಮೇಲೆ 400 ಇಂದ ಗುಣಿಸುತ್ತೆ."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "ಒಬ್ಬ patient ನ weight 72 kg, height 1.80 m. BMI ಎಷ್ಟು?",
+      "why": "72 ÷ 1.80² = 72 ÷ 3.24 ≈ 22.2."
+    },
+    {
+      "q": "Young's rule ನ formula ಯಾವುದು?",
+      "why": "Young's rule ವಯಸ್ಸು ಬಳಸುತ್ತೆ: age ÷ (age + 12) × adult dose."
+    },
+    {
+      "q": "ಈ lesson ನ bmi_category function ಇಂದ bmi_category(30) ಏನು return ಮಾಡುತ್ತೆ?",
+      "why": "30 < 30 False, ಅದಕ್ಕೇ ಯಾವ condition ಕೂಡ True ಇಲ್ಲ, else branch Obese return ಮಾಡುತ್ತೆ."
+    },
+    {
+      "q": "round(166.67) ಎಷ್ಟು?",
+      "why": "round() ಹತ್ತಿರದ ಪೂರ್ಣ number ಕೊಡುತ್ತೆ: 167."
+    },
+    {
+      "q": "ಈ lesson ಪ್ರತಿ ಲೆಕ್ಕವನ್ನು ಬೇರೆ function ನಲ್ಲಿ ಯಾಕೆ ಇಡುತ್ತೆ?",
+      "why": "ಚಿಕ್ಕ ಹೆಸರಿನ functions ಮತ್ತೆ ಬಳಸಬಹುದು, test ಮಾಡುವುದು ಸುಲಭ, ಮತ್ತು ಎಲ್ಲಾ callers ಗೆ ಒಮ್ಮೆಲೇ ಸರಿಯಾಗುತ್ತವೆ."
+    },
+    {
+      "q": "1.70 ** 2 ಏನು ಲೆಕ್ಕ ಹಾಕುತ್ತೆ?",
+      "why": "** ಘಾತ operator: 1.70 ನ square."
+    }
+  ],
+  "exam": {
+    "note": "Practice ಗಾಗಿ important questions. University ನ ನಿಜವಾದ questions ಬೇರೆ ಇರಬಹುದು."
+  },
+  "mindmap": {
+    "label": "Lesson 2.6 · Dosage ಮತ್ತು BMI calculators",
+    "children": [
+      {
+        "label": "Plan",
+        "children": [
+          {
+            "label": "ಒಂದು function, ಒಂದು ಕೆಲಸ"
+          },
+          {
+            "label": "ಲೆಕ್ಕ → ವರ್ಗೀಕರಣ → ತೋರಿಸು"
+          }
+        ]
+      },
+      {
+        "label": "BMI",
+        "children": [
+          {
+            "label": "weight / height ** 2"
+          },
+          {
+            "label": "if-elif-else category"
+          },
+          {
+            "label": "Return ಮಾಡಿ, print ಅಲ್ಲ"
+          }
+        ]
+      },
+      {
+        "label": "ಮಕ್ಕಳ dose",
+        "children": [
+          {
+            "label": "Young's: age/(age+12) × adult"
+          },
+          {
+            "label": "Clark's: kg/70 × adult"
+          },
+          {
+            "label": "round()"
+          }
+        ]
+      },
+      {
+        "label": "Safety",
+        "children": [
+          {
+            "label": "weight <= 0 ತಿರಸ್ಕರಿಸಿ"
+          },
+          {
+            "label": "Maximum ನಲ್ಲಿ ನಿಲ್ಲಿಸಿ"
+          },
+          {
+            "label": "ಬೇಗ return"
+          }
+        ]
+      },
+      {
+        "label": "Loop",
+        "children": [
+          {
+            "label": "ಹಲವು patients"
+          },
+          {
+            "label": "while True menu"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "ZeroDivisionError"
+          },
+          {
+            "label": "TypeError: str input"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "Program ಅನ್ನು **ಚಿಕ್ಕ functions** ಆಗಿ plan ಮಾಡಿ, ಪ್ರತಿಯೊಂದಕ್ಕೂ ಒಂದು ಕೆಲಸ: ಲೆಕ್ಕ, ವರ್ಗೀಕರಣ, ತೋರಿಸುವುದು.",
+    "**BMI** = weight (kg) ÷ height (m)², `weight_kg / height_m ** 2` ಅಂತ ಬರೆಯುತ್ತೇವೆ; ಒಂದು **if-elif-else** function ಅದರ category return ಮಾಡುತ್ತೆ.",
+    "**Young's rule** (age ÷ (age + 12) × adult dose) ಮತ್ತು **Clark's rule** (kg ÷ 70 × adult dose) ಒಂದೊಂದು line ನ functions ಆಗುತ್ತವೆ; **round()** ಫಲಿತಾಂಶ ಅಚ್ಚುಕಟ್ಟು ಮಾಡುತ್ತೆ.",
+    "**Safety checks** ಅನ್ನು function ಒಳಗೆ ಇಡಿ: ಅಸಾಧ್ಯ inputs ತಿರಸ್ಕರಿಸಿ, doses ಗೆ limit ಹಾಕಿ, ಬೇಗ `return` ಇಂದ.",
+    "ಒಂದು **loop** ಅದೇ functions ಅನ್ನು ಹಲವು patients ಗೆ run ಮಾಡಬಹುದು, ಅಥವಾ `while True` ಮತ್ತು `break` ಇಂದ **menu** ತೋರಿಸಬಹುದು."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "ಎರಡು inputs: ಅರವತ್ತೆಂಟು kilogram, ಮತ್ತು ಒಂದು ಪಾಯಿಂಟ್ ಏಳು metre."
+        },
+        {
+          "say": "ಇವು bmi function ಗೆ ಹೋಗುತ್ತವೆ, ಅದು weight ಅನ್ನು height ನ square ಇಂದ ಭಾಗಿಸುತ್ತೆ."
+        },
+        {
+          "say": "ಅದು ಇಪ್ಪತ್ಮೂರು ಪಾಯಿಂಟ್ ಐದು return ಮಾಡುತ್ತೆ."
+        },
+        {
+          "say": "ಆ number category function ಗೆ ಹೋಗುತ್ತೆ. ಅದು ಹದಿನೆಂಟು ಪಾಯಿಂಟ್ ಐದಕ್ಕಿಂತ ಕಡಿಮೆ ಇಲ್ಲ, ಆದರೆ ಇಪ್ಪತ್ತೈದಕ್ಕಿಂತ ಕಡಿಮೆ."
+        },
+        {
+          "say": "ಅದಕ್ಕೇ ಅದು Normal return ಮಾಡುತ್ತೆ, program ಉತ್ತರ print ಮಾಡುತ್ತೆ. ಎರಡು ಚಿಕ್ಕ functions, ಒಂದು ಸ್ಪಷ್ಟ ಫಲಿತಾಂಶ."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "kg ನ weight ಭಾಗಿಸು metres ನ height ನ square. Height ಗೆ ತಕ್ಕಂತೆ weight ಆರೋಗ್ಯಕರವಾಗಿದೆಯಾ ಅಂತ ನೋಡಲು ಬಳಸುತ್ತಾರೆ."
+    },
+    {
+      "meaning": "Child dose = age ÷ (age + 12) × adult dose, 1 ರಿಂದ 12 ವರ್ಷದ ಮಕ್ಕಳಿಗೆ."
+    },
+    {
+      "meaning": "Child dose = kg ನಲ್ಲಿ weight ÷ 70 × adult dose (ಅಥವಾ pounds ನಲ್ಲಿ weight ÷ 150 × adult dose)."
+    },
+    {
+      "meaning": "Number ಅನ್ನು ಹತ್ತಿರದ ಪೂರ್ಣ number ಗೆ, ಅಥವಾ ಕೆಲವು decimal places ಗೆ round ಮಾಡುತ್ತೆ: round(142.86) ಅಂದರೆ 143."
+    },
+    {
+      "meaning": "Loop ನಲ್ಲಿ choices ನ list ತೋರಿಸಿ, user ಆರಿಸಿದ್ದನ್ನು run ಮಾಡಿ, user exit ಆರಿಸುವವರೆಗೆ ಪುನರಾವರ್ತಿಸುವ program."
+    }
+  ]
+}

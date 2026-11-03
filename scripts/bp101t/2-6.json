@@ -1,0 +1,174 @@
+{
+  "course": "bp101t",
+  "lesson": "2-6",
+  "voices": {
+    "en": "Ritu",
+    "hi": "Ritu",
+    "kn": "Chaitra"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This is a small, complete program: two functions do the work, and a loop runs them for three patients.",
+        "The comment names the program.",
+        "def creates the bmi function: weight divided by height squared. Python remembers it for later.",
+        "def creates the category function, which returns a word for the number. Nothing runs yet.",
+        "The loop starts with the first weight, fifty kilograms.",
+        "bmi is called with fifty and one point seven. It returns about seventeen point three.",
+        "In the category function, seventeen point three is less than eighteen point five, so it returns Underweight, and the function ends there.",
+        "print puts it all together, with one decimal place.",
+        "Next, sixty-eight kilograms: BMI twenty-three point five. It is not under eighteen point five, but it is under twenty-five, so: Normal.",
+        "Last, ninety kilograms: BMI thirty-one point one. None of the three conditions is True, so the last return gives Obese."
+      ],
+      "display": [
+        "This is a small, complete program: two functions do the work, and a loop runs them for three patients.",
+        "The comment names the program.",
+        "def creates the bmi function: weight divided by height squared. Python remembers it for later.",
+        "def creates the category function, which returns a word for the number. Nothing runs yet.",
+        "The loop starts with the first weight, fifty kilograms.",
+        "bmi is called with fifty and one point seven. It returns about seventeen point three.",
+        "In the category function, seventeen point three is less than eighteen point five, so it returns Underweight, and the function ends there.",
+        "print puts it all together, with one decimal place.",
+        "Next, sixty-eight kilograms: BMI twenty-three point five. It is not under eighteen point five, but it is under twenty-five, so: Normal.",
+        "Last, ninety kilograms: BMI thirty-one point one. None of the three conditions is True, so the last return gives Obese."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह एक छोटा, पूरा program है: दो functions काम करते हैं, और एक loop उन्हें तीन patients के लिए चलाता है।",
+        "Comment program का नाम बताता है।",
+        "def, bmi function बनाता है: weight भाग height का square। पाइथन उसे बाद के लिए याद रखता है।",
+        "def, category function बनाता है, जो number के लिए एक शब्द return करता है। अभी कुछ नहीं चलता।",
+        "Loop पहले weight से शुरू होता है, पचास kilogram।",
+        "bmi को पचास और एक दशमलव सात के साथ call किया जाता है। यह लगभग सत्रह दशमलव तीन return करता है।",
+        "Category function में सत्रह दशमलव तीन, अठारह दशमलव पाँच से कम है, इसलिए यह Underweight return करता है, और function वहीं खत्म।",
+        "print सब कुछ एक decimal place के साथ जोड़कर दिखाता है।",
+        "अगला, अड़सठ kilogram: BMI तेईस दशमलव पाँच। यह अठारह दशमलव पाँच से कम नहीं, पर पच्चीस से कम है, इसलिए: Normal।",
+        "आखिर में, नब्बे kilogram: BMI इकतीस दशमलव एक। तीनों में से कोई condition True नहीं, इसलिए आखिरी return Obese देता है।"
+      ],
+      "display": [
+        "यह एक छोटा, पूरा program है: दो functions काम करते हैं, और एक loop उन्हें तीन patients के लिए चलाता है।",
+        "Comment program का नाम बताता है।",
+        "def, bmi function बनाता है: weight भाग height का square। Python उसे बाद के लिए याद रखता है।",
+        "def, category function बनाता है, जो number के लिए एक शब्द return करता है। अभी कुछ नहीं चलता।",
+        "Loop पहले weight से शुरू होता है, पचास kilogram।",
+        "bmi को पचास और एक दशमलव सात के साथ call किया जाता है। यह लगभग सत्रह दशमलव तीन return करता है।",
+        "Category function में सत्रह दशमलव तीन, अठारह दशमलव पाँच से कम है, इसलिए यह Underweight return करता है, और function वहीं खत्म।",
+        "print सब कुछ एक decimal place के साथ जोड़कर दिखाता है।",
+        "अगला, अड़सठ kilogram: BMI तेईस दशमलव पाँच। यह अठारह दशमलव पाँच से कम नहीं, पर पच्चीस से कम है, इसलिए: Normal।",
+        "आखिर में, नब्बे kilogram: BMI इकतीस दशमलव एक। तीनों में से कोई condition True नहीं, इसलिए आखिरी return Obese देता है।"
+      ],
+      "displayHinglish": [
+        "Yeh ek chhota, poora program hai: do functions kaam karte hain, aur ek loop unhe teen patients ke liye chalaata hai.",
+        "Comment program ka naam batata hai.",
+        "def, bmi function banaata hai: weight bhaag height ka square. Python use baad ke liye yaad rakhta hai.",
+        "def, category function banaata hai, jo number ke liye ek shabd return karta hai. Abhi kuch nahi chalta.",
+        "Loop pehle weight se shuru hota hai, pachaas kilogram.",
+        "bmi ko pachaas aur ek dashamlav saat ke saath call kiya jaata hai. Yeh lagbhag satrah dashamlav teen return karta hai.",
+        "Category function mein satrah dashamlav teen, athaarah dashamlav paanch se kam hai, isliye yeh Underweight return karta hai, aur function wahin khatam.",
+        "print sab kuch ek decimal place ke saath jodkar dikhaata hai.",
+        "Agla, adsath kilogram: BMI teis dashamlav paanch. Yeh athaarah dashamlav paanch se kam nahi, par pachchees se kam hai, isliye: Normal.",
+        "Aakhir mein, nabbe kilogram: BMI iktees dashamlav ek. Teenon mein se koi condition True nahi, isliye aakhri return Obese deta hai."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಇದು ಒಂದು ಚಿಕ್ಕ, ಪೂರ್ಣ program: ಎರಡು functions ಕೆಲಸ ಮಾಡುತ್ತವೆ, ಒಂದು loop ಅವನ್ನು ಮೂರು patients ಗೆ run ಮಾಡುತ್ತೆ.",
+        "Comment program ನ ಹೆಸರು ಹೇಳುತ್ತೆ.",
+        "def, bmi function ಮಾಡುತ್ತೆ: weight ಭಾಗಿಸು height ನ square. ಪೈಥಾನ್ ಅದನ್ನು ಆಮೇಲೆಗಾಗಿ ನೆನಪಿಟ್ಟುಕೊಳ್ಳುತ್ತೆ.",
+        "def, category function ಮಾಡುತ್ತೆ, ಅದು number ಗೆ ಒಂದು ಪದ return ಮಾಡುತ್ತೆ. ಇನ್ನೂ ಏನೂ run ಆಗಲ್ಲ.",
+        "Loop ಮೊದಲ weight ಇಂದ ಶುರುವಾಗುತ್ತೆ, ಐವತ್ತು kilogram.",
+        "bmi ಅನ್ನು ಐವತ್ತು ಮತ್ತು ಒಂದು ಪಾಯಿಂಟ್ ಏಳು ಜೊತೆ call ಮಾಡಲಾಗುತ್ತೆ. ಅದು ಸುಮಾರು ಹದಿನೇಳು ಪಾಯಿಂಟ್ ಮೂರು return ಮಾಡುತ್ತೆ.",
+        "Category function ನಲ್ಲಿ ಹದಿನೇಳು ಪಾಯಿಂಟ್ ಮೂರು, ಹದಿನೆಂಟು ಪಾಯಿಂಟ್ ಐದಕ್ಕಿಂತ ಕಡಿಮೆ, ಅದಕ್ಕೇ ಅದು Underweight return ಮಾಡುತ್ತೆ, function ಅಲ್ಲೇ ಮುಗಿಯುತ್ತೆ.",
+        "print ಎಲ್ಲವನ್ನೂ ಒಂದು decimal place ಜೊತೆ ಸೇರಿಸಿ ತೋರಿಸುತ್ತೆ.",
+        "ಮುಂದೆ, ಅರವತ್ತೆಂಟು kilogram: BMI ಇಪ್ಪತ್ಮೂರು ಪಾಯಿಂಟ್ ಐದು. ಇದು ಹದಿನೆಂಟು ಪಾಯಿಂಟ್ ಐದಕ್ಕಿಂತ ಕಡಿಮೆ ಇಲ್ಲ, ಆದರೆ ಇಪ್ಪತ್ತೈದಕ್ಕಿಂತ ಕಡಿಮೆ, ಅದಕ್ಕೇ: Normal.",
+        "ಕೊನೆಗೆ, ತೊಂಬತ್ತು kilogram: BMI ಮೂವತ್ತೊಂದು ಪಾಯಿಂಟ್ ಒಂದು. ಮೂರರಲ್ಲಿ ಯಾವ condition ಕೂಡ True ಇಲ್ಲ, ಅದಕ್ಕೇ ಕೊನೆಯ return Obese ಕೊಡುತ್ತೆ."
+      ],
+      "display": [
+        "ಇದು ಒಂದು ಚಿಕ್ಕ, ಪೂರ್ಣ program: ಎರಡು functions ಕೆಲಸ ಮಾಡುತ್ತವೆ, ಒಂದು loop ಅವನ್ನು ಮೂರು patients ಗೆ run ಮಾಡುತ್ತೆ.",
+        "Comment program ನ ಹೆಸರು ಹೇಳುತ್ತೆ.",
+        "def, bmi function ಮಾಡುತ್ತೆ: weight ಭಾಗಿಸು height ನ square. Python ಅದನ್ನು ಆಮೇಲೆಗಾಗಿ ನೆನಪಿಟ್ಟುಕೊಳ್ಳುತ್ತೆ.",
+        "def, category function ಮಾಡುತ್ತೆ, ಅದು number ಗೆ ಒಂದು ಪದ return ಮಾಡುತ್ತೆ. ಇನ್ನೂ ಏನೂ run ಆಗಲ್ಲ.",
+        "Loop ಮೊದಲ weight ಇಂದ ಶುರುವಾಗುತ್ತೆ, ಐವತ್ತು kilogram.",
+        "bmi ಅನ್ನು ಐವತ್ತು ಮತ್ತು ಒಂದು ಪಾಯಿಂಟ್ ಏಳು ಜೊತೆ call ಮಾಡಲಾಗುತ್ತೆ. ಅದು ಸುಮಾರು ಹದಿನೇಳು ಪಾಯಿಂಟ್ ಮೂರು return ಮಾಡುತ್ತೆ.",
+        "Category function ನಲ್ಲಿ ಹದಿನೇಳು ಪಾಯಿಂಟ್ ಮೂರು, ಹದಿನೆಂಟು ಪಾಯಿಂಟ್ ಐದಕ್ಕಿಂತ ಕಡಿಮೆ, ಅದಕ್ಕೇ ಅದು Underweight return ಮಾಡುತ್ತೆ, function ಅಲ್ಲೇ ಮುಗಿಯುತ್ತೆ.",
+        "print ಎಲ್ಲವನ್ನೂ ಒಂದು decimal place ಜೊತೆ ಸೇರಿಸಿ ತೋರಿಸುತ್ತೆ.",
+        "ಮುಂದೆ, ಅರವತ್ತೆಂಟು kilogram: BMI ಇಪ್ಪತ್ಮೂರು ಪಾಯಿಂಟ್ ಐದು. ಇದು ಹದಿನೆಂಟು ಪಾಯಿಂಟ್ ಐದಕ್ಕಿಂತ ಕಡಿಮೆ ಇಲ್ಲ, ಆದರೆ ಇಪ್ಪತ್ತೈದಕ್ಕಿಂತ ಕಡಿಮೆ, ಅದಕ್ಕೇ: Normal.",
+        "ಕೊನೆಗೆ, ತೊಂಬತ್ತು kilogram: BMI ಮೂವತ್ತೊಂದು ಪಾಯಿಂಟ್ ಒಂದು. ಮೂರರಲ್ಲಿ ಯಾವ condition ಕೂಡ True ಇಲ್ಲ, ಅದಕ್ಕೇ ಕೊನೆಯ return Obese ಕೊಡುತ್ತೆ."
+      ]
+    },
+    {
+      "id": "anim-pipeline",
+      "prefix": "anim-pipeline-",
+      "lang": "en",
+      "tts": [
+        "Two inputs: sixty-eight kilograms, and one point seven metres.",
+        "They go into the bmi function, which divides the weight by the height squared.",
+        "It returns twenty-three point five.",
+        "That number goes into the category function. It is not under eighteen point five, but it is under twenty-five.",
+        "So it returns Normal, and the program prints the answer. Two small functions, one clear result."
+      ],
+      "display": [
+        "Two inputs: sixty-eight kilograms, and one point seven metres.",
+        "They go into the bmi function, which divides the weight by the height squared.",
+        "It returns twenty-three point five.",
+        "That number goes into the category function. It is not under eighteen point five, but it is under twenty-five.",
+        "So it returns Normal, and the program prints the answer. Two small functions, one clear result."
+      ]
+    },
+    {
+      "id": "anim-pipeline",
+      "prefix": "anim-pipeline-",
+      "lang": "hi",
+      "tts": [
+        "दो inputs: अड़सठ kilogram, और एक दशमलव सात metre।",
+        "ये bmi function में जाते हैं, जो weight को height के square से भाग देता है।",
+        "यह तेईस दशमलव पाँच return करता है।",
+        "वह number category function में जाता है। यह अठारह दशमलव पाँच से कम नहीं, पर पच्चीस से कम है।",
+        "इसलिए यह Normal return करता है, और program जवाब print करता है। दो छोटे functions, एक साफ़ नतीजा।"
+      ],
+      "display": [
+        "दो inputs: अड़सठ kilogram, और एक दशमलव सात metre।",
+        "ये bmi function में जाते हैं, जो weight को height के square से भाग देता है।",
+        "यह तेईस दशमलव पाँच return करता है।",
+        "वह number category function में जाता है। यह अठारह दशमलव पाँच से कम नहीं, पर पच्चीस से कम है।",
+        "इसलिए यह Normal return करता है, और program जवाब print करता है। दो छोटे functions, एक साफ़ नतीजा।"
+      ],
+      "displayHinglish": [
+        "Do inputs: adsath kilogram, aur ek dashamlav saat metre.",
+        "Yeh bmi function mein jaate hain, jo weight ko height ke square se bhaag deta hai.",
+        "Yeh teis dashamlav paanch return karta hai.",
+        "Woh number category function mein jaata hai. Yeh athaarah dashamlav paanch se kam nahi, par pachchees se kam hai.",
+        "Isliye yeh Normal return karta hai, aur program jawaab print karta hai. Do chhote functions, ek saaf nateeja."
+      ]
+    },
+    {
+      "id": "anim-pipeline",
+      "prefix": "anim-pipeline-",
+      "lang": "kn",
+      "tts": [
+        "ಎರಡು inputs: ಅರವತ್ತೆಂಟು kilogram, ಮತ್ತು ಒಂದು ಪಾಯಿಂಟ್ ಏಳು metre.",
+        "ಇವು bmi function ಗೆ ಹೋಗುತ್ತವೆ, ಅದು weight ಅನ್ನು height ನ square ಇಂದ ಭಾಗಿಸುತ್ತೆ.",
+        "ಅದು ಇಪ್ಪತ್ಮೂರು ಪಾಯಿಂಟ್ ಐದು return ಮಾಡುತ್ತೆ.",
+        "ಆ number category function ಗೆ ಹೋಗುತ್ತೆ. ಅದು ಹದಿನೆಂಟು ಪಾಯಿಂಟ್ ಐದಕ್ಕಿಂತ ಕಡಿಮೆ ಇಲ್ಲ, ಆದರೆ ಇಪ್ಪತ್ತೈದಕ್ಕಿಂತ ಕಡಿಮೆ.",
+        "ಅದಕ್ಕೇ ಅದು Normal return ಮಾಡುತ್ತೆ, program ಉತ್ತರ print ಮಾಡುತ್ತೆ. ಎರಡು ಚಿಕ್ಕ functions, ಒಂದು ಸ್ಪಷ್ಟ ಫಲಿತಾಂಶ."
+      ],
+      "display": [
+        "ಎರಡು inputs: ಅರವತ್ತೆಂಟು kilogram, ಮತ್ತು ಒಂದು ಪಾಯಿಂಟ್ ಏಳು metre.",
+        "ಇವು bmi function ಗೆ ಹೋಗುತ್ತವೆ, ಅದು weight ಅನ್ನು height ನ square ಇಂದ ಭಾಗಿಸುತ್ತೆ.",
+        "ಅದು ಇಪ್ಪತ್ಮೂರು ಪಾಯಿಂಟ್ ಐದು return ಮಾಡುತ್ತೆ.",
+        "ಆ number category function ಗೆ ಹೋಗುತ್ತೆ. ಅದು ಹದಿನೆಂಟು ಪಾಯಿಂಟ್ ಐದಕ್ಕಿಂತ ಕಡಿಮೆ ಇಲ್ಲ, ಆದರೆ ಇಪ್ಪತ್ತೈದಕ್ಕಿಂತ ಕಡಿಮೆ.",
+        "ಅದಕ್ಕೇ ಅದು Normal return ಮಾಡುತ್ತೆ, program ಉತ್ತರ print ಮಾಡುತ್ತೆ. ಎರಡು ಚಿಕ್ಕ functions, ಒಂದು ಸ್ಪಷ್ಟ ಫಲಿತಾಂಶ."
+      ]
+    }
+  ]
+}
