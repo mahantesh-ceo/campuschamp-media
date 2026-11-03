@@ -1,0 +1,188 @@
+{
+  "course": "bp101t",
+  "lesson": "2-4",
+  "voices": {
+    "en": "Ritu",
+    "hi": "Ritu",
+    "kn": "Chaitra"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program repeats until a condition becomes False. We don't know in advance how many rounds that will take.",
+        "The comment states the question.",
+        "amount starts at one hundred milligrams.",
+        "hours starts at zero.",
+        "while checks: is the amount more than ten? One hundred is, so Python enters the block.",
+        "The amount is halved, to fifty.",
+        "Four hours have passed.",
+        "Back to the while line. Fifty is still more than ten, so it goes round again: twenty-five, then twelve point five. Hours grow to twelve.",
+        "Twelve point five is still more than ten, so one more round: six point two five milligrams, at sixteen hours.",
+        "Now: is six point two five more than ten? No. The condition is False, so the loop ends.",
+        "print shows the hours.",
+        "And the amount that is left."
+      ],
+      "display": [
+        "This program repeats until a condition becomes False. We don't know in advance how many rounds that will take.",
+        "The comment states the question.",
+        "amount starts at one hundred milligrams.",
+        "hours starts at zero.",
+        "while checks: is the amount more than ten? One hundred is, so Python enters the block.",
+        "The amount is halved, to fifty.",
+        "Four hours have passed.",
+        "Back to the while line. Fifty is still more than ten, so it goes round again: twenty-five, then twelve point five. Hours grow to twelve.",
+        "Twelve point five is still more than ten, so one more round: six point two five milligrams, at sixteen hours.",
+        "Now: is six point two five more than ten? No. The condition is False, so the loop ends.",
+        "print shows the hours.",
+        "And the amount that is left."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह program तब तक दोहराता है जब तक कोई condition False न हो जाए। हमें पहले से नहीं पता कि कितने rounds लगेंगे।",
+        "Comment सवाल बताता है।",
+        "amount सौ milligram से शुरू होता है।",
+        "hours zero से शुरू होता है।",
+        "while जाँचता है: क्या amount दस से ज़्यादा है? सौ है, इसलिए पाइथन block में जाता है।",
+        "Amount आधा होकर पचास हो जाता है।",
+        "चार घंटे बीत गए।",
+        "वापस while line पर। पचास अब भी दस से ज़्यादा है, इसलिए फिर घूमता है: पच्चीस, फिर बारह दशमलव पाँच। Hours बढ़कर बारह।",
+        "बारह दशमलव पाँच अब भी दस से ज़्यादा है, इसलिए एक round और: छह दशमलव दो पाँच milligram, सोलह घंटे पर।",
+        "अब: क्या छह दशमलव दो पाँच, दस से ज़्यादा है? नहीं। Condition False है, इसलिए loop खत्म।",
+        "print घंटे दिखाता है।",
+        "और जितना amount बचा है।"
+      ],
+      "display": [
+        "यह program तब तक दोहराता है जब तक कोई condition False न हो जाए। हमें पहले से नहीं पता कि कितने rounds लगेंगे।",
+        "Comment सवाल बताता है।",
+        "amount सौ milligram से शुरू होता है।",
+        "hours zero से शुरू होता है।",
+        "while जाँचता है: क्या amount दस से ज़्यादा है? सौ है, इसलिए Python block में जाता है।",
+        "Amount आधा होकर पचास हो जाता है।",
+        "चार घंटे बीत गए।",
+        "वापस while line पर। पचास अब भी दस से ज़्यादा है, इसलिए फिर घूमता है: पच्चीस, फिर बारह दशमलव पाँच। Hours बढ़कर बारह।",
+        "बारह दशमलव पाँच अब भी दस से ज़्यादा है, इसलिए एक round और: छह दशमलव दो पाँच milligram, सोलह घंटे पर।",
+        "अब: क्या छह दशमलव दो पाँच, दस से ज़्यादा है? नहीं। Condition False है, इसलिए loop खत्म।",
+        "print घंटे दिखाता है।",
+        "और जितना amount बचा है।"
+      ],
+      "displayHinglish": [
+        "Yeh program tab tak dohraata hai jab tak koi condition False na ho jaaye. Humein pehle se nahi pata ki kitne rounds lagenge.",
+        "Comment sawaal batata hai.",
+        "amount sau milligram se shuru hota hai.",
+        "hours zero se shuru hota hai.",
+        "while jaanchta hai: kya amount das se zyada hai? Sau hai, isliye Python block mein jaata hai.",
+        "Amount aadha hokar pachaas ho jaata hai.",
+        "Chaar ghante beet gaye.",
+        "Wapas while line par. Pachaas ab bhi das se zyada hai, isliye phir ghoomta hai: pachchees, phir baarah dashamlav paanch. Hours badhkar baarah.",
+        "Baarah dashamlav paanch ab bhi das se zyada hai, isliye ek round aur: chhah dashamlav do paanch milligram, solah ghante par.",
+        "Ab: kya chhah dashamlav do paanch, das se zyada hai? Nahi. Condition False hai, isliye loop khatam.",
+        "print ghante dikhaata hai.",
+        "Aur jitna amount bacha hai."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ program ಒಂದು condition False ಆಗುವವರೆಗೆ ಪುನರಾವರ್ತಿಸುತ್ತೆ. ಎಷ್ಟು ಸುತ್ತು ಬೇಕು ಅಂತ ಮುಂಚೆಯೇ ಗೊತ್ತಿಲ್ಲ.",
+        "Comment ಪ್ರಶ್ನೆಯನ್ನು ಹೇಳುತ್ತೆ.",
+        "amount ನೂರು milligram ಇಂದ ಶುರುವಾಗುತ್ತೆ.",
+        "hours zero ಇಂದ ಶುರುವಾಗುತ್ತೆ.",
+        "while check ಮಾಡುತ್ತೆ: amount ಹತ್ತಕ್ಕಿಂತ ಜಾಸ್ತಿ ಇದೆಯಾ? ನೂರು ಇದೆ, ಅದಕ್ಕೇ ಪೈಥಾನ್ block ಒಳಗೆ ಹೋಗುತ್ತೆ.",
+        "Amount ಅರ್ಧ ಆಗಿ ಐವತ್ತು ಆಗುತ್ತೆ.",
+        "ನಾಲ್ಕು ಗಂಟೆ ಕಳೆಯಿತು.",
+        "ಮತ್ತೆ while line ಗೆ. ಐವತ್ತು ಇನ್ನೂ ಹತ್ತಕ್ಕಿಂತ ಜಾಸ್ತಿ, ಅದಕ್ಕೇ ಮತ್ತೆ ಸುತ್ತುತ್ತೆ: ಇಪ್ಪತ್ತೈದು, ಆಮೇಲೆ ಹನ್ನೆರಡು ಪಾಯಿಂಟ್ ಐದು. Hours ಹನ್ನೆರಡಕ್ಕೆ ಬೆಳೆಯುತ್ತೆ.",
+        "ಹನ್ನೆರಡು ಪಾಯಿಂಟ್ ಐದು ಇನ್ನೂ ಹತ್ತಕ್ಕಿಂತ ಜಾಸ್ತಿ, ಅದಕ್ಕೇ ಇನ್ನೊಂದು ಸುತ್ತು: ಆರು ಪಾಯಿಂಟ್ ಎರಡು ಐದು milligram, ಹದಿನಾರು ಗಂಟೆಗೆ.",
+        "ಈಗ: ಆರು ಪಾಯಿಂಟ್ ಎರಡು ಐದು, ಹತ್ತಕ್ಕಿಂತ ಜಾಸ್ತಿ ಇದೆಯಾ? ಇಲ್ಲ. Condition False, ಅದಕ್ಕೇ loop ಮುಗಿಯುತ್ತೆ.",
+        "print ಗಂಟೆಗಳನ್ನು ತೋರಿಸುತ್ತೆ.",
+        "ಮತ್ತು ಉಳಿದ amount ಅನ್ನು."
+      ],
+      "display": [
+        "ಈ program ಒಂದು condition False ಆಗುವವರೆಗೆ ಪುನರಾವರ್ತಿಸುತ್ತೆ. ಎಷ್ಟು ಸುತ್ತು ಬೇಕು ಅಂತ ಮುಂಚೆಯೇ ಗೊತ್ತಿಲ್ಲ.",
+        "Comment ಪ್ರಶ್ನೆಯನ್ನು ಹೇಳುತ್ತೆ.",
+        "amount ನೂರು milligram ಇಂದ ಶುರುವಾಗುತ್ತೆ.",
+        "hours zero ಇಂದ ಶುರುವಾಗುತ್ತೆ.",
+        "while check ಮಾಡುತ್ತೆ: amount ಹತ್ತಕ್ಕಿಂತ ಜಾಸ್ತಿ ಇದೆಯಾ? ನೂರು ಇದೆ, ಅದಕ್ಕೇ Python block ಒಳಗೆ ಹೋಗುತ್ತೆ.",
+        "Amount ಅರ್ಧ ಆಗಿ ಐವತ್ತು ಆಗುತ್ತೆ.",
+        "ನಾಲ್ಕು ಗಂಟೆ ಕಳೆಯಿತು.",
+        "ಮತ್ತೆ while line ಗೆ. ಐವತ್ತು ಇನ್ನೂ ಹತ್ತಕ್ಕಿಂತ ಜಾಸ್ತಿ, ಅದಕ್ಕೇ ಮತ್ತೆ ಸುತ್ತುತ್ತೆ: ಇಪ್ಪತ್ತೈದು, ಆಮೇಲೆ ಹನ್ನೆರಡು ಪಾಯಿಂಟ್ ಐದು. Hours ಹನ್ನೆರಡಕ್ಕೆ ಬೆಳೆಯುತ್ತೆ.",
+        "ಹನ್ನೆರಡು ಪಾಯಿಂಟ್ ಐದು ಇನ್ನೂ ಹತ್ತಕ್ಕಿಂತ ಜಾಸ್ತಿ, ಅದಕ್ಕೇ ಇನ್ನೊಂದು ಸುತ್ತು: ಆರು ಪಾಯಿಂಟ್ ಎರಡು ಐದು milligram, ಹದಿನಾರು ಗಂಟೆಗೆ.",
+        "ಈಗ: ಆರು ಪಾಯಿಂಟ್ ಎರಡು ಐದು, ಹತ್ತಕ್ಕಿಂತ ಜಾಸ್ತಿ ಇದೆಯಾ? ಇಲ್ಲ. Condition False, ಅದಕ್ಕೇ loop ಮುಗಿಯುತ್ತೆ.",
+        "print ಗಂಟೆಗಳನ್ನು ತೋರಿಸುತ್ತೆ.",
+        "ಮತ್ತು ಉಳಿದ amount ಅನ್ನು."
+      ]
+    },
+    {
+      "id": "anim-halflife",
+      "prefix": "anim-halflife-",
+      "lang": "en",
+      "tts": [
+        "One hundred milligrams, at zero hours. The while line asks: is it more than ten? Yes.",
+        "Half is removed, and four hours pass. Fifty milligrams.",
+        "Still more than ten, so round and round it goes: twenty-five, then twelve point five.",
+        "One more halving: six point two five, at sixteen hours. Now the condition is False.",
+        "The loop stops by itself, and the answer is printed: sixteen hours."
+      ],
+      "display": [
+        "One hundred milligrams, at zero hours. The while line asks: is it more than ten? Yes.",
+        "Half is removed, and four hours pass. Fifty milligrams.",
+        "Still more than ten, so round and round it goes: twenty-five, then twelve point five.",
+        "One more halving: six point two five, at sixteen hours. Now the condition is False.",
+        "The loop stops by itself, and the answer is printed: sixteen hours."
+      ]
+    },
+    {
+      "id": "anim-halflife",
+      "prefix": "anim-halflife-",
+      "lang": "hi",
+      "tts": [
+        "सौ milligram, zero घंटे पर। while line पूछती है: क्या यह दस से ज़्यादा है? हाँ।",
+        "आधा हिस्सा निकल जाता है, और चार घंटे बीतते हैं। पचास milligram।",
+        "अब भी दस से ज़्यादा, इसलिए यह घूमता रहता है: पच्चीस, फिर बारह दशमलव पाँच।",
+        "एक बार और आधा: छह दशमलव दो पाँच, सोलह घंटे पर। अब condition False है।",
+        "Loop अपने-आप रुकता है, और जवाब print होता है: सोलह घंटे।"
+      ],
+      "display": [
+        "सौ milligram, zero घंटे पर। while line पूछती है: क्या यह दस से ज़्यादा है? हाँ।",
+        "आधा हिस्सा निकल जाता है, और चार घंटे बीतते हैं। पचास milligram।",
+        "अब भी दस से ज़्यादा, इसलिए यह घूमता रहता है: पच्चीस, फिर बारह दशमलव पाँच।",
+        "एक बार और आधा: छह दशमलव दो पाँच, सोलह घंटे पर। अब condition False है।",
+        "Loop अपने-आप रुकता है, और जवाब print होता है: सोलह घंटे।"
+      ],
+      "displayHinglish": [
+        "Sau milligram, zero ghante par. while line poochhti hai: kya yeh das se zyada hai? Haan.",
+        "Aadha hissa nikal jaata hai, aur chaar ghante beette hain. Pachaas milligram.",
+        "Ab bhi das se zyada, isliye yeh ghoomta rehta hai: pachchees, phir baarah dashamlav paanch.",
+        "Ek baar aur aadha: chhah dashamlav do paanch, solah ghante par. Ab condition False hai.",
+        "Loop apne-aap rukta hai, aur jawaab print hota hai: solah ghante."
+      ]
+    },
+    {
+      "id": "anim-halflife",
+      "prefix": "anim-halflife-",
+      "lang": "kn",
+      "tts": [
+        "ನೂರು milligram, zero ಗಂಟೆಗೆ. while line ಕೇಳುತ್ತೆ: ಇದು ಹತ್ತಕ್ಕಿಂತ ಜಾಸ್ತಿ ಇದೆಯಾ? ಹೌದು.",
+        "ಅರ್ಧ ಹೊರಹೋಗುತ್ತೆ, ನಾಲ್ಕು ಗಂಟೆ ಕಳೆಯುತ್ತೆ. ಐವತ್ತು milligram.",
+        "ಇನ್ನೂ ಹತ್ತಕ್ಕಿಂತ ಜಾಸ್ತಿ, ಅದಕ್ಕೇ ಸುತ್ತುತ್ತಲೇ ಇರುತ್ತೆ: ಇಪ್ಪತ್ತೈದು, ಆಮೇಲೆ ಹನ್ನೆರಡು ಪಾಯಿಂಟ್ ಐದು.",
+        "ಇನ್ನೊಂದು ಸಲ ಅರ್ಧ: ಆರು ಪಾಯಿಂಟ್ ಎರಡು ಐದು, ಹದಿನಾರು ಗಂಟೆಗೆ. ಈಗ condition False.",
+        "Loop ತಾನಾಗಿ ನಿಲ್ಲುತ್ತೆ, ಉತ್ತರ print ಆಗುತ್ತೆ: ಹದಿನಾರು ಗಂಟೆ."
+      ],
+      "display": [
+        "ನೂರು milligram, zero ಗಂಟೆಗೆ. while line ಕೇಳುತ್ತೆ: ಇದು ಹತ್ತಕ್ಕಿಂತ ಜಾಸ್ತಿ ಇದೆಯಾ? ಹೌದು.",
+        "ಅರ್ಧ ಹೊರಹೋಗುತ್ತೆ, ನಾಲ್ಕು ಗಂಟೆ ಕಳೆಯುತ್ತೆ. ಐವತ್ತು milligram.",
+        "ಇನ್ನೂ ಹತ್ತಕ್ಕಿಂತ ಜಾಸ್ತಿ, ಅದಕ್ಕೇ ಸುತ್ತುತ್ತಲೇ ಇರುತ್ತೆ: ಇಪ್ಪತ್ತೈದು, ಆಮೇಲೆ ಹನ್ನೆರಡು ಪಾಯಿಂಟ್ ಐದು.",
+        "ಇನ್ನೊಂದು ಸಲ ಅರ್ಧ: ಆರು ಪಾಯಿಂಟ್ ಎರಡು ಐದು, ಹದಿನಾರು ಗಂಟೆಗೆ. ಈಗ condition False.",
+        "Loop ತಾನಾಗಿ ನಿಲ್ಲುತ್ತೆ, ಉತ್ತರ print ಆಗುತ್ತೆ: ಹದಿನಾರು ಗಂಟೆ."
+      ]
+    }
+  ]
+}

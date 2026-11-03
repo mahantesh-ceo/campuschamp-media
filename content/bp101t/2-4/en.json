@@ -1,0 +1,731 @@
+{
+  "id": "2-4",
+  "course": "bp101t",
+  "unit": "Unit II",
+  "unitTitle": "Control Structures & Functions",
+  "number": "2.4",
+  "title": "while loops, break and continue",
+  "minutes": 15,
+  "free": false,
+  "audioLanguages": [
+    "en",
+    "hi",
+    "kn"
+  ],
+  "hook": {
+    "title": "How long until the drug is gone?",
+    "md": "A patient has **100 mg** of a drug in the body. Every **4 hours**, half of it is removed. That time is the drug's **half-life**. How many hours until less than **10 mg** is left?\n\nYou don't know in advance how many halvings it will take, so a `for` loop over a fixed `range()` doesn't fit. You need a loop that keeps going **while** something is true. That's today's lesson.\n\n*The numbers in this lesson are made up to learn Python. Real half-lives differ from drug to drug.*"
+  },
+  "learn": [
+    "How a **while loop** repeats as long as its condition is **True**",
+    "When to use **while** and when to use **for**",
+    "How to make sure a loop **ends**, and what an **infinite loop** is",
+    "How **break** stops a loop early, and **continue** skips one round"
+  ],
+  "explanation": [
+    {
+      "heading": "Repeat while a condition is True",
+      "md": "A **while loop** checks its condition, runs the block if it is `True`, then goes back and checks again. It stops the first time the condition is `False`.\n\n```python\namount = 100\nhours = 0\nwhile amount > 10:\n    amount = amount / 2\n    hours += 4\nprint(\"Below 10 mg after\", hours, \"hours\")\n```\n\nThis prints `Below 10 mg after 16 hours`. The amount goes 100 → 50 → 25 → 12.5 → 6.25. After the fourth halving, `6.25 > 10` is `False`, so the loop ends.\n\nThe syntax is the same as `if`: a condition, a colon, and an indented block. The difference is that `if` runs its block **at most once**, and `while` runs it **again and again**.",
+      "callout": {
+        "type": "definition",
+        "title": "while loop",
+        "md": "A loop that repeats its block as long as its condition is True. The condition is checked before every round."
+      }
+    },
+    {
+      "heading": "for or while?",
+      "md": "| Use | When | Example |\n|---|---|---|\n| `for` | You know the values, or how many times | Days 1 to 30, each drug in a list |\n| `while` | You repeat **until something happens** | Until the amount is below 10 mg, until a valid number is typed |\n\nMany problems can be written either way, but the right choice makes the program shorter and clearer."
+    },
+    {
+      "heading": "Make sure the loop ends",
+      "md": "Something inside a `while` block must change the condition, or the loop never stops:\n\n```python\nstock = 3\nwhile stock > 0:\n    print(\"Dispense one strip\")\n    stock -= 1\nprint(\"Out of stock: reorder\")\n```\n\nThis prints:\n\n```\nDispense one strip\nDispense one strip\nDispense one strip\nOut of stock: reorder\n```\n\n`stock -= 1` brings the stock down by one each round. Without it, `stock > 0` would stay `True` forever, and the program would print `Dispense one strip` without end. This is called an **infinite loop**.",
+      "callout": {
+        "type": "warning",
+        "title": "Stuck in an infinite loop?",
+        "md": "Press the Stop button in your IDE, or Ctrl + C in a terminal. Then check that the loop changes the variable in its condition."
+      }
+    },
+    {
+      "heading": "break: stop the loop now",
+      "md": "**break** ends a loop immediately, even if there are values left. It works in both `for` and `while` loops. Here, a pharmacist checks batches until the first expired one:\n\n```python\nexpiry_years = [2027, 2026, 2024, 2028]\nfor year in expiry_years:\n    if year < 2025:\n        print(\"Expired batch found:\", year)\n        break\n    print(year, \"OK\")\n```\n\nThis prints:\n\n```\n2027 OK\n2026 OK\nExpired batch found: 2024\n```\n\n2028 is never checked: `break` jumped straight out of the loop.\n\nA common pattern is `while True` with a `break`: keep asking until the answer is valid.\n\n```python\nwhile True:\n    dose = int(input(\"Dose in mg: \"))\n    if dose > 0:\n        break\n    print(\"The dose must be more than 0\")\nprint(\"Dose saved:\", dose)\n```\n\n`while True` would run forever on its own; the `break` is the only way out."
+    },
+    {
+      "heading": "continue: skip to the next round",
+      "md": "**continue** skips the rest of the block **for this round only**, and goes straight to the next value. A thermometer sometimes saves 0 when a reading fails:\n\n```python\ntemps = [37.2, 0, 38.5, 36.9]\nfor temp in temps:\n    if temp == 0:\n        print(\"Missing reading, skipped\")\n        continue\n    print(\"Reading:\", temp)\n```\n\nThis prints:\n\n```\nReading: 37.2\nMissing reading, skipped\nReading: 38.5\nReading: 36.9\n```\n\n`break` leaves the loop for good; `continue` just moves on to the next round.",
+      "callout": {
+        "type": "tip",
+        "title": "continue in a while loop",
+        "md": "In a while loop, update the variable before continue. Otherwise the update is skipped too, and the loop never ends."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "This program halves a 100 mg dose every 4 hours, until less than 10 mg is left, and reports how long that took.",
+    "filename": "half_life.py",
+    "code": "# How long until the drug falls below 10 mg?\namount = 100\nhours = 0\nwhile amount > 10:\n    amount = amount / 2\n    hours += 4\nprint(\"Hours:\", hours)\nprint(\"Left:\", amount, \"mg\")",
+    "output": "Hours: 16\nLeft: 6.25 mg",
+    "steps": [
+      {
+        "line": null,
+        "say": "This program repeats until a condition becomes False. We don't know in advance how many rounds that will take.",
+        "output": null,
+        "audio": "step-01.mp3"
+      },
+      {
+        "line": 1,
+        "say": "The comment states the question.",
+        "output": null,
+        "audio": "step-02.mp3"
+      },
+      {
+        "line": 2,
+        "say": "amount starts at one hundred milligrams.",
+        "output": null,
+        "audio": "step-03.mp3",
+        "vars": {
+          "amount": "100"
+        }
+      },
+      {
+        "line": 3,
+        "say": "hours starts at zero.",
+        "output": null,
+        "audio": "step-04.mp3",
+        "vars": {
+          "hours": "0"
+        }
+      },
+      {
+        "line": 4,
+        "say": "while checks: is the amount more than ten? One hundred is, so Python enters the block.",
+        "output": null,
+        "audio": "step-05.mp3"
+      },
+      {
+        "line": 5,
+        "say": "The amount is halved, to fifty.",
+        "output": null,
+        "audio": "step-06.mp3",
+        "vars": {
+          "amount": "50.0"
+        }
+      },
+      {
+        "line": 6,
+        "say": "Four hours have passed.",
+        "output": null,
+        "audio": "step-07.mp3",
+        "vars": {
+          "hours": "4"
+        }
+      },
+      {
+        "line": 4,
+        "say": "Back to the while line. Fifty is still more than ten, so it goes round again: twenty-five, then twelve point five. Hours grow to twelve.",
+        "output": null,
+        "audio": "step-08.mp3",
+        "vars": {
+          "amount": "12.5",
+          "hours": "12"
+        }
+      },
+      {
+        "line": 4,
+        "say": "Twelve point five is still more than ten, so one more round: six point two five milligrams, at sixteen hours.",
+        "output": null,
+        "audio": "step-09.mp3",
+        "vars": {
+          "amount": "6.25",
+          "hours": "16"
+        }
+      },
+      {
+        "line": 4,
+        "say": "Now: is six point two five more than ten? No. The condition is False, so the loop ends.",
+        "output": null,
+        "audio": "step-10.mp3"
+      },
+      {
+        "line": 7,
+        "say": "print shows the hours.",
+        "output": "Hours: 16",
+        "audio": "step-11.mp3"
+      },
+      {
+        "line": 8,
+        "say": "And the amount that is left.",
+        "output": "Left: 6.25 mg",
+        "audio": "step-12.mp3"
+      }
+    ],
+    "keyTerms": [
+      {
+        "term": "while amount > 10:",
+        "meaning": "Repeat the block as long as this is True."
+      },
+      {
+        "term": "amount / 2",
+        "meaning": "Halve the amount, once per half-life."
+      },
+      {
+        "term": "hours += 4",
+        "meaning": "Count the time, 4 hours per round."
+      },
+      {
+        "term": "Condition False",
+        "meaning": "The loop ends, and the next line runs."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "These two errors are common with while, break and continue.",
+    "examples": [
+      {
+        "title": "Using a variable before giving it a value",
+        "code": "while doses_given < 3:\n    print(\"Dose\")\n    doses_given += 1",
+        "output": "NameError: name 'doses_given' is not defined",
+        "errorLine": 1,
+        "md": "The `while` line checks `doses_given` before anything has stored it. Give it a starting value first: `doses_given = 0`."
+      },
+      {
+        "title": "break outside a loop",
+        "code": "dose = 1200\nif dose > 1000:\n    break",
+        "output": "SyntaxError: 'break' outside loop",
+        "errorLine": 3,
+        "md": "`break` and `continue` only work inside a `for` or `while` loop. To stop outside a loop, use an `if-else` instead."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Forgetting to change the variable in the condition, e.g. no `stock -= 1`",
+      "see": "No error, but the program never stops (an infinite loop)",
+      "fix": "Press Stop, then add a line inside the loop that moves the condition towards False."
+    },
+    {
+      "mistake": "Writing the condition the wrong way round, e.g. `while amount < 10:` when the amount starts at 100",
+      "see": "No error, but the loop never runs at all",
+      "fix": "Read it aloud: \"repeat while the amount is more than 10\" means `while amount > 10:`."
+    },
+    {
+      "mistake": "In a while loop, putting `continue` before the update, e.g. `i += 1` below it",
+      "see": "No error, but the loop gets stuck on one value forever",
+      "fix": "Update the variable before `continue`, or use a for loop."
+    },
+    {
+      "mistake": "Using while with a counter when the count is known",
+      "see": "No error, but the program is longer and easier to break",
+      "fix": "If you know how many times, use `for ... in range(...)`."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1",
+      "title": "Count down the stock",
+      "md": "Use a **while loop** to count the strips down from 3, printing exactly:",
+      "expectedOutput": "Strips left: 3\nStrips left: 2\nStrips left: 1",
+      "starterCode": "stock = 3\n# While stock is more than 0: print it, then take one away\n",
+      "hints": [
+        "Inside the loop, remember stock -= 1, or it never ends.",
+        "while stock > 0:\n    print(f\"Strips left: {stock}\")\n    stock -= 1"
+      ],
+      "solution": "stock = 3\n# While stock is more than 0: print it, then take one away\nwhile stock > 0:\n    print(f\"Strips left: {stock}\")\n    stock -= 1",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "while"
+        ]
+      }
+    },
+    {
+      "id": "t2",
+      "title": "A 6-hour half-life",
+      "md": "A drug starts at 80 mg and halves every 6 hours. Keep halving **while the amount is 10 mg or more**, and print exactly:",
+      "expectedOutput": "Below 10 mg after 24 hours",
+      "starterCode": "amount = 80\nhours = 0\n# Halve the amount every 6 hours while it is 10 or more\n",
+      "hints": [
+        "The condition is amount >= 10. Inside: amount = amount / 2 and hours += 6.",
+        "while amount >= 10:\n    amount = amount / 2\n    hours += 6\nprint(\"Below 10 mg after\", hours, \"hours\")"
+      ],
+      "solution": "amount = 80\nhours = 0\n# Halve the amount every 6 hours while it is 10 or more\nwhile amount >= 10:\n    amount = amount / 2\n    hours += 6\nprint(\"Below 10 mg after\", hours, \"hours\")",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "while"
+        ]
+      }
+    },
+    {
+      "id": "t3",
+      "title": "Stop at the first expired batch",
+      "md": "Go through the expiry years. When you find one before 2025, print it and **stop** with `break`. The output must be exactly:",
+      "expectedOutput": "Expired: 2023",
+      "starterCode": "years = [2027, 2023, 2026, 2021]\n# Print the first expired year, then stop\n",
+      "hints": [
+        "Inside a for loop: if year < 2025: print it, then break.",
+        "for year in years:\n    if year < 2025:\n        print(\"Expired:\", year)\n        break"
+      ],
+      "solution": "years = [2027, 2023, 2026, 2021]\n# Print the first expired year, then stop\nfor year in years:\n    if year < 2025:\n        print(\"Expired:\", year)\n        break",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "break"
+        ]
+      }
+    },
+    {
+      "id": "t4",
+      "title": "Find the bug",
+      "md": "Only 3 of these readings are real; the zeros are failed readings. The program says 5, and there is no error. Fix it so the output is exactly:",
+      "expectedOutput": "Valid readings: 3",
+      "starterCode": "readings = [37.0, 0, 38.2, 0, 36.8]\nvalid = 0\nfor r in readings:\n    valid += 1\n    if r == 0:\n        continue\nprint(\"Valid readings:\", valid)",
+      "hints": [
+        "Is a zero reading counted before continue gets a chance to skip it?",
+        "Move valid += 1 below the if block, so zeros skip it."
+      ],
+      "solution": "readings = [37.0, 0, 38.2, 0, 36.8]\nvalid = 0\nfor r in readings:\n    if r == 0:\n        continue\n    valid += 1\nprint(\"Valid readings:\", valid)",
+      "solutionNote": "continue only skips the lines after it. The count came before it, so every reading was counted. With the count after the if, the zeros are skipped.",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "continue"
+        ]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "q": "n = 1\nwhile n < 4:\n    print(n)\n    n += 1\n\nWhat does this print?",
+      "options": [
+        "1 2 3 (one per line)",
+        "1 2 3 4 (one per line)",
+        "4",
+        "Nothing"
+      ],
+      "answer": 0,
+      "why": "The loop runs for n = 1, 2 and 3. When n is 4, n < 4 is False.",
+      "code": true
+    },
+    {
+      "q": "What happens if nothing in a while loop ever changes its condition?",
+      "options": [
+        "Python gives an error",
+        "It runs once",
+        "It runs forever (an infinite loop)",
+        "It never runs"
+      ],
+      "answer": 2,
+      "why": "If the condition stays True, the loop keeps going round.",
+      "code": false
+    },
+    {
+      "q": "What does break do?",
+      "options": [
+        "Skips one round",
+        "Ends the loop immediately",
+        "Ends the whole program",
+        "Restarts the loop"
+      ],
+      "answer": 1,
+      "why": "break jumps straight out of the loop; the line after the loop runs next.",
+      "code": false
+    },
+    {
+      "q": "What does continue do?",
+      "options": [
+        "Ends the loop",
+        "Skips the rest of this round and goes to the next one",
+        "Repeats the same round",
+        "Nothing"
+      ],
+      "answer": 1,
+      "why": "continue skips the remaining lines of the block for this round only.",
+      "code": false
+    },
+    {
+      "q": "You want to keep asking for a dose until a valid one is typed. Which loop fits best?",
+      "options": [
+        "for with range(10)",
+        "while",
+        "if-else",
+        "No loop"
+      ],
+      "answer": 1,
+      "why": "You don't know how many tries it will take, so while (often while True with break) fits.",
+      "code": false
+    },
+    {
+      "q": "count = 10\nwhile count > 10:\n    print(\"A\")\n\nHow many times is A printed?",
+      "options": [
+        "0",
+        "1",
+        "10",
+        "Forever"
+      ],
+      "answer": 0,
+      "why": "10 > 10 is False at the very first check, so the block never runs.",
+      "code": true
+    }
+  ],
+  "exam": {
+    "note": "Important questions for practice. Actual university questions may differ.",
+    "short": [
+      {
+        "q": "Differentiate between the for loop and the while loop.",
+        "marks": 2,
+        "md": "| for loop | while loop |\n|---|---|\n| Repeats once for each item of a sequence (`range()`, string, list) | Repeats as long as a condition is True |\n| Used when the number of repetitions is known | Used when it is not known in advance |\n| The loop variable is updated automatically | The programmer must update the variable, or the loop runs forever |\n| `for i in range(1, 6):` | `while amount > 10:` |"
+      },
+      {
+        "q": "Explain break and continue statements with examples.",
+        "marks": 2,
+        "md": "**break** ends the loop immediately:\n\n```python\nfor year in [2027, 2024, 2028]:\n    if year < 2025:\n        break\n    print(year)\n```\n\nprints only `2027`.\n\n**continue** skips the rest of the current iteration and moves to the next:\n\n```python\nfor t in [37.2, 0, 38.5]:\n    if t == 0:\n        continue\n    print(t)\n```\n\nprints `37.2` and `38.5`. Both work in `for` and `while` loops only."
+      }
+    ],
+    "long": [
+      {
+        "q": "Explain the while loop in Python with syntax and flow. Write a program to find the sum of the digits of a number using a while loop.",
+        "marks": 5,
+        "md": "A **while loop** repeats a block of statements as long as a condition is True.\n\n**Syntax:**\n\n```python\nwhile condition:\n    statements\n```\n\n**Flow:**\n1. The condition is tested.\n2. If True, the indented block runs, and control goes back to step 1.\n3. If False, the loop ends and the statement after it runs.\n\nA statement inside the loop must change the condition; otherwise the loop never ends (**infinite loop**). `break` can end the loop early and `continue` skips to the next test.\n\n**Example:**\n\n```python\namount = 100\nhours = 0\nwhile amount > 10:\n    amount = amount / 2\n    hours += 4\nprint(hours)\n```\n\nOutput: `16`.\n\n**Program: sum of digits**\n\n```python\nn = int(input(\"Enter a number: \"))\ntotal = 0\nwhile n > 0:\n    digit = n % 10\n    total += digit\n    n = n // 10\nprint(\"Sum of digits =\", total)\n```\n\nFor 1234: digits 4, 3, 2, 1 are taken with `% 10` and removed with `// 10`; output `Sum of digits = 10`."
+      }
+    ]
+  },
+  "mindmap": {
+    "label": "Lesson 2.4 · while, break, continue",
+    "children": [
+      {
+        "label": "while loop",
+        "children": [
+          {
+            "label": "Repeat while True"
+          },
+          {
+            "label": "Checked before every round"
+          }
+        ]
+      },
+      {
+        "label": "for vs while",
+        "children": [
+          {
+            "label": "for: known values"
+          },
+          {
+            "label": "while: until something happens"
+          }
+        ]
+      },
+      {
+        "label": "Ending the loop",
+        "children": [
+          {
+            "label": "Change the variable"
+          },
+          {
+            "label": "Infinite loop"
+          },
+          {
+            "label": "Stop / Ctrl + C"
+          }
+        ]
+      },
+      {
+        "label": "break",
+        "children": [
+          {
+            "label": "Leave the loop now"
+          },
+          {
+            "label": "while True + break"
+          }
+        ]
+      },
+      {
+        "label": "continue",
+        "children": [
+          {
+            "label": "Skip this round"
+          },
+          {
+            "label": "Update before continue"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError"
+          },
+          {
+            "label": "'break' outside loop"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "A **while loop** repeats its block **as long as** its condition is `True`, checking it before every round.",
+    "Use **for** when you know the values or the count; use **while** when you repeat **until something happens**.",
+    "Something inside a `while` loop must change its condition; otherwise you get an **infinite loop**.",
+    "**break** leaves a loop immediately; `while True` with `break` keeps asking until an answer is valid.",
+    "**continue** skips the rest of one round and moves to the next; in a while loop, update the variable before it."
+  ],
+  "video": {
+    "videoUrl": null,
+    "searchTerms": [
+      "python while loop for beginners",
+      "python break and continue"
+    ]
+  },
+  "animations": [
+    {
+      "id": "halflife",
+      "title": "Halving until the condition is False",
+      "afterExplanation": 0,
+      "canvas": {
+        "desktop": {
+          "w": 800,
+          "h": 460
+        },
+        "mobile": {
+          "w": 360,
+          "h": 600
+        }
+      },
+      "actors": [
+        {
+          "id": "code",
+          "type": "card",
+          "title": "half_life.py",
+          "icon": "⏳",
+          "color": "indigo",
+          "mono": true,
+          "lines": [
+            "while amount > 10:",
+            "    amount = amount / 2",
+            "    hours += 4",
+            "print(\"Hours:\", hours)"
+          ],
+          "desktop": {
+            "x": 40,
+            "y": 40,
+            "w": 420,
+            "h": 190
+          },
+          "mobile": {
+            "x": 16,
+            "y": 120,
+            "w": 328,
+            "h": 180
+          }
+        },
+        {
+          "id": "amount",
+          "type": "box",
+          "label": "amount (mg)",
+          "value": "100",
+          "color": "amber",
+          "desktop": {
+            "x": 510,
+            "y": 40,
+            "w": 250,
+            "h": 90
+          },
+          "mobile": {
+            "x": 16,
+            "y": 12,
+            "w": 156,
+            "h": 96
+          }
+        },
+        {
+          "id": "hours",
+          "type": "box",
+          "label": "hours",
+          "value": "0",
+          "color": "emerald",
+          "desktop": {
+            "x": 510,
+            "y": 150,
+            "w": 250,
+            "h": 90
+          },
+          "mobile": {
+            "x": 188,
+            "y": 12,
+            "w": 156,
+            "h": 96
+          }
+        },
+        {
+          "id": "cond",
+          "type": "pill",
+          "text": "6.25 > 10 → False: stop",
+          "color": "rose",
+          "desktop": {
+            "x": 480,
+            "y": 260,
+            "w": 300,
+            "h": 30
+          },
+          "mobile": {
+            "x": 30,
+            "y": 312,
+            "w": 300,
+            "h": 30
+          }
+        },
+        {
+          "id": "out",
+          "type": "terminal",
+          "title": "Output",
+          "desktop": {
+            "x": 40,
+            "y": 310,
+            "w": 720,
+            "h": 120
+          },
+          "mobile": {
+            "x": 16,
+            "y": 360,
+            "w": 328,
+            "h": 150
+          }
+        }
+      ],
+      "steps": [
+        {
+          "say": "One hundred milligrams, at zero hours. The while line asks: is it more than ten? Yes.",
+          "audio": "anim-halflife-01.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "amount"
+            },
+            {
+              "do": "show",
+              "target": "hours"
+            },
+            {
+              "do": "show",
+              "target": "code"
+            },
+            {
+              "do": "show",
+              "target": "out"
+            },
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 0
+            }
+          ]
+        },
+        {
+          "say": "Half is removed, and four hours pass. Fifty milligrams.",
+          "audio": "anim-halflife-02.mp3",
+          "actions": [
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 1
+            },
+            {
+              "do": "setValue",
+              "target": "amount",
+              "value": "50.0"
+            },
+            {
+              "do": "setValue",
+              "target": "hours",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "say": "Still more than ten, so round and round it goes: twenty-five, then twelve point five.",
+          "audio": "anim-halflife-03.mp3",
+          "actions": [
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 0
+            },
+            {
+              "do": "setValue",
+              "target": "amount",
+              "value": "12.5"
+            },
+            {
+              "do": "setValue",
+              "target": "hours",
+              "value": "12"
+            }
+          ]
+        },
+        {
+          "say": "One more halving: six point two five, at sixteen hours. Now the condition is False.",
+          "audio": "anim-halflife-04.mp3",
+          "actions": [
+            {
+              "do": "setValue",
+              "target": "amount",
+              "value": "6.25"
+            },
+            {
+              "do": "setValue",
+              "target": "hours",
+              "value": "16"
+            },
+            {
+              "do": "show",
+              "target": "cond"
+            },
+            {
+              "do": "pulse",
+              "target": "cond"
+            }
+          ]
+        },
+        {
+          "say": "The loop stops by itself, and the answer is printed: sixteen hours.",
+          "audio": "anim-halflife-05.mp3",
+          "actions": [
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 3
+            },
+            {
+              "do": "appendOutput",
+              "target": "out",
+              "text": "Hours: 16"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "while loop",
+      "meaning": "A loop that repeats its block as long as its condition is True, checking the condition before every round."
+    },
+    {
+      "term": "Infinite loop",
+      "meaning": "A loop whose condition never becomes False, so it never stops. Press Stop or Ctrl + C to end it."
+    },
+    {
+      "term": "break",
+      "meaning": "Ends a loop immediately; the line after the loop runs next."
+    },
+    {
+      "term": "continue",
+      "meaning": "Skips the rest of the block for this round only, and moves on to the next round."
+    },
+    {
+      "term": "Half-life",
+      "meaning": "The time it takes for the amount of a drug in the body to fall to half."
+    }
+  ]
+}

@@ -1,0 +1,334 @@
+{
+  "hook": {
+    "title": "Dawa kab tak khatam hogi?",
+    "md": "Ek patient ke shareer mein kisi dawa ki **100 mg** hai. Har **4 ghante** mein uska aadha hissa nikal jaata hai. Yeh samay dawa ki **half-life** hai. Kitne ghante baad **10 mg** se kam bachega?\n\nAapko pehle se nahi pata ki kitni baar aadha karna padega, isliye fixed `range()` wala `for` loop theek nahi baithta. Aapko aisa loop chahiye jo **tab tak** chale **jab tak** kuch sach hai. Yahi aaj ka lesson hai.\n\n*Is lesson ke numbers Python seekhne ke liye banaaye gaye hain. Asli half-life har dawa ki alag hoti hai.*"
+  },
+  "learn": [
+    "**while loop** tab tak kaise dohraata hai jab tak uski condition **True** hai",
+    "Kab **while** aur kab **for** use karein",
+    "Loop **khatam** ho, yeh kaise pakka karein, aur **infinite loop** kya hai",
+    "**break** loop ko jaldi kaise rokta hai, aur **continue** ek round kaise chhodta hai"
+  ],
+  "explanation": [
+    {
+      "heading": "Jab tak condition True hai, dohraao",
+      "md": "**while loop** apni condition jaanchta hai, `True` ho to block chalaata hai, phir wapas jaakar phir jaanchta hai. Jaise hi condition pehli baar `False` ho, yeh ruk jaata hai.\n\n```python\namount = 100\nhours = 0\nwhile amount > 10:\n    amount = amount / 2\n    hours += 4\nprint(\"Below 10 mg after\", hours, \"hours\")\n```\n\nYeh `Below 10 mg after 16 hours` print karta hai. Amount aise ghatta hai: 100 → 50 → 25 → 12.5 → 6.25. Chauthi baar aadha karne ke baad `6.25 > 10` `False` hai, isliye loop khatam.\n\nSyntax `if` jaisa hi hai: condition, colon, aur indent kiya block. Fark yeh hai ki `if` apna block **zyada se zyada ek baar** chalaata hai, aur `while` **baar-baar**.",
+      "callout": {
+        "title": "while loop",
+        "md": "Aisa loop jo tab tak apna block dohraata hai jab tak condition True hai. Har round se pehle condition jaanchi jaati hai."
+      }
+    },
+    {
+      "heading": "for ya while?",
+      "md": "| Use | Kab | Example |\n|---|---|---|\n| `for` | Values pata hain, ya kitni baar | Day 1 se 30, list ki har dawa |\n| `while` | **Kuch hone tak** dohraana hai | Jab tak amount 10 mg se kam na ho, jab tak sahi number type na ho |\n\nKai problems dono tarah likhi ja sakti hain, par sahi chunaav program ko chhota aur saaf banaata hai."
+    },
+    {
+      "heading": "Pakka kijiye ki loop khatam ho",
+      "md": "`while` block ke andar kuch aisa hona chahiye jo condition badle, warna loop kabhi nahi rukega:\n\n```python\nstock = 3\nwhile stock > 0:\n    print(\"Dispense one strip\")\n    stock -= 1\nprint(\"Out of stock: reorder\")\n```\n\nYeh print karta hai:\n\n```\nDispense one strip\nDispense one strip\nDispense one strip\nOut of stock: reorder\n```\n\n`stock -= 1` har round mein stock ek kam karta hai. Iske bina `stock > 0` hamesha `True` rehta, aur program bina ruke `Dispense one strip` print karta rehta. Ise **infinite loop** kehte hain.",
+      "callout": {
+        "title": "Infinite loop mein phans gaye?",
+        "md": "IDE mein Stop button dabaaiye, ya terminal mein Ctrl + C. Phir dekhiye ki loop condition wale variable ko badalta hai ya nahi."
+      }
+    },
+    {
+      "heading": "break: loop abhi roko",
+      "md": "**break** loop ko turant khatam kar deta hai, bhale values bachi hon. Yeh `for` aur `while` dono mein kaam karta hai. Yahaan pharmacist pehla expired batch milne tak batches jaanchta hai:\n\n```python\nexpiry_years = [2027, 2026, 2024, 2028]\nfor year in expiry_years:\n    if year < 2025:\n        print(\"Expired batch found:\", year)\n        break\n    print(year, \"OK\")\n```\n\nYeh print karta hai:\n\n```\n2027 OK\n2026 OK\nExpired batch found: 2024\n```\n\n2028 kabhi jaancha hi nahi gaya: `break` seedha loop se bahar kood gaya.\n\nEk aam pattern hai `while True` ke saath `break`: sahi jawaab milne tak poochhte raho.\n\n```python\nwhile True:\n    dose = int(input(\"Dose in mg: \"))\n    if dose > 0:\n        break\n    print(\"The dose must be more than 0\")\nprint(\"Dose saved:\", dose)\n```\n\n`while True` akele hamesha chalta; `break` hi bahar nikalne ka akela raasta hai."
+    },
+    {
+      "heading": "continue: agle round par jaao",
+      "md": "**continue** block ka baaki hissa **sirf is round ke liye** chhod deta hai, aur seedha agli value par jaata hai. Reading fail hone par thermometer kabhi-kabhi 0 save kar deta hai:\n\n```python\ntemps = [37.2, 0, 38.5, 36.9]\nfor temp in temps:\n    if temp == 0:\n        print(\"Missing reading, skipped\")\n        continue\n    print(\"Reading:\", temp)\n```\n\nYeh print karta hai:\n\n```\nReading: 37.2\nMissing reading, skipped\nReading: 38.5\nReading: 36.9\n```\n\n`break` loop ko hamesha ke liye chhod deta hai; `continue` bas agle round par chala jaata hai.",
+      "callout": {
+        "title": "while loop mein continue",
+        "md": "while loop mein variable ko continue se pehle update kijiye. Warna update bhi chhoot jaayega, aur loop kabhi khatam nahi hoga."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "Yeh program 100 mg dose ko har 4 ghante mein aadha karta hai, jab tak 10 mg se kam na bache, aur batata hai ki ismein kitna samay laga.",
+    "keyTerms": [
+      {
+        "meaning": "Jab tak yeh True hai, block dohraao."
+      },
+      {
+        "meaning": "Har half-life par amount aadha karo."
+      },
+      {
+        "meaning": "Samay gino, har round mein 4 ghante."
+      },
+      {
+        "meaning": "Loop khatam hota hai, aur agli line chalti hai."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Yeh program tab tak dohraata hai jab tak koi condition False na ho jaaye. Humein pehle se nahi pata ki kitne rounds lagenge."
+      },
+      {
+        "say": "Comment sawaal batata hai."
+      },
+      {
+        "say": "amount sau milligram se shuru hota hai."
+      },
+      {
+        "say": "hours zero se shuru hota hai."
+      },
+      {
+        "say": "while jaanchta hai: kya amount das se zyada hai? Sau hai, isliye Python block mein jaata hai."
+      },
+      {
+        "say": "Amount aadha hokar pachaas ho jaata hai."
+      },
+      {
+        "say": "Chaar ghante beet gaye."
+      },
+      {
+        "say": "Wapas while line par. Pachaas ab bhi das se zyada hai, isliye phir ghoomta hai: pachchees, phir baarah dashamlav paanch. Hours badhkar baarah."
+      },
+      {
+        "say": "Baarah dashamlav paanch ab bhi das se zyada hai, isliye ek round aur: chhah dashamlav do paanch milligram, solah ghante par."
+      },
+      {
+        "say": "Ab: kya chhah dashamlav do paanch, das se zyada hai? Nahi. Condition False hai, isliye loop khatam."
+      },
+      {
+        "say": "print ghante dikhaata hai."
+      },
+      {
+        "say": "Aur jitna amount bacha hai."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "while, break aur continue ke saath yeh do errors aam hain.",
+    "examples": [
+      {
+        "title": "Value dene se pehle variable use karna",
+        "md": "`while` line `doses_given` ko tab jaanchti hai jab usmein kuch store hi nahi hua. Pehle shuruaati value dijiye: `doses_given = 0`."
+      },
+      {
+        "title": "Loop ke bahar break",
+        "md": "`break` aur `continue` sirf `for` ya `while` loop ke andar kaam karte hain. Loop ke bahar rukna ho to `if-else` use kijiye."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Condition wala variable badalna bhool jaana, jaise `stock -= 1` na likhna",
+      "see": "Koi error nahi, par program kabhi nahi rukta (infinite loop)",
+      "fix": "Stop dabaaiye, phir loop ke andar aisi line jodiye jo condition ko False ki or le jaaye."
+    },
+    {
+      "mistake": "Condition ulti likhna, jaise amount 100 se shuru ho aur `while amount < 10:`",
+      "see": "Koi error nahi, par loop kabhi chalta hi nahi",
+      "fix": "Zor se padhiye: \"jab tak amount 10 se zyada hai, dohraao\" yaani `while amount > 10:`."
+    },
+    {
+      "mistake": "while loop mein `continue` ko update se pehle rakhna, jaise `i += 1` uske neeche",
+      "see": "Koi error nahi, par loop ek hi value par hamesha atka rehta hai",
+      "fix": "`continue` se pehle variable update kijiye, ya for loop use kijiye."
+    },
+    {
+      "mistake": "Ginti pata ho phir bhi counter ke saath while use karna",
+      "see": "Koi error nahi, par program lamba aur bigadne mein aasaan",
+      "fix": "Kitni baar, yeh pata ho to `for ... in range(...)` use kijiye."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Stock ki ulti ginti",
+      "md": "**while loop** se strips ko 3 se neeche giniye, bilkul aise print karte hue:",
+      "hints": [
+        "Loop ke andar stock -= 1 yaad rakhiye, warna yeh kabhi khatam nahi hoga.",
+        "while stock > 0:\n    print(f\"Strips left: {stock}\")\n    stock -= 1"
+      ]
+    },
+    {
+      "title": "6 ghante ki half-life",
+      "md": "Ek dawa 80 mg se shuru hoti hai aur har 6 ghante mein aadhi hoti hai. **Jab tak amount 10 mg ya zyada hai**, aadha karte rahiye, aur bilkul aise print kijiye:",
+      "hints": [
+        "Condition hai amount >= 10. Andar: amount = amount / 2 aur hours += 6.",
+        "while amount >= 10:\n    amount = amount / 2\n    hours += 6\nprint(\"Below 10 mg after\", hours, \"hours\")"
+      ]
+    },
+    {
+      "title": "Pehle expired batch par rukiye",
+      "md": "Expiry years jaanchiye. 2025 se pehle ka saal mile to use print kijiye aur `break` se **ruk jaaiye**. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "for loop ke andar: if year < 2025: print kijiye, phir break.",
+        "for year in years:\n    if year < 2025:\n        print(\"Expired:\", year)\n        break"
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "In readings mein sirf 3 asli hain; zeros failed readings hain. Program 5 batata hai, aur koi error nahi. Ise theek kijiye taaki output bilkul yeh ho:",
+      "hints": [
+        "Kya zero reading, continue ke chhodne se pehle hi gin li jaati hai?",
+        "valid += 1 ko if block ke neeche le jaaiye, taaki zeros use chhod dein."
+      ],
+      "solutionNote": "continue sirf apne baad wali lines chhodta hai. Ginti usse pehle thi, isliye har reading gini gayi. Ginti if ke baad rakhne se zeros chhoot jaate hain."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "n = 1\nwhile n < 4:\n    print(n)\n    n += 1\n\nYeh kya print karta hai?",
+      "why": "Loop n = 1, 2 aur 3 ke liye chalta hai. n 4 hone par n < 4 False hai."
+    },
+    {
+      "q": "Agar while loop ke andar kuch bhi uski condition na badle to kya hoga?",
+      "why": "Condition True rahe to loop ghoomta hi rehta hai."
+    },
+    {
+      "q": "break kya karta hai?",
+      "why": "break seedha loop se bahar koodta hai; loop ke baad wali line aage chalti hai."
+    },
+    {
+      "q": "continue kya karta hai?",
+      "why": "continue sirf is round ke liye block ki baaki lines chhodta hai."
+    },
+    {
+      "q": "Sahi dose type hone tak poochhte rehna hai. Kaun-sa loop sabse theek hai?",
+      "why": "Kitni koshishein lagengi pata nahi, isliye while (aksar while True aur break) theek hai."
+    },
+    {
+      "q": "count = 10\nwhile count > 10:\n    print(\"A\")\n\nA kitni baar print hota hai?",
+      "why": "Pehli hi jaanch mein 10 > 10 False hai, isliye block kabhi nahi chalta."
+    }
+  ],
+  "exam": {
+    "note": "Practice ke liye important questions. University ke asli questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 2.4 · while, break, continue",
+    "children": [
+      {
+        "label": "while loop",
+        "children": [
+          {
+            "label": "True rehne tak dohraao"
+          },
+          {
+            "label": "Har round se pehle jaanch"
+          }
+        ]
+      },
+      {
+        "label": "for vs while",
+        "children": [
+          {
+            "label": "for: values pata hain"
+          },
+          {
+            "label": "while: kuch hone tak"
+          }
+        ]
+      },
+      {
+        "label": "Loop khatam karna",
+        "children": [
+          {
+            "label": "Variable badlo"
+          },
+          {
+            "label": "Infinite loop"
+          },
+          {
+            "label": "Stop / Ctrl + C"
+          }
+        ]
+      },
+      {
+        "label": "break",
+        "children": [
+          {
+            "label": "Abhi loop chhodo"
+          },
+          {
+            "label": "while True + break"
+          }
+        ]
+      },
+      {
+        "label": "continue",
+        "children": [
+          {
+            "label": "Yeh round chhodo"
+          },
+          {
+            "label": "continue se pehle update"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError"
+          },
+          {
+            "label": "'break' outside loop"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**while loop** apna block **tab tak** dohraata hai jab tak condition `True` hai, har round se pehle jaanchte hue.",
+    "Values ya ginti pata ho to **for**; **kuch hone tak** dohraana ho to **while**.",
+    "`while` loop ke andar kuch condition badalna chahiye; warna **infinite loop** banta hai.",
+    "**break** loop turant chhod deta hai; `while True` aur `break` sahi jawaab milne tak poochhte rehte hain.",
+    "**continue** ek round ka baaki hissa chhodkar agle par jaata hai; while loop mein usse pehle variable update kijiye."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Sau milligram, zero ghante par. while line poochhti hai: kya yeh das se zyada hai? Haan."
+        },
+        {
+          "say": "Aadha hissa nikal jaata hai, aur chaar ghante beette hain. Pachaas milligram."
+        },
+        {
+          "say": "Ab bhi das se zyada, isliye yeh ghoomta rehta hai: pachchees, phir baarah dashamlav paanch."
+        },
+        {
+          "say": "Ek baar aur aadha: chhah dashamlav do paanch, solah ghante par. Ab condition False hai."
+        },
+        {
+          "say": "Loop apne-aap rukta hai, aur jawaab print hota hai: solah ghante."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Aisa loop jo tab tak apna block dohraata hai jab tak condition True hai, har round se pehle condition jaanchte hue."
+    },
+    {
+      "meaning": "Aisa loop jiski condition kabhi False nahi hoti, isliye woh kabhi nahi rukta. Rokne ke liye Stop ya Ctrl + C dabaaiye."
+    },
+    {
+      "meaning": "Loop ko turant khatam karta hai; loop ke baad wali line aage chalti hai."
+    },
+    {
+      "meaning": "Sirf is round ke liye block ka baaki hissa chhodta hai, aur agle round par jaata hai."
+    },
+    {
+      "meaning": "Shareer mein kisi dawa ki maatra ko aadha hone mein lagne wala samay."
+    }
+  ]
+}

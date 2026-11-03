@@ -152,8 +152,12 @@
         {
           "id": "2-4",
           "title": "while loops, break and continue",
-          "available": false,
-          "translations": []
+          "available": true,
+          "translations": [
+            "hi",
+            "hinglish",
+            "kn"
+          ]
         },
         {
           "id": "2-5",

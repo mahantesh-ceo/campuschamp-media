@@ -485,6 +485,33 @@ G = {
             "hinglish": "Aisa variable jo loop mein nateeja jama karta hai, jaise 0 se shuru hokar += se badhne wala total.",
             "kn": "Loop ಉದ್ದಕ್ಕೂ ಫಲಿತಾಂಶ ಸಂಗ್ರಹಿಸುವ variable, ಉದಾ. 0 ಇಂದ ಶುರುವಾಗಿ += ಇಂದ ಬೆಳೆಯುವ total."}),
     ],
+    "2-4": [
+        ("while loop", {
+            "en": "A loop that repeats its block as long as its condition is True, checking the condition before every round.",
+            "hi": "ऐसा loop जो तब तक अपना block दोहराता है जब तक condition True है, हर round से पहले condition जाँचते हुए।",
+            "hinglish": "Aisa loop jo tab tak apna block dohraata hai jab tak condition True hai, har round se pehle condition jaanchte hue.",
+            "kn": "Condition True ಆಗಿರುವವರೆಗೆ ತನ್ನ block ಪುನರಾವರ್ತಿಸುವ loop, ಪ್ರತಿ ಸುತ್ತಿಗೆ ಮುಂಚೆ condition check ಮಾಡುತ್ತೆ."}),
+        ("Infinite loop", {
+            "en": "A loop whose condition never becomes False, so it never stops. Press Stop or Ctrl + C to end it.",
+            "hi": "ऐसा loop जिसकी condition कभी False नहीं होती, इसलिए वह कभी नहीं रुकता। रोकने के लिए Stop या Ctrl + C दबाइए।",
+            "hinglish": "Aisa loop jiski condition kabhi False nahi hoti, isliye woh kabhi nahi rukta. Rokne ke liye Stop ya Ctrl + C dabaaiye.",
+            "kn": "Condition ಯಾವತ್ತೂ False ಆಗದ loop, ಅದಕ್ಕೇ ಅದು ನಿಲ್ಲಲ್ಲ. ನಿಲ್ಲಿಸಲು Stop ಅಥವಾ Ctrl + C ಒತ್ತಿ."}),
+        ("break", {
+            "en": "Ends a loop immediately; the line after the loop runs next.",
+            "hi": "Loop को तुरंत खत्म करता है; loop के बाद वाली line आगे चलती है।",
+            "hinglish": "Loop ko turant khatam karta hai; loop ke baad wali line aage chalti hai.",
+            "kn": "Loop ಅನ್ನು ತಕ್ಷಣ ಮುಗಿಸುತ್ತೆ; loop ನಂತರದ line ಮುಂದೆ run ಆಗುತ್ತೆ."}),
+        ("continue", {
+            "en": "Skips the rest of the block for this round only, and moves on to the next round.",
+            "hi": "सिर्फ़ इस round के लिए block का बाकी हिस्सा छोड़ता है, और अगले round पर जाता है।",
+            "hinglish": "Sirf is round ke liye block ka baaki hissa chhodta hai, aur agle round par jaata hai.",
+            "kn": "ಈ ಸುತ್ತಿಗೆ ಮಾತ್ರ block ನ ಉಳಿದ ಭಾಗ ಬಿಟ್ಟು, ಮುಂದಿನ ಸುತ್ತಿಗೆ ಹೋಗುತ್ತೆ."}),
+        ("Half-life", {
+            "en": "The time it takes for the amount of a drug in the body to fall to half.",
+            "hi": "शरीर में किसी दवा की मात्रा को आधा होने में लगने वाला समय।",
+            "hinglish": "Shareer mein kisi dawa ki maatra ko aadha hone mein lagne wala samay.",
+            "kn": "ದೇಹದಲ್ಲಿ ಔಷಧದ ಪ್ರಮಾಣ ಅರ್ಧಕ್ಕೆ ಇಳಿಯಲು ಬೇಕಾಗುವ ಸಮಯ."}),
+    ],
 }
 
 

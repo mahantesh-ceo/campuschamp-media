@@ -1,0 +1,334 @@
+{
+  "hook": {
+    "title": "दवा कब तक खत्म होगी?",
+    "md": "एक patient के शरीर में किसी दवा की **100 mg** है। हर **4 घंटे** में उसका आधा हिस्सा निकल जाता है। यह समय दवा की **half-life** है। कितने घंटे बाद **10 mg** से कम बचेगा?\n\nआपको पहले से नहीं पता कि कितनी बार आधा करना पड़ेगा, इसलिए fixed `range()` वाला `for` loop ठीक नहीं बैठता। आपको ऐसा loop चाहिए जो **तब तक** चले **जब तक** कुछ सच है। यही आज का lesson है।\n\n*इस lesson के numbers Python सीखने के लिए बनाए गए हैं। असली half-life हर दवा की अलग होती है।*"
+  },
+  "learn": [
+    "**while loop** तब तक कैसे दोहराता है जब तक उसकी condition **True** है",
+    "कब **while** और कब **for** use करें",
+    "Loop **खत्म** हो, यह कैसे पक्का करें, और **infinite loop** क्या है",
+    "**break** loop को जल्दी कैसे रोकता है, और **continue** एक round कैसे छोड़ता है"
+  ],
+  "explanation": [
+    {
+      "heading": "जब तक condition True है, दोहराओ",
+      "md": "**while loop** अपनी condition जाँचता है, `True` हो तो block चलाता है, फिर वापस जाकर फिर जाँचता है। जैसे ही condition पहली बार `False` हो, यह रुक जाता है।\n\n```python\namount = 100\nhours = 0\nwhile amount > 10:\n    amount = amount / 2\n    hours += 4\nprint(\"Below 10 mg after\", hours, \"hours\")\n```\n\nयह `Below 10 mg after 16 hours` print करता है। Amount ऐसे घटता है: 100 → 50 → 25 → 12.5 → 6.25। चौथी बार आधा करने के बाद `6.25 > 10` `False` है, इसलिए loop खत्म।\n\nSyntax `if` जैसा ही है: condition, colon, और indent किया block। फ़र्क यह है कि `if` अपना block **ज़्यादा से ज़्यादा एक बार** चलाता है, और `while` **बार-बार**।",
+      "callout": {
+        "title": "while loop",
+        "md": "ऐसा loop जो तब तक अपना block दोहराता है जब तक condition True है। हर round से पहले condition जाँची जाती है।"
+      }
+    },
+    {
+      "heading": "for या while?",
+      "md": "| Use | कब | Example |\n|---|---|---|\n| `for` | Values पता हैं, या कितनी बार | Day 1 से 30, list की हर दवा |\n| `while` | **कुछ होने तक** दोहराना है | जब तक amount 10 mg से कम न हो, जब तक सही number type न हो |\n\nकई problems दोनों तरह लिखी जा सकती हैं, पर सही चुनाव program को छोटा और साफ़ बनाता है।"
+    },
+    {
+      "heading": "पक्का कीजिए कि loop खत्म हो",
+      "md": "`while` block के अंदर कुछ ऐसा होना चाहिए जो condition बदले, वरना loop कभी नहीं रुकेगा:\n\n```python\nstock = 3\nwhile stock > 0:\n    print(\"Dispense one strip\")\n    stock -= 1\nprint(\"Out of stock: reorder\")\n```\n\nयह print करता है:\n\n```\nDispense one strip\nDispense one strip\nDispense one strip\nOut of stock: reorder\n```\n\n`stock -= 1` हर round में stock एक कम करता है। इसके बिना `stock > 0` हमेशा `True` रहता, और program बिना रुके `Dispense one strip` print करता रहता। इसे **infinite loop** कहते हैं।",
+      "callout": {
+        "title": "Infinite loop में फँस गए?",
+        "md": "IDE में Stop button दबाइए, या terminal में Ctrl + C। फिर देखिए कि loop condition वाले variable को बदलता है या नहीं।"
+      }
+    },
+    {
+      "heading": "break: loop अभी रोको",
+      "md": "**break** loop को तुरंत खत्म कर देता है, भले values बची हों। यह `for` और `while` दोनों में काम करता है। यहाँ pharmacist पहला expired batch मिलने तक batches जाँचता है:\n\n```python\nexpiry_years = [2027, 2026, 2024, 2028]\nfor year in expiry_years:\n    if year < 2025:\n        print(\"Expired batch found:\", year)\n        break\n    print(year, \"OK\")\n```\n\nयह print करता है:\n\n```\n2027 OK\n2026 OK\nExpired batch found: 2024\n```\n\n2028 कभी जाँचा ही नहीं गया: `break` सीधा loop से बाहर कूद गया।\n\nएक आम pattern है `while True` के साथ `break`: सही जवाब मिलने तक पूछते रहो।\n\n```python\nwhile True:\n    dose = int(input(\"Dose in mg: \"))\n    if dose > 0:\n        break\n    print(\"The dose must be more than 0\")\nprint(\"Dose saved:\", dose)\n```\n\n`while True` अकेले हमेशा चलता; `break` ही बाहर निकलने का अकेला रास्ता है।"
+    },
+    {
+      "heading": "continue: अगले round पर जाओ",
+      "md": "**continue** block का बाकी हिस्सा **सिर्फ़ इस round के लिए** छोड़ देता है, और सीधा अगली value पर जाता है। Reading fail होने पर thermometer कभी-कभी 0 save कर देता है:\n\n```python\ntemps = [37.2, 0, 38.5, 36.9]\nfor temp in temps:\n    if temp == 0:\n        print(\"Missing reading, skipped\")\n        continue\n    print(\"Reading:\", temp)\n```\n\nयह print करता है:\n\n```\nReading: 37.2\nMissing reading, skipped\nReading: 38.5\nReading: 36.9\n```\n\n`break` loop को हमेशा के लिए छोड़ देता है; `continue` बस अगले round पर चला जाता है।",
+      "callout": {
+        "title": "while loop में continue",
+        "md": "while loop में variable को continue से पहले update कीजिए। वरना update भी छूट जाएगा, और loop कभी खत्म नहीं होगा।"
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "यह program 100 mg dose को हर 4 घंटे में आधा करता है, जब तक 10 mg से कम न बचे, और बताता है कि इसमें कितना समय लगा।",
+    "keyTerms": [
+      {
+        "meaning": "जब तक यह True है, block दोहराओ।"
+      },
+      {
+        "meaning": "हर half-life पर amount आधा करो।"
+      },
+      {
+        "meaning": "समय गिनो, हर round में 4 घंटे।"
+      },
+      {
+        "meaning": "Loop खत्म होता है, और अगली line चलती है।"
+      }
+    ],
+    "steps": [
+      {
+        "say": "यह program तब तक दोहराता है जब तक कोई condition False न हो जाए। हमें पहले से नहीं पता कि कितने rounds लगेंगे।"
+      },
+      {
+        "say": "Comment सवाल बताता है।"
+      },
+      {
+        "say": "amount सौ milligram से शुरू होता है।"
+      },
+      {
+        "say": "hours zero से शुरू होता है।"
+      },
+      {
+        "say": "while जाँचता है: क्या amount दस से ज़्यादा है? सौ है, इसलिए Python block में जाता है।"
+      },
+      {
+        "say": "Amount आधा होकर पचास हो जाता है।"
+      },
+      {
+        "say": "चार घंटे बीत गए।"
+      },
+      {
+        "say": "वापस while line पर। पचास अब भी दस से ज़्यादा है, इसलिए फिर घूमता है: पच्चीस, फिर बारह दशमलव पाँच। Hours बढ़कर बारह।"
+      },
+      {
+        "say": "बारह दशमलव पाँच अब भी दस से ज़्यादा है, इसलिए एक round और: छह दशमलव दो पाँच milligram, सोलह घंटे पर।"
+      },
+      {
+        "say": "अब: क्या छह दशमलव दो पाँच, दस से ज़्यादा है? नहीं। Condition False है, इसलिए loop खत्म।"
+      },
+      {
+        "say": "print घंटे दिखाता है।"
+      },
+      {
+        "say": "और जितना amount बचा है।"
+      }
+    ]
+  },
+  "errors": {
+    "intro": "while, break और continue के साथ ये दो errors आम हैं।",
+    "examples": [
+      {
+        "title": "Value देने से पहले variable use करना",
+        "md": "`while` line `doses_given` को तब जाँचती है जब उसमें कुछ store ही नहीं हुआ। पहले शुरुआती value दीजिए: `doses_given = 0`।"
+      },
+      {
+        "title": "Loop के बाहर break",
+        "md": "`break` और `continue` सिर्फ़ `for` या `while` loop के अंदर काम करते हैं। Loop के बाहर रुकना हो तो `if-else` use कीजिए।"
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Condition वाला variable बदलना भूल जाना, जैसे `stock -= 1` न लिखना",
+      "see": "कोई error नहीं, पर program कभी नहीं रुकता (infinite loop)",
+      "fix": "Stop दबाइए, फिर loop के अंदर ऐसी line जोड़िए जो condition को False की ओर ले जाए।"
+    },
+    {
+      "mistake": "Condition उल्टी लिखना, जैसे amount 100 से शुरू हो और `while amount < 10:`",
+      "see": "कोई error नहीं, पर loop कभी चलता ही नहीं",
+      "fix": "ज़ोर से पढ़िए: \"जब तक amount 10 से ज़्यादा है, दोहराओ\" यानी `while amount > 10:`।"
+    },
+    {
+      "mistake": "while loop में `continue` को update से पहले रखना, जैसे `i += 1` उसके नीचे",
+      "see": "कोई error नहीं, पर loop एक ही value पर हमेशा अटका रहता है",
+      "fix": "`continue` से पहले variable update कीजिए, या for loop use कीजिए।"
+    },
+    {
+      "mistake": "गिनती पता हो फिर भी counter के साथ while use करना",
+      "see": "कोई error नहीं, पर program लंबा और बिगड़ने में आसान",
+      "fix": "कितनी बार, यह पता हो तो `for ... in range(...)` use कीजिए।"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Stock की उल्टी गिनती",
+      "md": "**while loop** से strips को 3 से नीचे गिनिए, बिल्कुल ऐसे print करते हुए:",
+      "hints": [
+        "Loop के अंदर stock -= 1 याद रखिए, वरना यह कभी खत्म नहीं होगा।",
+        "while stock > 0:\n    print(f\"Strips left: {stock}\")\n    stock -= 1"
+      ]
+    },
+    {
+      "title": "6 घंटे की half-life",
+      "md": "एक दवा 80 mg से शुरू होती है और हर 6 घंटे में आधी होती है। **जब तक amount 10 mg या ज़्यादा है**, आधा करते रहिए, और बिल्कुल ऐसे print कीजिए:",
+      "hints": [
+        "Condition है amount >= 10। अंदर: amount = amount / 2 और hours += 6।",
+        "while amount >= 10:\n    amount = amount / 2\n    hours += 6\nprint(\"Below 10 mg after\", hours, \"hours\")"
+      ]
+    },
+    {
+      "title": "पहले expired batch पर रुकिए",
+      "md": "Expiry years जाँचिए। 2025 से पहले का साल मिले तो उसे print कीजिए और `break` से **रुक जाइए**। Output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "for loop के अंदर: if year < 2025: print कीजिए, फिर break।",
+        "for year in years:\n    if year < 2025:\n        print(\"Expired:\", year)\n        break"
+      ]
+    },
+    {
+      "title": "Bug ढूँढिए",
+      "md": "इन readings में सिर्फ़ 3 असली हैं; zeros failed readings हैं। Program 5 बताता है, और कोई error नहीं। इसे ठीक कीजिए ताकि output बिल्कुल यह हो:",
+      "hints": [
+        "क्या zero reading, continue के छोड़ने से पहले ही गिन ली जाती है?",
+        "valid += 1 को if block के नीचे ले जाइए, ताकि zeros उसे छोड़ दें।"
+      ],
+      "solutionNote": "continue सिर्फ़ अपने बाद वाली lines छोड़ता है। गिनती उससे पहले थी, इसलिए हर reading गिनी गई। गिनती if के बाद रखने से zeros छूट जाते हैं।"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "n = 1\nwhile n < 4:\n    print(n)\n    n += 1\n\nयह क्या print करता है?",
+      "why": "Loop n = 1, 2 और 3 के लिए चलता है। n 4 होने पर n < 4 False है।"
+    },
+    {
+      "q": "अगर while loop के अंदर कुछ भी उसकी condition न बदले तो क्या होगा?",
+      "why": "Condition True रहे तो loop घूमता ही रहता है।"
+    },
+    {
+      "q": "break क्या करता है?",
+      "why": "break सीधा loop से बाहर कूदता है; loop के बाद वाली line आगे चलती है।"
+    },
+    {
+      "q": "continue क्या करता है?",
+      "why": "continue सिर्फ़ इस round के लिए block की बाकी lines छोड़ता है।"
+    },
+    {
+      "q": "सही dose type होने तक पूछते रहना है। कौन-सा loop सबसे ठीक है?",
+      "why": "कितनी कोशिशें लगेंगी पता नहीं, इसलिए while (अक्सर while True और break) ठीक है।"
+    },
+    {
+      "q": "count = 10\nwhile count > 10:\n    print(\"A\")\n\nA कितनी बार print होता है?",
+      "why": "पहली ही जाँच में 10 > 10 False है, इसलिए block कभी नहीं चलता।"
+    }
+  ],
+  "exam": {
+    "note": "Practice के लिए important questions। University के असली questions अलग हो सकते हैं।"
+  },
+  "mindmap": {
+    "label": "Lesson 2.4 · while, break, continue",
+    "children": [
+      {
+        "label": "while loop",
+        "children": [
+          {
+            "label": "True रहने तक दोहराओ"
+          },
+          {
+            "label": "हर round से पहले जाँच"
+          }
+        ]
+      },
+      {
+        "label": "for बनाम while",
+        "children": [
+          {
+            "label": "for: values पता हैं"
+          },
+          {
+            "label": "while: कुछ होने तक"
+          }
+        ]
+      },
+      {
+        "label": "Loop खत्म करना",
+        "children": [
+          {
+            "label": "Variable बदलो"
+          },
+          {
+            "label": "Infinite loop"
+          },
+          {
+            "label": "Stop / Ctrl + C"
+          }
+        ]
+      },
+      {
+        "label": "break",
+        "children": [
+          {
+            "label": "अभी loop छोड़ो"
+          },
+          {
+            "label": "while True + break"
+          }
+        ]
+      },
+      {
+        "label": "continue",
+        "children": [
+          {
+            "label": "यह round छोड़ो"
+          },
+          {
+            "label": "continue से पहले update"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError"
+          },
+          {
+            "label": "'break' outside loop"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**while loop** अपना block **तब तक** दोहराता है जब तक condition `True` है, हर round से पहले जाँचते हुए।",
+    "Values या गिनती पता हो तो **for**; **कुछ होने तक** दोहराना हो तो **while**।",
+    "`while` loop के अंदर कुछ condition बदलना चाहिए; वरना **infinite loop** बनता है।",
+    "**break** loop तुरंत छोड़ देता है; `while True` और `break` सही जवाब मिलने तक पूछते रहते हैं।",
+    "**continue** एक round का बाकी हिस्सा छोड़कर अगले पर जाता है; while loop में उससे पहले variable update कीजिए।"
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "सौ milligram, zero घंटे पर। while line पूछती है: क्या यह दस से ज़्यादा है? हाँ।"
+        },
+        {
+          "say": "आधा हिस्सा निकल जाता है, और चार घंटे बीतते हैं। पचास milligram।"
+        },
+        {
+          "say": "अब भी दस से ज़्यादा, इसलिए यह घूमता रहता है: पच्चीस, फिर बारह दशमलव पाँच।"
+        },
+        {
+          "say": "एक बार और आधा: छह दशमलव दो पाँच, सोलह घंटे पर। अब condition False है।"
+        },
+        {
+          "say": "Loop अपने-आप रुकता है, और जवाब print होता है: सोलह घंटे।"
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "ऐसा loop जो तब तक अपना block दोहराता है जब तक condition True है, हर round से पहले condition जाँचते हुए।"
+    },
+    {
+      "meaning": "ऐसा loop जिसकी condition कभी False नहीं होती, इसलिए वह कभी नहीं रुकता। रोकने के लिए Stop या Ctrl + C दबाइए।"
+    },
+    {
+      "meaning": "Loop को तुरंत खत्म करता है; loop के बाद वाली line आगे चलती है।"
+    },
+    {
+      "meaning": "सिर्फ़ इस round के लिए block का बाकी हिस्सा छोड़ता है, और अगले round पर जाता है।"
+    },
+    {
+      "meaning": "शरीर में किसी दवा की मात्रा को आधा होने में लगने वाला समय।"
+    }
+  ]
+}
