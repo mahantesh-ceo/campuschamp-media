@@ -25,8 +25,8 @@
   {
    "id": "l03",
    "scene": "c-pains",
-   "say": "Who will teach it? Most pharmacy faculty were never trained in programming.",
-   "tts": "Who will teach it? Most pharmacy faculty were never trained in programming.",
+   "say": "Is your AI teacher equipped? Even a good teacher must build lessons, practicals and question banks from scratch.",
+   "tts": "Is your AI teacher equipped? Even a good teacher must build lessons, practicals and question banks from scratch.",
    "lang": "en",
    "speaker": "girish_en_documentary"
   },
@@ -153,8 +153,8 @@
   {
    "id": "l19",
    "scene": "c-teacher",
-   "say": "Faculty lead the class. Campus Champ powers the practice, on any phone, no lab needed.",
-   "tts": "Faculty lead the class. Campus Champ powers the practice, on any phone, no lab needed.",
+   "say": "Already appointed a teacher? We equip them from day one. Your teacher leads the class; Campus Champ powers the practice, on any phone, no lab needed.",
+   "tts": "Already appointed a teacher? We equip them from day one. Your teacher leads the class; Campus Champ powers the practice, on any phone, no lab needed.",
    "lang": "en",
    "speaker": "girish_en_documentary"
   },
@@ -185,16 +185,16 @@
   {
    "id": "l23",
    "scene": "c-cta",
-   "say": "Make your college AI-ready. One semester at a time.",
-   "tts": "Make your college AI-ready. One semester at a time.",
+   "say": "Make your college AI-ready. Equip your AI teacher from day one.",
+   "tts": "Make your college AI-ready. Equip your AI teacher from day one.",
    "lang": "en",
    "speaker": "girish_en_documentary"
   },
   {
    "id": "l24",
    "scene": "c-cta",
-   "say": "We're partnering with a small number of pilot colleges this year. Book a twenty-minute walkthrough at campuschamp.in/colleges.",
-   "tts": "We're partnering with a small number of pilot colleges this year. Book a twenty-minute walkthrough at campuschamp dot in, slash colleges.",
+   "say": "We're inviting a select few colleges to become Founding Partners for 2026-27. Book a twenty-minute walkthrough at campuschamp.in/colleges.",
+   "tts": "We're inviting a select few colleges to become Founding Partners for twenty twenty-six, twenty-seven. Book a twenty-minute walkthrough at campuschamp dot in slash colleges.",
    "lang": "en",
    "speaker": "girish_en_documentary"
   }

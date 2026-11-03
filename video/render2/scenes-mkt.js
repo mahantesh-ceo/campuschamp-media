@@ -250,7 +250,7 @@ window.addScenes(({ $, $$, clamp, ease, ap, lerp, show, pop, S, E, T }) => {
     'c-pains': {
       subsOnly: true,
       build: () => {
-        const Q = [['👩‍🏫', 'Who will teach it?', 'Faculty trained in pharmaceutics, not programming'], ['🖥️', 'Where will they practise?', '30 hours a semester. Limited labs.'], ['🧑‍🎓', 'Will they keep up?', 'Biology background. Second language.'], ['📋', 'How will you show it to NAAC?', 'Evidence that real learning happened']];
+        const Q = [['👩‍🏫', 'Is your teacher equipped?', 'Lessons, labs, question banks: from scratch'], ['🖥️', 'Where will they practise?', '30 hours a semester. Limited labs.'], ['🧑‍🎓', 'Will they keep up?', 'Biology background. Second language.'], ['📋', 'How will you show it to NAAC?', 'Evidence that real learning happened']];
         return `<div class="abs" style="inset:0;background:radial-gradient(circle at 50% 40%,#2a1030,#000 70%)"></div>
           <h1 id="h" class="abs" style="${H}left:0;right:0;top:400px;text-align:center;font-size:120px;color:#fff;transform-origin:50% 0">${words('Hard questions.')}</h1>
           <div class="abs" style="left:150px;right:150px;top:250px;display:grid;grid-template-columns:1fr 1fr;gap:26px">
@@ -440,7 +440,7 @@ window.addScenes(({ $, $$, clamp, ease, ap, lerp, show, pop, S, E, T }) => {
         <div id="a" class="abs" style="inset:0">
           <div id="ph" class="abs" style="left:250px;top:110px;perspective:2400px">${phone('dev', SHOT('m-lesson.png'), 380)}</div>
           <div class="abs" style="left:860px;top:260px;width:900px">
-            <p style="${H}font-size:84px;line-height:1.05;color:#1d1d1f">Your faculty lead.<br><span class="grad">Campus Champ powers the practice.</span></p>
+            <p style="${H}font-size:84px;line-height:1.05;color:#1d1d1f">Your teacher leads.<br><span class="grad">Campus Champ powers the practice.</span></p>
             <div style="margin-top:36px;display:flex;gap:16px;flex-wrap:wrap">${['ಕನ್ನಡ', 'हिन्दी', 'English', 'Any phone', 'No lab needed'].map((l) => `<span class="lg" style="opacity:0;${H}letter-spacing:-.01em;font-size:40px;color:#1d1d1f;padding:14px 30px;border-radius:999px;background:#f2f2f7">${l}</span>`).join('')}</div>
           </div>
         </div>
@@ -499,10 +499,10 @@ window.addScenes(({ $, $$, clamp, ease, ap, lerp, show, pop, S, E, T }) => {
         <div class="abs" style="left:0;right:0;top:250px;text-align:center">
           <h1 id="h" style="${H}font-size:140px;line-height:1.02;color:#fff">${words('Make your college')}</h1>
           <h1 id="h2" style="${H}font-size:140px;line-height:1.1;opacity:0"><span class="gl">AI-ready.</span></h1>
-          <p id="sb" style="${H}margin-top:18px;font-size:58px;color:#a1a1aa;opacity:0">One semester at a time.</p>
+          <p id="sb" style="${H}margin-top:18px;font-size:58px;color:#a1a1aa;opacity:0">Equip your AI teacher from day one.</p>
         </div>
         <div id="chips" class="abs" style="left:0;right:0;top:760px;display:flex;justify-content:center;gap:22px">
-          <span class="ch" style="opacity:0;font-family:var(--head);font-weight:700;font-size:38px;color:#fef3c7;padding:18px 34px;border-radius:999px;background:rgba(251,191,36,.14);border:1.5px solid #fbbf24">Pilot 2026-27 · limited colleges</span>
+          <span class="ch" style="opacity:0;font-family:var(--head);font-weight:700;font-size:38px;color:#fef3c7;padding:18px 34px;border-radius:999px;background:rgba(251,191,36,.14);border:1.5px solid #fbbf24">Founding Partners 2026-27 · limited colleges</span>
           <span class="ch" style="opacity:0;font-family:var(--head);font-weight:800;font-size:38px;color:#000;padding:18px 34px;border-radius:999px;background:#fff">Book a 20-minute walkthrough →</span>
         </div>`,
       update: (el, t, s) => {
