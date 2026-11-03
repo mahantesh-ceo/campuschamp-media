@@ -125,8 +125,20 @@ def snippet(meta, number):
     }
 
 
-def upload(meta, body, token):
+def video_file(meta):
+    """The 1080p master; if it isn't in the repo, fall back to the website copy (media/...) so a run never fails."""
     path = os.path.join(ROOT, meta["file"])
+    if os.path.exists(path):
+        return path
+    site = os.path.join(ROOT, "media", "bp101t", meta["lesson"], meta["language"], f"ep{meta['episode']}.mp4")
+    if os.path.exists(site):
+        print(f"::warning::{meta['file']} isn't in the repo; uploading the website copy {os.path.relpath(site, ROOT)} instead.")
+        return site
+    sys.exit(f"No video file: {meta['file']} (and no website copy).")
+
+
+def upload(meta, body, token):
+    path = video_file(meta)
     size = os.path.getsize(path)
     req = urllib.request.Request(
         "https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status",
@@ -135,23 +147,33 @@ def upload(meta, body, token):
                  "X-Upload-Content-Type": "video/mp4", "X-Upload-Content-Length": str(size)})
     with urllib.request.urlopen(req) as r:
         session = r.headers["Location"]
-    with open(path, "rb") as f:
-        put = urllib.request.Request(session, data=f.read(), method="PUT",
+    with open(path, "rb") as f:  # streamed from disk, not read into memory
+        put = urllib.request.Request(session, data=f, method="PUT",
                                      headers={"Content-Type": "video/mp4", "Content-Length": str(size)})
-        with urllib.request.urlopen(put) as r:
+        with urllib.request.urlopen(put, timeout=900) as r:
             return json.load(r)["id"]
 
 
 def set_thumbnail(video_id, thumb, token):
-    with open(os.path.join(ROOT, thumb), "rb") as f:
+    """True when YouTube accepted the custom thumbnail. A refusal is reported but never stops the run."""
+    path = os.path.join(ROOT, thumb)
+    if not os.path.exists(path):
+        print(f"::warning::Thumbnail {thumb} isn't in the repo")
+        return False
+    ctype = "image/jpeg" if path.lower().endswith((".jpg", ".jpeg")) else "image/png"
+    with open(path, "rb") as f:
         req = urllib.request.Request(f"https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId={video_id}",
                                      data=f.read(), method="POST",
-                                     headers={"Authorization": f"Bearer {token}", "Content-Type": "image/png"})
+                                     headers={"Authorization": f"Bearer {token}", "Content-Type": ctype})
     try:
         urllib.request.urlopen(req).read()
         print("Thumbnail set")
+        return True
     except urllib.error.HTTPError as e:
-        print("Thumbnail not set:", e.code)
+        why = e.read().decode()[:300]
+        hint = " The channel probably isn't phone-verified yet (youtube.com/verify); re-run this workflow after verifying." if e.code == 403 else ""
+        print(f"::warning::Thumbnail not set ({e.code}).{hint} {why}")
+        return False
 
 
 def playlist_id(meta, token):
@@ -223,6 +245,10 @@ if __name__ == "__main__":
         call("PUT", f"{API}/videos?part=snippet", token, {"id": existing, "snippet": snip})
         print(f"Already on YouTube, updated title/description: https://youtu.be/{existing}")
         video_id = existing
+        # a thumbnail refused earlier (e.g. before phone verification) is retried on every run until it sticks
+        if meta.get("thumbnail") and not src.get("thumbnail") and set_thumbnail(video_id, meta["thumbnail"], token):
+            src["thumbnail"] = True
+            save(VIDEOS, videos)
     else:
         body = {"snippet": snip, "status": {"privacyStatus": PRIVACY, "selfDeclaredMadeForKids": False,
                                             "containsSyntheticMedia": True}}  # AI voice disclosure
@@ -233,8 +259,8 @@ if __name__ == "__main__":
         except urllib.error.HTTPError as e:
             sys.exit(f"Upload failed ({e.code}): {e.read().decode()[:500]}")
         print(f"Uploaded ({'public' if PRIVACY == 'public' else 'scheduled ' + PUBLISH_AT if PUBLISH_AT else 'private'}): https://youtu.be/{video_id}")
-        if meta.get("thumbnail"):
-            set_thumbnail(video_id, meta["thumbnail"], token)
+        if meta.get("thumbnail") and set_thumbnail(video_id, meta["thumbnail"], token):
+            src["thumbnail"] = True
         # Public now → the website plays it from YouTube; otherwise pending until promote_published.py sees it public
         src["youtube" if PRIVACY == "public" else "youtube_pending"] = video_id
         save(VIDEOS, videos)

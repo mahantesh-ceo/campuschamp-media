@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       meta:
-        description: "Episode metadata file(s): all languages of an episode, e.g. video/meta/bp101t-1-1-ep1-*.json, or one file"
+        description: "Episode metadata file(s), e.g. video/meta/bp101t-1-1-ep1-*.json. Use video/meta/*.json to refresh every title and retry refused thumbnails (nothing is uploaded twice)."
         required: true
         default: "video/meta/bp101t-1-1-ep1-*.json"
       publish:
@@ -26,6 +26,7 @@ concurrency:
 jobs:
   upload:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v5
       - name: Which episodes
