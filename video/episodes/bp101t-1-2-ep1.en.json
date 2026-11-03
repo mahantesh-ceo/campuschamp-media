@@ -1,0 +1,423 @@
+{
+ "course": "bp101t",
+ "lesson": "1-2",
+ "episode": 1,
+ "lang": "en",
+ "engine": "sarvam",
+ "speaker": "ritu_en_edtech",
+ "voiceName": "Ritu",
+ "lines": [
+  {
+   "id": "h1",
+   "scene": "lhook",
+   "say": "Before you write any Python, you need Python itself on your computer, and a good place to write it.",
+   "tts": "Before you write any Python, you need Python itself on your computer, and a good place to write it.",
+   "reuse": false
+  },
+  {
+   "id": "h2",
+   "scene": "lhook",
+   "say": "In the next few minutes: how to install Python, which IDE to choose, and what to do if you don't have a laptop.",
+   "tts": "In the next few minutes: how to install Python, which IDE to choose, and what to do if you don't have a laptop.",
+   "reuse": false
+  },
+  {
+   "id": "../anim-ide-01",
+   "scene": "lanim",
+   "say": "A text editor, like Notepad, is just a blank page. It stores your code as plain text.",
+   "tts": "A text editor, like Notepad, is just a blank page. It stores your code as plain text.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-ide-02",
+   "scene": "lanim",
+   "say": "An IDE is an Integrated Development Environment. It is a complete workspace for writing code.",
+   "tts": "An IDE is an Integrated Development Environment. It is a complete workspace for writing code.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-ide-03",
+   "scene": "lanim",
+   "say": "It colours your code, suggests words as you type, warns you about mistakes, and helps you find bugs.",
+   "tts": "It colours your code, suggests words as you type, warns you about mistakes, and helps you find bugs.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-ide-04",
+   "scene": "lanim",
+   "say": "And with one click, it runs your program and shows the output, right there.",
+   "tts": "And with one click, it runs your program and shows the output, right there.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-ide-05",
+   "scene": "lanim",
+   "say": "That's why programmers prefer to use an IDE. It saves time and catches mistakes early.",
+   "tts": "That's why programmers prefer to use an IDE. It saves time and catches mistakes early.",
+   "reuse": true
+  },
+  {
+   "id": "c1",
+   "scene": "c1",
+   "say": "Installing Python means putting the interpreter on your computer. Download Python 3 from python dot org, tick Add to PATH, and check it with python, dash dash version.",
+   "tts": "Installing Python means putting the interpreter on your computer. Download Python 3 from python dot org, tick Add to PATH, and check it with python, dash dash version.",
+   "reuse": false
+  },
+  {
+   "id": "c2",
+   "scene": "c2",
+   "say": "Three popular IDEs. Jupyter Notebook runs code in small cells and shows graphs right below, which suits pharmacy data. PyCharm is for larger projects, and VS Code is a free, light editor from Microsoft.",
+   "tts": "Three popular IDEs. Jupyter Notebook runs code in small cells and shows graphs right below, which suits pharmacy data. PyCharm is for larger projects, and VS Code is a free, light editor from Microsoft.",
+   "reuse": false
+  },
+  {
+   "id": "c3",
+   "scene": "c3",
+   "say": "No laptop? No problem. Champ Lab runs Python in your browser, even on a phone, and Google Colab gives you a free notebook online.",
+   "tts": "No laptop? No problem. Champ Lab runs Python in your browser, even on a phone, and Google Colab gives you a free notebook online.",
+   "reuse": false
+  },
+  {
+   "id": "../step-01",
+   "scene": "lwalk",
+   "say": "You have installed Python and opened an IDE. Let's run a quick setup check.",
+   "tts": "You have installed Python and opened an IDE. Let's run a quick setup check.",
+   "reuse": true
+  },
+  {
+   "id": "../step-02",
+   "scene": "lwalk",
+   "say": "The first line is a comment, a note for us. In an IDE, comments appear in a different colour, so they are easy to spot.",
+   "tts": "The first line is a comment, a note for us. In an IDE, comments appear in a different colour, so they are easy to spot.",
+   "reuse": true
+  },
+  {
+   "id": "../step-03",
+   "scene": "lwalk",
+   "say": "This print confirms that Python is working. In an IDE, you press the Run button, and the output appears in a panel below your code.",
+   "tts": "This print confirms that Python is working. In an IDE, you press the Run button, and the output appears in a panel below your code.",
+   "reuse": true
+  },
+  {
+   "id": "../step-04",
+   "scene": "lwalk",
+   "say": "Here, Python adds two hundred and fifty and two hundred and fifty. If you see five hundred, calculations are working too.",
+   "tts": "Here, Python adds two hundred and fifty and two hundred and fifty. If you see five hundred, calculations are working too.",
+   "reuse": true
+  },
+  {
+   "id": "../step-05",
+   "scene": "lwalk",
+   "say": "The last line tells us we are ready for the course.",
+   "tts": "The last line tells us we are ready for the course.",
+   "reuse": true
+  },
+  {
+   "id": "../step-06",
+   "scene": "lwalk",
+   "say": "This same code runs the same way in Jupyter Notebook, PyCharm, VS Code, or Champ Lab. Only the buttons look different.",
+   "tts": "This same code runs the same way in Jupyter Notebook, PyCharm, VS Code, or Champ Lab. Only the buttons look different.",
+   "reuse": true
+  },
+  {
+   "id": "e1",
+   "scene": "e1",
+   "say": "A common mix-up: typing a terminal command, like python, inside Python itself. Commands like this belong in the Command Prompt, not in your code.",
+   "tts": "A common mix-up: typing a terminal command, like python, inside Python itself. Commands like this belong in the Command Prompt, not in your code.",
+   "reuse": false
+  },
+  {
+   "id": "e2",
+   "scene": "e2",
+   "say": "This one means the library isn't installed, or its name is misspelt. Check the spelling, then install it with pip.",
+   "tts": "This one means the library isn't installed, or its name is misspelt. Check the spelling, then install it with pip.",
+   "reuse": false
+  },
+  {
+   "id": "q1",
+   "scene": "quiz",
+   "say": "What does IDE stand for?",
+   "tts": "What does IDE stand for?",
+   "reuse": false
+  },
+  {
+   "id": "q2",
+   "scene": "quiz-answer",
+   "say": "The answer is A: Integrated Development Environment. IDE stands for Integrated Development Environment: one place to write, run and fix code.",
+   "tts": "The answer is A: Integrated Development Environment. IDE stands for Integrated Development Environment: one place to write, run and fix code.",
+   "reuse": false
+  },
+  {
+   "id": "r0",
+   "scene": "lrecap",
+   "say": "Let's recap.",
+   "tts": "Let's recap.",
+   "reuse": false
+  },
+  {
+   "id": "r1",
+   "scene": "lrecap",
+   "say": "Installing Python means putting the interpreter on your computer; on Windows, tick Add python.exe to PATH.",
+   "tts": "Installing Python means putting the interpreter on your computer; on Windows, tick Add python.exe to PATH.",
+   "reuse": false
+  },
+  {
+   "id": "r2",
+   "scene": "lrecap",
+   "say": "Check your installation with python --version in Command Prompt or Terminal.",
+   "tts": "Check your installation with python --version in Command Prompt or Terminal.",
+   "reuse": false
+  },
+  {
+   "id": "r3",
+   "scene": "lrecap",
+   "say": "An IDE (Integrated Development Environment) lets you write, run and fix code in one place.",
+   "tts": "An IDE (Integrated Development Environment) lets you write, run and fix code in one place.",
+   "reuse": false
+  },
+  {
+   "id": "r4",
+   "scene": "lrecap",
+   "say": "Popular IDEs: Jupyter Notebook (cells and graphs), PyCharm (full-featured) and VS Code (free, by Microsoft).",
+   "tts": "Popular IDEs: Jupyter Notebook (cells and graphs), PyCharm (full-featured) and VS Code (free, by Microsoft).",
+   "reuse": false
+  }
+ ],
+ "data": {
+  "hook": {
+   "icon": "🧰",
+   "title": "Set up your coding workspace",
+   "learn": [
+    "How to install Python and check that it works",
+    "What an IDE is, and the three popular ones: Jupyter Notebook, PyCharm and VS Code",
+    "The advantages of IDEs over text editors"
+   ],
+   "label": "BP101T · Lesson 1.2",
+   "learnT": "In this video"
+  },
+  "lanim": {
+   "title": "Text editor vs IDE",
+   "actors": [
+    {
+     "id": "editor",
+     "type": "card",
+     "title": "Text editor",
+     "icon": "📝",
+     "color": "amber",
+     "mono": true,
+     "lines": [
+      "print(\"Hello from my IDE!\")",
+      "(no colours, no hints, no Run)"
+     ],
+     "desktop": {
+      "x": 40,
+      "y": 40,
+      "w": 320,
+      "h": 240
+     },
+     "mobile": {
+      "x": 16,
+      "y": 16,
+      "w": 328,
+      "h": 130
+     }
+    },
+    {
+     "id": "ide",
+     "type": "card",
+     "title": "IDE",
+     "icon": "🧰",
+     "color": "indigo",
+     "lines": [
+      "Syntax colours",
+      "Auto-complete",
+      "Error hints",
+      "One-click Run",
+      "Debugger"
+     ],
+     "desktop": {
+      "x": 440,
+      "y": 40,
+      "w": 320,
+      "h": 240
+     },
+     "mobile": {
+      "x": 16,
+      "y": 166,
+      "w": 328,
+      "h": 236
+     }
+    },
+    {
+     "id": "out",
+     "type": "terminal",
+     "title": "Output",
+     "desktop": {
+      "x": 40,
+      "y": 310,
+      "w": 720,
+      "h": 120
+     },
+     "mobile": {
+      "x": 16,
+      "y": 422,
+      "w": 328,
+      "h": 130
+     }
+    }
+   ],
+   "steps": [
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "editor"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "ide"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "scanLines",
+       "target": "ide",
+       "intervalMs": 900
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "highlightLine",
+       "target": "ide",
+       "line": 3
+      },
+      {
+       "do": "show",
+       "target": "out"
+      },
+      {
+       "do": "appendOutput",
+       "target": "out",
+       "text": "Hello from my IDE!"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "connect",
+       "id": "upgrade",
+       "from": "editor",
+       "to": "ide",
+       "label": "Upgrade",
+       "color": "emerald"
+      },
+      {
+       "do": "pulse",
+       "target": "ide"
+      }
+     ]
+    }
+   ]
+  },
+  "c1": {
+   "heading": "What does \"installing Python\" mean?",
+   "mode": "points",
+   "idea": "Key idea",
+   "points": [
+    "python.org → Downloads → Python 3",
+    "Tick “Add python.exe to PATH”",
+    "Check: python --version"
+   ],
+   "callout": "Always install Python 3. Old tutorials use Python 2, which is no longer supported."
+  },
+  "c2": {
+   "heading": "Three popular IDEs",
+   "mode": "points",
+   "idea": "Key idea",
+   "points": [
+    "Jupyter Notebook: cells, data and graphs",
+    "PyCharm: larger projects",
+    "VS Code: free and light, by Microsoft"
+   ],
+   "callout": "A free bundle that installs Python together with Jupyter Notebook and popular science libraries in one go."
+  },
+  "c3": {
+   "heading": "No laptop? Use the browser",
+   "mode": "points",
+   "idea": "Key idea",
+   "points": [
+    "Champ Lab: Python in your browser, even on a phone",
+    "Google Colab: a free Jupyter Notebook online"
+   ]
+  },
+  "lwalk": {
+   "file": "setup_check.py",
+   "code": "# Setup check\nprint(\"Python is installed!\")\nprint(\"Test sum:\", 250 + 250)\nprint(\"All set for BP101T\")",
+   "steps": [
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 1,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 2,
+     "vars": {},
+     "output": "Python is installed!"
+    },
+    {
+     "line": 3,
+     "vars": {},
+     "output": "Test sum: 500"
+    },
+    {
+     "line": 4,
+     "vars": {},
+     "output": "All set for BP101T"
+    },
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    }
+   ],
+   "varsT": "Variables",
+   "outT": "Output"
+  },
+  "e1": {
+   "title": "Typing a terminal command inside Python",
+   "code": "python --version",
+   "errorLine": 1,
+   "output": "NameError: name 'python' is not defined"
+  },
+  "e2": {
+   "title": "A library that isn't installed (or is misspelt)",
+   "code": "import numpyy",
+   "errorLine": 1,
+   "output": "ModuleNotFoundError: No module named 'numpyy'"
+  },
+  "lrecap": {
+   "items": [
+    "Installing Python means putting the interpreter on your computer; on Windows, tick Add python.exe to PATH.",
+    "Check your installation with python --version in Command Prompt or Terminal.",
+    "An IDE (Integrated Development Environment) lets you write, run and fix code in one place.",
+    "Popular IDEs: Jupyter Notebook (cells and graphs), PyCharm (full-featured) and VS Code (free, by Microsoft)."
+   ],
+   "title": "Recap"
+  },
+  "output": "Output"
+ }
+}

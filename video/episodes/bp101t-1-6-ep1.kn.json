@@ -1,0 +1,459 @@
+{
+ "course": "bp101t",
+ "lesson": "1-6",
+ "episode": 1,
+ "lang": "kn",
+ "engine": "sarvam",
+ "speaker": "chaitra_kn_conversation",
+ "voiceName": "Chaitra",
+ "lines": [
+  {
+   "id": "h1",
+   "scene": "lhook",
+   "say": "ನಿಜವಾದ records ಗೊಂದಲದಿಂದ ಕೂಡಿರುತ್ತವೆ: extra spaces, ಚಿಕ್ಕ ಅಕ್ಷರಗಳು, unit ಮುಂಚೆ space ಇಲ್ಲ.",
+   "tts": "ನಿಜವಾದ records ಗೊಂದಲದಿಂದ ಕೂಡಿರುತ್ತವೆ: extra spaces, ಚಿಕ್ಕ ಅಕ್ಷರಗಳು, unit ಮುಂಚೆ space ಇಲ್ಲ.",
+   "reuse": false
+  },
+  {
+   "id": "h2",
+   "scene": "lhook",
+   "say": "ಇವತ್ತು string operations ಇಂದ text ಸರಿ ಮಾಡುತ್ತೀರಿ, batch code ನ ಭಾಗಗಳನ್ನು ಓದುತ್ತೀರಿ, patient record ಅನ್ನು ಒಡೆಯುತ್ತೀರಿ.",
+   "tts": "ಇವತ್ತು string operations ಇಂದ text ಸರಿ ಮಾಡುತ್ತೀರಿ, batch code ನ ಭಾಗಗಳನ್ನು ಓದುತ್ತೀರಿ, patient record ಅನ್ನು ಒಡೆಯುತ್ತೀರಿ.",
+   "reuse": false
+  },
+  {
+   "id": "../anim-slice-01",
+   "scene": "lanim",
+   "say": "ಇದು ಒಂದು medicine strip ನ batch code.",
+   "tts": "ಇದು ಒಂದು medicine strip ನ batch code.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-slice-02",
+   "scene": "lanim",
+   "say": "ಪ್ರತಿ character ಗೂ ಒಂದು index ಇದೆ, zero ಇಂದ ಶುರು. ವರ್ಷ index ನಾಲ್ಕರಿಂದ ಶುರು ಆಗುತ್ತೆ.",
+   "tts": "ಪ್ರತಿ character ಗೂ ಒಂದು index ಇದೆ, zero ಇಂದ ಶುರು. ವರ್ಷ index ನಾಲ್ಕರಿಂದ ಶುರು ಆಗುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-slice-03",
+   "scene": "lanim",
+   "say": "Slice ನಾಲ್ಕರಿಂದ ಎಂಟು, index ನಾಲ್ಕು, ಐದು, ಆರು ಮತ್ತು ಏಳು ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ. ಎಂಟಕ್ಕೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ.",
+   "tts": "Slice ನಾಲ್ಕರಿಂದ ಎಂಟು, index ನಾಲ್ಕು, ಐದು, ಆರು ಮತ್ತು ಏಳು ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ. ಎಂಟಕ್ಕೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-slice-04",
+   "scene": "lanim",
+   "say": "ಈ ನಾಲ್ಕು characters ಸೇರಿ ವರ್ಷ ಆಗುತ್ತೆ: ಎರಡು zero ಎರಡು ಆರು.",
+   "tts": "ಈ ನಾಲ್ಕು characters ಸೇರಿ ವರ್ಷ ಆಗುತ್ತೆ: ಎರಡು zero ಎರಡು ಆರು.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-slice-05",
+   "scene": "lanim",
+   "say": "ಮತ್ತು program ಇದನ್ನು label ಮೇಲೆ print ಮಾಡುತ್ತೆ.",
+   "tts": "ಮತ್ತು program ಇದನ್ನು label ಮೇಲೆ print ಮಾಡುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "c1",
+   "scene": "c1",
+   "say": "Plus strings ಅನ್ನು ಜೋಡಿಸುತ್ತೆ, star ಅವನ್ನು ಪುನರಾವರ್ತಿಸುತ್ತೆ, len characters ಎಣಿಸುತ್ತೆ, spaces ಸೇರಿ.",
+   "tts": "Plus strings ಅನ್ನು ಜೋಡಿಸುತ್ತೆ, star ಅವನ್ನು ಪುನರಾವರ್ತಿಸುತ್ತೆ, len characters ಎಣಿಸುತ್ತೆ, spaces ಸೇರಿ.",
+   "reuse": false
+  },
+  {
+   "id": "c2",
+   "scene": "c2",
+   "say": "Slice string ನ ಒಂದು ಭಾಗ ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ. ಮೊದಲ index ಇಂದ ಶುರುವಾಗಿ ಎರಡನೆಯದಕ್ಕೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ, ಅದಕ್ಕೇ ನಾಲ್ಕರಿಂದ ಎಂಟು ವರ್ಷವನ್ನು ಕೊಡುತ್ತೆ.",
+   "tts": "Slice string ನ ಒಂದು ಭಾಗ ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ. ಮೊದಲ index ಇಂದ ಶುರುವಾಗಿ ಎರಡನೆಯದಕ್ಕೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ, ಅದಕ್ಕೇ ನಾಲ್ಕರಿಂದ ಎಂಟು ವರ್ಷವನ್ನು ಕೊಡುತ್ತೆ.",
+   "reuse": false
+  },
+  {
+   "id": "c3",
+   "scene": "c3",
+   "say": "String methods text ಸರಿ ಮಾಡುತ್ತವೆ. strip ಎರಡೂ ತುದಿಯ spaces ತೆಗೆಯುತ್ತೆ, upper capitals ಮಾಡುತ್ತೆ, replace ಒಂದು text ಬದಲು ಇನ್ನೊಂದು ಹಾಕುತ್ತೆ.",
+   "tts": "String methods text ಸರಿ ಮಾಡುತ್ತವೆ. strip ಎರಡೂ ತುದಿಯ spaces ತೆಗೆಯುತ್ತೆ, upper capitals ಮಾಡುತ್ತೆ, replace ಒಂದು text ಬದಲು ಇನ್ನೊಂದು ಹಾಕುತ್ತೆ.",
+   "reuse": false
+  },
+  {
+   "id": "../step-01",
+   "scene": "lwalk",
+   "say": "ಈ program ಒಂದು ಗೊಂದಲದ drug entry ತೆಗೆದುಕೊಂಡು, ಒಂದೊಂದೇ string tool ಇಂದ ಅದನ್ನು ಸರಿ ಮಾಡುತ್ತೆ.",
+   "tts": "ಈ program ಒಂದು ಗೊಂದಲದ drug entry ತೆಗೆದುಕೊಂಡು, ಒಂದೊಂದೇ string tool ಇಂದ ಅದನ್ನು ಸರಿ ಮಾಡುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-02",
+   "scene": "lwalk",
+   "say": "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ.",
+   "tts": "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-03",
+   "scene": "lwalk",
+   "say": "Entry ನ ಎರಡೂ ತುದಿಗಳಲ್ಲಿ extra spaces ಇವೆ, ಮತ್ತು ಮೊದಲ ಅಕ್ಷರ ಚಿಕ್ಕದು. Variables panel ನೋಡಿ: spaces quotes ಒಳಗೆ ಇವೆ.",
+   "tts": "Entry ನ ಎರಡೂ ತುದಿಗಳಲ್ಲಿ extra spaces ಇವೆ, ಮತ್ತು ಮೊದಲ ಅಕ್ಷರ ಚಿಕ್ಕದು. Variables panel ನೋಡಿ: spaces quotes ಒಳಗೆ ಇವೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-04",
+   "scene": "lwalk",
+   "say": "strip ಎರಡೂ ತುದಿಗಳಿಂದ spaces ತೆಗೆಯುತ್ತೆ. ಆಮೇಲೆ capitalize ಮೊದಲ ಅಕ್ಷರವನ್ನು capital ಮಾಡುತ್ತೆ. ಸರಿಯಾದ text drug ನಲ್ಲಿ save ಆಗುತ್ತೆ.",
+   "tts": "strip ಎರಡೂ ತುದಿಗಳಿಂದ spaces ತೆಗೆಯುತ್ತೆ. ಆಮೇಲೆ capitalize ಮೊದಲ ಅಕ್ಷರವನ್ನು capital ಮಾಡುತ್ತೆ. ಸರಿಯಾದ text drug ನಲ್ಲಿ save ಆಗುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-05",
+   "scene": "lwalk",
+   "say": "print ಸರಿಯಾದ entry ತೋರಿಸುತ್ತೆ.",
+   "tts": "print ಸರಿಯಾದ entry ತೋರಿಸುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-06",
+   "scene": "lwalk",
+   "say": "len ಪ್ರತಿ character ಎಣಿಸುತ್ತೆ, ಮಧ್ಯದ space ಸೇರಿ. ಒಟ್ಟು ಹದಿನೇಳು.",
+   "tts": "len ಪ್ರತಿ character ಎಣಿಸುತ್ತೆ, ಮಧ್ಯದ space ಸೇರಿ. ಒಟ್ಟು ಹದಿನೇಳು.",
+   "reuse": true
+  },
+  {
+   "id": "../step-07",
+   "scene": "lwalk",
+   "say": "Slice ಮೊದಲ ನಾಲ್ಕು characters ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ, A M O X, ಮತ್ತು upper ಅವನ್ನು capitals ಮಾಡುತ್ತೆ. Label ಗೆ ಇದು ಒಂದು ಚಿಕ್ಕ code.",
+   "tts": "Slice ಮೊದಲ ನಾಲ್ಕು characters ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ, A M O X, ಮತ್ತು upper ಅವನ್ನು capitals ಮಾಡುತ್ತೆ. Label ಗೆ ಇದು ಒಂದು ಚಿಕ್ಕ code.",
+   "reuse": true
+  },
+  {
+   "id": "../step-08",
+   "scene": "lwalk",
+   "say": "replace, ಇನ್ನೂರ ಐವತ್ತು M G ಬದಲು ಇನ್ನೂರ ಐವತ್ತು, space, M G ಹಾಕುತ್ತೆ. ಗಮನಿಸಿ, drug ತಾನೇ ಬದಲಾಗಿಲ್ಲ: replace ಹೊಸ string ಕೊಟ್ಟಿದೆ.",
+   "tts": "replace, ಇನ್ನೂರ ಐವತ್ತು M G ಬದಲು ಇನ್ನೂರ ಐವತ್ತು, space, M G ಹಾಕುತ್ತೆ. ಗಮನಿಸಿ, drug ತಾನೇ ಬದಲಾಗಿಲ್ಲ: replace ಹೊಸ string ಕೊಟ್ಟಿದೆ.",
+   "reuse": true
+  },
+  {
+   "id": "e1",
+   "scene": "e1",
+   "say": "Aspirin ನಲ್ಲಿ ಏಳು characters ಇವೆ, index zero ಇಂದ ಆರರವರೆಗೆ. Index ಏಳು ಕೇಳಿದರೆ IndexError ಬರುತ್ತೆ.",
+   "tts": "Aspirin ನಲ್ಲಿ ಏಳು characters ಇವೆ, index zero ಇಂದ ಆರರವರೆಗೆ. Index ಏಳು ಕೇಳಿದರೆ IndexError ಬರುತ್ತೆ.",
+   "reuse": false
+  },
+  {
+   "id": "e2",
+   "scene": "e2",
+   "say": "ಮತ್ತು strings ಅನ್ನು ಅದೇ ಜಾಗದಲ್ಲಿ ಬದಲಾಯಿಸಲು ಆಗಲ್ಲ. ಹೊಸ string ಮಾಡಿ ಅದನ್ನು save ಮಾಡಿ.",
+   "tts": "ಮತ್ತು strings ಅನ್ನು ಅದೇ ಜಾಗದಲ್ಲಿ ಬದಲಾಯಿಸಲು ಆಗಲ್ಲ. ಹೊಸ string ಮಾಡಿ ಅದನ್ನು save ಮಾಡಿ.",
+   "reuse": false
+  },
+  {
+   "id": "q1",
+   "scene": "quiz",
+   "say": "drug = \"Paracetamol\". drug[0] ಏನು?",
+   "tts": "drug = \"Paracetamol\". drug[0] ಏನು?",
+   "reuse": false
+  },
+  {
+   "id": "q2",
+   "scene": "quiz-answer",
+   "say": "ಸರಿಯಾದ ಉತ್ತರ A: P. Index 0 ಇಂದ ಶುರು, ಅದಕ್ಕೇ drug[0] ಮೊದಲ character.",
+   "tts": "ಸರಿಯಾದ ಉತ್ತರ A: P. Index 0 ಇಂದ ಶುರು, ಅದಕ್ಕೇ drug[0] ಮೊದಲ character.",
+   "reuse": false
+  },
+  {
+   "id": "r0",
+   "scene": "lrecap",
+   "say": "ಒಮ್ಮೆ recap ಮಾಡೋಣ.",
+   "tts": "ಒಮ್ಮೆ recap ಮಾಡೋಣ.",
+   "reuse": false
+  },
+  {
+   "id": "r1",
+   "scene": "lrecap",
+   "say": "+ strings ಸೇರಿಸುತ್ತೆ, * ಅವನ್ನು ಪುನರಾವರ್ತಿಸುತ್ತೆ ಮತ್ತು len() characters ಎಣಿಸುತ್ತೆ, spaces ಸೇರಿ.",
+   "tts": "+ strings ಸೇರಿಸುತ್ತೆ, * ಅವನ್ನು ಪುನರಾವರ್ತಿಸುತ್ತೆ ಮತ್ತು len() characters ಎಣಿಸುತ್ತೆ, spaces ಸೇರಿ.",
+   "reuse": false
+  },
+  {
+   "id": "r2",
+   "scene": "lrecap",
+   "say": "Index ಒಂದು character ಆರಿಸುತ್ತೆ; ಎಣಿಕೆ 0 ಇಂದ ಶುರು, ಮತ್ತು -1 ಕೊನೆಯ character.",
+   "tts": "Index ಒಂದು character ಆರಿಸುತ್ತೆ; ಎಣಿಕೆ 0 ಇಂದ ಶುರು, ಮತ್ತು -1 ಕೊನೆಯ character.",
+   "reuse": false
+  },
+  {
+   "id": "r3",
+   "scene": "lrecap",
+   "say": "Slice text[start:end] ಒಂದು ಭಾಗ ತೆಗೆಯುತ್ತೆ, end ಗೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ.",
+   "tts": "Slice text[start:end] ಒಂದು ಭಾಗ ತೆಗೆಯುತ್ತೆ, end ಗೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ.",
+   "reuse": false
+  },
+  {
+   "id": "r4",
+   "scene": "lrecap",
+   "say": "strip(), upper(), lower(), capitalize() ಮತ್ತು replace() text ಸರಿ ಮಾಡುತ್ತವೆ. ಇವು ಹೊಸ string ಕೊಡುತ್ತವೆ, ಅದಕ್ಕೇ result save ಮಾಡಿ.",
+   "tts": "strip(), upper(), lower(), capitalize() ಮತ್ತು replace() text ಸರಿ ಮಾಡುತ್ತವೆ. ಇವು ಹೊಸ string ಕೊಡುತ್ತವೆ, ಅದಕ್ಕೇ result save ಮಾಡಿ.",
+   "reuse": false
+  }
+ ],
+ "data": {
+  "hook": {
+   "icon": "🔤",
+   "title": "ಗೊಂದಲದ drug entry ಅನ್ನು ಸರಿ ಮಾಡಿ",
+   "learn": [
+    "+, * ಮತ್ತು len() ಇಂದ text ಅನ್ನು ಸೇರಿಸೋದು, ಪುನರಾವರ್ತಿಸೋದು ಮತ್ತು ಅಳೆಯೋದು",
+    "index ಇಂದ ಒಂದು character, ಮತ್ತು slice ಇಂದ text ನ ಒಂದು ಭಾಗ ಹೇಗೆ ತೆಗೆಯೋದು",
+    "strip(), upper(), lower(), capitalize() ಮತ್ತು replace() ಇಂದ text ಅನ್ನು ಹೇಗೆ ಸರಿ ಮಾಡೋದು"
+   ],
+   "label": "BP101T · Lesson 1.6",
+   "learnT": "ಈ video ದಲ್ಲಿ"
+  },
+  "lanim": {
+   "title": "Slicing a batch code",
+   "actors": [
+    {
+     "id": "batch",
+     "type": "box",
+     "label": "batch",
+     "value": "\"AMX-2026-0457\"",
+     "color": "amber",
+     "desktop": {
+      "x": 200,
+      "y": 30,
+      "w": 400,
+      "h": 110
+     },
+     "mobile": {
+      "x": 16,
+      "y": 16,
+      "w": 328,
+      "h": 100
+     }
+    },
+    {
+     "id": "t_idx",
+     "type": "text",
+     "text": "A=0  M=1  X=2  -=3  2=4  0=5  2=6  6=7",
+     "size": 18,
+     "desktop": {
+      "x": 120,
+      "y": 160,
+      "w": 560,
+      "h": 28
+     },
+     "mobile": {
+      "x": 16,
+      "y": 128,
+      "w": 328,
+      "h": 52
+     }
+    },
+    {
+     "id": "t_slice",
+     "type": "text",
+     "text": "batch[4:8] → indexes 4, 5, 6, 7",
+     "size": 18,
+     "desktop": {
+      "x": 120,
+      "y": 200,
+      "w": 560,
+      "h": 28
+     },
+     "mobile": {
+      "x": 16,
+      "y": 192,
+      "w": 328,
+      "h": 26
+     }
+    },
+    {
+     "id": "year",
+     "type": "box",
+     "label": "year",
+     "value": "\"2026\"",
+     "color": "emerald",
+     "desktop": {
+      "x": 300,
+      "y": 245,
+      "w": 200,
+      "h": 100
+     },
+     "mobile": {
+      "x": 100,
+      "y": 232,
+      "w": 160,
+      "h": 100
+     }
+    },
+    {
+     "id": "term",
+     "type": "terminal",
+     "title": "Screen",
+     "desktop": {
+      "x": 40,
+      "y": 365,
+      "w": 730,
+      "h": 75
+     },
+     "mobile": {
+      "x": 16,
+      "y": 350,
+      "w": 328,
+      "h": 90
+     }
+    }
+   ],
+   "steps": [
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "batch"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "t_idx"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "t_slice"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "year"
+      },
+      {
+       "do": "pulse",
+       "target": "year"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "term"
+      },
+      {
+       "do": "appendOutput",
+       "target": "term",
+       "text": "Year: 2026"
+      }
+     ]
+    }
+   ]
+  },
+  "c1": {
+   "heading": "Strings: ಸೇರಿಸೋದು, ಪುನರಾವರ್ತಿಸೋದು, ಅಳೆಯೋದು",
+   "mode": "code",
+   "idea": "ಮುಖ್ಯ ವಿಷಯ",
+   "code": "drug = \"Paracetamol\"\nprint(drug + \" 500 mg\")\nprint(\"-\" * 12)\nprint(len(drug))",
+   "output": "Paracetamol 500 mg\n------------\n11",
+   "file": "example.py"
+  },
+  "c2": {
+   "heading": "Slicing: string ನ ಒಂದು ಭಾಗ",
+   "mode": "code",
+   "idea": "ಮುಖ್ಯ ವಿಷಯ",
+   "code": "batch = \"AMX-2026-0457\"\nprint(batch[0:3])\nprint(batch[4:8])\nprint(batch[-4:])",
+   "output": "AMX\n2026\n0457",
+   "file": "example.py",
+   "callout": "text[start:end] index start ಇಂದ index end ವರೆಗಿನ characters ಕೊಡುತ್ತೆ, end ಅನ್ನು ಬಿಟ್ಟು."
+  },
+  "c3": {
+   "heading": "String methods: text ಸರಿ ಮಾಡೋದು",
+   "mode": "code",
+   "idea": "ಮುಖ್ಯ ವಿಷಯ",
+   "code": "entry = \"  amoxicillin 250mg  \"\nprint(entry.strip())\nprint(entry.strip().upper())\nprint(\"250mg\".replace(\"mg\", \" mg\"))",
+   "output": "amoxicillin 250mg\nAMOXICILLIN 250MG\n250 mg",
+   "file": "example.py"
+  },
+  "lwalk": {
+   "file": "clean_entry.py",
+   "code": "# Clean a messy drug entry\nentry = \"  amoxicillin 250mg  \"\ndrug = entry.strip().capitalize()\nprint(drug)\nprint(\"Length:\", len(drug))\nprint(\"Code:\", drug[:4].upper())\nprint(drug.replace(\"250mg\", \"250 mg\"))",
+   "steps": [
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 1,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 2,
+     "vars": {
+      "entry": "\"  amoxicillin 250mg  \""
+     },
+     "output": null
+    },
+    {
+     "line": 3,
+     "vars": {
+      "drug": "\"Amoxicillin 250mg\""
+     },
+     "output": null
+    },
+    {
+     "line": 4,
+     "vars": {},
+     "output": "Amoxicillin 250mg"
+    },
+    {
+     "line": 5,
+     "vars": {},
+     "output": "Length: 17"
+    },
+    {
+     "line": 6,
+     "vars": {},
+     "output": "Code: AMOX"
+    },
+    {
+     "line": 7,
+     "vars": {},
+     "output": "Amoxicillin 250 mg"
+    }
+   ],
+   "varsT": "Variables",
+   "outT": "Output"
+  },
+  "e1": {
+   "title": "ಇಲ್ಲದ index ಕೇಳೋದು",
+   "code": "drug = \"Aspirin\"\nprint(drug[7])",
+   "errorLine": 2,
+   "output": "IndexError: string index out of range"
+  },
+  "e2": {
+   "title": "ಒಂದು character ಬದಲಾಯಿಸೋಕೆ ಪ್ರಯತ್ನ",
+   "code": "drug = \"aspirin\"\ndrug[0] = \"A\"",
+   "errorLine": 2,
+   "output": "TypeError: 'str' object does not support item assignment"
+  },
+  "lrecap": {
+   "items": [
+    "+ strings ಸೇರಿಸುತ್ತೆ, * ಅವನ್ನು ಪುನರಾವರ್ತಿಸುತ್ತೆ ಮತ್ತು len() characters ಎಣಿಸುತ್ತೆ, spaces ಸೇರಿ.",
+    "Index ಒಂದು character ಆರಿಸುತ್ತೆ; ಎಣಿಕೆ 0 ಇಂದ ಶುರು, ಮತ್ತು -1 ಕೊನೆಯ character.",
+    "Slice text[start:end] ಒಂದು ಭಾಗ ತೆಗೆಯುತ್ತೆ, end ಗೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ.",
+    "strip(), upper(), lower(), capitalize() ಮತ್ತು replace() text ಸರಿ ಮಾಡುತ್ತವೆ. ಇವು ಹೊಸ string ಕೊಡುತ್ತವೆ, ಅದಕ್ಕೇ result save ಮಾಡಿ."
+   ],
+   "title": "Recap"
+  },
+  "output": "Output"
+ }
+}

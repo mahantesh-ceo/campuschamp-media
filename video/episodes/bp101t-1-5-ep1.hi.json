@@ -1,0 +1,486 @@
+{
+ "course": "bp101t",
+ "lesson": "1-5",
+ "episode": 1,
+ "lang": "hi",
+ "engine": "sarvam",
+ "speaker": "ritu_hi_conversation",
+ "voiceName": "Ritu",
+ "lines": [
+  {
+   "id": "h1",
+   "scene": "lhook",
+   "say": "अब तक आपके programs हर बार वही numbers use करते थे।",
+   "tts": "अब तक आपके programs हर बार वही numbers use करते थे।",
+   "reuse": false
+  },
+  {
+   "id": "h2",
+   "scene": "lhook",
+   "say": "असली pharmacy tool को पूछना पड़ता है: patient का वज़न कितना है? आज आपका program पूछना सीखेगा, और साफ़-सुथरा जवाब देना भी।",
+   "tts": "असली pharmacy tool को पूछना पड़ता है: patient का वज़न कितना है? आज आपका program पूछना सीखेगा, और साफ़-सुथरा जवाब देना भी।",
+   "reuse": false
+  },
+  {
+   "id": "../anim-input-01",
+   "scene": "lanim",
+   "say": "Program सवाल दिखाकर इंतज़ार करता है। Pharmacist सोलह दशमलव एक type करके Enter दबाता है।",
+   "tts": "Program सवाल दिखाकर इंतज़ार करता है। Pharmacist सोलह दशमलव एक type करके Enter दबाता है।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-input-02",
+   "scene": "lanim",
+   "say": "input हमेशा text देता है। इसलिए पहले box में string सोलह दशमलव एक है, quotes के साथ।",
+   "tts": "input हमेशा text देता है। इसलिए पहले box में string सोलह दशमलव एक है, quotes के साथ।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-input-03",
+   "scene": "lanim",
+   "say": "float text को number बना देता है। अब quotes चले गए।",
+   "tts": "float text को number बना देता है। अब quotes चले गए।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-input-04",
+   "scene": "lanim",
+   "say": "अब Python dose calculate कर सकता है: सोलह दशमलव एक गुणा पंद्रह, एक छोटी rounding पूँछ के साथ।",
+   "tts": "अब Python dose calculate कर सकता है: सोलह दशमलव एक गुणा पंद्रह, एक छोटी rounding पूँछ के साथ।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-input-05",
+   "scene": "lanim",
+   "say": "Colon, point एक, f वाली f-string इसे साफ़-साफ़, एक decimal place के साथ print करती है।",
+   "tts": "Colon, point एक, f वाली f-string इसे साफ़-साफ़, एक decimal place के साथ print करती है।",
+   "reuse": true
+  },
+  {
+   "id": "c1",
+   "scene": "c1",
+   "say": "input एक सवाल पूछता है, और तब तक रुकता है जब तक user जवाब type करके Enter न दबाए।",
+   "tts": "input एक सवाल पूछता है, और तब तक रुकता है जब तक user जवाब type करके Enter न दबाए।",
+   "reuse": false
+  },
+  {
+   "id": "c2",
+   "scene": "c2",
+   "say": "f-string values को सीधे text में डाल देता है। Quotes से पहले f लिखिए, और हर नाम को curly brackets में रखिए।",
+   "tts": "f-string values को सीधे text में डाल देता है। Quotes से पहले f लिखिए, और हर नाम को curly brackets में रखिए।",
+   "reuse": false
+  },
+  {
+   "id": "c3",
+   "scene": "c3",
+   "say": "हिसाब से लंबे दशमलव आ सकते हैं। Curly brackets के अंदर colon, dot one f, सिर्फ़ एक decimal place रखता है।",
+   "tts": "हिसाब से लंबे दशमलव आ सकते हैं। Curly brackets के अंदर colon, dot one f, सिर्फ़ एक decimal place रखता है।",
+   "reuse": false
+  },
+  {
+   "id": "../step-01",
+   "scene": "lwalk",
+   "say": "यह program patient का नाम और वज़न पूछता है, और फिर dose print करता है। देखिए answers variables में कैसे जाते हैं।",
+   "tts": "यह program patient का नाम और वज़न पूछता है, और फिर dose print करता है। देखिए answers variables में कैसे जाते हैं।",
+   "reuse": true
+  },
+  {
+   "id": "../step-02",
+   "scene": "lwalk",
+   "say": "Comment बताता है कि program क्या करता है।",
+   "tts": "Comment बताता है कि program क्या करता है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-03",
+   "scene": "lwalk",
+   "say": "input सवाल दिखाता है, Patient name, और इंतज़ार करता है। Pharmacist Ravi type करके Enter दबाता है। Ravi, variable name में रख लिया जाता है।",
+   "tts": "input सवाल दिखाता है, Patient name, और इंतज़ार करता है। Pharmacist Ravi type करके Enter दबाता है। Ravi, variable name में रख लिया जाता है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-04",
+   "scene": "lwalk",
+   "say": "फिर input वज़न पूछता है। Answer text है, इसलिए float सोलह दशमलव एक को number बना देता है।",
+   "tts": "फिर input वज़न पूछता है। Answer text है, इसलिए float सोलह दशमलव एक को number बना देता है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-05",
+   "scene": "lwalk",
+   "say": "Python पंद्रह से गुणा करता है। Variables panel देखिए: answer के पीछे decimals की लंबी पूँछ है। यह बहुत छोटा rounding फ़र्क है।",
+   "tts": "Python पंद्रह से गुणा करता है। Variables panel देखिए: answer के पीछे decimals की लंबी पूँछ है। यह बहुत छोटा rounding फ़र्क है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-06",
+   "scene": "lwalk",
+   "say": "यह f-string, name की value को text के अंदर रखती है।",
+   "tts": "यह f-string, name की value को text के अंदर रखती है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-07",
+   "scene": "lwalk",
+   "say": "Colon, point एक, f ठीक एक decimal place दिखाता है। इसलिए label पढ़ता है, दो सौ इकतालीस दशमलव पाँच milligrams।",
+   "tts": "Colon, point एक, f ठीक एक decimal place दिखाता है। इसलिए label पढ़ता है, दो सौ इकतालीस दशमलव पाँच milligrams।",
+   "reuse": true
+  },
+  {
+   "id": "e1",
+   "scene": "e1",
+   "say": "याद रखिए, input हमेशा text देता है। उस text को दशमलव से गुणा करने पर यह TypeError आती है, इसलिए पहले float से बदलिए।",
+   "tts": "याद रखिए, input हमेशा text देता है। उस text को दशमलव से गुणा करने पर यह TypeError आती है, इसलिए पहले float से बदलिए।",
+   "reuse": false
+  },
+  {
+   "id": "e2",
+   "scene": "e2",
+   "say": "और अगर user अक्षर type करे, जैसे बावन kg, तो float उसे नहीं बदल पाता। साफ़ पूछिए, सिर्फ़ number।",
+   "tts": "और अगर user अक्षर type करे, जैसे बावन kg, तो float उसे नहीं बदल पाता। साफ़ पूछिए, सिर्फ़ number।",
+   "reuse": false
+  },
+  {
+   "id": "q1",
+   "scene": "quiz",
+   "say": "input() हमेशा कौन सा data type देता है?",
+   "tts": "input() हमेशा कौन सा data type देता है?",
+   "reuse": false
+  },
+  {
+   "id": "q2",
+   "scene": "quiz-answer",
+   "say": "सही जवाब है C: str। input() हमेशा text (string) देता है, चाहे user number type करे।",
+   "tts": "सही जवाब है C: str। input() हमेशा text (string) देता है, चाहे user number type करे।",
+   "reuse": false
+  },
+  {
+   "id": "r0",
+   "scene": "lrecap",
+   "say": "चलिए, एक बार दोहरा लेते हैं।",
+   "tts": "चलिए, एक बार दोहरा लेते हैं।",
+   "reuse": false
+  },
+  {
+   "id": "r1",
+   "scene": "lrecap",
+   "say": "input() एक prompt दिखाता है और user के answer type करके Enter दबाने का इंतज़ार करता है।",
+   "tts": "input() एक prompt दिखाता है और user के answer type करके Enter दबाने का इंतज़ार करता है।",
+   "reuse": false
+  },
+  {
+   "id": "r2",
+   "scene": "lrecap",
+   "say": "Answer हमेशा string होता है, इसलिए numbers को int() या float() से बदलिए: float(input(\"Weight (kg): \"))।",
+   "tts": "Answer हमेशा string होता है, इसलिए numbers को int() या float() से बदलिए: float(input(\"Weight (kg): \"))।",
+   "reuse": false
+  },
+  {
+   "id": "r3",
+   "scene": "lrecap",
+   "say": "sep तय करता है कि printed items के बीच क्या आए; end तय करता है कि line के आखिर में क्या आए।",
+   "tts": "sep तय करता है कि printed items के बीच क्या आए; end तय करता है कि line के आखिर में क्या आए।",
+   "reuse": false
+  },
+  {
+   "id": "r4",
+   "scene": "lrecap",
+   "say": "f-strings values को text के अंदर रखती हैं: f\"Dose: {dose} mg\"।",
+   "tts": "f-strings values को text के अंदर रखती हैं: f\"Dose: {dose} mg\"।",
+   "reuse": false
+  }
+ ],
+ "data": {
+  "hook": {
+   "icon": "⌨️",
+   "title": "सवाल पूछने वाला dose calculator",
+   "learn": [
+    "input() से user से जानकारी कैसे पूछें",
+    "input() हमेशा text क्यों देता है, और उसे number कैसे बनाएँ",
+    "sep, end और f-strings से साफ़ output कैसे print करें"
+   ],
+   "label": "BP101T · Lesson 1.5",
+   "learnT": "इस video में"
+  },
+  "lanim": {
+   "title": "From the keyboard to a number",
+   "actors": [
+    {
+     "id": "term",
+     "type": "terminal",
+     "title": "Screen",
+     "desktop": {
+      "x": 40,
+      "y": 30,
+      "w": 730,
+      "h": 110
+     },
+     "mobile": {
+      "x": 16,
+      "y": 16,
+      "w": 328,
+      "h": 130
+     }
+    },
+    {
+     "id": "weight",
+     "type": "box",
+     "label": "weight_kg",
+     "value": "\"16.1\"",
+     "color": "amber",
+     "desktop": {
+      "x": 120,
+      "y": 190,
+      "w": 200,
+      "h": 110
+     },
+     "mobile": {
+      "x": 16,
+      "y": 180,
+      "w": 156,
+      "h": 100
+     }
+    },
+    {
+     "id": "t_type",
+     "type": "text",
+     "text": "str (text)",
+     "size": 18,
+     "desktop": {
+      "x": 120,
+      "y": 310,
+      "w": 200,
+      "h": 28
+     },
+     "mobile": {
+      "x": 16,
+      "y": 288,
+      "w": 156,
+      "h": 26
+     }
+    },
+    {
+     "id": "t_float",
+     "type": "text",
+     "text": "float (number)",
+     "size": 18,
+     "desktop": {
+      "x": 120,
+      "y": 345,
+      "w": 200,
+      "h": 28
+     },
+     "mobile": {
+      "x": 16,
+      "y": 318,
+      "w": 156,
+      "h": 26
+     }
+    },
+    {
+     "id": "dose",
+     "type": "box",
+     "label": "dose_mg",
+     "value": "241.50000000000003",
+     "color": "emerald",
+     "desktop": {
+      "x": 480,
+      "y": 190,
+      "w": 240,
+      "h": 110
+     },
+     "mobile": {
+      "x": 188,
+      "y": 180,
+      "w": 156,
+      "h": 100
+     }
+    },
+    {
+     "id": "t_calc",
+     "type": "text",
+     "text": "16.1 * 15",
+     "size": 18,
+     "desktop": {
+      "x": 480,
+      "y": 310,
+      "w": 240,
+      "h": 28
+     },
+     "mobile": {
+      "x": 188,
+      "y": 288,
+      "w": 156,
+      "h": 26
+     }
+    }
+   ],
+   "steps": [
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "term"
+      },
+      {
+       "do": "appendOutput",
+       "target": "term",
+       "text": "Weight (kg): 16.1"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "weight"
+      },
+      {
+       "do": "show",
+       "target": "t_type"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "setValue",
+       "target": "weight",
+       "value": "16.1"
+      },
+      {
+       "do": "pulse",
+       "target": "weight"
+      },
+      {
+       "do": "hide",
+       "target": "t_type"
+      },
+      {
+       "do": "show",
+       "target": "t_float"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "dose"
+      },
+      {
+       "do": "show",
+       "target": "t_calc"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "appendOutput",
+       "target": "term",
+       "text": "Dose: 241.5 mg"
+      }
+     ]
+    }
+   ]
+  },
+  "c1": {
+   "heading": "input() से सवाल पूछना",
+   "mode": "code",
+   "idea": "मुख्य बात",
+   "code": "name = input(\"Patient name: \")\nprint(\"Hello,\", name)",
+   "output": "Patient name: Ravi\nHello, Ravi",
+   "file": "example.py",
+   "callout": "input(\"Weight (kg): \") लिखिए, closing quote से पहले space के साथ, ताकि answer सवाल से चिपके नहीं।"
+  },
+  "c2": {
+   "heading": "f-strings: text के अंदर values",
+   "mode": "code",
+   "idea": "मुख्य बात",
+   "code": "drug = \"Amoxicillin\"\ndose_mg = 500\nprint(f\"{drug}: {dose_mg} mg\")\nprint(f\"Daily total: {dose_mg * 3} mg\")",
+   "output": "Amoxicillin: 500 mg\nDaily total: 1500 mg",
+   "file": "example.py",
+   "callout": "Quotes से पहले f वाली string, जिसमें {name} की जगह name की value आ जाती है।"
+  },
+  "c3": {
+   "heading": "Decimal places तय करना",
+   "mode": "code",
+   "idea": "मुख्य बात",
+   "code": "dose_mg = 16.1 * 15\nprint(dose_mg)\nprint(f\"Dose: {dose_mg:.1f} mg\")",
+   "output": "241.50000000000003\nDose: 241.5 mg",
+   "file": "example.py"
+  },
+  "lwalk": {
+   "file": "dose_calculator.py",
+   "code": "# Dose calculator\nname = input(\"Patient name: \")\nweight_kg = float(input(\"Weight (kg): \"))\ndose_mg = weight_kg * 15\nprint(f\"Patient: {name}\")\nprint(f\"Dose: {dose_mg:.1f} mg\")",
+   "steps": [
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 1,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 2,
+     "vars": {
+      "name": "\"Ravi\""
+     },
+     "output": "Patient name: Ravi"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "weight_kg": "16.1"
+     },
+     "output": "Weight (kg): 16.1"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "dose_mg": "241.50000000000003"
+     },
+     "output": null
+    },
+    {
+     "line": 5,
+     "vars": {},
+     "output": "Patient: Ravi"
+    },
+    {
+     "line": 6,
+     "vars": {},
+     "output": "Dose: 241.5 mg"
+    }
+   ],
+   "varsT": "Variables",
+   "outT": "Output"
+  },
+  "e1": {
+   "title": "input() के text से calculate करना",
+   "code": "weight = input(\"Weight (kg): \")\nprint(weight * 2.5)",
+   "errorLine": 2,
+   "output": "TypeError: can't multiply sequence by non-int of type 'float'"
+  },
+  "e2": {
+   "title": "User ने number नहीं, कुछ और type किया",
+   "code": "weight = float(input(\"Weight (kg): \"))",
+   "errorLine": 1,
+   "output": "ValueError: could not convert string to float: '52 kg'"
+  },
+  "lrecap": {
+   "items": [
+    "input() एक prompt दिखाता है और user के answer type करके Enter दबाने का इंतज़ार करता है।",
+    "Answer हमेशा string होता है, इसलिए numbers को int() या float() से बदलिए: float(input(\"Weight (kg): \"))।",
+    "sep तय करता है कि printed items के बीच क्या आए; end तय करता है कि line के आखिर में क्या आए।",
+    "f-strings values को text के अंदर रखती हैं: f\"Dose: {dose} mg\"।"
+   ],
+   "title": "Recap"
+  },
+  "output": "Output"
+ }
+}

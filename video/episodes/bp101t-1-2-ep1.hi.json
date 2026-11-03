@@ -1,0 +1,423 @@
+{
+ "course": "bp101t",
+ "lesson": "1-2",
+ "episode": 1,
+ "lang": "hi",
+ "engine": "sarvam",
+ "speaker": "ritu_hi_conversation",
+ "voiceName": "Ritu",
+ "lines": [
+  {
+   "id": "h1",
+   "scene": "lhook",
+   "say": "Python लिखने से पहले आपके computer में खुद Python चाहिए, और उसे लिखने की एक अच्छी जगह।",
+   "tts": "Python लिखने से पहले आपके computer में खुद Python चाहिए, और उसे लिखने की एक अच्छी जगह।",
+   "reuse": false
+  },
+  {
+   "id": "h2",
+   "scene": "lhook",
+   "say": "अगले कुछ मिनटों में: Python कैसे install करें, कौन-सा IDE चुनें, और laptop न हो तो क्या करें।",
+   "tts": "अगले कुछ मिनटों में: Python कैसे install करें, कौन-सा IDE चुनें, और laptop न हो तो क्या करें।",
+   "reuse": false
+  },
+  {
+   "id": "../anim-ide-01",
+   "scene": "lanim",
+   "say": "Text editor, जैसे Notepad, बस एक खाली page है। यह आपका code सिर्फ plain text की तरह रखता है।",
+   "tts": "Text editor, जैसे Notepad, बस एक खाली page है। यह आपका code सिर्फ plain text की तरह रखता है।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-ide-02",
+   "scene": "lanim",
+   "say": "IDE यानी Integrated Development Environment। यह code लिखने के लिए एक पूरा workspace है।",
+   "tts": "IDE यानी Integrated Development Environment। यह code लिखने के लिए एक पूरा workspace है।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-ide-03",
+   "scene": "lanim",
+   "say": "यह आपके code को रंग देता है, type करते समय शब्द suggest करता है, गलतियों की warning देता है, और bugs ढूँढने में मदद करता है।",
+   "tts": "यह आपके code को रंग देता है, type करते समय शब्द suggest करता है, गलतियों की warning देता है, और bugs ढूँढने में मदद करता है।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-ide-04",
+   "scene": "lanim",
+   "say": "और एक click में, यह आपका program चलाकर output वहीं दिखा देता है।",
+   "tts": "और एक click में, यह आपका program चलाकर output वहीं दिखा देता है।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-ide-05",
+   "scene": "lanim",
+   "say": "इसीलिए programmers IDEs पसंद करते हैं। ये समय बचाते हैं और गलतियाँ जल्दी पकड़ते हैं।",
+   "tts": "इसीलिए programmers IDEs पसंद करते हैं। ये समय बचाते हैं और गलतियाँ जल्दी पकड़ते हैं।",
+   "reuse": true
+  },
+  {
+   "id": "c1",
+   "scene": "c1",
+   "say": "Python install करने का मतलब है interpreter को अपने computer में रखना। python dot org से Python 3 download कीजिए, Add to PATH पर tick कीजिए, और python dash dash version से जाँचिए।",
+   "tts": "Python install करने का मतलब है interpreter को अपने computer में रखना। python dot org से Python 3 download कीजिए, Add to PATH पर tick कीजिए, और python dash dash version से जाँचिए।",
+   "reuse": false
+  },
+  {
+   "id": "c2",
+   "scene": "c2",
+   "say": "तीन popular IDEs। Jupyter Notebook code को छोटे cells में चलाता है और graph ठीक नीचे दिखाता है, जो pharmacy data के लिए बढ़िया है। PyCharm बड़े projects के लिए है, और VS Code, Microsoft का free और हल्का editor है।",
+   "tts": "तीन popular IDEs। Jupyter Notebook code को छोटे cells में चलाता है और graph ठीक नीचे दिखाता है, जो pharmacy data के लिए बढ़िया है। PyCharm बड़े projects के लिए है, और VS Code, Microsoft का free और हल्का editor है।",
+   "reuse": false
+  },
+  {
+   "id": "c3",
+   "scene": "c3",
+   "say": "Laptop नहीं है? कोई बात नहीं। Champ Lab आपके browser में Python चलाता है, phone पर भी, और Google Colab online एक free notebook देता है।",
+   "tts": "Laptop नहीं है? कोई बात नहीं। Champ Lab आपके browser में Python चलाता है, phone पर भी, और Google Colab online एक free notebook देता है।",
+   "reuse": false
+  },
+  {
+   "id": "../step-01",
+   "scene": "lwalk",
+   "say": "आपने Python install कर लिया है और एक IDE खोल लिया है। चलिए, एक quick setup check चलाते हैं।",
+   "tts": "आपने Python install कर लिया है और एक IDE खोल लिया है। चलिए, एक quick setup check चलाते हैं।",
+   "reuse": true
+  },
+  {
+   "id": "../step-02",
+   "scene": "lwalk",
+   "say": "पहली line एक comment है, हमारे लिए एक note। IDE में comments अलग रंग में दिखते हैं, इसलिए आसानी से पहचान में आते हैं।",
+   "tts": "पहली line एक comment है, हमारे लिए एक note। IDE में comments अलग रंग में दिखते हैं, इसलिए आसानी से पहचान में आते हैं।",
+   "reuse": true
+  },
+  {
+   "id": "../step-03",
+   "scene": "lwalk",
+   "say": "यह print बताता है कि Python काम कर रहा है। IDE में आप Run button दबाते हैं, और output आपके code के नीचे एक panel में दिखता है।",
+   "tts": "यह print बताता है कि Python काम कर रहा है। IDE में आप Run button दबाते हैं, और output आपके code के नीचे एक panel में दिखता है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-04",
+   "scene": "lwalk",
+   "say": "यहाँ Python ढाई सौ और ढाई सौ जोड़ता है। अगर पाँच सौ दिखे, तो calculations भी काम कर रही हैं।",
+   "tts": "यहाँ Python ढाई सौ और ढाई सौ जोड़ता है। अगर पाँच सौ दिखे, तो calculations भी काम कर रही हैं।",
+   "reuse": true
+  },
+  {
+   "id": "../step-05",
+   "scene": "lwalk",
+   "say": "आखिरी line बताती है कि हम course के लिए तैयार हैं।",
+   "tts": "आखिरी line बताती है कि हम course के लिए तैयार हैं।",
+   "reuse": true
+  },
+  {
+   "id": "../step-06",
+   "scene": "lwalk",
+   "say": "यही code Jupyter Notebook, PyCharm, VS Code या Champ Lab में एक जैसा चलता है। बस buttons अलग दिखते हैं।",
+   "tts": "यही code Jupyter Notebook, PyCharm, VS Code या Champ Lab में एक जैसा चलता है। बस buttons अलग दिखते हैं।",
+   "reuse": true
+  },
+  {
+   "id": "e1",
+   "scene": "e1",
+   "say": "एक आम गड़बड़: terminal वाला command, जैसे python, Python के अंदर ही type कर देना। ऐसे commands Command Prompt में जाते हैं, code में नहीं।",
+   "tts": "एक आम गड़बड़: terminal वाला command, जैसे python, Python के अंदर ही type कर देना। ऐसे commands Command Prompt में जाते हैं, code में नहीं।",
+   "reuse": false
+  },
+  {
+   "id": "e2",
+   "scene": "e2",
+   "say": "इसका मतलब है library install नहीं है, या उसकी spelling गलत है। Spelling जाँचिए, फिर pip से install कीजिए।",
+   "tts": "इसका मतलब है library install नहीं है, या उसकी spelling गलत है। Spelling जाँचिए, फिर pip से install कीजिए।",
+   "reuse": false
+  },
+  {
+   "id": "q1",
+   "scene": "quiz",
+   "say": "IDE का full form क्या है?",
+   "tts": "IDE का full form क्या है?",
+   "reuse": false
+  },
+  {
+   "id": "q2",
+   "scene": "quiz-answer",
+   "say": "सही जवाब है A: Integrated Development Environment। IDE यानी Integrated Development Environment: code लिखने, चलाने और ठीक करने की एक जगह।",
+   "tts": "सही जवाब है A: Integrated Development Environment। IDE यानी Integrated Development Environment: code लिखने, चलाने और ठीक करने की एक जगह।",
+   "reuse": false
+  },
+  {
+   "id": "r0",
+   "scene": "lrecap",
+   "say": "चलिए, एक बार दोहरा लेते हैं।",
+   "tts": "चलिए, एक बार दोहरा लेते हैं।",
+   "reuse": false
+  },
+  {
+   "id": "r1",
+   "scene": "lrecap",
+   "say": "Python install करना मतलब interpreter को अपने computer पर रखना; Windows पर Add python.exe to PATH पर tick कीजिए।",
+   "tts": "Python install करना मतलब interpreter को अपने computer पर रखना; Windows पर Add python.exe to PATH पर tick कीजिए।",
+   "reuse": false
+  },
+  {
+   "id": "r2",
+   "scene": "lrecap",
+   "say": "Installation check कीजिए: Command Prompt या Terminal में python --version।",
+   "tts": "Installation check कीजिए: Command Prompt या Terminal में python --version।",
+   "reuse": false
+  },
+  {
+   "id": "r3",
+   "scene": "lrecap",
+   "say": "IDE (Integrated Development Environment) में code लिखना, चलाना और ठीक करना, सब एक जगह होता है।",
+   "tts": "IDE (Integrated Development Environment) में code लिखना, चलाना और ठीक करना, सब एक जगह होता है।",
+   "reuse": false
+  },
+  {
+   "id": "r4",
+   "scene": "lrecap",
+   "say": "Popular IDEs: Jupyter Notebook (cells और graphs), PyCharm (full-featured) और VS Code (free, Microsoft का)।",
+   "tts": "Popular IDEs: Jupyter Notebook (cells और graphs), PyCharm (full-featured) और VS Code (free, Microsoft का)।",
+   "reuse": false
+  }
+ ],
+ "data": {
+  "hook": {
+   "icon": "🧰",
+   "title": "अपना coding workspace तैयार कीजिए",
+   "learn": [
+    "Python install कैसे करें और check कैसे करें कि वह काम कर रहा है",
+    "IDE क्या है, और तीन popular IDEs: Jupyter Notebook, PyCharm और VS Code",
+    "Text editors के मुकाबले IDEs के फायदे"
+   ],
+   "label": "BP101T · Lesson 1.2",
+   "learnT": "इस video में"
+  },
+  "lanim": {
+   "title": "Text editor vs IDE",
+   "actors": [
+    {
+     "id": "editor",
+     "type": "card",
+     "title": "Text editor",
+     "icon": "📝",
+     "color": "amber",
+     "mono": true,
+     "lines": [
+      "print(\"Hello from my IDE!\")",
+      "(no colours, no hints, no Run)"
+     ],
+     "desktop": {
+      "x": 40,
+      "y": 40,
+      "w": 320,
+      "h": 240
+     },
+     "mobile": {
+      "x": 16,
+      "y": 16,
+      "w": 328,
+      "h": 130
+     }
+    },
+    {
+     "id": "ide",
+     "type": "card",
+     "title": "IDE",
+     "icon": "🧰",
+     "color": "indigo",
+     "lines": [
+      "Syntax colours",
+      "Auto-complete",
+      "Error hints",
+      "One-click Run",
+      "Debugger"
+     ],
+     "desktop": {
+      "x": 440,
+      "y": 40,
+      "w": 320,
+      "h": 240
+     },
+     "mobile": {
+      "x": 16,
+      "y": 166,
+      "w": 328,
+      "h": 236
+     }
+    },
+    {
+     "id": "out",
+     "type": "terminal",
+     "title": "Output",
+     "desktop": {
+      "x": 40,
+      "y": 310,
+      "w": 720,
+      "h": 120
+     },
+     "mobile": {
+      "x": 16,
+      "y": 422,
+      "w": 328,
+      "h": 130
+     }
+    }
+   ],
+   "steps": [
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "editor"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "ide"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "scanLines",
+       "target": "ide",
+       "intervalMs": 900
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "highlightLine",
+       "target": "ide",
+       "line": 3
+      },
+      {
+       "do": "show",
+       "target": "out"
+      },
+      {
+       "do": "appendOutput",
+       "target": "out",
+       "text": "Hello from my IDE!"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "connect",
+       "id": "upgrade",
+       "from": "editor",
+       "to": "ide",
+       "label": "Upgrade",
+       "color": "emerald"
+      },
+      {
+       "do": "pulse",
+       "target": "ide"
+      }
+     ]
+    }
+   ]
+  },
+  "c1": {
+   "heading": "\"Python install करना\" मतलब क्या?",
+   "mode": "points",
+   "idea": "मुख्य बात",
+   "points": [
+    "python.org → Downloads → Python 3",
+    "“Add python.exe to PATH” पर tick",
+    "जाँचिए: python --version"
+   ],
+   "callout": "हमेशा Python 3 install कीजिए। पुराने tutorials Python 2 use करते हैं, जो अब supported नहीं है।"
+  },
+  "c2": {
+   "heading": "तीन popular IDEs",
+   "mode": "points",
+   "idea": "मुख्य बात",
+   "points": [
+    "Jupyter Notebook: cells, data और graphs",
+    "PyCharm: बड़े projects",
+    "VS Code: free और हल्का, Microsoft का"
+   ],
+   "callout": "एक free bundle जो Python, Jupyter Notebook और popular science libraries एक साथ install कर देता है।"
+  },
+  "c3": {
+   "heading": "Laptop नहीं है? Browser use कीजिए",
+   "mode": "points",
+   "idea": "मुख्य बात",
+   "points": [
+    "Champ Lab: browser में Python, phone पर भी",
+    "Google Colab: online free Jupyter Notebook"
+   ]
+  },
+  "lwalk": {
+   "file": "setup_check.py",
+   "code": "# Setup check\nprint(\"Python is installed!\")\nprint(\"Test sum:\", 250 + 250)\nprint(\"All set for BP101T\")",
+   "steps": [
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 1,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 2,
+     "vars": {},
+     "output": "Python is installed!"
+    },
+    {
+     "line": 3,
+     "vars": {},
+     "output": "Test sum: 500"
+    },
+    {
+     "line": 4,
+     "vars": {},
+     "output": "All set for BP101T"
+    },
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    }
+   ],
+   "varsT": "Variables",
+   "outT": "Output"
+  },
+  "e1": {
+   "title": "Python के अंदर terminal command type कर देना",
+   "code": "python --version",
+   "errorLine": 1,
+   "output": "NameError: name 'python' is not defined"
+  },
+  "e2": {
+   "title": "ऐसी library जो install नहीं है (या spelling गलत है)",
+   "code": "import numpyy",
+   "errorLine": 1,
+   "output": "ModuleNotFoundError: No module named 'numpyy'"
+  },
+  "lrecap": {
+   "items": [
+    "Python install करना मतलब interpreter को अपने computer पर रखना; Windows पर Add python.exe to PATH पर tick कीजिए।",
+    "Installation check कीजिए: Command Prompt या Terminal में python --version।",
+    "IDE (Integrated Development Environment) में code लिखना, चलाना और ठीक करना, सब एक जगह होता है।",
+    "Popular IDEs: Jupyter Notebook (cells और graphs), PyCharm (full-featured) और VS Code (free, Microsoft का)।"
+   ],
+   "title": "Recap"
+  },
+  "output": "Output"
+ }
+}

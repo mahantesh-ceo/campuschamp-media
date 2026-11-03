@@ -1,0 +1,485 @@
+{
+ "course": "bp101t",
+ "lesson": "1-5",
+ "episode": 1,
+ "lang": "en",
+ "engine": "sarvam",
+ "speaker": "ritu_en_edtech",
+ "voiceName": "Ritu",
+ "lines": [
+  {
+   "id": "h1",
+   "scene": "lhook",
+   "say": "So far, your programs used the same numbers every time.",
+   "tts": "So far, your programs used the same numbers every time.",
+   "reuse": false
+  },
+  {
+   "id": "h2",
+   "scene": "lhook",
+   "say": "A real pharmacy tool has to ask: what's the patient's weight? Today, your program learns to ask, and to answer neatly.",
+   "tts": "A real pharmacy tool has to ask: what's the patient's weight? Today, your program learns to ask, and to answer neatly.",
+   "reuse": false
+  },
+  {
+   "id": "../anim-input-01",
+   "scene": "lanim",
+   "say": "The program shows a question and waits. The pharmacist types sixteen point one and presses Enter.",
+   "tts": "The program shows a question and waits. The pharmacist types sixteen point one and presses Enter.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-input-02",
+   "scene": "lanim",
+   "say": "input always gives text. So, at first, the box holds the string sixteen point one, in quotes.",
+   "tts": "input always gives text. So, at first, the box holds the string sixteen point one, in quotes.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-input-03",
+   "scene": "lanim",
+   "say": "float turns the text into a number. Now the quotes are gone.",
+   "tts": "float turns the text into a number. Now the quotes are gone.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-input-04",
+   "scene": "lanim",
+   "say": "Now Python can calculate the dose: sixteen point one times fifteen, with a tiny rounding tail.",
+   "tts": "Now Python can calculate the dose: sixteen point one times fifteen, with a tiny rounding tail.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-input-05",
+   "scene": "lanim",
+   "say": "An f-string with a one-decimal code prints it neatly, with one decimal place.",
+   "tts": "An f-string with a one-decimal code prints it neatly, with one decimal place.",
+   "reuse": true
+  },
+  {
+   "id": "c1",
+   "scene": "c1",
+   "say": "input asks a question, and waits until the user types an answer and presses Enter.",
+   "tts": "input asks a question, and waits until the user types an answer and presses Enter.",
+   "reuse": false
+  },
+  {
+   "id": "c2",
+   "scene": "c2",
+   "say": "An f-string puts values straight into text. Write f before the quotes, and put each name inside curly brackets.",
+   "tts": "An f-string puts values straight into text. Write f before the quotes, and put each name inside curly brackets.",
+   "reuse": false
+  },
+  {
+   "id": "c3",
+   "scene": "c3",
+   "say": "Calculations can give long decimals. Colon, dot one f, inside the curly brackets, keeps just one decimal place.",
+   "tts": "Calculations can give long decimals. Colon, dot one f, inside the curly brackets, keeps just one decimal place.",
+   "reuse": false
+  },
+  {
+   "id": "../step-01",
+   "scene": "lwalk",
+   "say": "This program asks for a patient's name and weight, and then prints the dose. Watch how the answers go into variables.",
+   "tts": "This program asks for a patient's name and weight, and then prints the dose. Watch how the answers go into variables.",
+   "reuse": true
+  },
+  {
+   "id": "../step-02",
+   "scene": "lwalk",
+   "say": "The comment says what the program does.",
+   "tts": "The comment says what the program does.",
+   "reuse": true
+  },
+  {
+   "id": "../step-03",
+   "scene": "lwalk",
+   "say": "input shows the question, Patient name, and waits. The pharmacist types Ravi and presses Enter. Ravi is stored in the variable name.",
+   "tts": "input shows the question, Patient name, and waits. The pharmacist types Ravi and presses Enter. Ravi is stored in the variable name.",
+   "reuse": true
+  },
+  {
+   "id": "../step-04",
+   "scene": "lwalk",
+   "say": "Next, input asks for the weight. The answer is text, so float turns sixteen point one into a number.",
+   "tts": "Next, input asks for the weight. The answer is text, so float turns sixteen point one into a number.",
+   "reuse": true
+  },
+  {
+   "id": "../step-05",
+   "scene": "lwalk",
+   "say": "Python multiplies by fifteen. Look at the Variables panel: the answer has a long tail of decimals. That's a tiny rounding difference.",
+   "tts": "Python multiplies by fifteen. Look at the Variables panel: the answer has a long tail of decimals. That's a tiny rounding difference.",
+   "reuse": true
+  },
+  {
+   "id": "../step-06",
+   "scene": "lwalk",
+   "say": "This f-string puts the value of name inside the text.",
+   "tts": "This f-string puts the value of name inside the text.",
+   "reuse": true
+  },
+  {
+   "id": "../step-07",
+   "scene": "lwalk",
+   "say": "The code after the colon shows exactly one decimal place. So the label reads two hundred and forty-one point five milligrams.",
+   "tts": "The code after the colon shows exactly one decimal place. So the label reads two hundred and forty-one point five milligrams.",
+   "reuse": true
+  },
+  {
+   "id": "e1",
+   "scene": "e1",
+   "say": "Remember, input always gives text. Multiplying that text by a decimal causes this TypeError, so convert it with float first.",
+   "tts": "Remember, input always gives text. Multiplying that text by a decimal causes this TypeError, so convert it with float first.",
+   "reuse": false
+  },
+  {
+   "id": "e2",
+   "scene": "e2",
+   "say": "And if the user types letters, like fifty-two kg, float can't convert it. Ask clearly for just the number.",
+   "tts": "And if the user types letters, like fifty-two kg, float can't convert it. Ask clearly for just the number.",
+   "reuse": false
+  },
+  {
+   "id": "q1",
+   "scene": "quiz",
+   "say": "What data type does input() always give?",
+   "tts": "What data type does input() always give?",
+   "reuse": false
+  },
+  {
+   "id": "q2",
+   "scene": "quiz-answer",
+   "say": "The answer is C: str. input() always gives text (a string), even when the user types a number.",
+   "tts": "The answer is C: str. input() always gives text (a string), even when the user types a number.",
+   "reuse": false
+  },
+  {
+   "id": "r0",
+   "scene": "lrecap",
+   "say": "Let's recap.",
+   "tts": "Let's recap.",
+   "reuse": false
+  },
+  {
+   "id": "r1",
+   "scene": "lrecap",
+   "say": "input() shows a prompt and waits for the user to type an answer and press Enter.",
+   "tts": "input() shows a prompt and waits for the user to type an answer and press Enter.",
+   "reuse": false
+  },
+  {
+   "id": "r2",
+   "scene": "lrecap",
+   "say": "The answer is always a string, so convert numbers with int() or float(): float(input(\"Weight (kg): \")).",
+   "tts": "The answer is always a string, so convert numbers with int() or float(): float(input(\"Weight (kg): \")).",
+   "reuse": false
+  },
+  {
+   "id": "r3",
+   "scene": "lrecap",
+   "say": "sep sets what goes between printed items; end sets what goes at the end of the line.",
+   "tts": "sep sets what goes between printed items; end sets what goes at the end of the line.",
+   "reuse": false
+  },
+  {
+   "id": "r4",
+   "scene": "lrecap",
+   "say": "f-strings put values inside text: f\"Dose: {dose} mg\".",
+   "tts": "f-strings put values inside text: f\"Dose: {dose} mg\".",
+   "reuse": false
+  }
+ ],
+ "data": {
+  "hook": {
+   "icon": "⌨️",
+   "title": "A dose calculator that asks questions",
+   "learn": [
+    "How to ask the user for information with input()",
+    "Why input() always gives text, and how to turn it into a number",
+    "How to print neatly with sep, end and f-strings"
+   ],
+   "label": "BP101T · Lesson 1.5",
+   "learnT": "In this video"
+  },
+  "lanim": {
+   "title": "From the keyboard to a number",
+   "actors": [
+    {
+     "id": "term",
+     "type": "terminal",
+     "title": "Screen",
+     "desktop": {
+      "x": 40,
+      "y": 30,
+      "w": 730,
+      "h": 110
+     },
+     "mobile": {
+      "x": 16,
+      "y": 16,
+      "w": 328,
+      "h": 130
+     }
+    },
+    {
+     "id": "weight",
+     "type": "box",
+     "label": "weight_kg",
+     "value": "\"16.1\"",
+     "color": "amber",
+     "desktop": {
+      "x": 120,
+      "y": 190,
+      "w": 200,
+      "h": 110
+     },
+     "mobile": {
+      "x": 16,
+      "y": 180,
+      "w": 156,
+      "h": 100
+     }
+    },
+    {
+     "id": "t_type",
+     "type": "text",
+     "text": "str (text)",
+     "size": 18,
+     "desktop": {
+      "x": 120,
+      "y": 310,
+      "w": 200,
+      "h": 28
+     },
+     "mobile": {
+      "x": 16,
+      "y": 288,
+      "w": 156,
+      "h": 26
+     }
+    },
+    {
+     "id": "t_float",
+     "type": "text",
+     "text": "float (number)",
+     "size": 18,
+     "desktop": {
+      "x": 120,
+      "y": 345,
+      "w": 200,
+      "h": 28
+     },
+     "mobile": {
+      "x": 16,
+      "y": 318,
+      "w": 156,
+      "h": 26
+     }
+    },
+    {
+     "id": "dose",
+     "type": "box",
+     "label": "dose_mg",
+     "value": "241.50000000000003",
+     "color": "emerald",
+     "desktop": {
+      "x": 480,
+      "y": 190,
+      "w": 240,
+      "h": 110
+     },
+     "mobile": {
+      "x": 188,
+      "y": 180,
+      "w": 156,
+      "h": 100
+     }
+    },
+    {
+     "id": "t_calc",
+     "type": "text",
+     "text": "16.1 * 15",
+     "size": 18,
+     "desktop": {
+      "x": 480,
+      "y": 310,
+      "w": 240,
+      "h": 28
+     },
+     "mobile": {
+      "x": 188,
+      "y": 288,
+      "w": 156,
+      "h": 26
+     }
+    }
+   ],
+   "steps": [
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "term"
+      },
+      {
+       "do": "appendOutput",
+       "target": "term",
+       "text": "Weight (kg): 16.1"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "weight"
+      },
+      {
+       "do": "show",
+       "target": "t_type"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "setValue",
+       "target": "weight",
+       "value": "16.1"
+      },
+      {
+       "do": "pulse",
+       "target": "weight"
+      },
+      {
+       "do": "hide",
+       "target": "t_type"
+      },
+      {
+       "do": "show",
+       "target": "t_float"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "dose"
+      },
+      {
+       "do": "show",
+       "target": "t_calc"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "appendOutput",
+       "target": "term",
+       "text": "Dose: 241.5 mg"
+      }
+     ]
+    }
+   ]
+  },
+  "c1": {
+   "heading": "Asking a question with input()",
+   "mode": "code",
+   "idea": "Key idea",
+   "code": "name = input(\"Patient name: \")\nprint(\"Hello,\", name)",
+   "output": "Patient name: Ravi\nHello, Ravi",
+   "file": "example.py"
+  },
+  "c2": {
+   "heading": "f-strings: values inside text",
+   "mode": "code",
+   "idea": "Key idea",
+   "code": "drug = \"Amoxicillin\"\ndose_mg = 500\nprint(f\"{drug}: {dose_mg} mg\")\nprint(f\"Daily total: {dose_mg * 3} mg\")",
+   "output": "Amoxicillin: 500 mg\nDaily total: 1500 mg",
+   "file": "example.py",
+   "callout": "A string with f before the quotes, where {name} is replaced by the value of name."
+  },
+  "c3": {
+   "heading": "Fixing the number of decimal places",
+   "mode": "code",
+   "idea": "Key idea",
+   "code": "dose_mg = 16.1 * 15\nprint(dose_mg)\nprint(f\"Dose: {dose_mg:.1f} mg\")",
+   "output": "241.50000000000003\nDose: 241.5 mg",
+   "file": "example.py"
+  },
+  "lwalk": {
+   "file": "dose_calculator.py",
+   "code": "# Dose calculator\nname = input(\"Patient name: \")\nweight_kg = float(input(\"Weight (kg): \"))\ndose_mg = weight_kg * 15\nprint(f\"Patient: {name}\")\nprint(f\"Dose: {dose_mg:.1f} mg\")",
+   "steps": [
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 1,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 2,
+     "vars": {
+      "name": "\"Ravi\""
+     },
+     "output": "Patient name: Ravi"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "weight_kg": "16.1"
+     },
+     "output": "Weight (kg): 16.1"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "dose_mg": "241.50000000000003"
+     },
+     "output": null
+    },
+    {
+     "line": 5,
+     "vars": {},
+     "output": "Patient: Ravi"
+    },
+    {
+     "line": 6,
+     "vars": {},
+     "output": "Dose: 241.5 mg"
+    }
+   ],
+   "varsT": "Variables",
+   "outT": "Output"
+  },
+  "e1": {
+   "title": "Calculating with text from input()",
+   "code": "weight = input(\"Weight (kg): \")\nprint(weight * 2.5)",
+   "errorLine": 2,
+   "output": "TypeError: can't multiply sequence by non-int of type 'float'"
+  },
+  "e2": {
+   "title": "The user types something that isn't a number",
+   "code": "weight = float(input(\"Weight (kg): \"))",
+   "errorLine": 1,
+   "output": "ValueError: could not convert string to float: '52 kg'"
+  },
+  "lrecap": {
+   "items": [
+    "input() shows a prompt and waits for the user to type an answer and press Enter.",
+    "The answer is always a string, so convert numbers with int() or float(): float(input(\"Weight (kg): \")).",
+    "sep sets what goes between printed items; end sets what goes at the end of the line.",
+    "f-strings put values inside text: f\"Dose: {dose} mg\"."
+   ],
+   "title": "Recap"
+  },
+  "output": "Output"
+ }
+}

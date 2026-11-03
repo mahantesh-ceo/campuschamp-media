@@ -1,0 +1,530 @@
+{
+ "course": "bp101t",
+ "lesson": "1-4",
+ "episode": 1,
+ "lang": "en",
+ "engine": "sarvam",
+ "speaker": "ritu_en_edtech",
+ "voiceName": "Ritu",
+ "lines": [
+  {
+   "id": "h1",
+   "scene": "lhook",
+   "say": "Twenty-five tablets, ten to a strip. How many full strips, and how many tablets are left over?",
+   "tts": "Twenty-five tablets, ten to a strip. How many full strips, and how many tablets are left over?",
+   "reuse": false
+  },
+  {
+   "id": "h2",
+   "scene": "lhook",
+   "say": "Today, Python does the maths: converting types, and using operators.",
+   "tts": "Today, Python does the maths: converting types, and using operators.",
+   "reuse": false
+  },
+  {
+   "id": "../anim-strips-01",
+   "scene": "lanim",
+   "say": "Forty-two tablets need to be packed in strips of ten.",
+   "tts": "Forty-two tablets need to be packed in strips of ten.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-strips-02",
+   "scene": "lanim",
+   "say": "Two slashes count the full strips. Forty-two divided by ten, keeping only the whole number, is four.",
+   "tts": "Two slashes count the full strips. Forty-two divided by ten, keeping only the whole number, is four.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-strips-03",
+   "scene": "lanim",
+   "say": "The percent sign counts what's left over: two loose tablets.",
+   "tts": "The percent sign counts what's left over: two loose tablets.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-strips-04",
+   "scene": "lanim",
+   "say": "Four strips hold only forty tablets, so a comparison says they are not enough. The patient needs five strips.",
+   "tts": "Four strips hold only forty tablets, so a comparison says they are not enough. The patient needs five strips.",
+   "reuse": true
+  },
+  {
+   "id": "c1",
+   "scene": "c1",
+   "say": "Type casting converts a value from one type to another. int turns the text five hundred into a number, so we can multiply it.",
+   "tts": "Type casting converts a value from one type to another. int turns the text five hundred into a number, so we can multiply it.",
+   "reuse": false
+  },
+  {
+   "id": "c2",
+   "scene": "c2",
+   "say": "Two very useful operators. Double slash gives the whole number of times: two full strips. And percent gives what is left over: five tablets.",
+   "tts": "Two very useful operators. Double slash gives the whole number of times: two full strips. And percent gives what is left over: five tablets.",
+   "reuse": false
+  },
+  {
+   "id": "c3",
+   "scene": "c3",
+   "say": "Logical operators join questions. and needs both sides to be True; or needs just one.",
+   "tts": "Logical operators join questions. and needs both sides to be True; or needs just one.",
+   "reuse": false
+  },
+  {
+   "id": "../step-01",
+   "scene": "lwalk",
+   "say": "This program works out how many tablets a seven-day course needs, and how many strips to give. Watch the Variables panel.",
+   "tts": "This program works out how many tablets a seven-day course needs, and how many strips to give. Watch the Variables panel.",
+   "reuse": true
+  },
+  {
+   "id": "../step-02",
+   "scene": "lwalk",
+   "say": "The comment says what the program does.",
+   "tts": "The comment says what the program does.",
+   "reuse": true
+  },
+  {
+   "id": "../step-03",
+   "scene": "lwalk",
+   "say": "int converts the text two into the number two, so Python can calculate with it.",
+   "tts": "int converts the text two into the number two, so Python can calculate with it.",
+   "reuse": true
+  },
+  {
+   "id": "../step-04",
+   "scene": "lwalk",
+   "say": "doses_per_day stores three.",
+   "tts": "doses_per_day stores three.",
+   "reuse": true
+  },
+  {
+   "id": "../step-05",
+   "scene": "lwalk",
+   "say": "days stores seven.",
+   "tts": "days stores seven.",
+   "reuse": true
+  },
+  {
+   "id": "../step-06",
+   "scene": "lwalk",
+   "say": "The star multiplies. Two times three times seven is forty-two tablets.",
+   "tts": "The star multiplies. Two times three times seven is forty-two tablets.",
+   "reuse": true
+  },
+  {
+   "id": "../step-07",
+   "scene": "lwalk",
+   "say": "Two slashes divide, and keep only the whole number. Forty-two divided by ten gives four full strips.",
+   "tts": "Two slashes divide, and keep only the whole number. Forty-two divided by ten gives four full strips.",
+   "reuse": true
+  },
+  {
+   "id": "../step-08",
+   "scene": "lwalk",
+   "say": "The percent sign gives the remainder. Forty-two divided by ten leaves two loose tablets.",
+   "tts": "The percent sign gives the remainder. Forty-two divided by ten leaves two loose tablets.",
+   "reuse": true
+  },
+  {
+   "id": "../step-09",
+   "scene": "lwalk",
+   "say": "Print shows the total number of tablets.",
+   "tts": "Print shows the total number of tablets.",
+   "reuse": true
+  },
+  {
+   "id": "../step-10",
+   "scene": "lwalk",
+   "say": "Next, the number of strips and loose tablets.",
+   "tts": "Next, the number of strips and loose tablets.",
+   "reuse": true
+  },
+  {
+   "id": "../step-11",
+   "scene": "lwalk",
+   "say": "Finally, a comparison. Four strips hold forty tablets. Forty is not greater than or equal to forty-two, so the answer is False. The patient needs one more strip.",
+   "tts": "Finally, a comparison. Four strips hold forty tablets. Forty is not greater than or equal to forty-two, so the answer is False. The patient needs one more strip.",
+   "reuse": true
+  },
+  {
+   "id": "e1",
+   "scene": "e1",
+   "say": "int can't convert text with a decimal point in it. Use float for decimals.",
+   "tts": "int can't convert text with a decimal point in it. Use float for decimals.",
+   "reuse": false
+  },
+  {
+   "id": "e2",
+   "scene": "e2",
+   "say": "And dividing by zero is impossible, so Python stops with a ZeroDivisionError.",
+   "tts": "And dividing by zero is impossible, so Python stops with a ZeroDivisionError.",
+   "reuse": false
+  },
+  {
+   "id": "q1",
+   "scene": "quiz",
+   "say": "What is 17 // 5?",
+   "tts": "What is 17 // 5?",
+   "reuse": false
+  },
+  {
+   "id": "q2",
+   "scene": "quiz-answer",
+   "say": "The answer is A: 3. // divides and keeps only the whole number: 17 divided by 5 is 3, with some left over.",
+   "tts": "The answer is A: 3. // divides and keeps only the whole number: 17 divided by 5 is 3, with some left over.",
+   "reuse": false
+  },
+  {
+   "id": "r0",
+   "scene": "lrecap",
+   "say": "Let's recap.",
+   "tts": "Let's recap.",
+   "reuse": false
+  },
+  {
+   "id": "r1",
+   "scene": "lrecap",
+   "say": "Type casting converts values: int(\"500\") gives 500, float(\"52.5\") gives 52.5 and str(500) gives \"500\".",
+   "tts": "Type casting converts values: int(\"500\") gives 500, float(\"52.5\") gives 52.5 and str(500) gives \"500\".",
+   "reuse": false
+  },
+  {
+   "id": "r2",
+   "scene": "lrecap",
+   "say": "int() cuts off the decimal part (it doesn't round), and an int mixed with a float gives a float.",
+   "tts": "int() cuts off the decimal part (it doesn't round), and an int mixed with a float gives a float.",
+   "reuse": false
+  },
+  {
+   "id": "r3",
+   "scene": "lrecap",
+   "say": "Arithmetic operators calculate: // keeps the whole number and % gives the remainder, perfect for strips and loose tablets.",
+   "tts": "Arithmetic operators calculate: // keeps the whole number and % gives the remainder, perfect for strips and loose tablets.",
+   "reuse": false
+  },
+  {
+   "id": "r4",
+   "scene": "lrecap",
+   "say": "Comparison operators (==, !=, >, <, >=, <=) and logical operators (and, or, not) give True or False.",
+   "tts": "Comparison operators (==, !=, >, <, >=, <=) and logical operators (and, or, not) give True or False.",
+   "reuse": false
+  }
+ ],
+ "data": {
+  "hook": {
+   "icon": "🧮",
+   "title": "How many strips does this patient need?",
+   "learn": [
+    "How to convert a value from one data type to another, called type casting",
+    "Arithmetic operators for calculations, including // and %",
+    "Comparison and logical operators that answer True or False"
+   ],
+   "label": "BP101T · Lesson 1.4",
+   "learnT": "In this video"
+  },
+  "lanim": {
+   "title": "Splitting tablets into strips",
+   "actors": [
+    {
+     "id": "total",
+     "type": "box",
+     "label": "total",
+     "value": "42",
+     "color": "indigo",
+     "desktop": {
+      "x": 320,
+      "y": 30,
+      "w": 160,
+      "h": 100
+     },
+     "mobile": {
+      "x": 100,
+      "y": 16,
+      "w": 160,
+      "h": 96
+     }
+    },
+    {
+     "id": "t_floor",
+     "type": "text",
+     "text": "42 // 10",
+     "size": 20,
+     "desktop": {
+      "x": 110,
+      "y": 160,
+      "w": 200,
+      "h": 30
+     },
+     "mobile": {
+      "x": 16,
+      "y": 130,
+      "w": 156,
+      "h": 28
+     }
+    },
+    {
+     "id": "t_mod",
+     "type": "text",
+     "text": "42 % 10",
+     "size": 20,
+     "desktop": {
+      "x": 490,
+      "y": 160,
+      "w": 200,
+      "h": 30
+     },
+     "mobile": {
+      "x": 188,
+      "y": 130,
+      "w": 156,
+      "h": 28
+     }
+    },
+    {
+     "id": "strips",
+     "type": "box",
+     "label": "strips",
+     "value": "?",
+     "color": "emerald",
+     "desktop": {
+      "x": 130,
+      "y": 200,
+      "w": 160,
+      "h": 100
+     },
+     "mobile": {
+      "x": 16,
+      "y": 166,
+      "w": 156,
+      "h": 96
+     }
+    },
+    {
+     "id": "loose",
+     "type": "box",
+     "label": "loose",
+     "value": "?",
+     "color": "amber",
+     "desktop": {
+      "x": 510,
+      "y": 200,
+      "w": 160,
+      "h": 100
+     },
+     "mobile": {
+      "x": 188,
+      "y": 166,
+      "w": 156,
+      "h": 96
+     }
+    },
+    {
+     "id": "out",
+     "type": "terminal",
+     "title": "Output",
+     "desktop": {
+      "x": 40,
+      "y": 330,
+      "w": 730,
+      "h": 100
+     },
+     "mobile": {
+      "x": 16,
+      "y": 300,
+      "w": 328,
+      "h": 150
+     }
+    }
+   ],
+   "steps": [
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "total"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "t_floor"
+      },
+      {
+       "do": "show",
+       "target": "strips"
+      },
+      {
+       "do": "setValue",
+       "target": "strips",
+       "value": "4"
+      },
+      {
+       "do": "pulse",
+       "target": "strips"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "t_mod"
+      },
+      {
+       "do": "show",
+       "target": "loose"
+      },
+      {
+       "do": "setValue",
+       "target": "loose",
+       "value": "2"
+      },
+      {
+       "do": "pulse",
+       "target": "loose"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "out"
+      },
+      {
+       "do": "appendOutput",
+       "target": "out",
+       "text": "Enough with 4 strips? False"
+      }
+     ]
+    }
+   ]
+  },
+  "c1": {
+   "heading": "Converting between data types",
+   "mode": "code",
+   "idea": "Key idea",
+   "code": "strength = \"500\"\nprint(int(strength) * 3)",
+   "output": "1500",
+   "file": "example.py",
+   "callout": "Converting a value from one data type to another, using int(), float() or str()."
+  },
+  "c2": {
+   "heading": "Arithmetic operators",
+   "mode": "code",
+   "idea": "Key idea",
+   "code": "tablets = 25\nprint(tablets // 10)\nprint(tablets % 10)",
+   "output": "2\n5",
+   "file": "example.py",
+   "callout": "A symbol that does something with values, such as + (add) or > (greater than)."
+  },
+  "c3": {
+   "heading": "Logical operators: and, or, not",
+   "mode": "code",
+   "idea": "Key idea",
+   "code": "age = 16\nweight_kg = 52\nprint(age >= 18 and weight_kg >= 50)\nprint(age >= 18 or weight_kg >= 50)",
+   "output": "False\nTrue",
+   "file": "example.py"
+  },
+  "lwalk": {
+   "file": "strips.py",
+   "code": "# Tablets for a 7-day course\ntablets_per_dose = int(\"2\")\ndoses_per_day = 3\ndays = 7\ntotal = tablets_per_dose * doses_per_day * days\nstrips = total // 10\nloose = total % 10\nprint(\"Total tablets:\", total)\nprint(\"Strips:\", strips, \"Loose:\", loose)\nprint(\"Enough with 4 strips?\", strips * 10 >= total)",
+   "steps": [
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 1,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 2,
+     "vars": {
+      "tablets_per_dose": "2"
+     },
+     "output": null
+    },
+    {
+     "line": 3,
+     "vars": {
+      "doses_per_day": "3"
+     },
+     "output": null
+    },
+    {
+     "line": 4,
+     "vars": {
+      "days": "7"
+     },
+     "output": null
+    },
+    {
+     "line": 5,
+     "vars": {
+      "total": "42"
+     },
+     "output": null
+    },
+    {
+     "line": 6,
+     "vars": {
+      "strips": "4"
+     },
+     "output": null
+    },
+    {
+     "line": 7,
+     "vars": {
+      "loose": "2"
+     },
+     "output": null
+    },
+    {
+     "line": 8,
+     "vars": {},
+     "output": "Total tablets: 42"
+    },
+    {
+     "line": 9,
+     "vars": {},
+     "output": "Strips: 4 Loose: 2"
+    },
+    {
+     "line": 10,
+     "vars": {},
+     "output": "Enough with 4 strips? False"
+    }
+   ],
+   "varsT": "Variables",
+   "outT": "Output"
+  },
+  "e1": {
+   "title": "Converting text that isn't a whole number",
+   "code": "weight = int(\"52.5\")",
+   "errorLine": 1,
+   "output": "ValueError: invalid literal for int() with base 10: '52.5'"
+  },
+  "e2": {
+   "title": "Dividing by zero",
+   "code": "tablets = 30\ndays = 0\nprint(tablets / days)",
+   "errorLine": 3,
+   "output": "ZeroDivisionError: division by zero"
+  },
+  "lrecap": {
+   "items": [
+    "Type casting converts values: int(\"500\") gives 500, float(\"52.5\") gives 52.5 and str(500) gives \"500\".",
+    "int() cuts off the decimal part (it doesn't round), and an int mixed with a float gives a float.",
+    "Arithmetic operators calculate: // keeps the whole number and % gives the remainder, perfect for strips and loose tablets.",
+    "Comparison operators (==, !=, >, <, >=, <=) and logical operators (and, or, not) give True or False."
+   ],
+   "title": "Recap"
+  },
+  "output": "Output"
+ }
+}

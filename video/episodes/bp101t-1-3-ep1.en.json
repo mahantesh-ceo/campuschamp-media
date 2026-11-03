@@ -1,0 +1,570 @@
+{
+ "course": "bp101t",
+ "lesson": "1-3",
+ "episode": 1,
+ "lang": "en",
+ "engine": "sarvam",
+ "speaker": "ritu_en_edtech",
+ "voiceName": "Ritu",
+ "lines": [
+  {
+   "id": "h1",
+   "scene": "lhook",
+   "say": "A pharmacist keeps every medicine in a labelled box, so the right one can be found instantly.",
+   "tts": "A pharmacist keeps every medicine in a labelled box, so the right one can be found instantly.",
+   "reuse": false
+  },
+  {
+   "id": "h2",
+   "scene": "lhook",
+   "say": "Python stores information the same way, in variables. Let's see how.",
+   "tts": "Python stores information the same way, in variables. Let's see how.",
+   "reuse": false
+  },
+  {
+   "id": "../anim-boxes-01",
+   "scene": "lanim",
+   "say": "A variable is like a labelled box on a pharmacy shelf. The label is the name, and inside is the value.",
+   "tts": "A variable is like a labelled box on a pharmacy shelf. The label is the name, and inside is the value.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-boxes-02",
+   "scene": "lanim",
+   "say": "Different boxes can hold different kinds of values: text, a decimal number, or True or False.",
+   "tts": "Different boxes can hold different kinds of values: text, a decimal number, or True or False.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-boxes-03",
+   "scene": "lanim",
+   "say": "Python remembers the kind of value in each box. This is called its data type: int, str, float and bool.",
+   "tts": "Python remembers the kind of value in each box. This is called its data type: int, str, float and bool.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-boxes-04",
+   "scene": "lanim",
+   "say": "You can change what's inside. Now the dose_mg box holds six hundred and fifty, not five hundred.",
+   "tts": "You can change what's inside. Now the dose_mg box holds six hundred and fifty, not five hundred.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-boxes-05",
+   "scene": "lanim",
+   "say": "When you use the name, Python looks inside the box and uses the value that's there now.",
+   "tts": "When you use the name, Python looks inside the box and uses the value that's there now.",
+   "reuse": true
+  },
+  {
+   "id": "c1",
+   "scene": "c1",
+   "say": "A variable is a labelled box. The equals sign puts a value in the box, and a new value replaces the old one, so this prints six hundred and fifty.",
+   "tts": "A variable is a labelled box. The equals sign puts a value in the box, and a new value replaces the old one, so this prints six hundred and fifty.",
+   "reuse": false
+  },
+  {
+   "id": "c2",
+   "scene": "c2",
+   "say": "Every value has a data type, and type tells you which: int for whole numbers, float for decimals, str for text, and bool for True or False.",
+   "tts": "Every value has a data type, and type tells you which: int for whole numbers, float for decimals, str for text, and bool for True or False.",
+   "reuse": false
+  },
+  {
+   "id": "c3",
+   "scene": "c3",
+   "say": "Types matter. The number five hundred, times three, is fifteen hundred. But the text five hundred, times three, just repeats the text.",
+   "tts": "Types matter. The number five hundred, times three, is fifteen hundred. But the text five hundred, times three, just repeats the text.",
+   "reuse": false
+  },
+  {
+   "id": "../step-01",
+   "scene": "lwalk",
+   "say": "This program stores a patient's details in variables, and then uses them. Watch the Variables panel as each line runs.",
+   "tts": "This program stores a patient's details in variables, and then uses them. Watch the Variables panel as each line runs.",
+   "reuse": true
+  },
+  {
+   "id": "../step-02",
+   "scene": "lwalk",
+   "say": "The first line is a comment. It tells us what the program is about.",
+   "tts": "The first line is a comment. It tells us what the program is about.",
+   "reuse": true
+  },
+  {
+   "id": "../step-03",
+   "scene": "lwalk",
+   "say": "Here, the equals sign means store. Python stores the text Ananya in a box called patient_name. It's in quotes, so it's a string.",
+   "tts": "Here, the equals sign means store. Python stores the text Ananya in a box called patient_name. It's in quotes, so it's a string.",
+   "reuse": true
+  },
+  {
+   "id": "../step-04",
+   "scene": "lwalk",
+   "say": "weight_kg stores fifty-two point five. It has a decimal point, so its data type is float.",
+   "tts": "weight_kg stores fifty-two point five. It has a decimal point, so its data type is float.",
+   "reuse": true
+  },
+  {
+   "id": "../step-05",
+   "scene": "lwalk",
+   "say": "dose_mg_per_kg stores ten, a whole number. Its data type is int, short for integer.",
+   "tts": "dose_mg_per_kg stores ten, a whole number. Its data type is int, short for integer.",
+   "reuse": true
+  },
+  {
+   "id": "../step-06",
+   "scene": "lwalk",
+   "say": "in_stock stores True, with a capital T. Values that are only True or False are called boolean values.",
+   "tts": "in_stock stores True, with a capital T. Values that are only True or False are called boolean values.",
+   "reuse": true
+  },
+  {
+   "id": "../step-07",
+   "scene": "lwalk",
+   "say": "Now print uses the variables. Python looks inside each box and shows the values.",
+   "tts": "Now print uses the variables. Python looks inside each box and shows the values.",
+   "reuse": true
+  },
+  {
+   "id": "../step-08",
+   "scene": "lwalk",
+   "say": "Python multiplies fifty-two point five by ten. One of them is a float, so the answer is a float too: five hundred and twenty-five point zero.",
+   "tts": "Python multiplies fifty-two point five by ten. One of them is a float, so the answer is a float too: five hundred and twenty-five point zero.",
+   "reuse": true
+  },
+  {
+   "id": "../step-09",
+   "scene": "lwalk",
+   "say": "Finally, Python shows the boolean. You have just stored and used four different data types.",
+   "tts": "Finally, Python shows the boolean. You have just stored and used four different data types.",
+   "reuse": true
+  },
+  {
+   "id": "e1",
+   "scene": "e1",
+   "say": "If you use a name that was never created, or spell it differently, Python stops with a NameError.",
+   "tts": "If you use a name that was never created, or spell it differently, Python stops with a NameError.",
+   "reuse": false
+  },
+  {
+   "id": "e2",
+   "scene": "e2",
+   "say": "And you can't join text and a number with plus. Use a comma in print, or convert the number to text first.",
+   "tts": "And you can't join text and a number with plus. Use a comma in print, or convert the number to text first.",
+   "reuse": false
+  },
+  {
+   "id": "q1",
+   "scene": "quiz",
+   "say": "What is the data type of 52.5?",
+   "tts": "What is the data type of 52.5?",
+   "reuse": false
+  },
+  {
+   "id": "q2",
+   "scene": "quiz-answer",
+   "say": "The answer is B: float. 52.5 has a decimal point, so it is a float.",
+   "tts": "The answer is B: float. 52.5 has a decimal point, so it is a float.",
+   "reuse": false
+  },
+  {
+   "id": "r0",
+   "scene": "lrecap",
+   "say": "Let's recap.",
+   "tts": "Let's recap.",
+   "reuse": false
+  },
+  {
+   "id": "r1",
+   "scene": "lrecap",
+   "say": "A variable is a labelled box that stores a value; = means store, not equals.",
+   "tts": "A variable is a labelled box that stores a value; = means store, not equals.",
+   "reuse": false
+  },
+  {
+   "id": "r2",
+   "scene": "lrecap",
+   "say": "Names use letters, numbers and underscores, can't start with a number or contain spaces, and are case-sensitive.",
+   "tts": "Names use letters, numbers and underscores, can't start with a number or contain spaces, and are case-sensitive.",
+   "reuse": false
+  },
+  {
+   "id": "r3",
+   "scene": "lrecap",
+   "say": "The four basic data types are int (30), float (52.5), str (\"Amoxicillin\") and bool (True / False).",
+   "tts": "The four basic data types are int (30), float (52.5), str (\"Amoxicillin\") and bool (True / False).",
+   "reuse": false
+  },
+  {
+   "id": "r4",
+   "scene": "lrecap",
+   "say": "type() shows a value's data type; anything in quotes is a string, even \"500\".",
+   "tts": "type() shows a value's data type; anything in quotes is a string, even \"500\".",
+   "reuse": false
+  }
+ ],
+ "data": {
+  "hook": {
+   "icon": "📦",
+   "title": "Store a patient's details in labelled boxes",
+   "learn": [
+    "What a variable is, and how to store and change a value",
+    "The rules for naming variables",
+    "The four basic data types: integers, floats, strings and booleans"
+   ],
+   "label": "BP101T · Lesson 1.3",
+   "learnT": "In this video"
+  },
+  "lanim": {
+   "title": "Variables are labelled boxes",
+   "actors": [
+    {
+     "id": "dose",
+     "type": "box",
+     "label": "dose_mg",
+     "value": "500",
+     "color": "indigo",
+     "desktop": {
+      "x": 40,
+      "y": 50,
+      "w": 160,
+      "h": 110
+     },
+     "mobile": {
+      "x": 16,
+      "y": 16,
+      "w": 156,
+      "h": 100
+     }
+    },
+    {
+     "id": "drug",
+     "type": "box",
+     "label": "drug",
+     "value": "\"Paracetamol\"",
+     "color": "emerald",
+     "desktop": {
+      "x": 230,
+      "y": 50,
+      "w": 160,
+      "h": 110
+     },
+     "mobile": {
+      "x": 188,
+      "y": 16,
+      "w": 156,
+      "h": 100
+     }
+    },
+    {
+     "id": "weight",
+     "type": "box",
+     "label": "weight_kg",
+     "value": "52.5",
+     "color": "amber",
+     "desktop": {
+      "x": 420,
+      "y": 50,
+      "w": 160,
+      "h": 110
+     },
+     "mobile": {
+      "x": 16,
+      "y": 170,
+      "w": 156,
+      "h": 100
+     }
+    },
+    {
+     "id": "stock",
+     "type": "box",
+     "label": "in_stock",
+     "value": "True",
+     "color": "rose",
+     "desktop": {
+      "x": 610,
+      "y": 50,
+      "w": 160,
+      "h": 110
+     },
+     "mobile": {
+      "x": 188,
+      "y": 170,
+      "w": 156,
+      "h": 100
+     }
+    },
+    {
+     "id": "t_dose",
+     "type": "text",
+     "text": "int",
+     "size": 18,
+     "desktop": {
+      "x": 40,
+      "y": 175,
+      "w": 160,
+      "h": 28
+     },
+     "mobile": {
+      "x": 16,
+      "y": 124,
+      "w": 156,
+      "h": 26
+     }
+    },
+    {
+     "id": "t_drug",
+     "type": "text",
+     "text": "str",
+     "size": 18,
+     "desktop": {
+      "x": 230,
+      "y": 175,
+      "w": 160,
+      "h": 28
+     },
+     "mobile": {
+      "x": 188,
+      "y": 124,
+      "w": 156,
+      "h": 26
+     }
+    },
+    {
+     "id": "t_weight",
+     "type": "text",
+     "text": "float",
+     "size": 18,
+     "desktop": {
+      "x": 420,
+      "y": 175,
+      "w": 160,
+      "h": 28
+     },
+     "mobile": {
+      "x": 16,
+      "y": 278,
+      "w": 156,
+      "h": 26
+     }
+    },
+    {
+     "id": "t_stock",
+     "type": "text",
+     "text": "bool",
+     "size": 18,
+     "desktop": {
+      "x": 610,
+      "y": 175,
+      "w": 160,
+      "h": 28
+     },
+     "mobile": {
+      "x": 188,
+      "y": 278,
+      "w": 156,
+      "h": 26
+     }
+    },
+    {
+     "id": "out",
+     "type": "terminal",
+     "title": "Output",
+     "desktop": {
+      "x": 40,
+      "y": 300,
+      "w": 730,
+      "h": 120
+     },
+     "mobile": {
+      "x": 16,
+      "y": 330,
+      "w": 328,
+      "h": 150
+     }
+    }
+   ],
+   "steps": [
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "dose"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "drug"
+      },
+      {
+       "do": "show",
+       "target": "weight"
+      },
+      {
+       "do": "show",
+       "target": "stock"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "t_dose"
+      },
+      {
+       "do": "show",
+       "target": "t_drug"
+      },
+      {
+       "do": "show",
+       "target": "t_weight"
+      },
+      {
+       "do": "show",
+       "target": "t_stock"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "setValue",
+       "target": "dose",
+       "value": "650"
+      },
+      {
+       "do": "pulse",
+       "target": "dose"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "out"
+      },
+      {
+       "do": "appendOutput",
+       "target": "out",
+       "text": "Dose: 650 mg"
+      }
+     ]
+    }
+   ]
+  },
+  "c1": {
+   "heading": "What is a variable?",
+   "mode": "code",
+   "idea": "Key idea",
+   "code": "dose_mg = 500\ndose_mg = 650\nprint(\"Dose:\", dose_mg, \"mg\")",
+   "output": "Dose: 650 mg",
+   "file": "example.py",
+   "callout": "A named place in the computer's memory that stores a value, like a labelled box on a shelf."
+  },
+  "c2": {
+   "heading": "Checking the type with type()",
+   "mode": "code",
+   "idea": "Key idea",
+   "code": "print(type(500))\nprint(type(52.5))\nprint(type(\"500\"))\nprint(type(True))",
+   "output": "<class 'int'>\n<class 'float'>\n<class 'str'>\n<class 'bool'>",
+   "file": "example.py"
+  },
+  "c3": {
+   "heading": "Why data types matter",
+   "mode": "code",
+   "idea": "Key idea",
+   "code": "dose = 500\nprint(dose * 3)\ndose = \"500\"\nprint(dose * 3)",
+   "output": "1500\n500500500",
+   "file": "example.py"
+  },
+  "lwalk": {
+   "file": "patient_record.py",
+   "code": "# Patient record\npatient_name = \"Ananya\"\nweight_kg = 52.5\ndose_mg_per_kg = 10\nin_stock = True\nprint(patient_name, \"weighs\", weight_kg, \"kg\")\nprint(\"Dose:\", weight_kg * dose_mg_per_kg, \"mg\")\nprint(\"In stock:\", in_stock)",
+   "steps": [
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 1,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 2,
+     "vars": {
+      "patient_name": "\"Ananya\""
+     },
+     "output": null
+    },
+    {
+     "line": 3,
+     "vars": {
+      "weight_kg": "52.5"
+     },
+     "output": null
+    },
+    {
+     "line": 4,
+     "vars": {
+      "dose_mg_per_kg": "10"
+     },
+     "output": null
+    },
+    {
+     "line": 5,
+     "vars": {
+      "in_stock": "True"
+     },
+     "output": null
+    },
+    {
+     "line": 6,
+     "vars": {},
+     "output": "Ananya weighs 52.5 kg"
+    },
+    {
+     "line": 7,
+     "vars": {},
+     "output": "Dose: 525.0 mg"
+    },
+    {
+     "line": 8,
+     "vars": {},
+     "output": "In stock: True"
+    }
+   ],
+   "varsT": "Variables",
+   "outT": "Output"
+  },
+  "e1": {
+   "title": "Using a name that doesn't exist",
+   "code": "dose_mg = 500\nprint(dose)",
+   "errorLine": 2,
+   "output": "NameError: name 'dose' is not defined"
+  },
+  "e2": {
+   "title": "Joining text and a number with +",
+   "code": "print(\"Dose: \" + 500)",
+   "errorLine": 1,
+   "output": "TypeError: can only concatenate str (not \"int\") to str"
+  },
+  "lrecap": {
+   "items": [
+    "A variable is a labelled box that stores a value; = means store, not equals.",
+    "Names use letters, numbers and underscores, can't start with a number or contain spaces, and are case-sensitive.",
+    "The four basic data types are int (30), float (52.5), str (\"Amoxicillin\") and bool (True / False).",
+    "type() shows a value's data type; anything in quotes is a string, even \"500\"."
+   ],
+   "title": "Recap"
+  },
+  "output": "Output"
+ }
+}

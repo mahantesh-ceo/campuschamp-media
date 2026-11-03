@@ -1,0 +1,530 @@
+{
+ "course": "bp101t",
+ "lesson": "1-4",
+ "episode": 1,
+ "lang": "hi",
+ "engine": "sarvam",
+ "speaker": "ritu_hi_conversation",
+ "voiceName": "Ritu",
+ "lines": [
+  {
+   "id": "h1",
+   "scene": "lhook",
+   "say": "पच्चीस tablets, एक strip में दस। कितनी पूरी strips बनेंगी, और कितनी tablets बचेंगी?",
+   "tts": "पच्चीस tablets, एक strip में दस। कितनी पूरी strips बनेंगी, और कितनी tablets बचेंगी?",
+   "reuse": false
+  },
+  {
+   "id": "h2",
+   "scene": "lhook",
+   "say": "आज Python हिसाब लगाएगा: types बदलना, और operators use करना।",
+   "tts": "आज Python हिसाब लगाएगा: types बदलना, और operators use करना।",
+   "reuse": false
+  },
+  {
+   "id": "../anim-strips-01",
+   "scene": "lanim",
+   "say": "बयालीस tablets को दस-दस की strips में pack करना है।",
+   "tts": "बयालीस tablets को दस-दस की strips में pack करना है।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-strips-02",
+   "scene": "lanim",
+   "say": "दो slashes पूरी strips गिनते हैं। बयालीस को दस से भाग देकर, सिर्फ पूरी संख्या रखने पर, चार।",
+   "tts": "दो slashes पूरी strips गिनते हैं। बयालीस को दस से भाग देकर, सिर्फ पूरी संख्या रखने पर, चार।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-strips-03",
+   "scene": "lanim",
+   "say": "Percent sign बचा हुआ गिनता है: दो खुली tablets।",
+   "tts": "Percent sign बचा हुआ गिनता है: दो खुली tablets।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-strips-04",
+   "scene": "lanim",
+   "say": "चार strips में सिर्फ चालीस tablets आती हैं, इसलिए comparison कहता है कि ये काफी नहीं हैं। Patient को पाँच strips चाहिए।",
+   "tts": "चार strips में सिर्फ चालीस tablets आती हैं, इसलिए comparison कहता है कि ये काफी नहीं हैं। Patient को पाँच strips चाहिए।",
+   "reuse": true
+  },
+  {
+   "id": "c1",
+   "scene": "c1",
+   "say": "Type casting एक value को एक type से दूसरे में बदलता है। int, text पाँच सौ को number बना देता है, ताकि हम उसे गुणा कर सकें।",
+   "tts": "Type casting एक value को एक type से दूसरे में बदलता है। int, text पाँच सौ को number बना देता है, ताकि हम उसे गुणा कर सकें।",
+   "reuse": false
+  },
+  {
+   "id": "c2",
+   "scene": "c2",
+   "say": "दो बहुत काम के operators। Double slash बताता है पूरी कितनी बार: दो पूरी strips। और percent बताता है कितना बचा: पाँच tablets।",
+   "tts": "दो बहुत काम के operators। Double slash बताता है पूरी कितनी बार: दो पूरी strips। और percent बताता है कितना बचा: पाँच tablets।",
+   "reuse": false
+  },
+  {
+   "id": "c3",
+   "scene": "c3",
+   "say": "Logical operators सवालों को जोड़ते हैं। and को दोनों तरफ़ True चाहिए; or को सिर्फ़ एक।",
+   "tts": "Logical operators सवालों को जोड़ते हैं। and को दोनों तरफ़ True चाहिए; or को सिर्फ़ एक।",
+   "reuse": false
+  },
+  {
+   "id": "../step-01",
+   "scene": "lwalk",
+   "say": "यह program निकालता है कि सात दिन के course में कितनी tablets लगेंगी, और कितनी strips देनी हैं। Variables panel देखिए।",
+   "tts": "यह program निकालता है कि सात दिन के course में कितनी tablets लगेंगी, और कितनी strips देनी हैं। Variables panel देखिए।",
+   "reuse": true
+  },
+  {
+   "id": "../step-02",
+   "scene": "lwalk",
+   "say": "Comment बताता है कि program क्या करता है।",
+   "tts": "Comment बताता है कि program क्या करता है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-03",
+   "scene": "lwalk",
+   "say": "int, text दो को number दो में बदलता है, ताकि Python उससे calculate कर सके।",
+   "tts": "int, text दो को number दो में बदलता है, ताकि Python उससे calculate कर सके।",
+   "reuse": true
+  },
+  {
+   "id": "../step-04",
+   "scene": "lwalk",
+   "say": "doses_per_day में तीन रखा गया है।",
+   "tts": "doses_per_day में तीन रखा गया है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-05",
+   "scene": "lwalk",
+   "say": "days में सात रखा गया है।",
+   "tts": "days में सात रखा गया है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-06",
+   "scene": "lwalk",
+   "say": "Star गुणा करता है। दो गुणा तीन गुणा सात, यानी बयालीस tablets।",
+   "tts": "Star गुणा करता है। दो गुणा तीन गुणा सात, यानी बयालीस tablets।",
+   "reuse": true
+  },
+  {
+   "id": "../step-07",
+   "scene": "lwalk",
+   "say": "दो slashes भाग देकर सिर्फ पूरी संख्या रखते हैं। बयालीस को दस से भाग देने पर चार पूरी strips।",
+   "tts": "दो slashes भाग देकर सिर्फ पूरी संख्या रखते हैं। बयालीस को दस से भाग देने पर चार पूरी strips।",
+   "reuse": true
+  },
+  {
+   "id": "../step-08",
+   "scene": "lwalk",
+   "say": "Percent sign शेषफल देता है। बयालीस को दस से भाग देने पर दो खुली tablets बचती हैं।",
+   "tts": "Percent sign शेषफल देता है। बयालीस को दस से भाग देने पर दो खुली tablets बचती हैं।",
+   "reuse": true
+  },
+  {
+   "id": "../step-09",
+   "scene": "lwalk",
+   "say": "Print कुल tablets दिखाता है।",
+   "tts": "Print कुल tablets दिखाता है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-10",
+   "scene": "lwalk",
+   "say": "फिर strips और खुली tablets।",
+   "tts": "फिर strips और खुली tablets।",
+   "reuse": true
+  },
+  {
+   "id": "../step-11",
+   "scene": "lwalk",
+   "say": "आखिर में एक comparison। चार strips में चालीस tablets आती हैं। चालीस, बयालीस से बड़ा या बराबर नहीं है, इसलिए answer False है। Patient को एक और strip चाहिए।",
+   "tts": "आखिर में एक comparison। चार strips में चालीस tablets आती हैं। चालीस, बयालीस से बड़ा या बराबर नहीं है, इसलिए answer False है। Patient को एक और strip चाहिए।",
+   "reuse": true
+  },
+  {
+   "id": "e1",
+   "scene": "e1",
+   "say": "int, दशमलव वाले text को नहीं बदल सकता। दशमलव के लिए float use कीजिए।",
+   "tts": "int, दशमलव वाले text को नहीं बदल सकता। दशमलव के लिए float use कीजिए।",
+   "reuse": false
+  },
+  {
+   "id": "e2",
+   "scene": "e2",
+   "say": "और zero से भाग देना संभव नहीं, इसलिए Python ZeroDivisionError पर रुक जाता है।",
+   "tts": "और zero से भाग देना संभव नहीं, इसलिए Python ZeroDivisionError पर रुक जाता है।",
+   "reuse": false
+  },
+  {
+   "id": "q1",
+   "scene": "quiz",
+   "say": "17 // 5 कितना है?",
+   "tts": "17 // 5 कितना है?",
+   "reuse": false
+  },
+  {
+   "id": "q2",
+   "scene": "quiz-answer",
+   "say": "सही जवाब है A: 3। // भाग देकर सिर्फ पूरी संख्या रखता है: 17 में 5 तीन बार जाता है, कुछ बच जाता है।",
+   "tts": "सही जवाब है A: 3। // भाग देकर सिर्फ पूरी संख्या रखता है: 17 में 5 तीन बार जाता है, कुछ बच जाता है।",
+   "reuse": false
+  },
+  {
+   "id": "r0",
+   "scene": "lrecap",
+   "say": "चलिए, एक बार दोहरा लेते हैं।",
+   "tts": "चलिए, एक बार दोहरा लेते हैं।",
+   "reuse": false
+  },
+  {
+   "id": "r1",
+   "scene": "lrecap",
+   "say": "Type casting values बदलता है: int(\"500\") देता है 500, float(\"52.5\") देता है 52.5 और str(500) देता है \"500\"।",
+   "tts": "Type casting values बदलता है: int(\"500\") देता है 500, float(\"52.5\") देता है 52.5 और str(500) देता है \"500\"।",
+   "reuse": false
+  },
+  {
+   "id": "r2",
+   "scene": "lrecap",
+   "say": "int() दशमलव वाला हिस्सा काट देता है (round नहीं करता), और int के साथ float मिलाने पर answer float होता है।",
+   "tts": "int() दशमलव वाला हिस्सा काट देता है (round नहीं करता), और int के साथ float मिलाने पर answer float होता है।",
+   "reuse": false
+  },
+  {
+   "id": "r3",
+   "scene": "lrecap",
+   "say": "Arithmetic operators calculate करते हैं: // पूरी संख्या रखता है और % शेषफल देता है, strips और खुली tablets के लिए एकदम सही।",
+   "tts": "Arithmetic operators calculate करते हैं: // पूरी संख्या रखता है और % शेषफल देता है, strips और खुली tablets के लिए एकदम सही।",
+   "reuse": false
+  },
+  {
+   "id": "r4",
+   "scene": "lrecap",
+   "say": "Comparison operators (==, !=, >, <, >=, <=) और logical operators (and, or, not) True या False देते हैं।",
+   "tts": "Comparison operators (==, !=, >, <, >=, <=) और logical operators (and, or, not) True या False देते हैं।",
+   "reuse": false
+  }
+ ],
+ "data": {
+  "hook": {
+   "icon": "🧮",
+   "title": "इस patient को कितनी strips चाहिए?",
+   "learn": [
+    "किसी value को एक data type से दूसरे में बदलना, जिसे type casting कहते हैं",
+    "Calculation के लिए arithmetic operators, // और % के साथ",
+    "Comparison और logical operators, जो True या False answer देते हैं"
+   ],
+   "label": "BP101T · Lesson 1.4",
+   "learnT": "इस video में"
+  },
+  "lanim": {
+   "title": "Splitting tablets into strips",
+   "actors": [
+    {
+     "id": "total",
+     "type": "box",
+     "label": "total",
+     "value": "42",
+     "color": "indigo",
+     "desktop": {
+      "x": 320,
+      "y": 30,
+      "w": 160,
+      "h": 100
+     },
+     "mobile": {
+      "x": 100,
+      "y": 16,
+      "w": 160,
+      "h": 96
+     }
+    },
+    {
+     "id": "t_floor",
+     "type": "text",
+     "text": "42 // 10",
+     "size": 20,
+     "desktop": {
+      "x": 110,
+      "y": 160,
+      "w": 200,
+      "h": 30
+     },
+     "mobile": {
+      "x": 16,
+      "y": 130,
+      "w": 156,
+      "h": 28
+     }
+    },
+    {
+     "id": "t_mod",
+     "type": "text",
+     "text": "42 % 10",
+     "size": 20,
+     "desktop": {
+      "x": 490,
+      "y": 160,
+      "w": 200,
+      "h": 30
+     },
+     "mobile": {
+      "x": 188,
+      "y": 130,
+      "w": 156,
+      "h": 28
+     }
+    },
+    {
+     "id": "strips",
+     "type": "box",
+     "label": "strips",
+     "value": "?",
+     "color": "emerald",
+     "desktop": {
+      "x": 130,
+      "y": 200,
+      "w": 160,
+      "h": 100
+     },
+     "mobile": {
+      "x": 16,
+      "y": 166,
+      "w": 156,
+      "h": 96
+     }
+    },
+    {
+     "id": "loose",
+     "type": "box",
+     "label": "loose",
+     "value": "?",
+     "color": "amber",
+     "desktop": {
+      "x": 510,
+      "y": 200,
+      "w": 160,
+      "h": 100
+     },
+     "mobile": {
+      "x": 188,
+      "y": 166,
+      "w": 156,
+      "h": 96
+     }
+    },
+    {
+     "id": "out",
+     "type": "terminal",
+     "title": "Output",
+     "desktop": {
+      "x": 40,
+      "y": 330,
+      "w": 730,
+      "h": 100
+     },
+     "mobile": {
+      "x": 16,
+      "y": 300,
+      "w": 328,
+      "h": 150
+     }
+    }
+   ],
+   "steps": [
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "total"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "t_floor"
+      },
+      {
+       "do": "show",
+       "target": "strips"
+      },
+      {
+       "do": "setValue",
+       "target": "strips",
+       "value": "4"
+      },
+      {
+       "do": "pulse",
+       "target": "strips"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "t_mod"
+      },
+      {
+       "do": "show",
+       "target": "loose"
+      },
+      {
+       "do": "setValue",
+       "target": "loose",
+       "value": "2"
+      },
+      {
+       "do": "pulse",
+       "target": "loose"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "out"
+      },
+      {
+       "do": "appendOutput",
+       "target": "out",
+       "text": "Enough with 4 strips? False"
+      }
+     ]
+    }
+   ]
+  },
+  "c1": {
+   "heading": "Data types के बीच बदलना",
+   "mode": "code",
+   "idea": "मुख्य बात",
+   "code": "strength = \"500\"\nprint(int(strength) * 3)",
+   "output": "1500",
+   "file": "example.py",
+   "callout": "किसी value को एक data type से दूसरे में बदलना, int(), float() या str() से।"
+  },
+  "c2": {
+   "heading": "Arithmetic operators",
+   "mode": "code",
+   "idea": "मुख्य बात",
+   "code": "tablets = 25\nprint(tablets // 10)\nprint(tablets % 10)",
+   "output": "2\n5",
+   "file": "example.py",
+   "callout": "एक symbol जो values के साथ कुछ करता है, जैसे + (जोड़ना) या > (बड़ा है)।"
+  },
+  "c3": {
+   "heading": "Logical operators: and, or, not",
+   "mode": "code",
+   "idea": "मुख्य बात",
+   "code": "age = 16\nweight_kg = 52\nprint(age >= 18 and weight_kg >= 50)\nprint(age >= 18 or weight_kg >= 50)",
+   "output": "False\nTrue",
+   "file": "example.py"
+  },
+  "lwalk": {
+   "file": "strips.py",
+   "code": "# Tablets for a 7-day course\ntablets_per_dose = int(\"2\")\ndoses_per_day = 3\ndays = 7\ntotal = tablets_per_dose * doses_per_day * days\nstrips = total // 10\nloose = total % 10\nprint(\"Total tablets:\", total)\nprint(\"Strips:\", strips, \"Loose:\", loose)\nprint(\"Enough with 4 strips?\", strips * 10 >= total)",
+   "steps": [
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 1,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 2,
+     "vars": {
+      "tablets_per_dose": "2"
+     },
+     "output": null
+    },
+    {
+     "line": 3,
+     "vars": {
+      "doses_per_day": "3"
+     },
+     "output": null
+    },
+    {
+     "line": 4,
+     "vars": {
+      "days": "7"
+     },
+     "output": null
+    },
+    {
+     "line": 5,
+     "vars": {
+      "total": "42"
+     },
+     "output": null
+    },
+    {
+     "line": 6,
+     "vars": {
+      "strips": "4"
+     },
+     "output": null
+    },
+    {
+     "line": 7,
+     "vars": {
+      "loose": "2"
+     },
+     "output": null
+    },
+    {
+     "line": 8,
+     "vars": {},
+     "output": "Total tablets: 42"
+    },
+    {
+     "line": 9,
+     "vars": {},
+     "output": "Strips: 4 Loose: 2"
+    },
+    {
+     "line": 10,
+     "vars": {},
+     "output": "Enough with 4 strips? False"
+    }
+   ],
+   "varsT": "Variables",
+   "outT": "Output"
+  },
+  "e1": {
+   "title": "ऐसा text बदलना जो पूरी संख्या नहीं है",
+   "code": "weight = int(\"52.5\")",
+   "errorLine": 1,
+   "output": "ValueError: invalid literal for int() with base 10: '52.5'"
+  },
+  "e2": {
+   "title": "शून्य से भाग देना",
+   "code": "tablets = 30\ndays = 0\nprint(tablets / days)",
+   "errorLine": 3,
+   "output": "ZeroDivisionError: division by zero"
+  },
+  "lrecap": {
+   "items": [
+    "Type casting values बदलता है: int(\"500\") देता है 500, float(\"52.5\") देता है 52.5 और str(500) देता है \"500\"।",
+    "int() दशमलव वाला हिस्सा काट देता है (round नहीं करता), और int के साथ float मिलाने पर answer float होता है।",
+    "Arithmetic operators calculate करते हैं: // पूरी संख्या रखता है और % शेषफल देता है, strips और खुली tablets के लिए एकदम सही।",
+    "Comparison operators (==, !=, >, <, >=, <=) और logical operators (and, or, not) True या False देते हैं।"
+   ],
+   "title": "Recap"
+  },
+  "output": "Output"
+ }
+}

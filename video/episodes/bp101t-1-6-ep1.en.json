@@ -1,0 +1,460 @@
+{
+ "course": "bp101t",
+ "lesson": "1-6",
+ "episode": 1,
+ "lang": "en",
+ "engine": "sarvam",
+ "speaker": "ritu_en_edtech",
+ "voiceName": "Ritu",
+ "lines": [
+  {
+   "id": "h1",
+   "scene": "lhook",
+   "say": "Real records are messy: extra spaces, small letters, no space before the unit.",
+   "tts": "Real records are messy: extra spaces, small letters, no space before the unit.",
+   "reuse": false
+  },
+  {
+   "id": "h2",
+   "scene": "lhook",
+   "say": "Today you'll clean text, read parts of a batch code, and split a patient record, with string operations.",
+   "tts": "Today you'll clean text, read parts of a batch code, and split a patient record, with string operations.",
+   "reuse": false
+  },
+  {
+   "id": "../anim-slice-01",
+   "scene": "lanim",
+   "say": "Here is a batch code from a medicine strip.",
+   "tts": "Here is a batch code from a medicine strip.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-slice-02",
+   "scene": "lanim",
+   "say": "Every character has an index, starting from zero. The year starts at index four.",
+   "tts": "Every character has an index, starting from zero. The year starts at index four.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-slice-03",
+   "scene": "lanim",
+   "say": "The slice four to eight takes indexes four, five, six and seven. It stops just before eight.",
+   "tts": "The slice four to eight takes indexes four, five, six and seven. It stops just before eight.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-slice-04",
+   "scene": "lanim",
+   "say": "Those four characters make the year: two zero two six.",
+   "tts": "Those four characters make the year: two zero two six.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-slice-05",
+   "scene": "lanim",
+   "say": "And the program prints it on the label.",
+   "tts": "And the program prints it on the label.",
+   "reuse": true
+  },
+  {
+   "id": "c1",
+   "scene": "c1",
+   "say": "Plus joins strings, star repeats them, and len counts the characters, spaces included.",
+   "tts": "Plus joins strings, star repeats them, and len counts the characters, spaces included.",
+   "reuse": false
+  },
+  {
+   "id": "c2",
+   "scene": "c2",
+   "say": "A slice takes a piece of a string. It starts at the first index and stops just before the second, so four to eight gives the year.",
+   "tts": "A slice takes a piece of a string. It starts at the first index and stops just before the second, so four to eight gives the year.",
+   "reuse": false
+  },
+  {
+   "id": "c3",
+   "scene": "c3",
+   "say": "String methods clean text. strip removes the spaces at both ends, upper makes capitals, and replace swaps one piece of text for another.",
+   "tts": "String methods clean text. strip removes the spaces at both ends, upper makes capitals, and replace swaps one piece of text for another.",
+   "reuse": false
+  },
+  {
+   "id": "../step-01",
+   "scene": "lwalk",
+   "say": "This program takes a messy drug entry and cleans it, one string tool at a time.",
+   "tts": "This program takes a messy drug entry and cleans it, one string tool at a time.",
+   "reuse": true
+  },
+  {
+   "id": "../step-02",
+   "scene": "lwalk",
+   "say": "The comment says what the program does.",
+   "tts": "The comment says what the program does.",
+   "reuse": true
+  },
+  {
+   "id": "../step-03",
+   "scene": "lwalk",
+   "say": "The entry has extra spaces at both ends and a small first letter. Look at the Variables panel: the spaces are inside the quotes.",
+   "tts": "The entry has extra spaces at both ends and a small first letter. Look at the Variables panel: the spaces are inside the quotes.",
+   "reuse": true
+  },
+  {
+   "id": "../step-04",
+   "scene": "lwalk",
+   "say": "strip removes the spaces from both ends. Then capitalize makes the first letter a capital. The clean text is saved in drug.",
+   "tts": "strip removes the spaces from both ends. Then capitalize makes the first letter a capital. The clean text is saved in drug.",
+   "reuse": true
+  },
+  {
+   "id": "../step-05",
+   "scene": "lwalk",
+   "say": "print shows the clean entry.",
+   "tts": "print shows the clean entry.",
+   "reuse": true
+  },
+  {
+   "id": "../step-06",
+   "scene": "lwalk",
+   "say": "len counts every character, including the space in the middle. That makes seventeen.",
+   "tts": "len counts every character, including the space in the middle. That makes seventeen.",
+   "reuse": true
+  },
+  {
+   "id": "../step-07",
+   "scene": "lwalk",
+   "say": "The slice takes the first four characters, A M O X, and upper turns them into capitals. That's a short code for the label.",
+   "tts": "The slice takes the first four characters, A M O X, and upper turns them into capitals. That's a short code for the label.",
+   "reuse": true
+  },
+  {
+   "id": "../step-08",
+   "scene": "lwalk",
+   "say": "replace swaps two fifty M G for two fifty, space, M G. Notice that drug itself didn't change: replace gave a new string.",
+   "tts": "replace swaps two fifty M G for two fifty, space, M G. Notice that drug itself didn't change: replace gave a new string.",
+   "reuse": true
+  },
+  {
+   "id": "e1",
+   "scene": "e1",
+   "say": "Aspirin has seven characters, at indexes zero to six. Asking for index seven gives an IndexError.",
+   "tts": "Aspirin has seven characters, at indexes zero to six. Asking for index seven gives an IndexError.",
+   "reuse": false
+  },
+  {
+   "id": "e2",
+   "scene": "e2",
+   "say": "And strings can't be changed in place. Make a new string and save it instead.",
+   "tts": "And strings can't be changed in place. Make a new string and save it instead.",
+   "reuse": false
+  },
+  {
+   "id": "q1",
+   "scene": "quiz",
+   "say": "drug = \"Paracetamol\". What is drug[0]?",
+   "tts": "drug = \"Paracetamol\". What is drug[0]?",
+   "reuse": false
+  },
+  {
+   "id": "q2",
+   "scene": "quiz-answer",
+   "say": "The answer is A: P. Indexes start at 0, so drug[0] is the first character.",
+   "tts": "The answer is A: P. Indexes start at 0, so drug[0] is the first character.",
+   "reuse": false
+  },
+  {
+   "id": "r0",
+   "scene": "lrecap",
+   "say": "Let's recap.",
+   "tts": "Let's recap.",
+   "reuse": false
+  },
+  {
+   "id": "r1",
+   "scene": "lrecap",
+   "say": "+ joins strings, * repeats them and len() counts their characters, spaces included.",
+   "tts": "+ joins strings, * repeats them and len() counts their characters, spaces included.",
+   "reuse": false
+  },
+  {
+   "id": "r2",
+   "scene": "lrecap",
+   "say": "An index picks one character; counting starts at 0, and -1 is the last character.",
+   "tts": "An index picks one character; counting starts at 0, and -1 is the last character.",
+   "reuse": false
+  },
+  {
+   "id": "r3",
+   "scene": "lrecap",
+   "say": "A slice text[start:end] takes a piece, stopping just before end.",
+   "tts": "A slice text[start:end] takes a piece, stopping just before end.",
+   "reuse": false
+  },
+  {
+   "id": "r4",
+   "scene": "lrecap",
+   "say": "strip(), upper(), lower(), capitalize() and replace() clean text. They give a new string, so save the result.",
+   "tts": "strip(), upper(), lower(), capitalize() and replace() clean text. They give a new string, so save the result.",
+   "reuse": false
+  }
+ ],
+ "data": {
+  "hook": {
+   "icon": "🔤",
+   "title": "Clean up a messy drug entry",
+   "learn": [
+    "How to join, repeat and measure text with +, * and len()",
+    "How to pick one character by its index, and a piece of text with a slice",
+    "How to clean text with strip(), upper(), lower(), capitalize() and replace()"
+   ],
+   "label": "BP101T · Lesson 1.6",
+   "learnT": "In this video"
+  },
+  "lanim": {
+   "title": "Slicing a batch code",
+   "actors": [
+    {
+     "id": "batch",
+     "type": "box",
+     "label": "batch",
+     "value": "\"AMX-2026-0457\"",
+     "color": "amber",
+     "desktop": {
+      "x": 200,
+      "y": 30,
+      "w": 400,
+      "h": 110
+     },
+     "mobile": {
+      "x": 16,
+      "y": 16,
+      "w": 328,
+      "h": 100
+     }
+    },
+    {
+     "id": "t_idx",
+     "type": "text",
+     "text": "A=0  M=1  X=2  -=3  2=4  0=5  2=6  6=7",
+     "size": 18,
+     "desktop": {
+      "x": 120,
+      "y": 160,
+      "w": 560,
+      "h": 28
+     },
+     "mobile": {
+      "x": 16,
+      "y": 128,
+      "w": 328,
+      "h": 52
+     }
+    },
+    {
+     "id": "t_slice",
+     "type": "text",
+     "text": "batch[4:8] → indexes 4, 5, 6, 7",
+     "size": 18,
+     "desktop": {
+      "x": 120,
+      "y": 200,
+      "w": 560,
+      "h": 28
+     },
+     "mobile": {
+      "x": 16,
+      "y": 192,
+      "w": 328,
+      "h": 26
+     }
+    },
+    {
+     "id": "year",
+     "type": "box",
+     "label": "year",
+     "value": "\"2026\"",
+     "color": "emerald",
+     "desktop": {
+      "x": 300,
+      "y": 245,
+      "w": 200,
+      "h": 100
+     },
+     "mobile": {
+      "x": 100,
+      "y": 232,
+      "w": 160,
+      "h": 100
+     }
+    },
+    {
+     "id": "term",
+     "type": "terminal",
+     "title": "Screen",
+     "desktop": {
+      "x": 40,
+      "y": 365,
+      "w": 730,
+      "h": 75
+     },
+     "mobile": {
+      "x": 16,
+      "y": 350,
+      "w": 328,
+      "h": 90
+     }
+    }
+   ],
+   "steps": [
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "batch"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "t_idx"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "t_slice"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "year"
+      },
+      {
+       "do": "pulse",
+       "target": "year"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "term"
+      },
+      {
+       "do": "appendOutput",
+       "target": "term",
+       "text": "Year: 2026"
+      }
+     ]
+    }
+   ]
+  },
+  "c1": {
+   "heading": "Strings: joining, repeating, measuring",
+   "mode": "code",
+   "idea": "Key idea",
+   "code": "drug = \"Paracetamol\"\nprint(drug + \" 500 mg\")\nprint(\"-\" * 12)\nprint(len(drug))",
+   "output": "Paracetamol 500 mg\n------------\n11",
+   "file": "example.py"
+  },
+  "c2": {
+   "heading": "Slicing: a piece of a string",
+   "mode": "code",
+   "idea": "Key idea",
+   "code": "batch = \"AMX-2026-0457\"\nprint(batch[0:3])\nprint(batch[4:8])\nprint(batch[-4:])",
+   "output": "AMX\n2026\n0457",
+   "file": "example.py",
+   "callout": "text[start:end] gives the characters from index start up to, but not including, index end."
+  },
+  "c3": {
+   "heading": "String methods: cleaning text",
+   "mode": "code",
+   "idea": "Key idea",
+   "code": "entry = \"  amoxicillin 250mg  \"\nprint(entry.strip())\nprint(entry.strip().upper())\nprint(\"250mg\".replace(\"mg\", \" mg\"))",
+   "output": "amoxicillin 250mg\nAMOXICILLIN 250MG\n250 mg",
+   "file": "example.py",
+   "callout": "Strings can't be changed in place. drug.upper() gives a new string, so save it: drug = drug.upper()."
+  },
+  "lwalk": {
+   "file": "clean_entry.py",
+   "code": "# Clean a messy drug entry\nentry = \"  amoxicillin 250mg  \"\ndrug = entry.strip().capitalize()\nprint(drug)\nprint(\"Length:\", len(drug))\nprint(\"Code:\", drug[:4].upper())\nprint(drug.replace(\"250mg\", \"250 mg\"))",
+   "steps": [
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 1,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 2,
+     "vars": {
+      "entry": "\"  amoxicillin 250mg  \""
+     },
+     "output": null
+    },
+    {
+     "line": 3,
+     "vars": {
+      "drug": "\"Amoxicillin 250mg\""
+     },
+     "output": null
+    },
+    {
+     "line": 4,
+     "vars": {},
+     "output": "Amoxicillin 250mg"
+    },
+    {
+     "line": 5,
+     "vars": {},
+     "output": "Length: 17"
+    },
+    {
+     "line": 6,
+     "vars": {},
+     "output": "Code: AMOX"
+    },
+    {
+     "line": 7,
+     "vars": {},
+     "output": "Amoxicillin 250 mg"
+    }
+   ],
+   "varsT": "Variables",
+   "outT": "Output"
+  },
+  "e1": {
+   "title": "Asking for an index that doesn't exist",
+   "code": "drug = \"Aspirin\"\nprint(drug[7])",
+   "errorLine": 2,
+   "output": "IndexError: string index out of range"
+  },
+  "e2": {
+   "title": "Trying to change one character",
+   "code": "drug = \"aspirin\"\ndrug[0] = \"A\"",
+   "errorLine": 2,
+   "output": "TypeError: 'str' object does not support item assignment"
+  },
+  "lrecap": {
+   "items": [
+    "+ joins strings, * repeats them and len() counts their characters, spaces included.",
+    "An index picks one character; counting starts at 0, and -1 is the last character.",
+    "A slice text[start:end] takes a piece, stopping just before end.",
+    "strip(), upper(), lower(), capitalize() and replace() clean text. They give a new string, so save the result."
+   ],
+   "title": "Recap"
+  },
+  "output": "Output"
+ }
+}

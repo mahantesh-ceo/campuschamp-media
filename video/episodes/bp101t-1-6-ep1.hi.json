@@ -1,0 +1,459 @@
+{
+ "course": "bp101t",
+ "lesson": "1-6",
+ "episode": 1,
+ "lang": "hi",
+ "engine": "sarvam",
+ "speaker": "ritu_hi_conversation",
+ "voiceName": "Ritu",
+ "lines": [
+  {
+   "id": "h1",
+   "scene": "lhook",
+   "say": "असली records गड़बड़ होते हैं: extra spaces, छोटे अक्षर, unit से पहले space नहीं।",
+   "tts": "असली records गड़बड़ होते हैं: extra spaces, छोटे अक्षर, unit से पहले space नहीं।",
+   "reuse": false
+  },
+  {
+   "id": "h2",
+   "scene": "lhook",
+   "say": "आज आप string operations से text साफ़ करेंगे, batch code के हिस्से पढ़ेंगे, और patient record को तोड़ेंगे।",
+   "tts": "आज आप string operations से text साफ़ करेंगे, batch code के हिस्से पढ़ेंगे, और patient record को तोड़ेंगे।",
+   "reuse": false
+  },
+  {
+   "id": "../anim-slice-01",
+   "scene": "lanim",
+   "say": "यह medicine strip का एक batch code है।",
+   "tts": "यह medicine strip का एक batch code है।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-slice-02",
+   "scene": "lanim",
+   "say": "हर character का एक index है, जो zero से शुरू होता है। साल index चार से शुरू होता है।",
+   "tts": "हर character का एक index है, जो zero से शुरू होता है। साल index चार से शुरू होता है।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-slice-03",
+   "scene": "lanim",
+   "say": "Slice चार से आठ, index चार, पाँच, छह और सात लेता है। यह आठ से ठीक पहले रुकता है।",
+   "tts": "Slice चार से आठ, index चार, पाँच, छह और सात लेता है। यह आठ से ठीक पहले रुकता है।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-slice-04",
+   "scene": "lanim",
+   "say": "ये चार characters मिलकर साल बनाते हैं: दो zero दो छह।",
+   "tts": "ये चार characters मिलकर साल बनाते हैं: दो zero दो छह।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-slice-05",
+   "scene": "lanim",
+   "say": "और program इसे label पर print करता है।",
+   "tts": "और program इसे label पर print करता है।",
+   "reuse": true
+  },
+  {
+   "id": "c1",
+   "scene": "c1",
+   "say": "Plus strings को जोड़ता है, star उन्हें दोहराता है, और len characters गिनता है, spaces समेत।",
+   "tts": "Plus strings को जोड़ता है, star उन्हें दोहराता है, और len characters गिनता है, spaces समेत।",
+   "reuse": false
+  },
+  {
+   "id": "c2",
+   "scene": "c2",
+   "say": "Slice string का एक हिस्सा लेता है। यह पहले index से शुरू होकर दूसरे से ठीक पहले रुकता है, इसलिए चार से आठ साल देता है।",
+   "tts": "Slice string का एक हिस्सा लेता है। यह पहले index से शुरू होकर दूसरे से ठीक पहले रुकता है, इसलिए चार से आठ साल देता है।",
+   "reuse": false
+  },
+  {
+   "id": "c3",
+   "scene": "c3",
+   "say": "String methods text साफ़ करते हैं। strip दोनों सिरों के spaces हटाता है, upper capitals बनाता है, और replace एक text की जगह दूसरा रखता है।",
+   "tts": "String methods text साफ़ करते हैं। strip दोनों सिरों के spaces हटाता है, upper capitals बनाता है, और replace एक text की जगह दूसरा रखता है।",
+   "reuse": false
+  },
+  {
+   "id": "../step-01",
+   "scene": "lwalk",
+   "say": "यह program एक गड़बड़ drug entry लेता है और उसे एक-एक string tool से साफ़ करता है।",
+   "tts": "यह program एक गड़बड़ drug entry लेता है और उसे एक-एक string tool से साफ़ करता है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-02",
+   "scene": "lwalk",
+   "say": "Comment बताता है कि program क्या करता है।",
+   "tts": "Comment बताता है कि program क्या करता है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-03",
+   "scene": "lwalk",
+   "say": "Entry के दोनों सिरों पर extra spaces हैं, और पहला अक्षर छोटा है। Variables panel देखिए: spaces quotes के अंदर हैं।",
+   "tts": "Entry के दोनों सिरों पर extra spaces हैं, और पहला अक्षर छोटा है। Variables panel देखिए: spaces quotes के अंदर हैं।",
+   "reuse": true
+  },
+  {
+   "id": "../step-04",
+   "scene": "lwalk",
+   "say": "strip दोनों सिरों से spaces हटाता है। फिर capitalize पहले अक्षर को capital बनाता है। साफ़ text drug में save हो जाता है।",
+   "tts": "strip दोनों सिरों से spaces हटाता है। फिर capitalize पहले अक्षर को capital बनाता है। साफ़ text drug में save हो जाता है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-05",
+   "scene": "lwalk",
+   "say": "print साफ़ entry दिखाता है।",
+   "tts": "print साफ़ entry दिखाता है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-06",
+   "scene": "lwalk",
+   "say": "len हर character गिनता है, बीच वाले space समेत। कुल सत्रह।",
+   "tts": "len हर character गिनता है, बीच वाले space समेत। कुल सत्रह।",
+   "reuse": true
+  },
+  {
+   "id": "../step-07",
+   "scene": "lwalk",
+   "say": "Slice पहले चार characters लेता है, A M O X, और upper उन्हें capitals बना देता है। Label के लिए यह एक छोटा code है।",
+   "tts": "Slice पहले चार characters लेता है, A M O X, और upper उन्हें capitals बना देता है। Label के लिए यह एक छोटा code है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-08",
+   "scene": "lwalk",
+   "say": "replace, दो सौ पचास M G की जगह दो सौ पचास, space, M G रखता है। ध्यान दीजिए, drug खुद नहीं बदला: replace ने नई string दी।",
+   "tts": "replace, दो सौ पचास M G की जगह दो सौ पचास, space, M G रखता है। ध्यान दीजिए, drug खुद नहीं बदला: replace ने नई string दी।",
+   "reuse": true
+  },
+  {
+   "id": "e1",
+   "scene": "e1",
+   "say": "Aspirin में सात characters हैं, index zero से छह तक। Index सात माँगने पर IndexError आती है।",
+   "tts": "Aspirin में सात characters हैं, index zero से छह तक। Index सात माँगने पर IndexError आती है।",
+   "reuse": false
+  },
+  {
+   "id": "e2",
+   "scene": "e2",
+   "say": "और strings को उसी जगह नहीं बदल सकते। नई string बनाइए और उसे save कीजिए।",
+   "tts": "और strings को उसी जगह नहीं बदल सकते। नई string बनाइए और उसे save कीजिए।",
+   "reuse": false
+  },
+  {
+   "id": "q1",
+   "scene": "quiz",
+   "say": "drug = \"Paracetamol\"। drug[0] क्या है?",
+   "tts": "drug = \"Paracetamol\"। drug[0] क्या है?",
+   "reuse": false
+  },
+  {
+   "id": "q2",
+   "scene": "quiz-answer",
+   "say": "सही जवाब है A: P। Index 0 से शुरू होते हैं, इसलिए drug[0] पहला character है।",
+   "tts": "सही जवाब है A: P। Index 0 से शुरू होते हैं, इसलिए drug[0] पहला character है।",
+   "reuse": false
+  },
+  {
+   "id": "r0",
+   "scene": "lrecap",
+   "say": "चलिए, एक बार दोहरा लेते हैं।",
+   "tts": "चलिए, एक बार दोहरा लेते हैं।",
+   "reuse": false
+  },
+  {
+   "id": "r1",
+   "scene": "lrecap",
+   "say": "+ strings जोड़ता है, * उन्हें दोहराता है और len() उनके characters गिनता है, spaces समेत।",
+   "tts": "+ strings जोड़ता है, * उन्हें दोहराता है और len() उनके characters गिनता है, spaces समेत।",
+   "reuse": false
+  },
+  {
+   "id": "r2",
+   "scene": "lrecap",
+   "say": "Index एक character चुनता है; गिनती 0 से शुरू होती है, और -1 आखिरी character है।",
+   "tts": "Index एक character चुनता है; गिनती 0 से शुरू होती है, और -1 आखिरी character है।",
+   "reuse": false
+  },
+  {
+   "id": "r3",
+   "scene": "lrecap",
+   "say": "Slice text[start:end] एक हिस्सा लेता है, और end से ठीक पहले रुकता है।",
+   "tts": "Slice text[start:end] एक हिस्सा लेता है, और end से ठीक पहले रुकता है।",
+   "reuse": false
+  },
+  {
+   "id": "r4",
+   "scene": "lrecap",
+   "say": "strip(), upper(), lower(), capitalize() और replace() text साफ़ करते हैं। ये नई string देते हैं, इसलिए result save कीजिए।",
+   "tts": "strip(), upper(), lower(), capitalize() और replace() text साफ़ करते हैं। ये नई string देते हैं, इसलिए result save कीजिए।",
+   "reuse": false
+  }
+ ],
+ "data": {
+  "hook": {
+   "icon": "🔤",
+   "title": "गड़बड़ drug entry को साफ़ कीजिए",
+   "learn": [
+    "+, * और len() से text को जोड़ना, दोहराना और नापना",
+    "index से एक character, और slice से text का एक हिस्सा कैसे निकालें",
+    "strip(), upper(), lower(), capitalize() और replace() से text कैसे साफ़ करें"
+   ],
+   "label": "BP101T · Lesson 1.6",
+   "learnT": "इस video में"
+  },
+  "lanim": {
+   "title": "Slicing a batch code",
+   "actors": [
+    {
+     "id": "batch",
+     "type": "box",
+     "label": "batch",
+     "value": "\"AMX-2026-0457\"",
+     "color": "amber",
+     "desktop": {
+      "x": 200,
+      "y": 30,
+      "w": 400,
+      "h": 110
+     },
+     "mobile": {
+      "x": 16,
+      "y": 16,
+      "w": 328,
+      "h": 100
+     }
+    },
+    {
+     "id": "t_idx",
+     "type": "text",
+     "text": "A=0  M=1  X=2  -=3  2=4  0=5  2=6  6=7",
+     "size": 18,
+     "desktop": {
+      "x": 120,
+      "y": 160,
+      "w": 560,
+      "h": 28
+     },
+     "mobile": {
+      "x": 16,
+      "y": 128,
+      "w": 328,
+      "h": 52
+     }
+    },
+    {
+     "id": "t_slice",
+     "type": "text",
+     "text": "batch[4:8] → indexes 4, 5, 6, 7",
+     "size": 18,
+     "desktop": {
+      "x": 120,
+      "y": 200,
+      "w": 560,
+      "h": 28
+     },
+     "mobile": {
+      "x": 16,
+      "y": 192,
+      "w": 328,
+      "h": 26
+     }
+    },
+    {
+     "id": "year",
+     "type": "box",
+     "label": "year",
+     "value": "\"2026\"",
+     "color": "emerald",
+     "desktop": {
+      "x": 300,
+      "y": 245,
+      "w": 200,
+      "h": 100
+     },
+     "mobile": {
+      "x": 100,
+      "y": 232,
+      "w": 160,
+      "h": 100
+     }
+    },
+    {
+     "id": "term",
+     "type": "terminal",
+     "title": "Screen",
+     "desktop": {
+      "x": 40,
+      "y": 365,
+      "w": 730,
+      "h": 75
+     },
+     "mobile": {
+      "x": 16,
+      "y": 350,
+      "w": 328,
+      "h": 90
+     }
+    }
+   ],
+   "steps": [
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "batch"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "t_idx"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "t_slice"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "year"
+      },
+      {
+       "do": "pulse",
+       "target": "year"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "term"
+      },
+      {
+       "do": "appendOutput",
+       "target": "term",
+       "text": "Year: 2026"
+      }
+     ]
+    }
+   ]
+  },
+  "c1": {
+   "heading": "Strings: जोड़ना, दोहराना, नापना",
+   "mode": "code",
+   "idea": "मुख्य बात",
+   "code": "drug = \"Paracetamol\"\nprint(drug + \" 500 mg\")\nprint(\"-\" * 12)\nprint(len(drug))",
+   "output": "Paracetamol 500 mg\n------------\n11",
+   "file": "example.py"
+  },
+  "c2": {
+   "heading": "Slicing: string का एक हिस्सा",
+   "mode": "code",
+   "idea": "मुख्य बात",
+   "code": "batch = \"AMX-2026-0457\"\nprint(batch[0:3])\nprint(batch[4:8])\nprint(batch[-4:])",
+   "output": "AMX\n2026\n0457",
+   "file": "example.py",
+   "callout": "text[start:end] index start से लेकर index end तक के characters देता है, end को छोड़कर।"
+  },
+  "c3": {
+   "heading": "String methods: text साफ़ करना",
+   "mode": "code",
+   "idea": "मुख्य बात",
+   "code": "entry = \"  amoxicillin 250mg  \"\nprint(entry.strip())\nprint(entry.strip().upper())\nprint(\"250mg\".replace(\"mg\", \" mg\"))",
+   "output": "amoxicillin 250mg\nAMOXICILLIN 250MG\n250 mg",
+   "file": "example.py"
+  },
+  "lwalk": {
+   "file": "clean_entry.py",
+   "code": "# Clean a messy drug entry\nentry = \"  amoxicillin 250mg  \"\ndrug = entry.strip().capitalize()\nprint(drug)\nprint(\"Length:\", len(drug))\nprint(\"Code:\", drug[:4].upper())\nprint(drug.replace(\"250mg\", \"250 mg\"))",
+   "steps": [
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 1,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 2,
+     "vars": {
+      "entry": "\"  amoxicillin 250mg  \""
+     },
+     "output": null
+    },
+    {
+     "line": 3,
+     "vars": {
+      "drug": "\"Amoxicillin 250mg\""
+     },
+     "output": null
+    },
+    {
+     "line": 4,
+     "vars": {},
+     "output": "Amoxicillin 250mg"
+    },
+    {
+     "line": 5,
+     "vars": {},
+     "output": "Length: 17"
+    },
+    {
+     "line": 6,
+     "vars": {},
+     "output": "Code: AMOX"
+    },
+    {
+     "line": 7,
+     "vars": {},
+     "output": "Amoxicillin 250 mg"
+    }
+   ],
+   "varsT": "Variables",
+   "outT": "Output"
+  },
+  "e1": {
+   "title": "ऐसा index माँगना जो है ही नहीं",
+   "code": "drug = \"Aspirin\"\nprint(drug[7])",
+   "errorLine": 2,
+   "output": "IndexError: string index out of range"
+  },
+  "e2": {
+   "title": "एक character बदलने की कोशिश",
+   "code": "drug = \"aspirin\"\ndrug[0] = \"A\"",
+   "errorLine": 2,
+   "output": "TypeError: 'str' object does not support item assignment"
+  },
+  "lrecap": {
+   "items": [
+    "+ strings जोड़ता है, * उन्हें दोहराता है और len() उनके characters गिनता है, spaces समेत।",
+    "Index एक character चुनता है; गिनती 0 से शुरू होती है, और -1 आखिरी character है।",
+    "Slice text[start:end] एक हिस्सा लेता है, और end से ठीक पहले रुकता है।",
+    "strip(), upper(), lower(), capitalize() और replace() text साफ़ करते हैं। ये नई string देते हैं, इसलिए result save कीजिए।"
+   ],
+   "title": "Recap"
+  },
+  "output": "Output"
+ }
+}

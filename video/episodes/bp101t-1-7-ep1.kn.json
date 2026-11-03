@@ -1,0 +1,474 @@
+{
+ "course": "bp101t",
+ "lesson": "1-7",
+ "episode": 1,
+ "lang": "kn",
+ "engine": "sarvam",
+ "speaker": "chaitra_kn_conversation",
+ "voiceName": "Chaitra",
+ "lines": [
+  {
+   "id": "h1",
+   "scene": "lhook",
+   "say": "Experts ಈಗಾಗಲೇ square root ಅಥವಾ average ಬರೆದು test ಮಾಡಿರುವಾಗ, ನೀವೇ ಯಾಕೆ ಬರೆಯಬೇಕು?",
+   "tts": "Experts ಈಗಾಗಲೇ square root ಅಥವಾ average ಬರೆದು test ಮಾಡಿರುವಾಗ, ನೀವೇ ಯಾಕೆ ಬರೆಯಬೇಕು?",
+   "reuse": false
+  },
+  {
+   "id": "h2",
+   "scene": "lhook",
+   "say": "ಇವತ್ತು: modules, libraries, ಮತ್ತು ಅವನ್ನು install ಮಾಡುವ pip.",
+   "tts": "ಇವತ್ತು: modules, libraries, ಮತ್ತು ಅವನ್ನು install ಮಾಡುವ pip.",
+   "reuse": false
+  },
+  {
+   "id": "../anim-pip-01",
+   "scene": "lanim",
+   "say": "Terminal ನಲ್ಲಿ student type ಮಾಡುತ್ತಾರೆ: pip install numpy.",
+   "tts": "Terminal ನಲ್ಲಿ student type ಮಾಡುತ್ತಾರೆ: pip install numpy.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-pip-02",
+   "scene": "lanim",
+   "say": "pip, NumPy ಅನ್ನು PyPI ನಲ್ಲಿ ಹುಡುಕುತ್ತೆ, ಇದು Python packages ನ online library.",
+   "tts": "pip, NumPy ಅನ್ನು PyPI ನಲ್ಲಿ ಹುಡುಕುತ್ತೆ, ಇದು Python packages ನ online library.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-pip-03",
+   "scene": "lanim",
+   "say": "ಇದು NumPy ಅನ್ನು download ಮಾಡಿ computer ನಲ್ಲಿ install ಮಾಡುತ್ತೆ.",
+   "tts": "ಇದು NumPy ಅನ್ನು download ಮಾಡಿ computer ನಲ್ಲಿ install ಮಾಡುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-pip-04",
+   "scene": "lanim",
+   "say": "ಈಗ ಈ computer ನ ಯಾವ program ಬೇಕಾದ್ರೂ ಇದನ್ನು ಬಳಸಬಹುದು, import numpy as np ಇಂದ.",
+   "tts": "ಈಗ ಈ computer ನ ಯಾವ program ಬೇಕಾದ್ರೂ ಇದನ್ನು ಬಳಸಬಹುದು, import numpy as np ಇಂದ.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-pip-05",
+   "scene": "lanim",
+   "say": "ಮತ್ತು pip uninstall numpy ಇದನ್ನು ಮತ್ತೆ ತೆಗೆಯುತ್ತೆ.",
+   "tts": "ಮತ್ತು pip uninstall numpy ಇದನ್ನು ಮತ್ತೆ ತೆಗೆಯುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "c1",
+   "scene": "c1",
+   "say": "Module ಅಂದರೆ ready-made code ಇರುವ ಒಂದು file. math ಅನ್ನು import ಮಾಡಿ, ಅದರ tools ಬಳಸಿ, ಉದಾಹರಣೆಗೆ square root ಮತ್ತು pi.",
+   "tts": "Module ಅಂದರೆ ready-made code ಇರುವ ಒಂದು file. math ಅನ್ನು import ಮಾಡಿ, ಅದರ tools ಬಳಸಿ, ಉದಾಹರಣೆಗೆ square root ಮತ್ತು pi.",
+   "reuse": false
+  },
+  {
+   "id": "c2",
+   "scene": "c2",
+   "say": "Import ಮಾಡಲು ಮೂರು ದಾರಿಗಳಿವೆ: ಇಡೀ module, from ಇಂದ ಒಂದು tool, ಅಥವಾ as ಇಂದ ಒಂದು ಚಿಕ್ಕ nickname.",
+   "tts": "Import ಮಾಡಲು ಮೂರು ದಾರಿಗಳಿವೆ: ಇಡೀ module, from ಇಂದ ಒಂದು tool, ಅಥವಾ as ಇಂದ ಒಂದು ಚಿಕ್ಕ nickname.",
+   "reuse": false
+  },
+  {
+   "id": "c3",
+   "scene": "c3",
+   "say": "Python ಜೊತೆ ಬರದ libraries ಅನ್ನು pip ಇಂದ install ಮಾಡುತ್ತಾರೆ. ಅದನ್ನು terminal ನಲ್ಲಿ type ಮಾಡಿ, Python ಒಳಗೆ ಅಲ್ಲ: pip install, pip uninstall, ಮತ್ತು pip list.",
+   "tts": "Python ಜೊತೆ ಬರದ libraries ಅನ್ನು pip ಇಂದ install ಮಾಡುತ್ತಾರೆ. ಅದನ್ನು terminal ನಲ್ಲಿ type ಮಾಡಿ, Python ಒಳಗೆ ಅಲ್ಲ: pip install, pip uninstall, ಮತ್ತು pip list.",
+   "reuse": false
+  },
+  {
+   "id": "../step-01",
+   "scene": "lwalk",
+   "say": "ಈ program Python ನ math library ಬಳಸಿ ಎಷ್ಟು strips ಕೊಡಬೇಕು ಅಂತ ಲೆಕ್ಕ ಹಾಕುತ್ತೆ.",
+   "tts": "ಈ program Python ನ math library ಬಳಸಿ ಎಷ್ಟು strips ಕೊಡಬೇಕು ಅಂತ ಲೆಕ್ಕ ಹಾಕುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-02",
+   "scene": "lwalk",
+   "say": "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ.",
+   "tts": "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-03",
+   "scene": "lwalk",
+   "say": "import math, Python ನ math module ಅನ್ನು ತರುತ್ತೆ. ಇದು Python ಜೊತೆಗೇ ಬರುತ್ತೆ, ಅದಕ್ಕೇ ಏನೂ install ಮಾಡಬೇಕಿಲ್ಲ.",
+   "tts": "import math, Python ನ math module ಅನ್ನು ತರುತ್ತೆ. ಇದು Python ಜೊತೆಗೇ ಬರುತ್ತೆ, ಅದಕ್ಕೇ ಏನೂ install ಮಾಡಬೇಕಿಲ್ಲ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-04",
+   "scene": "lwalk",
+   "say": "Patient ಗೆ ನಲವತ್ತೈದು tablets ಬೇಕು.",
+   "tts": "Patient ಗೆ ನಲವತ್ತೈದು tablets ಬೇಕು.",
+   "reuse": true
+  },
+  {
+   "id": "../step-05",
+   "scene": "lwalk",
+   "say": "ಪ್ರತಿ strip ನಲ್ಲಿ ಹತ್ತು tablets ಇವೆ.",
+   "tts": "ಪ್ರತಿ strip ನಲ್ಲಿ ಹತ್ತು tablets ಇವೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-06",
+   "scene": "lwalk",
+   "say": "ನಲವತ್ತೈದನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿದ್ರೆ ನಾಲ್ಕು ಪಾಯಿಂಟ್ ಐದು. ಆದ್ರೆ ಅರ್ಧ strip ಕೊಡೋಕೆ ಆಗಲ್ಲ.",
+   "tts": "ನಲವತ್ತೈದನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿದ್ರೆ ನಾಲ್ಕು ಪಾಯಿಂಟ್ ಐದು. ಆದ್ರೆ ಅರ್ಧ strip ಕೊಡೋಕೆ ಆಗಲ್ಲ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-07",
+   "scene": "lwalk",
+   "say": "math dot ceil ಮುಂದಿನ ಪೂರ್ಣ ಸಂಖ್ಯೆಗೆ ಮೇಲಕ್ಕೆ round ಮಾಡುತ್ತೆ. ಅದಕ್ಕೇ pharmacist ಐದು strips ಕೊಡುತ್ತಾರೆ.",
+   "tts": "math dot ceil ಮುಂದಿನ ಪೂರ್ಣ ಸಂಖ್ಯೆಗೆ ಮೇಲಕ್ಕೆ round ಮಾಡುತ್ತೆ. ಅದಕ್ಕೇ pharmacist ಐದು strips ಕೊಡುತ್ತಾರೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-08",
+   "scene": "lwalk",
+   "say": "ಈ line square root tool ಅನ್ನು ಮಾತ್ರ import ಮಾಡುತ್ತೆ, math ಮತ್ತು dot ಬರೆಯದೆ ಬಳಸಲು.",
+   "tts": "ಈ line square root tool ಅನ್ನು ಮಾತ್ರ import ಮಾಡುತ್ತೆ, math ಮತ್ತು dot ಬರೆಯದೆ ಬಳಸಲು.",
+   "reuse": true
+  },
+  {
+   "id": "../step-09",
+   "scene": "lwalk",
+   "say": "ಎಂಬತ್ತೊಂದರ square root ಒಂಬತ್ತು. Python ಇದನ್ನು ಒಂಬತ್ತು ಪಾಯಿಂಟ್ zero ಅಂತ ತೋರಿಸುತ್ತೆ.",
+   "tts": "ಎಂಬತ್ತೊಂದರ square root ಒಂಬತ್ತು. Python ಇದನ್ನು ಒಂಬತ್ತು ಪಾಯಿಂಟ್ zero ಅಂತ ತೋರಿಸುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "e1",
+   "scene": "e1",
+   "say": "ಈ error ನ ಅರ್ಥ library install ಆಗಿಲ್ಲ, ಅಥವಾ ಹೆಸರಿನ spelling ತಪ್ಪು: numpy ಬದಲು n u m p i.",
+   "tts": "ಈ error ನ ಅರ್ಥ library install ಆಗಿಲ್ಲ, ಅಥವಾ ಹೆಸರಿನ spelling ತಪ್ಪು: numpy ಬದಲು n u m p i.",
+   "reuse": false
+  },
+  {
+   "id": "e2",
+   "scene": "e2",
+   "say": "ಮತ್ತು import math ಆದಮೇಲೆ math dot sqrt ಅಂತ ಬರೆಯಬೇಕು. ಸುಮ್ಮನೆ sqrt, from math import sqrt ಇದ್ದಾಗ ಮಾತ್ರ ಕೆಲಸ ಮಾಡುತ್ತೆ.",
+   "tts": "ಮತ್ತು import math ಆದಮೇಲೆ math dot sqrt ಅಂತ ಬರೆಯಬೇಕು. ಸುಮ್ಮನೆ sqrt, from math import sqrt ಇದ್ದಾಗ ಮಾತ್ರ ಕೆಲಸ ಮಾಡುತ್ತೆ.",
+   "reuse": false
+  },
+  {
+   "id": "q1",
+   "scene": "quiz",
+   "say": "ಯಾವ command NumPy install ಮಾಡುತ್ತೆ?",
+   "tts": "ಯಾವ command NumPy install ಮಾಡುತ್ತೆ?",
+   "reuse": false
+  },
+  {
+   "id": "q2",
+   "scene": "quiz-answer",
+   "say": "ಸರಿಯಾದ ಉತ್ತರ B: pip install numpy. pip install library download ಮಾಡಿ install ಮಾಡುತ್ತೆ. import ಈಗಾಗಲೇ install ಆದ library ಅನ್ನು ಮಾತ್ರ ಬಳಸುತ್ತೆ.",
+   "tts": "ಸರಿಯಾದ ಉತ್ತರ B: pip install numpy. pip install library download ಮಾಡಿ install ಮಾಡುತ್ತೆ. import ಈಗಾಗಲೇ install ಆದ library ಅನ್ನು ಮಾತ್ರ ಬಳಸುತ್ತೆ.",
+   "reuse": false
+  },
+  {
+   "id": "r0",
+   "scene": "lrecap",
+   "say": "ಒಮ್ಮೆ recap ಮಾಡೋಣ.",
+   "tts": "ಒಮ್ಮೆ recap ಮಾಡೋಣ.",
+   "reuse": false
+  },
+  {
+   "id": "r1",
+   "scene": "lrecap",
+   "say": "Library ಅಂದ್ರೆ ready-made, test ಆದ code; module ಅದರ ಒಂದು file. ಇದನ್ನು import ಇಂದ ತರುತ್ತೇವೆ.",
+   "tts": "Library ಅಂದ್ರೆ ready-made, test ಆದ code; module ಅದರ ಒಂದು file. ಇದನ್ನು import ಇಂದ ತರುತ್ತೇವೆ.",
+   "reuse": false
+  },
+  {
+   "id": "r2",
+   "scene": "lrecap",
+   "say": "Standard library Python ಜೊತೆ ಬರುತ್ತೆ, ಉದಾ: math: math.ceil() ಮೇಲಕ್ಕೆ round ಮಾಡುತ್ತೆ, math.sqrt() square root ಕೊಡುತ್ತೆ.",
+   "tts": "Standard library Python ಜೊತೆ ಬರುತ್ತೆ, ಉದಾ: math: math.ceil() ಮೇಲಕ್ಕೆ round ಮಾಡುತ್ತೆ, math.sqrt() square root ಕೊಡುತ್ತೆ.",
+   "reuse": false
+  },
+  {
+   "id": "r3",
+   "scene": "lrecap",
+   "say": "ಪೂರ್ತಿ module (import math), ಒಂದು tool (from math import sqrt) import ಮಾಡಿ, ಅಥವಾ ಚಿಕ್ಕ alias ಬಳಸಿ (import numpy as np).",
+   "tts": "ಪೂರ್ತಿ module (import math), ಒಂದು tool (from math import sqrt) import ಮಾಡಿ, ಅಥವಾ ಚಿಕ್ಕ alias ಬಳಸಿ (import numpy as np).",
+   "reuse": false
+  },
+  {
+   "id": "r4",
+   "scene": "lrecap",
+   "say": "NumPy, Pandas ಮತ್ತು Matplotlib ತರಹದ third-party libraries PyPI ಇಂದ ಬರುತ್ತವೆ, pip ಇಂದ install ಆಗುತ್ತವೆ.",
+   "tts": "NumPy, Pandas ಮತ್ತು Matplotlib ತರಹದ third-party libraries PyPI ಇಂದ ಬರುತ್ತವೆ, pip ಇಂದ install ಆಗುತ್ತವೆ.",
+   "reuse": false
+  }
+ ],
+ "data": {
+  "hook": {
+   "icon": "📚",
+   "title": "ಪ್ರತಿ tablet ಅನ್ನು ಶುರುವಿನಿಂದ ಮಾಡಬೇಡಿ",
+   "learn": [
+    "Module ಮತ್ತು library ಅಂದ್ರೆ ಏನು",
+    "Python ಜೊತೆ ಬರುವ standard library ಹೇಗೆ ಬಳಸೋದು, ಉದಾ: math",
+    "Import ಮಾಡುವ ಮೂರು ವಿಧಾನಗಳು: import math, from math import sqrt ಮತ್ತು import numpy as np"
+   ],
+   "label": "BP101T · Lesson 1.7",
+   "learnT": "ಈ video ದಲ್ಲಿ"
+  },
+  "lanim": {
+   "title": "From PyPI to your program",
+   "actors": [
+    {
+     "id": "term",
+     "type": "terminal",
+     "title": "Terminal",
+     "desktop": {
+      "x": 40,
+      "y": 30,
+      "w": 730,
+      "h": 120
+     },
+     "mobile": {
+      "x": 16,
+      "y": 16,
+      "w": 328,
+      "h": 140
+     }
+    },
+    {
+     "id": "pypi",
+     "type": "box",
+     "label": "PyPI (online)",
+     "value": "numpy",
+     "color": "amber",
+     "desktop": {
+      "x": 80,
+      "y": 200,
+      "w": 240,
+      "h": 110
+     },
+     "mobile": {
+      "x": 16,
+      "y": 190,
+      "w": 156,
+      "h": 100
+     }
+    },
+    {
+     "id": "pc",
+     "type": "box",
+     "label": "Your computer",
+     "value": "not installed",
+     "color": "emerald",
+     "desktop": {
+      "x": 480,
+      "y": 200,
+      "w": 240,
+      "h": 110
+     },
+     "mobile": {
+      "x": 188,
+      "y": 190,
+      "w": 156,
+      "h": 100
+     }
+    },
+    {
+     "id": "t_dl",
+     "type": "text",
+     "text": "pip downloads and installs",
+     "size": 18,
+     "desktop": {
+      "x": 200,
+      "y": 330,
+      "w": 400,
+      "h": 28
+     },
+     "mobile": {
+      "x": 16,
+      "y": 310,
+      "w": 328,
+      "h": 26
+     }
+    }
+   ],
+   "steps": [
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "term"
+      },
+      {
+       "do": "appendOutput",
+       "target": "term",
+       "text": "pip install numpy"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "pypi"
+      },
+      {
+       "do": "pulse",
+       "target": "pypi"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "pc"
+      },
+      {
+       "do": "show",
+       "target": "t_dl"
+      },
+      {
+       "do": "setValue",
+       "target": "pc",
+       "value": "numpy installed"
+      },
+      {
+       "do": "pulse",
+       "target": "pc"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "appendOutput",
+       "target": "term",
+       "text": "Successfully installed numpy"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "appendOutput",
+       "target": "term",
+       "text": "pip uninstall numpy"
+      },
+      {
+       "do": "setValue",
+       "target": "pc",
+       "value": "not installed"
+      }
+     ]
+    }
+   ]
+  },
+  "c1": {
+   "heading": "Modules ಮತ್ತು libraries",
+   "mode": "code",
+   "idea": "ಮುಖ್ಯ ವಿಷಯ",
+   "code": "import math\nprint(math.sqrt(49))\nprint(math.pi)",
+   "output": "7.0\n3.141592653589793",
+   "file": "example.py",
+   "callout": "ನೀವೇ ಬರೆಯುವ ಬದಲು ನಿಮ್ಮ program ಗೆ import ಮಾಡಿಕೊಳ್ಳುವ ready-made, test ಆದ code."
+  },
+  "c2": {
+   "heading": "Import ಮಾಡುವ ಮೂರು ವಿಧಾನಗಳು",
+   "mode": "code",
+   "idea": "ಮುಖ್ಯ ವಿಷಯ",
+   "code": "import math\nprint(math.ceil(4.5))\nfrom math import sqrt\nprint(sqrt(81))\nimport statistics as st\nprint(st.mean([250, 500, 375]))",
+   "output": "5\n9.0\n375",
+   "file": "example.py",
+   "callout": "Import lines ಅನ್ನು program ನ ಶುರುವಿನಲ್ಲಿ ಬರೆಯಿರಿ, ಕೆಳಗಿನ ಪ್ರತಿ line ಅವನ್ನು ಬಳಸಲು."
+  },
+  "c3": {
+   "heading": "pip ಇಂದ install ಮತ್ತು uninstall",
+   "mode": "terminal",
+   "idea": "ಮುಖ್ಯ ವಿಷಯ",
+   "code": "pip install numpy\npip uninstall numpy\npip list",
+   "output": "",
+   "file": "Terminal"
+  },
+  "lwalk": {
+   "file": "strips.py",
+   "code": "# How many strips should the pharmacist give?\nimport math\ntablets_needed = 45\nper_strip = 10\nprint(\"Exact:\", tablets_needed / per_strip)\nprint(\"Strips:\", math.ceil(tablets_needed / per_strip))\nfrom math import sqrt\nprint(\"Square root of 81:\", sqrt(81))",
+   "steps": [
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 1,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 2,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 3,
+     "vars": {
+      "tablets_needed": "45"
+     },
+     "output": null
+    },
+    {
+     "line": 4,
+     "vars": {
+      "per_strip": "10"
+     },
+     "output": null
+    },
+    {
+     "line": 5,
+     "vars": {},
+     "output": "Exact: 4.5"
+    },
+    {
+     "line": 6,
+     "vars": {},
+     "output": "Strips: 5"
+    },
+    {
+     "line": 7,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 8,
+     "vars": {},
+     "output": "Square root of 81: 9.0"
+    }
+   ],
+   "varsT": "Variables",
+   "outT": "Output"
+  },
+  "e1": {
+   "title": "Library install ಆಗಿಲ್ಲ, ಅಥವಾ ಹೆಸರಿನ spelling ತಪ್ಪು",
+   "code": "import numpi",
+   "errorLine": 1,
+   "output": "ModuleNotFoundError: No module named 'numpi'"
+  },
+  "e2": {
+   "title": "Module ಹೆಸರಿಲ್ಲದೆ tool ಬಳಸೋದು",
+   "code": "import math\nprint(sqrt(16))",
+   "errorLine": 2,
+   "output": "NameError: name 'sqrt' is not defined"
+  },
+  "lrecap": {
+   "items": [
+    "Library ಅಂದ್ರೆ ready-made, test ಆದ code; module ಅದರ ಒಂದು file. ಇದನ್ನು import ಇಂದ ತರುತ್ತೇವೆ.",
+    "Standard library Python ಜೊತೆ ಬರುತ್ತೆ, ಉದಾ: math: math.ceil() ಮೇಲಕ್ಕೆ round ಮಾಡುತ್ತೆ, math.sqrt() square root ಕೊಡುತ್ತೆ.",
+    "ಪೂರ್ತಿ module (import math), ಒಂದು tool (from math import sqrt) import ಮಾಡಿ, ಅಥವಾ ಚಿಕ್ಕ alias ಬಳಸಿ (import numpy as np).",
+    "NumPy, Pandas ಮತ್ತು Matplotlib ತರಹದ third-party libraries PyPI ಇಂದ ಬರುತ್ತವೆ, pip ಇಂದ install ಆಗುತ್ತವೆ."
+   ],
+   "title": "Recap"
+  },
+  "output": "Output"
+ }
+}

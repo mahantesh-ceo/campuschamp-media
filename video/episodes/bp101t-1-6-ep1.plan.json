@@ -1,0 +1,139 @@
+{
+ "order": [
+  "lhook",
+  "sting",
+  "lanim",
+  "c1",
+  "c2",
+  "c3",
+  "lwalk",
+  "e1",
+  "e2",
+  "quiz",
+  "lrecap",
+  "end"
+ ],
+ "hold": {
+  "lhook": 1.2,
+  "sting": 2.8,
+  "lanim": 1.2,
+  "c1": 1.8,
+  "c2": 1.8,
+  "c3": 1.8,
+  "lwalk": 1.4,
+  "e1": 1.4,
+  "e2": 1.4,
+  "quiz": 1.4,
+  "lrecap": 1.4,
+  "end": 6
+ },
+ "chapters": {
+  "en": {
+   "lhook": "Intro",
+   "lanim": "Slicing a batch code",
+   "c1": "Strings: joining, repeating, measuring",
+   "c2": "Slicing: a piece of a string",
+   "c3": "String methods: cleaning text",
+   "lwalk": "Walkthrough",
+   "e1": "Common errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practise"
+  },
+  "hi": {
+   "lhook": "Intro",
+   "lanim": "मुख्य बात",
+   "c1": "Strings: जोड़ना, दोहराना, नापना",
+   "c2": "Slicing: string का एक हिस्सा",
+   "c3": "String methods: text साफ़ करना",
+   "lwalk": "Walkthrough",
+   "e1": "आम errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practice"
+  },
+  "kn": {
+   "lhook": "Intro",
+   "lanim": "ಮುಖ್ಯ ವಿಷಯ",
+   "c1": "Strings: ಸೇರಿಸೋದು, ಪುನರಾವರ್ತಿಸೋದು, ಅಳೆಯೋದು",
+   "c2": "Slicing: string ನ ಒಂದು ಭಾಗ",
+   "c3": "String methods: text ಸರಿ ಮಾಡೋದು",
+   "lwalk": "Walkthrough",
+   "e1": "ಸಾಮಾನ್ಯ errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practice"
+  }
+ },
+ "title": {
+  "en": "String operations",
+  "hi": "String operations",
+  "kn": "String operations"
+ },
+ "quiz": {
+  "en": {
+   "q": "drug = \"Paracetamol\". What is drug[0]?",
+   "options": [
+    "P",
+    "a",
+    "Para"
+   ],
+   "answer": 0
+  },
+  "hi": {
+   "q": "drug = \"Paracetamol\"। drug[0] क्या है?",
+   "options": [
+    "P",
+    "a",
+    "Para"
+   ],
+   "answer": 0
+  },
+  "kn": {
+   "q": "drug = \"Paracetamol\". drug[0] ಏನು?",
+   "options": [
+    "P",
+    "a",
+    "Para"
+   ],
+   "answer": 0
+  }
+ },
+ "recap": {
+  "en": [
+   "+ joins strings, * repeats them and len() counts their characters, spaces included.",
+   "An index picks one character; counting starts at 0, and -1 is the last character.",
+   "A slice text[start:end] takes a piece, stopping just before end.",
+   "strip(), upper(), lower(), capitalize() and replace() clean text. They give a new string, so save the result."
+  ],
+  "hi": [
+   "+ strings जोड़ता है, * उन्हें दोहराता है और len() उनके characters गिनता है, spaces समेत।",
+   "Index एक character चुनता है; गिनती 0 से शुरू होती है, और -1 आखिरी character है।",
+   "Slice text[start:end] एक हिस्सा लेता है, और end से ठीक पहले रुकता है।",
+   "strip(), upper(), lower(), capitalize() और replace() text साफ़ करते हैं। ये नई string देते हैं, इसलिए result save कीजिए।"
+  ],
+  "kn": [
+   "+ strings ಸೇರಿಸುತ್ತೆ, * ಅವನ್ನು ಪುನರಾವರ್ತಿಸುತ್ತೆ ಮತ್ತು len() characters ಎಣಿಸುತ್ತೆ, spaces ಸೇರಿ.",
+   "Index ಒಂದು character ಆರಿಸುತ್ತೆ; ಎಣಿಕೆ 0 ಇಂದ ಶುರು, ಮತ್ತು -1 ಕೊನೆಯ character.",
+   "Slice text[start:end] ಒಂದು ಭಾಗ ತೆಗೆಯುತ್ತೆ, end ಗೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ.",
+   "strip(), upper(), lower(), capitalize() ಮತ್ತು replace() text ಸರಿ ಮಾಡುತ್ತವೆ. ಇವು ಹೊಸ string ಕೊಡುತ್ತವೆ, ಅದಕ್ಕೇ result save ಮಾಡಿ."
+  ]
+ },
+ "next": {
+  "en": {
+   "label": "Next: Lesson 1.7",
+   "title": "Libraries and pip",
+   "desc": "Practise this lesson with instant feedback, in your language."
+  },
+  "hi": {
+   "label": "आगे: Lesson 1.7",
+   "title": "Libraries और pip",
+   "desc": "इस lesson की practice कीजिए, तुरंत feedback के साथ, अपनी भाषा में।"
+  },
+  "kn": {
+   "label": "ಮುಂದೆ: Lesson 1.7",
+   "title": "Libraries ಮತ್ತು pip",
+   "desc": "ಈ lesson ಅನ್ನು ತಕ್ಷಣದ feedback ಜೊತೆ, ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ practice ಮಾಡಿ."
+  }
+ }
+}

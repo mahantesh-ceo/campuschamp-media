@@ -1,0 +1,423 @@
+{
+ "course": "bp101t",
+ "lesson": "1-2",
+ "episode": 1,
+ "lang": "kn",
+ "engine": "sarvam",
+ "speaker": "chaitra_kn_conversation",
+ "voiceName": "Chaitra",
+ "lines": [
+  {
+   "id": "h1",
+   "scene": "lhook",
+   "say": "Python ಬರೆಯುವ ಮುಂಚೆ ನಿಮ್ಮ computer ನಲ್ಲಿ Python ಇರಬೇಕು, ಮತ್ತು ಅದನ್ನು ಬರೆಯಲು ಒಂದು ಒಳ್ಳೆಯ ಜಾಗ ಬೇಕು.",
+   "tts": "Python ಬರೆಯುವ ಮುಂಚೆ ನಿಮ್ಮ computer ನಲ್ಲಿ Python ಇರಬೇಕು, ಮತ್ತು ಅದನ್ನು ಬರೆಯಲು ಒಂದು ಒಳ್ಳೆಯ ಜಾಗ ಬೇಕು.",
+   "reuse": false
+  },
+  {
+   "id": "h2",
+   "scene": "lhook",
+   "say": "ಮುಂದಿನ ಕೆಲವು ನಿಮಿಷಗಳಲ್ಲಿ: Python install ಮಾಡುವುದು ಹೇಗೆ, ಯಾವ IDE ಆರಿಸಬೇಕು, laptop ಇಲ್ಲದಿದ್ದರೆ ಏನು ಮಾಡಬೇಕು.",
+   "tts": "ಮುಂದಿನ ಕೆಲವು ನಿಮಿಷಗಳಲ್ಲಿ: Python install ಮಾಡುವುದು ಹೇಗೆ, ಯಾವ IDE ಆರಿಸಬೇಕು, laptop ಇಲ್ಲದಿದ್ದರೆ ಏನು ಮಾಡಬೇಕು.",
+   "reuse": false
+  },
+  {
+   "id": "../anim-ide-01",
+   "scene": "lanim",
+   "say": "Text editor, ಉದಾ: Notepad, ಒಂದು ಖಾಲಿ page ಅಷ್ಟೇ. ಅದು ನಿಮ್ಮ code ಅನ್ನು plain text ಆಗಿ ಮಾತ್ರ ಇಡುತ್ತೆ.",
+   "tts": "Text editor, ಉದಾ: Notepad, ಒಂದು ಖಾಲಿ page ಅಷ್ಟೇ. ಅದು ನಿಮ್ಮ code ಅನ್ನು plain text ಆಗಿ ಮಾತ್ರ ಇಡುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-ide-02",
+   "scene": "lanim",
+   "say": "IDE ಅಂದ್ರೆ Integrated Development Environment. ಇದು code ಬರೆಯಲು ಒಂದು ಪೂರ್ಣ workspace.",
+   "tts": "IDE ಅಂದ್ರೆ Integrated Development Environment. ಇದು code ಬರೆಯಲು ಒಂದು ಪೂರ್ಣ workspace.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-ide-03",
+   "scene": "lanim",
+   "say": "ಇದು ನಿಮ್ಮ code ಗೆ ಬಣ್ಣ ಕೊಡುತ್ತೆ, type ಮಾಡುವಾಗ ಪದಗಳನ್ನು suggest ಮಾಡುತ್ತೆ, ತಪ್ಪುಗಳ ಬಗ್ಗೆ warning ಕೊಡುತ್ತೆ, ಮತ್ತು bugs ಹುಡುಕಲು ಸಹಾಯ ಮಾಡುತ್ತೆ.",
+   "tts": "ಇದು ನಿಮ್ಮ code ಗೆ ಬಣ್ಣ ಕೊಡುತ್ತೆ, type ಮಾಡುವಾಗ ಪದಗಳನ್ನು suggest ಮಾಡುತ್ತೆ, ತಪ್ಪುಗಳ ಬಗ್ಗೆ warning ಕೊಡುತ್ತೆ, ಮತ್ತು bugs ಹುಡುಕಲು ಸಹಾಯ ಮಾಡುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-ide-04",
+   "scene": "lanim",
+   "say": "ಮತ್ತು ಒಂದೇ click ನಲ್ಲಿ, ನಿಮ್ಮ program run ಮಾಡಿ output ಅನ್ನು ಅಲ್ಲೇ ತೋರಿಸುತ್ತೆ.",
+   "tts": "ಮತ್ತು ಒಂದೇ click ನಲ್ಲಿ, ನಿಮ್ಮ program run ಮಾಡಿ output ಅನ್ನು ಅಲ್ಲೇ ತೋರಿಸುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-ide-05",
+   "scene": "lanim",
+   "say": "ಅದಕ್ಕೇ programmers IDEs ಇಷ್ಟಪಡ್ತಾರೆ. ಅವು ಸಮಯ ಉಳಿಸುತ್ತವೆ ಮತ್ತು ತಪ್ಪುಗಳನ್ನು ಬೇಗ ಹಿಡಿಯುತ್ತವೆ.",
+   "tts": "ಅದಕ್ಕೇ programmers IDEs ಇಷ್ಟಪಡ್ತಾರೆ. ಅವು ಸಮಯ ಉಳಿಸುತ್ತವೆ ಮತ್ತು ತಪ್ಪುಗಳನ್ನು ಬೇಗ ಹಿಡಿಯುತ್ತವೆ.",
+   "reuse": true
+  },
+  {
+   "id": "c1",
+   "scene": "c1",
+   "say": "Python install ಮಾಡುವುದು ಅಂದರೆ interpreter ಅನ್ನು ನಿಮ್ಮ computer ಗೆ ಹಾಕುವುದು. python dot org ಇಂದ Python 3 download ಮಾಡಿ, Add to PATH tick ಮಾಡಿ, python dash dash version ಇಂದ check ಮಾಡಿ.",
+   "tts": "Python install ಮಾಡುವುದು ಅಂದರೆ interpreter ಅನ್ನು ನಿಮ್ಮ computer ಗೆ ಹಾಕುವುದು. python dot org ಇಂದ Python 3 download ಮಾಡಿ, Add to PATH tick ಮಾಡಿ, python dash dash version ಇಂದ check ಮಾಡಿ.",
+   "reuse": false
+  },
+  {
+   "id": "c2",
+   "scene": "c2",
+   "say": "ಮೂರು popular IDEs. Jupyter Notebook code ಅನ್ನು ಚಿಕ್ಕ cells ನಲ್ಲಿ run ಮಾಡಿ graph ಅನ್ನು ಕೆಳಗೇ ತೋರಿಸುತ್ತೆ, pharmacy data ಗೆ ಇದು ಸೂಕ್ತ. PyCharm ದೊಡ್ಡ projects ಗೆ, VS Code Microsoft ನ free ಮತ್ತು ಹಗುರವಾದ editor.",
+   "tts": "ಮೂರು popular IDEs. Jupyter Notebook code ಅನ್ನು ಚಿಕ್ಕ cells ನಲ್ಲಿ run ಮಾಡಿ graph ಅನ್ನು ಕೆಳಗೇ ತೋರಿಸುತ್ತೆ, pharmacy data ಗೆ ಇದು ಸೂಕ್ತ. PyCharm ದೊಡ್ಡ projects ಗೆ, VS Code Microsoft ನ free ಮತ್ತು ಹಗುರವಾದ editor.",
+   "reuse": false
+  },
+  {
+   "id": "c3",
+   "scene": "c3",
+   "say": "Laptop ಇಲ್ಲವಾ? ಪರವಾಗಿಲ್ಲ. Champ Lab ನಿಮ್ಮ browser ನಲ್ಲೇ Python run ಮಾಡುತ್ತೆ, phone ನಲ್ಲೂ, ಮತ್ತು Google Colab online ಒಂದು free notebook ಕೊಡುತ್ತೆ.",
+   "tts": "Laptop ಇಲ್ಲವಾ? ಪರವಾಗಿಲ್ಲ. Champ Lab ನಿಮ್ಮ browser ನಲ್ಲೇ Python run ಮಾಡುತ್ತೆ, phone ನಲ್ಲೂ, ಮತ್ತು Google Colab online ಒಂದು free notebook ಕೊಡುತ್ತೆ.",
+   "reuse": false
+  },
+  {
+   "id": "../step-01",
+   "scene": "lwalk",
+   "say": "ನೀವು Python install ಮಾಡಿ, ಒಂದು IDE open ಮಾಡಿದ್ದೀರಿ. ಬನ್ನಿ, ಒಂದು quick setup check run ಮಾಡೋಣ.",
+   "tts": "ನೀವು Python install ಮಾಡಿ, ಒಂದು IDE open ಮಾಡಿದ್ದೀರಿ. ಬನ್ನಿ, ಒಂದು quick setup check run ಮಾಡೋಣ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-02",
+   "scene": "lwalk",
+   "say": "ಮೊದಲ line ಒಂದು comment, ನಮಗಾಗಿ ಒಂದು note. IDE ನಲ್ಲಿ comments ಬೇರೆ ಬಣ್ಣದಲ್ಲಿ ಕಾಣುತ್ತವೆ, ಹಾಗಾಗಿ ಸುಲಭವಾಗಿ ಗುರುತಿಸಬಹುದು.",
+   "tts": "ಮೊದಲ line ಒಂದು comment, ನಮಗಾಗಿ ಒಂದು note. IDE ನಲ್ಲಿ comments ಬೇರೆ ಬಣ್ಣದಲ್ಲಿ ಕಾಣುತ್ತವೆ, ಹಾಗಾಗಿ ಸುಲಭವಾಗಿ ಗುರುತಿಸಬಹುದು.",
+   "reuse": true
+  },
+  {
+   "id": "../step-03",
+   "scene": "lwalk",
+   "say": "ಈ print, Python ಕೆಲಸ ಮಾಡ್ತಿದೆ ಅಂತ ಖಚಿತ ಪಡಿಸುತ್ತೆ. IDE ನಲ್ಲಿ Run button ಒತ್ತಿದರೆ, output ನಿಮ್ಮ code ನ ಕೆಳಗಿನ panel ನಲ್ಲಿ ಕಾಣುತ್ತೆ.",
+   "tts": "ಈ print, Python ಕೆಲಸ ಮಾಡ್ತಿದೆ ಅಂತ ಖಚಿತ ಪಡಿಸುತ್ತೆ. IDE ನಲ್ಲಿ Run button ಒತ್ತಿದರೆ, output ನಿಮ್ಮ code ನ ಕೆಳಗಿನ panel ನಲ್ಲಿ ಕಾಣುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-04",
+   "scene": "lwalk",
+   "say": "ಇಲ್ಲಿ Python ಇನ್ನೂರ ಐವತ್ತು ಮತ್ತು ಇನ್ನೂರ ಐವತ್ತು ಕೂಡಿಸುತ್ತೆ. ಐನೂರು ಕಂಡರೆ, calculations ಕೂಡ ಕೆಲಸ ಮಾಡ್ತಿವೆ.",
+   "tts": "ಇಲ್ಲಿ Python ಇನ್ನೂರ ಐವತ್ತು ಮತ್ತು ಇನ್ನೂರ ಐವತ್ತು ಕೂಡಿಸುತ್ತೆ. ಐನೂರು ಕಂಡರೆ, calculations ಕೂಡ ಕೆಲಸ ಮಾಡ್ತಿವೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-05",
+   "scene": "lwalk",
+   "say": "ಕೊನೆಯ line, ನಾವು course ಗೆ ಸಿದ್ಧ ಅಂತ ಹೇಳುತ್ತೆ.",
+   "tts": "ಕೊನೆಯ line, ನಾವು course ಗೆ ಸಿದ್ಧ ಅಂತ ಹೇಳುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-06",
+   "scene": "lwalk",
+   "say": "ಇದೇ code Jupyter Notebook, PyCharm, VS Code ಅಥವಾ Champ Lab ನಲ್ಲಿ ಒಂದೇ ತರಹ run ಆಗುತ್ತೆ. Buttons ಮಾತ್ರ ಬೇರೆ ಕಾಣುತ್ತವೆ.",
+   "tts": "ಇದೇ code Jupyter Notebook, PyCharm, VS Code ಅಥವಾ Champ Lab ನಲ್ಲಿ ಒಂದೇ ತರಹ run ಆಗುತ್ತೆ. Buttons ಮಾತ್ರ ಬೇರೆ ಕಾಣುತ್ತವೆ.",
+   "reuse": true
+  },
+  {
+   "id": "e1",
+   "scene": "e1",
+   "say": "ಒಂದು ಸಾಮಾನ್ಯ ಗೊಂದಲ: terminal command, ಉದಾಹರಣೆಗೆ python, ಅನ್ನು Python ಒಳಗೇ type ಮಾಡುವುದು. ಇಂಥ commands Command Prompt ಗೆ ಸೇರಿದ್ದು, code ಗೆ ಅಲ್ಲ.",
+   "tts": "ಒಂದು ಸಾಮಾನ್ಯ ಗೊಂದಲ: terminal command, ಉದಾಹರಣೆಗೆ python, ಅನ್ನು Python ಒಳಗೇ type ಮಾಡುವುದು. ಇಂಥ commands Command Prompt ಗೆ ಸೇರಿದ್ದು, code ಗೆ ಅಲ್ಲ.",
+   "reuse": false
+  },
+  {
+   "id": "e2",
+   "scene": "e2",
+   "say": "ಇದರ ಅರ್ಥ library install ಆಗಿಲ್ಲ, ಅಥವಾ ಅದರ spelling ತಪ್ಪಾಗಿದೆ. Spelling check ಮಾಡಿ, ಆಮೇಲೆ pip ಇಂದ install ಮಾಡಿ.",
+   "tts": "ಇದರ ಅರ್ಥ library install ಆಗಿಲ್ಲ, ಅಥವಾ ಅದರ spelling ತಪ್ಪಾಗಿದೆ. Spelling check ಮಾಡಿ, ಆಮೇಲೆ pip ಇಂದ install ಮಾಡಿ.",
+   "reuse": false
+  },
+  {
+   "id": "q1",
+   "scene": "quiz",
+   "say": "IDE ನ full form ಏನು?",
+   "tts": "IDE ನ full form ಏನು?",
+   "reuse": false
+  },
+  {
+   "id": "q2",
+   "scene": "quiz-answer",
+   "say": "ಸರಿಯಾದ ಉತ್ತರ A: Integrated Development Environment. IDE ಅಂದ್ರೆ Integrated Development Environment: code ಬರೆಯಲು, run ಮಾಡಲು ಮತ್ತು ಸರಿ ಮಾಡಲು ಒಂದೇ ಜಾಗ.",
+   "tts": "ಸರಿಯಾದ ಉತ್ತರ A: Integrated Development Environment. IDE ಅಂದ್ರೆ Integrated Development Environment: code ಬರೆಯಲು, run ಮಾಡಲು ಮತ್ತು ಸರಿ ಮಾಡಲು ಒಂದೇ ಜಾಗ.",
+   "reuse": false
+  },
+  {
+   "id": "r0",
+   "scene": "lrecap",
+   "say": "ಒಮ್ಮೆ recap ಮಾಡೋಣ.",
+   "tts": "ಒಮ್ಮೆ recap ಮಾಡೋಣ.",
+   "reuse": false
+  },
+  {
+   "id": "r1",
+   "scene": "lrecap",
+   "say": "Python install ಮಾಡೋದು ಅಂದ್ರೆ interpreter ಅನ್ನು ನಿಮ್ಮ computer ನಲ್ಲಿ ಇಡೋದು; Windows ನಲ್ಲಿ Add python.exe to PATH ಗೆ tick ಮಾಡಿ.",
+   "tts": "Python install ಮಾಡೋದು ಅಂದ್ರೆ interpreter ಅನ್ನು ನಿಮ್ಮ computer ನಲ್ಲಿ ಇಡೋದು; Windows ನಲ್ಲಿ Add python.exe to PATH ಗೆ tick ಮಾಡಿ.",
+   "reuse": false
+  },
+  {
+   "id": "r2",
+   "scene": "lrecap",
+   "say": "Installation check ಮಾಡಿ: Command Prompt ಅಥವಾ Terminal ನಲ್ಲಿ python --version.",
+   "tts": "Installation check ಮಾಡಿ: Command Prompt ಅಥವಾ Terminal ನಲ್ಲಿ python --version.",
+   "reuse": false
+  },
+  {
+   "id": "r3",
+   "scene": "lrecap",
+   "say": "IDE (Integrated Development Environment) ನಲ್ಲಿ code ಬರೆಯೋದು, run ಮಾಡೋದು ಮತ್ತು ಸರಿ ಮಾಡೋದು ಎಲ್ಲಾ ಒಂದೇ ಕಡೆ.",
+   "tts": "IDE (Integrated Development Environment) ನಲ್ಲಿ code ಬರೆಯೋದು, run ಮಾಡೋದು ಮತ್ತು ಸರಿ ಮಾಡೋದು ಎಲ್ಲಾ ಒಂದೇ ಕಡೆ.",
+   "reuse": false
+  },
+  {
+   "id": "r4",
+   "scene": "lrecap",
+   "say": "Popular IDEs: Jupyter Notebook (cells ಮತ್ತು graphs), PyCharm (full-featured) ಮತ್ತು VS Code (free, Microsoft ನದು).",
+   "tts": "Popular IDEs: Jupyter Notebook (cells ಮತ್ತು graphs), PyCharm (full-featured) ಮತ್ತು VS Code (free, Microsoft ನದು).",
+   "reuse": false
+  }
+ ],
+ "data": {
+  "hook": {
+   "icon": "🧰",
+   "title": "ನಿಮ್ಮ coding workspace ಸಿದ್ಧ ಮಾಡಿ",
+   "learn": [
+    "Python install ಮಾಡೋದು ಮತ್ತು ಅದು ಕೆಲಸ ಮಾಡ್ತಿದೆಯಾ ಅಂತ check ಮಾಡೋದು",
+    "IDE ಅಂದ್ರೆ ಏನು, ಮತ್ತು ಮೂರು popular IDEs: Jupyter Notebook, PyCharm ಮತ್ತು VS Code",
+    "Text editors ಗಿಂತ IDEs ನ ಅನುಕೂಲಗಳು"
+   ],
+   "label": "BP101T · Lesson 1.2",
+   "learnT": "ಈ video ದಲ್ಲಿ"
+  },
+  "lanim": {
+   "title": "Text editor vs IDE",
+   "actors": [
+    {
+     "id": "editor",
+     "type": "card",
+     "title": "Text editor",
+     "icon": "📝",
+     "color": "amber",
+     "mono": true,
+     "lines": [
+      "print(\"Hello from my IDE!\")",
+      "(no colours, no hints, no Run)"
+     ],
+     "desktop": {
+      "x": 40,
+      "y": 40,
+      "w": 320,
+      "h": 240
+     },
+     "mobile": {
+      "x": 16,
+      "y": 16,
+      "w": 328,
+      "h": 130
+     }
+    },
+    {
+     "id": "ide",
+     "type": "card",
+     "title": "IDE",
+     "icon": "🧰",
+     "color": "indigo",
+     "lines": [
+      "Syntax colours",
+      "Auto-complete",
+      "Error hints",
+      "One-click Run",
+      "Debugger"
+     ],
+     "desktop": {
+      "x": 440,
+      "y": 40,
+      "w": 320,
+      "h": 240
+     },
+     "mobile": {
+      "x": 16,
+      "y": 166,
+      "w": 328,
+      "h": 236
+     }
+    },
+    {
+     "id": "out",
+     "type": "terminal",
+     "title": "Output",
+     "desktop": {
+      "x": 40,
+      "y": 310,
+      "w": 720,
+      "h": 120
+     },
+     "mobile": {
+      "x": 16,
+      "y": 422,
+      "w": 328,
+      "h": 130
+     }
+    }
+   ],
+   "steps": [
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "editor"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "ide"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "scanLines",
+       "target": "ide",
+       "intervalMs": 900
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "highlightLine",
+       "target": "ide",
+       "line": 3
+      },
+      {
+       "do": "show",
+       "target": "out"
+      },
+      {
+       "do": "appendOutput",
+       "target": "out",
+       "text": "Hello from my IDE!"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "connect",
+       "id": "upgrade",
+       "from": "editor",
+       "to": "ide",
+       "label": "Upgrade",
+       "color": "emerald"
+      },
+      {
+       "do": "pulse",
+       "target": "ide"
+      }
+     ]
+    }
+   ]
+  },
+  "c1": {
+   "heading": "\"Python install ಮಾಡೋದು\" ಅಂದ್ರೆ ಏನು?",
+   "mode": "points",
+   "idea": "ಮುಖ್ಯ ವಿಷಯ",
+   "points": [
+    "python.org → Downloads → Python 3",
+    "“Add python.exe to PATH” tick ಮಾಡಿ",
+    "Check: python --version"
+   ],
+   "callout": "ಯಾವಾಗಲೂ Python 3 install ಮಾಡಿ. ಹಳೆಯ tutorials Python 2 use ಮಾಡ್ತವೆ, ಅದು ಈಗ supported ಅಲ್ಲ."
+  },
+  "c2": {
+   "heading": "ಮೂರು popular IDEs",
+   "mode": "points",
+   "idea": "ಮುಖ್ಯ ವಿಷಯ",
+   "points": [
+    "Jupyter Notebook: cells, data ಮತ್ತು graphs",
+    "PyCharm: ದೊಡ್ಡ projects",
+    "VS Code: free, ಹಗುರ, Microsoft ನದು"
+   ],
+   "callout": "Python, Jupyter Notebook ಮತ್ತು popular science libraries ಅನ್ನು ಒಂದೇ ಸಲ install ಮಾಡುವ ಒಂದು free bundle."
+  },
+  "c3": {
+   "heading": "Laptop ಇಲ್ವಾ? Browser use ಮಾಡಿ",
+   "mode": "points",
+   "idea": "ಮುಖ್ಯ ವಿಷಯ",
+   "points": [
+    "Champ Lab: browser ನಲ್ಲೇ Python, phone ನಲ್ಲೂ",
+    "Google Colab: online free Jupyter Notebook"
+   ]
+  },
+  "lwalk": {
+   "file": "setup_check.py",
+   "code": "# Setup check\nprint(\"Python is installed!\")\nprint(\"Test sum:\", 250 + 250)\nprint(\"All set for BP101T\")",
+   "steps": [
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 1,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 2,
+     "vars": {},
+     "output": "Python is installed!"
+    },
+    {
+     "line": 3,
+     "vars": {},
+     "output": "Test sum: 500"
+    },
+    {
+     "line": 4,
+     "vars": {},
+     "output": "All set for BP101T"
+    },
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    }
+   ],
+   "varsT": "Variables",
+   "outT": "Output"
+  },
+  "e1": {
+   "title": "Python ಒಳಗೇ terminal command type ಮಾಡೋದು",
+   "code": "python --version",
+   "errorLine": 1,
+   "output": "NameError: name 'python' is not defined"
+  },
+  "e2": {
+   "title": "Install ಆಗಿರದ (ಅಥವಾ spelling ತಪ್ಪಾದ) library",
+   "code": "import numpyy",
+   "errorLine": 1,
+   "output": "ModuleNotFoundError: No module named 'numpyy'"
+  },
+  "lrecap": {
+   "items": [
+    "Python install ಮಾಡೋದು ಅಂದ್ರೆ interpreter ಅನ್ನು ನಿಮ್ಮ computer ನಲ್ಲಿ ಇಡೋದು; Windows ನಲ್ಲಿ Add python.exe to PATH ಗೆ tick ಮಾಡಿ.",
+    "Installation check ಮಾಡಿ: Command Prompt ಅಥವಾ Terminal ನಲ್ಲಿ python --version.",
+    "IDE (Integrated Development Environment) ನಲ್ಲಿ code ಬರೆಯೋದು, run ಮಾಡೋದು ಮತ್ತು ಸರಿ ಮಾಡೋದು ಎಲ್ಲಾ ಒಂದೇ ಕಡೆ.",
+    "Popular IDEs: Jupyter Notebook (cells ಮತ್ತು graphs), PyCharm (full-featured) ಮತ್ತು VS Code (free, Microsoft ನದು)."
+   ],
+   "title": "Recap"
+  },
+  "output": "Output"
+ }
+}

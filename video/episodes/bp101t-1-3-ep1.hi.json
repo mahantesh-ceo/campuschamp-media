@@ -1,0 +1,570 @@
+{
+ "course": "bp101t",
+ "lesson": "1-3",
+ "episode": 1,
+ "lang": "hi",
+ "engine": "sarvam",
+ "speaker": "ritu_hi_conversation",
+ "voiceName": "Ritu",
+ "lines": [
+  {
+   "id": "h1",
+   "scene": "lhook",
+   "say": "Pharmacist हर दवा को label लगे डिब्बे में रखता है, ताकि सही दवा तुरंत मिल जाए।",
+   "tts": "Pharmacist हर दवा को label लगे डिब्बे में रखता है, ताकि सही दवा तुरंत मिल जाए।",
+   "reuse": false
+  },
+  {
+   "id": "h2",
+   "scene": "lhook",
+   "say": "Python भी जानकारी ऐसे ही रखता है, variables में। चलिए देखते हैं कैसे।",
+   "tts": "Python भी जानकारी ऐसे ही रखता है, variables में। चलिए देखते हैं कैसे।",
+   "reuse": false
+  },
+  {
+   "id": "../anim-boxes-01",
+   "scene": "lanim",
+   "say": "Variable, pharmacy की shelf पर रखे label लगे box जैसा है। Label उसका नाम है, और अंदर value है।",
+   "tts": "Variable, pharmacy की shelf पर रखे label लगे box जैसा है। Label उसका नाम है, और अंदर value है।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-boxes-02",
+   "scene": "lanim",
+   "say": "अलग-अलग boxes अलग तरह की values रख सकते हैं: text, दशमलव वाली संख्या, या True या False।",
+   "tts": "अलग-अलग boxes अलग तरह की values रख सकते हैं: text, दशमलव वाली संख्या, या True या False।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-boxes-03",
+   "scene": "lanim",
+   "say": "Python याद रखता है कि हर box में किस तरह की value है। इसे data type कहते हैं: int, str, float और bool।",
+   "tts": "Python याद रखता है कि हर box में किस तरह की value है। इसे data type कहते हैं: int, str, float और bool।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-boxes-04",
+   "scene": "lanim",
+   "say": "आप अंदर की चीज़ बदल सकते हैं। अब dose_mg box में पाँच सौ नहीं, साढ़े छह सौ है।",
+   "tts": "आप अंदर की चीज़ बदल सकते हैं। अब dose_mg box में पाँच सौ नहीं, साढ़े छह सौ है।",
+   "reuse": true
+  },
+  {
+   "id": "../anim-boxes-05",
+   "scene": "lanim",
+   "say": "जब आप नाम use करते हैं, Python box के अंदर देखकर अभी वाली value use करता है।",
+   "tts": "जब आप नाम use करते हैं, Python box के अंदर देखकर अभी वाली value use करता है।",
+   "reuse": true
+  },
+  {
+   "id": "c1",
+   "scene": "c1",
+   "say": "Variable एक label लगा डिब्बा है। Equals sign डिब्बे में value रखता है, और नई value पुरानी को बदल देती है, इसलिए यह छह सौ पचास print करता है।",
+   "tts": "Variable एक label लगा डिब्बा है। Equals sign डिब्बे में value रखता है, और नई value पुरानी को बदल देती है, इसलिए यह छह सौ पचास print करता है।",
+   "reuse": false
+  },
+  {
+   "id": "c2",
+   "scene": "c2",
+   "say": "हर value का एक data type होता है, और type बताता है कौन-सा: पूरे numbers के लिए int, दशमलव के लिए float, text के लिए str, और True या False के लिए bool।",
+   "tts": "हर value का एक data type होता है, और type बताता है कौन-सा: पूरे numbers के लिए int, दशमलव के लिए float, text के लिए str, और True या False के लिए bool।",
+   "reuse": false
+  },
+  {
+   "id": "c3",
+   "scene": "c3",
+   "say": "Types मायने रखते हैं। Number पाँच सौ गुणा तीन, पंद्रह सौ है। पर text पाँच सौ गुणा तीन, बस text को दोहराता है।",
+   "tts": "Types मायने रखते हैं। Number पाँच सौ गुणा तीन, पंद्रह सौ है। पर text पाँच सौ गुणा तीन, बस text को दोहराता है।",
+   "reuse": false
+  },
+  {
+   "id": "../step-01",
+   "scene": "lwalk",
+   "say": "यह program एक patient की details variables में रखता है, और फिर उन्हें use करता है। हर line चलते समय Variables panel देखिए।",
+   "tts": "यह program एक patient की details variables में रखता है, और फिर उन्हें use करता है। हर line चलते समय Variables panel देखिए।",
+   "reuse": true
+  },
+  {
+   "id": "../step-02",
+   "scene": "lwalk",
+   "say": "पहली line एक comment है। यह बताती है कि program किस बारे में है।",
+   "tts": "पहली line एक comment है। यह बताती है कि program किस बारे में है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-03",
+   "scene": "lwalk",
+   "say": "यहाँ equals sign का मतलब है रखो। Python, text Ananya को patient_name नाम के box में रखता है। यह quotes में है, इसलिए यह string है।",
+   "tts": "यहाँ equals sign का मतलब है रखो। Python, text Ananya को patient_name नाम के box में रखता है। यह quotes में है, इसलिए यह string है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-04",
+   "scene": "lwalk",
+   "say": "weight_kg में बावन दशमलव पाँच रखा गया है। इसमें दशमलव है, इसलिए इसका data type float है।",
+   "tts": "weight_kg में बावन दशमलव पाँच रखा गया है। इसमें दशमलव है, इसलिए इसका data type float है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-05",
+   "scene": "lwalk",
+   "say": "dose_mg_per_kg में दस रखा गया है, एक पूरी संख्या। इसका data type int है, यानी integer।",
+   "tts": "dose_mg_per_kg में दस रखा गया है, एक पूरी संख्या। इसका data type int है, यानी integer।",
+   "reuse": true
+  },
+  {
+   "id": "../step-06",
+   "scene": "lwalk",
+   "say": "in_stock में True रखा गया है, capital T के साथ। जो values सिर्फ True या False होती हैं, उन्हें booleans कहते हैं।",
+   "tts": "in_stock में True रखा गया है, capital T के साथ। जो values सिर्फ True या False होती हैं, उन्हें booleans कहते हैं।",
+   "reuse": true
+  },
+  {
+   "id": "../step-07",
+   "scene": "lwalk",
+   "say": "अब print variables use करता है। Python हर box के अंदर देखकर values दिखाता है।",
+   "tts": "अब print variables use करता है। Python हर box के अंदर देखकर values दिखाता है।",
+   "reuse": true
+  },
+  {
+   "id": "../step-08",
+   "scene": "lwalk",
+   "say": "Python बावन दशमलव पाँच को दस से गुणा करता है। इनमें से एक float है, इसलिए answer भी float है: पाँच सौ पच्चीस दशमलव शून्य।",
+   "tts": "Python बावन दशमलव पाँच को दस से गुणा करता है। इनमें से एक float है, इसलिए answer भी float है: पाँच सौ पच्चीस दशमलव शून्य।",
+   "reuse": true
+  },
+  {
+   "id": "../step-09",
+   "scene": "lwalk",
+   "say": "आखिर में Python boolean दिखाता है। आपने अभी चार अलग-अलग data types रखकर use किए।",
+   "tts": "आखिर में Python boolean दिखाता है। आपने अभी चार अलग-अलग data types रखकर use किए।",
+   "reuse": true
+  },
+  {
+   "id": "e1",
+   "scene": "e1",
+   "say": "अगर आप ऐसा नाम use करें जो कभी बना ही नहीं, या उसकी spelling अलग हो, तो Python NameError पर रुक जाता है।",
+   "tts": "अगर आप ऐसा नाम use करें जो कभी बना ही नहीं, या उसकी spelling अलग हो, तो Python NameError पर रुक जाता है।",
+   "reuse": false
+  },
+  {
+   "id": "e2",
+   "scene": "e2",
+   "say": "और text और number को plus से नहीं जोड़ सकते। print में comma use कीजिए, या पहले number को text में बदलिए।",
+   "tts": "और text और number को plus से नहीं जोड़ सकते। print में comma use कीजिए, या पहले number को text में बदलिए।",
+   "reuse": false
+  },
+  {
+   "id": "q1",
+   "scene": "quiz",
+   "say": "52.5 का data type क्या है?",
+   "tts": "52.5 का data type क्या है?",
+   "reuse": false
+  },
+  {
+   "id": "q2",
+   "scene": "quiz-answer",
+   "say": "सही जवाब है B: float। 52.5 में दशमलव है, इसलिए यह float है।",
+   "tts": "सही जवाब है B: float। 52.5 में दशमलव है, इसलिए यह float है।",
+   "reuse": false
+  },
+  {
+   "id": "r0",
+   "scene": "lrecap",
+   "say": "चलिए, एक बार दोहरा लेते हैं।",
+   "tts": "चलिए, एक बार दोहरा लेते हैं।",
+   "reuse": false
+  },
+  {
+   "id": "r1",
+   "scene": "lrecap",
+   "say": "Variable एक label लगा box है जो value रखता है; = का मतलब रखो है, बराबर नहीं।",
+   "tts": "Variable एक label लगा box है जो value रखता है; = का मतलब रखो है, बराबर नहीं।",
+   "reuse": false
+  },
+  {
+   "id": "r2",
+   "scene": "lrecap",
+   "say": "नामों में letters, numbers और underscores होते हैं, ये number से शुरू नहीं होते, इनमें spaces नहीं होते, और ये case-sensitive होते हैं।",
+   "tts": "नामों में letters, numbers और underscores होते हैं, ये number से शुरू नहीं होते, इनमें spaces नहीं होते, और ये case-sensitive होते हैं।",
+   "reuse": false
+  },
+  {
+   "id": "r3",
+   "scene": "lrecap",
+   "say": "चार basic data types हैं int (30), float (52.5), str (\"Amoxicillin\") और bool (True / False)।",
+   "tts": "चार basic data types हैं int (30), float (52.5), str (\"Amoxicillin\") और bool (True / False)।",
+   "reuse": false
+  },
+  {
+   "id": "r4",
+   "scene": "lrecap",
+   "say": "type() value का data type दिखाता है; quotes में लिखी हर चीज़ string है, \"500\" भी।",
+   "tts": "type() value का data type दिखाता है; quotes में लिखी हर चीज़ string है, \"500\" भी।",
+   "reuse": false
+  }
+ ],
+ "data": {
+  "hook": {
+   "icon": "📦",
+   "title": "Patient की details को label लगे boxes में रखिए",
+   "learn": [
+    "Variable क्या है, और value कैसे रखें और बदलें",
+    "Variables के नाम रखने के नियम",
+    "चार basic data types: integers, floats, strings और booleans"
+   ],
+   "label": "BP101T · Lesson 1.3",
+   "learnT": "इस video में"
+  },
+  "lanim": {
+   "title": "Variables are labelled boxes",
+   "actors": [
+    {
+     "id": "dose",
+     "type": "box",
+     "label": "dose_mg",
+     "value": "500",
+     "color": "indigo",
+     "desktop": {
+      "x": 40,
+      "y": 50,
+      "w": 160,
+      "h": 110
+     },
+     "mobile": {
+      "x": 16,
+      "y": 16,
+      "w": 156,
+      "h": 100
+     }
+    },
+    {
+     "id": "drug",
+     "type": "box",
+     "label": "drug",
+     "value": "\"Paracetamol\"",
+     "color": "emerald",
+     "desktop": {
+      "x": 230,
+      "y": 50,
+      "w": 160,
+      "h": 110
+     },
+     "mobile": {
+      "x": 188,
+      "y": 16,
+      "w": 156,
+      "h": 100
+     }
+    },
+    {
+     "id": "weight",
+     "type": "box",
+     "label": "weight_kg",
+     "value": "52.5",
+     "color": "amber",
+     "desktop": {
+      "x": 420,
+      "y": 50,
+      "w": 160,
+      "h": 110
+     },
+     "mobile": {
+      "x": 16,
+      "y": 170,
+      "w": 156,
+      "h": 100
+     }
+    },
+    {
+     "id": "stock",
+     "type": "box",
+     "label": "in_stock",
+     "value": "True",
+     "color": "rose",
+     "desktop": {
+      "x": 610,
+      "y": 50,
+      "w": 160,
+      "h": 110
+     },
+     "mobile": {
+      "x": 188,
+      "y": 170,
+      "w": 156,
+      "h": 100
+     }
+    },
+    {
+     "id": "t_dose",
+     "type": "text",
+     "text": "int",
+     "size": 18,
+     "desktop": {
+      "x": 40,
+      "y": 175,
+      "w": 160,
+      "h": 28
+     },
+     "mobile": {
+      "x": 16,
+      "y": 124,
+      "w": 156,
+      "h": 26
+     }
+    },
+    {
+     "id": "t_drug",
+     "type": "text",
+     "text": "str",
+     "size": 18,
+     "desktop": {
+      "x": 230,
+      "y": 175,
+      "w": 160,
+      "h": 28
+     },
+     "mobile": {
+      "x": 188,
+      "y": 124,
+      "w": 156,
+      "h": 26
+     }
+    },
+    {
+     "id": "t_weight",
+     "type": "text",
+     "text": "float",
+     "size": 18,
+     "desktop": {
+      "x": 420,
+      "y": 175,
+      "w": 160,
+      "h": 28
+     },
+     "mobile": {
+      "x": 16,
+      "y": 278,
+      "w": 156,
+      "h": 26
+     }
+    },
+    {
+     "id": "t_stock",
+     "type": "text",
+     "text": "bool",
+     "size": 18,
+     "desktop": {
+      "x": 610,
+      "y": 175,
+      "w": 160,
+      "h": 28
+     },
+     "mobile": {
+      "x": 188,
+      "y": 278,
+      "w": 156,
+      "h": 26
+     }
+    },
+    {
+     "id": "out",
+     "type": "terminal",
+     "title": "Output",
+     "desktop": {
+      "x": 40,
+      "y": 300,
+      "w": 730,
+      "h": 120
+     },
+     "mobile": {
+      "x": 16,
+      "y": 330,
+      "w": 328,
+      "h": 150
+     }
+    }
+   ],
+   "steps": [
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "dose"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "drug"
+      },
+      {
+       "do": "show",
+       "target": "weight"
+      },
+      {
+       "do": "show",
+       "target": "stock"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "t_dose"
+      },
+      {
+       "do": "show",
+       "target": "t_drug"
+      },
+      {
+       "do": "show",
+       "target": "t_weight"
+      },
+      {
+       "do": "show",
+       "target": "t_stock"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "setValue",
+       "target": "dose",
+       "value": "650"
+      },
+      {
+       "do": "pulse",
+       "target": "dose"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "out"
+      },
+      {
+       "do": "appendOutput",
+       "target": "out",
+       "text": "Dose: 650 mg"
+      }
+     ]
+    }
+   ]
+  },
+  "c1": {
+   "heading": "Variable क्या है?",
+   "mode": "code",
+   "idea": "मुख्य बात",
+   "code": "dose_mg = 500\ndose_mg = 650\nprint(\"Dose:\", dose_mg, \"mg\")",
+   "output": "Dose: 650 mg",
+   "file": "example.py",
+   "callout": "Computer की memory में एक नाम वाली जगह जो एक value रखती है, जैसे shelf पर label लगा box।"
+  },
+  "c2": {
+   "heading": "type() से type check करना",
+   "mode": "code",
+   "idea": "मुख्य बात",
+   "code": "print(type(500))\nprint(type(52.5))\nprint(type(\"500\"))\nprint(type(True))",
+   "output": "<class 'int'>\n<class 'float'>\n<class 'str'>\n<class 'bool'>",
+   "file": "example.py"
+  },
+  "c3": {
+   "heading": "Data types क्यों ज़रूरी हैं",
+   "mode": "code",
+   "idea": "मुख्य बात",
+   "code": "dose = 500\nprint(dose * 3)\ndose = \"500\"\nprint(dose * 3)",
+   "output": "1500\n500500500",
+   "file": "example.py"
+  },
+  "lwalk": {
+   "file": "patient_record.py",
+   "code": "# Patient record\npatient_name = \"Ananya\"\nweight_kg = 52.5\ndose_mg_per_kg = 10\nin_stock = True\nprint(patient_name, \"weighs\", weight_kg, \"kg\")\nprint(\"Dose:\", weight_kg * dose_mg_per_kg, \"mg\")\nprint(\"In stock:\", in_stock)",
+   "steps": [
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 1,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 2,
+     "vars": {
+      "patient_name": "\"Ananya\""
+     },
+     "output": null
+    },
+    {
+     "line": 3,
+     "vars": {
+      "weight_kg": "52.5"
+     },
+     "output": null
+    },
+    {
+     "line": 4,
+     "vars": {
+      "dose_mg_per_kg": "10"
+     },
+     "output": null
+    },
+    {
+     "line": 5,
+     "vars": {
+      "in_stock": "True"
+     },
+     "output": null
+    },
+    {
+     "line": 6,
+     "vars": {},
+     "output": "Ananya weighs 52.5 kg"
+    },
+    {
+     "line": 7,
+     "vars": {},
+     "output": "Dose: 525.0 mg"
+    },
+    {
+     "line": 8,
+     "vars": {},
+     "output": "In stock: True"
+    }
+   ],
+   "varsT": "Variables",
+   "outT": "Output"
+  },
+  "e1": {
+   "title": "ऐसा नाम use करना जो मौजूद ही नहीं",
+   "code": "dose_mg = 500\nprint(dose)",
+   "errorLine": 2,
+   "output": "NameError: name 'dose' is not defined"
+  },
+  "e2": {
+   "title": "Text और number को + से जोड़ना",
+   "code": "print(\"Dose: \" + 500)",
+   "errorLine": 1,
+   "output": "TypeError: can only concatenate str (not \"int\") to str"
+  },
+  "lrecap": {
+   "items": [
+    "Variable एक label लगा box है जो value रखता है; = का मतलब रखो है, बराबर नहीं।",
+    "नामों में letters, numbers और underscores होते हैं, ये number से शुरू नहीं होते, इनमें spaces नहीं होते, और ये case-sensitive होते हैं।",
+    "चार basic data types हैं int (30), float (52.5), str (\"Amoxicillin\") और bool (True / False)।",
+    "type() value का data type दिखाता है; quotes में लिखी हर चीज़ string है, \"500\" भी।"
+   ],
+   "title": "Recap"
+  },
+  "output": "Output"
+ }
+}

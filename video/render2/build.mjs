@@ -80,6 +80,8 @@ const timeline = {
   music: P.music,
   reveal: P.reveal ? (scenes.find((x) => x.type === P.reveal) || {}).start : undefined,
   qr: await QRCode.toDataURL(qrUrl, { margin: 1, width: 600, color: { dark: '#1d1d1f', light: '#ffffff' } }),
+  data: E.data,
+  voiceName: E.voiceName,
   scenes,
   audio,
 };

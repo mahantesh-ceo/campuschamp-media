@@ -1,0 +1,139 @@
+{
+ "order": [
+  "lhook",
+  "sting",
+  "lanim",
+  "c1",
+  "c2",
+  "c3",
+  "lwalk",
+  "e1",
+  "e2",
+  "quiz",
+  "lrecap",
+  "end"
+ ],
+ "hold": {
+  "lhook": 1.2,
+  "sting": 2.8,
+  "lanim": 1.2,
+  "c1": 1.8,
+  "c2": 1.8,
+  "c3": 1.8,
+  "lwalk": 1.4,
+  "e1": 1.4,
+  "e2": 1.4,
+  "quiz": 1.4,
+  "lrecap": 1.4,
+  "end": 6
+ },
+ "chapters": {
+  "en": {
+   "lhook": "Intro",
+   "lanim": "From PyPI to your program",
+   "c1": "Modules and libraries",
+   "c2": "Three ways to import",
+   "c3": "Installing and uninstalling with pip",
+   "lwalk": "Walkthrough",
+   "e1": "Common errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practise"
+  },
+  "hi": {
+   "lhook": "Intro",
+   "lanim": "मुख्य बात",
+   "c1": "Modules और libraries",
+   "c2": "Import करने के तीन तरीके",
+   "c3": "pip से install और uninstall करना",
+   "lwalk": "Walkthrough",
+   "e1": "आम errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practice"
+  },
+  "kn": {
+   "lhook": "Intro",
+   "lanim": "ಮುಖ್ಯ ವಿಷಯ",
+   "c1": "Modules ಮತ್ತು libraries",
+   "c2": "Import ಮಾಡುವ ಮೂರು ವಿಧಾನಗಳು",
+   "c3": "pip ಇಂದ install ಮತ್ತು uninstall",
+   "lwalk": "Walkthrough",
+   "e1": "ಸಾಮಾನ್ಯ errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practice"
+  }
+ },
+ "title": {
+  "en": "Libraries and pip",
+  "hi": "Libraries और pip",
+  "kn": "Libraries ಮತ್ತು pip"
+ },
+ "quiz": {
+  "en": {
+   "q": "Which command installs NumPy?",
+   "options": [
+    "import numpy",
+    "pip install numpy",
+    "install numpy"
+   ],
+   "answer": 1
+  },
+  "hi": {
+   "q": "कौन सा command NumPy install करता है?",
+   "options": [
+    "import numpy",
+    "pip install numpy",
+    "install numpy"
+   ],
+   "answer": 1
+  },
+  "kn": {
+   "q": "ಯಾವ command NumPy install ಮಾಡುತ್ತೆ?",
+   "options": [
+    "import numpy",
+    "pip install numpy",
+    "install numpy"
+   ],
+   "answer": 1
+  }
+ },
+ "recap": {
+  "en": [
+   "A library is ready-made, tested code; a module is one file of it. You bring it in with import.",
+   "The standard library comes with Python, such as math: math.ceil() rounds up, math.sqrt() finds a square root.",
+   "Import a whole module (import math), one tool (from math import sqrt), or use a short alias (import numpy as np).",
+   "Third-party libraries such as NumPy, Pandas and Matplotlib come from PyPI and are installed with pip."
+  ],
+  "hi": [
+   "Library ready-made, test किया हुआ code है; module उसकी एक file है। इसे import से लाते हैं।",
+   "Standard library Python के साथ आती है, जैसे math: math.ceil() ऊपर round करता है, math.sqrt() square root निकालता है।",
+   "पूरा module (import math), एक tool (from math import sqrt) import कीजिए, या छोटा alias use कीजिए (import numpy as np)।",
+   "NumPy, Pandas और Matplotlib जैसी third-party libraries PyPI से आती हैं और pip से install होती हैं।"
+  ],
+  "kn": [
+   "Library ಅಂದ್ರೆ ready-made, test ಆದ code; module ಅದರ ಒಂದು file. ಇದನ್ನು import ಇಂದ ತರುತ್ತೇವೆ.",
+   "Standard library Python ಜೊತೆ ಬರುತ್ತೆ, ಉದಾ: math: math.ceil() ಮೇಲಕ್ಕೆ round ಮಾಡುತ್ತೆ, math.sqrt() square root ಕೊಡುತ್ತೆ.",
+   "ಪೂರ್ತಿ module (import math), ಒಂದು tool (from math import sqrt) import ಮಾಡಿ, ಅಥವಾ ಚಿಕ್ಕ alias ಬಳಸಿ (import numpy as np).",
+   "NumPy, Pandas ಮತ್ತು Matplotlib ತರಹದ third-party libraries PyPI ಇಂದ ಬರುತ್ತವೆ, pip ಇಂದ install ಆಗುತ್ತವೆ."
+  ]
+ },
+ "next": {
+  "en": {
+   "label": "Next: Lesson 2.1",
+   "title": "if, if-else and if-elif-else",
+   "desc": "Practise this lesson with instant feedback, in your language."
+  },
+  "hi": {
+   "label": "आगे: Lesson 2.1",
+   "title": "if, if-else और if-elif-else",
+   "desc": "इस lesson की practice कीजिए, तुरंत feedback के साथ, अपनी भाषा में।"
+  },
+  "kn": {
+   "label": "ಮುಂದೆ: Lesson 2.1",
+   "title": "if, if-else ಮತ್ತು if-elif-else",
+   "desc": "ಈ lesson ಅನ್ನು ತಕ್ಷಣದ feedback ಜೊತೆ, ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ practice ಮಾಡಿ."
+  }
+ }
+}

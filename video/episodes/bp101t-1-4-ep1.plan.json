@@ -1,0 +1,139 @@
+{
+ "order": [
+  "lhook",
+  "sting",
+  "lanim",
+  "c1",
+  "c2",
+  "c3",
+  "lwalk",
+  "e1",
+  "e2",
+  "quiz",
+  "lrecap",
+  "end"
+ ],
+ "hold": {
+  "lhook": 1.2,
+  "sting": 2.8,
+  "lanim": 1.2,
+  "c1": 1.8,
+  "c2": 1.8,
+  "c3": 1.8,
+  "lwalk": 1.4,
+  "e1": 1.4,
+  "e2": 1.4,
+  "quiz": 1.4,
+  "lrecap": 1.4,
+  "end": 6
+ },
+ "chapters": {
+  "en": {
+   "lhook": "Intro",
+   "lanim": "Splitting tablets into strips",
+   "c1": "Converting between data types",
+   "c2": "Arithmetic operators",
+   "c3": "Logical operators: and, or, not",
+   "lwalk": "Walkthrough",
+   "e1": "Common errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practise"
+  },
+  "hi": {
+   "lhook": "Intro",
+   "lanim": "मुख्य बात",
+   "c1": "Data types के बीच बदलना",
+   "c2": "Arithmetic operators",
+   "c3": "Logical operators: and, or, not",
+   "lwalk": "Walkthrough",
+   "e1": "आम errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practice"
+  },
+  "kn": {
+   "lhook": "Intro",
+   "lanim": "ಮುಖ್ಯ ವಿಷಯ",
+   "c1": "Data types ನಡುವೆ ಬದಲಾಯಿಸೋದು",
+   "c2": "Arithmetic operators",
+   "c3": "Logical operators: and, or, not",
+   "lwalk": "Walkthrough",
+   "e1": "ಸಾಮಾನ್ಯ errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practice"
+  }
+ },
+ "title": {
+  "en": "Type casting and operators",
+  "hi": "Type casting और operators",
+  "kn": "Type casting ಮತ್ತು operators"
+ },
+ "quiz": {
+  "en": {
+   "q": "What is 17 // 5?",
+   "options": [
+    "3",
+    "3.4",
+    "2"
+   ],
+   "answer": 0
+  },
+  "hi": {
+   "q": "17 // 5 कितना है?",
+   "options": [
+    "3",
+    "3.4",
+    "2"
+   ],
+   "answer": 0
+  },
+  "kn": {
+   "q": "17 // 5 ಎಷ್ಟು?",
+   "options": [
+    "3",
+    "3.4",
+    "2"
+   ],
+   "answer": 0
+  }
+ },
+ "recap": {
+  "en": [
+   "Type casting converts values: int(\"500\") gives 500, float(\"52.5\") gives 52.5 and str(500) gives \"500\".",
+   "int() cuts off the decimal part (it doesn't round), and an int mixed with a float gives a float.",
+   "Arithmetic operators calculate: // keeps the whole number and % gives the remainder, perfect for strips and loose tablets.",
+   "Comparison operators (==, !=, >, <, >=, <=) and logical operators (and, or, not) give True or False."
+  ],
+  "hi": [
+   "Type casting values बदलता है: int(\"500\") देता है 500, float(\"52.5\") देता है 52.5 और str(500) देता है \"500\"।",
+   "int() दशमलव वाला हिस्सा काट देता है (round नहीं करता), और int के साथ float मिलाने पर answer float होता है।",
+   "Arithmetic operators calculate करते हैं: // पूरी संख्या रखता है और % शेषफल देता है, strips और खुली tablets के लिए एकदम सही।",
+   "Comparison operators (==, !=, >, <, >=, <=) और logical operators (and, or, not) True या False देते हैं।"
+  ],
+  "kn": [
+   "Type casting values ಅನ್ನು ಬದಲಾಯಿಸುತ್ತೆ: int(\"500\") ಕೊಡೋದು 500, float(\"52.5\") ಕೊಡೋದು 52.5, str(500) ಕೊಡೋದು \"500\".",
+   "int() ದಶಮಾಂಶ ಭಾಗವನ್ನು ಕತ್ತರಿಸುತ್ತೆ (round ಮಾಡಲ್ಲ), ಮತ್ತು int ಜೊತೆ float ಸೇರಿಸಿದರೆ ಉತ್ತರ float.",
+   "Arithmetic operators ಲೆಕ್ಕ ಮಾಡುತ್ತವೆ: // ಪೂರ್ಣ ಸಂಖ್ಯೆ ಇಡುತ್ತೆ, % ಶೇಷ ಕೊಡುತ್ತೆ, strips ಮತ್ತು ಬಿಡಿ tablets ಗೆ ಸರಿಯಾದದ್ದು.",
+   "Comparison operators (==, !=, >, <, >=, <=) ಮತ್ತು logical operators (and, or, not) True ಅಥವಾ False ಕೊಡುತ್ತವೆ."
+  ]
+ },
+ "next": {
+  "en": {
+   "label": "Next: Lesson 1.5",
+   "title": "Input and output",
+   "desc": "Practise this lesson with instant feedback, in your language."
+  },
+  "hi": {
+   "label": "आगे: Lesson 1.5",
+   "title": "Input और output",
+   "desc": "इस lesson की practice कीजिए, तुरंत feedback के साथ, अपनी भाषा में।"
+  },
+  "kn": {
+   "label": "ಮುಂದೆ: Lesson 1.5",
+   "title": "Input ಮತ್ತು output",
+   "desc": "ಈ lesson ಅನ್ನು ತಕ್ಷಣದ feedback ಜೊತೆ, ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ practice ಮಾಡಿ."
+  }
+ }
+}

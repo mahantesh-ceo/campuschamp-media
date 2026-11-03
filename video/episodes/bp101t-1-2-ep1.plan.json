@@ -1,0 +1,139 @@
+{
+ "order": [
+  "lhook",
+  "sting",
+  "lanim",
+  "c1",
+  "c2",
+  "c3",
+  "lwalk",
+  "e1",
+  "e2",
+  "quiz",
+  "lrecap",
+  "end"
+ ],
+ "hold": {
+  "lhook": 1.2,
+  "sting": 2.8,
+  "lanim": 1.2,
+  "c1": 1.8,
+  "c2": 1.8,
+  "c3": 1.8,
+  "lwalk": 1.4,
+  "e1": 1.4,
+  "e2": 1.4,
+  "quiz": 1.4,
+  "lrecap": 1.4,
+  "end": 6
+ },
+ "chapters": {
+  "en": {
+   "lhook": "Intro",
+   "lanim": "Text editor vs IDE",
+   "c1": "What does \"installing Python\" mean?",
+   "c2": "Three popular IDEs",
+   "c3": "No laptop? Use the browser",
+   "lwalk": "Walkthrough",
+   "e1": "Common errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practise"
+  },
+  "hi": {
+   "lhook": "Intro",
+   "lanim": "मुख्य बात",
+   "c1": "\"Python install करना\" मतलब क्या?",
+   "c2": "तीन popular IDEs",
+   "c3": "Laptop नहीं है? Browser use कीजिए",
+   "lwalk": "Walkthrough",
+   "e1": "आम errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practice"
+  },
+  "kn": {
+   "lhook": "Intro",
+   "lanim": "ಮುಖ್ಯ ವಿಷಯ",
+   "c1": "\"Python install ಮಾಡೋದು\" ಅಂದ್ರೆ ಏನು?",
+   "c2": "ಮೂರು popular IDEs",
+   "c3": "Laptop ಇಲ್ವಾ? Browser use ಮಾಡಿ",
+   "lwalk": "Walkthrough",
+   "e1": "ಸಾಮಾನ್ಯ errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practice"
+  }
+ },
+ "title": {
+  "en": "Installing Python and IDEs",
+  "hi": "Python और IDE install करना",
+  "kn": "Python ಮತ್ತು IDE install ಮಾಡುವುದು"
+ },
+ "quiz": {
+  "en": {
+   "q": "What does IDE stand for?",
+   "options": [
+    "Integrated Development Environment",
+    "Internal Data Editor",
+    "Interactive Design Engine"
+   ],
+   "answer": 0
+  },
+  "hi": {
+   "q": "IDE का full form क्या है?",
+   "options": [
+    "Integrated Development Environment",
+    "Internal Data Editor",
+    "Interactive Design Engine"
+   ],
+   "answer": 0
+  },
+  "kn": {
+   "q": "IDE ನ full form ಏನು?",
+   "options": [
+    "Integrated Development Environment",
+    "Internal Data Editor",
+    "Interactive Design Engine"
+   ],
+   "answer": 0
+  }
+ },
+ "recap": {
+  "en": [
+   "Installing Python means putting the interpreter on your computer; on Windows, tick Add python.exe to PATH.",
+   "Check your installation with python --version in Command Prompt or Terminal.",
+   "An IDE (Integrated Development Environment) lets you write, run and fix code in one place.",
+   "Popular IDEs: Jupyter Notebook (cells and graphs), PyCharm (full-featured) and VS Code (free, by Microsoft)."
+  ],
+  "hi": [
+   "Python install करना मतलब interpreter को अपने computer पर रखना; Windows पर Add python.exe to PATH पर tick कीजिए।",
+   "Installation check कीजिए: Command Prompt या Terminal में python --version।",
+   "IDE (Integrated Development Environment) में code लिखना, चलाना और ठीक करना, सब एक जगह होता है।",
+   "Popular IDEs: Jupyter Notebook (cells और graphs), PyCharm (full-featured) और VS Code (free, Microsoft का)।"
+  ],
+  "kn": [
+   "Python install ಮಾಡೋದು ಅಂದ್ರೆ interpreter ಅನ್ನು ನಿಮ್ಮ computer ನಲ್ಲಿ ಇಡೋದು; Windows ನಲ್ಲಿ Add python.exe to PATH ಗೆ tick ಮಾಡಿ.",
+   "Installation check ಮಾಡಿ: Command Prompt ಅಥವಾ Terminal ನಲ್ಲಿ python --version.",
+   "IDE (Integrated Development Environment) ನಲ್ಲಿ code ಬರೆಯೋದು, run ಮಾಡೋದು ಮತ್ತು ಸರಿ ಮಾಡೋದು ಎಲ್ಲಾ ಒಂದೇ ಕಡೆ.",
+   "Popular IDEs: Jupyter Notebook (cells ಮತ್ತು graphs), PyCharm (full-featured) ಮತ್ತು VS Code (free, Microsoft ನದು)."
+  ]
+ },
+ "next": {
+  "en": {
+   "label": "Next: Lesson 1.3",
+   "title": "Variables and data types",
+   "desc": "Practise this lesson with instant feedback, in your language."
+  },
+  "hi": {
+   "label": "आगे: Lesson 1.3",
+   "title": "Variables और data types",
+   "desc": "इस lesson की practice कीजिए, तुरंत feedback के साथ, अपनी भाषा में।"
+  },
+  "kn": {
+   "label": "ಮುಂದೆ: Lesson 1.3",
+   "title": "Variables ಮತ್ತು data types",
+   "desc": "ಈ lesson ಅನ್ನು ತಕ್ಷಣದ feedback ಜೊತೆ, ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ practice ಮಾಡಿ."
+  }
+ }
+}

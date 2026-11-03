@@ -1,0 +1,475 @@
+{
+ "course": "bp101t",
+ "lesson": "1-7",
+ "episode": 1,
+ "lang": "en",
+ "engine": "sarvam",
+ "speaker": "ritu_en_edtech",
+ "voiceName": "Ritu",
+ "lines": [
+  {
+   "id": "h1",
+   "scene": "lhook",
+   "say": "Why write a square root, or an average, yourself, when experts have already written and tested it?",
+   "tts": "Why write a square root, or an average, yourself, when experts have already written and tested it?",
+   "reuse": false
+  },
+  {
+   "id": "h2",
+   "scene": "lhook",
+   "say": "Today: modules, libraries, and pip, the tool that installs them.",
+   "tts": "Today: modules, libraries, and pip, the tool that installs them.",
+   "reuse": false
+  },
+  {
+   "id": "../anim-pip-01",
+   "scene": "lanim",
+   "say": "In the terminal, the student types: pip install numpy.",
+   "tts": "In the terminal, the student types: pip install numpy.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-pip-02",
+   "scene": "lanim",
+   "say": "pip finds NumPy on PyPI, the online library of Python packages.",
+   "tts": "pip finds NumPy on PyPI, the online library of Python packages.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-pip-03",
+   "scene": "lanim",
+   "say": "It downloads NumPy and installs it on the computer.",
+   "tts": "It downloads NumPy and installs it on the computer.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-pip-04",
+   "scene": "lanim",
+   "say": "Now any program on this computer can use it, with import numpy as np.",
+   "tts": "Now any program on this computer can use it, with import numpy as np.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-pip-05",
+   "scene": "lanim",
+   "say": "And pip uninstall numpy removes it again.",
+   "tts": "And pip uninstall numpy removes it again.",
+   "reuse": true
+  },
+  {
+   "id": "c1",
+   "scene": "c1",
+   "say": "A module is a file of ready-made code. Import math, and you can use its tools, like the square root and pi.",
+   "tts": "A module is a file of ready-made code. Import math, and you can use its tools, like the square root and pi.",
+   "reuse": false
+  },
+  {
+   "id": "c2",
+   "scene": "c2",
+   "say": "There are three ways to import: the whole module, one tool with from, or a short nickname with as.",
+   "tts": "There are three ways to import: the whole module, one tool with from, or a short nickname with as.",
+   "reuse": false
+  },
+  {
+   "id": "c3",
+   "scene": "c3",
+   "say": "Libraries that don't come with Python are installed with pip. Type it in the terminal, not inside Python: pip install, pip uninstall, and pip list.",
+   "tts": "Libraries that don't come with Python are installed with pip. Type it in the terminal, not inside Python: pip install, pip uninstall, and pip list.",
+   "reuse": false
+  },
+  {
+   "id": "../step-01",
+   "scene": "lwalk",
+   "say": "This program uses Python's math library to work out how many strips to give.",
+   "tts": "This program uses Python's math library to work out how many strips to give.",
+   "reuse": true
+  },
+  {
+   "id": "../step-02",
+   "scene": "lwalk",
+   "say": "The comment says what the program does.",
+   "tts": "The comment says what the program does.",
+   "reuse": true
+  },
+  {
+   "id": "../step-03",
+   "scene": "lwalk",
+   "say": "import math brings in Python's math module. It comes with Python, so there's nothing to install.",
+   "tts": "import math brings in Python's math module. It comes with Python, so there's nothing to install.",
+   "reuse": true
+  },
+  {
+   "id": "../step-04",
+   "scene": "lwalk",
+   "say": "The patient needs forty-five tablets.",
+   "tts": "The patient needs forty-five tablets.",
+   "reuse": true
+  },
+  {
+   "id": "../step-05",
+   "scene": "lwalk",
+   "say": "Each strip has ten tablets.",
+   "tts": "Each strip has ten tablets.",
+   "reuse": true
+  },
+  {
+   "id": "../step-06",
+   "scene": "lwalk",
+   "say": "Forty-five divided by ten is four point five. But you can't give half a strip.",
+   "tts": "Forty-five divided by ten is four point five. But you can't give half a strip.",
+   "reuse": true
+  },
+  {
+   "id": "../step-07",
+   "scene": "lwalk",
+   "say": "math dot ceil rounds up to the next whole number. So the pharmacist gives five strips.",
+   "tts": "math dot ceil rounds up to the next whole number. So the pharmacist gives five strips.",
+   "reuse": true
+  },
+  {
+   "id": "../step-08",
+   "scene": "lwalk",
+   "say": "This line imports only the square root tool, so it can be used without writing math and a dot.",
+   "tts": "This line imports only the square root tool, so it can be used without writing math and a dot.",
+   "reuse": true
+  },
+  {
+   "id": "../step-09",
+   "scene": "lwalk",
+   "say": "The square root of eighty-one is nine. Python shows it as nine point zero.",
+   "tts": "The square root of eighty-one is nine. Python shows it as nine point zero.",
+   "reuse": true
+  },
+  {
+   "id": "e1",
+   "scene": "e1",
+   "say": "This error means the library isn't installed, or its name is misspelt: n u m p i, instead of numpy.",
+   "tts": "This error means the library isn't installed, or its name is misspelt: n u m p i, instead of numpy.",
+   "reuse": false
+  },
+  {
+   "id": "e2",
+   "scene": "e2",
+   "say": "And after import math, you must write math dot sqrt. Plain sqrt only works with from math import sqrt.",
+   "tts": "And after import math, you must write math dot sqrt. Plain sqrt only works with from math import sqrt.",
+   "reuse": false
+  },
+  {
+   "id": "q1",
+   "scene": "quiz",
+   "say": "Which command installs NumPy?",
+   "tts": "Which command installs NumPy?",
+   "reuse": false
+  },
+  {
+   "id": "q2",
+   "scene": "quiz-answer",
+   "say": "The answer is B: pip install numpy. pip install downloads and installs a library. import only uses one that is already installed.",
+   "tts": "The answer is B: pip install numpy. pip install downloads and installs a library. import only uses one that is already installed.",
+   "reuse": false
+  },
+  {
+   "id": "r0",
+   "scene": "lrecap",
+   "say": "Let's recap.",
+   "tts": "Let's recap.",
+   "reuse": false
+  },
+  {
+   "id": "r1",
+   "scene": "lrecap",
+   "say": "A library is ready-made, tested code; a module is one file of it. You bring it in with import.",
+   "tts": "A library is ready-made, tested code; a module is one file of it. You bring it in with import.",
+   "reuse": false
+  },
+  {
+   "id": "r2",
+   "scene": "lrecap",
+   "say": "The standard library comes with Python, such as math: math.ceil() rounds up, math.sqrt() finds a square root.",
+   "tts": "The standard library comes with Python, such as math: math.ceil() rounds up, math.sqrt() finds a square root.",
+   "reuse": false
+  },
+  {
+   "id": "r3",
+   "scene": "lrecap",
+   "say": "Import a whole module (import math), one tool (from math import sqrt), or use a short alias (import numpy as np).",
+   "tts": "Import a whole module (import math), one tool (from math import sqrt), or use a short alias (import numpy as np).",
+   "reuse": false
+  },
+  {
+   "id": "r4",
+   "scene": "lrecap",
+   "say": "Third-party libraries such as NumPy, Pandas and Matplotlib come from PyPI and are installed with pip.",
+   "tts": "Third-party libraries such as NumPy, Pandas and Matplotlib come from PyPI and are installed with pip.",
+   "reuse": false
+  }
+ ],
+ "data": {
+  "hook": {
+   "icon": "📚",
+   "title": "Don't make every tablet from scratch",
+   "learn": [
+    "What a module and a library are",
+    "How to use the standard library, which comes with Python, such as math",
+    "Three ways to import: import math, from math import sqrt and import numpy as np"
+   ],
+   "label": "BP101T · Lesson 1.7",
+   "learnT": "In this video"
+  },
+  "lanim": {
+   "title": "From PyPI to your program",
+   "actors": [
+    {
+     "id": "term",
+     "type": "terminal",
+     "title": "Terminal",
+     "desktop": {
+      "x": 40,
+      "y": 30,
+      "w": 730,
+      "h": 120
+     },
+     "mobile": {
+      "x": 16,
+      "y": 16,
+      "w": 328,
+      "h": 140
+     }
+    },
+    {
+     "id": "pypi",
+     "type": "box",
+     "label": "PyPI (online)",
+     "value": "numpy",
+     "color": "amber",
+     "desktop": {
+      "x": 80,
+      "y": 200,
+      "w": 240,
+      "h": 110
+     },
+     "mobile": {
+      "x": 16,
+      "y": 190,
+      "w": 156,
+      "h": 100
+     }
+    },
+    {
+     "id": "pc",
+     "type": "box",
+     "label": "Your computer",
+     "value": "not installed",
+     "color": "emerald",
+     "desktop": {
+      "x": 480,
+      "y": 200,
+      "w": 240,
+      "h": 110
+     },
+     "mobile": {
+      "x": 188,
+      "y": 190,
+      "w": 156,
+      "h": 100
+     }
+    },
+    {
+     "id": "t_dl",
+     "type": "text",
+     "text": "pip downloads and installs",
+     "size": 18,
+     "desktop": {
+      "x": 200,
+      "y": 330,
+      "w": 400,
+      "h": 28
+     },
+     "mobile": {
+      "x": 16,
+      "y": 310,
+      "w": 328,
+      "h": 26
+     }
+    }
+   ],
+   "steps": [
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "term"
+      },
+      {
+       "do": "appendOutput",
+       "target": "term",
+       "text": "pip install numpy"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "pypi"
+      },
+      {
+       "do": "pulse",
+       "target": "pypi"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "pc"
+      },
+      {
+       "do": "show",
+       "target": "t_dl"
+      },
+      {
+       "do": "setValue",
+       "target": "pc",
+       "value": "numpy installed"
+      },
+      {
+       "do": "pulse",
+       "target": "pc"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "appendOutput",
+       "target": "term",
+       "text": "Successfully installed numpy"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "appendOutput",
+       "target": "term",
+       "text": "pip uninstall numpy"
+      },
+      {
+       "do": "setValue",
+       "target": "pc",
+       "value": "not installed"
+      }
+     ]
+    }
+   ]
+  },
+  "c1": {
+   "heading": "Modules and libraries",
+   "mode": "code",
+   "idea": "Key idea",
+   "code": "import math\nprint(math.sqrt(49))\nprint(math.pi)",
+   "output": "7.0\n3.141592653589793",
+   "file": "example.py",
+   "callout": "Ready-made, tested code you can import into your program instead of writing it yourself."
+  },
+  "c2": {
+   "heading": "Three ways to import",
+   "mode": "code",
+   "idea": "Key idea",
+   "code": "import math\nprint(math.ceil(4.5))\nfrom math import sqrt\nprint(sqrt(81))\nimport statistics as st\nprint(st.mean([250, 500, 375]))",
+   "output": "5\n9.0\n375",
+   "file": "example.py",
+   "callout": "Put your import lines at the start of the program, so every line below can use them."
+  },
+  "c3": {
+   "heading": "Installing and uninstalling with pip",
+   "mode": "terminal",
+   "idea": "Key idea",
+   "code": "pip install numpy\npip uninstall numpy\npip list",
+   "output": "",
+   "file": "Terminal",
+   "callout": "Typing pip install numpy inside a .py file or at the >>> prompt gives a SyntaxError. Type it in the terminal."
+  },
+  "lwalk": {
+   "file": "strips.py",
+   "code": "# How many strips should the pharmacist give?\nimport math\ntablets_needed = 45\nper_strip = 10\nprint(\"Exact:\", tablets_needed / per_strip)\nprint(\"Strips:\", math.ceil(tablets_needed / per_strip))\nfrom math import sqrt\nprint(\"Square root of 81:\", sqrt(81))",
+   "steps": [
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 1,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 2,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 3,
+     "vars": {
+      "tablets_needed": "45"
+     },
+     "output": null
+    },
+    {
+     "line": 4,
+     "vars": {
+      "per_strip": "10"
+     },
+     "output": null
+    },
+    {
+     "line": 5,
+     "vars": {},
+     "output": "Exact: 4.5"
+    },
+    {
+     "line": 6,
+     "vars": {},
+     "output": "Strips: 5"
+    },
+    {
+     "line": 7,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 8,
+     "vars": {},
+     "output": "Square root of 81: 9.0"
+    }
+   ],
+   "varsT": "Variables",
+   "outT": "Output"
+  },
+  "e1": {
+   "title": "The library isn't installed, or its name is misspelt",
+   "code": "import numpi",
+   "errorLine": 1,
+   "output": "ModuleNotFoundError: No module named 'numpi'"
+  },
+  "e2": {
+   "title": "Using a tool without its module name",
+   "code": "import math\nprint(sqrt(16))",
+   "errorLine": 2,
+   "output": "NameError: name 'sqrt' is not defined"
+  },
+  "lrecap": {
+   "items": [
+    "A library is ready-made, tested code; a module is one file of it. You bring it in with import.",
+    "The standard library comes with Python, such as math: math.ceil() rounds up, math.sqrt() finds a square root.",
+    "Import a whole module (import math), one tool (from math import sqrt), or use a short alias (import numpy as np).",
+    "Third-party libraries such as NumPy, Pandas and Matplotlib come from PyPI and are installed with pip."
+   ],
+   "title": "Recap"
+  },
+  "output": "Output"
+ }
+}

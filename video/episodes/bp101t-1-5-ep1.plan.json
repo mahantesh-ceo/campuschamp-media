@@ -1,0 +1,139 @@
+{
+ "order": [
+  "lhook",
+  "sting",
+  "lanim",
+  "c1",
+  "c2",
+  "c3",
+  "lwalk",
+  "e1",
+  "e2",
+  "quiz",
+  "lrecap",
+  "end"
+ ],
+ "hold": {
+  "lhook": 1.2,
+  "sting": 2.8,
+  "lanim": 1.2,
+  "c1": 1.8,
+  "c2": 1.8,
+  "c3": 1.8,
+  "lwalk": 1.4,
+  "e1": 1.4,
+  "e2": 1.4,
+  "quiz": 1.4,
+  "lrecap": 1.4,
+  "end": 6
+ },
+ "chapters": {
+  "en": {
+   "lhook": "Intro",
+   "lanim": "From the keyboard to a number",
+   "c1": "Asking a question with input()",
+   "c2": "f-strings: values inside text",
+   "c3": "Fixing the number of decimal places",
+   "lwalk": "Walkthrough",
+   "e1": "Common errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practise"
+  },
+  "hi": {
+   "lhook": "Intro",
+   "lanim": "मुख्य बात",
+   "c1": "input() से सवाल पूछना",
+   "c2": "f-strings: text के अंदर values",
+   "c3": "Decimal places तय करना",
+   "lwalk": "Walkthrough",
+   "e1": "आम errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practice"
+  },
+  "kn": {
+   "lhook": "Intro",
+   "lanim": "ಮುಖ್ಯ ವಿಷಯ",
+   "c1": "input() ಇಂದ ಪ್ರಶ್ನೆ ಕೇಳೋದು",
+   "c2": "f-strings: text ಒಳಗೆ values",
+   "c3": "Decimal places ನಿಗದಿ ಮಾಡೋದು",
+   "lwalk": "Walkthrough",
+   "e1": "ಸಾಮಾನ್ಯ errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practice"
+  }
+ },
+ "title": {
+  "en": "Input and output",
+  "hi": "Input और output",
+  "kn": "Input ಮತ್ತು output"
+ },
+ "quiz": {
+  "en": {
+   "q": "What data type does input() always give?",
+   "options": [
+    "int",
+    "float",
+    "str"
+   ],
+   "answer": 2
+  },
+  "hi": {
+   "q": "input() हमेशा कौन सा data type देता है?",
+   "options": [
+    "int",
+    "float",
+    "str"
+   ],
+   "answer": 2
+  },
+  "kn": {
+   "q": "input() ಯಾವಾಗಲೂ ಯಾವ data type ಕೊಡುತ್ತೆ?",
+   "options": [
+    "int",
+    "float",
+    "str"
+   ],
+   "answer": 2
+  }
+ },
+ "recap": {
+  "en": [
+   "input() shows a prompt and waits for the user to type an answer and press Enter.",
+   "The answer is always a string, so convert numbers with int() or float(): float(input(\"Weight (kg): \")).",
+   "sep sets what goes between printed items; end sets what goes at the end of the line.",
+   "f-strings put values inside text: f\"Dose: {dose} mg\"."
+  ],
+  "hi": [
+   "input() एक prompt दिखाता है और user के answer type करके Enter दबाने का इंतज़ार करता है।",
+   "Answer हमेशा string होता है, इसलिए numbers को int() या float() से बदलिए: float(input(\"Weight (kg): \"))।",
+   "sep तय करता है कि printed items के बीच क्या आए; end तय करता है कि line के आखिर में क्या आए।",
+   "f-strings values को text के अंदर रखती हैं: f\"Dose: {dose} mg\"।"
+  ],
+  "kn": [
+   "input() ಒಂದು prompt ತೋರಿಸಿ, user answer type ಮಾಡಿ Enter ಒತ್ತುವವರೆಗೆ ಕಾಯುತ್ತೆ.",
+   "Answer ಯಾವಾಗಲೂ string, ಹಾಗಾಗಿ numbers ಅನ್ನು int() ಅಥವಾ float() ಇಂದ ಬದಲಾಯಿಸಿ: float(input(\"Weight (kg): \")).",
+   "sep print ಆಗುವ items ನಡುವೆ ಏನು ಬರಬೇಕು, end line ಕೊನೆಯಲ್ಲಿ ಏನು ಬರಬೇಕು ಅಂತ ನಿರ್ಧರಿಸುತ್ತೆ.",
+   "f-strings values ಅನ್ನು text ಒಳಗೆ ಇಡುತ್ತವೆ: f\"Dose: {dose} mg\"."
+  ]
+ },
+ "next": {
+  "en": {
+   "label": "Next: Lesson 1.6",
+   "title": "String operations",
+   "desc": "Practise this lesson with instant feedback, in your language."
+  },
+  "hi": {
+   "label": "आगे: Lesson 1.6",
+   "title": "String operations",
+   "desc": "इस lesson की practice कीजिए, तुरंत feedback के साथ, अपनी भाषा में।"
+  },
+  "kn": {
+   "label": "ಮುಂದೆ: Lesson 1.6",
+   "title": "String operations",
+   "desc": "ಈ lesson ಅನ್ನು ತಕ್ಷಣದ feedback ಜೊತೆ, ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ practice ಮಾಡಿ."
+  }
+ }
+}

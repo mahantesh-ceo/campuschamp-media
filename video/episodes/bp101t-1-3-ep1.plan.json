@@ -1,0 +1,139 @@
+{
+ "order": [
+  "lhook",
+  "sting",
+  "lanim",
+  "c1",
+  "c2",
+  "c3",
+  "lwalk",
+  "e1",
+  "e2",
+  "quiz",
+  "lrecap",
+  "end"
+ ],
+ "hold": {
+  "lhook": 1.2,
+  "sting": 2.8,
+  "lanim": 1.2,
+  "c1": 1.8,
+  "c2": 1.8,
+  "c3": 1.8,
+  "lwalk": 1.4,
+  "e1": 1.4,
+  "e2": 1.4,
+  "quiz": 1.4,
+  "lrecap": 1.4,
+  "end": 6
+ },
+ "chapters": {
+  "en": {
+   "lhook": "Intro",
+   "lanim": "Variables are labelled boxes",
+   "c1": "What is a variable?",
+   "c2": "Checking the type with type()",
+   "c3": "Why data types matter",
+   "lwalk": "Walkthrough",
+   "e1": "Common errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practise"
+  },
+  "hi": {
+   "lhook": "Intro",
+   "lanim": "मुख्य बात",
+   "c1": "Variable क्या है?",
+   "c2": "type() से type check करना",
+   "c3": "Data types क्यों ज़रूरी हैं",
+   "lwalk": "Walkthrough",
+   "e1": "आम errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practice"
+  },
+  "kn": {
+   "lhook": "Intro",
+   "lanim": "ಮುಖ್ಯ ವಿಷಯ",
+   "c1": "Variable ಅಂದ್ರೆ ಏನು?",
+   "c2": "type() ಇಂದ type check ಮಾಡೋದು",
+   "c3": "Data types ಯಾಕೆ ಮುಖ್ಯ",
+   "lwalk": "Walkthrough",
+   "e1": "ಸಾಮಾನ್ಯ errors",
+   "quiz": "Quick check",
+   "lrecap": "Recap",
+   "end": "Practice"
+  }
+ },
+ "title": {
+  "en": "Variables and data types",
+  "hi": "Variables और data types",
+  "kn": "Variables ಮತ್ತು data types"
+ },
+ "quiz": {
+  "en": {
+   "q": "What is the data type of 52.5?",
+   "options": [
+    "int",
+    "float",
+    "str"
+   ],
+   "answer": 1
+  },
+  "hi": {
+   "q": "52.5 का data type क्या है?",
+   "options": [
+    "int",
+    "float",
+    "str"
+   ],
+   "answer": 1
+  },
+  "kn": {
+   "q": "52.5 ನ data type ಏನು?",
+   "options": [
+    "int",
+    "float",
+    "str"
+   ],
+   "answer": 1
+  }
+ },
+ "recap": {
+  "en": [
+   "A variable is a labelled box that stores a value; = means store, not equals.",
+   "Names use letters, numbers and underscores, can't start with a number or contain spaces, and are case-sensitive.",
+   "The four basic data types are int (30), float (52.5), str (\"Amoxicillin\") and bool (True / False).",
+   "type() shows a value's data type; anything in quotes is a string, even \"500\"."
+  ],
+  "hi": [
+   "Variable एक label लगा box है जो value रखता है; = का मतलब रखो है, बराबर नहीं।",
+   "नामों में letters, numbers और underscores होते हैं, ये number से शुरू नहीं होते, इनमें spaces नहीं होते, और ये case-sensitive होते हैं।",
+   "चार basic data types हैं int (30), float (52.5), str (\"Amoxicillin\") और bool (True / False)।",
+   "type() value का data type दिखाता है; quotes में लिखी हर चीज़ string है, \"500\" भी।"
+  ],
+  "kn": [
+   "Variable ಅಂದ್ರೆ value ಇಡುವ label ಇರುವ box; = ಅಂದ್ರೆ ಇಡು, ಸಮ ಅಲ್ಲ.",
+   "ಹೆಸರುಗಳಲ್ಲಿ letters, numbers ಮತ್ತು underscores ಇರುತ್ತವೆ, number ಇಂದ ಶುರುವಾಗಲ್ಲ, spaces ಇರಲ್ಲ, ಮತ್ತು ಅವು case-sensitive.",
+   "ನಾಲ್ಕು basic data types: int (30), float (52.5), str (\"Amoxicillin\") ಮತ್ತು bool (True / False).",
+   "type() value ನ data type ತೋರಿಸುತ್ತೆ; quotes ನಲ್ಲಿರುವ ಎಲ್ಲವೂ string, \"500\" ಕೂಡ."
+  ]
+ },
+ "next": {
+  "en": {
+   "label": "Next: Lesson 1.4",
+   "title": "Type casting and operators",
+   "desc": "Practise this lesson with instant feedback, in your language."
+  },
+  "hi": {
+   "label": "आगे: Lesson 1.4",
+   "title": "Type casting और operators",
+   "desc": "इस lesson की practice कीजिए, तुरंत feedback के साथ, अपनी भाषा में।"
+  },
+  "kn": {
+   "label": "ಮುಂದೆ: Lesson 1.4",
+   "title": "Type casting ಮತ್ತು operators",
+   "desc": "ಈ lesson ಅನ್ನು ತಕ್ಷಣದ feedback ಜೊತೆ, ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ practice ಮಾಡಿ."
+  }
+ }
+}

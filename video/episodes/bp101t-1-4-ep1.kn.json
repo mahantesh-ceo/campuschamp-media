@@ -1,0 +1,530 @@
+{
+ "course": "bp101t",
+ "lesson": "1-4",
+ "episode": 1,
+ "lang": "kn",
+ "engine": "sarvam",
+ "speaker": "chaitra_kn_conversation",
+ "voiceName": "Chaitra",
+ "lines": [
+  {
+   "id": "h1",
+   "scene": "lhook",
+   "say": "ಇಪ್ಪತ್ತೈದು tablets, ಒಂದು strip ನಲ್ಲಿ ಹತ್ತು. ಎಷ್ಟು ಪೂರ್ಣ strips ಆಗುತ್ತವೆ, ಎಷ್ಟು tablets ಉಳಿಯುತ್ತವೆ?",
+   "tts": "ಇಪ್ಪತ್ತೈದು tablets, ಒಂದು strip ನಲ್ಲಿ ಹತ್ತು. ಎಷ್ಟು ಪೂರ್ಣ strips ಆಗುತ್ತವೆ, ಎಷ್ಟು tablets ಉಳಿಯುತ್ತವೆ?",
+   "reuse": false
+  },
+  {
+   "id": "h2",
+   "scene": "lhook",
+   "say": "ಇವತ್ತು Python ಲೆಕ್ಕ ಹಾಕುತ್ತೆ: types ಬದಲಾಯಿಸುವುದು, ಮತ್ತು operators ಬಳಸುವುದು.",
+   "tts": "ಇವತ್ತು Python ಲೆಕ್ಕ ಹಾಕುತ್ತೆ: types ಬದಲಾಯಿಸುವುದು, ಮತ್ತು operators ಬಳಸುವುದು.",
+   "reuse": false
+  },
+  {
+   "id": "../anim-strips-01",
+   "scene": "lanim",
+   "say": "ನಲವತ್ತೆರಡು tablets ಅನ್ನು ಹತ್ತು ಹತ್ತರ strips ನಲ್ಲಿ pack ಮಾಡಬೇಕು.",
+   "tts": "ನಲವತ್ತೆರಡು tablets ಅನ್ನು ಹತ್ತು ಹತ್ತರ strips ನಲ್ಲಿ pack ಮಾಡಬೇಕು.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-strips-02",
+   "scene": "lanim",
+   "say": "ಎರಡು slashes ಪೂರ್ತಿ strips ಎಣಿಸುತ್ತವೆ. ನಲವತ್ತೆರಡನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿ, ಪೂರ್ಣ ಸಂಖ್ಯೆ ಮಾತ್ರ ಇಟ್ಟರೆ, ನಾಲ್ಕು.",
+   "tts": "ಎರಡು slashes ಪೂರ್ತಿ strips ಎಣಿಸುತ್ತವೆ. ನಲವತ್ತೆರಡನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿ, ಪೂರ್ಣ ಸಂಖ್ಯೆ ಮಾತ್ರ ಇಟ್ಟರೆ, ನಾಲ್ಕು.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-strips-03",
+   "scene": "lanim",
+   "say": "Percent sign ಉಳಿದದ್ದನ್ನು ಎಣಿಸುತ್ತೆ: ಎರಡು ಬಿಡಿ tablets.",
+   "tts": "Percent sign ಉಳಿದದ್ದನ್ನು ಎಣಿಸುತ್ತೆ: ಎರಡು ಬಿಡಿ tablets.",
+   "reuse": true
+  },
+  {
+   "id": "../anim-strips-04",
+   "scene": "lanim",
+   "say": "ನಾಲ್ಕು strips ನಲ್ಲಿ ನಲವತ್ತು tablets ಮಾತ್ರ ಇರುತ್ತವೆ, ಹಾಗಾಗಿ ಅವು ಸಾಕಾಗಲ್ಲ ಅಂತ comparison ಹೇಳುತ್ತೆ. Patient ಗೆ ಐದು strips ಬೇಕು.",
+   "tts": "ನಾಲ್ಕು strips ನಲ್ಲಿ ನಲವತ್ತು tablets ಮಾತ್ರ ಇರುತ್ತವೆ, ಹಾಗಾಗಿ ಅವು ಸಾಕಾಗಲ್ಲ ಅಂತ comparison ಹೇಳುತ್ತೆ. Patient ಗೆ ಐದು strips ಬೇಕು.",
+   "reuse": true
+  },
+  {
+   "id": "c1",
+   "scene": "c1",
+   "say": "Type casting ಒಂದು value ಅನ್ನು ಒಂದು type ಇಂದ ಇನ್ನೊಂದಕ್ಕೆ ಬದಲಾಯಿಸುತ್ತೆ. int, text ಐನೂರನ್ನು number ಮಾಡುತ್ತೆ, ಆಗ ಅದನ್ನು ಗುಣಿಸಬಹುದು.",
+   "tts": "Type casting ಒಂದು value ಅನ್ನು ಒಂದು type ಇಂದ ಇನ್ನೊಂದಕ್ಕೆ ಬದಲಾಯಿಸುತ್ತೆ. int, text ಐನೂರನ್ನು number ಮಾಡುತ್ತೆ, ಆಗ ಅದನ್ನು ಗುಣಿಸಬಹುದು.",
+   "reuse": false
+  },
+  {
+   "id": "c2",
+   "scene": "c2",
+   "say": "ಎರಡು ತುಂಬಾ ಉಪಯುಕ್ತ operators. Double slash ಪೂರ್ಣ ಎಷ್ಟು ಸಲ ಅಂತ ಕೊಡುತ್ತೆ: ಎರಡು ಪೂರ್ಣ strips. Percent ಉಳಿದದ್ದನ್ನು ಕೊಡುತ್ತೆ: ಐದು tablets.",
+   "tts": "ಎರಡು ತುಂಬಾ ಉಪಯುಕ್ತ operators. Double slash ಪೂರ್ಣ ಎಷ್ಟು ಸಲ ಅಂತ ಕೊಡುತ್ತೆ: ಎರಡು ಪೂರ್ಣ strips. Percent ಉಳಿದದ್ದನ್ನು ಕೊಡುತ್ತೆ: ಐದು tablets.",
+   "reuse": false
+  },
+  {
+   "id": "c3",
+   "scene": "c3",
+   "say": "Logical operators ಪ್ರಶ್ನೆಗಳನ್ನು ಜೋಡಿಸುತ್ತವೆ. and ಗೆ ಎರಡೂ ಕಡೆ True ಬೇಕು; or ಗೆ ಒಂದು ಸಾಕು.",
+   "tts": "Logical operators ಪ್ರಶ್ನೆಗಳನ್ನು ಜೋಡಿಸುತ್ತವೆ. and ಗೆ ಎರಡೂ ಕಡೆ True ಬೇಕು; or ಗೆ ಒಂದು ಸಾಕು.",
+   "reuse": false
+  },
+  {
+   "id": "../step-01",
+   "scene": "lwalk",
+   "say": "ಈ program ಏಳು ದಿನದ course ಗೆ ಎಷ್ಟು tablets ಬೇಕು, ಮತ್ತು ಎಷ್ಟು strips ಕೊಡಬೇಕು ಅಂತ ಲೆಕ್ಕ ಹಾಕುತ್ತೆ. Variables panel ನೋಡಿ.",
+   "tts": "ಈ program ಏಳು ದಿನದ course ಗೆ ಎಷ್ಟು tablets ಬೇಕು, ಮತ್ತು ಎಷ್ಟು strips ಕೊಡಬೇಕು ಅಂತ ಲೆಕ್ಕ ಹಾಕುತ್ತೆ. Variables panel ನೋಡಿ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-02",
+   "scene": "lwalk",
+   "say": "Program ಏನು ಮಾಡುತ್ತೆ ಅಂತ comment ಹೇಳುತ್ತೆ.",
+   "tts": "Program ಏನು ಮಾಡುತ್ತೆ ಅಂತ comment ಹೇಳುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-03",
+   "scene": "lwalk",
+   "say": "int, ಎರಡು ಅನ್ನುವ text ಅನ್ನು ಎರಡು ಅನ್ನುವ number ಆಗಿ ಬದಲಾಯಿಸುತ್ತೆ, ಆಗ Python ಅದರಿಂದ ಲೆಕ್ಕ ಮಾಡಬಹುದು.",
+   "tts": "int, ಎರಡು ಅನ್ನುವ text ಅನ್ನು ಎರಡು ಅನ್ನುವ number ಆಗಿ ಬದಲಾಯಿಸುತ್ತೆ, ಆಗ Python ಅದರಿಂದ ಲೆಕ್ಕ ಮಾಡಬಹುದು.",
+   "reuse": true
+  },
+  {
+   "id": "../step-04",
+   "scene": "lwalk",
+   "say": "doses_per_day ನಲ್ಲಿ ಮೂರು ಇಡಲಾಗಿದೆ.",
+   "tts": "doses_per_day ನಲ್ಲಿ ಮೂರು ಇಡಲಾಗಿದೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-05",
+   "scene": "lwalk",
+   "say": "days ನಲ್ಲಿ ಏಳು ಇಡಲಾಗಿದೆ.",
+   "tts": "days ನಲ್ಲಿ ಏಳು ಇಡಲಾಗಿದೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-06",
+   "scene": "lwalk",
+   "say": "Star ಗುಣಿಸುತ್ತೆ. ಎರಡು ಗುಣಿಸು ಮೂರು ಗುಣಿಸು ಏಳು, ಅಂದ್ರೆ ನಲವತ್ತೆರಡು tablets.",
+   "tts": "Star ಗುಣಿಸುತ್ತೆ. ಎರಡು ಗುಣಿಸು ಮೂರು ಗುಣಿಸು ಏಳು, ಅಂದ್ರೆ ನಲವತ್ತೆರಡು tablets.",
+   "reuse": true
+  },
+  {
+   "id": "../step-07",
+   "scene": "lwalk",
+   "say": "ಎರಡು slashes ಭಾಗಿಸಿ ಪೂರ್ಣ ಸಂಖ್ಯೆ ಮಾತ್ರ ಇಡುತ್ತವೆ. ನಲವತ್ತೆರಡನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿದರೆ ನಾಲ್ಕು ಪೂರ್ತಿ strips.",
+   "tts": "ಎರಡು slashes ಭಾಗಿಸಿ ಪೂರ್ಣ ಸಂಖ್ಯೆ ಮಾತ್ರ ಇಡುತ್ತವೆ. ನಲವತ್ತೆರಡನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿದರೆ ನಾಲ್ಕು ಪೂರ್ತಿ strips.",
+   "reuse": true
+  },
+  {
+   "id": "../step-08",
+   "scene": "lwalk",
+   "say": "Percent sign ಶೇಷ ಕೊಡುತ್ತೆ. ನಲವತ್ತೆರಡನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿದರೆ ಎರಡು ಬಿಡಿ tablets ಉಳಿಯುತ್ತವೆ.",
+   "tts": "Percent sign ಶೇಷ ಕೊಡುತ್ತೆ. ನಲವತ್ತೆರಡನ್ನು ಹತ್ತರಿಂದ ಭಾಗಿಸಿದರೆ ಎರಡು ಬಿಡಿ tablets ಉಳಿಯುತ್ತವೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-09",
+   "scene": "lwalk",
+   "say": "Print ಒಟ್ಟು tablets ತೋರಿಸುತ್ತೆ.",
+   "tts": "Print ಒಟ್ಟು tablets ತೋರಿಸುತ್ತೆ.",
+   "reuse": true
+  },
+  {
+   "id": "../step-10",
+   "scene": "lwalk",
+   "say": "ನಂತರ strips ಮತ್ತು ಬಿಡಿ tablets.",
+   "tts": "ನಂತರ strips ಮತ್ತು ಬಿಡಿ tablets.",
+   "reuse": true
+  },
+  {
+   "id": "../step-11",
+   "scene": "lwalk",
+   "say": "ಕೊನೆಗೆ ಒಂದು comparison. ನಾಲ್ಕು strips ನಲ್ಲಿ ನಲವತ್ತು tablets ಇರುತ್ತವೆ. ನಲವತ್ತು, ನಲವತ್ತೆರಡಕ್ಕಿಂತ ದೊಡ್ಡದು ಅಥವಾ ಸಮ ಅಲ್ಲ, ಹಾಗಾಗಿ ಉತ್ತರ False. Patient ಗೆ ಇನ್ನೊಂದು strip ಬೇಕು.",
+   "tts": "ಕೊನೆಗೆ ಒಂದು comparison. ನಾಲ್ಕು strips ನಲ್ಲಿ ನಲವತ್ತು tablets ಇರುತ್ತವೆ. ನಲವತ್ತು, ನಲವತ್ತೆರಡಕ್ಕಿಂತ ದೊಡ್ಡದು ಅಥವಾ ಸಮ ಅಲ್ಲ, ಹಾಗಾಗಿ ಉತ್ತರ False. Patient ಗೆ ಇನ್ನೊಂದು strip ಬೇಕು.",
+   "reuse": true
+  },
+  {
+   "id": "e1",
+   "scene": "e1",
+   "say": "ದಶಮಾಂಶ ಇರುವ text ಅನ್ನು int ಬದಲಾಯಿಸಲು ಆಗಲ್ಲ. ದಶಮಾಂಶಕ್ಕೆ float ಬಳಸಿ.",
+   "tts": "ದಶಮಾಂಶ ಇರುವ text ಅನ್ನು int ಬದಲಾಯಿಸಲು ಆಗಲ್ಲ. ದಶಮಾಂಶಕ್ಕೆ float ಬಳಸಿ.",
+   "reuse": false
+  },
+  {
+   "id": "e2",
+   "scene": "e2",
+   "say": "ಮತ್ತು zero ಇಂದ ಭಾಗಿಸುವುದು ಅಸಾಧ್ಯ, ಅದಕ್ಕೇ Python ZeroDivisionError ಕೊಟ್ಟು ನಿಲ್ಲುತ್ತೆ.",
+   "tts": "ಮತ್ತು zero ಇಂದ ಭಾಗಿಸುವುದು ಅಸಾಧ್ಯ, ಅದಕ್ಕೇ Python ZeroDivisionError ಕೊಟ್ಟು ನಿಲ್ಲುತ್ತೆ.",
+   "reuse": false
+  },
+  {
+   "id": "q1",
+   "scene": "quiz",
+   "say": "17 // 5 ಎಷ್ಟು?",
+   "tts": "17 // 5 ಎಷ್ಟು?",
+   "reuse": false
+  },
+  {
+   "id": "q2",
+   "scene": "quiz-answer",
+   "say": "ಸರಿಯಾದ ಉತ್ತರ A: 3. // ಭಾಗಿಸಿ ಪೂರ್ಣ ಸಂಖ್ಯೆ ಮಾತ್ರ ಇಡುತ್ತೆ: 17 ರಲ್ಲಿ 5 ಮೂರು ಸಲ ಹೋಗುತ್ತೆ, ಸ್ವಲ್ಪ ಉಳಿಯುತ್ತೆ.",
+   "tts": "ಸರಿಯಾದ ಉತ್ತರ A: 3. // ಭಾಗಿಸಿ ಪೂರ್ಣ ಸಂಖ್ಯೆ ಮಾತ್ರ ಇಡುತ್ತೆ: 17 ರಲ್ಲಿ 5 ಮೂರು ಸಲ ಹೋಗುತ್ತೆ, ಸ್ವಲ್ಪ ಉಳಿಯುತ್ತೆ.",
+   "reuse": false
+  },
+  {
+   "id": "r0",
+   "scene": "lrecap",
+   "say": "ಒಮ್ಮೆ recap ಮಾಡೋಣ.",
+   "tts": "ಒಮ್ಮೆ recap ಮಾಡೋಣ.",
+   "reuse": false
+  },
+  {
+   "id": "r1",
+   "scene": "lrecap",
+   "say": "Type casting values ಅನ್ನು ಬದಲಾಯಿಸುತ್ತೆ: int(\"500\") ಕೊಡೋದು 500, float(\"52.5\") ಕೊಡೋದು 52.5, str(500) ಕೊಡೋದು \"500\".",
+   "tts": "Type casting values ಅನ್ನು ಬದಲಾಯಿಸುತ್ತೆ: int(\"500\") ಕೊಡೋದು 500, float(\"52.5\") ಕೊಡೋದು 52.5, str(500) ಕೊಡೋದು \"500\".",
+   "reuse": false
+  },
+  {
+   "id": "r2",
+   "scene": "lrecap",
+   "say": "int() ದಶಮಾಂಶ ಭಾಗವನ್ನು ಕತ್ತರಿಸುತ್ತೆ (round ಮಾಡಲ್ಲ), ಮತ್ತು int ಜೊತೆ float ಸೇರಿಸಿದರೆ ಉತ್ತರ float.",
+   "tts": "int() ದಶಮಾಂಶ ಭಾಗವನ್ನು ಕತ್ತರಿಸುತ್ತೆ (round ಮಾಡಲ್ಲ), ಮತ್ತು int ಜೊತೆ float ಸೇರಿಸಿದರೆ ಉತ್ತರ float.",
+   "reuse": false
+  },
+  {
+   "id": "r3",
+   "scene": "lrecap",
+   "say": "Arithmetic operators ಲೆಕ್ಕ ಮಾಡುತ್ತವೆ: // ಪೂರ್ಣ ಸಂಖ್ಯೆ ಇಡುತ್ತೆ, % ಶೇಷ ಕೊಡುತ್ತೆ, strips ಮತ್ತು ಬಿಡಿ tablets ಗೆ ಸರಿಯಾದದ್ದು.",
+   "tts": "Arithmetic operators ಲೆಕ್ಕ ಮಾಡುತ್ತವೆ: // ಪೂರ್ಣ ಸಂಖ್ಯೆ ಇಡುತ್ತೆ, % ಶೇಷ ಕೊಡುತ್ತೆ, strips ಮತ್ತು ಬಿಡಿ tablets ಗೆ ಸರಿಯಾದದ್ದು.",
+   "reuse": false
+  },
+  {
+   "id": "r4",
+   "scene": "lrecap",
+   "say": "Comparison operators (==, !=, >, <, >=, <=) ಮತ್ತು logical operators (and, or, not) True ಅಥವಾ False ಕೊಡುತ್ತವೆ.",
+   "tts": "Comparison operators (==, !=, >, <, >=, <=) ಮತ್ತು logical operators (and, or, not) True ಅಥವಾ False ಕೊಡುತ್ತವೆ.",
+   "reuse": false
+  }
+ ],
+ "data": {
+  "hook": {
+   "icon": "🧮",
+   "title": "ಈ patient ಗೆ ಎಷ್ಟು strips ಬೇಕು?",
+   "learn": [
+    "ಒಂದು value ಅನ್ನು ಒಂದು data type ಇಂದ ಇನ್ನೊಂದಕ್ಕೆ ಬದಲಾಯಿಸೋದು, ಇದಕ್ಕೆ type casting ಅಂತಾರೆ",
+    "ಲೆಕ್ಕಕ್ಕಾಗಿ arithmetic operators, // ಮತ್ತು % ಜೊತೆ",
+    "True ಅಥವಾ False ಉತ್ತರ ಕೊಡುವ comparison ಮತ್ತು logical operators"
+   ],
+   "label": "BP101T · Lesson 1.4",
+   "learnT": "ಈ video ದಲ್ಲಿ"
+  },
+  "lanim": {
+   "title": "Splitting tablets into strips",
+   "actors": [
+    {
+     "id": "total",
+     "type": "box",
+     "label": "total",
+     "value": "42",
+     "color": "indigo",
+     "desktop": {
+      "x": 320,
+      "y": 30,
+      "w": 160,
+      "h": 100
+     },
+     "mobile": {
+      "x": 100,
+      "y": 16,
+      "w": 160,
+      "h": 96
+     }
+    },
+    {
+     "id": "t_floor",
+     "type": "text",
+     "text": "42 // 10",
+     "size": 20,
+     "desktop": {
+      "x": 110,
+      "y": 160,
+      "w": 200,
+      "h": 30
+     },
+     "mobile": {
+      "x": 16,
+      "y": 130,
+      "w": 156,
+      "h": 28
+     }
+    },
+    {
+     "id": "t_mod",
+     "type": "text",
+     "text": "42 % 10",
+     "size": 20,
+     "desktop": {
+      "x": 490,
+      "y": 160,
+      "w": 200,
+      "h": 30
+     },
+     "mobile": {
+      "x": 188,
+      "y": 130,
+      "w": 156,
+      "h": 28
+     }
+    },
+    {
+     "id": "strips",
+     "type": "box",
+     "label": "strips",
+     "value": "?",
+     "color": "emerald",
+     "desktop": {
+      "x": 130,
+      "y": 200,
+      "w": 160,
+      "h": 100
+     },
+     "mobile": {
+      "x": 16,
+      "y": 166,
+      "w": 156,
+      "h": 96
+     }
+    },
+    {
+     "id": "loose",
+     "type": "box",
+     "label": "loose",
+     "value": "?",
+     "color": "amber",
+     "desktop": {
+      "x": 510,
+      "y": 200,
+      "w": 160,
+      "h": 100
+     },
+     "mobile": {
+      "x": 188,
+      "y": 166,
+      "w": 156,
+      "h": 96
+     }
+    },
+    {
+     "id": "out",
+     "type": "terminal",
+     "title": "Output",
+     "desktop": {
+      "x": 40,
+      "y": 330,
+      "w": 730,
+      "h": 100
+     },
+     "mobile": {
+      "x": 16,
+      "y": 300,
+      "w": 328,
+      "h": 150
+     }
+    }
+   ],
+   "steps": [
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "total"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "t_floor"
+      },
+      {
+       "do": "show",
+       "target": "strips"
+      },
+      {
+       "do": "setValue",
+       "target": "strips",
+       "value": "4"
+      },
+      {
+       "do": "pulse",
+       "target": "strips"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "t_mod"
+      },
+      {
+       "do": "show",
+       "target": "loose"
+      },
+      {
+       "do": "setValue",
+       "target": "loose",
+       "value": "2"
+      },
+      {
+       "do": "pulse",
+       "target": "loose"
+      }
+     ]
+    },
+    {
+     "actions": [
+      {
+       "do": "show",
+       "target": "out"
+      },
+      {
+       "do": "appendOutput",
+       "target": "out",
+       "text": "Enough with 4 strips? False"
+      }
+     ]
+    }
+   ]
+  },
+  "c1": {
+   "heading": "Data types ನಡುವೆ ಬದಲಾಯಿಸೋದು",
+   "mode": "code",
+   "idea": "ಮುಖ್ಯ ವಿಷಯ",
+   "code": "strength = \"500\"\nprint(int(strength) * 3)",
+   "output": "1500",
+   "file": "example.py",
+   "callout": "ಒಂದು value ಅನ್ನು ಒಂದು data type ಇಂದ ಇನ್ನೊಂದಕ್ಕೆ ಬದಲಾಯಿಸೋದು, int(), float() ಅಥವಾ str() ಇಂದ."
+  },
+  "c2": {
+   "heading": "Arithmetic operators",
+   "mode": "code",
+   "idea": "ಮುಖ್ಯ ವಿಷಯ",
+   "code": "tablets = 25\nprint(tablets // 10)\nprint(tablets % 10)",
+   "output": "2\n5",
+   "file": "example.py",
+   "callout": "Values ಜೊತೆ ಏನಾದರೂ ಮಾಡುವ symbol, ಉದಾ: + (ಕೂಡಿಸು) ಅಥವಾ > (ದೊಡ್ಡದು)."
+  },
+  "c3": {
+   "heading": "Logical operators: and, or, not",
+   "mode": "code",
+   "idea": "ಮುಖ್ಯ ವಿಷಯ",
+   "code": "age = 16\nweight_kg = 52\nprint(age >= 18 and weight_kg >= 50)\nprint(age >= 18 or weight_kg >= 50)",
+   "output": "False\nTrue",
+   "file": "example.py"
+  },
+  "lwalk": {
+   "file": "strips.py",
+   "code": "# Tablets for a 7-day course\ntablets_per_dose = int(\"2\")\ndoses_per_day = 3\ndays = 7\ntotal = tablets_per_dose * doses_per_day * days\nstrips = total // 10\nloose = total % 10\nprint(\"Total tablets:\", total)\nprint(\"Strips:\", strips, \"Loose:\", loose)\nprint(\"Enough with 4 strips?\", strips * 10 >= total)",
+   "steps": [
+    {
+     "line": null,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 1,
+     "vars": {},
+     "output": null
+    },
+    {
+     "line": 2,
+     "vars": {
+      "tablets_per_dose": "2"
+     },
+     "output": null
+    },
+    {
+     "line": 3,
+     "vars": {
+      "doses_per_day": "3"
+     },
+     "output": null
+    },
+    {
+     "line": 4,
+     "vars": {
+      "days": "7"
+     },
+     "output": null
+    },
+    {
+     "line": 5,
+     "vars": {
+      "total": "42"
+     },
+     "output": null
+    },
+    {
+     "line": 6,
+     "vars": {
+      "strips": "4"
+     },
+     "output": null
+    },
+    {
+     "line": 7,
+     "vars": {
+      "loose": "2"
+     },
+     "output": null
+    },
+    {
+     "line": 8,
+     "vars": {},
+     "output": "Total tablets: 42"
+    },
+    {
+     "line": 9,
+     "vars": {},
+     "output": "Strips: 4 Loose: 2"
+    },
+    {
+     "line": 10,
+     "vars": {},
+     "output": "Enough with 4 strips? False"
+    }
+   ],
+   "varsT": "Variables",
+   "outT": "Output"
+  },
+  "e1": {
+   "title": "ಪೂರ್ಣ ಸಂಖ್ಯೆ ಅಲ್ಲದ text ಅನ್ನು ಬದಲಾಯಿಸೋದು",
+   "code": "weight = int(\"52.5\")",
+   "errorLine": 1,
+   "output": "ValueError: invalid literal for int() with base 10: '52.5'"
+  },
+  "e2": {
+   "title": "ಸೊನ್ನೆಯಿಂದ ಭಾಗಿಸೋದು",
+   "code": "tablets = 30\ndays = 0\nprint(tablets / days)",
+   "errorLine": 3,
+   "output": "ZeroDivisionError: division by zero"
+  },
+  "lrecap": {
+   "items": [
+    "Type casting values ಅನ್ನು ಬದಲಾಯಿಸುತ್ತೆ: int(\"500\") ಕೊಡೋದು 500, float(\"52.5\") ಕೊಡೋದು 52.5, str(500) ಕೊಡೋದು \"500\".",
+    "int() ದಶಮಾಂಶ ಭಾಗವನ್ನು ಕತ್ತರಿಸುತ್ತೆ (round ಮಾಡಲ್ಲ), ಮತ್ತು int ಜೊತೆ float ಸೇರಿಸಿದರೆ ಉತ್ತರ float.",
+    "Arithmetic operators ಲೆಕ್ಕ ಮಾಡುತ್ತವೆ: // ಪೂರ್ಣ ಸಂಖ್ಯೆ ಇಡುತ್ತೆ, % ಶೇಷ ಕೊಡುತ್ತೆ, strips ಮತ್ತು ಬಿಡಿ tablets ಗೆ ಸರಿಯಾದದ್ದು.",
+    "Comparison operators (==, !=, >, <, >=, <=) ಮತ್ತು logical operators (and, or, not) True ಅಥವಾ False ಕೊಡುತ್ತವೆ."
+   ],
+   "title": "Recap"
+  },
+  "output": "Output"
+ }
+}
