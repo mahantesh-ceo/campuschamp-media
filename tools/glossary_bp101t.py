@@ -448,6 +448,43 @@ G = {
             "hinglish": "Jab aap aisa naam use karein jiski abhi koi value nahi, tab Python yeh error deta hai, jaise aisi branch mein bana variable jo chali hi nahi.",
             "kn": "ಇನ್ನೂ value ಇಲ್ಲದ ಹೆಸರನ್ನು ಬಳಸಿದಾಗ Python ಕೊಡುವ error, ಉದಾ. run ಆಗದ branch ನಲ್ಲಿ ಮಾತ್ರ ಮಾಡಿದ variable."}),
     ],
+    "2-3": [
+        ("Loop", {
+            "en": "A block of code that runs again and again, so you don't have to copy the same lines.",
+            "hi": "Code का ऐसा block जो बार-बार चलता है, ताकि वही lines copy न करनी पड़ें।",
+            "hinglish": "Code ka aisa block jo baar-baar chalta hai, taaki wahi lines copy na karni padein.",
+            "kn": "ಮತ್ತೆ ಮತ್ತೆ run ಆಗುವ code block, ಅದೇ lines ಅನ್ನು copy ಮಾಡಬೇಕಿಲ್ಲ."}),
+        ("for loop", {
+            "en": "A loop that runs its block once for each value in a sequence, such as range(), a string or a list.",
+            "hi": "ऐसा loop जो sequence की हर value के लिए अपना block एक बार चलाता है, जैसे range(), string या list।",
+            "hinglish": "Aisa loop jo sequence ki har value ke liye apna block ek baar chalaata hai, jaise range(), string ya list.",
+            "kn": "Sequence ನ ಪ್ರತಿ value ಗೆ ತನ್ನ block ಅನ್ನು ಒಂದು ಸಲ run ಮಾಡುವ loop, ಉದಾ. range(), string ಅಥವಾ list."}),
+        ("Loop variable", {
+            "en": "The name after for, like day in for day in range(1, 4). It holds the current value on each iteration.",
+            "hi": "for के बाद वाला नाम, जैसे for day in range(1, 4) में day। हर iteration में इसमें मौजूदा value रहती है।",
+            "hinglish": "for ke baad wala naam, jaise for day in range(1, 4) mein day. Har iteration mein ismein maujooda value rehti hai.",
+            "kn": "for ನಂತರದ ಹೆಸರು, ಉದಾ. for day in range(1, 4) ನಲ್ಲಿ day. ಪ್ರತಿ iteration ನಲ್ಲಿ ಇದರಲ್ಲಿ ಈಗಿನ value ಇರುತ್ತೆ."}),
+        ("Iteration", {
+            "en": "One run of a loop's block. A loop over range(3) has three iterations.",
+            "hi": "Loop के block का एक बार चलना। range(3) वाले loop में तीन iterations होती हैं।",
+            "hinglish": "Loop ke block ka ek baar chalna. range(3) wale loop mein teen iterations hoti hain.",
+            "kn": "Loop ನ block ಒಂದು ಸಲ run ಆಗುವುದು. range(3) ಮೇಲಿನ loop ಗೆ ಮೂರು iterations."}),
+        ("range()", {
+            "en": "Makes a run of whole numbers: range(start, stop, step). The stop number is not included.",
+            "hi": "पूरे numbers की लड़ी बनाता है: range(start, stop, step)। Stop number शामिल नहीं होता।",
+            "hinglish": "Poore numbers ki ladi banaata hai: range(start, stop, step). Stop number shaamil nahi hota.",
+            "kn": "ಪೂರ್ಣ numbers ನ ಸರಣಿ ಮಾಡುತ್ತೆ: range(start, stop, step). Stop number ಸೇರಲ್ಲ."}),
+        ("List", {
+            "en": "Several values kept together inside square brackets, separated by commas, like [500, 650]. More in Unit III.",
+            "hi": "Square brackets के अंदर commas से अलग कई values एक साथ, जैसे [500, 650]। ज़्यादा Unit III में।",
+            "hinglish": "Square brackets ke andar commas se alag kai values ek saath, jaise [500, 650]. Zyada Unit III mein.",
+            "kn": "Square brackets ಒಳಗೆ commas ಇಂದ ಬೇರ್ಪಡಿಸಿದ ಹಲವು values ಒಟ್ಟಿಗೆ, ಉದಾ. [500, 650]. ಹೆಚ್ಚು Unit III ನಲ್ಲಿ."}),
+        ("Accumulator", {
+            "en": "A variable that collects a result across a loop, such as a total that starts at 0 and grows with +=.",
+            "hi": "ऐसा variable जो loop में नतीजा जमा करता है, जैसे 0 से शुरू होकर += से बढ़ने वाला total।",
+            "hinglish": "Aisa variable jo loop mein nateeja jama karta hai, jaise 0 se shuru hokar += se badhne wala total.",
+            "kn": "Loop ಉದ್ದಕ್ಕೂ ಫಲಿತಾಂಶ ಸಂಗ್ರಹಿಸುವ variable, ಉದಾ. 0 ಇಂದ ಶುರುವಾಗಿ += ಇಂದ ಬೆಳೆಯುವ total."}),
+    ],
 }
 
 

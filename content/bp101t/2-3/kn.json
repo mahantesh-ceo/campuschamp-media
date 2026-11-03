@@ -1,0 +1,343 @@
+{
+  "hook": {
+    "title": "30 ದಿನದ dosing chart",
+    "md": "ಒಬ್ಬ patient 30 ದಿನದ course ತೆಗೆದುಕೊಂಡು ಹೋಗುತ್ತಾರೆ, ನೀವು ಒಂದು chart print ಮಾಡಬೇಕು: **Day 1, Day 2, ... Day 30**. 30 `print()` lines ಬರೆಯುವುದು ನಿಧಾನ, ಬೇಸರ, ಮತ್ತು ತಪ್ಪಾಗುವುದು ಸುಲಭ.\n\nComputers ವಿಷಯಗಳನ್ನು ಪುನರಾವರ್ತಿಸುವುದರಲ್ಲಿ ಅದ್ಭುತ. ಈ lesson ನಲ್ಲಿ ಎಷ್ಟು ಸಲ ಬೇಕೋ ಅಷ್ಟು ಸಲ ಪುನರಾವರ್ತಿಸುವ **ಒಂದು** line ಬರೆಯುತ್ತೀರಿ: **for loop**."
+  },
+  "learn": [
+    "**for loop** ಪ್ರತಿ item ಗೆ ಒಂದು ಸಲ block ಅನ್ನು ಹೇಗೆ ಪುನರಾವರ್ತಿಸುತ್ತೆ",
+    "**range()** numbers ನ ಸರಣಿ ಹೇಗೆ ಮಾಡುತ್ತೆ, ಮತ್ತು stop number ಯಾಕೆ ಬಿಟ್ಟುಹೋಗುತ್ತೆ",
+    "**String** ನ ಅಕ್ಷರಗಳು ಮತ್ತು **list** ನ items ಮೇಲೆ loop ಹೇಗೆ ಮಾಡುವುದು",
+    "Loop ಇಂದ **ಕೂಡಿಸುವುದು** ಅಥವಾ **ಎಣಿಸುವುದು**"
+  ],
+  "explanation": [
+    {
+      "heading": "Copy ಮಾಡದೆ ಪುನರಾವರ್ತನೆ",
+      "md": "**for loop** ಒಂದೇ block ಅನ್ನು ಮತ್ತೆ ಮತ್ತೆ run ಮಾಡುತ್ತೆ, ಕೊಟ್ಟ ಪ್ರತಿ value ಗೆ ಒಂದು ಸಲ:\n\n```python\nfor day in range(1, 4):\n    print(f\"Day {day}: 1 tablet\")\nprint(\"Course complete\")\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nDay 1: 1 tablet\nDay 2: 1 tablet\nDay 3: 1 tablet\nCourse complete\n```\n\nಪ್ರತಿ ಸುತ್ತಿನಲ್ಲಿ **loop variable** `day` ಮುಂದಿನ value ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ: ಮೊದಲು 1, ಆಮೇಲೆ 2, ಆಮೇಲೆ 3. Block ಒಂದು ಸಲ run ಆಗುವುದಕ್ಕೆ **iteration** ಅಂತಾರೆ.\n\n`if` ನ ನಿಯಮಗಳು ಇಲ್ಲೂ ಅನ್ವಯ: `for` line **colon** ಇಂದ ಮುಗಿಯುತ್ತೆ, block **4 spaces ಇಂದ indent** ಆಗಿರುತ್ತೆ. `print(\"Course complete\")` indent ಆಗಿಲ್ಲ, ಅದಕ್ಕೇ loop ಮುಗಿದಮೇಲೆ **ಒಂದು ಸಲ** run ಆಗುತ್ತೆ.",
+      "callout": {
+        "title": "Loop",
+        "md": "ಮತ್ತೆ ಮತ್ತೆ run ಆಗುವ code block. for loop ಪ್ರತಿ value ಗೆ ಅದನ್ನು ಒಂದು ಸಲ run ಮಾಡುತ್ತೆ; ಪ್ರತಿ run ಒಂದು iteration."
+      }
+    },
+    {
+      "heading": "range(): numbers ನ ಸರಣಿ",
+      "md": "Loop ಹಾದುಹೋಗುವ numbers ಅನ್ನು **range()** ಮಾಡುತ್ತೆ. ಇದಕ್ಕೆ ಮೂರು ರೂಪಗಳಿವೆ:\n\n| ನೀವು ಬರೆಯುವುದು | ನಿಮಗೆ ಸಿಗುವುದು |\n|---|---|\n| `range(5)` | 0, 1, 2, 3, 4 |\n| `range(1, 6)` | 1, 2, 3, 4, 5 |\n| `range(0, 24, 8)` | 0, 8, 16 |\n\nಮೂರನೇ number **step**: ಪ್ರತಿ ಸಲ ಎಷ್ಟು ಸೇರಿಸಬೇಕು. ಪ್ರತಿ 8 ಗಂಟೆಗೆ ತೆಗೆದುಕೊಳ್ಳುವ ಔಷಧ:\n\n```python\nfor hour in range(0, 24, 8):\n    print(f\"Dose at {hour}:00\")\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nDose at 0:00\nDose at 8:00\nDose at 16:00\n```",
+      "callout": {
+        "title": "Stop number ಯಾವತ್ತೂ ಸೇರಲ್ಲ",
+        "md": "range(1, 6) slice ತರಹ 6 ಕ್ಕೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ. Day 1 ರಿಂದ 30 ಕ್ಕೆ range(1, 31) ಅಂತ ಬರೆಯಿರಿ."
+      }
+    },
+    {
+      "heading": "Text ಮತ್ತು lists ಮೇಲೆ loop",
+      "md": "`for` loop numbers ಮಾತ್ರ ಅಲ್ಲ, ಬೇರೆಯದರ ಮೂಲಕವೂ ಹೋಗಬಹುದು. ಇದು **string** ನ ಪ್ರತಿ character ಗೆ, ಅಥವಾ **list** ನ ಪ್ರತಿ item ಗೆ ಹೋಗಬಹುದು: square brackets ಒಳಗೆ commas ಇಂದ ಬೇರ್ಪಡಿಸಿದ values.\n\n```python\nfor letter in \"DOSE\":\n    print(letter)\n\ndrugs = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nfor drug in drugs:\n    print(drug.upper())\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nD\nO\nS\nE\nPARACETAMOL\nAMOXICILLIN\nCETIRIZINE\n```\n\nLoop variable ಪ್ರತಿ item ಅನ್ನು ಸರದಿಯಲ್ಲಿ, ಮೊದಲಿನಿಂದ ಕೊನೆಯವರೆಗೆ ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ. Lists ಬಗ್ಗೆ Unit III ನಲ್ಲಿ ಇನ್ನೂ ಕಲಿಯುತ್ತೀರಿ."
+    },
+    {
+      "heading": "Loop ಇಂದ ಕೂಡಿಸುವುದು",
+      "md": "Values ಕೂಡಿಸಲು loop ಗೆ **ಮುಂಚೆ** ಒಂದು **total** ಅನ್ನು 0 ಇಂದ ಶುರು ಮಾಡಿ, loop **ಒಳಗೆ** ಅದಕ್ಕೆ ಸೇರಿಸಿ. ಇದಕ್ಕೆ **accumulator** ಅಂತಾರೆ.\n\nಒಬ್ಬ adult ನ ಒಂದು ದಿನದ paracetamol doses:\n\n```python\ndoses = [500, 500, 650, 500]\ntotal = 0\nfor dose in doses:\n    total += dose\nprint(\"Total today:\", total, \"mg\")\nif total > 4000:\n    print(\"Above the daily limit!\")\n```\n\nಇದು `Total today: 2150 mg` print ಮಾಡುತ್ತೆ. ಬೇರೇನೂ print ಆಗಲ್ಲ, ಯಾಕೆಂದರೆ 2150, adults ನ ಸಾಮಾನ್ಯ daily limit ಆದ 4000 mg ಗಿಂತ ಜಾಸ್ತಿ ಇಲ್ಲ.\n\n`total += dose` Lesson 1.4 ನ shortcut: ಅಂದರೆ `total = total + dose`.",
+      "callout": {
+        "title": "Total ಅನ್ನು loop ಹೊರಗೆ ಶುರು ಮಾಡಿ",
+        "md": "total = 0 loop ಒಳಗೆ ಇದ್ದರೆ, ಪ್ರತಿ ಸುತ್ತಿನಲ್ಲಿ ಅದು 0 ಆಗುತ್ತೆ, ನಿಮಗೆ ಕೊನೆಯ value ಮಾತ್ರ ಸಿಗುತ್ತೆ."
+      }
+    },
+    {
+      "heading": "Loop ಒಳಗೆ if",
+      "md": "Loop ಮತ್ತು `if` ಒಟ್ಟಿಗೆ ಚೆನ್ನಾಗಿ ಕೆಲಸ ಮಾಡುತ್ತವೆ: loop ಪ್ರತಿ value ಗೆ ಹೋಗುತ್ತೆ, `if` ಮುಖ್ಯವಾದವನ್ನು ಆರಿಸುತ್ತೆ. ಇಲ್ಲಿ nurse ನ temperature readings ನಲ್ಲಿ ಜ್ವರ check ಮಾಡಿ ಎಣಿಸಲಾಗುತ್ತೆ:\n\n```python\ntemps = [36.8, 38.4, 37.1, 39.6]\nfevers = 0\nfor temp in temps:\n    if temp >= 38.0:\n        print(temp, \"is a fever\")\n        fevers += 1\nprint(\"Readings with fever:\", fevers)\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\n38.4 is a fever\n39.6 is a fever\nReadings with fever: 2\n```\n\n`if` block ಗೆ 8 spaces, ಯಾಕೆಂದರೆ ಅದು loop ಒಳಗಿದೆ. ಕೊನೆಯ `print` ಗೆ ಯಾವುದೂ ಇಲ್ಲ, ಅದಕ್ಕೇ ಎಲ್ಲಾ readings check ಆದಮೇಲೆ ಅದು ಒಂದು ಸಲ run ಆಗುತ್ತೆ."
+    }
+  ],
+  "walkthrough": {
+    "intro": "ಈ program 3 ದಿನದ tablet chart print ಮಾಡಿ, patient ಗೆ ಎಷ್ಟು tablets ಬೇಕು ಅಂತ ಎಣಿಸುತ್ತೆ.",
+    "keyTerms": [
+      {
+        "meaning": "ಪ್ರತಿ value ಗೆ block ಒಂದು ಸಲ ಪುನರಾವರ್ತಿಸು, value day ನಲ್ಲಿ ಇರುತ್ತೆ."
+      },
+      {
+        "meaning": "Numbers 1, 2 ಮತ್ತು 3 (4 ಬಿಟ್ಟುಹೋಗುತ್ತೆ)."
+      },
+      {
+        "meaning": "Loop ಗೆ ಮುಂಚೆ running total ಶುರು ಮಾಡು."
+      },
+      {
+        "meaning": "ಪ್ರತಿ ಸುತ್ತಿನಲ್ಲಿ total ಗೆ 2 ಸೇರಿಸು."
+      }
+    ],
+    "steps": [
+      {
+        "say": "ಈ program ಎರಡು lines ಅನ್ನು course ನ ಪ್ರತಿ ದಿನಕ್ಕೆ ಒಂದು ಸಲ ಪುನರಾವರ್ತಿಸುತ್ತೆ, ಮತ್ತು ಒಂದು running total ಇಟ್ಟುಕೊಳ್ಳುತ್ತೆ."
+      },
+      {
+        "say": "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ."
+      },
+      {
+        "say": "total loop ಗೆ ಮುಂಚೆ zero ಇಂದ ಶುರುವಾಗುತ್ತೆ."
+      },
+      {
+        "say": "range ಒಂದರಿಂದ ನಾಲ್ಕು, ಒಂದು, ಎರಡು ಮತ್ತು ಮೂರು ಕೊಡುತ್ತೆ. Loop ಶುರುವಾಗುತ್ತೆ, day ಒಂದು."
+      },
+      {
+        "say": "Total ಗೆ ಎರಡು tablets ಸೇರುತ್ತವೆ, ಅದಕ್ಕೇ total ಎರಡು."
+      },
+      {
+        "say": "print ದಿನ ಒಂದನ್ನು ತೋರಿಸುತ್ತೆ."
+      },
+      {
+        "say": "Block ಮುಗಿಯಿತು, ಅದಕ್ಕೇ Python loop ನ ಮೇಲಕ್ಕೆ ಹಿಂತಿರುಗುತ್ತೆ. day ಎರಡು ಆಗುತ್ತೆ."
+      },
+      {
+        "say": "total ನಾಲ್ಕು ಆಗುತ್ತೆ, print ದಿನ ಎರಡನ್ನು ತೋರಿಸುತ್ತೆ."
+      },
+      {
+        "say": "ದಿನ ಮೂರಕ್ಕೆ ಇನ್ನೊಂದು ಸಲ. total ಆರು ಆಗುತ್ತೆ."
+      },
+      {
+        "say": "range ನಲ್ಲಿ ಯಾವ number ಕೂಡ ಉಳಿದಿಲ್ಲ, ಅದಕ್ಕೇ loop ಮುಗಿಯುತ್ತೆ. ಕೊನೆಯ line indent ಆಗಿಲ್ಲ, ಅದಕ್ಕೇ ಒಂದು ಸಲ run ಆಗಿ total ತೋರಿಸುತ್ತೆ."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "ಈ ಎರಡು errors for line ಇಂದಲೇ ಬರುತ್ತವೆ.",
+    "examples": [
+      {
+        "title": "Colon ಮರೆಯುವುದು",
+        "md": "`if` ತರಹ, `for` line ಕೂಡ colon ಇಂದ ಮುಗಿಯಬೇಕು: `for day in range(1, 4):`."
+      },
+      {
+        "title": "range() ಗೆ number ಬದಲು text ಕೊಡುವುದು",
+        "md": "`\"5\"` ಒಂದು string, ಉದಾ. `input()` ಇಂದ ಬಂದದ್ದು. `range()` ಗೆ integer ಬೇಕು. ಮೊದಲು ಬದಲಾಯಿಸಿ: `range(int(days))`."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "`range(1, 30)` ನಲ್ಲಿ 30 ಕೂಡ ಇದೆ ಅಂದುಕೊಳ್ಳುವುದು",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ chart Day 29 ಕ್ಕೆ ನಿಲ್ಲುತ್ತೆ",
+      "fix": "Stop ಬಿಟ್ಟುಹೋಗುತ್ತೆ, ಅದಕ್ಕೇ `range(1, 31)` ಅಂತ ಬರೆಯಿರಿ."
+    },
+    {
+      "mistake": "`total = 0` ಅನ್ನು loop ಒಳಗೆ ಇಡುವುದು",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ total ಕೊನೆಯ value ಮಾತ್ರ",
+      "fix": "Total ಅನ್ನು ಒಂದು ಸಲ, loop ಗೆ ಮುಂಚೆ ಶುರು ಮಾಡಿ."
+    },
+    {
+      "mistake": "ಕೊನೆಯ `print` ಅನ್ನು ತಪ್ಪಾಗಿ indent ಮಾಡುವುದು",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ ಪ್ರತಿ iteration ಆದಮೇಲೆ total print ಆಗುತ್ತೆ",
+      "fix": "ಒಂದು ಸಲ run ಆಗಬೇಕಾದ lines ಅನ್ನು loop ಆದಮೇಲೆ, indentation ಇಲ್ಲದೆ ಇಡಿ."
+    },
+    {
+      "mistake": "`range()` ಗೆ decimal ಕೊಡುವುದು, ಉದಾ. `range(1, 7.5)`",
+      "see": "TypeError: 'float' object cannot be interpreted as an integer",
+      "fix": "`range()` ಪೂರ್ಣ numbers ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ. `int()` ಅಥವಾ ಪೂರ್ಣ number ಬಳಸಿ."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Doses ಗೆ number ಕೊಡಿ",
+      "md": "**range()** ಜೊತೆ **for loop** ಬಳಸಿ ದಿನದ ಮೂರು doses ಅನ್ನು ಸರಿಯಾಗಿ ಹೀಗೆ print ಮಾಡಿ:",
+      "hints": [
+        "range(1, 4) ಇಂದ 1, 2 ಮತ್ತು 3 ಸಿಗುತ್ತವೆ.",
+        "for n in range(1, 4):\n    print(f\"Dose {n}\")"
+      ]
+    },
+    {
+      "title": "ಪ್ರತಿ 6 ಗಂಟೆಗೆ",
+      "md": "ಒಂದು antibiotic ಅನ್ನು ಪ್ರತಿ 6 ಗಂಟೆಗೆ, ಮಧ್ಯರಾತ್ರಿಯಿಂದ ಶುರು ಮಾಡಿ ಕೊಡಲಾಗುತ್ತೆ. Output ಸರಿಯಾಗಿ ಹೀಗೇ ಬರುವ ಹಾಗೆ **step ಇರುವ range()** ಬಳಸಿ:",
+      "hints": [
+        "range() ನ ಮೂರನೇ number step: range(0, 24, 6).",
+        "for hour in range(0, 24, 6):\n    print(f\"Dose at {hour}:00\")"
+      ]
+    },
+    {
+      "title": "Doses ಕೂಡಿಸಿ",
+      "md": "List ನ doses ಅನ್ನು loop ಇಂದ ಕೂಡಿಸಿ, total ಅನ್ನು ಸರಿಯಾಗಿ ಹೀಗೆ print ಮಾಡಿ:",
+      "hints": [
+        "Loop ಒಳಗೆ: total += dose",
+        "for dose in doses:\n    total += dose\nprint(\"Total:\", total, \"mg\")"
+      ]
+    },
+    {
+      "title": "Bug ಹುಡುಕಿ",
+      "md": "ಒಬ್ಬ patient 7 ದಿನ ದಿನಕ್ಕೆ 3 tablets ತೆಗೆದುಕೊಳ್ಳುತ್ತಾರೆ, ಅದಕ್ಕೇ 21 tablets ಬೇಕು. ಈ program 3 ಅಂತ ಹೇಳುತ್ತೆ, error ಇಲ್ಲ. Output ಸರಿಯಾಗಿ ಹೀಗೇ ಬರುವ ಹಾಗೆ ಸರಿ ಮಾಡಿ:",
+      "hints": [
+        "ಪ್ರತಿ iteration ಶುರುವಿನಲ್ಲಿ total ಗೆ ಏನಾಗುತ್ತೆ?",
+        "Loop ಒಳಗಿನ total = 0 ತೆಗೆಯಿರಿ. Loop ಗೆ ಮುಂಚಿನದು ಸಾಕು."
+      ],
+      "solutionNote": "Loop ಒಳಗಿನ total = 0 ಪ್ರತಿ ದಿನ total ಅನ್ನು reset ಮಾಡುತ್ತಿತ್ತು, ಅದಕ್ಕೇ ಕೊನೆಯ 3 ಮಾತ್ರ ಉಳಿಯುತ್ತಿತ್ತು. Loop ಗೆ ಮುಂಚೆ ಒಂದು ಸಲ ಶುರು ಮಾಡಿದರೆ ಅದು 21 ವರೆಗೆ ಬೆಳೆಯುತ್ತೆ."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "range(1, 4) ಯಾವ numbers ಕೊಡುತ್ತೆ?",
+      "why": "range stop number 4 ಕ್ಕೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ."
+    },
+    {
+      "q": "for i in range(3):\n    print(\"Shake well\")\n\n\"Shake well\" ಎಷ್ಟು ಸಲ print ಆಗುತ್ತೆ?",
+      "why": "range(3) ಇಂದ 0, 1 ಮತ್ತು 2: ಮೂರು values, ಅದಕ್ಕೇ ಮೂರು iterations."
+    },
+    {
+      "q": "range(0, 10, 5) ಏನು ಕೊಡುತ್ತೆ?",
+      "why": "0 ಇಂದ ಶುರು, ಪ್ರತಿ ಸಲ 5 ಸೇರಿಸಿ, 10 ಕ್ಕೆ ಮುಂಚೆ ನಿಲ್ಲಿ."
+    },
+    {
+      "q": "total = 0\nfor n in range(1, 4):\n    total += n\nprint(total)\n\nಇದು ಏನು print ಮಾಡುತ್ತೆ?",
+      "why": "1 + 2 + 3 = 6."
+    },
+    {
+      "q": "for ch in \"ABC\":\n    print(ch)\n\nಏನು print ಆಗುತ್ತೆ?",
+      "why": "Loop ಪ್ರತಿ character ಗೆ ಹೋಗುತ್ತೆ, ಪ್ರತಿ print ಹೊಸ line ಇಂದ ಶುರುವಾಗುತ್ತೆ."
+    },
+    {
+      "q": "Loop ಮುಗಿದಮೇಲೆ ಯಾವ line ಒಂದೇ ಸಲ run ಆಗುತ್ತೆ?",
+      "why": "Indent ಆಗದ lines loop ಹೊರಗಿವೆ, ಅದಕ್ಕೇ ಅದು ಮುಗಿದಮೇಲೆ ಒಂದು ಸಲ run ಆಗುತ್ತವೆ."
+    }
+  ],
+  "exam": {
+    "note": "Practice ಗಾಗಿ important questions. University ನ ನಿಜವಾದ questions ಬೇರೆ ಇರಬಹುದು."
+  },
+  "mindmap": {
+    "label": "Lesson 2.3 · for loops",
+    "children": [
+      {
+        "label": "for loop",
+        "children": [
+          {
+            "label": "ಪ್ರತಿ value ಗೆ ಪುನರಾವರ್ತನೆ"
+          },
+          {
+            "label": "Loop variable"
+          },
+          {
+            "label": "Iteration = ಒಂದು run"
+          }
+        ]
+      },
+      {
+        "label": "range()",
+        "children": [
+          {
+            "label": "range(5) → 0-4"
+          },
+          {
+            "label": "range(1, 6) → 1-5"
+          },
+          {
+            "label": "range(0, 24, 8) → step"
+          }
+        ]
+      },
+      {
+        "label": "Sequences",
+        "children": [
+          {
+            "label": "String ನ characters"
+          },
+          {
+            "label": "List ನ items"
+          }
+        ]
+      },
+      {
+        "label": "Patterns",
+        "children": [
+          {
+            "label": "ಮುಂಚೆ total = 0"
+          },
+          {
+            "label": "ಒಳಗೆ total += value"
+          },
+          {
+            "label": "if ಇಂದ ಎಣಿಕೆ"
+          }
+        ]
+      },
+      {
+        "label": "Syntax",
+        "children": [
+          {
+            "label": "Colon :"
+          },
+          {
+            "label": "4-space block"
+          },
+          {
+            "label": "Loop ಆದಮೇಲೆ ಒಂದು ಸಲ"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "SyntaxError: expected ':'"
+          },
+          {
+            "label": "TypeError: range ನಲ್ಲಿ str/float"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**for loop** ತನ್ನ indent ಮಾಡಿದ block ಅನ್ನು **ಪ್ರತಿ value** ಗೆ ಒಂದು ಸಲ run ಮಾಡುತ್ತೆ; **loop variable** ನಲ್ಲಿ ಈಗಿನ value ಇರುತ್ತೆ, ಪ್ರತಿ run ಒಂದು **iteration**.",
+    "**range(stop)**, **range(start, stop)** ಮತ್ತು **range(start, stop, step)** ಪೂರ್ಣ numbers ನ ಸರಣಿ ಮಾಡುತ್ತವೆ; **stop ಯಾವತ್ತೂ ಸೇರಲ್ಲ**.",
+    "for loop **string ನ ಪ್ರತಿ character** ಅಥವಾ **list ನ ಪ್ರತಿ item** ಗೂ ಹೋಗಬಹುದು.",
+    "ಕೂಡಿಸಲು loop ಗೆ **ಮುಂಚೆ** `total = 0` ಶುರು ಮಾಡಿ, **ಒಳಗೆ** `total += value` ಬಳಸಿ.",
+    "**Loop ಒಳಗಿನ if** ಮುಖ್ಯ values ಅನ್ನು ಆರಿಸುತ್ತೆ ಅಥವಾ ಎಣಿಸುತ್ತೆ. Loop ಆದಮೇಲಿನ, indentation ಇಲ್ಲದ lines ಒಂದು ಸಲ run ಆಗುತ್ತವೆ."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "total zero ಇಂದ ಶುರುವಾಗುತ್ತೆ. Loop ಮೂರು ಸಲ ಸುತ್ತುತ್ತೆ, ದಿನ ಒಂದು, ಎರಡು ಮತ್ತು ಮೂರಕ್ಕೆ."
+        },
+        {
+          "say": "ಮೊದಲ ಸುತ್ತಿನಲ್ಲಿ day ಒಂದು. ಎರಡು tablets ಸೇರುತ್ತವೆ, ದಿನ ಒಂದು print ಆಗುತ್ತೆ."
+        },
+        {
+          "say": "ಮತ್ತೆ ಮೇಲಕ್ಕೆ. day ಎರಡು, total ನಾಲ್ಕಕ್ಕೆ ಬೆಳೆಯುತ್ತೆ."
+        },
+        {
+          "say": "ಇನ್ನೊಂದು ಸಲ: ದಿನ ಮೂರು, total ಆರು."
+        },
+        {
+          "say": "ಯಾವ number ಕೂಡ ಉಳಿದಿಲ್ಲ, ಅದಕ್ಕೇ loop ಮುಗಿಯುತ್ತೆ, ಕೊನೆಯ line ಒಂದೇ ಸಲ run ಆಗುತ್ತೆ."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "ಮತ್ತೆ ಮತ್ತೆ run ಆಗುವ code block, ಅದೇ lines ಅನ್ನು copy ಮಾಡಬೇಕಿಲ್ಲ."
+    },
+    {
+      "meaning": "Sequence ನ ಪ್ರತಿ value ಗೆ ತನ್ನ block ಅನ್ನು ಒಂದು ಸಲ run ಮಾಡುವ loop, ಉದಾ. range(), string ಅಥವಾ list."
+    },
+    {
+      "meaning": "for ನಂತರದ ಹೆಸರು, ಉದಾ. for day in range(1, 4) ನಲ್ಲಿ day. ಪ್ರತಿ iteration ನಲ್ಲಿ ಇದರಲ್ಲಿ ಈಗಿನ value ಇರುತ್ತೆ."
+    },
+    {
+      "meaning": "Loop ನ block ಒಂದು ಸಲ run ಆಗುವುದು. range(3) ಮೇಲಿನ loop ಗೆ ಮೂರು iterations."
+    },
+    {
+      "meaning": "ಪೂರ್ಣ numbers ನ ಸರಣಿ ಮಾಡುತ್ತೆ: range(start, stop, step). Stop number ಸೇರಲ್ಲ."
+    },
+    {
+      "meaning": "Square brackets ಒಳಗೆ commas ಇಂದ ಬೇರ್ಪಡಿಸಿದ ಹಲವು values ಒಟ್ಟಿಗೆ, ಉದಾ. [500, 650]. ಹೆಚ್ಚು Unit III ನಲ್ಲಿ."
+    },
+    {
+      "meaning": "Loop ಉದ್ದಕ್ಕೂ ಫಲಿತಾಂಶ ಸಂಗ್ರಹಿಸುವ variable, ಉದಾ. 0 ಇಂದ ಶುರುವಾಗಿ += ಇಂದ ಬೆಳೆಯುವ total."
+    }
+  ]
+}

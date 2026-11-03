@@ -1,0 +1,343 @@
+{
+  "hook": {
+    "title": "30 din ka dosing chart",
+    "md": "Ek patient 30 din ka course lekar jaata hai, aur aap ek chart print karna chahte hain: **Day 1, Day 2, ... Day 30**. 30 `print()` lines likhna dheema, boring aur galti wala hoga.\n\nComputers cheezein dohraane mein kamaal ke hain. Is lesson mein aap **ek** line likhenge jo jitni baar chahiye utni baar dohraati hai: **for loop**."
+  },
+  "learn": [
+    "**for loop** har item ke liye ek baar block kaise dohraata hai",
+    "**range()** numbers ki ladi kaise banaata hai, aur stop number kyon chhoot jaata hai",
+    "**String** ke aksharon aur **list** ke items par loop kaise chalaayein",
+    "Loop se cheezein **jodna** ya **ginna**"
+  ],
+  "explanation": [
+    {
+      "heading": "Bina copy kiye dohraana",
+      "md": "**for loop** ek hi block ko baar-baar chalaata hai, mili hui har value ke liye ek baar:\n\n```python\nfor day in range(1, 4):\n    print(f\"Day {day}: 1 tablet\")\nprint(\"Course complete\")\n```\n\nYeh print karta hai:\n\n```\nDay 1: 1 tablet\nDay 2: 1 tablet\nDay 3: 1 tablet\nCourse complete\n```\n\nHar baar **loop variable** `day` agli value leta hai: pehle 1, phir 2, phir 3. Block ke ek baar chalne ko **iteration** kehte hain.\n\n`if` wale niyam yahaan bhi laagu hain: `for` line **colon** par khatam hoti hai, aur block **4 spaces se indent** hota hai. `print(\"Course complete\")` indent nahi hai, isliye loop khatam hone ke baad **ek baar** chalta hai.",
+      "callout": {
+        "title": "Loop",
+        "md": "Code ka aisa block jo baar-baar chalta hai. for loop har value ke liye use ek baar chalaata hai; har baar chalna ek iteration hai."
+      }
+    },
+    {
+      "heading": "range(): numbers ki ladi",
+      "md": "**range()** woh numbers banaata hai jinse loop guzarta hai. Iske teen roop hain:\n\n| Aap likhte hain | Aapko milta hai |\n|---|---|\n| `range(5)` | 0, 1, 2, 3, 4 |\n| `range(1, 6)` | 1, 2, 3, 4, 5 |\n| `range(0, 24, 8)` | 0, 8, 16 |\n\nTeesra number **step** hai: har baar kitna jodna hai. Har 8 ghante mein li jaane wali dawa:\n\n```python\nfor hour in range(0, 24, 8):\n    print(f\"Dose at {hour}:00\")\n```\n\nYeh print karta hai:\n\n```\nDose at 0:00\nDose at 8:00\nDose at 16:00\n```",
+      "callout": {
+        "title": "Stop number kabhi shaamil nahi hota",
+        "md": "range(1, 6) theek 6 se pehle rukta hai, slice ki tarah. Day 1 se 30 ke liye range(1, 31) likhiye."
+      }
+    },
+    {
+      "heading": "Text aur lists par loop",
+      "md": "`for` loop sirf numbers nahi, aur bhi cheezon se guzar sakta hai. Yeh **string** ke har character par, ya **list** ke har item par ja sakta hai: square brackets ke andar commas se alag ki gayi values.\n\n```python\nfor letter in \"DOSE\":\n    print(letter)\n\ndrugs = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nfor drug in drugs:\n    print(drug.upper())\n```\n\nYeh print karta hai:\n\n```\nD\nO\nS\nE\nPARACETAMOL\nAMOXICILLIN\nCETIRIZINE\n```\n\nLoop variable baari-baari har item leta hai, pehle se aakhri tak. Lists ke baare mein aap Unit III mein aur seekhenge."
+    },
+    {
+      "heading": "Loop se jodna",
+      "md": "Values jodne ke liye loop se **pehle** ek **total** 0 par shuru kijiye, aur loop ke **andar** usmein jodiye. Ise **accumulator** kehte hain.\n\nEk adult ki ek din ki paracetamol doses:\n\n```python\ndoses = [500, 500, 650, 500]\ntotal = 0\nfor dose in doses:\n    total += dose\nprint(\"Total today:\", total, \"mg\")\nif total > 4000:\n    print(\"Above the daily limit!\")\n```\n\nYeh `Total today: 2150 mg` print karta hai. Aur kuch print nahi hota, kyonki 2150, 4000 mg se zyada nahi, jo adults ki aam daily limit hai.\n\n`total += dose` Lesson 1.4 ka shortcut hai: iska matlab `total = total + dose`.",
+      "callout": {
+        "title": "Total ko loop ke bahar shuru kijiye",
+        "md": "Agar total = 0 loop ke andar hai, to har baar woh 0 ho jaata hai, aur aapko sirf aakhri value milti hai."
+      }
+    },
+    {
+      "heading": "Loop ke andar if",
+      "md": "Loop aur `if` saath mein badhiya kaam karte hain: loop har value par jaata hai, aur `if` zaroori values chunta hai. Yahaan nurse ki temperature readings mein bukhaar jaancha aur gina jaata hai:\n\n```python\ntemps = [36.8, 38.4, 37.1, 39.6]\nfevers = 0\nfor temp in temps:\n    if temp >= 38.0:\n        print(temp, \"is a fever\")\n        fevers += 1\nprint(\"Readings with fever:\", fevers)\n```\n\nYeh print karta hai:\n\n```\n38.4 is a fever\n39.6 is a fever\nReadings with fever: 2\n```\n\n`if` block mein 8 spaces hain, kyonki woh loop ke andar hai. Aakhri `print` mein koi nahi, isliye saari readings jaanchne ke baad woh ek baar chalta hai."
+    }
+  ],
+  "walkthrough": {
+    "intro": "Yeh program 3 din ka tablet chart print karta hai aur ginta hai ki patient ko kitni tablets chahiye.",
+    "keyTerms": [
+      {
+        "meaning": "Har value ke liye block ek baar dohraao, value day mein rehti hai."
+      },
+      {
+        "meaning": "Numbers 1, 2 aur 3 (4 chhoot jaata hai)."
+      },
+      {
+        "meaning": "Loop se pehle running total shuru karo."
+      },
+      {
+        "meaning": "Har baar total mein 2 jodo."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Yeh program do lines dohraata hai, course ke har din ke liye ek baar, aur ek running total rakhta hai."
+      },
+      {
+        "say": "Comment batata hai ki program kya karta hai."
+      },
+      {
+        "say": "total loop se pehle zero se shuru hota hai."
+      },
+      {
+        "say": "range ek se chaar, ek, do aur teen deta hai. Loop shuru hota hai, aur day ek hai."
+      },
+      {
+        "say": "Total mein do tablets judti hain, to total do hai."
+      },
+      {
+        "say": "print din ek dikhaata hai."
+      },
+      {
+        "say": "Block khatam hua, isliye Python loop ke upar lautta hai. day do ho jaata hai."
+      },
+      {
+        "say": "total chaar ho jaata hai, aur print din do dikhaata hai."
+      },
+      {
+        "say": "Din teen ke liye ek baar aur. total chhah ho jaata hai."
+      },
+      {
+        "say": "range mein koi number nahi bacha, isliye loop khatam. Aakhri line indent nahi hai, isliye ek baar chalti hai, aur total dikhaati hai."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Yeh do errors khud for line se aati hain.",
+    "examples": [
+      {
+        "title": "Colon bhool jaana",
+        "md": "`if` ki tarah, `for` line bhi colon par khatam honi chahiye: `for day in range(1, 4):`."
+      },
+      {
+        "title": "range() ko number ki jagah text dena",
+        "md": "`\"5\"` ek string hai, jaise `input()` se aayi. `range()` ko integer chahiye. Pehle badaliye: `range(int(days))`."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Yeh maanna ki `range(1, 30)` mein 30 bhi hai",
+      "see": "Koi error nahi, par chart Day 29 par ruk jaata hai",
+      "fix": "Stop chhoot jaata hai, isliye `range(1, 31)` likhiye."
+    },
+    {
+      "mistake": "`total = 0` ko loop ke andar rakhna",
+      "see": "Koi error nahi, par total sirf aakhri value hota hai",
+      "fix": "Total ko ek baar, loop se pehle shuru kijiye."
+    },
+    {
+      "mistake": "Aakhri `print` ko galti se indent kar dena",
+      "see": "Koi error nahi, par har iteration ke baad total print hota hai",
+      "fix": "Jo lines ek baar chalni hain, woh loop ke baad, bina indentation ke rakhiye."
+    },
+    {
+      "mistake": "`range()` mein decimal dena, jaise `range(1, 7.5)`",
+      "see": "TypeError: 'float' object cannot be interpreted as an integer",
+      "fix": "`range()` sirf poore numbers leta hai. `int()` ya poora number use kijiye."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Doses ko number dijiye",
+      "md": "**range()** ke saath **for loop** use karke din ki teen doses print kijiye, bilkul aise:",
+      "hints": [
+        "range(1, 4) se 1, 2 aur 3 milte hain.",
+        "for n in range(1, 4):\n    print(f\"Dose {n}\")"
+      ]
+    },
+    {
+      "title": "Har 6 ghante",
+      "md": "Ek antibiotic har 6 ghante di jaati hai, aadhi raat se shuru. **Step wala range()** use kijiye taaki output bilkul yeh ho:",
+      "hints": [
+        "range() ka teesra number step hai: range(0, 24, 6).",
+        "for hour in range(0, 24, 6):\n    print(f\"Dose at {hour}:00\")"
+      ]
+    },
+    {
+      "title": "Doses jodiye",
+      "md": "List ki doses ko loop se jodiye, aur total bilkul aise print kijiye:",
+      "hints": [
+        "Loop ke andar: total += dose",
+        "for dose in doses:\n    total += dose\nprint(\"Total:\", total, \"mg\")"
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "Ek patient 7 din tak roz 3 tablets leta hai, to use 21 tablets chahiye. Yeh program 3 batata hai, aur koi error nahi. Ise theek kijiye taaki output bilkul yeh ho:",
+      "hints": [
+        "Har iteration ki shuruaat mein total ke saath kya hota hai?",
+        "Loop ke andar wala total = 0 hataaiye. Loop se pehle wala kaafi hai."
+      ],
+      "solutionNote": "Loop ke andar total = 0 har din total ko reset kar deta tha, isliye sirf aakhri 3 bachta tha. Loop se pehle ek baar shuru karne par yeh 21 tak badhta hai."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "range(1, 4) kaun-se numbers deta hai?",
+      "why": "range stop number, 4, se theek pehle rukta hai."
+    },
+    {
+      "q": "for i in range(3):\n    print(\"Shake well\")\n\n\"Shake well\" kitni baar print hota hai?",
+      "why": "range(3) se 0, 1 aur 2 milte hain: teen values, isliye teen iterations."
+    },
+    {
+      "q": "range(0, 10, 5) kya deta hai?",
+      "why": "0 se shuru, har baar 5 jodo, aur 10 se pehle ruko."
+    },
+    {
+      "q": "total = 0\nfor n in range(1, 4):\n    total += n\nprint(total)\n\nYeh kya print karta hai?",
+      "why": "1 + 2 + 3 = 6."
+    },
+    {
+      "q": "for ch in \"ABC\":\n    print(ch)\n\nKya print hota hai?",
+      "why": "Loop har character par jaata hai, aur har print nayi line se shuru hota hai."
+    },
+    {
+      "q": "Loop khatam hone ke baad kaun-si line sirf ek baar chalti hai?",
+      "why": "Jo lines indent nahi hain woh loop ke bahar hain, isliye uske khatam hone ke baad ek baar chalti hain."
+    }
+  ],
+  "exam": {
+    "note": "Practice ke liye important questions. University ke asli questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 2.3 · for loops",
+    "children": [
+      {
+        "label": "for loop",
+        "children": [
+          {
+            "label": "Har value ke liye dohraao"
+          },
+          {
+            "label": "Loop variable"
+          },
+          {
+            "label": "Iteration = ek baar chalna"
+          }
+        ]
+      },
+      {
+        "label": "range()",
+        "children": [
+          {
+            "label": "range(5) → 0-4"
+          },
+          {
+            "label": "range(1, 6) → 1-5"
+          },
+          {
+            "label": "range(0, 24, 8) → step"
+          }
+        ]
+      },
+      {
+        "label": "Sequences",
+        "children": [
+          {
+            "label": "String ke characters"
+          },
+          {
+            "label": "List ke items"
+          }
+        ]
+      },
+      {
+        "label": "Patterns",
+        "children": [
+          {
+            "label": "Pehle total = 0"
+          },
+          {
+            "label": "Andar total += value"
+          },
+          {
+            "label": "if se ginti"
+          }
+        ]
+      },
+      {
+        "label": "Syntax",
+        "children": [
+          {
+            "label": "Colon :"
+          },
+          {
+            "label": "4-space block"
+          },
+          {
+            "label": "Loop ke baad ek baar"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "SyntaxError: expected ':'"
+          },
+          {
+            "label": "TypeError: range mein str/float"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**for loop** apna indent kiya hua block **har value** ke liye ek baar chalaata hai; **loop variable** mein maujooda value rehti hai, aur har baar chalna ek **iteration** hai.",
+    "**range(stop)**, **range(start, stop)** aur **range(start, stop, step)** poore numbers ki ladi banaate hain; **stop kabhi shaamil nahi hota**.",
+    "for loop **string ke har character** ya **list ke har item** par bhi ja sakta hai.",
+    "Jodne ke liye loop se **pehle** `total = 0` shuru kijiye aur **andar** `total += value` use kijiye.",
+    "**Loop ke andar if** zaroori values chunta ya ginta hai. Loop ke baad, bina indentation wali lines ek baar chalti hain."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "total zero se shuru hota hai. Loop teen baar ghoomega, din ek, do aur teen ke liye."
+        },
+        {
+          "say": "Pehli baar day ek hai. Do tablets judti hain, aur din ek print hota hai."
+        },
+        {
+          "say": "Wapas upar. day do hai, aur total badhkar chaar ho jaata hai."
+        },
+        {
+          "say": "Ek baar aur: din teen, total chhah."
+        },
+        {
+          "say": "Koi number nahi bacha, isliye loop khatam hota hai, aur aakhri line sirf ek baar chalti hai."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Code ka aisa block jo baar-baar chalta hai, taaki wahi lines copy na karni padein."
+    },
+    {
+      "meaning": "Aisa loop jo sequence ki har value ke liye apna block ek baar chalaata hai, jaise range(), string ya list."
+    },
+    {
+      "meaning": "for ke baad wala naam, jaise for day in range(1, 4) mein day. Har iteration mein ismein maujooda value rehti hai."
+    },
+    {
+      "meaning": "Loop ke block ka ek baar chalna. range(3) wale loop mein teen iterations hoti hain."
+    },
+    {
+      "meaning": "Poore numbers ki ladi banaata hai: range(start, stop, step). Stop number shaamil nahi hota."
+    },
+    {
+      "meaning": "Square brackets ke andar commas se alag kai values ek saath, jaise [500, 650]. Zyada Unit III mein."
+    },
+    {
+      "meaning": "Aisa variable jo loop mein nateeja jama karta hai, jaise 0 se shuru hokar += se badhne wala total."
+    }
+  ]
+}

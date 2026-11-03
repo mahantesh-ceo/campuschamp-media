@@ -1,0 +1,174 @@
+{
+  "course": "bp101t",
+  "lesson": "2-3",
+  "voices": {
+    "en": "Ritu",
+    "hi": "Ritu",
+    "kn": "Chaitra"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program repeats two lines, once for each day of the course, and keeps a running total.",
+        "The comment says what the program does.",
+        "total starts at zero, before the loop.",
+        "range one to four gives one, two and three. The loop starts, and day is one.",
+        "Two tablets are added to total, so total is two.",
+        "print shows day one.",
+        "The block is finished, so Python goes back to the top of the loop. day becomes two.",
+        "total becomes four, and print shows day two.",
+        "Once more for day three. total becomes six.",
+        "range has no numbers left, so the loop ends. The last line is not indented, so it runs once, and shows the total."
+      ],
+      "display": [
+        "This program repeats two lines, once for each day of the course, and keeps a running total.",
+        "The comment says what the program does.",
+        "total starts at zero, before the loop.",
+        "range one to four gives one, two and three. The loop starts, and day is one.",
+        "Two tablets are added to total, so total is two.",
+        "print shows day one.",
+        "The block is finished, so Python goes back to the top of the loop. day becomes two.",
+        "total becomes four, and print shows day two.",
+        "Once more for day three. total becomes six.",
+        "range has no numbers left, so the loop ends. The last line is not indented, so it runs once, and shows the total."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह program दो lines दोहराता है, course के हर दिन के लिए एक बार, और एक running total रखता है।",
+        "Comment बताता है कि program क्या करता है।",
+        "total loop से पहले zero से शुरू होता है।",
+        "range एक से चार, एक, दो और तीन देता है। Loop शुरू होता है, और day एक है।",
+        "Total में दो tablets जुड़ती हैं, तो total दो है।",
+        "print दिन एक दिखाता है।",
+        "Block खत्म हुआ, इसलिए पाइथन loop के ऊपर लौटता है। day दो हो जाता है।",
+        "total चार हो जाता है, और print दिन दो दिखाता है।",
+        "दिन तीन के लिए एक बार और। total छह हो जाता है।",
+        "range में कोई number नहीं बचा, इसलिए loop खत्म। आखिरी line indent नहीं है, इसलिए एक बार चलती है, और total दिखाती है।"
+      ],
+      "display": [
+        "यह program दो lines दोहराता है, course के हर दिन के लिए एक बार, और एक running total रखता है।",
+        "Comment बताता है कि program क्या करता है।",
+        "total loop से पहले zero से शुरू होता है।",
+        "range एक से चार, एक, दो और तीन देता है। Loop शुरू होता है, और day एक है।",
+        "Total में दो tablets जुड़ती हैं, तो total दो है।",
+        "print दिन एक दिखाता है।",
+        "Block खत्म हुआ, इसलिए Python loop के ऊपर लौटता है। day दो हो जाता है।",
+        "total चार हो जाता है, और print दिन दो दिखाता है।",
+        "दिन तीन के लिए एक बार और। total छह हो जाता है।",
+        "range में कोई number नहीं बचा, इसलिए loop खत्म। आखिरी line indent नहीं है, इसलिए एक बार चलती है, और total दिखाती है।"
+      ],
+      "displayHinglish": [
+        "Yeh program do lines dohraata hai, course ke har din ke liye ek baar, aur ek running total rakhta hai.",
+        "Comment batata hai ki program kya karta hai.",
+        "total loop se pehle zero se shuru hota hai.",
+        "range ek se chaar, ek, do aur teen deta hai. Loop shuru hota hai, aur day ek hai.",
+        "Total mein do tablets judti hain, to total do hai.",
+        "print din ek dikhaata hai.",
+        "Block khatam hua, isliye Python loop ke upar lautta hai. day do ho jaata hai.",
+        "total chaar ho jaata hai, aur print din do dikhaata hai.",
+        "Din teen ke liye ek baar aur. total chhah ho jaata hai.",
+        "range mein koi number nahi bacha, isliye loop khatam. Aakhri line indent nahi hai, isliye ek baar chalti hai, aur total dikhaati hai."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ program ಎರಡು lines ಅನ್ನು course ನ ಪ್ರತಿ ದಿನಕ್ಕೆ ಒಂದು ಸಲ ಪುನರಾವರ್ತಿಸುತ್ತೆ, ಮತ್ತು ಒಂದು running total ಇಟ್ಟುಕೊಳ್ಳುತ್ತೆ.",
+        "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "total loop ಗೆ ಮುಂಚೆ zero ಇಂದ ಶುರುವಾಗುತ್ತೆ.",
+        "range ಒಂದರಿಂದ ನಾಲ್ಕು, ಒಂದು, ಎರಡು ಮತ್ತು ಮೂರು ಕೊಡುತ್ತೆ. Loop ಶುರುವಾಗುತ್ತೆ, day ಒಂದು.",
+        "Total ಗೆ ಎರಡು tablets ಸೇರುತ್ತವೆ, ಅದಕ್ಕೇ total ಎರಡು.",
+        "print ದಿನ ಒಂದನ್ನು ತೋರಿಸುತ್ತೆ.",
+        "Block ಮುಗಿಯಿತು, ಅದಕ್ಕೇ ಪೈಥಾನ್ loop ನ ಮೇಲಕ್ಕೆ ಹಿಂತಿರುಗುತ್ತೆ. day ಎರಡು ಆಗುತ್ತೆ.",
+        "total ನಾಲ್ಕು ಆಗುತ್ತೆ, print ದಿನ ಎರಡನ್ನು ತೋರಿಸುತ್ತೆ.",
+        "ದಿನ ಮೂರಕ್ಕೆ ಇನ್ನೊಂದು ಸಲ. total ಆರು ಆಗುತ್ತೆ.",
+        "range ನಲ್ಲಿ ಯಾವ number ಕೂಡ ಉಳಿದಿಲ್ಲ, ಅದಕ್ಕೇ loop ಮುಗಿಯುತ್ತೆ. ಕೊನೆಯ line indent ಆಗಿಲ್ಲ, ಅದಕ್ಕೇ ಒಂದು ಸಲ run ಆಗಿ total ತೋರಿಸುತ್ತೆ."
+      ],
+      "display": [
+        "ಈ program ಎರಡು lines ಅನ್ನು course ನ ಪ್ರತಿ ದಿನಕ್ಕೆ ಒಂದು ಸಲ ಪುನರಾವರ್ತಿಸುತ್ತೆ, ಮತ್ತು ಒಂದು running total ಇಟ್ಟುಕೊಳ್ಳುತ್ತೆ.",
+        "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "total loop ಗೆ ಮುಂಚೆ zero ಇಂದ ಶುರುವಾಗುತ್ತೆ.",
+        "range ಒಂದರಿಂದ ನಾಲ್ಕು, ಒಂದು, ಎರಡು ಮತ್ತು ಮೂರು ಕೊಡುತ್ತೆ. Loop ಶುರುವಾಗುತ್ತೆ, day ಒಂದು.",
+        "Total ಗೆ ಎರಡು tablets ಸೇರುತ್ತವೆ, ಅದಕ್ಕೇ total ಎರಡು.",
+        "print ದಿನ ಒಂದನ್ನು ತೋರಿಸುತ್ತೆ.",
+        "Block ಮುಗಿಯಿತು, ಅದಕ್ಕೇ Python loop ನ ಮೇಲಕ್ಕೆ ಹಿಂತಿರುಗುತ್ತೆ. day ಎರಡು ಆಗುತ್ತೆ.",
+        "total ನಾಲ್ಕು ಆಗುತ್ತೆ, print ದಿನ ಎರಡನ್ನು ತೋರಿಸುತ್ತೆ.",
+        "ದಿನ ಮೂರಕ್ಕೆ ಇನ್ನೊಂದು ಸಲ. total ಆರು ಆಗುತ್ತೆ.",
+        "range ನಲ್ಲಿ ಯಾವ number ಕೂಡ ಉಳಿದಿಲ್ಲ, ಅದಕ್ಕೇ loop ಮುಗಿಯುತ್ತೆ. ಕೊನೆಯ line indent ಆಗಿಲ್ಲ, ಅದಕ್ಕೇ ಒಂದು ಸಲ run ಆಗಿ total ತೋರಿಸುತ್ತೆ."
+      ]
+    },
+    {
+      "id": "anim-loop",
+      "prefix": "anim-loop-",
+      "lang": "en",
+      "tts": [
+        "total starts at zero. The loop will go round three times, for days one, two and three.",
+        "First time round, day is one. Two tablets are added, and day one is printed.",
+        "Back to the top. day is two, and total grows to four.",
+        "Once more: day three, total six.",
+        "No numbers are left, so the loop ends, and the last line runs just once."
+      ],
+      "display": [
+        "total starts at zero. The loop will go round three times, for days one, two and three.",
+        "First time round, day is one. Two tablets are added, and day one is printed.",
+        "Back to the top. day is two, and total grows to four.",
+        "Once more: day three, total six.",
+        "No numbers are left, so the loop ends, and the last line runs just once."
+      ]
+    },
+    {
+      "id": "anim-loop",
+      "prefix": "anim-loop-",
+      "lang": "hi",
+      "tts": [
+        "total zero से शुरू होता है। Loop तीन बार घूमेगा, दिन एक, दो और तीन के लिए।",
+        "पहली बार day एक है। दो tablets जुड़ती हैं, और दिन एक print होता है।",
+        "वापस ऊपर। day दो है, और total बढ़कर चार हो जाता है।",
+        "एक बार और: दिन तीन, total छह।",
+        "कोई number नहीं बचा, इसलिए loop खत्म होता है, और आखिरी line सिर्फ़ एक बार चलती है।"
+      ],
+      "display": [
+        "total zero से शुरू होता है। Loop तीन बार घूमेगा, दिन एक, दो और तीन के लिए।",
+        "पहली बार day एक है। दो tablets जुड़ती हैं, और दिन एक print होता है।",
+        "वापस ऊपर। day दो है, और total बढ़कर चार हो जाता है।",
+        "एक बार और: दिन तीन, total छह।",
+        "कोई number नहीं बचा, इसलिए loop खत्म होता है, और आखिरी line सिर्फ़ एक बार चलती है।"
+      ],
+      "displayHinglish": [
+        "total zero se shuru hota hai. Loop teen baar ghoomega, din ek, do aur teen ke liye.",
+        "Pehli baar day ek hai. Do tablets judti hain, aur din ek print hota hai.",
+        "Wapas upar. day do hai, aur total badhkar chaar ho jaata hai.",
+        "Ek baar aur: din teen, total chhah.",
+        "Koi number nahi bacha, isliye loop khatam hota hai, aur aakhri line sirf ek baar chalti hai."
+      ]
+    },
+    {
+      "id": "anim-loop",
+      "prefix": "anim-loop-",
+      "lang": "kn",
+      "tts": [
+        "total zero ಇಂದ ಶುರುವಾಗುತ್ತೆ. Loop ಮೂರು ಸಲ ಸುತ್ತುತ್ತೆ, ದಿನ ಒಂದು, ಎರಡು ಮತ್ತು ಮೂರಕ್ಕೆ.",
+        "ಮೊದಲ ಸುತ್ತಿನಲ್ಲಿ day ಒಂದು. ಎರಡು tablets ಸೇರುತ್ತವೆ, ದಿನ ಒಂದು print ಆಗುತ್ತೆ.",
+        "ಮತ್ತೆ ಮೇಲಕ್ಕೆ. day ಎರಡು, total ನಾಲ್ಕಕ್ಕೆ ಬೆಳೆಯುತ್ತೆ.",
+        "ಇನ್ನೊಂದು ಸಲ: ದಿನ ಮೂರು, total ಆರು.",
+        "ಯಾವ number ಕೂಡ ಉಳಿದಿಲ್ಲ, ಅದಕ್ಕೇ loop ಮುಗಿಯುತ್ತೆ, ಕೊನೆಯ line ಒಂದೇ ಸಲ run ಆಗುತ್ತೆ."
+      ],
+      "display": [
+        "total zero ಇಂದ ಶುರುವಾಗುತ್ತೆ. Loop ಮೂರು ಸಲ ಸುತ್ತುತ್ತೆ, ದಿನ ಒಂದು, ಎರಡು ಮತ್ತು ಮೂರಕ್ಕೆ.",
+        "ಮೊದಲ ಸುತ್ತಿನಲ್ಲಿ day ಒಂದು. ಎರಡು tablets ಸೇರುತ್ತವೆ, ದಿನ ಒಂದು print ಆಗುತ್ತೆ.",
+        "ಮತ್ತೆ ಮೇಲಕ್ಕೆ. day ಎರಡು, total ನಾಲ್ಕಕ್ಕೆ ಬೆಳೆಯುತ್ತೆ.",
+        "ಇನ್ನೊಂದು ಸಲ: ದಿನ ಮೂರು, total ಆರು.",
+        "ಯಾವ number ಕೂಡ ಉಳಿದಿಲ್ಲ, ಅದಕ್ಕೇ loop ಮುಗಿಯುತ್ತೆ, ಕೊನೆಯ line ಒಂದೇ ಸಲ run ಆಗುತ್ತೆ."
+      ]
+    }
+  ]
+}

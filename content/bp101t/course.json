@@ -142,8 +142,12 @@
         {
           "id": "2-3",
           "title": "for loops",
-          "available": false,
-          "translations": []
+          "available": true,
+          "translations": [
+            "hi",
+            "hinglish",
+            "kn"
+          ]
         },
         {
           "id": "2-4",
