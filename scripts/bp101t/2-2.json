@@ -1,0 +1,174 @@
+{
+  "course": "bp101t",
+  "lesson": "2-2",
+  "voices": {
+    "en": "Ritu",
+    "hi": "Ritu",
+    "kn": "Chaitra"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program asks two questions, one inside the other. First: is the weight sensible? Then: is the patient a child?",
+        "The comment says what the program does, and that it is only for learning.",
+        "age stores eight.",
+        "weight stores twenty-four, in kilograms.",
+        "The outer if checks that the weight is more than zero. Twenty-four is, so Python enters the outer block.",
+        "Inside it, the inner if asks: is age less than twelve? Eight is, so Python enters the inner block.",
+        "dose is fifteen times twenty-four, which is three hundred and sixty.",
+        "print shows the child dose.",
+        "This else has four spaces, so it belongs to the inner if. The inner if was True, so it is skipped.",
+        "This else is at the left edge, so it belongs to the outer if. That was True too, so this is skipped, and the program ends."
+      ],
+      "display": [
+        "This program asks two questions, one inside the other. First: is the weight sensible? Then: is the patient a child?",
+        "The comment says what the program does, and that it is only for learning.",
+        "age stores eight.",
+        "weight stores twenty-four, in kilograms.",
+        "The outer if checks that the weight is more than zero. Twenty-four is, so Python enters the outer block.",
+        "Inside it, the inner if asks: is age less than twelve? Eight is, so Python enters the inner block.",
+        "dose is fifteen times twenty-four, which is three hundred and sixty.",
+        "print shows the child dose.",
+        "This else has four spaces, so it belongs to the inner if. The inner if was True, so it is skipped.",
+        "This else is at the left edge, so it belongs to the outer if. That was True too, so this is skipped, and the program ends."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह program दो सवाल पूछता है, एक दूसरे के अंदर। पहला: क्या वज़न ठीक है? फिर: क्या patient बच्चा है?",
+        "Comment बताता है कि program क्या करता है, और यह कि यह सिर्फ़ सीखने के लिए है।",
+        "age में आठ store होता है।",
+        "weight में चौबीस store होता है, kilogram में।",
+        "बाहर वाला if जाँचता है कि वज़न zero से ज़्यादा है। चौबीस है, इसलिए पाइथन बाहर वाले block में जाता है।",
+        "उसके अंदर, अंदर वाला if पूछता है: क्या age बारह से कम है? आठ है, इसलिए पाइथन अंदर वाले block में जाता है।",
+        "dose है पंद्रह गुणा चौबीस, यानी तीन सौ साठ।",
+        "print child dose दिखाता है।",
+        "इस else में चार spaces हैं, इसलिए यह अंदर वाले if का है। अंदर वाला if True था, इसलिए यह छूट जाता है।",
+        "यह else left edge पर है, इसलिए यह बाहर वाले if का है। वह भी True था, इसलिए यह भी छूट जाता है, और program खत्म होता है।"
+      ],
+      "display": [
+        "यह program दो सवाल पूछता है, एक दूसरे के अंदर। पहला: क्या वज़न ठीक है? फिर: क्या patient बच्चा है?",
+        "Comment बताता है कि program क्या करता है, और यह कि यह सिर्फ़ सीखने के लिए है।",
+        "age में आठ store होता है।",
+        "weight में चौबीस store होता है, kilogram में।",
+        "बाहर वाला if जाँचता है कि वज़न zero से ज़्यादा है। चौबीस है, इसलिए Python बाहर वाले block में जाता है।",
+        "उसके अंदर, अंदर वाला if पूछता है: क्या age बारह से कम है? आठ है, इसलिए Python अंदर वाले block में जाता है।",
+        "dose है पंद्रह गुणा चौबीस, यानी तीन सौ साठ।",
+        "print child dose दिखाता है।",
+        "इस else में चार spaces हैं, इसलिए यह अंदर वाले if का है। अंदर वाला if True था, इसलिए यह छूट जाता है।",
+        "यह else left edge पर है, इसलिए यह बाहर वाले if का है। वह भी True था, इसलिए यह भी छूट जाता है, और program खत्म होता है।"
+      ],
+      "displayHinglish": [
+        "Yeh program do sawaal poochhta hai, ek doosre ke andar. Pehla: kya wazan theek hai? Phir: kya patient bachcha hai?",
+        "Comment batata hai ki program kya karta hai, aur yeh ki yeh sirf seekhne ke liye hai.",
+        "age mein aath store hota hai.",
+        "weight mein chaubees store hota hai, kilogram mein.",
+        "Bahar wala if jaanchta hai ki wazan zero se zyada hai. Chaubees hai, isliye Python bahar wale block mein jaata hai.",
+        "Uske andar, andar wala if poochhta hai: kya age baarah se kam hai? Aath hai, isliye Python andar wale block mein jaata hai.",
+        "dose hai pandrah guna chaubees, yaani teen sau saath.",
+        "print child dose dikhaata hai.",
+        "Is else mein chaar spaces hain, isliye yeh andar wale if ka hai. Andar wala if True tha, isliye yeh chhoot jaata hai.",
+        "Yeh else left edge par hai, isliye yeh bahar wale if ka hai. Woh bhi True tha, isliye yeh bhi chhoot jaata hai, aur program khatam hota hai."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ program ಎರಡು ಪ್ರಶ್ನೆಗಳನ್ನು ಕೇಳುತ್ತೆ, ಒಂದರ ಒಳಗೆ ಇನ್ನೊಂದು. ಮೊದಲು: ತೂಕ ಸರಿಯಾಗಿದೆಯಾ? ಆಮೇಲೆ: patient ಮಗುವಾ?",
+        "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ, ಮತ್ತು ಇದು ಕಲಿಯಲು ಮಾತ್ರ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "age ನಲ್ಲಿ ಎಂಟು store ಆಗುತ್ತೆ.",
+        "weight ನಲ್ಲಿ ಇಪ್ಪತ್ನಾಲ್ಕು store ಆಗುತ್ತೆ, kilogram ನಲ್ಲಿ.",
+        "ಹೊರಗಿನ if ತೂಕ zero ಗಿಂತ ಜಾಸ್ತಿ ಇದೆಯಾ ಅಂತ check ಮಾಡುತ್ತೆ. ಇಪ್ಪತ್ನಾಲ್ಕು ಇದೆ, ಅದಕ್ಕೇ ಪೈಥಾನ್ ಹೊರಗಿನ block ಒಳಗೆ ಹೋಗುತ್ತೆ.",
+        "ಅದರ ಒಳಗೆ, ಒಳಗಿನ if ಕೇಳುತ್ತೆ: age ಹನ್ನೆರಡಕ್ಕಿಂತ ಕಡಿಮೆ ಇದೆಯಾ? ಎಂಟು ಇದೆ, ಅದಕ್ಕೇ ಪೈಥಾನ್ ಒಳಗಿನ block ಒಳಗೆ ಹೋಗುತ್ತೆ.",
+        "dose ಅಂದರೆ ಹದಿನೈದು ಗುಣಿಸು ಇಪ್ಪತ್ನಾಲ್ಕು, ಅಂದರೆ ಮುನ್ನೂರ ಅರವತ್ತು.",
+        "print child dose ತೋರಿಸುತ್ತೆ.",
+        "ಈ else ಗೆ ನಾಲ್ಕು spaces ಇವೆ, ಅದಕ್ಕೇ ಇದು ಒಳಗಿನ if ಗೆ ಸೇರಿದ್ದು. ಒಳಗಿನ if True ಆಗಿತ್ತು, ಅದಕ್ಕೇ ಇದು ಬಿಟ್ಟುಹೋಗುತ್ತೆ.",
+        "ಈ else left edge ನಲ್ಲಿದೆ, ಅದಕ್ಕೇ ಇದು ಹೊರಗಿನ if ಗೆ ಸೇರಿದ್ದು. ಅದೂ True ಆಗಿತ್ತು, ಅದಕ್ಕೇ ಇದೂ ಬಿಟ್ಟುಹೋಗುತ್ತೆ, program ಮುಗಿಯುತ್ತೆ."
+      ],
+      "display": [
+        "ಈ program ಎರಡು ಪ್ರಶ್ನೆಗಳನ್ನು ಕೇಳುತ್ತೆ, ಒಂದರ ಒಳಗೆ ಇನ್ನೊಂದು. ಮೊದಲು: ತೂಕ ಸರಿಯಾಗಿದೆಯಾ? ಆಮೇಲೆ: patient ಮಗುವಾ?",
+        "Comment ಈ program ಏನು ಮಾಡುತ್ತೆ ಅಂತ, ಮತ್ತು ಇದು ಕಲಿಯಲು ಮಾತ್ರ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "age ನಲ್ಲಿ ಎಂಟು store ಆಗುತ್ತೆ.",
+        "weight ನಲ್ಲಿ ಇಪ್ಪತ್ನಾಲ್ಕು store ಆಗುತ್ತೆ, kilogram ನಲ್ಲಿ.",
+        "ಹೊರಗಿನ if ತೂಕ zero ಗಿಂತ ಜಾಸ್ತಿ ಇದೆಯಾ ಅಂತ check ಮಾಡುತ್ತೆ. ಇಪ್ಪತ್ನಾಲ್ಕು ಇದೆ, ಅದಕ್ಕೇ Python ಹೊರಗಿನ block ಒಳಗೆ ಹೋಗುತ್ತೆ.",
+        "ಅದರ ಒಳಗೆ, ಒಳಗಿನ if ಕೇಳುತ್ತೆ: age ಹನ್ನೆರಡಕ್ಕಿಂತ ಕಡಿಮೆ ಇದೆಯಾ? ಎಂಟು ಇದೆ, ಅದಕ್ಕೇ Python ಒಳಗಿನ block ಒಳಗೆ ಹೋಗುತ್ತೆ.",
+        "dose ಅಂದರೆ ಹದಿನೈದು ಗುಣಿಸು ಇಪ್ಪತ್ನಾಲ್ಕು, ಅಂದರೆ ಮುನ್ನೂರ ಅರವತ್ತು.",
+        "print child dose ತೋರಿಸುತ್ತೆ.",
+        "ಈ else ಗೆ ನಾಲ್ಕು spaces ಇವೆ, ಅದಕ್ಕೇ ಇದು ಒಳಗಿನ if ಗೆ ಸೇರಿದ್ದು. ಒಳಗಿನ if True ಆಗಿತ್ತು, ಅದಕ್ಕೇ ಇದು ಬಿಟ್ಟುಹೋಗುತ್ತೆ.",
+        "ಈ else left edge ನಲ್ಲಿದೆ, ಅದಕ್ಕೇ ಇದು ಹೊರಗಿನ if ಗೆ ಸೇರಿದ್ದು. ಅದೂ True ಆಗಿತ್ತು, ಅದಕ್ಕೇ ಇದೂ ಬಿಟ್ಟುಹೋಗುತ್ತೆ, program ಮುಗಿಯುತ್ತೆ."
+      ]
+    },
+    {
+      "id": "anim-nest",
+      "prefix": "anim-nest-",
+      "lang": "en",
+      "tts": [
+        "This medicine needs a fridge, and the thermometer shows twelve degrees.",
+        "The outer question comes first: does it need a fridge? Yes, so Python steps inside.",
+        "Only now is the inner question asked: is it eight degrees or colder? Twelve is not.",
+        "So the inner else runs. It lines up with the inner if.",
+        "The outer else belongs to the outer if, which was True, so it is skipped."
+      ],
+      "display": [
+        "This medicine needs a fridge, and the thermometer shows twelve degrees.",
+        "The outer question comes first: does it need a fridge? Yes, so Python steps inside.",
+        "Only now is the inner question asked: is it eight degrees or colder? Twelve is not.",
+        "So the inner else runs. It lines up with the inner if.",
+        "The outer else belongs to the outer if, which was True, so it is skipped."
+      ]
+    },
+    {
+      "id": "anim-nest",
+      "prefix": "anim-nest-",
+      "lang": "hi",
+      "tts": [
+        "इस दवा को fridge चाहिए, और thermometer बारह degree दिखा रहा है।",
+        "पहले बाहर वाला सवाल: क्या इसे fridge चाहिए? हाँ, इसलिए पाइथन अंदर जाता है।",
+        "अब जाकर अंदर वाला सवाल पूछा जाता है: क्या यह आठ degree या उससे ठंडा है? बारह नहीं है।",
+        "इसलिए अंदर वाला else चलता है। यह अंदर वाले if की सीध में है।",
+        "बाहर वाला else बाहर वाले if का है, जो True था, इसलिए वह छूट जाता है।"
+      ],
+      "display": [
+        "इस दवा को fridge चाहिए, और thermometer बारह degree दिखा रहा है।",
+        "पहले बाहर वाला सवाल: क्या इसे fridge चाहिए? हाँ, इसलिए Python अंदर जाता है।",
+        "अब जाकर अंदर वाला सवाल पूछा जाता है: क्या यह आठ degree या उससे ठंडा है? बारह नहीं है।",
+        "इसलिए अंदर वाला else चलता है। यह अंदर वाले if की सीध में है।",
+        "बाहर वाला else बाहर वाले if का है, जो True था, इसलिए वह छूट जाता है।"
+      ],
+      "displayHinglish": [
+        "Is dawa ko fridge chahiye, aur thermometer baarah degree dikha raha hai.",
+        "Pehle bahar wala sawaal: kya ise fridge chahiye? Haan, isliye Python andar jaata hai.",
+        "Ab jaakar andar wala sawaal poochha jaata hai: kya yeh aath degree ya usse thanda hai? Baarah nahi hai.",
+        "Isliye andar wala else chalta hai. Yeh andar wale if ki seedh mein hai.",
+        "Bahar wala else bahar wale if ka hai, jo True tha, isliye woh chhoot jaata hai."
+      ]
+    },
+    {
+      "id": "anim-nest",
+      "prefix": "anim-nest-",
+      "lang": "kn",
+      "tts": [
+        "ಈ ಔಷಧಕ್ಕೆ fridge ಬೇಕು, thermometer ಹನ್ನೆರಡು degree ತೋರಿಸುತ್ತಿದೆ.",
+        "ಮೊದಲು ಹೊರಗಿನ ಪ್ರಶ್ನೆ: ಇದಕ್ಕೆ fridge ಬೇಕಾ? ಹೌದು, ಅದಕ್ಕೇ ಪೈಥಾನ್ ಒಳಗೆ ಹೋಗುತ್ತೆ.",
+        "ಈಗ ಮಾತ್ರ ಒಳಗಿನ ಪ್ರಶ್ನೆ ಕೇಳಲಾಗುತ್ತೆ: ಇದು ಎಂಟು degree ಅಥವಾ ಅದಕ್ಕಿಂತ ತಣ್ಣಗಿದೆಯಾ? ಹನ್ನೆರಡು ಇಲ್ಲ.",
+        "ಅದಕ್ಕೇ ಒಳಗಿನ else run ಆಗುತ್ತೆ. ಇದು ಒಳಗಿನ if ನ ಸಾಲಿನಲ್ಲಿದೆ.",
+        "ಹೊರಗಿನ else ಹೊರಗಿನ if ಗೆ ಸೇರಿದ್ದು, ಅದು True ಆಗಿತ್ತು, ಅದಕ್ಕೇ ಅದು ಬಿಟ್ಟುಹೋಗುತ್ತೆ."
+      ],
+      "display": [
+        "ಈ ಔಷಧಕ್ಕೆ fridge ಬೇಕು, thermometer ಹನ್ನೆರಡು degree ತೋರಿಸುತ್ತಿದೆ.",
+        "ಮೊದಲು ಹೊರಗಿನ ಪ್ರಶ್ನೆ: ಇದಕ್ಕೆ fridge ಬೇಕಾ? ಹೌದು, ಅದಕ್ಕೇ Python ಒಳಗೆ ಹೋಗುತ್ತೆ.",
+        "ಈಗ ಮಾತ್ರ ಒಳಗಿನ ಪ್ರಶ್ನೆ ಕೇಳಲಾಗುತ್ತೆ: ಇದು ಎಂಟು degree ಅಥವಾ ಅದಕ್ಕಿಂತ ತಣ್ಣಗಿದೆಯಾ? ಹನ್ನೆರಡು ಇಲ್ಲ.",
+        "ಅದಕ್ಕೇ ಒಳಗಿನ else run ಆಗುತ್ತೆ. ಇದು ಒಳಗಿನ if ನ ಸಾಲಿನಲ್ಲಿದೆ.",
+        "ಹೊರಗಿನ else ಹೊರಗಿನ if ಗೆ ಸೇರಿದ್ದು, ಅದು True ಆಗಿತ್ತು, ಅದಕ್ಕೇ ಅದು ಬಿಟ್ಟುಹೋಗುತ್ತೆ."
+      ]
+    }
+  ]
+}

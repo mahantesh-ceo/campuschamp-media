@@ -1,0 +1,322 @@
+{
+  "hook": {
+    "title": "Ek sawaal se agla sawaal",
+    "md": "Ek parent apne bachche ke liye bukhaar ki dawa maangte hain. Pharmacist ka pehla sawaal: **bachcha hai ya bada?** Bachcha ho, tabhi agla sawaal matter karta hai: **bachche ka wazan kitna hai?**\n\nKuch faisle kisi doosre faisle ke **andar** hi samajh aate hain. Is lesson mein aap `if` ke andar `if` likhenge.\n\n*Is lesson ki doses sirf Python seekhne ke liye hain. Asli dose hamesha prescriber aur label se aati hai.*"
+  },
+  "learn": [
+    "Ek **if** ko doosre **if** ke andar kaise rakhein (**nested** condition)",
+    "**Indentation** kaise batata hai ki kaun-sa `else` kis `if` ka hai",
+    "Nested `if` kab use karein, aur kab **and** ya **elif** aasaan hai",
+    "Kisi value ko use karne se pehle **use jaanchna**"
+  ],
+  "explanation": [
+    {
+      "heading": "Faisle ke andar faisla",
+      "md": "**Nested if** ek `if` statement hai jo kisi doosre `if` (ya `else`) ke block ke andar ho. Andar wala sawaal tabhi poochha jaata hai jab bahar wala jawaab wahaan tak le jaaye.\n\nInsulin aur kai vaccines 2 se 8 °C ke beech rakhne hote hain. Storage check pehle poochhta hai ki dawa ko fridge chahiye ya nahi, aur uske baad hi temperature jaanchta hai:\n\n```python\nneeds_fridge = True\ntemp = 12\nif needs_fridge:\n    if temp <= 8:\n        print(\"Stored correctly\")\n    else:\n        print(\"Too warm: move to the fridge\")\nelse:\n    print(\"Store at room temperature\")\n```\n\nYeh `Too warm: move to the fridge` print karta hai. Bahar wala `if` `True` hai, isliye Python uske block mein jaata hai. Wahaan `temp <= 8` `False` hai, isliye andar wala `else` chalta hai.\n\nAgar `needs_fridge` `False` hota, to Python temperature dekhta hi nahi: seedha bahar wale `else` par jaata.",
+      "callout": {
+        "title": "Nested if",
+        "md": "Kisi doosre if ya else ke block ke andar likha if statement. Andar ki condition tabhi jaanchi jaati hai jab Python us block tak pahunche."
+      }
+    },
+    {
+      "heading": "Indentation levels dikhaata hai",
+      "md": "Nesting ka har level **4 aur spaces** jodta hai:\n\n- Bahar wala `if` aur uska `else` left edge se shuru hote hain.\n- Andar wala `if` aur uska `else` **4 spaces** ke baad shuru hote hain.\n- Andar ke blocks ki lines **8 spaces** ke baad shuru hoti hain.\n\n`else` us `if` ka hota hai jo **usi indentation** par ho. Storage example mein 4 spaces wala `else`, `if temp <= 8` ke saath judta hai, aur left edge wala `else`, `if needs_fridge` ke saath.",
+      "callout": {
+        "title": "Har else ko uske if ki seedh mein rakhiye",
+        "md": "else ko 4 spaces khiskaaiye aur woh kisi doosre if se jud jaayega. Python shaayad error na de, par program galat faisla lega."
+      }
+    },
+    {
+      "heading": "Nested if, ya and?",
+      "md": "Jab andar wale `if` ka koi `else` na ho, to nested `if` ka matlab **and** wale ek `if` jaisa hi hai:\n\n```python\n# Nested\nif age >= 18:\n    if weight >= 50:\n        print(\"Standard adult dose\")\n\n# Same thing with and\nif age >= 18 and weight >= 50:\n    print(\"Standard adult dose\")\n```\n\n`and` wala roop chhota aur padhne mein aasaan hai. Nesting tab use kijiye jab andar wale faisle ka **apna** `else` ho, ya bahar wala block pehle koi aur kaam kare, jaise agle example mein.",
+      "callout": {
+        "title": "Nesting kam rakhiye",
+        "md": "Aam taur par nesting ke do levels kaafi hain. Zyada gehre jaayein to and, or ya elif chain aazmaaiye."
+      }
+    },
+    {
+      "heading": "Do sawaalon ke beech kaam karna",
+      "md": "Bachchon ka dose aksar shareer ke wazan se nikaala jaata hai, jaise har kg ke liye 15 mg, ek oopari limit ke saath. Limit dose nikaalne ke **baad** hi matter karti hai, isliye check child block ke andar hai:\n\n```python\nage = 8\nweight = 24\nif age < 12:\n    dose = 15 * weight\n    if dose > 500:\n        dose = 500\n    print(\"Child dose:\", dose, \"mg\")\nelse:\n    print(\"Adult dose: 500 mg\")\n```\n\nYeh `Child dose: 360 mg` print karta hai, kyonki 15 × 24 = 360 aur 360, 500 se zyada nahi hai. 40 kg ke bachche ke liye 15 × 40 = 600, to andar wala `if` use 500 par rok dega.\n\nDhyaan dijiye, `print(\"Child dose:\", ...)` mein 4 spaces hain, 8 nahi: yeh har bachche ke liye chalta hai, dose ruka ho ya nahi."
+    },
+    {
+      "heading": "Pehle value jaanchiye",
+      "md": "Program ko aisi value se hisaab nahi lagaana chahiye jiska koi matlab na ho, jaise 0 ya negative wazan. Check ko **bahar wale** `if` mein rakhiye, aur asli kaam uske andar kijiye:\n\n```python\nweight = 0\nif weight > 0:\n    print(\"Dose:\", 15 * weight, \"mg\")\nelse:\n    print(\"Check the weight\")\n```\n\nYeh `Check the weight` print karta hai. Aise checks galti se type hue number se patient ko bachaate hain. Asli programs user ki type ki hui har value jaanchte hain."
+    }
+  ],
+  "walkthrough": {
+    "intro": "Yeh program pehle wazan jaanchta hai, phir child dose aur adult dose mein se ek chunta hai. Yeh sirf Python seekhne ke liye hai, asli dosing ke liye nahi.",
+    "keyTerms": [
+      {
+        "meaning": "Pehla sawaal: kya wazan 0 se zyada hai?"
+      },
+      {
+        "meaning": "Sirf bahar wale block ke andar poochha jaata hai: kya patient bachcha hai?"
+      },
+      {
+        "meaning": "Nesting ka ek level, phir do."
+      },
+      {
+        "meaning": "else usi indentation wale if ka hota hai."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Yeh program do sawaal poochhta hai, ek doosre ke andar. Pehla: kya wazan theek hai? Phir: kya patient bachcha hai?"
+      },
+      {
+        "say": "Comment batata hai ki program kya karta hai, aur yeh ki yeh sirf seekhne ke liye hai."
+      },
+      {
+        "say": "age mein aath store hota hai."
+      },
+      {
+        "say": "weight mein chaubees store hota hai, kilogram mein."
+      },
+      {
+        "say": "Bahar wala if jaanchta hai ki wazan zero se zyada hai. Chaubees hai, isliye Python bahar wale block mein jaata hai."
+      },
+      {
+        "say": "Uske andar, andar wala if poochhta hai: kya age baarah se kam hai? Aath hai, isliye Python andar wale block mein jaata hai."
+      },
+      {
+        "say": "dose hai pandrah guna chaubees, yaani teen sau saath."
+      },
+      {
+        "say": "print child dose dikhaata hai."
+      },
+      {
+        "say": "Is else mein chaar spaces hain, isliye yeh andar wale if ka hai. Andar wala if True tha, isliye yeh chhoot jaata hai."
+      },
+      {
+        "say": "Yeh else left edge par hai, isliye yeh bahar wale if ka hai. Woh bhi True tha, isliye yeh bhi chhoot jaata hai, aur program khatam hota hai."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Nested blocks mein indentation dhyaan se chahiye. Yeh do errors galat jagah spaces se aati hain.",
+    "examples": [
+      {
+        "title": "Aisa else jo kisi ki seedh mein nahi",
+        "md": "`else` mein 6 spaces hain, par upar kisi `if` mein 6 nahi hain. Ise us `if` ki seedh mein rakhiye jiska yeh hai: `if age < 2:` ke saath judne ke liye 4 spaces."
+      },
+      {
+        "title": "Andar wala block indent nahi hai",
+        "md": "Andar wale `if` ko bhi apna indent kiya hua block chahiye. `print(\"Infant\")` ko 8 spaces dijiye: 4 bahar wale level ke, aur 4 andar wale ke."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "`else` ko galat level par rakhna, jisse woh bahar wale `if` se jud jaaye",
+      "see": "Koi error nahi, par galat message print hota hai, ya kuch bhi nahi",
+      "fix": "`else` ko theek us `if` ke neeche rakhiye jiska woh hai."
+    },
+    {
+      "mistake": "Variable sirf ek branch mein banaana, phir `if` ke baad use karna",
+      "see": "NameError: name 'dose' is not defined",
+      "fix": "Har branch mein variable ko value dijiye, ya `if` se pehle."
+    },
+    {
+      "mistake": "Teen-chaar levels gehri nesting karna",
+      "see": "Koi error nahi, par program padhna mushkil aur bigadna aasaan",
+      "fix": "Conditions ko `and` se jodiye, ya `elif` chain use kijiye."
+    },
+    {
+      "mistake": "Value jaanchne se pehle usse hisaab lagaana, jaise 0 wazan",
+      "see": "Koi error nahi, par dose 0 mg ya negative aata hai",
+      "fix": "Pehle bahar wale `if` mein value jaanchiye."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Kya vaccine sahi rakha hai?",
+      "md": "Vaccine ko fridge chahiye, aur fridge 5 °C dikha raha hai. **Nested if** use kijiye taaki output bilkul yeh ho:",
+      "hints": [
+        "if needs_fridge: se shuru kijiye aur uske andar, 4 spaces par, if temp <= 8: rakhiye.",
+        "if needs_fridge:\n    if temp <= 8:\n        print(\"Stored correctly\")\n    else:\n        print(\"Too warm\")\nelse:\n    print(\"Room temperature\")"
+      ]
+    },
+    {
+      "title": "Wazan se child dose",
+      "md": "Bachche (12 se kam) ke liye dose har kg par 15 mg hai. Baaki sabke liye \"Adult dose: 500 mg\" print kijiye. 20 kg ke is 6 saal ke bachche ke liye output bilkul yeh hona chahiye:",
+      "hints": [
+        "if age < 12: ke andar dose = 15 * weight nikaaliye.",
+        "if age < 12:\n    dose = 15 * weight\n    print(\"Child dose:\", dose, \"mg\")\nelse:\n    print(\"Adult dose: 500 mg\")"
+      ]
+    },
+    {
+      "title": "Safety check jodiye",
+      "md": "Kisi ne negative wazan type kar diya, aur program aaraam se negative dose print kar raha hai. Dose wale code ko ek bahari `if weight > 0:` mein rakhiye, aur warna \"Check the weight\" print kijiye. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "Upar if weight > 0: rakhiye, aur poore age check ko 4 spaces aur andar kijiye.",
+        "if weight > 0:\n    if age < 12:\n        print(\"Child dose:\", 15 * weight, \"mg\")\n    else:\n        print(\"Adult dose: 500 mg\")\nelse:\n    print(\"Check the weight\")"
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "Yeh 30 saal ki patient pregnant nahi hai, to program ko \"Standard adult dose\" print karna chahiye. Par yeh kuch bhi print nahi karta, aur koi error bhi nahi. Ise theek kijiye taaki output bilkul yeh ho:",
+      "hints": [
+        "else kis if ka hai? Uska indentation dekhiye.",
+        "else ko if pregnant: se judna chahiye, isliye use 4 spaces dijiye, aur uske print ko 8."
+      ],
+      "solutionNote": "Left edge par else, if age >= 18 se juda tha, jo True tha, isliye woh kabhi nahi chala. 4 spaces par woh if pregnant: se judta hai, jo False hai, isliye chalta hai."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "a = 5\nb = 2\nif a > 3:\n    if b > 3:\n        print(\"X\")\n    else:\n        print(\"Y\")\nelse:\n    print(\"Z\")\n\nYeh kya print karta hai?",
+      "why": "a > 3 True hai, isliye Python bahar wale block mein jaata hai; b > 3 False hai, isliye andar wala else Y print karta hai."
+    },
+    {
+      "q": "Nested code mein Python kaise jaanta hai ki else kis if ka hai?",
+      "why": "else usi indentation wale if se judta hai."
+    },
+    {
+      "q": "Kaun-si ek line is nested code (bina else) jaisi hi hai?\n\nif a:\n    if b:\n        print(\"OK\")",
+      "why": "print tak pahunchne ke liye dono conditions True honi chahiye, yahi and ka matlab hai."
+    },
+    {
+      "q": "Andar wale if (do level gehre) ke andar ki line kitne spaces se shuru hoti hai?",
+      "why": "Har level 4 spaces jodta hai: 4 + 4 = 8."
+    },
+    {
+      "q": "age = 15\nif age >= 18:\n    if age >= 65:\n        print(\"Senior\")\n    else:\n        print(\"Adult\")\nelse:\n    print(\"Minor\")\n\nYeh kya print karta hai?",
+      "why": "15 >= 18 False hai, isliye Python poora bahar wala block chhodkar bahar wala else chalaata hai."
+    },
+    {
+      "q": "dose sirf ek aise if block mein bana jiski condition False thi, phir if ke baad print hua. Kya hoga?",
+      "why": "dose banaane wali line kabhi chali hi nahi, isliye yeh naam abhi hai hi nahi."
+    }
+  ],
+  "exam": {
+    "note": "Practice ke liye important questions. University ke asli questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 2.2 · Nested conditions",
+    "children": [
+      {
+        "label": "Nested if",
+        "children": [
+          {
+            "label": "if ke andar if"
+          },
+          {
+            "label": "Pahunchne par hi andar wala sawaal"
+          }
+        ]
+      },
+      {
+        "label": "Indentation",
+        "children": [
+          {
+            "label": "Har level par 4 spaces"
+          },
+          {
+            "label": "else usi level se judta hai"
+          }
+        ]
+      },
+      {
+        "label": "Ya and use karein",
+        "children": [
+          {
+            "label": "Andar else nahi → and"
+          },
+          {
+            "label": "Zyada se zyada 2 levels"
+          }
+        ]
+      },
+      {
+        "label": "Beech mein kaam",
+        "children": [
+          {
+            "label": "Pehle hisaab, phir check"
+          },
+          {
+            "label": "Dose par limit"
+          }
+        ]
+      },
+      {
+        "label": "Pehle jaanchiye",
+        "children": [
+          {
+            "label": "Bahar wala if jaanchta hai"
+          },
+          {
+            "label": "weight > 0"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "IndentationError"
+          },
+          {
+            "label": "NameError"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Nested if** kisi doosre `if` ya `else` ke block ke andar ka `if` hai; andar ki condition tabhi jaanchi jaati hai jab Python wahaan pahunche.",
+    "Nesting ka har level **4 spaces** jodta hai, aur `else` **usi indentation** wale `if` ka hota hai.",
+    "Bina andar wale `else` ka nested `if`, **and** wale ek `if` se likha ja sakta hai; nesting lagbhag do levels tak rakhiye.",
+    "Bahar wale block mein **pehle hisaab** lagaaiye, phir andar wala `if` nateeja jaanche.",
+    "**Value use karne se pehle use jaanchiye**, jaise `if weight > 0:`, taaki type ki galti se galat dose na bane."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Is dawa ko fridge chahiye, aur thermometer baarah degree dikha raha hai."
+        },
+        {
+          "say": "Pehle bahar wala sawaal: kya ise fridge chahiye? Haan, isliye Python andar jaata hai."
+        },
+        {
+          "say": "Ab jaakar andar wala sawaal poochha jaata hai: kya yeh aath degree ya usse thanda hai? Baarah nahi hai."
+        },
+        {
+          "say": "Isliye andar wala else chalta hai. Yeh andar wale if ki seedh mein hai."
+        },
+        {
+          "say": "Bahar wala else bahar wale if ka hai, jo True tha, isliye woh chhoot jaata hai."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Kisi doosre if ya else ke block ke andar likha if statement. Iski condition tabhi jaanchi jaati hai jab Python wahaan pahunche."
+    },
+    {
+      "meaning": "Nested code mein bahar wala if pehle poochha jaata hai; andar wala if uske block mein, 4 spaces aur andar hota hai."
+    },
+    {
+      "meaning": "Program kisi value ko use kare, usse pehle jaanchna ki uska matlab banta hai, jaise weight > 0."
+    },
+    {
+      "meaning": "Jab aap aisa naam use karein jiski abhi koi value nahi, tab Python yeh error deta hai, jaise aisi branch mein bana variable jo chali hi nahi."
+    }
+  ]
+}

@@ -132,8 +132,12 @@
         {
           "id": "2-2",
           "title": "Nested conditions",
-          "available": false,
-          "translations": []
+          "available": true,
+          "translations": [
+            "hi",
+            "hinglish",
+            "kn"
+          ]
         },
         {
           "id": "2-3",

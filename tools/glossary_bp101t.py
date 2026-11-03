@@ -426,6 +426,28 @@ G = {
             "hinglish": "Indentation na ho ya oonchi-neechi ho to Python yeh error deta hai, jaise colon ke baad indent ki hui line na ho.",
             "kn": "Indentation ಇಲ್ಲದಿದ್ದಾಗ ಅಥವಾ ಸರಿಯಾಗಿ ಸಾಲಿನಲ್ಲಿ ಇಲ್ಲದಿದ್ದಾಗ Python ಕೊಡುವ error, ಉದಾ. colon ಆದಮೇಲೆ indent ಮಾಡಿದ line ಇಲ್ಲದಿದ್ದಾಗ."}),
     ],
+    "2-2": [
+        ("Nested if", {
+            "en": "An if statement written inside the block of another if or else. Its condition is checked only when Python reaches it.",
+            "hi": "किसी दूसरे if या else के block के अंदर लिखा if statement। इसकी condition तभी जाँची जाती है जब Python वहाँ पहुँचे।",
+            "hinglish": "Kisi doosre if ya else ke block ke andar likha if statement. Iski condition tabhi jaanchi jaati hai jab Python wahaan pahunche.",
+            "kn": "ಇನ್ನೊಂದು if ಅಥವಾ else ನ block ಒಳಗೆ ಬರೆದ if statement. Python ಅಲ್ಲಿಗೆ ತಲುಪಿದಾಗ ಮಾತ್ರ ಇದರ condition check ಆಗುತ್ತೆ."}),
+        ("Outer and inner if", {
+            "en": "In nested code, the outer if is asked first; the inner if sits inside its block, 4 spaces further in.",
+            "hi": "Nested code में बाहर वाला if पहले पूछा जाता है; अंदर वाला if उसके block में, 4 spaces और अंदर होता है।",
+            "hinglish": "Nested code mein bahar wala if pehle poochha jaata hai; andar wala if uske block mein, 4 spaces aur andar hota hai.",
+            "kn": "Nested code ನಲ್ಲಿ ಹೊರಗಿನ if ಮೊದಲು ಕೇಳಲಾಗುತ್ತೆ; ಒಳಗಿನ if ಅದರ block ಒಳಗೆ, ಇನ್ನೂ 4 spaces ಒಳಗೆ ಇರುತ್ತೆ."}),
+        ("Input check (validation)", {
+            "en": "Checking that a value makes sense, such as weight > 0, before the program uses it.",
+            "hi": "Program किसी value को use करे, उससे पहले जाँचना कि उसका मतलब बनता है, जैसे weight > 0।",
+            "hinglish": "Program kisi value ko use kare, usse pehle jaanchna ki uska matlab banta hai, jaise weight > 0.",
+            "kn": "Program ಒಂದು value ಬಳಸುವ ಮುಂಚೆ ಅದು ಅರ್ಥಪೂರ್ಣವಾಗಿದೆಯಾ ಅಂತ check ಮಾಡುವುದು, ಉದಾ. weight > 0."}),
+        ("NameError", {
+            "en": "The error Python gives when you use a name that has no value yet, for example a variable created only in a branch that didn't run.",
+            "hi": "जब आप ऐसा नाम use करें जिसकी अभी कोई value नहीं, तब Python यह error देता है, जैसे ऐसी branch में बना variable जो चली ही नहीं।",
+            "hinglish": "Jab aap aisa naam use karein jiski abhi koi value nahi, tab Python yeh error deta hai, jaise aisi branch mein bana variable jo chali hi nahi.",
+            "kn": "ಇನ್ನೂ value ಇಲ್ಲದ ಹೆಸರನ್ನು ಬಳಸಿದಾಗ Python ಕೊಡುವ error, ಉದಾ. run ಆಗದ branch ನಲ್ಲಿ ಮಾತ್ರ ಮಾಡಿದ variable."}),
+    ],
 }
 
 

@@ -1,0 +1,322 @@
+{
+  "hook": {
+    "title": "एक सवाल से अगला सवाल",
+    "md": "एक parent अपने बच्चे के लिए बुखार की दवा माँगते हैं। Pharmacist का पहला सवाल: **बच्चा है या बड़ा?** बच्चा हो, तभी अगला सवाल मायने रखता है: **बच्चे का वज़न कितना है?**\n\nकुछ फ़ैसले किसी दूसरे फ़ैसले के **अंदर** ही समझ आते हैं। इस lesson में आप `if` के अंदर `if` लिखेंगे।\n\n*इस lesson की doses सिर्फ़ Python सीखने के लिए हैं। असली dose हमेशा prescriber और label से आती है।*"
+  },
+  "learn": [
+    "एक **if** को दूसरे **if** के अंदर कैसे रखें (**nested** condition)",
+    "**Indentation** कैसे बताता है कि कौन-सा `else` किस `if` का है",
+    "Nested `if` कब use करें, और कब **and** या **elif** आसान है",
+    "किसी value को use करने से पहले **उसे जाँचना**"
+  ],
+  "explanation": [
+    {
+      "heading": "फ़ैसले के अंदर फ़ैसला",
+      "md": "**Nested if** एक `if` statement है जो किसी दूसरे `if` (या `else`) के block के अंदर हो। अंदर वाला सवाल तभी पूछा जाता है जब बाहर वाला जवाब वहाँ तक ले जाए।\n\nInsulin और कई vaccines 2 से 8 °C के बीच रखने होते हैं। Storage check पहले पूछता है कि दवा को fridge चाहिए या नहीं, और उसके बाद ही temperature जाँचता है:\n\n```python\nneeds_fridge = True\ntemp = 12\nif needs_fridge:\n    if temp <= 8:\n        print(\"Stored correctly\")\n    else:\n        print(\"Too warm: move to the fridge\")\nelse:\n    print(\"Store at room temperature\")\n```\n\nयह `Too warm: move to the fridge` print करता है। बाहर वाला `if` `True` है, इसलिए Python उसके block में जाता है। वहाँ `temp <= 8` `False` है, इसलिए अंदर वाला `else` चलता है।\n\nअगर `needs_fridge` `False` होता, तो Python temperature देखता ही नहीं: सीधा बाहर वाले `else` पर जाता।",
+      "callout": {
+        "title": "Nested if",
+        "md": "किसी दूसरे if या else के block के अंदर लिखा if statement। अंदर की condition तभी जाँची जाती है जब Python उस block तक पहुँचे।"
+      }
+    },
+    {
+      "heading": "Indentation levels दिखाता है",
+      "md": "Nesting का हर level **4 और spaces** जोड़ता है:\n\n- बाहर वाला `if` और उसका `else` left edge से शुरू होते हैं।\n- अंदर वाला `if` और उसका `else` **4 spaces** के बाद शुरू होते हैं।\n- अंदर के blocks की lines **8 spaces** के बाद शुरू होती हैं।\n\n`else` उस `if` का होता है जो **उसी indentation** पर हो। Storage example में 4 spaces वाला `else`, `if temp <= 8` के साथ जुड़ता है, और left edge वाला `else`, `if needs_fridge` के साथ।",
+      "callout": {
+        "title": "हर else को उसके if की सीध में रखिए",
+        "md": "else को 4 spaces खिसकाइए और वह किसी दूसरे if से जुड़ जाएगा। Python शायद error न दे, पर program गलत फ़ैसला लेगा।"
+      }
+    },
+    {
+      "heading": "Nested if, या and?",
+      "md": "जब अंदर वाले `if` का कोई `else` न हो, तो nested `if` का मतलब **and** वाले एक `if` जैसा ही है:\n\n```python\n# Nested\nif age >= 18:\n    if weight >= 50:\n        print(\"Standard adult dose\")\n\n# Same thing with and\nif age >= 18 and weight >= 50:\n    print(\"Standard adult dose\")\n```\n\n`and` वाला रूप छोटा और पढ़ने में आसान है। Nesting तब use कीजिए जब अंदर वाले फ़ैसले का **अपना** `else` हो, या बाहर वाला block पहले कोई और काम करे, जैसे अगले example में।",
+      "callout": {
+        "title": "Nesting कम रखिए",
+        "md": "आमतौर पर nesting के दो levels काफ़ी हैं। ज़्यादा गहरे जाएँ तो and, or या elif chain आज़माइए।"
+      }
+    },
+    {
+      "heading": "दो सवालों के बीच काम करना",
+      "md": "बच्चों का dose अक्सर शरीर के वज़न से निकाला जाता है, जैसे हर kg के लिए 15 mg, एक ऊपरी limit के साथ। Limit dose निकालने के **बाद** ही मायने रखती है, इसलिए check child block के अंदर है:\n\n```python\nage = 8\nweight = 24\nif age < 12:\n    dose = 15 * weight\n    if dose > 500:\n        dose = 500\n    print(\"Child dose:\", dose, \"mg\")\nelse:\n    print(\"Adult dose: 500 mg\")\n```\n\nयह `Child dose: 360 mg` print करता है, क्योंकि 15 × 24 = 360 और 360, 500 से ज़्यादा नहीं है। 40 kg के बच्चे के लिए 15 × 40 = 600, तो अंदर वाला `if` उसे 500 पर रोक देगा।\n\nध्यान दीजिए, `print(\"Child dose:\", ...)` में 4 spaces हैं, 8 नहीं: यह हर बच्चे के लिए चलता है, dose रुका हो या नहीं।"
+    },
+    {
+      "heading": "पहले value जाँचिए",
+      "md": "Program को ऐसी value से हिसाब नहीं लगाना चाहिए जिसका कोई मतलब न हो, जैसे 0 या negative वज़न। Check को **बाहर वाले** `if` में रखिए, और असली काम उसके अंदर कीजिए:\n\n```python\nweight = 0\nif weight > 0:\n    print(\"Dose:\", 15 * weight, \"mg\")\nelse:\n    print(\"Check the weight\")\n```\n\nयह `Check the weight` print करता है। ऐसे checks गलती से type हुए number से patient को बचाते हैं। असली programs user की type की हुई हर value जाँचते हैं।"
+    }
+  ],
+  "walkthrough": {
+    "intro": "यह program पहले वज़न जाँचता है, फिर child dose और adult dose में से एक चुनता है। यह सिर्फ़ Python सीखने के लिए है, असली dosing के लिए नहीं।",
+    "keyTerms": [
+      {
+        "meaning": "पहला सवाल: क्या वज़न 0 से ज़्यादा है?"
+      },
+      {
+        "meaning": "सिर्फ़ बाहर वाले block के अंदर पूछा जाता है: क्या patient बच्चा है?"
+      },
+      {
+        "meaning": "Nesting का एक level, फिर दो।"
+      },
+      {
+        "meaning": "else उसी indentation वाले if का होता है।"
+      }
+    ],
+    "steps": [
+      {
+        "say": "यह program दो सवाल पूछता है, एक दूसरे के अंदर। पहला: क्या वज़न ठीक है? फिर: क्या patient बच्चा है?"
+      },
+      {
+        "say": "Comment बताता है कि program क्या करता है, और यह कि यह सिर्फ़ सीखने के लिए है।"
+      },
+      {
+        "say": "age में आठ store होता है।"
+      },
+      {
+        "say": "weight में चौबीस store होता है, kilogram में।"
+      },
+      {
+        "say": "बाहर वाला if जाँचता है कि वज़न zero से ज़्यादा है। चौबीस है, इसलिए Python बाहर वाले block में जाता है।"
+      },
+      {
+        "say": "उसके अंदर, अंदर वाला if पूछता है: क्या age बारह से कम है? आठ है, इसलिए Python अंदर वाले block में जाता है।"
+      },
+      {
+        "say": "dose है पंद्रह गुणा चौबीस, यानी तीन सौ साठ।"
+      },
+      {
+        "say": "print child dose दिखाता है।"
+      },
+      {
+        "say": "इस else में चार spaces हैं, इसलिए यह अंदर वाले if का है। अंदर वाला if True था, इसलिए यह छूट जाता है।"
+      },
+      {
+        "say": "यह else left edge पर है, इसलिए यह बाहर वाले if का है। वह भी True था, इसलिए यह भी छूट जाता है, और program खत्म होता है।"
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Nested blocks में indentation ध्यान से चाहिए। ये दो errors गलत जगह spaces से आती हैं।",
+    "examples": [
+      {
+        "title": "ऐसा else जो किसी की सीध में नहीं",
+        "md": "`else` में 6 spaces हैं, पर ऊपर किसी `if` में 6 नहीं हैं। इसे उस `if` की सीध में रखिए जिसका यह है: `if age < 2:` के साथ जुड़ने के लिए 4 spaces।"
+      },
+      {
+        "title": "अंदर वाला block indent नहीं है",
+        "md": "अंदर वाले `if` को भी अपना indent किया हुआ block चाहिए। `print(\"Infant\")` को 8 spaces दीजिए: 4 बाहर वाले level के, और 4 अंदर वाले के।"
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "`else` को गलत level पर रखना, जिससे वह बाहर वाले `if` से जुड़ जाए",
+      "see": "कोई error नहीं, पर गलत message print होता है, या कुछ भी नहीं",
+      "fix": "`else` को ठीक उस `if` के नीचे रखिए जिसका वह है।"
+    },
+    {
+      "mistake": "Variable सिर्फ़ एक branch में बनाना, फिर `if` के बाद use करना",
+      "see": "NameError: name 'dose' is not defined",
+      "fix": "हर branch में variable को value दीजिए, या `if` से पहले।"
+    },
+    {
+      "mistake": "तीन-चार levels गहरी nesting करना",
+      "see": "कोई error नहीं, पर program पढ़ना मुश्किल और बिगड़ना आसान",
+      "fix": "Conditions को `and` से जोड़िए, या `elif` chain use कीजिए।"
+    },
+    {
+      "mistake": "Value जाँचने से पहले उससे हिसाब लगाना, जैसे 0 वज़न",
+      "see": "कोई error नहीं, पर dose 0 mg या negative आता है",
+      "fix": "पहले बाहर वाले `if` में value जाँचिए।"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "क्या vaccine सही रखा है?",
+      "md": "Vaccine को fridge चाहिए, और fridge 5 °C दिखा रहा है। **Nested if** use कीजिए ताकि output बिल्कुल यह हो:",
+      "hints": [
+        "if needs_fridge: से शुरू कीजिए और उसके अंदर, 4 spaces पर, if temp <= 8: रखिए।",
+        "if needs_fridge:\n    if temp <= 8:\n        print(\"Stored correctly\")\n    else:\n        print(\"Too warm\")\nelse:\n    print(\"Room temperature\")"
+      ]
+    },
+    {
+      "title": "वज़न से child dose",
+      "md": "बच्चे (12 से कम) के लिए dose हर kg पर 15 mg है। बाकी सबके लिए \"Adult dose: 500 mg\" print कीजिए। 20 kg के इस 6 साल के बच्चे के लिए output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "if age < 12: के अंदर dose = 15 * weight निकालिए।",
+        "if age < 12:\n    dose = 15 * weight\n    print(\"Child dose:\", dose, \"mg\")\nelse:\n    print(\"Adult dose: 500 mg\")"
+      ]
+    },
+    {
+      "title": "Safety check जोड़िए",
+      "md": "किसी ने negative वज़न type कर दिया, और program आराम से negative dose print कर रहा है। Dose वाले code को एक बाहरी `if weight > 0:` में रखिए, और वरना \"Check the weight\" print कीजिए। Output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "ऊपर if weight > 0: रखिए, और पूरे age check को 4 spaces और अंदर कीजिए।",
+        "if weight > 0:\n    if age < 12:\n        print(\"Child dose:\", 15 * weight, \"mg\")\n    else:\n        print(\"Adult dose: 500 mg\")\nelse:\n    print(\"Check the weight\")"
+      ]
+    },
+    {
+      "title": "Bug ढूँढिए",
+      "md": "यह 30 साल की patient pregnant नहीं है, तो program को \"Standard adult dose\" print करना चाहिए। पर यह कुछ भी print नहीं करता, और कोई error भी नहीं। इसे ठीक कीजिए ताकि output बिल्कुल यह हो:",
+      "hints": [
+        "else किस if का है? उसका indentation देखिए।",
+        "else को if pregnant: से जुड़ना चाहिए, इसलिए उसे 4 spaces दीजिए, और उसके print को 8।"
+      ],
+      "solutionNote": "Left edge पर else, if age >= 18 से जुड़ा था, जो True था, इसलिए वह कभी नहीं चला। 4 spaces पर वह if pregnant: से जुड़ता है, जो False है, इसलिए चलता है।"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "a = 5\nb = 2\nif a > 3:\n    if b > 3:\n        print(\"X\")\n    else:\n        print(\"Y\")\nelse:\n    print(\"Z\")\n\nयह क्या print करता है?",
+      "why": "a > 3 True है, इसलिए Python बाहर वाले block में जाता है; b > 3 False है, इसलिए अंदर वाला else Y print करता है।"
+    },
+    {
+      "q": "Nested code में Python कैसे जानता है कि else किस if का है?",
+      "why": "else उसी indentation वाले if से जुड़ता है।"
+    },
+    {
+      "q": "कौन-सी एक line इस nested code (बिना else) जैसी ही है?\n\nif a:\n    if b:\n        print(\"OK\")",
+      "why": "print तक पहुँचने के लिए दोनों conditions True होनी चाहिए, यही and का मतलब है।"
+    },
+    {
+      "q": "अंदर वाले if (दो level गहरे) के अंदर की line कितने spaces से शुरू होती है?",
+      "why": "हर level 4 spaces जोड़ता है: 4 + 4 = 8।"
+    },
+    {
+      "q": "age = 15\nif age >= 18:\n    if age >= 65:\n        print(\"Senior\")\n    else:\n        print(\"Adult\")\nelse:\n    print(\"Minor\")\n\nयह क्या print करता है?",
+      "why": "15 >= 18 False है, इसलिए Python पूरा बाहर वाला block छोड़कर बाहर वाला else चलाता है।"
+    },
+    {
+      "q": "dose सिर्फ़ एक ऐसे if block में बना जिसकी condition False थी, फिर if के बाद print हुआ। क्या होगा?",
+      "why": "dose बनाने वाली line कभी चली ही नहीं, इसलिए यह नाम अभी है ही नहीं।"
+    }
+  ],
+  "exam": {
+    "note": "Practice के लिए important questions। University के असली questions अलग हो सकते हैं।"
+  },
+  "mindmap": {
+    "label": "Lesson 2.2 · Nested conditions",
+    "children": [
+      {
+        "label": "Nested if",
+        "children": [
+          {
+            "label": "if के अंदर if"
+          },
+          {
+            "label": "पहुँचने पर ही अंदर वाला सवाल"
+          }
+        ]
+      },
+      {
+        "label": "Indentation",
+        "children": [
+          {
+            "label": "हर level पर 4 spaces"
+          },
+          {
+            "label": "else उसी level से जुड़ता है"
+          }
+        ]
+      },
+      {
+        "label": "या and use करें",
+        "children": [
+          {
+            "label": "अंदर else नहीं → and"
+          },
+          {
+            "label": "ज़्यादा से ज़्यादा 2 levels"
+          }
+        ]
+      },
+      {
+        "label": "बीच में काम",
+        "children": [
+          {
+            "label": "पहले हिसाब, फिर check"
+          },
+          {
+            "label": "Dose पर limit"
+          }
+        ]
+      },
+      {
+        "label": "पहले जाँचिए",
+        "children": [
+          {
+            "label": "बाहर वाला if जाँचता है"
+          },
+          {
+            "label": "weight > 0"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "IndentationError"
+          },
+          {
+            "label": "NameError"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Nested if** किसी दूसरे `if` या `else` के block के अंदर का `if` है; अंदर की condition तभी जाँची जाती है जब Python वहाँ पहुँचे।",
+    "Nesting का हर level **4 spaces** जोड़ता है, और `else` **उसी indentation** वाले `if` का होता है।",
+    "बिना अंदर वाले `else` का nested `if`, **and** वाले एक `if` से लिखा जा सकता है; nesting लगभग दो levels तक रखिए।",
+    "बाहर वाले block में **पहले हिसाब** लगाइए, फिर अंदर वाला `if` नतीजा जाँचे।",
+    "**Value use करने से पहले उसे जाँचिए**, जैसे `if weight > 0:`, ताकि type की गलती से गलत dose न बने।"
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "इस दवा को fridge चाहिए, और thermometer बारह degree दिखा रहा है।"
+        },
+        {
+          "say": "पहले बाहर वाला सवाल: क्या इसे fridge चाहिए? हाँ, इसलिए Python अंदर जाता है।"
+        },
+        {
+          "say": "अब जाकर अंदर वाला सवाल पूछा जाता है: क्या यह आठ degree या उससे ठंडा है? बारह नहीं है।"
+        },
+        {
+          "say": "इसलिए अंदर वाला else चलता है। यह अंदर वाले if की सीध में है।"
+        },
+        {
+          "say": "बाहर वाला else बाहर वाले if का है, जो True था, इसलिए वह छूट जाता है।"
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "किसी दूसरे if या else के block के अंदर लिखा if statement। इसकी condition तभी जाँची जाती है जब Python वहाँ पहुँचे।"
+    },
+    {
+      "meaning": "Nested code में बाहर वाला if पहले पूछा जाता है; अंदर वाला if उसके block में, 4 spaces और अंदर होता है।"
+    },
+    {
+      "meaning": "Program किसी value को use करे, उससे पहले जाँचना कि उसका मतलब बनता है, जैसे weight > 0।"
+    },
+    {
+      "meaning": "जब आप ऐसा नाम use करें जिसकी अभी कोई value नहीं, तब Python यह error देता है, जैसे ऐसी branch में बना variable जो चली ही नहीं।"
+    }
+  ]
+}

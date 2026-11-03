@@ -1,0 +1,232 @@
+"""Lesson 2.2 (English). Run to write content/bp101t/2-2/en.json."""
+import json
+import os
+import subprocess
+import sys
+
+C_STORE = "```python\nneeds_fridge = True\ntemp = 12\nif needs_fridge:\n    if temp <= 8:\n        print(\"Stored correctly\")\n    else:\n        print(\"Too warm: move to the fridge\")\nelse:\n    print(\"Store at room temperature\")\n```"
+C_AND = "```python\n# Nested\nif age >= 18:\n    if weight >= 50:\n        print(\"Standard adult dose\")\n\n# Same thing with and\nif age >= 18 and weight >= 50:\n    print(\"Standard adult dose\")\n```"
+C_CHILD = "```python\nage = 8\nweight = 24\nif age < 12:\n    dose = 15 * weight\n    if dose > 500:\n        dose = 500\n    print(\"Child dose:\", dose, \"mg\")\nelse:\n    print(\"Adult dose: 500 mg\")\n```"
+C_GUARD = "```python\nweight = 0\nif weight > 0:\n    print(\"Dose:\", 15 * weight, \"mg\")\nelse:\n    print(\"Check the weight\")\n```"
+
+L = {
+    "id": "2-2",
+    "course": "bp101t",
+    "unit": "Unit II",
+    "unitTitle": "Control Structures & Functions",
+    "number": "2.2",
+    "title": "Nested conditions",
+    "minutes": 15,
+    "free": False,
+    "audioLanguages": ["en", "hi", "kn"],
+    "hook": {
+        "title": "One question leads to the next",
+        "md": "A parent asks for a fever medicine for their child. The pharmacist's first question is: **is it a child or an adult?** Only if it is a child does the next question matter: **how much does the child weigh?**\n\nSome decisions only make sense **inside** another decision. In this lesson, you'll put an `if` inside an `if`.\n\n*The doses in this lesson are for learning Python only. Real doses always come from the prescriber and the label.*",
+    },
+    "learn": [
+        "How to put an **if** inside another **if** (a **nested** condition)",
+        "How **indentation** shows which `else` belongs to which `if`",
+        "When to use a nested `if`, and when **and** or **elif** is simpler",
+        "How to **check a value first** before using it",
+    ],
+    "explanation": [
+        {
+            "heading": "A decision inside a decision",
+            "md": "A **nested if** is an `if` statement inside the block of another `if` (or `else`). The inner question is asked only when the outer answer leads there.\n\nInsulin and many vaccines must be stored between 2 and 8 °C. A storage check first asks whether the medicine needs a fridge, and only then checks the temperature:\n\n" + C_STORE + "\n\nThis prints `Too warm: move to the fridge`. The outer `if` is `True`, so Python enters its block. There, `temp <= 8` is `False`, so the inner `else` runs.\n\nIf `needs_fridge` were `False`, Python would never look at the temperature: it would go straight to the outer `else`.",
+            "callout": {"type": "definition", "title": "Nested if", "md": "An if statement written inside the block of another if or else. The inner condition is checked only when Python reaches that block."},
+        },
+        {
+            "heading": "Indentation shows the levels",
+            "md": "Each level of nesting adds **4 more spaces**:\n\n- The outer `if` and its `else` start at the left edge.\n- The inner `if` and its `else` start after **4 spaces**.\n- The lines inside the inner blocks start after **8 spaces**.\n\nAn `else` belongs to the `if` that is at **the same indentation**. In the storage example, the `else` with 4 spaces pairs with `if temp <= 8`, and the `else` at the left edge pairs with `if needs_fridge`.",
+            "callout": {"type": "warning", "title": "Line up each else with its if", "md": "Move an else by 4 spaces and it pairs with a different if. Python may not show an error, but the program will make the wrong decision."},
+        },
+        {
+            "heading": "Nested if, or and?",
+            "md": "When the inner `if` has no `else`, a nested `if` means the same as one `if` with **and**:\n\n" + C_AND + "\n\nThe version with `and` is shorter and easier to read. Use nesting when the inner decision has its **own** `else`, or when the outer block does other work first, as in the next example.",
+            "callout": {"type": "tip", "title": "Keep it shallow", "md": "Two levels of nesting is usually enough. If you go deeper, try and, or, or an elif chain instead."},
+        },
+        {
+            "heading": "Doing work between the two questions",
+            "md": "Children's doses are often worked out from body weight, for example 15 mg for each kg, with an upper limit. The limit only matters **after** the dose is calculated, so the check sits inside the child block:\n\n" + C_CHILD + "\n\nThis prints `Child dose: 360 mg`, because 15 × 24 = 360 and 360 is not above 500. For a 40 kg child, 15 × 40 = 600, so the inner `if` would cap it at 500.\n\nNotice that `print(\"Child dose:\", ...)` has 4 spaces, not 8: it runs for every child, whether or not the dose was capped.",
+        },
+        {
+            "heading": "Check the value first",
+            "md": "A program should not calculate with a value that makes no sense, such as a weight of 0 or a negative number. Put the check in the **outer** `if`, and do the real work inside it:\n\n" + C_GUARD + "\n\nThis prints `Check the weight`. Checks like this protect the patient from a wrong number typed by mistake. Real programs check every value a user types.",
+        },
+    ],
+    "walkthrough": {
+        "intro": "This program checks the weight first, then decides between a child dose and an adult dose. It is for learning Python only, not for real dosing.",
+        "filename": "child_dose.py",
+        "code": "# Paracetamol dose (for learning only)\nage = 8\nweight = 24\nif weight > 0:\n    if age < 12:\n        dose = 15 * weight\n        print(\"Child dose:\", dose, \"mg\")\n    else:\n        print(\"Adult dose: 500 mg\")\nelse:\n    print(\"Check the weight\")",
+        "output": "Child dose: 360 mg",
+        "steps": [
+            {"line": None, "say": "This program asks two questions, one inside the other. First: is the weight sensible? Then: is the patient a child?", "output": None, "audio": "step-01.mp3"},
+            {"line": 1, "say": "The comment says what the program does, and that it is only for learning.", "output": None, "audio": "step-02.mp3"},
+            {"line": 2, "say": "age stores eight.", "output": None, "audio": "step-03.mp3", "vars": {"age": "8"}},
+            {"line": 3, "say": "weight stores twenty-four, in kilograms.", "output": None, "audio": "step-04.mp3", "vars": {"weight": "24"}},
+            {"line": 4, "say": "The outer if checks that the weight is more than zero. Twenty-four is, so Python enters the outer block.", "output": None, "audio": "step-05.mp3"},
+            {"line": 5, "say": "Inside it, the inner if asks: is age less than twelve? Eight is, so Python enters the inner block.", "output": None, "audio": "step-06.mp3"},
+            {"line": 6, "say": "dose is fifteen times twenty-four, which is three hundred and sixty.", "output": None, "audio": "step-07.mp3", "vars": {"dose": "360"}},
+            {"line": 7, "say": "print shows the child dose.", "output": "Child dose: 360 mg", "audio": "step-08.mp3"},
+            {"line": 8, "say": "This else has four spaces, so it belongs to the inner if. The inner if was True, so it is skipped.", "output": None, "audio": "step-09.mp3"},
+            {"line": 10, "say": "This else is at the left edge, so it belongs to the outer if. That was True too, so this is skipped, and the program ends.", "output": None, "audio": "step-10.mp3"},
+        ],
+        "keyTerms": [
+            {"term": "Outer if", "meaning": "The first question: is the weight more than 0?"},
+            {"term": "Inner if", "meaning": "Asked only inside the outer block: is the patient a child?"},
+            {"term": "4 / 8 spaces", "meaning": "One level of nesting, then two."},
+            {"term": "else pairing", "meaning": "An else belongs to the if at the same indentation."},
+        ],
+    },
+    "errors": {
+        "intro": "Nested blocks need careful indentation. These two errors come from spaces in the wrong place.",
+        "examples": [
+            {
+                "title": "An else that lines up with nothing",
+                "code": "age = 8\nif age < 12:\n    if age < 2:\n        print(\"Infant\")\n      else:\n        print(\"Child\")",
+                "output": "IndentationError: unindent does not match any outer indentation level",
+                "errorLine": 5,
+                "md": "The `else` has 6 spaces, but no `if` above it has 6. Line it up with the `if` it belongs to: 4 spaces, to pair with `if age < 2:`.",
+            },
+            {
+                "title": "The inner block is not indented",
+                "code": "age = 8\nif age < 12:\n    if age < 2:\n    print(\"Infant\")",
+                "output": "IndentationError: expected an indented block after 'if' statement on line 3",
+                "errorLine": 4,
+                "md": "The inner `if` also needs its own indented block. Give `print(\"Infant\")` 8 spaces: 4 for the outer level and 4 more for the inner one.",
+            },
+        ],
+    },
+    "mistakes": [
+        {"mistake": "Putting an `else` at the wrong level, so it pairs with the outer `if`", "see": "No error, but the wrong message prints, or nothing prints", "fix": "Line the `else` up exactly under the `if` it belongs to."},
+        {"mistake": "Creating a variable in only one branch, then using it after the `if`", "see": "NameError: name 'dose' is not defined", "fix": "Give the variable a value in every branch, or before the `if`."},
+        {"mistake": "Nesting three or four levels deep", "see": "No error, but the program is hard to read and easy to break", "fix": "Combine conditions with `and`, or use an `elif` chain."},
+        {"mistake": "Calculating with a value before checking it, e.g. a weight of 0", "see": "No error, but the dose is 0 mg, or negative", "fix": "Check the value in an outer `if` first."},
+    ],
+    "tasks": [
+        {
+            "id": "t1",
+            "title": "Is the vaccine stored correctly?",
+            "md": "The vaccine needs a fridge, and the fridge reads 5 °C. Use a **nested if** so the output is exactly:",
+            "expectedOutput": "Stored correctly",
+            "starterCode": "needs_fridge = True\ntemp = 5\n# If it needs a fridge: print \"Stored correctly\" when temp <= 8, else \"Too warm\"\n# If it doesn't need a fridge: print \"Room temperature\"\n",
+            "hints": ["Start with if needs_fridge: and put if temp <= 8: inside it, 4 spaces in.", "if needs_fridge:\n    if temp <= 8:\n        print(\"Stored correctly\")\n    else:\n        print(\"Too warm\")\nelse:\n    print(\"Room temperature\")"],
+            "solution": "needs_fridge = True\ntemp = 5\n# If it needs a fridge: print \"Stored correctly\" when temp <= 8, else \"Too warm\"\n# If it doesn't need a fridge: print \"Room temperature\"\nif needs_fridge:\n    if temp <= 8:\n        print(\"Stored correctly\")\n    else:\n        print(\"Too warm\")\nelse:\n    print(\"Room temperature\")",
+            "check": {"type": "exactOutput", "mustContain": ["if needs_fridge", "if temp"]},
+        },
+        {
+            "id": "t2",
+            "title": "Child dose from weight",
+            "md": "For a child (under 12), the dose is 15 mg for each kg. For anyone else, print \"Adult dose: 500 mg\". For this 6-year-old weighing 20 kg, the output must be exactly:",
+            "expectedOutput": "Child dose: 300 mg",
+            "starterCode": "age = 6\nweight = 20\n# Print the dose\n",
+            "hints": ["Inside if age < 12:, work out dose = 15 * weight.", "if age < 12:\n    dose = 15 * weight\n    print(\"Child dose:\", dose, \"mg\")\nelse:\n    print(\"Adult dose: 500 mg\")"],
+            "solution": "age = 6\nweight = 20\n# Print the dose\nif age < 12:\n    dose = 15 * weight\n    print(\"Child dose:\", dose, \"mg\")\nelse:\n    print(\"Adult dose: 500 mg\")",
+            "check": {"type": "exactOutput", "mustContain": ["if", "else"]},
+        },
+        {
+            "id": "t3",
+            "title": "Add a safety check",
+            "md": "Someone typed a negative weight, and the program happily prints a negative dose. Wrap the dose code in an outer `if weight > 0:`, and print \"Check the weight\" otherwise. The output must be exactly:",
+            "expectedOutput": "Check the weight",
+            "starterCode": "age = 5\nweight = -5\nif age < 12:\n    print(\"Child dose:\", 15 * weight, \"mg\")\nelse:\n    print(\"Adult dose: 500 mg\")",
+            "hints": ["Put if weight > 0: on top, and indent the whole age check 4 more spaces.", "if weight > 0:\n    if age < 12:\n        print(\"Child dose:\", 15 * weight, \"mg\")\n    else:\n        print(\"Adult dose: 500 mg\")\nelse:\n    print(\"Check the weight\")"],
+            "solution": "age = 5\nweight = -5\nif weight > 0:\n    if age < 12:\n        print(\"Child dose:\", 15 * weight, \"mg\")\n    else:\n        print(\"Adult dose: 500 mg\")\nelse:\n    print(\"Check the weight\")",
+            "check": {"type": "exactOutput", "mustContain": ["weight > 0", "else"]},
+        },
+        {
+            "id": "t4",
+            "title": "Find the bug",
+            "md": "This 30-year-old patient is not pregnant, so the program should print \"Standard adult dose\". Instead it prints nothing at all, and there is no error. Fix it so the output is exactly:",
+            "expectedOutput": "Standard adult dose",
+            "starterCode": "age = 30\npregnant = False\nif age >= 18:\n    if pregnant:\n        print(\"Ask the doctor first\")\nelse:\n    print(\"Standard adult dose\")",
+            "hints": ["Which if does the else belong to? Look at its indentation.", "The else should pair with if pregnant:, so give it 4 spaces, and its print 8."],
+            "solution": "age = 30\npregnant = False\nif age >= 18:\n    if pregnant:\n        print(\"Ask the doctor first\")\n    else:\n        print(\"Standard adult dose\")",
+            "solutionNote": "At the left edge, the else paired with if age >= 18, which was True, so it never ran. With 4 spaces it pairs with if pregnant:, which is False, so it runs.",
+            "check": {"type": "exactOutput", "mustContain": ["else"]},
+        },
+    ],
+    "quiz": [
+        {"q": "a = 5\nb = 2\nif a > 3:\n    if b > 3:\n        print(\"X\")\n    else:\n        print(\"Y\")\nelse:\n    print(\"Z\")\n\nWhat does this print?", "options": ["X", "Y", "Z", "Nothing"], "answer": 1, "why": "a > 3 is True, so Python enters the outer block; b > 3 is False, so the inner else prints Y.", "code": True},
+        {"q": "In nested code, how does Python know which if an else belongs to?", "options": ["The nearest if above it", "The indentation", "The first if in the program", "It guesses"], "answer": 1, "why": "An else pairs with the if at the same indentation.", "code": False},
+        {"q": "Which single line means the same as this nested code (with no else)?\n\nif a:\n    if b:\n        print(\"OK\")", "options": ["if a or b:", "if a and b:", "if not a:", "if a == b:"], "answer": 1, "why": "Both conditions must be True to reach print, which is exactly what and means.", "code": True},
+        {"q": "How many spaces start a line inside an inner if (two levels deep)?", "options": ["2", "4", "8", "16"], "answer": 2, "why": "Each level adds 4 spaces: 4 + 4 = 8.", "code": False},
+        {"q": "age = 15\nif age >= 18:\n    if age >= 65:\n        print(\"Senior\")\n    else:\n        print(\"Adult\")\nelse:\n    print(\"Minor\")\n\nWhat does this print?", "options": ["Senior", "Adult", "Minor", "Nothing"], "answer": 2, "why": "15 >= 18 is False, so Python skips the whole outer block and runs the outer else.", "code": True},
+        {"q": "dose is created only inside an if block whose condition was False, then printed after the if. What happens?", "options": ["It prints 0", "It prints None", "NameError", "SyntaxError"], "answer": 2, "why": "The line that creates dose never ran, so the name doesn't exist yet.", "code": False},
+    ],
+    "exam": {
+        "note": "Important questions for practice. Actual university questions may differ.",
+        "short": [
+            {"q": "What is a nested if statement? Write its syntax.", "marks": 2,
+             "md": "A **nested if** is an `if` statement placed inside the block of another `if` or `else`. The inner condition is tested only when the outer block is reached.\n\n```python\nif condition1:\n    if condition2:\n        block_a\n    else:\n        block_b\nelse:\n    block_c\n```\n\nEach level is indented by 4 more spaces; an `else` pairs with the `if` at the same indentation."},
+            {"q": "Differentiate between nested if and the if-elif-else ladder.", "marks": 2,
+             "md": "**Nested if:** one decision placed **inside** another; the inner condition is checked only if the outer one leads there. Used when the second question depends on the first (e.g. first child or adult, then weight).\n\n**if-elif-else ladder:** several conditions at the **same level**, checked from top to bottom; only the first True block runs. Used to pick one category from many (e.g. BP stages).\n\nNested if increases indentation at each level; an elif ladder keeps all conditions at one level."},
+        ],
+        "long": [
+            {"q": "Explain nested if statements in Python with syntax, flow of control and a pharmacy-related example.", "marks": 5,
+             "md": "**Nested if:** an `if` (with or without `else`) written inside the block of another `if` or `else`. It is used when one decision depends on the result of another.\n\n**Syntax:**\n\n```python\nif outer_condition:\n    if inner_condition:\n        statements_1\n    else:\n        statements_2\nelse:\n    statements_3\n```\n\n**Flow of control:**\n1. The outer condition is tested.\n2. If False, Python skips the outer block and runs the outer `else` (statements_3); the inner condition is never tested.\n3. If True, Python enters the outer block and tests the inner condition: statements_1 if True, statements_2 if False.\n\n**Example: storage of a cold-chain medicine (2-8 °C)**\n\n```python\nneeds_fridge = True\ntemp = 12\nif needs_fridge:\n    if temp <= 8:\n        print(\"Stored correctly\")\n    else:\n        print(\"Too warm: move to the fridge\")\nelse:\n    print(\"Store at room temperature\")\n```\n\nOutput: `Too warm: move to the fridge`.\n\n**Points to remember:** each level adds 4 spaces of indentation; an `else` belongs to the `if` at the same indentation; a nested `if` with no inner `else` can be written with `and`; deep nesting should be avoided for readability."},
+        ],
+    },
+    "mindmap": {
+        "label": "Lesson 2.2 · Nested conditions",
+        "children": [
+            {"label": "Nested if", "children": [{"label": "if inside if"}, {"label": "Inner asked only if reached"}]},
+            {"label": "Indentation", "children": [{"label": "4 spaces per level"}, {"label": "else pairs at same level"}]},
+            {"label": "Or use and", "children": [{"label": "No inner else → and"}, {"label": "Keep 2 levels max"}]},
+            {"label": "Work between", "children": [{"label": "Calculate, then check"}, {"label": "Cap the dose"}]},
+            {"label": "Check first", "children": [{"label": "Outer if validates"}, {"label": "weight > 0"}]},
+            {"label": "Errors", "children": [{"label": "IndentationError"}, {"label": "NameError"}]},
+        ],
+    },
+    "summary": [
+        "A **nested if** is an `if` inside the block of another `if` or `else`; the inner condition is checked only when Python reaches it.",
+        "Each level of nesting adds **4 spaces**, and an `else` belongs to the `if` at **the same indentation**.",
+        "A nested `if` with no inner `else` can be written as one `if` with **and**; keep nesting to about two levels.",
+        "Use the outer block to **calculate first**, then let an inner `if` check the result.",
+        "**Check a value before using it**, for example `if weight > 0:`, so a typing mistake can't produce a wrong dose.",
+    ],
+    "video": {"videoUrl": None, "searchTerms": ["python nested if statements", "python nested if else beginners"]},
+    "animations": [
+        {
+            "id": "nest",
+            "title": "Two questions, one inside the other",
+            "afterExplanation": 1,
+            "canvas": {"desktop": {"w": 800, "h": 460}, "mobile": {"w": 360, "h": 600}},
+            "actors": [
+                {"id": "code", "type": "card", "title": "storage_check.py", "icon": "💉", "color": "indigo", "mono": True,
+                 "lines": ["if needs_fridge:", "    if temp <= 8:", "        print(\"Stored correctly\")", "    else:", "        print(\"Too warm\")", "else:", "    print(\"Room temperature\")"],
+                 "desktop": {"x": 40, "y": 40, "w": 420, "h": 270}, "mobile": {"x": 16, "y": 120, "w": 328, "h": 240}},
+                {"id": "fridge", "type": "box", "label": "needs_fridge", "value": "True", "color": "emerald",
+                 "desktop": {"x": 510, "y": 40, "w": 250, "h": 90}, "mobile": {"x": 16, "y": 12, "w": 156, "h": 96}},
+                {"id": "temp", "type": "box", "label": "temp", "value": "12", "color": "amber",
+                 "desktop": {"x": 510, "y": 150, "w": 250, "h": 90}, "mobile": {"x": 188, "y": 12, "w": 156, "h": 96}},
+                {"id": "q1", "type": "pill", "text": "Outer: needs_fridge → True", "color": "emerald",
+                 "desktop": {"x": 490, "y": 255, "w": 290, "h": 28}, "mobile": {"x": 30, "y": 370, "w": 300, "h": 28}},
+                {"id": "q2", "type": "pill", "text": "Inner: 12 <= 8 → False", "color": "rose",
+                 "desktop": {"x": 490, "y": 290, "w": 290, "h": 28}, "mobile": {"x": 30, "y": 404, "w": 300, "h": 28}},
+                {"id": "out", "type": "terminal", "title": "Output",
+                 "desktop": {"x": 40, "y": 330, "w": 720, "h": 100}, "mobile": {"x": 16, "y": 446, "w": 328, "h": 120}},
+            ],
+            "steps": [
+                {"say": "This medicine needs a fridge, and the thermometer shows twelve degrees.", "audio": "anim-nest-01.mp3",
+                 "actions": [{"do": "show", "target": "fridge"}, {"do": "show", "target": "temp"}, {"do": "show", "target": "code"}, {"do": "show", "target": "out"}]},
+                {"say": "The outer question comes first: does it need a fridge? Yes, so Python steps inside.", "audio": "anim-nest-02.mp3",
+                 "actions": [{"do": "highlightLine", "target": "code", "line": 0}, {"do": "show", "target": "q1"}]},
+                {"say": "Only now is the inner question asked: is it eight degrees or colder? Twelve is not.", "audio": "anim-nest-03.mp3",
+                 "actions": [{"do": "highlightLine", "target": "code", "line": 1}, {"do": "show", "target": "q2"}]},
+                {"say": "So the inner else runs. It lines up with the inner if.", "audio": "anim-nest-04.mp3",
+                 "actions": [{"do": "highlightLine", "target": "code", "line": 4}, {"do": "appendOutput", "target": "out", "text": "Too warm"}]},
+                {"say": "The outer else belongs to the outer if, which was True, so it is skipped.", "audio": "anim-nest-05.mp3",
+                 "actions": [{"do": "highlightLine", "target": "code", "line": 5}]},
+            ],
+        }
+    ],
+}
+
+if __name__ == "__main__":
+    root = os.path.join(os.path.dirname(__file__), "..", "..")
+    out = os.path.join(root, "content", "bp101t", "2-2", "en.json")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    json.dump(L, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    print("wrote", out)
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "..", "glossary_bp101t.py")], check=True)
