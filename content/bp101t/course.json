@@ -162,8 +162,12 @@
         {
           "id": "2-5",
           "title": "Functions",
-          "available": false,
-          "translations": []
+          "available": true,
+          "translations": [
+            "hi",
+            "hinglish",
+            "kn"
+          ]
         },
         {
           "id": "2-6",

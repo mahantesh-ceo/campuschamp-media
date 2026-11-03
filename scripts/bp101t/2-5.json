@@ -1,0 +1,160 @@
+{
+  "course": "bp101t",
+  "lesson": "2-5",
+  "voices": {
+    "en": "Ritu",
+    "hi": "Ritu",
+    "kn": "Chaitra"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program writes the conversion once, as a function, and uses it twice.",
+        "The comment says what the function does.",
+        "def creates a function named M G to G, with one parameter, m g. Python remembers it, but doesn't run the body yet.",
+        "Here the function is called with five hundred. Python jumps into the function, and the parameter m g gets the value five hundred.",
+        "Inside, grams is five hundred divided by a thousand: zero point five.",
+        "return sends zero point five back to the line that called the function.",
+        "Back on line six, the call is replaced by its result, and print shows it.",
+        "The same function is called again, with two thousand five hundred. This time it returns two point five."
+      ],
+      "display": [
+        "This program writes the conversion once, as a function, and uses it twice.",
+        "The comment says what the function does.",
+        "def creates a function named m g to g, with one parameter, m g. Python remembers it, but doesn't run the body yet.",
+        "Here the function is called with five hundred. Python jumps into the function, and the parameter m g gets the value five hundred.",
+        "Inside, grams is five hundred divided by a thousand: zero point five.",
+        "return sends zero point five back to the line that called the function.",
+        "Back on line six, the call is replaced by its result, and print shows it.",
+        "The same function is called again, with two thousand five hundred. This time it returns two point five."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह program conversion को एक बार, function के रूप में लिखता है, और उसे दो बार use करता है।",
+        "Comment बताता है कि function क्या करता है।",
+        "def, m g to g नाम का function बनाता है, जिसका एक parameter है, m g। पाइथन उसे याद रखता है, पर body अभी नहीं चलाता।",
+        "यहाँ function को पाँच सौ के साथ call किया गया। पाइथन function में कूदता है, और parameter m g को पाँच सौ मिलता है।",
+        "अंदर, grams है पाँच सौ भाग एक हज़ार: zero दशमलव पाँच।",
+        "return, zero दशमलव पाँच को उस line पर वापस भेजता है जिसने function call किया।",
+        "Line छह पर वापस, call की जगह उसका नतीजा आ जाता है, और print उसे दिखाता है।",
+        "वही function फिर call होता है, दो हज़ार पाँच सौ के साथ। इस बार वह दो दशमलव पाँच return करता है।"
+      ],
+      "display": [
+        "यह program conversion को एक बार, function के रूप में लिखता है, और उसे दो बार use करता है।",
+        "Comment बताता है कि function क्या करता है।",
+        "def, m g to g नाम का function बनाता है, जिसका एक parameter है, m g। Python उसे याद रखता है, पर body अभी नहीं चलाता।",
+        "यहाँ function को पाँच सौ के साथ call किया गया। Python function में कूदता है, और parameter m g को पाँच सौ मिलता है।",
+        "अंदर, grams है पाँच सौ भाग एक हज़ार: zero दशमलव पाँच।",
+        "return, zero दशमलव पाँच को उस line पर वापस भेजता है जिसने function call किया।",
+        "Line छह पर वापस, call की जगह उसका नतीजा आ जाता है, और print उसे दिखाता है।",
+        "वही function फिर call होता है, दो हज़ार पाँच सौ के साथ। इस बार वह दो दशमलव पाँच return करता है।"
+      ],
+      "displayHinglish": [
+        "Yeh program conversion ko ek baar, function ke roop mein likhta hai, aur use do baar use karta hai.",
+        "Comment batata hai ki function kya karta hai.",
+        "def, m g to g naam ka function banaata hai, jiska ek parameter hai, m g. Python use yaad rakhta hai, par body abhi nahi chalaata.",
+        "Yahaan function ko paanch sau ke saath call kiya gaya. Python function mein koodta hai, aur parameter m g ko paanch sau milta hai.",
+        "Andar, grams hai paanch sau bhaag ek hazaar: zero dashamlav paanch.",
+        "return, zero dashamlav paanch ko us line par wapas bhejta hai jisne function call kiya.",
+        "Line chhah par wapas, call ki jagah uska nateeja aa jaata hai, aur print use dikhaata hai.",
+        "Wahi function phir call hota hai, do hazaar paanch sau ke saath. Is baar woh do dashamlav paanch return karta hai."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ program conversion ಅನ್ನು ಒಮ್ಮೆ, function ಆಗಿ ಬರೆದು, ಎರಡು ಸಲ ಬಳಸುತ್ತೆ.",
+        "Comment function ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "def, m g to g ಎಂಬ function ಮಾಡುತ್ತೆ, ಅದಕ್ಕೆ ಒಂದು parameter, m g. ಪೈಥಾನ್ ಅದನ್ನು ನೆನಪಿಟ್ಟುಕೊಳ್ಳುತ್ತೆ, ಆದರೆ body ಈಗ run ಮಾಡಲ್ಲ.",
+        "ಇಲ್ಲಿ function ಅನ್ನು ಐನೂರು ಜೊತೆ call ಮಾಡಲಾಗಿದೆ. ಪೈಥಾನ್ function ಒಳಗೆ ಜಿಗಿಯುತ್ತೆ, parameter m g ಗೆ ಐನೂರು ಸಿಗುತ್ತೆ.",
+        "ಒಳಗೆ, grams ಅಂದರೆ ಐನೂರು ಭಾಗಿಸು ಸಾವಿರ: zero ಪಾಯಿಂಟ್ ಐದು.",
+        "return, zero ಪಾಯಿಂಟ್ ಐದನ್ನು function call ಮಾಡಿದ line ಗೆ ಹಿಂದೆ ಕಳಿಸುತ್ತೆ.",
+        "Line ಆರಕ್ಕೆ ಹಿಂತಿರುಗಿ, call ಜಾಗದಲ್ಲಿ ಅದರ ಫಲಿತಾಂಶ ಬರುತ್ತೆ, print ಅದನ್ನು ತೋರಿಸುತ್ತೆ.",
+        "ಅದೇ function ಮತ್ತೆ call ಆಗುತ್ತೆ, ಎರಡು ಸಾವಿರದ ಐನೂರು ಜೊತೆ. ಈ ಸಲ ಅದು ಎರಡು ಪಾಯಿಂಟ್ ಐದು return ಮಾಡುತ್ತೆ."
+      ],
+      "display": [
+        "ಈ program conversion ಅನ್ನು ಒಮ್ಮೆ, function ಆಗಿ ಬರೆದು, ಎರಡು ಸಲ ಬಳಸುತ್ತೆ.",
+        "Comment function ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "def, m g to g ಎಂಬ function ಮಾಡುತ್ತೆ, ಅದಕ್ಕೆ ಒಂದು parameter, m g. Python ಅದನ್ನು ನೆನಪಿಟ್ಟುಕೊಳ್ಳುತ್ತೆ, ಆದರೆ body ಈಗ run ಮಾಡಲ್ಲ.",
+        "ಇಲ್ಲಿ function ಅನ್ನು ಐನೂರು ಜೊತೆ call ಮಾಡಲಾಗಿದೆ. Python function ಒಳಗೆ ಜಿಗಿಯುತ್ತೆ, parameter m g ಗೆ ಐನೂರು ಸಿಗುತ್ತೆ.",
+        "ಒಳಗೆ, grams ಅಂದರೆ ಐನೂರು ಭಾಗಿಸು ಸಾವಿರ: zero ಪಾಯಿಂಟ್ ಐದು.",
+        "return, zero ಪಾಯಿಂಟ್ ಐದನ್ನು function call ಮಾಡಿದ line ಗೆ ಹಿಂದೆ ಕಳಿಸುತ್ತೆ.",
+        "Line ಆರಕ್ಕೆ ಹಿಂತಿರುಗಿ, call ಜಾಗದಲ್ಲಿ ಅದರ ಫಲಿತಾಂಶ ಬರುತ್ತೆ, print ಅದನ್ನು ತೋರಿಸುತ್ತೆ.",
+        "ಅದೇ function ಮತ್ತೆ call ಆಗುತ್ತೆ, ಎರಡು ಸಾವಿರದ ಐನೂರು ಜೊತೆ. ಈ ಸಲ ಅದು ಎರಡು ಪಾಯಿಂಟ್ ಐದು return ಮಾಡುತ್ತೆ."
+      ]
+    },
+    {
+      "id": "anim-call",
+      "prefix": "anim-call-",
+      "lang": "en",
+      "tts": [
+        "The def lines only teach Python a new word, M G to G. Nothing runs yet.",
+        "The last line calls the function with five hundred. Python jumps into the function, and the parameter m g receives five hundred.",
+        "The body works out the grams: zero point five.",
+        "return carries zero point five back to where the function was called.",
+        "The call becomes zero point five, and print shows it."
+      ],
+      "display": [
+        "The def lines only teach Python a new word, m g to g. Nothing runs yet.",
+        "The last line calls the function with five hundred. Python jumps into the function, and the parameter m g receives five hundred.",
+        "The body works out the grams: zero point five.",
+        "return carries zero point five back to where the function was called.",
+        "The call becomes zero point five, and print shows it."
+      ]
+    },
+    {
+      "id": "anim-call",
+      "prefix": "anim-call-",
+      "lang": "hi",
+      "tts": [
+        "def lines बस पाइथन को एक नया शब्द सिखाती हैं, m g to g। अभी कुछ नहीं चलता।",
+        "आखिरी line function को पाँच सौ के साथ call करती है। पाइथन function में कूदता है, और parameter m g को पाँच सौ मिलता है।",
+        "Body grams निकालती है: zero दशमलव पाँच।",
+        "return, zero दशमलव पाँच को वहाँ वापस ले जाता है जहाँ function call हुआ था।",
+        "Call, zero दशमलव पाँच बन जाता है, और print उसे दिखाता है।"
+      ],
+      "display": [
+        "def lines बस Python को एक नया शब्द सिखाती हैं, m g to g। अभी कुछ नहीं चलता।",
+        "आखिरी line function को पाँच सौ के साथ call करती है। Python function में कूदता है, और parameter m g को पाँच सौ मिलता है।",
+        "Body grams निकालती है: zero दशमलव पाँच।",
+        "return, zero दशमलव पाँच को वहाँ वापस ले जाता है जहाँ function call हुआ था।",
+        "Call, zero दशमलव पाँच बन जाता है, और print उसे दिखाता है।"
+      ],
+      "displayHinglish": [
+        "def lines bas Python ko ek naya shabd sikhaati hain, m g to g. Abhi kuch nahi chalta.",
+        "Aakhri line function ko paanch sau ke saath call karti hai. Python function mein koodta hai, aur parameter m g ko paanch sau milta hai.",
+        "Body grams nikaalti hai: zero dashamlav paanch.",
+        "return, zero dashamlav paanch ko wahaan wapas le jaata hai jahaan function call hua tha.",
+        "Call, zero dashamlav paanch ban jaata hai, aur print use dikhaata hai."
+      ]
+    },
+    {
+      "id": "anim-call",
+      "prefix": "anim-call-",
+      "lang": "kn",
+      "tts": [
+        "def lines ಪೈಥಾನ್ ಗೆ ಒಂದು ಹೊಸ ಪದ ಕಲಿಸುತ್ತವೆ ಅಷ್ಟೇ, m g to g. ಇನ್ನೂ ಏನೂ run ಆಗಲ್ಲ.",
+        "ಕೊನೆಯ line function ಅನ್ನು ಐನೂರು ಜೊತೆ call ಮಾಡುತ್ತೆ. ಪೈಥಾನ್ function ಒಳಗೆ ಜಿಗಿಯುತ್ತೆ, parameter m g ಗೆ ಐನೂರು ಸಿಗುತ್ತೆ.",
+        "Body grams ಲೆಕ್ಕ ಹಾಕುತ್ತೆ: zero ಪಾಯಿಂಟ್ ಐದು.",
+        "return, zero ಪಾಯಿಂಟ್ ಐದನ್ನು function call ಆದ ಜಾಗಕ್ಕೆ ಹಿಂದೆ ಕೊಂಡೊಯ್ಯುತ್ತೆ.",
+        "Call zero ಪಾಯಿಂಟ್ ಐದು ಆಗುತ್ತೆ, print ಅದನ್ನು ತೋರಿಸುತ್ತೆ."
+      ],
+      "display": [
+        "def lines Python ಗೆ ಒಂದು ಹೊಸ ಪದ ಕಲಿಸುತ್ತವೆ ಅಷ್ಟೇ, m g to g. ಇನ್ನೂ ಏನೂ run ಆಗಲ್ಲ.",
+        "ಕೊನೆಯ line function ಅನ್ನು ಐನೂರು ಜೊತೆ call ಮಾಡುತ್ತೆ. Python function ಒಳಗೆ ಜಿಗಿಯುತ್ತೆ, parameter m g ಗೆ ಐನೂರು ಸಿಗುತ್ತೆ.",
+        "Body grams ಲೆಕ್ಕ ಹಾಕುತ್ತೆ: zero ಪಾಯಿಂಟ್ ಐದು.",
+        "return, zero ಪಾಯಿಂಟ್ ಐದನ್ನು function call ಆದ ಜಾಗಕ್ಕೆ ಹಿಂದೆ ಕೊಂಡೊಯ್ಯುತ್ತೆ.",
+        "Call zero ಪಾಯಿಂಟ್ ಐದು ಆಗುತ್ತೆ, print ಅದನ್ನು ತೋರಿಸುತ್ತೆ."
+      ]
+    }
+  ]
+}

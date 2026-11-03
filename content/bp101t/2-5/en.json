@@ -1,0 +1,702 @@
+{
+  "id": "2-5",
+  "course": "bp101t",
+  "unit": "Unit II",
+  "unitTitle": "Control Structures & Functions",
+  "number": "2.5",
+  "title": "Functions",
+  "minutes": 18,
+  "free": false,
+  "audioLanguages": [
+    "en",
+    "hi",
+    "kn"
+  ],
+  "hook": {
+    "title": "Write it once, use it everywhere",
+    "md": "A hospital pharmacy app works out doses from body weight in many places: on the prescription screen, on the label, in the stock report. If the formula is copied into ten places and one copy has a mistake, a patient could get the wrong dose.\n\nThe fix is to write the formula **once**, give it a **name**, and use that name everywhere. That named, reusable piece of code is a **function**. You've been using functions since Lesson 1.1: `print()`, `len()` and `input()`. Today you'll write your own."
+  },
+  "learn": [
+    "How to **define** a function with **def**, and **call** it",
+    "How **parameters** let a function work with different values",
+    "How **return** sends a result back, and why it is not the same as print",
+    "How **default values** and **local variables** work"
+  ],
+  "explanation": [
+    {
+      "heading": "Your first function",
+      "md": "You **define** a function with the keyword **def**, a name, brackets and a colon. The indented lines below are its **body**:\n\n```python\ndef label():\n    print(\"Keep out of reach of children\")\n    print(\"Store below 25 C\")\n\nlabel()\nlabel()\n```\n\nThis prints:\n\n```\nKeep out of reach of children\nStore below 25 C\nKeep out of reach of children\nStore below 25 C\n```\n\nDefining a function does **not** run it. Python just remembers it. The body runs each time you **call** the function by writing its name with brackets: `label()`.",
+      "callout": {
+        "type": "definition",
+        "title": "Function",
+        "md": "A named block of code that does one job. You define it once with def, and run it whenever you need by calling its name with brackets."
+      }
+    },
+    {
+      "heading": "Parameters: giving a function information",
+      "md": "A function becomes much more useful when you can hand it values. The names inside the brackets of `def` are **parameters**:\n\n```python\ndef dose_label(drug, mg):\n    print(f\"{drug}: {mg} mg\")\n\ndose_label(\"Paracetamol\", 500)\ndose_label(\"Amoxicillin\", 250)\n```\n\nThis prints:\n\n```\nParacetamol: 500 mg\nAmoxicillin: 250 mg\n```\n\nThe values you pass in the call, like `\"Paracetamol\"` and `500`, are **arguments**. They are matched to the parameters **in order**: the first argument goes into `drug`, the second into `mg`."
+    },
+    {
+      "heading": "return: sending a result back",
+      "md": "`print()` only shows a value on the screen. To **use** a function's result in the rest of your program, the function must **return** it:\n\n```python\ndef child_dose(weight, mg_per_kg):\n    return weight * mg_per_kg\n\ndose = child_dose(20, 15)\nprint(\"Dose:\", dose, \"mg\")\nprint(\"Two doses:\", child_dose(20, 15) * 2, \"mg\")\n```\n\nThis prints:\n\n```\nDose: 300 mg\nTwo doses: 600 mg\n```\n\n`return` hands the value back to the place where the function was called, so you can store it, print it, or calculate with it. It also ends the function: lines after `return` never run.",
+      "callout": {
+        "type": "warning",
+        "title": "No return means None",
+        "md": "A function without return gives back None, Python's word for \"nothing\". If you print inside a function instead of returning, dose = child_dose(20, 15) stores None."
+      }
+    },
+    {
+      "heading": "Default values and named arguments",
+      "md": "A parameter can have a **default value**, used when the call leaves it out. You can also name arguments in the call, and then their order doesn't matter:\n\n```python\ndef dose_label(drug, amount, unit=\"mg\"):\n    print(f\"{drug}: {amount} {unit}\")\n\ndose_label(\"Paracetamol\", 500)\ndose_label(\"Insulin\", 10, \"units\")\ndose_label(unit=\"ml\", drug=\"Cough syrup\", amount=5)\n```\n\nThis prints:\n\n```\nParacetamol: 500 mg\nInsulin: 10 units\nCough syrup: 5 ml\n```\n\nParameters with defaults must come **after** the ones without."
+    },
+    {
+      "heading": "Variables inside a function stay inside",
+      "md": "A variable created inside a function is **local**: it exists only while the function runs.\n\n```python\ndef total_tablets(per_day, days):\n    total = per_day * days\n    return total\n\nprint(total_tablets(2, 5))\n```\n\nThis prints `10`. But a `print(total)` after the function would give `NameError: name 'total' is not defined`, because `total` disappeared when the function finished. To use a value outside, **return** it.\n\nThis is a good thing: each function keeps its own variables, so functions can't accidentally change each other's values.",
+      "callout": {
+        "type": "tip",
+        "title": "Why write functions?",
+        "md": "Write once, use many times. Fix a mistake in one place. Give a clear name to a step, like mg_to_g. And test each piece on its own."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "This program defines a function that converts milligrams to grams, then calls it twice.",
+    "filename": "mg_to_g.py",
+    "code": "# A function that converts mg to g\ndef mg_to_g(mg):\n    grams = mg / 1000\n    return grams\n\nprint(mg_to_g(500), \"g\")\nprint(mg_to_g(2500), \"g\")",
+    "output": "0.5 g\n2.5 g",
+    "steps": [
+      {
+        "line": null,
+        "say": "This program writes the conversion once, as a function, and uses it twice.",
+        "output": null,
+        "audio": "step-01.mp3"
+      },
+      {
+        "line": 1,
+        "say": "The comment says what the function does.",
+        "output": null,
+        "audio": "step-02.mp3"
+      },
+      {
+        "line": 2,
+        "say": "def creates a function named m g to g, with one parameter, m g. Python remembers it, but doesn't run the body yet.",
+        "output": null,
+        "audio": "step-03.mp3"
+      },
+      {
+        "line": 6,
+        "say": "Here the function is called with five hundred. Python jumps into the function, and the parameter m g gets the value five hundred.",
+        "output": null,
+        "audio": "step-04.mp3",
+        "vars": {
+          "mg": "500"
+        }
+      },
+      {
+        "line": 3,
+        "say": "Inside, grams is five hundred divided by a thousand: zero point five.",
+        "output": null,
+        "audio": "step-05.mp3",
+        "vars": {
+          "grams": "0.5"
+        }
+      },
+      {
+        "line": 4,
+        "say": "return sends zero point five back to the line that called the function.",
+        "output": null,
+        "audio": "step-06.mp3"
+      },
+      {
+        "line": 6,
+        "say": "Back on line six, the call is replaced by its result, and print shows it.",
+        "output": "0.5 g",
+        "audio": "step-07.mp3"
+      },
+      {
+        "line": 7,
+        "say": "The same function is called again, with two thousand five hundred. This time it returns two point five.",
+        "output": "2.5 g",
+        "audio": "step-08.mp3",
+        "vars": {
+          "mg": "2500",
+          "grams": "2.5"
+        }
+      }
+    ],
+    "keyTerms": [
+      {
+        "term": "def mg_to_g(mg):",
+        "meaning": "Define a function named mg_to_g with one parameter."
+      },
+      {
+        "term": "mg",
+        "meaning": "A parameter: it takes the value passed in each call."
+      },
+      {
+        "term": "return grams",
+        "meaning": "Send the result back to the caller."
+      },
+      {
+        "term": "mg_to_g(500)",
+        "meaning": "Call the function with the argument 500."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "These two errors come from how a function is called.",
+    "examples": [
+      {
+        "title": "Calling a function before defining it",
+        "code": "print(mg_to_g(500))\n\ndef mg_to_g(mg):\n    return mg / 1000",
+        "output": "NameError: name 'mg_to_g' is not defined",
+        "errorLine": 1,
+        "md": "Python runs from top to bottom, so on line 1 it hasn't seen the `def` yet. Put function definitions at the top, before you call them."
+      },
+      {
+        "title": "Leaving out an argument",
+        "code": "def child_dose(weight, mg_per_kg):\n    return weight * mg_per_kg\n\nprint(child_dose(20))",
+        "output": "TypeError: child_dose() missing 1 required positional argument: 'mg_per_kg'",
+        "errorLine": 4,
+        "md": "The function has two parameters, but the call passes only one value. Pass both: `child_dose(20, 15)`, or give the parameter a default value."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Forgetting the brackets when calling, e.g. `label` instead of `label()`",
+      "see": "No error, but nothing happens",
+      "fix": "A call always needs brackets: `label()`."
+    },
+    {
+      "mistake": "Printing inside the function instead of returning, then calculating with the result",
+      "see": "TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'",
+      "fix": "Use `return` to send the value back; print it outside if you need to."
+    },
+    {
+      "mistake": "Writing lines after `return` and expecting them to run",
+      "see": "No error, but those lines never run",
+      "fix": "Put everything the function must do before `return`."
+    },
+    {
+      "mistake": "Passing arguments in the wrong order, e.g. `dose_label(500, \"Paracetamol\")`",
+      "see": "No error, but the label reads \"500: Paracetamol mg\"",
+      "fix": "Match the order of the parameters, or name them: `dose_label(drug=\"Paracetamol\", mg=500)`."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1",
+      "title": "A label function",
+      "md": "Define a function named **warning** that prints `Shake well before use`. Then **call it twice**, so the output is exactly:",
+      "expectedOutput": "Shake well before use\nShake well before use",
+      "starterCode": "# Define the function warning() here\n\n\n# Call it twice\n",
+      "hints": [
+        "def warning():\n    print(\"Shake well before use\")",
+        "Call it with warning() on two separate lines, with no indentation."
+      ],
+      "solution": "# Define the function warning() here\ndef warning():\n    print(\"Shake well before use\")\n\n# Call it twice\nwarning()\nwarning()",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "def warning",
+          "warning()"
+        ]
+      }
+    },
+    {
+      "id": "t2",
+      "title": "A function with parameters",
+      "md": "Complete **dose_label(drug, mg)** so that it prints the drug and the dose. The call is already written; the output must be exactly:",
+      "expectedOutput": "Cetirizine 10 mg",
+      "starterCode": "def dose_label(drug, mg):\n    pass  # replace with a print\n\ndose_label(\"Cetirizine\", 10)",
+      "hints": [
+        "Inside the function, use both parameters in one print.",
+        "    print(f\"{drug} {mg} mg\")"
+      ],
+      "solution": "def dose_label(drug, mg):\n    print(f\"{drug} {mg} mg\")\n\ndose_label(\"Cetirizine\", 10)",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "def dose_label"
+        ]
+      }
+    },
+    {
+      "id": "t3",
+      "title": "Return the daily dose",
+      "md": "Make **daily_dose(dose, times)** **return** the dose multiplied by the number of times a day. Right now it prints `None`. The output must be exactly:",
+      "expectedOutput": "Daily dose: 1500 mg",
+      "starterCode": "def daily_dose(dose, times):\n    pass  # replace with a return\n\nprint(\"Daily dose:\", daily_dose(500, 3), \"mg\")",
+      "hints": [
+        "return sends a value back to the call.",
+        "    return dose * times"
+      ],
+      "solution": "def daily_dose(dose, times):\n    return dose * times\n\nprint(\"Daily dose:\", daily_dose(500, 3), \"mg\")",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "return"
+        ]
+      }
+    },
+    {
+      "id": "t4",
+      "title": "Find the bug",
+      "md": "A syrup has 50 mg in each ml. For a 250 mg dose the patient needs 5 ml, but this program prints the number on its own line and then says `Give None ml`. Fix it so the output is exactly:",
+      "expectedOutput": "Give 5.0 ml",
+      "starterCode": "def ml_needed(dose_mg, mg_per_ml):\n    print(dose_mg / mg_per_ml)\n\nvolume = ml_needed(250, 50)\nprint(\"Give\", volume, \"ml\")",
+      "hints": [
+        "What does a function give back when it has no return?",
+        "Change print(...) inside the function to return ..."
+      ],
+      "solution": "def ml_needed(dose_mg, mg_per_ml):\n    return dose_mg / mg_per_ml\n\nvolume = ml_needed(250, 50)\nprint(\"Give\", volume, \"ml\")",
+      "solutionNote": "print only showed 5.0 on the screen; the function itself gave back None, so volume was None. return sends 5.0 back into volume.",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "return"
+        ]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Which keyword defines a function in Python?",
+      "options": [
+        "function",
+        "def",
+        "define",
+        "fun"
+      ],
+      "answer": 1,
+      "why": "Functions are defined with def, a name, brackets and a colon.",
+      "code": false
+    },
+    {
+      "q": "def double(x):\n    return x * 2\n\nprint(double(4))\n\nWhat does this print?",
+      "options": [
+        "4",
+        "8",
+        "x * 2",
+        "None"
+      ],
+      "answer": 1,
+      "why": "double(4) returns 4 * 2, which is 8.",
+      "code": true
+    },
+    {
+      "q": "What does a function give back if it has no return statement?",
+      "options": [
+        "0",
+        "An empty string",
+        "None",
+        "An error"
+      ],
+      "answer": 2,
+      "why": "Without return, Python gives back None.",
+      "code": false
+    },
+    {
+      "q": "In def child_dose(weight, mg_per_kg):, what is weight?",
+      "options": [
+        "An argument",
+        "A parameter",
+        "A return value",
+        "A keyword"
+      ],
+      "answer": 1,
+      "why": "Names inside the brackets of def are parameters; the values passed in a call are arguments.",
+      "code": true
+    },
+    {
+      "q": "def greet(name=\"Patient\"):\n    print(\"Hello\", name)\n\ngreet()\n\nWhat does this print?",
+      "options": [
+        "Hello",
+        "Hello name",
+        "Hello Patient",
+        "Error"
+      ],
+      "answer": 2,
+      "why": "No argument was passed, so the default value \"Patient\" is used.",
+      "code": true
+    },
+    {
+      "q": "What happens to lines written after return inside a function?",
+      "options": [
+        "They run after the return",
+        "They run first",
+        "They never run",
+        "They cause an error"
+      ],
+      "answer": 2,
+      "why": "return ends the function immediately.",
+      "code": false
+    }
+  ],
+  "exam": {
+    "note": "Important questions for practice. Actual university questions may differ.",
+    "short": [
+      {
+        "q": "Differentiate between parameters and arguments.",
+        "marks": 2,
+        "md": "**Parameters** are the variable names listed in the function definition: in `def child_dose(weight, mg_per_kg):`, `weight` and `mg_per_kg` are parameters.\n\n**Arguments** are the actual values passed when the function is called: in `child_dose(20, 15)`, `20` and `15` are arguments.\n\nArguments are matched to parameters by position, or by name (keyword arguments, e.g. `child_dose(mg_per_kg=15, weight=20)`)."
+      },
+      {
+        "q": "What is the use of the return statement? Explain with an example.",
+        "marks": 2,
+        "md": "The **return** statement ends a function and sends a value back to the place where it was called, so the result can be stored or used in further calculation.\n\n```python\ndef mg_to_g(mg):\n    return mg / 1000\n\ngrams = mg_to_g(2500)\nprint(grams)\n```\n\nOutput: `2.5`. A function without `return` returns `None`. Statements after `return` are not executed."
+      }
+    ],
+    "long": [
+      {
+        "q": "What is a function? Explain how to define and call a user-defined function in Python with parameters, default arguments and a return value. List the advantages of functions.",
+        "marks": 5,
+        "md": "A **function** is a named, reusable block of code that performs a specific task. Python has built-in functions (`print()`, `len()`, `input()`, `range()`) and **user-defined functions**, created with `def`.\n\n**Syntax:**\n\n```python\ndef function_name(parameter1, parameter2=default):\n    statements\n    return value\n```\n\n- `def` keyword, function name, parameters in brackets, colon.\n- The indented **body** runs only when the function is **called**: `function_name(arguments)`.\n- **Parameters** receive the **arguments** passed in the call (by position or by name).\n- A **default argument** is used when the caller leaves it out.\n- **return** sends a result back and ends the function; without it the function returns `None`.\n\n**Example:**\n\n```python\ndef child_dose(weight, mg_per_kg=15):\n    return weight * mg_per_kg\n\nprint(child_dose(20))\nprint(child_dose(20, 10))\n```\n\nOutput: `300` and `200`.\n\nVariables created inside a function are **local** and exist only while it runs.\n\n**Advantages of functions:**\n1. **Reusability:** write once, call many times.\n2. **Modularity:** a large program is divided into small, manageable parts.\n3. **Easier debugging and maintenance:** a mistake is fixed in one place.\n4. **Readability:** a well-named function (e.g. `mg_to_g`) explains what a step does.\n5. **Testing:** each function can be tested on its own."
+      }
+    ]
+  },
+  "mindmap": {
+    "label": "Lesson 2.5 · Functions",
+    "children": [
+      {
+        "label": "Define",
+        "children": [
+          {
+            "label": "def name():"
+          },
+          {
+            "label": "Indented body"
+          },
+          {
+            "label": "Not run yet"
+          }
+        ]
+      },
+      {
+        "label": "Call",
+        "children": [
+          {
+            "label": "name()"
+          },
+          {
+            "label": "Runs the body"
+          },
+          {
+            "label": "Call many times"
+          }
+        ]
+      },
+      {
+        "label": "Parameters",
+        "children": [
+          {
+            "label": "Names in def"
+          },
+          {
+            "label": "Arguments = values in call"
+          },
+          {
+            "label": "Matched in order"
+          }
+        ]
+      },
+      {
+        "label": "return",
+        "children": [
+          {
+            "label": "Sends result back"
+          },
+          {
+            "label": "Ends the function"
+          },
+          {
+            "label": "No return → None"
+          }
+        ]
+      },
+      {
+        "label": "Extras",
+        "children": [
+          {
+            "label": "Default values"
+          },
+          {
+            "label": "Named arguments"
+          },
+          {
+            "label": "Local variables"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError: not defined yet"
+          },
+          {
+            "label": "TypeError: missing argument"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "A **function** is a named block of code. **def** defines it; it runs only when you **call** it with brackets, like `label()`.",
+    "**Parameters** are the names in the `def` line; **arguments** are the values you pass in a call, matched in order or by name.",
+    "**return** sends a result back to the caller and ends the function; a function without `return` gives back **None**.",
+    "A parameter can have a **default value**, used when the call leaves it out.",
+    "Variables made inside a function are **local**: they disappear when it finishes, so return what you need."
+  ],
+  "video": {
+    "videoUrl": null,
+    "searchTerms": [
+      "python functions for beginners def return",
+      "python function parameters and arguments"
+    ]
+  },
+  "animations": [
+    {
+      "id": "call",
+      "title": "What happens when you call a function",
+      "afterExplanation": 2,
+      "canvas": {
+        "desktop": {
+          "w": 800,
+          "h": 460
+        },
+        "mobile": {
+          "w": 360,
+          "h": 600
+        }
+      },
+      "actors": [
+        {
+          "id": "code",
+          "type": "card",
+          "title": "mg_to_g.py",
+          "icon": "⚖️",
+          "color": "indigo",
+          "mono": true,
+          "lines": [
+            "def mg_to_g(mg):",
+            "    grams = mg / 1000",
+            "    return grams",
+            "",
+            "print(mg_to_g(500), \"g\")"
+          ],
+          "desktop": {
+            "x": 40,
+            "y": 40,
+            "w": 420,
+            "h": 220
+          },
+          "mobile": {
+            "x": 16,
+            "y": 120,
+            "w": 328,
+            "h": 200
+          }
+        },
+        {
+          "id": "mg",
+          "type": "box",
+          "label": "mg",
+          "value": "500",
+          "color": "amber",
+          "desktop": {
+            "x": 510,
+            "y": 40,
+            "w": 250,
+            "h": 90
+          },
+          "mobile": {
+            "x": 16,
+            "y": 12,
+            "w": 156,
+            "h": 96
+          }
+        },
+        {
+          "id": "grams",
+          "type": "box",
+          "label": "grams",
+          "value": "0.5",
+          "color": "emerald",
+          "desktop": {
+            "x": 510,
+            "y": 150,
+            "w": 250,
+            "h": 90
+          },
+          "mobile": {
+            "x": 188,
+            "y": 12,
+            "w": 156,
+            "h": 96
+          }
+        },
+        {
+          "id": "ret",
+          "type": "pill",
+          "text": "return 0.5 → back to the call",
+          "color": "emerald",
+          "desktop": {
+            "x": 480,
+            "y": 260,
+            "w": 300,
+            "h": 30
+          },
+          "mobile": {
+            "x": 30,
+            "y": 332,
+            "w": 300,
+            "h": 30
+          }
+        },
+        {
+          "id": "out",
+          "type": "terminal",
+          "title": "Output",
+          "desktop": {
+            "x": 40,
+            "y": 310,
+            "w": 720,
+            "h": 120
+          },
+          "mobile": {
+            "x": 16,
+            "y": 380,
+            "w": 328,
+            "h": 130
+          }
+        }
+      ],
+      "steps": [
+        {
+          "say": "The def lines only teach Python a new word, m g to g. Nothing runs yet.",
+          "audio": "anim-call-01.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "code"
+            },
+            {
+              "do": "show",
+              "target": "out"
+            },
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 0
+            }
+          ]
+        },
+        {
+          "say": "The last line calls the function with five hundred. Python jumps into the function, and the parameter m g receives five hundred.",
+          "audio": "anim-call-02.mp3",
+          "actions": [
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 4
+            },
+            {
+              "do": "show",
+              "target": "mg"
+            },
+            {
+              "do": "pulse",
+              "target": "mg"
+            }
+          ]
+        },
+        {
+          "say": "The body works out the grams: zero point five.",
+          "audio": "anim-call-03.mp3",
+          "actions": [
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 1
+            },
+            {
+              "do": "show",
+              "target": "grams"
+            }
+          ]
+        },
+        {
+          "say": "return carries zero point five back to where the function was called.",
+          "audio": "anim-call-04.mp3",
+          "actions": [
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 2
+            },
+            {
+              "do": "show",
+              "target": "ret"
+            },
+            {
+              "do": "pulse",
+              "target": "ret"
+            }
+          ]
+        },
+        {
+          "say": "The call becomes zero point five, and print shows it.",
+          "audio": "anim-call-05.mp3",
+          "actions": [
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 4
+            },
+            {
+              "do": "appendOutput",
+              "target": "out",
+              "text": "0.5 g"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "def",
+      "meaning": "The keyword that defines a new function: def name(parameters): followed by an indented body."
+    },
+    {
+      "term": "Call (a function)",
+      "meaning": "To run a function by writing its name with brackets, like label() or mg_to_g(500)."
+    },
+    {
+      "term": "Parameter",
+      "meaning": "A name inside the brackets of def. It receives a value each time the function is called."
+    },
+    {
+      "term": "Argument",
+      "meaning": "The actual value passed to a function in a call, like 500 in mg_to_g(500)."
+    },
+    {
+      "term": "return",
+      "meaning": "Sends a result back to where the function was called, and ends the function."
+    },
+    {
+      "term": "None",
+      "meaning": "Python's value for \"nothing\". A function without return gives back None."
+    },
+    {
+      "term": "Default value",
+      "meaning": "A value given to a parameter in def, like unit=\"mg\". It is used when the call leaves that argument out."
+    },
+    {
+      "term": "Local variable",
+      "meaning": "A variable created inside a function. It exists only while the function runs."
+    }
+  ]
+}

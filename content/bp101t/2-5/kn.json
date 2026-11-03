@@ -1,0 +1,343 @@
+{
+  "hook": {
+    "title": "ಒಮ್ಮೆ ಬರೆಯಿರಿ, ಎಲ್ಲೆಡೆ ಬಳಸಿ",
+    "md": "Hospital pharmacy ನ ಒಂದು app ಹಲವು ಕಡೆ ದೇಹದ ತೂಕದಿಂದ dose ಲೆಕ್ಕ ಹಾಕುತ್ತೆ: prescription screen ನಲ್ಲಿ, label ನಲ್ಲಿ, stock report ನಲ್ಲಿ. Formula ಹತ್ತು ಕಡೆ copy ಆಗಿದ್ದು ಒಂದು copy ಯಲ್ಲಿ ತಪ್ಪಿದ್ದರೆ, patient ಗೆ ತಪ್ಪು dose ಸಿಗಬಹುದು.\n\nಪರಿಹಾರ: formula ಅನ್ನು **ಒಮ್ಮೆ** ಬರೆದು, ಅದಕ್ಕೆ ಒಂದು **ಹೆಸರು** ಕೊಟ್ಟು, ಎಲ್ಲೆಡೆ ಆ ಹೆಸರನ್ನೇ ಬಳಸುವುದು. Code ನ ಈ ಹೆಸರಿರುವ, ಮತ್ತೆ ಬಳಸಬಹುದಾದ ಭಾಗವೇ **function**. Lesson 1.1 ಇಂದ ನೀವು functions ಬಳಸುತ್ತಿದ್ದೀರಿ: `print()`, `len()` ಮತ್ತು `input()`. ಇವತ್ತು ನಿಮ್ಮದೇ function ಬರೆಯುತ್ತೀರಿ."
+  },
+  "learn": [
+    "**def** ಇಂದ function **define** ಮಾಡುವುದು, ಮತ್ತು ಅದನ್ನು **call** ಮಾಡುವುದು",
+    "**Parameters** ಇಂದ function ಬೇರೆ ಬೇರೆ values ಜೊತೆ ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತೆ",
+    "**return** ಫಲಿತಾಂಶವನ್ನು ಹೇಗೆ ಹಿಂದೆ ಕಳಿಸುತ್ತೆ, ಮತ್ತು ಅದು print ತರಹ ಯಾಕಲ್ಲ",
+    "**Default values** ಮತ್ತು **local variables** ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತವೆ"
+  ],
+  "explanation": [
+    {
+      "heading": "ನಿಮ್ಮ ಮೊದಲ function",
+      "md": "Function ಅನ್ನು keyword **def**, ಒಂದು ಹೆಸರು, brackets ಮತ್ತು colon ಇಂದ **define** ಮಾಡುತ್ತೀರಿ. ಕೆಳಗಿನ indent ಮಾಡಿದ lines ಅದರ **body**:\n\n```python\ndef label():\n    print(\"Keep out of reach of children\")\n    print(\"Store below 25 C\")\n\nlabel()\nlabel()\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nKeep out of reach of children\nStore below 25 C\nKeep out of reach of children\nStore below 25 C\n```\n\nFunction define ಮಾಡಿದರೆ ಅದು **run ಆಗಲ್ಲ**. Python ಅದನ್ನು ನೆನಪಿಟ್ಟುಕೊಳ್ಳುತ್ತೆ ಅಷ್ಟೇ. Function ನ ಹೆಸರನ್ನು brackets ಜೊತೆ ಬರೆದು **call** ಮಾಡಿದಾಗ ಪ್ರತಿ ಸಲ body run ಆಗುತ್ತೆ: `label()`.",
+      "callout": {
+        "title": "Function",
+        "md": "ಒಂದು ಕೆಲಸ ಮಾಡುವ ಹೆಸರಿರುವ code block. def ಇಂದ ಒಮ್ಮೆ define ಮಾಡಿ, ಬೇಕಾದಾಗ ಅದರ ಹೆಸರನ್ನು brackets ಜೊತೆ ಬರೆದು run ಮಾಡುತ್ತೀರಿ."
+      }
+    },
+    {
+      "heading": "Parameters: function ಗೆ ಮಾಹಿತಿ ಕೊಡುವುದು",
+      "md": "Function ಗೆ values ಕೊಡಲು ಸಾಧ್ಯವಾದಾಗ ಅದು ಇನ್ನೂ ಹೆಚ್ಚು ಉಪಯುಕ್ತ. `def` ನ brackets ಒಳಗಿನ ಹೆಸರುಗಳು **parameters**:\n\n```python\ndef dose_label(drug, mg):\n    print(f\"{drug}: {mg} mg\")\n\ndose_label(\"Paracetamol\", 500)\ndose_label(\"Amoxicillin\", 250)\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nParacetamol: 500 mg\nAmoxicillin: 250 mg\n```\n\nCall ನಲ್ಲಿ ಕೊಡುವ values, ಉದಾ. `\"Paracetamol\"` ಮತ್ತು `500`, **arguments**. ಇವು parameters ಜೊತೆ **ಕ್ರಮವಾಗಿ** ಹೊಂದುತ್ತವೆ: ಮೊದಲ argument `drug` ಗೆ, ಎರಡನೆಯದು `mg` ಗೆ."
+    },
+    {
+      "heading": "return: ಫಲಿತಾಂಶ ಹಿಂದೆ ಕಳಿಸುವುದು",
+      "md": "`print()` value ಅನ್ನು screen ಮೇಲೆ ತೋರಿಸುತ್ತೆ ಅಷ್ಟೇ. Function ನ ಫಲಿತಾಂಶವನ್ನು program ನಲ್ಲಿ ಮುಂದೆ **ಬಳಸಲು**, function ಅದನ್ನು **return** ಮಾಡಬೇಕು:\n\n```python\ndef child_dose(weight, mg_per_kg):\n    return weight * mg_per_kg\n\ndose = child_dose(20, 15)\nprint(\"Dose:\", dose, \"mg\")\nprint(\"Two doses:\", child_dose(20, 15) * 2, \"mg\")\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nDose: 300 mg\nTwo doses: 600 mg\n```\n\n`return` value ಅನ್ನು function call ಆದ ಜಾಗಕ್ಕೆ ಹಿಂದೆ ಕೊಡುತ್ತೆ, ಆಗ ನೀವು ಅದನ್ನು store ಮಾಡಬಹುದು, print ಮಾಡಬಹುದು, ಅಥವಾ ಲೆಕ್ಕ ಹಾಕಬಹುದು. ಇದು function ಅನ್ನು ಮುಗಿಸುತ್ತೆ ಕೂಡ: `return` ನಂತರದ lines ಯಾವತ್ತೂ run ಆಗಲ್ಲ.",
+      "callout": {
+        "title": "return ಇಲ್ಲದಿದ್ದರೆ None",
+        "md": "return ಇಲ್ಲದ function None ಕೊಡುತ್ತೆ, Python ನಲ್ಲಿ \"ಏನೂ ಇಲ್ಲ\" ಅನ್ನುವ ಪದ. Function ಒಳಗೆ return ಬದಲು print ಮಾಡಿದರೆ, dose = child_dose(20, 15) ನಲ್ಲಿ None store ಆಗುತ್ತೆ."
+      }
+    },
+    {
+      "heading": "Default values ಮತ್ತು ಹೆಸರಿನ arguments",
+      "md": "Parameter ಗೆ ಒಂದು **default value** ಇರಬಹುದು, call ನಲ್ಲಿ ಕೊಡದಿದ್ದಾಗ ಅದು ಬಳಕೆಯಾಗುತ್ತೆ. Call ನಲ್ಲಿ arguments ಅನ್ನು ಹೆಸರಿನಿಂದಲೂ ಕೊಡಬಹುದು, ಆಗ ಅವುಗಳ ಕ್ರಮ ಮುಖ್ಯ ಅಲ್ಲ:\n\n```python\ndef dose_label(drug, amount, unit=\"mg\"):\n    print(f\"{drug}: {amount} {unit}\")\n\ndose_label(\"Paracetamol\", 500)\ndose_label(\"Insulin\", 10, \"units\")\ndose_label(unit=\"ml\", drug=\"Cough syrup\", amount=5)\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nParacetamol: 500 mg\nInsulin: 10 units\nCough syrup: 5 ml\n```\n\nDefault ಇರುವ parameters, default ಇಲ್ಲದವುಗಳ **ನಂತರ** ಬರಬೇಕು."
+    },
+    {
+      "heading": "Function ಒಳಗಿನ variables ಒಳಗೇ ಇರುತ್ತವೆ",
+      "md": "Function ಒಳಗೆ ಮಾಡಿದ variable **local**: function run ಆಗುವವರೆಗೆ ಮಾತ್ರ ಇರುತ್ತೆ.\n\n```python\ndef total_tablets(per_day, days):\n    total = per_day * days\n    return total\n\nprint(total_tablets(2, 5))\n```\n\nಇದು `10` print ಮಾಡುತ್ತೆ. ಆದರೆ function ನಂತರ `print(total)` ಬರೆದರೆ `NameError: name 'total' is not defined` ಬರುತ್ತೆ, ಯಾಕೆಂದರೆ function ಮುಗಿದಾಗ `total` ಮಾಯವಾಯಿತು. Value ಹೊರಗೆ ಬಳಸಬೇಕಾದರೆ ಅದನ್ನು **return** ಮಾಡಿ.\n\nಇದು ಒಳ್ಳೆಯದು: ಪ್ರತಿ function ಗೆ ತನ್ನದೇ variables, ಅದಕ್ಕೇ functions ಆಕಸ್ಮಿಕವಾಗಿ ಒಂದರ values ಇನ್ನೊಂದು ಬದಲಾಯಿಸಲ್ಲ.",
+      "callout": {
+        "title": "Functions ಯಾಕೆ ಬರೆಯಬೇಕು?",
+        "md": "ಒಮ್ಮೆ ಬರೆಯಿರಿ, ಹಲವು ಸಲ ಬಳಸಿ. ತಪ್ಪನ್ನು ಒಂದೇ ಕಡೆ ಸರಿ ಮಾಡಿ. ಒಂದು step ಗೆ ಸ್ಪಷ್ಟ ಹೆಸರು ಕೊಡಿ, ಉದಾ. mg_to_g. ಮತ್ತು ಪ್ರತಿ ಭಾಗವನ್ನು ಬೇರೆಯಾಗಿ test ಮಾಡಿ."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "ಈ program milligrams ಅನ್ನು grams ಗೆ ಬದಲಾಯಿಸುವ function define ಮಾಡಿ, ಅದನ್ನು ಎರಡು ಸಲ call ಮಾಡುತ್ತೆ.",
+    "keyTerms": [
+      {
+        "meaning": "ಒಂದು parameter ಇರುವ mg_to_g ಎಂಬ function define ಮಾಡು."
+      },
+      {
+        "meaning": "ಒಂದು parameter: ಪ್ರತಿ call ನಲ್ಲಿ ಕೊಟ್ಟ value ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ."
+      },
+      {
+        "meaning": "ಫಲಿತಾಂಶವನ್ನು call ಮಾಡಿದವರಿಗೆ ಹಿಂದೆ ಕಳಿಸು."
+      },
+      {
+        "meaning": "Function ಅನ್ನು argument 500 ಜೊತೆ call ಮಾಡು."
+      }
+    ],
+    "steps": [
+      {
+        "say": "ಈ program conversion ಅನ್ನು ಒಮ್ಮೆ, function ಆಗಿ ಬರೆದು, ಎರಡು ಸಲ ಬಳಸುತ್ತೆ."
+      },
+      {
+        "say": "Comment function ಏನು ಮಾಡುತ್ತೆ ಅಂತ ಹೇಳುತ್ತೆ."
+      },
+      {
+        "say": "def, m g to g ಎಂಬ function ಮಾಡುತ್ತೆ, ಅದಕ್ಕೆ ಒಂದು parameter, m g. Python ಅದನ್ನು ನೆನಪಿಟ್ಟುಕೊಳ್ಳುತ್ತೆ, ಆದರೆ body ಈಗ run ಮಾಡಲ್ಲ."
+      },
+      {
+        "say": "ಇಲ್ಲಿ function ಅನ್ನು ಐನೂರು ಜೊತೆ call ಮಾಡಲಾಗಿದೆ. Python function ಒಳಗೆ ಜಿಗಿಯುತ್ತೆ, parameter m g ಗೆ ಐನೂರು ಸಿಗುತ್ತೆ."
+      },
+      {
+        "say": "ಒಳಗೆ, grams ಅಂದರೆ ಐನೂರು ಭಾಗಿಸು ಸಾವಿರ: zero ಪಾಯಿಂಟ್ ಐದು."
+      },
+      {
+        "say": "return, zero ಪಾಯಿಂಟ್ ಐದನ್ನು function call ಮಾಡಿದ line ಗೆ ಹಿಂದೆ ಕಳಿಸುತ್ತೆ."
+      },
+      {
+        "say": "Line ಆರಕ್ಕೆ ಹಿಂತಿರುಗಿ, call ಜಾಗದಲ್ಲಿ ಅದರ ಫಲಿತಾಂಶ ಬರುತ್ತೆ, print ಅದನ್ನು ತೋರಿಸುತ್ತೆ."
+      },
+      {
+        "say": "ಅದೇ function ಮತ್ತೆ call ಆಗುತ್ತೆ, ಎರಡು ಸಾವಿರದ ಐನೂರು ಜೊತೆ. ಈ ಸಲ ಅದು ಎರಡು ಪಾಯಿಂಟ್ ಐದು return ಮಾಡುತ್ತೆ."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "ಈ ಎರಡು errors function ಅನ್ನು call ಮಾಡುವ ರೀತಿಯಿಂದ ಬರುತ್ತವೆ.",
+    "examples": [
+      {
+        "title": "Define ಮಾಡುವ ಮುಂಚೆ function call ಮಾಡುವುದು",
+        "md": "Python ಮೇಲಿಂದ ಕೆಳಗೆ run ಆಗುತ್ತೆ, ಅದಕ್ಕೇ line 1 ನಲ್ಲಿ ಅದು ಇನ್ನೂ `def` ನೋಡಿಲ್ಲ. Function definitions ಅನ್ನು ಮೇಲೆ, call ಮಾಡುವ ಮುಂಚೆ ಇಡಿ."
+      },
+      {
+        "title": "ಒಂದು argument ಬಿಡುವುದು",
+        "md": "Function ಗೆ ಎರಡು parameters ಇವೆ, ಆದರೆ call ಒಂದೇ value ಕೊಡುತ್ತೆ. ಎರಡೂ ಕೊಡಿ: `child_dose(20, 15)`, ಅಥವಾ parameter ಗೆ default value ಕೊಡಿ."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Call ಮಾಡುವಾಗ brackets ಮರೆಯುವುದು, ಉದಾ. `label()` ಬದಲು `label`",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ ಏನೂ ಆಗಲ್ಲ",
+      "fix": "Call ಗೆ ಯಾವಾಗಲೂ brackets ಬೇಕು: `label()`."
+    },
+    {
+      "mistake": "Function ಒಳಗೆ return ಬದಲು print ಮಾಡಿ, ಆಮೇಲೆ ಫಲಿತಾಂಶದಿಂದ ಲೆಕ್ಕ ಹಾಕುವುದು",
+      "see": "TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'",
+      "fix": "Value ಹಿಂದೆ ಕಳಿಸಲು `return` ಬಳಸಿ; ಬೇಕಾದರೆ ಹೊರಗೆ print ಮಾಡಿ."
+    },
+    {
+      "mistake": "`return` ನಂತರ lines ಬರೆದು ಅವು run ಆಗುತ್ತವೆ ಅಂತ ನಿರೀಕ್ಷಿಸುವುದು",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ ಆ lines ಯಾವತ್ತೂ run ಆಗಲ್ಲ",
+      "fix": "Function ಮಾಡಬೇಕಾದ ಎಲ್ಲವನ್ನೂ `return` ಗಿಂತ ಮುಂಚೆ ಇಡಿ."
+    },
+    {
+      "mistake": "Arguments ಅನ್ನು ತಪ್ಪು ಕ್ರಮದಲ್ಲಿ ಕೊಡುವುದು, ಉದಾ. `dose_label(500, \"Paracetamol\")`",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ label \"500: Paracetamol mg\" ಅಂತ ಬರುತ್ತೆ",
+      "fix": "Parameters ನ ಕ್ರಮ ಹೊಂದಿಸಿ, ಅಥವಾ ಹೆಸರು ಕೊಡಿ: `dose_label(drug=\"Paracetamol\", mg=500)`."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Label function",
+      "md": "`Shake well before use` print ಮಾಡುವ **warning** ಎಂಬ function define ಮಾಡಿ. ಆಮೇಲೆ ಅದನ್ನು **ಎರಡು ಸಲ call** ಮಾಡಿ, output ಸರಿಯಾಗಿ ಹೀಗಿರಲಿ:",
+      "hints": [
+        "def warning():\n    print(\"Shake well before use\")",
+        "ಅದನ್ನು warning() ಇಂದ ಎರಡು ಬೇರೆ lines ನಲ್ಲಿ, indentation ಇಲ್ಲದೆ call ಮಾಡಿ."
+      ]
+    },
+    {
+      "title": "Parameters ಇರುವ function",
+      "md": "**dose_label(drug, mg)** ಅನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ, ಅದು drug ಮತ್ತು dose print ಮಾಡಲಿ. Call ಮೊದಲೇ ಬರೆದಿದೆ; output ಸರಿಯಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "Function ಒಳಗೆ ಎರಡೂ parameters ಅನ್ನು ಒಂದು print ನಲ್ಲಿ ಬಳಸಿ.",
+        "    print(f\"{drug} {mg} mg\")"
+      ]
+    },
+    {
+      "title": "Daily dose return ಮಾಡಿ",
+      "md": "**daily_dose(dose, times)** dose ಅನ್ನು ದಿನಕ್ಕೆ ಎಷ್ಟು ಸಲ ಅನ್ನುವುದರಿಂದ ಗುಣಿಸಿ **return** ಮಾಡಲಿ. ಈಗ ಅದು `None` print ಮಾಡುತ್ತೆ. Output ಸರಿಯಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "return value ಅನ್ನು call ಗೆ ಹಿಂದೆ ಕಳಿಸುತ್ತೆ.",
+        "    return dose * times"
+      ]
+    },
+    {
+      "title": "Bug ಹುಡುಕಿ",
+      "md": "ಒಂದು syrup ನ ಪ್ರತಿ ml ನಲ್ಲಿ 50 mg ಇದೆ. 250 mg dose ಗೆ patient ಗೆ 5 ml ಬೇಕು, ಆದರೆ ಈ program number ಅನ್ನು ಬೇರೆ line ನಲ್ಲಿ print ಮಾಡಿ, ಆಮೇಲೆ `Give None ml` ಅಂತ ಹೇಳುತ್ತೆ. Output ಸರಿಯಾಗಿ ಹೀಗೇ ಬರುವ ಹಾಗೆ ಸರಿ ಮಾಡಿ:",
+      "hints": [
+        "Function ಗೆ return ಇಲ್ಲದಿದ್ದಾಗ ಅದು ಏನು ಹಿಂದೆ ಕೊಡುತ್ತೆ?",
+        "Function ಒಳಗಿನ print(...) ಅನ್ನು return ... ಗೆ ಬದಲಾಯಿಸಿ."
+      ],
+      "solutionNote": "print 5.0 ಅನ್ನು screen ಮೇಲೆ ತೋರಿಸಿತು ಅಷ್ಟೇ; function ತಾನು None ಕೊಟ್ಟಿತು, ಅದಕ್ಕೇ volume None ಆಯ್ತು. return, 5.0 ಅನ್ನು volume ಗೆ ಹಿಂದೆ ಕಳಿಸುತ್ತೆ."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Python ನಲ್ಲಿ ಯಾವ keyword function define ಮಾಡುತ್ತೆ?",
+      "why": "Functions def, ಹೆಸರು, brackets ಮತ್ತು colon ಇಂದ define ಆಗುತ್ತವೆ."
+    },
+    {
+      "q": "def double(x):\n    return x * 2\n\nprint(double(4))\n\nಇದು ಏನು print ಮಾಡುತ್ತೆ?",
+      "why": "double(4), 4 * 2 ಅಂದರೆ 8 return ಮಾಡುತ್ತೆ."
+    },
+    {
+      "q": "return statement ಇಲ್ಲದಿದ್ದರೆ function ಏನು ಹಿಂದೆ ಕೊಡುತ್ತೆ?",
+      "why": "return ಇಲ್ಲದೆ Python None ಕೊಡುತ್ತೆ."
+    },
+    {
+      "q": "def child_dose(weight, mg_per_kg): ನಲ್ಲಿ weight ಏನು?",
+      "why": "def ನ brackets ಒಳಗಿನ ಹೆಸರುಗಳು parameters; call ನಲ್ಲಿ ಕೊಡುವ values arguments."
+    },
+    {
+      "q": "def greet(name=\"Patient\"):\n    print(\"Hello\", name)\n\ngreet()\n\nಇದು ಏನು print ಮಾಡುತ್ತೆ?",
+      "why": "ಯಾವ argument ಕೂಡ ಕೊಟ್ಟಿಲ್ಲ, ಅದಕ್ಕೇ default value \"Patient\" ಬಳಕೆಯಾಗುತ್ತೆ."
+    },
+    {
+      "q": "Function ಒಳಗೆ return ನಂತರ ಬರೆದ lines ಗೆ ಏನಾಗುತ್ತೆ?",
+      "why": "return function ಅನ್ನು ತಕ್ಷಣ ಮುಗಿಸುತ್ತೆ."
+    }
+  ],
+  "exam": {
+    "note": "Practice ಗಾಗಿ important questions. University ನ ನಿಜವಾದ questions ಬೇರೆ ಇರಬಹುದು."
+  },
+  "mindmap": {
+    "label": "Lesson 2.5 · Functions",
+    "children": [
+      {
+        "label": "Define",
+        "children": [
+          {
+            "label": "def name():"
+          },
+          {
+            "label": "Indent ಮಾಡಿದ body"
+          },
+          {
+            "label": "ಇನ್ನೂ run ಆಗಲ್ಲ"
+          }
+        ]
+      },
+      {
+        "label": "Call",
+        "children": [
+          {
+            "label": "name()"
+          },
+          {
+            "label": "Body run ಮಾಡುತ್ತೆ"
+          },
+          {
+            "label": "ಹಲವು ಸಲ call"
+          }
+        ]
+      },
+      {
+        "label": "Parameters",
+        "children": [
+          {
+            "label": "def ನಲ್ಲಿ ಹೆಸರು"
+          },
+          {
+            "label": "Arguments = call ನ values"
+          },
+          {
+            "label": "ಕ್ರಮವಾಗಿ ಹೊಂದುತ್ತವೆ"
+          }
+        ]
+      },
+      {
+        "label": "return",
+        "children": [
+          {
+            "label": "ಫಲಿತಾಂಶ ಹಿಂದೆ ಕಳಿಸುತ್ತೆ"
+          },
+          {
+            "label": "Function ಮುಗಿಸುತ್ತೆ"
+          },
+          {
+            "label": "return ಇಲ್ಲ → None"
+          }
+        ]
+      },
+      {
+        "label": "Extras",
+        "children": [
+          {
+            "label": "Default values"
+          },
+          {
+            "label": "ಹೆಸರಿನ arguments"
+          },
+          {
+            "label": "Local variables"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError: ಇನ್ನೂ define ಆಗಿಲ್ಲ"
+          },
+          {
+            "label": "TypeError: argument ಬಿಟ್ಟಿದೆ"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Function** ಹೆಸರಿರುವ code block. **def** ಅದನ್ನು define ಮಾಡುತ್ತೆ; brackets ಜೊತೆ **call** ಮಾಡಿದಾಗ ಮಾತ್ರ run ಆಗುತ್ತೆ, ಉದಾ. `label()`.",
+    "**Parameters** `def` line ನ ಹೆಸರುಗಳು; **arguments** call ನಲ್ಲಿ ಕೊಡುವ values, ಕ್ರಮವಾಗಿ ಅಥವಾ ಹೆಸರಿನಿಂದ ಹೊಂದುತ್ತವೆ.",
+    "**return** ಫಲಿತಾಂಶವನ್ನು call ಮಾಡಿದವರಿಗೆ ಹಿಂದೆ ಕಳಿಸಿ function ಮುಗಿಸುತ್ತೆ; `return` ಇಲ್ಲದ function **None** ಕೊಡುತ್ತೆ.",
+    "Parameter ಗೆ **default value** ಇರಬಹುದು, call ನಲ್ಲಿ ಕೊಡದಿದ್ದಾಗ ಅದು ಬಳಕೆಯಾಗುತ್ತೆ.",
+    "Function ಒಳಗೆ ಮಾಡಿದ variables **local**: ಅದು ಮುಗಿದಾಗ ಮಾಯವಾಗುತ್ತವೆ, ಅದಕ್ಕೇ ಬೇಕಾದ್ದನ್ನು return ಮಾಡಿ."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "def lines Python ಗೆ ಒಂದು ಹೊಸ ಪದ ಕಲಿಸುತ್ತವೆ ಅಷ್ಟೇ, m g to g. ಇನ್ನೂ ಏನೂ run ಆಗಲ್ಲ."
+        },
+        {
+          "say": "ಕೊನೆಯ line function ಅನ್ನು ಐನೂರು ಜೊತೆ call ಮಾಡುತ್ತೆ. Python function ಒಳಗೆ ಜಿಗಿಯುತ್ತೆ, parameter m g ಗೆ ಐನೂರು ಸಿಗುತ್ತೆ."
+        },
+        {
+          "say": "Body grams ಲೆಕ್ಕ ಹಾಕುತ್ತೆ: zero ಪಾಯಿಂಟ್ ಐದು."
+        },
+        {
+          "say": "return, zero ಪಾಯಿಂಟ್ ಐದನ್ನು function call ಆದ ಜಾಗಕ್ಕೆ ಹಿಂದೆ ಕೊಂಡೊಯ್ಯುತ್ತೆ."
+        },
+        {
+          "say": "Call zero ಪಾಯಿಂಟ್ ಐದು ಆಗುತ್ತೆ, print ಅದನ್ನು ತೋರಿಸುತ್ತೆ."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "ಹೊಸ function define ಮಾಡುವ keyword: def name(parameters): ಮತ್ತು ಅದರ ಕೆಳಗೆ indent ಮಾಡಿದ body."
+    },
+    {
+      "meaning": "Function ನ ಹೆಸರನ್ನು brackets ಜೊತೆ ಬರೆದು ಅದನ್ನು run ಮಾಡುವುದು, ಉದಾ. label() ಅಥವಾ mg_to_g(500)."
+    },
+    {
+      "meaning": "def ನ brackets ಒಳಗಿನ ಹೆಸರು. Function call ಆದ ಪ್ರತಿ ಸಲ ಇದಕ್ಕೆ ಒಂದು value ಸಿಗುತ್ತೆ."
+    },
+    {
+      "meaning": "Call ನಲ್ಲಿ function ಗೆ ಕೊಡುವ ನಿಜವಾದ value, ಉದಾ. mg_to_g(500) ನಲ್ಲಿ 500."
+    },
+    {
+      "meaning": "Function call ಆದ ಜಾಗಕ್ಕೆ ಫಲಿತಾಂಶ ಹಿಂದೆ ಕಳಿಸಿ, function ಮುಗಿಸುತ್ತೆ."
+    },
+    {
+      "meaning": "Python ನಲ್ಲಿ \"ಏನೂ ಇಲ್ಲ\" ಅನ್ನುವ value. return ಇಲ್ಲದ function None ಕೊಡುತ್ತೆ."
+    },
+    {
+      "meaning": "def ನಲ್ಲಿ parameter ಗೆ ಕೊಟ್ಟ value, ಉದಾ. unit=\"mg\". Call ನಲ್ಲಿ ಆ argument ಇಲ್ಲದಿದ್ದಾಗ ಇದು ಬಳಕೆಯಾಗುತ್ತೆ."
+    },
+    {
+      "meaning": "Function ಒಳಗೆ ಮಾಡಿದ variable. Function run ಆಗುವವರೆಗೆ ಮಾತ್ರ ಇರುತ್ತೆ."
+    }
+  ]
+}

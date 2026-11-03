@@ -512,6 +512,48 @@ G = {
             "hinglish": "Shareer mein kisi dawa ki maatra ko aadha hone mein lagne wala samay.",
             "kn": "ದೇಹದಲ್ಲಿ ಔಷಧದ ಪ್ರಮಾಣ ಅರ್ಧಕ್ಕೆ ಇಳಿಯಲು ಬೇಕಾಗುವ ಸಮಯ."}),
     ],
+    "2-5": [
+        ("def", {
+            "en": "The keyword that defines a new function: def name(parameters): followed by an indented body.",
+            "hi": "नया function define करने वाला keyword: def name(parameters): और उसके नीचे indent की हुई body।",
+            "hinglish": "Naya function define karne wala keyword: def name(parameters): aur uske neeche indent ki hui body.",
+            "kn": "ಹೊಸ function define ಮಾಡುವ keyword: def name(parameters): ಮತ್ತು ಅದರ ಕೆಳಗೆ indent ಮಾಡಿದ body."}),
+        ("Call (a function)", {
+            "en": "To run a function by writing its name with brackets, like label() or mg_to_g(500).",
+            "hi": "Function का नाम brackets के साथ लिखकर उसे चलाना, जैसे label() या mg_to_g(500)।",
+            "hinglish": "Function ka naam brackets ke saath likhkar use chalaana, jaise label() ya mg_to_g(500).",
+            "kn": "Function ನ ಹೆಸರನ್ನು brackets ಜೊತೆ ಬರೆದು ಅದನ್ನು run ಮಾಡುವುದು, ಉದಾ. label() ಅಥವಾ mg_to_g(500)."}),
+        ("Parameter", {
+            "en": "A name inside the brackets of def. It receives a value each time the function is called.",
+            "hi": "def के brackets के अंदर का नाम। हर बार function call होने पर इसे एक value मिलती है।",
+            "hinglish": "def ke brackets ke andar ka naam. Har baar function call hone par ise ek value milti hai.",
+            "kn": "def ನ brackets ಒಳಗಿನ ಹೆಸರು. Function call ಆದ ಪ್ರತಿ ಸಲ ಇದಕ್ಕೆ ಒಂದು value ಸಿಗುತ್ತೆ."}),
+        ("Argument", {
+            "en": "The actual value passed to a function in a call, like 500 in mg_to_g(500).",
+            "hi": "Call में function को दी गई असली value, जैसे mg_to_g(500) में 500।",
+            "hinglish": "Call mein function ko di gayi asli value, jaise mg_to_g(500) mein 500.",
+            "kn": "Call ನಲ್ಲಿ function ಗೆ ಕೊಡುವ ನಿಜವಾದ value, ಉದಾ. mg_to_g(500) ನಲ್ಲಿ 500."}),
+        ("return", {
+            "en": "Sends a result back to where the function was called, and ends the function.",
+            "hi": "नतीजा वहाँ वापस भेजता है जहाँ function call हुआ था, और function खत्म करता है।",
+            "hinglish": "Nateeja wahaan wapas bhejta hai jahaan function call hua tha, aur function khatam karta hai.",
+            "kn": "Function call ಆದ ಜಾಗಕ್ಕೆ ಫಲಿತಾಂಶ ಹಿಂದೆ ಕಳಿಸಿ, function ಮುಗಿಸುತ್ತೆ."}),
+        ("None", {
+            "en": "Python's value for \"nothing\". A function without return gives back None.",
+            "hi": "Python में \"कुछ नहीं\" की value। बिना return का function None वापस देता है।",
+            "hinglish": "Python mein \"kuch nahi\" ki value. Bina return ka function None wapas deta hai.",
+            "kn": "Python ನಲ್ಲಿ \"ಏನೂ ಇಲ್ಲ\" ಅನ್ನುವ value. return ಇಲ್ಲದ function None ಕೊಡುತ್ತೆ."}),
+        ("Default value", {
+            "en": "A value given to a parameter in def, like unit=\"mg\". It is used when the call leaves that argument out.",
+            "hi": "def में parameter को दी गई value, जैसे unit=\"mg\"। Call में वह argument न हो तो यही use होती है।",
+            "hinglish": "def mein parameter ko di gayi value, jaise unit=\"mg\". Call mein woh argument na ho to yahi use hoti hai.",
+            "kn": "def ನಲ್ಲಿ parameter ಗೆ ಕೊಟ್ಟ value, ಉದಾ. unit=\"mg\". Call ನಲ್ಲಿ ಆ argument ಇಲ್ಲದಿದ್ದಾಗ ಇದು ಬಳಕೆಯಾಗುತ್ತೆ."}),
+        ("Local variable", {
+            "en": "A variable created inside a function. It exists only while the function runs.",
+            "hi": "Function के अंदर बना variable। यह सिर्फ़ function चलने तक रहता है।",
+            "hinglish": "Function ke andar bana variable. Yeh sirf function chalne tak rehta hai.",
+            "kn": "Function ಒಳಗೆ ಮಾಡಿದ variable. Function run ಆಗುವವರೆಗೆ ಮಾತ್ರ ಇರುತ್ತೆ."}),
+    ],
 }
 
 

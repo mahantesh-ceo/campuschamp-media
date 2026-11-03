@@ -1,0 +1,343 @@
+{
+  "hook": {
+    "title": "Ek baar likho, har jagah use karo",
+    "md": "Hospital pharmacy ka ek app kai jagah shareer ke wazan se dose nikaalta hai: prescription screen par, label par, stock report mein. Agar formula das jagah copy ho aur kisi ek copy mein galti ho, to patient ko galat dose mil sakta hai.\n\nIlaaj hai formula ko **ek baar** likhna, use ek **naam** dena, aur har jagah wahi naam use karna. Code ka yeh naam wala, dobara use hone wala hissa **function** hai. Lesson 1.1 se aap functions use kar rahe hain: `print()`, `len()` aur `input()`. Aaj aap apna function likhenge."
+  },
+  "learn": [
+    "**def** se function **define** karna, aur use **call** karna",
+    "**Parameters** se function alag-alag values ke saath kaise kaam karta hai",
+    "**return** nateeja wapas kaise bhejta hai, aur yeh print jaisa kyon nahi",
+    "**Default values** aur **local variables** kaise kaam karte hain"
+  ],
+  "explanation": [
+    {
+      "heading": "Aapka pehla function",
+      "md": "Function ko keyword **def**, ek naam, brackets aur colon se **define** karte hain. Neeche ki indent ki hui lines uski **body** hain:\n\n```python\ndef label():\n    print(\"Keep out of reach of children\")\n    print(\"Store below 25 C\")\n\nlabel()\nlabel()\n```\n\nYeh print karta hai:\n\n```\nKeep out of reach of children\nStore below 25 C\nKeep out of reach of children\nStore below 25 C\n```\n\nFunction define karne se woh **chalta nahi**. Python bas use yaad rakh leta hai. Body tab chalti hai jab aap function ka naam brackets ke saath likhkar use **call** karte hain: `label()`.",
+      "callout": {
+        "title": "Function",
+        "md": "Code ka naam wala block jo ek kaam karta hai. def se use ek baar define karte hain, aur jab chahein uska naam brackets ke saath likhkar chalaate hain."
+      }
+    },
+    {
+      "heading": "Parameters: function ko jaankaari dena",
+      "md": "Jab aap function ko values de sakein, to woh kahin zyada kaam ka ho jaata hai. `def` ke brackets ke andar ke naam **parameters** hain:\n\n```python\ndef dose_label(drug, mg):\n    print(f\"{drug}: {mg} mg\")\n\ndose_label(\"Paracetamol\", 500)\ndose_label(\"Amoxicillin\", 250)\n```\n\nYeh print karta hai:\n\n```\nParacetamol: 500 mg\nAmoxicillin: 250 mg\n```\n\nCall mein aap jo values dete hain, jaise `\"Paracetamol\"` aur `500`, woh **arguments** hain. Yeh parameters se **kram mein** milte hain: pehla argument `drug` mein, doosra `mg` mein."
+    },
+    {
+      "heading": "return: nateeja wapas bhejna",
+      "md": "`print()` value ko sirf screen par dikhaata hai. Function ke nateeje ko program mein aage **use** karne ke liye function ko use **return** karna hoga:\n\n```python\ndef child_dose(weight, mg_per_kg):\n    return weight * mg_per_kg\n\ndose = child_dose(20, 15)\nprint(\"Dose:\", dose, \"mg\")\nprint(\"Two doses:\", child_dose(20, 15) * 2, \"mg\")\n```\n\nYeh print karta hai:\n\n```\nDose: 300 mg\nTwo doses: 600 mg\n```\n\n`return` value ko us jagah wapas deta hai jahaan function call hua tha, taaki aap use store karein, print karein, ya usse hisaab lagaayein. Yeh function ko khatam bhi karta hai: `return` ke baad ki lines kabhi nahi chalti.",
+      "callout": {
+        "title": "return nahi, to None",
+        "md": "Bina return ka function None deta hai, jo Python mein \"kuch nahi\" ka shabd hai. Agar function mein return ki jagah print karein, to dose = child_dose(20, 15) mein None store hota hai."
+      }
+    },
+    {
+      "heading": "Default values aur naam wale arguments",
+      "md": "Parameter ki ek **default value** ho sakti hai, jo call mein na di jaaye to use hoti hai. Call mein arguments ko naam se bhi de sakte hain, tab unka kram matter nahi karta:\n\n```python\ndef dose_label(drug, amount, unit=\"mg\"):\n    print(f\"{drug}: {amount} {unit}\")\n\ndose_label(\"Paracetamol\", 500)\ndose_label(\"Insulin\", 10, \"units\")\ndose_label(unit=\"ml\", drug=\"Cough syrup\", amount=5)\n```\n\nYeh print karta hai:\n\n```\nParacetamol: 500 mg\nInsulin: 10 units\nCough syrup: 5 ml\n```\n\nDefault wale parameters, bina default walon ke **baad** aane chahiye."
+    },
+    {
+      "heading": "Function ke andar ke variables andar hi rehte hain",
+      "md": "Function ke andar bana variable **local** hota hai: woh sirf function chalne tak rehta hai.\n\n```python\ndef total_tablets(per_day, days):\n    total = per_day * days\n    return total\n\nprint(total_tablets(2, 5))\n```\n\nYeh `10` print karta hai. Par function ke baad `print(total)` likhein to `NameError: name 'total' is not defined` aayega, kyonki function khatam hote hi `total` gaayab ho gaya. Bahar value use karni ho to use **return** kijiye.\n\nYeh achchhi baat hai: har function ke apne variables hote hain, isliye functions galti se ek-doosre ki values nahi badal sakte.",
+      "callout": {
+        "title": "Functions kyon likhein?",
+        "md": "Ek baar likho, kai baar use karo. Galti ek jagah theek karo. Kisi step ko saaf naam do, jaise mg_to_g. Aur har hisse ko alag se test karo."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "Yeh program milligrams ko grams mein badalne wala function define karta hai, phir use do baar call karta hai.",
+    "keyTerms": [
+      {
+        "meaning": "mg_to_g naam ka function define karo, ek parameter ke saath."
+      },
+      {
+        "meaning": "Ek parameter: har call mein di gayi value leta hai."
+      },
+      {
+        "meaning": "Nateeja call karne wale ko wapas bhejo."
+      },
+      {
+        "meaning": "Function ko argument 500 ke saath call karo."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Yeh program conversion ko ek baar, function ke roop mein likhta hai, aur use do baar use karta hai."
+      },
+      {
+        "say": "Comment batata hai ki function kya karta hai."
+      },
+      {
+        "say": "def, m g to g naam ka function banaata hai, jiska ek parameter hai, m g. Python use yaad rakhta hai, par body abhi nahi chalaata."
+      },
+      {
+        "say": "Yahaan function ko paanch sau ke saath call kiya gaya. Python function mein koodta hai, aur parameter m g ko paanch sau milta hai."
+      },
+      {
+        "say": "Andar, grams hai paanch sau bhaag ek hazaar: zero dashamlav paanch."
+      },
+      {
+        "say": "return, zero dashamlav paanch ko us line par wapas bhejta hai jisne function call kiya."
+      },
+      {
+        "say": "Line chhah par wapas, call ki jagah uska nateeja aa jaata hai, aur print use dikhaata hai."
+      },
+      {
+        "say": "Wahi function phir call hota hai, do hazaar paanch sau ke saath. Is baar woh do dashamlav paanch return karta hai."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Yeh do errors function ko call karne ke tareeke se aati hain.",
+    "examples": [
+      {
+        "title": "Define karne se pehle function call karna",
+        "md": "Python upar se neeche chalta hai, isliye line 1 par usne abhi `def` dekha hi nahi. Function definitions upar rakhiye, call karne se pehle."
+      },
+      {
+        "title": "Ek argument chhod dena",
+        "md": "Function ke do parameters hain, par call sirf ek value deta hai. Dono dijiye: `child_dose(20, 15)`, ya parameter ko default value dijiye."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Call karte samay brackets bhool jaana, jaise `label()` ki jagah `label`",
+      "see": "Koi error nahi, par kuch nahi hota",
+      "fix": "Call mein hamesha brackets chahiye: `label()`."
+    },
+    {
+      "mistake": "Function mein return ki jagah print karna, phir nateeje se hisaab lagaana",
+      "see": "TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'",
+      "fix": "Value wapas bhejne ke liye `return` use kijiye; zaroorat ho to bahar print kijiye."
+    },
+    {
+      "mistake": "`return` ke baad lines likhna aur ummeed karna ki woh chalengi",
+      "see": "Koi error nahi, par woh lines kabhi nahi chalti",
+      "fix": "Function ko jo kuch karna hai, woh sab `return` se pehle rakhiye."
+    },
+    {
+      "mistake": "Arguments galat kram mein dena, jaise `dose_label(500, \"Paracetamol\")`",
+      "see": "Koi error nahi, par label par \"500: Paracetamol mg\" aata hai",
+      "fix": "Parameters ka kram milaaiye, ya naam dijiye: `dose_label(drug=\"Paracetamol\", mg=500)`."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Label wala function",
+      "md": "**warning** naam ka function define kijiye jo `Shake well before use` print kare. Phir use **do baar call** kijiye, taaki output bilkul yeh ho:",
+      "hints": [
+        "def warning():\n    print(\"Shake well before use\")",
+        "Use warning() se do alag lines par call kijiye, bina indentation ke."
+      ]
+    },
+    {
+      "title": "Parameters wala function",
+      "md": "**dose_label(drug, mg)** ko poora kijiye taaki woh drug aur dose print kare. Call pehle se likha hai; output bilkul yeh hona chahiye:",
+      "hints": [
+        "Function ke andar dono parameters ek print mein use kijiye.",
+        "    print(f\"{drug} {mg} mg\")"
+      ]
+    },
+    {
+      "title": "Daily dose return kijiye",
+      "md": "**daily_dose(dose, times)** ko dose guna din mein kitni baar ka nateeja **return** karwaaiye. Abhi yeh `None` print karta hai. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "return value ko call par wapas bhejta hai.",
+        "    return dose * times"
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "Ek syrup mein har ml mein 50 mg hai. 250 mg dose ke liye patient ko 5 ml chahiye, par yeh program number ko alag line par print karta hai aur phir `Give None ml` kehta hai. Ise theek kijiye taaki output bilkul yeh ho:",
+      "hints": [
+        "Jab function mein return na ho, to woh kya wapas deta hai?",
+        "Function ke andar print(...) ko return ... mein badaliye."
+      ],
+      "solutionNote": "print ne 5.0 sirf screen par dikhaaya; function ne khud None wapas diya, isliye volume None tha. return, 5.0 ko volume mein wapas bhejta hai."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Python mein kaun-sa keyword function define karta hai?",
+      "why": "Functions def, naam, brackets aur colon se define hote hain."
+    },
+    {
+      "q": "def double(x):\n    return x * 2\n\nprint(double(4))\n\nYeh kya print karta hai?",
+      "why": "double(4), 4 * 2 yaani 8 return karta hai."
+    },
+    {
+      "q": "return statement na ho to function kya wapas deta hai?",
+      "why": "return ke bina Python None wapas deta hai."
+    },
+    {
+      "q": "def child_dose(weight, mg_per_kg): mein weight kya hai?",
+      "why": "def ke brackets ke naam parameters hain; call mein di gayi values arguments hain."
+    },
+    {
+      "q": "def greet(name=\"Patient\"):\n    print(\"Hello\", name)\n\ngreet()\n\nYeh kya print karta hai?",
+      "why": "Koi argument nahi diya gaya, isliye default value \"Patient\" use hoti hai."
+    },
+    {
+      "q": "Function ke andar return ke baad likhi lines ka kya hota hai?",
+      "why": "return function ko turant khatam kar deta hai."
+    }
+  ],
+  "exam": {
+    "note": "Practice ke liye important questions. University ke asli questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 2.5 · Functions",
+    "children": [
+      {
+        "label": "Define",
+        "children": [
+          {
+            "label": "def name():"
+          },
+          {
+            "label": "Indent ki hui body"
+          },
+          {
+            "label": "Abhi nahi chalta"
+          }
+        ]
+      },
+      {
+        "label": "Call",
+        "children": [
+          {
+            "label": "name()"
+          },
+          {
+            "label": "Body chalaata hai"
+          },
+          {
+            "label": "Kai baar call"
+          }
+        ]
+      },
+      {
+        "label": "Parameters",
+        "children": [
+          {
+            "label": "def mein naam"
+          },
+          {
+            "label": "Arguments = call ki values"
+          },
+          {
+            "label": "Kram se milte hain"
+          }
+        ]
+      },
+      {
+        "label": "return",
+        "children": [
+          {
+            "label": "Nateeja wapas bhejta hai"
+          },
+          {
+            "label": "Function khatam karta hai"
+          },
+          {
+            "label": "return nahi → None"
+          }
+        ]
+      },
+      {
+        "label": "Extras",
+        "children": [
+          {
+            "label": "Default values"
+          },
+          {
+            "label": "Naam wale arguments"
+          },
+          {
+            "label": "Local variables"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError: abhi define nahi"
+          },
+          {
+            "label": "TypeError: argument chhoota"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Function** code ka naam wala block hai. **def** use define karta hai; woh tabhi chalta hai jab aap use brackets ke saath **call** karein, jaise `label()`.",
+    "**Parameters** `def` line ke naam hain; **arguments** call mein di gayi values hain, jo kram se ya naam se milti hain.",
+    "**return** nateeja call karne wale ko wapas bhejta hai aur function khatam karta hai; bina `return` ka function **None** deta hai.",
+    "Parameter ki **default value** ho sakti hai, jo call mein na di jaaye to use hoti hai.",
+    "Function ke andar bane variables **local** hote hain: function khatam hote hi gaayab, isliye jo chahiye use return kijiye."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "def lines bas Python ko ek naya shabd sikhaati hain, m g to g. Abhi kuch nahi chalta."
+        },
+        {
+          "say": "Aakhri line function ko paanch sau ke saath call karti hai. Python function mein koodta hai, aur parameter m g ko paanch sau milta hai."
+        },
+        {
+          "say": "Body grams nikaalti hai: zero dashamlav paanch."
+        },
+        {
+          "say": "return, zero dashamlav paanch ko wahaan wapas le jaata hai jahaan function call hua tha."
+        },
+        {
+          "say": "Call, zero dashamlav paanch ban jaata hai, aur print use dikhaata hai."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Naya function define karne wala keyword: def name(parameters): aur uske neeche indent ki hui body."
+    },
+    {
+      "meaning": "Function ka naam brackets ke saath likhkar use chalaana, jaise label() ya mg_to_g(500)."
+    },
+    {
+      "meaning": "def ke brackets ke andar ka naam. Har baar function call hone par ise ek value milti hai."
+    },
+    {
+      "meaning": "Call mein function ko di gayi asli value, jaise mg_to_g(500) mein 500."
+    },
+    {
+      "meaning": "Nateeja wahaan wapas bhejta hai jahaan function call hua tha, aur function khatam karta hai."
+    },
+    {
+      "meaning": "Python mein \"kuch nahi\" ki value. Bina return ka function None wapas deta hai."
+    },
+    {
+      "meaning": "def mein parameter ko di gayi value, jaise unit=\"mg\". Call mein woh argument na ho to yahi use hoti hai."
+    },
+    {
+      "meaning": "Function ke andar bana variable. Yeh sirf function chalne tak rehta hai."
+    }
+  ]
+}
