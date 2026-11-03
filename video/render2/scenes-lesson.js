@@ -39,12 +39,12 @@ window.addScenes(({ $, $$, clamp, ap, lerp, esc, show, pop, S, E, bg, T }) => {
     const fs = fontFor(rows, w, opts.max || 34);
     const rh = Math.round(fs * 1.9);
     return { rh, top: y, html: `<div id="${id}" class="abs" style="left:${x}px;top:${y}px;width:${w}px;opacity:0;border-radius:28px;background:#0b1023;border:1.5px solid #2b3466;box-shadow:0 30px 70px rgba(0,0,0,.5);overflow:hidden">
-      <div style="display:flex;align-items:center;gap:10px;padding:16px 24px;background:#111633;border-bottom:1.5px solid #1e293b"><i style="width:14px;height:14px;border-radius:50%;background:#fb7185"></i><i style="width:14px;height:14px;border-radius:50%;background:#fbbf24"></i><i style="width:14px;height:14px;border-radius:50%;background:#34d399"></i><span style="margin-left:12px;color:#94a3b8;font-family:var(--mono);font-size:22px">${esc(file)}</span></div>
-      <div style="padding:16px 0">${rows.map((r, i) => `<div class="row" data-i="${i}" style="height:${rh}px;display:flex;align-items:center;padding:0 26px;font-family:var(--mono);font-size:${fs}px;color:#e2e8f0;white-space:pre">${opts.prompt ? '<span style="color:#34d399">$ </span>' : `<span style="width:${fs * 1.4}px;flex:none;color:#475569">${i + 1}</span>`}${opts.prompt ? esc(r) : hl(r)}</div>`).join('')}</div></div>` };
+      <div style="display:flex;align-items:center;gap:10px;padding:16px 24px;background:#111633;border-bottom:1.5px solid #1e293b"><i style="width:14px;height:14px;border-radius:50%;background:#fb7185"></i><i style="width:14px;height:14px;border-radius:50%;background:#fbbf24"></i><i style="width:14px;height:14px;border-radius:50%;background:#34d399"></i><span style="margin-left:12px;color:#94a3b8;font-family:var(--mono);font-variant-ligatures:none;font-size:22px">${esc(file)}</span></div>
+      <div style="padding:16px 0">${rows.map((r, i) => `<div class="row" data-i="${i}" style="height:${rh}px;display:flex;align-items:center;padding:0 26px;font-family:var(--mono);font-variant-ligatures:none;font-size:${fs}px;color:#e2e8f0;white-space:pre">${opts.prompt ? '<span style="color:#34d399">$ </span>' : `<span style="width:${fs * 1.4}px;flex:none;color:#475569">${i + 1}</span>`}${opts.prompt ? esc(r) : hl(r)}</div>`).join('')}</div></div>` };
   };
   const consoleBox = (id, x, y, w, h, title) => `<div id="${id}" class="abs" style="left:${x}px;top:${y}px;width:${w}px;opacity:0;border-radius:28px;background:#020617;border:1.5px solid #1e293b;overflow:hidden">
       <div style="padding:16px 24px;background:#0f172a;color:#94a3b8;font-family:var(--head);font-weight:700;font-size:24px">${esc(title || D('output') || 'Output')}</div>
-      <div class="out" style="padding:20px 24px;font-family:var(--mono);font-size:30px;line-height:1.6;color:#e2e8f0;height:${h}px;white-space:pre-wrap;overflow:hidden"></div></div>`;
+      <div class="out" style="padding:20px 24px;font-family:var(--mono);font-variant-ligatures:none;font-size:30px;line-height:1.6;color:#e2e8f0;height:${h}px;white-space:pre-wrap;overflow:hidden"></div></div>`;
   const glowRow = (n, p, rgb) => { if (!n) return; n.style.background = `rgba(${rgb},${0.22 * p})`; n.style.boxShadow = p > 0 ? `inset 6px 0 0 rgba(${rgb},${p})` : 'none'; };
   const voiceName = () => { const v = document.querySelector('#voice'); if (v && T().voiceName && v.lastChild.nodeType === 3) v.lastChild.textContent = T().voiceName; };
 
@@ -81,18 +81,18 @@ window.addScenes(({ $, $$, clamp, ap, lerp, esc, show, pop, S, E, bg, T }) => {
         const base = `position:absolute;left:${p.x}px;top:${p.y}px;width:${p.w}px;height:${p.h}px;opacity:0`;
         if (a.type === 'box') return `<div class="act" data-id="${a.id}" style="${base};border-radius:16px;background:rgba(255,255,255,.06);border:2px solid ${c};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px">
             <span style="font-family:var(--head);font-weight:700;font-size:15px;color:${c}">${esc(a.label || '')}</span>
-            <span class="val" style="font-family:var(--mono);font-weight:700;font-size:${Math.min(30, p.h * 0.3)}px;color:#fff;white-space:nowrap">${esc(a.value || '')}</span></div>`;
+            <span class="val" style="font-family:var(--mono);font-variant-ligatures:none;font-weight:700;font-size:${Math.min(30, p.h * 0.3)}px;color:#fff;white-space:nowrap">${esc(a.value || '')}</span></div>`;
         if (a.type === 'pill') return `<div class="act" data-id="${a.id}" style="${base};border-radius:999px;background:${c}2e;border:1.5px solid ${c};display:grid;place-items:center;font-family:var(--head);font-weight:700;font-size:${Math.min(16, p.h * 0.55)}px;color:#fff;white-space:nowrap">${esc(a.text || '')}</div>`;
-        if (a.type === 'text') return `<div class="act" data-id="${a.id}" style="${base};display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--mono);font-size:${(a.size || 18) * 0.95}px;color:#e2e8f0">${esc(a.text || '')}</div>`;
+        if (a.type === 'text') return `<div class="act" data-id="${a.id}" style="${base};display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--mono);font-variant-ligatures:none;font-size:${(a.size || 18) * 0.95}px;color:#e2e8f0">${esc(a.text || '')}</div>`;
         if (a.type === 'terminal') return `<div class="act" data-id="${a.id}" style="${base};border-radius:14px;background:#020617;border:1.5px solid #1e293b;overflow:hidden">
             <div style="padding:6px 12px;background:#0f172a;color:#94a3b8;font-family:var(--head);font-weight:700;font-size:13px">${esc(a.title || 'Output')}</div>
-            <div class="tout" style="padding:8px 12px;font-family:var(--mono);font-size:16px;line-height:1.5;color:#e2e8f0;white-space:pre-wrap"></div></div>`;
+            <div class="tout" style="padding:8px 12px;font-family:var(--mono);font-variant-ligatures:none;font-size:16px;line-height:1.5;color:#e2e8f0;white-space:pre-wrap"></div></div>`;
         // card
         const lines = a.lines || [];
         const lh = Math.max(16, Math.min(34, (p.h - 46) / Math.max(1, lines.length)));
         return `<div class="act" data-id="${a.id}" style="${base};border-radius:16px;background:#0b1023;border:1.5px solid ${c};overflow:hidden">
             <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:${c}26;color:#fff;font-family:var(--head);font-weight:700;font-size:15px"><span>${a.icon || ''}</span>${esc(a.title || '')}</div>
-            <div style="padding:6px 0">${lines.map((l, i) => `<div class="cl" data-i="${i}" style="height:${lh}px;display:flex;align-items:center;padding:0 12px;font-family:${a.mono ? 'var(--mono)' : 'var(--body)'};font-size:${Math.min(16, lh * 0.62)}px;color:#e2e8f0;white-space:pre">${a.mono ? hl(l) : esc(l)}</div>`).join('')}</div></div>`;
+            <div style="padding:6px 0">${lines.map((l, i) => `<div class="cl" data-i="${i}" style="height:${lh}px;display:flex;align-items:center;padding:0 12px;font-family:${a.mono ? 'var(--mono)' : 'var(--body)'};font-variant-ligatures:none;font-size:${Math.min(16, lh * 0.62)}px;color:#e2e8f0;white-space:pre">${a.mono ? hl(l) : esc(l)}</div>`).join('')}</div></div>`;
       };
       return `${bg(['#0f2a4a', '#0a1a33', '#040b18'])}
         <svg id="wires" class="abs" style="left:320px;top:120px;width:1280px;height:736px;overflow:visible" viewBox="0 0 800 460"></svg>
@@ -227,7 +227,7 @@ window.addScenes(({ $, $$, clamp, ap, lerp, esc, show, pop, S, E, bg, T }) => {
       const ptr = $('#ptr', el);
       ptr.style.opacity = cur >= 0 ? 1 : 0;
       ptr.style.top = `${140 + 64 + 16 + cur * rh + (rh - 40) / 2}px`;
-      $('#vars .vl', el).innerHTML = Object.entries(vars).map(([k, v]) => `<div style="display:flex;gap:14px;align-items:baseline;font-family:var(--mono);font-size:${String(v).length > 22 ? 22 : 28}px;color:#e2e8f0"><span style="color:#a5b4fc">${esc(k)}</span><span style="color:#64748b">=</span><span style="color:#fef3c7;white-space:pre">${esc(v)}</span></div>`).join('');
+      $('#vars .vl', el).innerHTML = Object.entries(vars).map(([k, v]) => `<div style="display:flex;gap:14px;align-items:baseline;font-family:var(--mono);font-variant-ligatures:none;font-size:${String(v).length > 22 ? 22 : 28}px;color:#e2e8f0"><span style="color:#a5b4fc">${esc(k)}</span><span style="color:#64748b">=</span><span style="color:#fef3c7;white-space:pre">${esc(v)}</span></div>`).join('');
       const o = $('#con .out', el);
       o.textContent = outs.join('\n');
       o.style.fontSize = outs.length > 7 ? '22px' : '28px';
@@ -243,7 +243,7 @@ window.addScenes(({ $, $$, clamp, ap, lerp, esc, show, pop, S, E, bg, T }) => {
       return `${bg(['#4a1430', '#2a0b1c', '#12040c'])}
         <h2 id="hh" class="abs h" style="left:150px;top:150px;width:1620px;font-size:56px;line-height:1.1;color:#fff;opacity:0">⚠️ ${esc(d.title || '')}</h2>
         ${ed.html}
-        <div id="msg" class="abs" style="left:150px;top:${280 + 64 + 32 + d.code.split('\n').length * ed.rh + 30}px;width:1620px;opacity:0;border-radius:24px;background:#2a0712;border:2px solid #fb7185;padding:22px 30px;font-family:var(--mono);font-size:${d.output.length > 70 ? 26 : 32}px;color:#fecdd3">${esc(d.output)}</div>`;
+        <div id="msg" class="abs" style="left:150px;top:${280 + 64 + 32 + d.code.split('\n').length * ed.rh + 30}px;width:1620px;opacity:0;border-radius:24px;background:#2a0712;border:2px solid #fb7185;padding:22px 30px;font-family:var(--mono);font-variant-ligatures:none;font-size:${d.output.length > 70 ? 26 : 32}px;color:#fecdd3">${esc(d.output)}</div>`;
     },
     update: (el, t, s) => {
       const d = D(key);
