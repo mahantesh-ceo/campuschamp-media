@@ -1,0 +1,10 @@
+0:00 Intro
+0:19 From the keyboard to a number
+0:58 Asking a question with input()
+1:08 f-strings: values inside text
+1:20 Fixing the number of decimal places
+1:32 Walkthrough
+2:35 Common errors
+3:01 Quick check
+3:22 Recap
+3:55 Practise

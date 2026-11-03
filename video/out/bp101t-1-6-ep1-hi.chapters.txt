@@ -1,0 +1,10 @@
+0:00 Intro
+0:21 मुख्य बात
+0:52 Strings: जोड़ना, दोहराना, नापना
+1:03 Slicing: string का एक हिस्सा
+1:16 String methods: text साफ़ करना
+1:30 Walkthrough
+2:35 आम errors
+2:54 Quick check
+3:13 Recap
+3:49 Practice

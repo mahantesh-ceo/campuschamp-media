@@ -1,0 +1,23 @@
+{
+  "lesson": "1-5",
+  "episode": 1,
+  "language": "kn",
+  "file": "video/out/bp101t-1-5-ep1-kn.mp4",
+  "chapters": "video/out/bp101t-1-5-ep1-kn.chapters.txt",
+  "thumbnail": "video/out/bp101t-1-5-ep1-kn.png",
+  "description": "B.Pharm Sem I, BP101T Basics of Python Programming for Pharmaceutical Sciences, ಕನ್ನಡದಲ್ಲಿ.\n\nಈ episode ನಲ್ಲಿ: input() ಇಂದ ಪ್ರಶ್ನೆ ಕೇಳೋದು, f-strings: text ಒಳಗೆ values ಮತ್ತು Decimal places ನಿಗದಿ ಮಾಡೋದು. ಆಮೇಲೆ ಎರಡು ಸಾಮಾನ್ಯ errors (TypeError / ValueError), ಒಂದು quick check ಮತ್ತು recap.\n\n▶ ಈ lesson ಅನ್ನು ನಿಮ್ಮ phone ನಲ್ಲಿ free ಆಗಿ practise ಮಾಡಿ:\nhttps://www.campuschamp.in/learn/bp101t/1-5?utm_source=youtube&utm_medium=video&utm_campaign=bp101t-1-5-ep1-kn\n\n📄 BP101T Unit 1 important questions (free PDF):\nhttps://www.campuschamp.in/kn/bp101t/important-questions/unit-1?utm_source=youtube&utm_medium=video&utm_campaign=bp101t-1-5-ep1-kn\n\nChapters\n{{CHAPTERS}}\n\nNarration uses an AI voice. Practice questions only; university questions may differ.\n\n#BP101T #BPharm #PythonInKannada #PCI",
+  "tags": [
+    "BP101T",
+    "B.Pharm Python",
+    "Python in Kannada",
+    "python input output kannada",
+    "python f-string kannada",
+    "python input function kannada",
+    "Basics of Python Programming for Pharmaceutical Sciences",
+    "PCI syllabus",
+    "B.Pharm Sem 1",
+    "pharmacy students",
+    "Campus Champ"
+  ],
+  "topic": "Input ಮತ್ತು output"
+}

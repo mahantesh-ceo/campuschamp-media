@@ -1,0 +1,10 @@
+0:00 Intro
+0:21 Slicing a batch code
+0:48 Strings: joining, repeating, measuring
+0:59 Slicing: a piece of a string
+1:11 String methods: cleaning text
+1:26 Walkthrough
+2:30 Common errors
+2:50 Quick check
+3:10 Recap
+3:46 Practise

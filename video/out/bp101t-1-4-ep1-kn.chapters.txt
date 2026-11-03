@@ -1,0 +1,10 @@
+0:00 Intro
+0:18 ಮುಖ್ಯ ವಿಷಯ
+0:48 Data types ನಡುವೆ ಬದಲಾಯಿಸೋದು
+1:00 Arithmetic operators
+1:14 Logical operators: and, or, not
+1:25 Walkthrough
+2:35 ಸಾಮಾನ್ಯ errors
+2:52 Quick check
+3:13 Recap
+4:00 Practice

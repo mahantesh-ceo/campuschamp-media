@@ -1,0 +1,10 @@
+0:00 Intro
+0:17 Splitting tablets into strips
+0:46 Converting between data types
+0:59 Arithmetic operators
+1:13 Logical operators: and, or, not
+1:24 Walkthrough
+2:33 Common errors
+2:50 Quick check
+3:11 Recap
+4:03 Practise

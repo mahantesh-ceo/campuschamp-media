@@ -1,0 +1,10 @@
+0:00 Intro
+0:22 ಮುಖ್ಯ ವಿಷಯ
+1:05 "Python install ಮಾಡೋದು" ಅಂದ್ರೆ ಏನು?
+1:22 ಮೂರು popular IDEs
+1:41 Laptop ಇಲ್ವಾ? Browser use ಮಾಡಿ
+1:54 Walkthrough
+2:45 ಸಾಮಾನ್ಯ errors
+3:12 Quick check
+3:35 Recap
+4:09 Practice

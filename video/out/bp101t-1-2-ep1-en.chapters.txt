@@ -1,0 +1,10 @@
+0:00 Intro
+0:21 Text editor vs IDE
+0:58 What does "installing Python" mean?
+1:14 Three popular IDEs
+1:33 No laptop? Use the browser
+1:48 Walkthrough
+2:39 Common errors
+3:05 Quick check
+3:30 Recap
+4:07 Practise

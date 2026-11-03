@@ -1,0 +1,10 @@
+0:00 Intro
+0:18 मुख्य बात
+1:01 Variable क्या है?
+1:16 type() से type check करना
+1:30 Data types क्यों ज़रूरी हैं
+1:41 Walkthrough
+2:59 आम errors
+3:21 Quick check
+3:41 Recap
+4:24 Practice

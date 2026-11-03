@@ -1,0 +1,10 @@
+0:00 Intro
+0:18 ಮುಖ್ಯ ವಿಷಯ
+0:48 Modules ಮತ್ತು libraries
+1:00 Import ಮಾಡುವ ಮೂರು ವಿಧಾನಗಳು
+1:11 pip ಇಂದ install ಮತ್ತು uninstall
+1:28 Walkthrough
+2:22 ಸಾಮಾನ್ಯ errors
+2:47 Quick check
+3:10 Recap
+3:53 Practice

@@ -1,0 +1,10 @@
+0:00 Intro
+0:19 मुख्य बात
+0:57 input() से सवाल पूछना
+1:08 f-strings: text के अंदर values
+1:20 Decimal places तय करना
+1:33 Walkthrough
+2:32 आम errors
+2:57 Quick check
+3:16 Recap
+3:50 Practice

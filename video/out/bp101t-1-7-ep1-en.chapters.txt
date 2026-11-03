@@ -1,0 +1,10 @@
+0:00 Intro
+0:20 From PyPI to your program
+0:47 Modules and libraries
+0:59 Three ways to import
+1:11 Installing and uninstalling with pip
+1:27 Walkthrough
+2:18 Common errors
+2:46 Quick check
+3:08 Recap
+3:50 Practise

@@ -1,0 +1,10 @@
+0:00 Intro
+0:22 ಮುಖ್ಯ ವಿಷಯ
+0:51 Strings: ಸೇರಿಸೋದು, ಪುನರಾವರ್ತಿಸೋದು, ಅಳೆಯೋದು
+1:02 Slicing: string ನ ಒಂದು ಭಾಗ
+1:16 String methods: text ಸರಿ ಮಾಡೋದು
+1:29 Walkthrough
+2:31 ಸಾಮಾನ್ಯ errors
+2:50 Quick check
+3:08 Recap
+3:41 Practice

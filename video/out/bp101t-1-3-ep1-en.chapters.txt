@@ -1,0 +1,10 @@
+0:00 Intro
+0:18 Variables are labelled boxes
+1:02 What is a variable?
+1:16 Checking the type with type()
+1:32 Why data types matter
+1:46 Walkthrough
+3:07 Common errors
+3:30 Quick check
+3:50 Recap
+4:29 Practise
