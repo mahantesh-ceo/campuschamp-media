@@ -1,0 +1,346 @@
+{
+ "duration": 233.699,
+ "scenes": [
+  {
+   "id": "hist",
+   "start": 0,
+   "end": 23.084
+  },
+  {
+   "id": "search",
+   "start": 23.084,
+   "end": 34.521
+  },
+  {
+   "id": "smiles",
+   "start": 34.521,
+   "end": 40.435
+  },
+  {
+   "id": "fold",
+   "start": 40.435,
+   "end": 47.632
+  },
+  {
+   "id": "abx",
+   "start": 47.632,
+   "end": 55.222
+  },
+  {
+   "id": "data",
+   "start": 55.222,
+   "end": 65.854
+  },
+  {
+   "id": "india",
+   "start": 65.854,
+   "end": 73.213
+  },
+  {
+   "id": "syl",
+   "start": 73.213,
+   "end": 81.434
+  },
+  {
+   "id": "sems",
+   "start": 81.434,
+   "end": 129.872
+  },
+  {
+   "id": "wall",
+   "start": 129.872,
+   "end": 135.262
+  },
+  {
+   "id": "good",
+   "start": 135.262,
+   "end": 146.728
+  },
+  {
+   "id": "blend",
+   "start": 146.728,
+   "end": 174.335
+  },
+  {
+   "id": "promise",
+   "start": 174.335,
+   "end": 190.814
+  },
+  {
+   "id": "proof",
+   "start": 190.814,
+   "end": 197.528
+  },
+  {
+   "id": "book",
+   "start": 197.528,
+   "end": 213.878
+  },
+  {
+   "id": "cta",
+   "start": 213.878,
+   "end": 233.699
+  }
+ ],
+ "lines": [
+  {
+   "i": 0,
+   "scene": "hist",
+   "start": 1.0,
+   "dur": 2.926,
+   "text": "Every few decades, a profession is rewritten."
+  },
+  {
+   "i": 1,
+   "scene": "hist",
+   "start": 4.526,
+   "dur": 7.053,
+   "text": "1928. Penicillin. 1953. The double helix. 2003. The human genome."
+  },
+  {
+   "i": 2,
+   "scene": "hist",
+   "start": 11.879,
+   "dur": 4.571,
+   "text": "2024. A Nobel Prize, for AI that predicts the shape of proteins."
+  },
+  {
+   "i": 3,
+   "scene": "hist",
+   "start": 16.75,
+   "dur": 5.433,
+   "text": "And 2026. The year AI enters every pharmacy classroom in India."
+  },
+  {
+   "i": 4,
+   "scene": "search",
+   "start": 23.434,
+   "dur": 4.18,
+   "text": "Medicine is a search through ten to the sixty possible molecules."
+  },
+  {
+   "i": 5,
+   "scene": "search",
+   "start": 27.913,
+   "dur": 6.008,
+   "text": "For a century, we searched by hand: fifteen years, billions of dollars, a single medicine."
+  },
+  {
+   "i": 6,
+   "scene": "smiles",
+   "start": 34.871,
+   "dur": 4.963,
+   "text": "Then AI learned to read chemistry. To a model, paracetamol is eighteen characters."
+  },
+  {
+   "i": 7,
+   "scene": "fold",
+   "start": 40.785,
+   "dur": 6.348,
+   "text": "AlphaFold predicted the structure of over two hundred million proteins, each with its own confidence score."
+  },
+  {
+   "i": 8,
+   "scene": "abx",
+   "start": 47.982,
+   "dur": 6.74,
+   "text": "A message-passing neural network screened more than a hundred million molecules, and discovered a new antibiotic."
+  },
+  {
+   "i": 9,
+   "scene": "data",
+   "start": 55.572,
+   "dur": 5.094,
+   "text": "Today, a single Phase III trial generates 3.6 million data points."
+  },
+  {
+   "i": 10,
+   "scene": "data",
+   "start": 60.966,
+   "dur": 4.389,
+   "text": "The FDA has reviewed over five hundred drug submissions built with AI."
+  },
+  {
+   "i": 11,
+   "scene": "india",
+   "start": 66.204,
+   "dur": 6.008,
+   "text": "And India, which makes one in five of the world\u2019s generic medicines, is ready to lead what comes next."
+  },
+  {
+   "i": 12,
+   "scene": "syl",
+   "start": 73.563,
+   "dur": 7.471,
+   "text": "The PCI has written that future into the B.Pharm. NEP 2020. From 2026\u201327."
+  },
+  {
+   "i": 13,
+   "scene": "sems",
+   "start": 81.784,
+   "dur": 4.441,
+   "text": "Semester one, Python Programming: a student writes her first line of code."
+  },
+  {
+   "i": 14,
+   "scene": "sems",
+   "start": 86.524,
+   "dur": 9.482,
+   "text": "Two, Biostatistics and Data Analytics: she proves bioequivalence, a 90% confidence interval inside 80 to 125 percent."
+  },
+  {
+   "i": 15,
+   "scene": "sems",
+   "start": 96.307,
+   "dur": 6.4,
+   "text": "Three, Machine Learning: she predicts solubility from molecular descriptors, before a single gram is made."
+  },
+  {
+   "i": 16,
+   "scene": "sems",
+   "start": 103.007,
+   "dur": 4.963,
+   "text": "Five, Innovation and Startups: idea, prototype, pilot."
+  },
+  {
+   "i": 17,
+   "scene": "sems",
+   "start": 108.27,
+   "dur": 9.091,
+   "text": "Six, AI in Pharmaceutical Sciences and Computer-Aided Drug Design: she docks molecules into a target and ranks them by binding energy."
+  },
+  {
+   "i": 18,
+   "scene": "sems",
+   "start": 117.661,
+   "dur": 5.956,
+   "text": "Seven, AI in Clinical Practice: she detects drug-safety signals across thousands of reports."
+  },
+  {
+   "i": 19,
+   "scene": "sems",
+   "start": 123.917,
+   "dur": 5.355,
+   "text": "Eight, Ethics of AI: she learns to prove a model is fair, explainable and safe."
+  },
+  {
+   "i": 20,
+   "scene": "wall",
+   "start": 130.222,
+   "dur": 3.84,
+   "text": "Four years. One pharmacist who can do all of this."
+  },
+  {
+   "i": 21,
+   "scene": "good",
+   "start": 135.762,
+   "dur": 4.833,
+   "text": "And here\u2019s the beautiful part. Every college can teach this. Starting this semester."
+  },
+  {
+   "i": 22,
+   "scene": "good",
+   "start": 140.894,
+   "dur": 5.433,
+   "text": "Campus Champ. Built for this syllabus, unit by unit. On one idea: blended learning."
+  },
+  {
+   "i": 23,
+   "scene": "blend",
+   "start": 147.078,
+   "dur": 8.046,
+   "text": "Before class, students meet the topic on their phones: a calm voice, a live animation, in Kannada, Hindi, Hinglish or English."
+  },
+  {
+   "i": 24,
+   "scene": "blend",
+   "start": 155.424,
+   "dur": 6.74,
+   "text": "In class, your teacher does what only a teacher can. Explains. Questions. Inspires."
+  },
+  {
+   "i": 25,
+   "scene": "blend",
+   "start": 162.463,
+   "dur": 6.087,
+   "text": "After class, students run real Python on their own phones. Every answer checked instantly."
+  },
+  {
+   "i": 26,
+   "scene": "blend",
+   "start": 168.85,
+   "dur": 4.885,
+   "text": "And your teacher sees which concept the class finds hardest, and begins the next class right there."
+  },
+  {
+   "i": 27,
+   "scene": "promise",
+   "start": 174.685,
+   "dur": 9.456,
+   "text": "No lab to build. No textbook to buy. Code stays in English, exactly as the exam needs. NEP 2020, in every classroom."
+  },
+  {
+   "i": 28,
+   "scene": "promise",
+   "start": 184.441,
+   "dur": 5.773,
+   "text": "Two hours a week becomes a learning experience that never stops. Live in thirty days."
+  },
+  {
+   "i": 29,
+   "scene": "proof",
+   "start": 191.164,
+   "dur": 5.564,
+   "text": "And it has already begun. Over a hundred pharmacy students in Bagalkot learn this way today."
+  },
+  {
+   "i": 30,
+   "scene": "book",
+   "start": 198.128,
+   "dur": 5.46,
+   "text": "One day, someone will write the story of how India\u2019s pharmacists learned AI."
+  },
+  {
+   "i": 31,
+   "scene": "book",
+   "start": 203.888,
+   "dur": 3.318,
+   "text": "It will name the first colleges that made it happen."
+  },
+  {
+   "i": 32,
+   "scene": "book",
+   "start": 207.505,
+   "dur": 5.773,
+   "text": "Colleges whose students went on to design medicines, protect patients, and build companies of their own."
+  },
+  {
+   "i": 33,
+   "scene": "cta",
+   "start": 214.228,
+   "dur": 3.736,
+   "text": "This year, the first Founding Partner colleges begin that story."
+  },
+  {
+   "i": 34,
+   "scene": "cta",
+   "start": 218.564,
+   "dur": 5.094,
+   "text": "Penicillin. DNA. The genome. AI."
+  },
+  {
+   "i": 35,
+   "scene": "cta",
+   "start": 224.258,
+   "dur": 2.56,
+   "text": "History remembers those who go first."
+  },
+  {
+   "i": 36,
+   "scene": "cta",
+   "start": 227.318,
+   "dur": 1.881,
+   "text": "Let it remember your college."
+  }
+ ]
+}

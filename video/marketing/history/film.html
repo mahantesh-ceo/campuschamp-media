@@ -1,0 +1,226 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+Kannada:wght@600;700&family=Noto+Sans+Devanagari:wght@600;700&family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap">
+<style>
+:root{--ink:#1d1d1f;--gray:#6e6e73;--hair:#d2d2d7;--tile:#f5f5f7}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow:hidden;background:#fbfbfd;font-family:Inter,-apple-system,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+body.V{width:1080px;height:1920px}body.H{width:1920px;height:1080px}
+.sc{position:absolute;inset:0;overflow:hidden;opacity:0}
+.bg{position:absolute;inset:0}
+.lay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:6vmin}
+.V .lay{flex-direction:column;justify-content:flex-start;padding:24vmin 8vmin 0}
+.H .lay{flex-direction:row;padding:0 9vmin}
+.txt{flex:none}.V .txt{width:100%}.H .txt{width:50%}
+.vis{position:relative;flex:none;display:flex;align-items:center;justify-content:center}
+.V .vis{width:100%;height:96vmin}.H .vis{width:42%;height:80vmin}
+.center .txt{text-align:center}.H .center .txt{width:84%}.H .center{flex-direction:column;justify-content:center;gap:5vmin}
+.V .center{justify-content:center;padding-top:0}
+h1{font-weight:800;letter-spacing:-.045em;line-height:1.02}
+.h1{font-size:9vmin}.h1b{font-size:12vmin}.h1s{font-size:7vmin}
+.sub{font-weight:600;color:var(--gray);letter-spacing:-.02em;font-size:4.4vmin;line-height:1.22;margin-top:2.6vmin}
+.eyebrow{font-weight:700;font-size:2.5vmin;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:2.4vmin}
+.g{background:linear-gradient(90deg,#0071e3,#7c3aed 55%,#e3306c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.w{display:inline-block;opacity:0}
+.tile{background:#fff;border-radius:3.2vmin;box-shadow:0 1px 2px rgba(0,0,0,.04),0 2vmin 6vmin rgba(0,0,0,.08)}
+.glass{background:rgba(255,255,255,.75);backdrop-filter:blur(2vmin);border:1px solid rgba(255,255,255,.95);box-shadow:0 2vmin 7vmin -2vmin rgba(30,30,90,.18);border-radius:3vmin}
+.phone{position:absolute;width:30vmin;border-radius:5.5vmin;background:#1d1d1f;padding:1vmin;box-shadow:0 4vmin 10vmin rgba(0,0,0,.2)}
+.phone img{width:100%;display:block;border-radius:4.6vmin}
+.mono{font-family:'JetBrains Mono',monospace;font-variant-ligatures:none}
+.chip{display:inline-block;font-weight:700;border-radius:999px;padding:1.4vmin 3vmin;font-size:2.9vmin;background:#fff;box-shadow:0 1vmin 3vmin rgba(0,0,0,.08)}
+.pill{display:inline-block;font-weight:700;font-size:2.7vmin;border-radius:999px;padding:1.4vmin 3.2vmin;color:#fff;background:#1d1d1f}
+.stack{display:grid}.stack>*{grid-area:1/1}
+.blob{position:absolute;border-radius:50%;filter:blur(10vmin);opacity:0}
+.big{font-weight:800;letter-spacing:-.055em;line-height:.9}
+.kn{font-family:'Noto Sans Kannada'}.hi{font-family:'Noto Sans Devanagari'}
+#cap{position:absolute;left:8vmin;right:8vmin;z-index:70;text-align:center;font-weight:600;font-size:3.3vmin;line-height:1.35;color:#1d1d1f}
+.V #cap{bottom:12vmin}.H #cap{bottom:5vmin;font-size:2.8vmin}
+#cap span{background:rgba(255,255,255,.85);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:.4vmin 1.6vmin;border-radius:1.2vmin}
+#mark{position:absolute;z-index:70;display:flex;align-items:center;gap:1.4vmin;font-weight:700;font-size:2.4vmin;color:#1d1d1f}
+.V #mark{left:0;right:0;justify-content:center;top:7vmin}.H #mark{left:5vmin;top:5vmin}
+#mark i{width:4vmin;height:4vmin;border-radius:1.2vmin;background:linear-gradient(140deg,#6366f1,#7c3aed 55%,#2dd4bf);display:grid;place-items:center;font:700 1.5vmin ui-monospace,monospace;font-style:normal;color:#fff}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;z-index:60;pointer-events:none}
+.dot{width:1.6vmin;height:1.6vmin;border-radius:50%;background:#d2d2d7}
+</style></head><body class="__MODE__">
+<div id="stage"></div><div id="flash"></div>
+<div id="mark"><i>&lt;/&gt;</i>Campus Champ</div>
+<div id="cap"></div>
+<script>
+const TL = __TIMELINE__; const QR = '__QR__'; const MODE = '__MODE__';
+const $ = (q, el = document) => el.querySelector(q), $$ = (q, el = document) => [...el.querySelectorAll(q)];
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x)); const ease = (x) => { x = clamp(x); return 1 - Math.pow(1 - x, 3); };
+const ap = (t, a, d = 0.6) => ease((t - a) / d); const lerp = (a, b, k) => a + (b - a) * k;
+const SC = {}; TL.scenes.forEach((s) => (SC[s.id] = s));
+const LN = (sc) => TL.lines.filter((l) => l.scene === sc); const S = (sc, k) => (LN(sc)[k] || {}).start ?? 1e9; const Dd = (sc, k) => (LN(sc)[k] || {}).dur ?? 1;
+const words = (txt, cls = '') => txt.split(' ').map((w) => `<span class="w ${cls}">${w}</span>`).join(' ');
+const reveal = (el, t, a, per = 0.08) => el && $$('.w', el).forEach((w, i) => { const p = ap(t, a + i * per, 0.55); w.style.opacity = p; w.style.transform = `translateY(${(1 - p) * 0.4}em)`; w.style.filter = `blur(${(1 - p) * 10}px)`; });
+const show = (el, p, dy = 4, sc = 1) => { if (!el) return; el.style.opacity = p; el.style.transform = `translateY(${(1 - p) * dy}vmin) scale(${lerp(sc, 1, p)})`; };
+const fmt = (v, d = 0) => v.toLocaleString('en-IN', { minimumFractionDigits: d, maximumFractionDigits: d });
+const blobs = (cols) => cols.map(([c, x, y, s]) => `<div class="blob" style="background:${c};left:${x}%;top:${y}%;width:${s}vmin;height:${s}vmin"></div>`).join('');
+const blobOn = (el, k) => $$('.blob', el).forEach((b, i) => { b.style.opacity = k * 0.7; b.style.transform = `scale(${0.7 + k * 0.4}) translate(${Math.sin(i + k * 2) * 3}vmin,0)`; });
+const hex = (sz, col = '#1d1d1f', sw = 5) => `<svg viewBox="0 0 120 120" style="width:${sz}vmin;height:${sz}vmin" fill="none" stroke="${col}" stroke-width="${sw}" stroke-linejoin="round"><polygon points="60,18 96,39 96,81 60,102 24,81 24,39"/><line x1="96" y1="39" x2="114" y2="28"/><line x1="24" y1="81" x2="6" y2="92"/></svg>`;
+let seed = 3; const rnd = () => ((seed = (seed * 9301 + 49297) % 233280), seed / 233280);
+const MOLS = Array.from({ length: 46 }, () => ({ x: rnd() * 100, y: rnd() * 100, s: 3 + rnd() * 5, r: rnd() * 360, o: 0.12 + rnd() * 0.3, c: ['#0071e3', '#7c3aed', '#e3306c', '#1d1d1f'][Math.floor(rnd() * 4)] }));
+const molField = () => MOLS.map((m, i) => `<div class="mol" data-i="${i}" style="position:absolute;left:${m.x}%;top:${m.y}%;opacity:0">${hex(m.s, '#1d1d1f', 4)}<span style="position:absolute;right:-.6vmin;top:-.2vmin;width:1.2vmin;height:1.2vmin;border-radius:50%;background:${m.c}"></span></div>`).join('');
+
+const SEMS = [
+  ['Semester I', 'Python Programming', 'Her first line of code.', 'code'],
+  ['Semester II', 'Biostatistics & Data Analytics', 'Bioequivalence, proven.', 'ci'],
+  ['Semester III', 'Machine Learning', 'Predict before you make.', 'ml'],
+  ['Semester V', 'Innovation & Startups', 'Idea. Prototype. Pilot.', 'startup'],
+  ['Semester VI', 'AI in Pharmaceutical Sciences · Computer-Aided Drug Design', 'Dock. Score. Rank.', 'cadd'],
+  ['Semester VII', 'AI in Clinical Practice', 'Signals in thousands of reports.', 'pv'],
+  ['Semester VIII', 'Ethics of AI in Pharmacy', 'Fair. Explainable. Safe.', 'ethics'],
+];
+const semVis = (k) => {
+  if (k === 'code') return `<div style="width:100%;background:#0b0b0f;border-radius:3vmin;padding:4vmin 4.4vmin;color:#f5f5f7;font-size:3.4vmin;line-height:1.8" class="mono"><div style="display:flex;gap:1vmin;margin-bottom:3vmin"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span></div><div><span style="color:#7dd3fc">print</span>(<span style="color:#ffa372" class="ty" data-full='"Paracetamol 500 mg"'></span>)</div><div class="out" style="margin-top:3vmin;padding-top:2.4vmin;border-top:1px solid #333;color:#7ee787;opacity:0">Paracetamol 500 mg</div></div>`;
+  if (k === 'ci') return `<div class="tile" style="width:100%;padding:5vmin 4.4vmin"><p style="font-weight:700;font-size:2.3vmin;letter-spacing:.12em;color:var(--gray)">BIOEQUIVALENCE · 90% CI</p><div style="position:relative;height:16vmin;margin-top:4vmin"><div style="position:absolute;left:20%;right:20%;top:2vmin;bottom:2vmin;background:#e8f1ff;border-radius:1.6vmin;border:.3vmin dashed #0071e3"></div><span style="position:absolute;left:20%;bottom:-3.4vmin;transform:translateX(-50%);font-weight:700;font-size:2.4vmin;color:#0071e3">80%</span><span style="position:absolute;right:20%;bottom:-3.4vmin;transform:translateX(50%);font-weight:700;font-size:2.4vmin;color:#0071e3">125%</span><div class="cib" style="position:absolute;top:6.4vmin;height:3.2vmin;border-radius:2vmin;background:linear-gradient(90deg,#7c3aed,#e3306c)"></div><div class="cim" style="position:absolute;top:5vmin;width:1vmin;height:6vmin;background:#1d1d1f;border-radius:1vmin"></div></div><p class="ok" style="margin-top:6vmin;font-weight:800;font-size:4vmin;color:#1d7a46;opacity:0">✓ Bioequivalent</p></div>`;
+  if (k === 'ethics') return `<div class="tile" style="width:100%;padding:5vmin 4.4vmin"><p style="font-weight:700;font-size:2.3vmin;letter-spacing:.12em;color:var(--gray)">MODEL CREDIBILITY</p>${['Fair across patient groups', 'Explainable decisions', 'Validated and safe'].map((x) => `<div class="tk" style="display:flex;gap:2.4vmin;align-items:center;margin-top:3.4vmin;opacity:0"><span style="flex:none;width:5vmin;height:5vmin;border-radius:50%;background:linear-gradient(135deg,#0071e3,#7c3aed);color:#fff;display:grid;place-items:center;font-weight:800;font-size:2.8vmin">✓</span><span style="font-weight:700;font-size:3.6vmin;letter-spacing:-.02em">${x}</span></div>`).join('')}</div>`;
+  return `<img src="shots/${k}.png" style="width:100%;display:block;border-radius:3vmin;box-shadow:0 3vmin 8vmin -3vmin rgba(0,0,0,.25)">`;
+};
+
+const B = {
+hist: () => `<div class="bg" style="background:#fff"></div>${blobs([['#ffc2dc', 70, -10, 70], ['#c9d4ff', -10, 55, 70]])}
+  <div class="lay center" style="gap:3vmin"><div class="txt"><p class="sub" id="h0" style="margin:0;font-size:4.6vmin">${words('Every few decades, a profession is rewritten.')}</p></div>
+  <div style="position:relative;width:${MODE === 'V' ? 90 : 150}vmin;height:${MODE === 'V' ? 70 : 34}vmin">
+   <svg viewBox="0 0 1000 300" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible"><defs><linearGradient id="tr" x1="0" x2="1"><stop offset="0" stop-color="#d2d2d7"/><stop offset=".7" stop-color="#7c3aed"/><stop offset="1" stop-color="#e3306c"/></linearGradient></defs>
+    <path id="trail" d="M0 250 C 250 250, 380 200, 500 190 S 800 120, 1000 60" stroke="url(#tr)" stroke-width="6" fill="none" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>
+   ${[['1928', 'Penicillin', 12, 76], ['1953', 'The double helix', 36, 64], ['2003', 'The genome', 60, 52], ['2024', 'Nobel Prize for AI', 84, 30]].map(([y, n, x, top], i) => `<div class="yr" style="position:absolute;left:${x}%;top:${top}%;transform:translateX(-50%);text-align:center;opacity:0"><div style="width:2.4vmin;height:2.4vmin;border-radius:50%;margin:0 auto 1.6vmin;background:${i === 3 ? '#7c3aed' : '#1d1d1f'}"></div><p style="font-weight:800;font-size:5vmin;letter-spacing:-.04em;color:${i === 3 ? '#7c3aed' : '#1d1d1f'}">${y}</p><p style="font-weight:600;font-size:2.4vmin;color:var(--gray)">${n}</p></div>`).join('')}
+  </div>
+  <div class="txt" id="y26" style="opacity:0"><p class="big g" style="font-size:22vmin">2026</p><p style="font-weight:700;font-size:4.2vmin;letter-spacing:-.02em;margin-top:1vmin">AI enters every pharmacy classroom.</p></div></div>`,
+search: () => `<div class="bg" style="background:radial-gradient(ellipse at 50% 50%,#fff,#eef0fa)"></div><div id="mf">${molField()}</div>
+  <div class="lay center"><div class="txt stack">
+   <div id="s1"><p class="big" style="font-size:34vmin">10<span class="g" style="font-size:17vmin;vertical-align:top;line-height:1" id="exp">0</span></p><p style="font-weight:700;font-size:4.6vmin;letter-spacing:-.02em;margin-top:2vmin">possible drug-like molecules</p><p class="sub" style="margin-top:1vmin;font-size:3.4vmin">More than the atoms in our solar system.</p></div>
+   <div id="s2" style="opacity:0;display:flex;flex-direction:column;align-items:center">
+    <svg viewBox="0 0 600 420" style="width:${MODE === 'V' ? 80 : 70}vmin"><defs><radialGradient id="one"><stop offset="0" stop-color="#e3306c"/><stop offset="1" stop-color="#7c3aed"/></radialGradient></defs>
+     <path id="fun" d="M20 10 H580 L360 300 H240 Z" fill="#ececf3"/>
+     <text x="300" y="110" text-anchor="middle" font-family="Inter" font-weight="800" font-size="64" letter-spacing="-3" fill="#1d1d1f" id="ftx">10,000</text>
+     <text x="300" y="150" text-anchor="middle" font-family="Inter" font-weight="600" font-size="20" fill="#6e6e73">compounds tested in labs</text>
+     <circle id="o1" cx="300" cy="360" r="48" fill="url(#one)" opacity="0"/><text id="o1t" x="300" y="380" text-anchor="middle" font-family="Inter" font-weight="800" font-size="56" fill="#fff" opacity="0">1</text></svg>
+    <div style="display:flex;gap:2vmin;margin-top:3vmin">${['15 years', 'Billions of dollars', 'One medicine'].map((x, i) => `<span class="chip fx" style="opacity:0;${i === 2 ? 'background:#1d1d1f;color:#fff' : ''}">${x}</span>`).join('')}</div></div>
+  </div></div>`,
+smiles: () => `<div class="bg" style="background:#fbfbfd"></div>${blobs([['#c9d4ff', 60, 10, 60]])}<div class="lay"><div class="txt">
+  <p class="eyebrow">AI reads chemistry</p><h1 class="h1" id="sm1">${words('To a model, paracetamol is')} <span class="w g">18</span> <span class="w g">characters.</span></h1></div>
+  <div class="vis"><div style="text-align:center;width:100%"><p class="mono" id="smi" style="font-size:${MODE === 'V' ? 6.4 : 5}vmin;font-weight:600;letter-spacing:.02em;min-height:8vmin"></p>
+   <div id="cnt" class="mono" style="font-size:2.6vmin;color:var(--gray);margin-top:1vmin;opacity:0">18 characters</div>
+   <div id="molbig" style="margin:4vmin auto 0;width:40vmin;opacity:0">
+    <svg viewBox="0 0 300 200" style="width:100%"><g fill="none" stroke="#1d1d1f" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><polygon points="165,57 215,57 240,100 215,143 165,143 140,100"/><circle cx="190" cy="100" r="24" stroke-width="3.5"/><line x1="240" y1="100" x2="262" y2="100"/><line x1="140" y1="100" x2="118" y2="100"/><line x1="92" y1="96" x2="72" y2="78"/><line x1="68" y1="78" x2="68" y2="44"/><line x1="78" y1="78" x2="78" y2="44"/><line x1="72" y1="78" x2="40" y2="98"/></g><text x="266" y="108" font-family="Inter" font-size="22" font-weight="800" fill="#e3306c">OH</text><text x="105" y="108" font-family="Inter" font-size="22" font-weight="800" fill="#0071e3" text-anchor="middle">N</text><text x="105" y="130" font-family="Inter" font-size="16" font-weight="700" fill="#0071e3" text-anchor="middle">H</text><text x="73" y="34" font-family="Inter" font-size="22" font-weight="800" fill="#e3306c" text-anchor="middle">O</text><text x="30" y="118" font-family="Inter" font-size="16" font-weight="700" fill="#6e6e73" text-anchor="middle">CH₃</text></svg>
+    <p style="font-weight:700;font-size:3vmin;margin-top:1vmin">Paracetamol</p></div></div></div></div>`,
+fold: () => `<div class="bg" style="background:#fff"></div><div class="lay"><div class="txt"><p class="eyebrow">AlphaFold</p>
+  <p class="big g" style="font-size:20vmin" id="fn">0M+</p><h1 class="h1s" id="fl" style="margin-top:2vmin">${words('protein structures predicted.')}</h1>
+  <div id="pl" style="display:flex;gap:2vmin;margin-top:3vmin;opacity:0;font-weight:600;font-size:2.6vmin;color:var(--gray);align-items:center">Confidence <span style="width:3vmin;height:3vmin;border-radius:.8vmin;background:#0053D6"></span>very high <span style="width:3vmin;height:3vmin;border-radius:.8vmin;background:#65CBF3"></span>high <span style="width:3vmin;height:3vmin;border-radius:.8vmin;background:#FFDB13"></span>low</div></div>
+  <div class="vis"><div id="pimg" style="width:100%;border-radius:3.2vmin;overflow:hidden;background:linear-gradient(135deg,#EFF6FF,#E0E7FF);opacity:0;box-shadow:0 3vmin 8vmin -3vmin rgba(0,0,0,.2)"><img src="shots/protein.png" style="width:100%;display:block"></div>
+   <div id="nob" class="pill" style="position:absolute;right:2vmin;top:2vmin;opacity:0;background:linear-gradient(90deg,#b8860b,#e0b84c)">Nobel Prize · 2024</div></div></div>`,
+abx: () => `<div class="bg" style="background:#fbfbfd"></div><div class="lay"><div class="txt"><p class="eyebrow">Deep learning finds an antibiotic</p>
+  <p class="big g" style="font-size:20vmin" id="an">0M+</p><h1 class="h1s" style="margin-top:2vmin" id="al">${words('molecules screened by a neural network.')}</h1>
+  <div id="found" style="margin-top:3vmin;opacity:0"><span class="pill" style="background:#1d7a46">✓ A new antibiotic</span></div></div>
+  <div class="vis"><svg id="nn" viewBox="0 0 400 320" style="width:100%">
+   ${[[60, [60, 130, 200, 270]], [200, [40, 110, 180, 250, 300]], [340, [120, 200]]].map(([x, ys], li) => ys.map((y) => `<circle cx="${x}" cy="${y}" r="14" fill="${li === 2 ? '#e3306c' : '#0071e3'}" opacity=".9"/>`).join('')).join('')}
+   <g stroke="#c7c7d6" stroke-width="1.5">${[60, 130, 200, 270].map((a) => [40, 110, 180, 250, 300].map((b) => `<line x1="60" y1="${a}" x2="200" y2="${b}"/>`).join('')).join('')}${[40, 110, 180, 250, 300].map((a) => [120, 200].map((b) => `<line x1="200" y1="${a}" x2="340" y2="${b}"/>`).join('')).join('')}</g>
+   <g id="pk">${Array.from({ length: 10 }, (_, i) => `<circle class="pkt" r="5" fill="#7c3aed"/>`).join('')}</g></svg></div></div>`,
+data: () => `<div class="bg" style="background:#fff"></div><div class="lay center"><div class="txt" style="display:flex;gap:6vmin;justify-content:center;${MODE === 'V' ? 'flex-direction:column' : ''}">
+  <div class="tile" id="d1" style="flex:1;padding:6vmin 5vmin;opacity:0;text-align:center"><p class="big g" style="font-size:16vmin" id="dn">0M</p><p style="font-weight:700;font-size:3.6vmin;margin-top:2vmin;letter-spacing:-.02em">data points in one Phase III trial</p>
+   <div style="display:flex;gap:.5vmin;justify-content:center;align-items:flex-end;height:10vmin;margin-top:3vmin">${Array.from({ length: 28 }, (_, i) => `<span class="db" style="width:1.2vmin;background:linear-gradient(#0071e3,#7c3aed);border-radius:.6vmin;height:${20 + ((i * 37) % 80)}%"></span>`).join('')}</div></div>
+  <div class="tile" id="d2" style="flex:1;padding:6vmin 5vmin;opacity:0;text-align:center"><p class="big g" style="font-size:16vmin" id="fd">0+</p><p style="font-weight:700;font-size:3.6vmin;margin-top:2vmin;letter-spacing:-.02em">FDA drug submissions built with AI</p><p class="sub" style="font-size:2.8vmin">since 2016</p></div></div></div>`,
+india: () => `<div class="bg" style="background:#fbfbfd"></div>${blobs([['#ffd3a8', 10, 30, 70], ['#c9f2d9', 60, 40, 60]])}<div class="lay center"><div class="txt">
+  <div style="display:flex;gap:3vmin;justify-content:center;margin-bottom:5vmin">${[0, 1, 2, 3, 4].map((i) => `<div class="pp" style="width:${MODE === 'V' ? 14 : 11}vmin;height:${MODE === 'V' ? 28 : 22}vmin;border-radius:8vmin;opacity:0;background:${i === 0 ? 'linear-gradient(160deg,#ff9933,#ffffff 50%,#138808)' : '#e5e5ea'};box-shadow:0 2vmin 5vmin -2vmin rgba(0,0,0,.2)"></div>`).join('')}</div>
+  <p class="big g" style="font-size:16vmin;opacity:0" id="i15">1 in 5</p>
+  <h1 class="h1s" id="il" style="margin-top:2vmin">${words('of the world’s generic medicines are made in India.')}</h1>
+  <p class="sub" id="ir" style="opacity:0">Ready to lead what comes next.</p></div></div>`,
+syl: () => `<div class="bg" style="background:#fff"></div>${blobs([['#c9d4ff', 10, 10, 70], ['#ffc2dc', 55, 45, 70]])}<div class="lay center"><div class="txt">
+  <div id="sy" style="display:flex;gap:2vmin;justify-content:center;flex-wrap:wrap">${['PCI', 'NEP 2020', '2026–27'].map((x) => `<span class="pill sy" style="opacity:0;font-size:3.6vmin;padding:1.8vmin 4vmin">${x}</span>`).join('')}</div>
+  <h1 class="h1b" id="syh" style="margin-top:5vmin">${words('The future,')} ${words('written into the B.Pharm.', 'g')}</h1></div></div>`,
+sems: () => `<div class="bg" style="background:linear-gradient(180deg,#fbfbfd,#eef0fb)"></div>
+  <div id="prog" style="position:absolute;left:0;right:0;top:${MODE === 'V' ? 16 : 10}vmin;display:flex;gap:1.6vmin;justify-content:center;z-index:5">${['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'].map((r) => `<div class="pg" data-r="${r}" style="text-align:center;font-weight:700;font-size:2.2vmin;color:#aeaeb2;width:${MODE === 'V' ? 9.5 : 8}vmin"><div style="height:.8vmin;border-radius:1vmin;background:#e5e5ea;margin-bottom:1vmin" class="pgb"></div>${r}</div>`).join('')}</div>
+  ${SEMS.map(([sem, name, line, k], i) => `<div class="semc" data-i="${i}" style="position:absolute;inset:0;opacity:0"><div class="lay"><div class="txt"><p class="eyebrow" style="color:#7c3aed">${sem}</p><h1 class="${name.length > 30 ? 'h1s' : 'h1'}">${name}</h1><p class="sub">${line}</p></div><div class="vis">${semVis(k)}</div></div></div>`).join('')}`,
+wall: () => `<div class="bg" style="background:linear-gradient(180deg,#fbfbfd,#eef0fb)"></div>${blobs([['#c9b8ff', 30, 50, 80]])}<div class="lay center" style="gap:4vmin"><div class="txt"><h1 class="h1" id="wl">${words('Four years.')} ${words('One pharmacist who can do all of this.', 'g')}</h1></div>
+  <div style="display:grid;grid-template-columns:repeat(${MODE === 'V' ? 2 : 4},1fr);gap:2.4vmin;width:${MODE === 'V' ? 86 : 160}vmin">${[['Sem I', 'Python Programming'], ['Sem II', 'Biostatistics & Data Analytics'], ['Sem III', 'Machine Learning'], ['Sem V', 'Innovation & Startups'], ['Sem VI', 'AI in Pharmaceutical Sciences'], ['Sem VI', 'Computer-Aided Drug Design'], ['Sem VII', 'AI in Clinical Practice'], ['Sem VIII', 'Ethics of AI in Pharmacy']].map(([s, n], i) => `<div class="glass wc" style="padding:2.8vmin 3vmin;height:${MODE === 'V' ? 17 : 19}vmin;opacity:0;${i === 7 ? 'background:linear-gradient(135deg,#0071e3,#7c3aed 55%,#e3306c);color:#fff;border:none' : ''}"><p style="font-weight:700;font-size:2.2vmin;color:${i === 7 ? '#ffffffcc' : '#7c3aed'}">${s}</p><p style="font-weight:700;font-size:3.2vmin;letter-spacing:-.02em;line-height:1.12;margin-top:1.2vmin">${n}</p></div>`).join('')}</div></div>`,
+good: () => `<div class="bg" style="background:#fff"></div>${blobs([['#ffb36b', 10, 30, 70], ['#ff6fa5', 55, 15, 70], ['#7c8cff', 35, 55, 80]])}<div class="lay center"><div class="txt stack">
+  <div id="g1"><h1 class="h1b">${words('Every college')}<br>${words('can teach this.', 'g')}</h1><p class="sub" id="g1s" style="opacity:0">Starting this semester.</p></div>
+  <div id="g2" style="opacity:0"><div style="display:flex;align-items:center;gap:2.4vmin;justify-content:center"><i style="width:10vmin;height:10vmin;border-radius:3vmin;background:linear-gradient(140deg,#6366f1,#7c3aed 55%,#2dd4bf);display:grid;place-items:center;font:700 3.6vmin ui-monospace,monospace;font-style:normal;color:#fff">&lt;/&gt;</i><span style="font-weight:800;font-size:9vmin;letter-spacing:-.04em">Campus Champ</span></div>
+   <p class="sub">Built for this syllabus, unit by unit.</p><p id="bl" style="opacity:0;margin-top:4vmin"><span class="pill" style="font-size:4vmin;padding:2vmin 5vmin;background:linear-gradient(90deg,#0071e3,#7c3aed,#e3306c)">Blended learning</span></p></div></div></div>`,
+blend: () => `<div class="bg" style="background:#fff"></div>${blobs([['#c9d4ff', 30, 30, 70]])}
+  <div style="position:absolute;left:0;right:0;top:${MODE === 'V' ? 18 : 9}vmin;text-align:center"><p class="eyebrow" style="margin:0">Blended learning</p><h1 style="font-size:${MODE === 'V' ? 7.4 : 6.6}vmin;font-weight:800;letter-spacing:-.045em;margin-top:1.4vmin">Your teacher leads. <span class="g">We carry it home.</span></h1></div>
+  <div style="position:absolute;left:${MODE === 'V' ? 6 : 8}vmin;right:${MODE === 'V' ? 6 : 8}vmin;top:${MODE === 'V' ? 40 : 30}vmin;bottom:${MODE === 'V' ? 22 : 12}vmin;display:grid;grid-template-columns:repeat(${MODE === 'V' ? 2 : 4},1fr);gap:${MODE === 'V' ? 4 : 3}vmin;align-items:center">
+   ${[['Before class', 'Meet it in ಕನ್ನಡ', `<div class="phone" style="position:relative;width:${MODE === 'V' ? 30 : 24}vmin;margin:0 auto"><img src="shots/lesson.webp"></div>`, '#0071e3'],
+      ['In class', 'Explains · questions · inspires', `<div style="width:100%;max-width:44vmin;margin:0 auto;aspect-ratio:1.1;border-radius:3vmin;background:linear-gradient(160deg,#1d1d1f,#3a3a44);display:flex;flex-direction:column;justify-content:center;padding:3vmin;color:#f5f5f7"><div class="mono" style="font-size:2.6vmin;line-height:1.7"><span style="color:#FF7AB2">if</span> temp &gt;= <span style="color:#D9C97C">38.0</span>:<br>&nbsp;&nbsp;<span style="color:#7DD3FC">print</span>(<span style="color:#FFA372">"Fever"</span>)</div><div style="display:flex;gap:2vmin;justify-content:center;margin-top:3vmin">${[0, 1, 2].map(() => `<span style="width:5vmin;height:5vmin;border-radius:50%;background:#5a5a66"></span>`).join('')}</div></div>`, '#7c3aed'],
+      ['After class', 'Practise · checked instantly', `<div class="phone" style="position:relative;width:${MODE === 'V' ? 30 : 24}vmin;margin:0 auto"><img src="shots/lab.webp"></div>`, '#e3306c'],
+      ['Your teacher sees', 'The hardest concept, for the next class', `<div style="width:100%;border-radius:2.4vmin;overflow:hidden;box-shadow:0 3vmin 7vmin -3vmin rgba(0,0,0,.3);background:#fff"><img src="shots/dashboard.webp" style="width:100%;display:block"></div>`, '#1d7a46']].map(([a, b, v, c], i) => `<div class="st" style="text-align:center;opacity:0">${v}<p style="font-weight:700;font-size:2.6vmin;color:${c};margin-top:3vmin">${a}</p><p style="font-weight:700;font-size:3.2vmin;letter-spacing:-.02em;margin-top:.6vmin">${b}</p></div>`).join('')}
+  </div>`,
+promise: () => `<div class="bg" style="background:#fbfbfd"></div><div class="lay center"><div class="txt stack">
+  <div id="p1"><div style="display:flex;flex-wrap:wrap;gap:2vmin;justify-content:center">${[['🧪', 'No lab to build'], ['📚', 'No textbook to buy'], ['⌨️', 'Code stays in English'], ['🇮🇳', 'NEP 2020, every classroom']].map(([e, x]) => `<div class="tile pr" style="opacity:0;padding:4vmin 4.4vmin;width:${MODE === 'V' ? 40 : 30}vmin;text-align:center"><p style="font-size:7vmin">${e}</p><p style="font-weight:800;font-size:3.4vmin;letter-spacing:-.02em;margin-top:1.4vmin">${x}</p></div>`).join('')}</div>
+   <div style="display:flex;gap:1.6vmin;justify-content:center;margin-top:4vmin" id="lg">${[['ಕನ್ನಡ', 'kn'], ['हिन्दी', 'hi'], ['Hinglish', ''], ['English', '']].map(([w, c]) => `<span class="chip lgc ${c}" style="opacity:0;font-size:3.4vmin">${w}</span>`).join('')}</div></div>
+  <div id="p2" style="opacity:0"><p class="big" style="font-size:${MODE === 'V' ? 16 : 18}vmin"><span style="color:#aeaeb2">2 hrs</span> <span class="g">→ 24 × 7</span></p><p class="sub" style="font-size:4.4vmin">A learning experience that never stops.</p><p id="l30" style="margin-top:4vmin;opacity:0"><span class="pill" style="font-size:3.6vmin;padding:1.8vmin 4.4vmin">Live in 30 days</span></p></div></div></div>`,
+proof: () => `<div class="bg" style="background:#fff"></div><div class="lay"><div class="txt"><p class="eyebrow">It has already begun</p>
+  <p class="big g" style="font-size:24vmin" id="pn">0+</p><p class="sub" id="pt" style="opacity:0;font-size:4.8vmin;color:#1d1d1f">pharmacy students in Bagalkot<br><span style="color:var(--gray)">learn this way today.</span></p></div>
+  <div class="vis"><div class="phone" id="pa" style="left:4%;top:14%;transform:rotate(-7deg);opacity:0"><img src="shots/narrator.webp"></div><div class="phone" id="pb" style="left:34%;top:4%;z-index:2;opacity:0"><img src="shots/lab.webp"></div><div class="phone" id="pc" style="right:4%;top:14%;transform:rotate(7deg);opacity:0"><img src="shots/quiz.webp"></div></div></div>`,
+book: () => `<div class="bg" style="background:radial-gradient(ellipse at 50% 40%,#fff,#f1f1f6)"></div><div class="lay center" style="gap:5vmin">
+  <div id="bk" style="opacity:0;perspective:160vmin;width:${MODE === 'V' ? 88 : 110}vmin"><div style="transform:rotateX(16deg);border-radius:1.6vmin;background:#fffdf8;box-shadow:0 5vmin 10vmin -4vmin rgba(0,0,0,.35);display:grid;grid-template-columns:1fr 1fr;overflow:hidden">
+   <div style="padding:5vmin 4vmin;border-right:1px solid #eee5d6"><p style="font-family:Newsreader,serif;font-size:2vmin;color:#a08a6a;letter-spacing:.2em;text-transform:uppercase">Chapter 2026</p><p style="font-family:Newsreader,serif;font-size:4vmin;line-height:1.15;margin-top:1.6vmin;color:#3a2f24">How India’s pharmacists learned AI</p>${[80, 64, 72, 58].map((w) => `<div style="margin-top:1.6vmin;height:.8vmin;width:${w}%;background:#efe7da;border-radius:.4vmin"></div>`).join('')}</div>
+   <div style="padding:5vmin 4vmin"><p style="font-family:Newsreader,serif;font-size:2.2vmin;color:#a08a6a">The first colleges</p><div style="font-family:Newsreader,serif;font-size:3.2vmin;color:#3a2f24;margin-top:2vmin;line-height:1.8">${[1, 2, 3, 4].map((n) => `<div class="bl" style="opacity:0">${n}. <span style="display:inline-block;width:70%;border-bottom:.3vmin dotted #c9b99c"></span></div>`).join('')}</div></div></div></div>
+  <div class="txt"><h1 class="h1s" id="bt">${words('The first colleges that made it happen.')}</h1>
+   <div style="display:flex;gap:1.6vmin;justify-content:center;flex-wrap:wrap;margin-top:3vmin">${['💊 Design medicines', '🛡️ Protect patients', '🚀 Build companies'].map((x) => `<span class="chip bc" style="opacity:0">${x}</span>`).join('')}</div></div></div>`,
+cta: () => `<div class="bg" style="background:#fff"></div>${blobs([['#c9d4ff', 10, 10, 60], ['#ffc2dc', 55, 55, 60]])}<div class="lay center"><div class="txt stack">
+  <div id="c1"><span class="pill" style="font-size:3.4vmin;padding:1.8vmin 4vmin">Founding Partner Colleges · 2026–27</span><h1 class="h1" style="margin-top:4vmin">${words('Begin the story this year.')}</h1></div>
+  <div id="c2" style="opacity:0;display:flex;gap:4vmin;justify-content:center;flex-wrap:wrap">${[['1928', 'Penicillin'], ['1953', 'DNA'], ['2003', 'The genome'], ['2026', 'AI']].map(([y, n], i) => `<div class="cy" style="opacity:0;text-align:center"><p class="big ${i === 3 ? 'g' : ''}" style="font-size:${MODE === 'V' ? 13 : 11}vmin">${y}</p><p style="font-weight:700;font-size:3vmin;color:var(--gray);margin-top:1vmin">${n}</p></div>`).join('')}</div>
+  <div id="c3" style="opacity:0"><h1 class="h1b">${words('History remembers')}<br>${words('those who go first.', 'g')}</h1></div>
+  <div id="c4" style="opacity:0"><h1 class="h1b">Let it remember<br><span class="g">your college.</span></h1>
+   <div class="tile" id="end" style="opacity:0;display:inline-flex;gap:3vmin;align-items:center;padding:2.6vmin 3.4vmin;margin-top:5vmin"><img src="${QR}" style="width:16vmin;height:16vmin"><div style="text-align:left"><p style="font-weight:800;font-size:3.4vmin;letter-spacing:-.02em">Become a Founding Partner</p><p style="font-weight:700;font-size:2.9vmin;color:#0071e3;margin-top:1vmin">campuschamp.in/colleges</p></div></div></div></div></div>`,
+};
+
+const U = {
+hist: (el, t, s) => { blobOn(el, ap(t, s.start, 2)); reveal($('#h0', el), t, S('hist', 0), 0.07);
+  const t1 = S('hist', 1), d1 = Dd('hist', 1); $('#trail', el).style.strokeDashoffset = 1 - ease((t - t1 + 0.3) / (d1 + Dd('hist', 2) + 0.6)) * 0.86 - ap(t, S('hist', 3), 1) * 0.14;
+  $$('.yr', el).forEach((y, i) => show(y, ap(t, i < 3 ? t1 + i * d1 / 3 : S('hist', 2), 0.5), 3, 0.9));
+  const p = ap(t, S('hist', 3) + 0.4, 0.8); $('#y26', el).style.opacity = p; $('#y26', el).style.transform = `scale(${lerp(0.85, 1, p)})`; $('#y26', el).style.filter = `blur(${(1 - p) * 14}px)`; },
+search: (el, t, s) => { const a = S('search', 0), b = S('search', 1);
+  $$('.mol', el).forEach((m, i) => { const k = ap(t, a - 0.6 + (i % 12) * 0.08, 0.8); const out = ap(t, b - 0.4, 0.8); m.style.opacity = k * MOLS[i].o * (1 - out); m.style.transform = `rotate(${MOLS[i].r + (t - s.start) * 8}deg) translate(${out * (MOLS[i].x - 50)}vmin,${out * (MOLS[i].y - 50)}vmin)`; });
+  $('#exp', el).textContent = Math.round(ease((t - a - 0.3) / 1.8) * 60); const sw = ap(t, b - 0.4, 0.5); $('#s1', el).style.opacity = 1 - sw; show($('#s2', el), sw, 4, 0.95);
+  const sq = ap(t, b + 0.4, 1.6); $('#fun', el).setAttribute('d', `M${20 + sq * 120} 10 H${580 - sq * 120} L${360 - sq * 30} 300 H${240 + sq * 30} Z`);
+  $('#ftx', el).textContent = fmt(Math.round(lerp(10000, 10000, sq))); const o = ap(t, b + 1.6, 0.6); $('#o1', el).setAttribute('opacity', o); $('#o1t', el).setAttribute('opacity', o);
+  $$('.fx', el).forEach((c, i) => show(c, ap(t, b + 0.6 + i * Dd('search', 1) / 4, 0.4), 2, 0.9)); },
+smiles: (el, t, s) => { blobOn(el, 0.8); reveal($('#sm1', el), t, S('smiles', 0) + 0.1, 0.07); const full = 'CC(=O)Nc1ccc(O)cc1';
+  const n = Math.round(clamp((t - S('smiles', 0) - 0.3) / 2.2) * full.length); $('#smi', el).innerHTML = full.slice(0, n).replace(/(=O|O\))/g, '<span style="color:#e3306c">$1</span>').replace(/N/, '<span style="color:#0071e3">N</span>') + (n < full.length && Math.floor(t * 3) % 2 ? '▍' : '');
+  show($('#cnt', el), ap(t, S('smiles', 0) + 2.8, 0.5), 1); show($('#molbig', el), ap(t, S('smiles', 0) + 3.1, 0.8), 4, 0.8); },
+fold: (el, t, s) => { const a = S('fold', 0); $('#fn', el).textContent = Math.round(ease((t - a - 0.8) / 2) * 200) + 'M+'; reveal($('#fl', el), t, a + 0.3, 0.08);
+  const p = ap(t, a, 0.9); $('#pimg', el).style.opacity = p; $('#pimg', el).style.transform = `scale(${lerp(0.9, 1, p)}) rotate(${lerp(-3, 0, p)}deg)`; show($('#pl', el), ap(t, a + Dd('fold', 0) * 0.7, 0.5), 2); show($('#nob', el), ap(t, a + 1.6, 0.5), 2, 0.8); },
+abx: (el, t, s) => { const a = S('abx', 0); $('#an', el).textContent = Math.round(ease((t - a - 0.6) / 2.2) * 100) + 'M+'; reveal($('#al', el), t, a + 0.2, 0.07); show($('#found', el), ap(t, a + Dd('abx', 0) * 0.78, 0.5), 2, 0.9);
+  $$('.pkt', el).forEach((c, i) => { const k = ((t * 0.55 + i / 10) % 1); const x = 60 + k * 280, y = 60 + ((i * 53) % 240) * (1 - k) + 160 * k * (i % 2 ? 0.75 : 0.25); c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('opacity', ap(t, a, 0.6) * (k < 0.92 ? 1 : 0)); }); },
+data: (el, t) => { const a = S('data', 0), b = S('data', 1); show($('#d1', el), ap(t, a - 0.2, 0.6), 4, 0.95); $('#dn', el).textContent = (ease((t - a - 0.5) / 2) * 3.6).toFixed(1) + 'M';
+  $$('.db', el).forEach((d, i) => (d.style.transform = `scaleY(${0.4 + 0.6 * Math.abs(Math.sin(t * 3 + i))})`)); show($('#d2', el), ap(t, b - 0.2, 0.6), 4, 0.95); $('#fd', el).textContent = Math.round(ease((t - b - 0.6) / 2) * 500) + '+'; },
+india: (el, t, s) => { blobOn(el, ap(t, s.start, 1.5)); const a = S('india', 0); $$('.pp', el).forEach((p, i) => show(p, ap(t, a + i * 0.15, 0.5), 4, 0.8)); show($('#i15', el), ap(t, a + 0.9, 0.6), 3, 0.9); reveal($('#il', el), t, a + 1.2, 0.07); show($('#ir', el), ap(t, a + Dd('india', 0) * 0.62, 0.6), 2); },
+syl: (el, t, s) => { blobOn(el, ap(t, s.start, 1.5)); const a = S('syl', 0); reveal($('#syh', el), t, a + 0.2, 0.09); $$('.sy', el).forEach((p, i) => show(p, ap(t, a + Dd('syl', 0) * (0.45 + i * 0.16), 0.4), 2, 0.85)); },
+sems: (el, t) => { const st = LN('sems').map((l) => l.start); const idx = st.filter((x) => t >= x - 0.35).length - 1; const roman = [['I'], ['II'], ['III'], ['V'], ['VI'], ['VII'], ['VIII']];
+  $$('.semc', el).forEach((c, i) => { const a = st[i] - 0.35, e = st[i + 1] !== undefined ? st[i + 1] - 0.35 : 1e9; const k = ap(t, a, 0.45) * (1 - ap(t, e, 0.35)); c.style.opacity = k; c.style.transform = `translateX(${(1 - ap(t, a, 0.45)) * 8 - ap(t, e, 0.35) * 8}vmin)`;
+    if (k > 0) { const ty = $('.ty', c); if (ty) { const f = ty.dataset.full; ty.textContent = f.slice(0, Math.round(clamp((t - st[i] - 1.6) / 1.4) * f.length)); show($('.out', c), ap(t, st[i] + 3.2, 0.4), 1); }
+      const cib = $('.cib', c); if (cib) { const p = ap(t, st[i] + 2, 1.6); const l = lerp(4, 28, p), r = lerp(96, 74, p); cib.style.left = l + '%'; cib.style.right = (100 - r) + '%'; $('.cim', c).style.left = `calc(${(l + r) / 2}% - .5vmin)`; show($('.ok', c), ap(t, st[i] + 3.8, 0.4), 2, 0.9); }
+      $$('.tk', c).forEach((x, j) => show(x, ap(t, st[i] + 1.6 + j * 0.6, 0.4), 2)); const im = $('img', c); if (im) im.style.transform = `scale(${1 + (t - st[i]) * 0.006})`; } });
+  $$('.pg', el).forEach((g) => { const r = g.dataset.r; const done = roman.findIndex((x) => x[0] === r); const on = done >= 0 && done <= idx; g.style.color = on ? (done === idx ? '#7c3aed' : '#1d1d1f') : '#c7c7cc'; $('.pgb', g).style.background = on ? 'linear-gradient(90deg,#0071e3,#7c3aed)' : (r === 'IV' && idx >= 3 ? '#d2d2d7' : '#e5e5ea'); }); },
+wall: (el, t, s) => { blobOn(el, ap(t, s.start, 1.5)); reveal($('#wl', el), t, S('wall', 0), 0.1); $$('.wc', el).forEach((c, i) => show(c, ap(t, s.start + 0.1 + i * 0.12, 0.5), 5, 0.9)); },
+good: (el, t, s) => { blobOn(el, ap(t, s.start, 2)); reveal($('#g1', el), t, S('good', 0) + 1.3, 0.1); show($('#g1s', el), ap(t, S('good', 0) + Dd('good', 0) * 0.78, 0.5), 2);
+  const sw = ap(t, S('good', 1) - 0.4, 0.5); $('#g1', el).style.opacity = 1 - sw; show($('#g2', el), sw, 3, 0.95); show($('#bl', el), ap(t, S('good', 1) + Dd('good', 1) * 0.72, 0.5), 2, 0.85); },
+blend: (el, t, s) => { blobOn(el, 0.6); const st = LN('blend').map((l) => l.start); $$('.st', el).forEach((c, i) => { const k = ap(t, st[i] - 0.3, 0.6); const act = t >= st[i] - 0.3 && (st[i + 1] === undefined || t < st[i + 1] - 0.3); c.style.opacity = k * (act ? 1 : 0.45); c.style.transform = `translateY(${(1 - k) * 5}vmin) scale(${act ? 1.04 : 0.96})`; }); },
+promise: (el, t) => { const a = S('promise', 0), b = S('promise', 1); const d = Dd('promise', 0); $$('.pr', el).forEach((c, i) => show(c, ap(t, a + i * d / 4.2, 0.45), 4, 0.9)); $$('.lgc', el).forEach((c, i) => show(c, ap(t, a + d * 0.55 + i * 0.25, 0.4), 2, 0.85));
+  const sw = ap(t, b - 0.4, 0.5); $('#p1', el).style.opacity = 1 - sw; show($('#p2', el), sw, 3, 0.95); show($('#l30', el), ap(t, b + Dd('promise', 1) * 0.72, 0.5), 2, 0.85); },
+proof: (el, t) => { const a = S('proof', 0); $('#pn', el).textContent = Math.round(ease((t - a - 1) / 2) * 100) + '+'; show($('#pt', el), ap(t, a + 2.4, 0.6), 2); ['#pa', '#pb', '#pc'].forEach((q, i) => { const e = $(q, el); const k = ap(t, a + 0.3 + i * 0.3, 0.8); e.style.opacity = k; e.style.marginTop = `${(1 - k) * 8}vmin`; }); },
+book: (el, t) => { const a = S('book', 0); show($('#bk', el), ap(t, a, 0.9), 6, 0.92); $$('.bl', el).forEach((l, i) => show(l, ap(t, S('book', 1) + i * 0.4, 0.4), 1)); reveal($('#bt', el), t, S('book', 1), 0.08); $$('.bc', el).forEach((c, i) => show(c, ap(t, S('book', 2) + 0.6 + i * Dd('book', 2) / 3.4, 0.4), 2, 0.9)); },
+cta: (el, t, s) => { blobOn(el, ap(t, s.start, 1.5)); const a = [0, 1, 2, 3].map((i) => S('cta', i)); reveal($('#c1', el), t, a[0] + 0.6, 0.08);
+  const f = (x, y) => ap(t, x, 0.4) * (1 - ap(t, y, 0.35)); $('#c1', el).style.opacity = 1 - ap(t, a[1] - 0.4, 0.35); $('#c2', el).style.opacity = f(a[1] - 0.4, a[2] - 0.4);
+  $$('.cy', el).forEach((c, i) => show(c, ap(t, a[1] + i * Dd('cta', 1) / 4.2, 0.35), 3, 0.85)); $('#c3', el).style.opacity = f(a[2] - 0.4, a[3] - 0.4); reveal($('#c3', el), t, a[2], 0.1);
+  const y = ap(t, a[3] - 0.2, 0.7); $('#c4', el).style.opacity = y; $('#c4', el).style.transform = `scale(${lerp(1.08, 1, y)})`; show($('#end', el), ap(t, a[3] + 2.2, 0.8), 4, 0.95); },
+};
+
+const stage = document.getElementById('stage'); const built = {};
+TL.scenes.forEach((s) => { const d = document.createElement('div'); d.className = 'sc'; d.innerHTML = B[s.id](); stage.appendChild(d); built[s.id] = d; });
+function chunk(text) { const parts = text.match(/[^,.?!:;—]+[,.?!:;—”]*\s*/g) || [text]; const out = []; let c = ''; for (const p of parts) { if ((c + p).length > 52 && c) { out.push(c.trim()); c = p; } else c += p; } if (c.trim()) out.push(c.trim()); return out; }
+const NOCAP = new Set([3, 20, 21, 34, 35, 36]);
+window.renderAt = (t) => {
+  TL.scenes.forEach((s, i) => { const el = built[s.id]; const op = ap(t, s.start - 0.05, 0.45) * (i === TL.scenes.length - 1 ? 1 : 1 - ap(t, s.end - 0.25, 0.4));
+    el.style.opacity = op; el.style.display = op > 0.001 ? 'block' : 'none';
+    if (op > 0.001) { const lay = $('.lay', el); if (lay) lay.style.transform = `scale(${1 + (t - s.start) * 0.002})`; U[s.id](el, t, s); } });
+  const ft = S('hist', 3) + 0.4; document.getElementById('flash').style.opacity = t > ft && t < ft + 0.6 ? 0.55 * (1 - (t - ft) / 0.6) : 0;
+  const line = TL.lines.find((l) => t >= l.start && t < l.start + l.dur + 0.15 && !NOCAP.has(l.i)); const cap = document.getElementById('cap');
+  if (line) { const cs = chunk(line.text); const tot = cs.reduce((a, c) => a + c.length, 0); let acc = 0, pick = cs[cs.length - 1]; for (const c of cs) { acc += c.length; if ((t - line.start) / line.dur <= acc / tot) { pick = c; break; } } cap.innerHTML = `<span>${pick}</span>`; } else cap.innerHTML = '';
+  document.getElementById('mark').style.opacity = t > SC.cta.start ? ap(t, SC.cta.start, 0.6) : (t < 4 ? ap(t, 0.2, 0.8) : 1 - ap(t, 4, 0.6));
+};
+window.renderAt(0);
+</script></body></html>
