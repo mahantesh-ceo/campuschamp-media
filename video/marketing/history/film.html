@@ -211,7 +211,7 @@ cta: (el, t, s) => { blobOn(el, ap(t, s.start, 1.5)); const a = [0, 1, 2, 3].map
 
 const stage = document.getElementById('stage'); const built = {};
 TL.scenes.forEach((s) => { const d = document.createElement('div'); d.className = 'sc'; d.innerHTML = B[s.id](); stage.appendChild(d); built[s.id] = d; });
-function chunk(text) { const parts = text.match(/[^,.?!:;—]+[,.?!:;—”]*\s*/g) || [text]; const out = []; let c = ''; for (const p of parts) { if ((c + p).length > 52 && c) { out.push(c.trim()); c = p; } else c += p; } if (c.trim()) out.push(c.trim()); return out; }
+function chunk(text) { const parts = text.split(/(?<=[,.?!:;—”])\s+/).map((x) => x + ' '); const out = []; let c = ''; for (const p of parts) { if ((c + p).length > 52 && c) { out.push(c.trim()); c = p; } else c += p; } if (c.trim()) out.push(c.trim()); return out; }
 const NOCAP = new Set([3, 20, 21, 34, 35, 36]);
 window.renderAt = (t) => {
   TL.scenes.forEach((s, i) => { const el = built[s.id]; const op = ap(t, s.start - 0.05, 0.45) * (i === TL.scenes.length - 1 ? 1 : 1 - ap(t, s.end - 0.25, 0.4));
