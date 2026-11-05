@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Champ Lab · Faculty Challenge</title>
+<meta name="description" content="Write your first Python program in 10 minutes, on your phone.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&family=Noto+Sans+Kannada:wght@500;700&family=Noto+Sans+Devanagari:wght@500;700&display=swap">
+<style>
+:root{--ink:#1d1d1f;--gray:#6e6e73;--hair:#e5e5ea;--tile:#f5f5f7;--blue:#0071e3;--green:#1f9d55;--red:#d70015;--bg:#fbfbfd}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);font-family:Inter,'Noto Sans Kannada','Noto Sans Devanagari',-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;padding:max(16px,env(safe-area-inset-top)) 16px 40px}
+.wrap{max-width:640px;margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:center;padding:6px 0 18px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px}
+.logo i{width:30px;height:30px;border-radius:9px;background:linear-gradient(140deg,#6366f1,#7c3aed 55%,#2dd4bf);display:grid;place-items:center;font:700 11px 'JetBrains Mono',monospace;font-style:normal;color:#fff}
+.lang{display:flex;background:var(--tile);border-radius:999px;padding:3px}
+.lang button{border:0;background:none;font:600 13px inherit;font-family:inherit;padding:7px 11px;border-radius:999px;color:var(--gray)}
+.lang button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+h1{font-size:34px;line-height:1.08;letter-spacing:-.035em;font-weight:800}
+.g{background:linear-gradient(90deg,#0071e3,#7c3aed 50%,#e5397a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--gray);font-size:17px;line-height:1.45;margin-top:10px}
+.card{background:#fff;border-radius:20px;padding:20px;margin-top:18px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 28px rgba(0,0,0,.06)}
+label{display:block;font-weight:600;font-size:14px;color:var(--gray);margin:14px 0 6px}
+input[type=text]{width:100%;font:500 17px inherit;font-family:inherit;padding:14px;border:1.5px solid var(--hair);border-radius:12px;background:#fff;color:var(--ink)}
+.btn{display:block;width:100%;border:0;border-radius:14px;padding:16px;font:700 17px inherit;font-family:inherit;background:var(--ink);color:#fff;margin-top:18px}
+.btn.blue{background:var(--blue)}.btn.ghost{background:var(--tile);color:var(--ink);font-weight:600}
+.btn:disabled{opacity:.45}
+.steps{display:flex;gap:6px;margin:4px 0 14px}.steps b{flex:1;height:5px;border-radius:3px;background:var(--hair)}.steps b.on{background:var(--blue)}.steps b.done{background:var(--green)}
+.eyebrow{font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+.task{font-size:17px;line-height:1.5;margin-top:8px}
+.expect{font-variant-ligatures:none;margin-top:12px;font:500 15px 'JetBrains Mono',monospace;background:var(--tile);border-radius:10px;padding:10px 12px;white-space:pre-wrap}
+.expect small{display:block;font:600 12px Inter,sans-serif;color:var(--gray);margin-bottom:4px}
+textarea{font-variant-ligatures:none;width:100%;min-height:170px;margin-top:14px;font:500 16px/1.55 'JetBrains Mono',monospace;padding:14px;border-radius:14px;border:1.5px solid #2b3466;background:#0b1023;color:#e2e8f0;resize:vertical;tab-size:4}
+.keys{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.keys button{font-variant-ligatures:none;border:0;background:var(--tile);border-radius:9px;padding:9px 0;min-width:40px;flex:1;font:600 16px 'JetBrains Mono',monospace;color:var(--ink)}
+.out{font-variant-ligatures:none;margin-top:12px;min-height:54px;border-radius:14px;background:#020617;color:#e2e8f0;font:500 15px/1.55 'JetBrains Mono',monospace;padding:12px 14px;white-space:pre-wrap}
+.out .err{color:#fda4af}
+.row{display:flex;gap:10px}.row .btn{margin-top:12px}
+.ok{display:none;margin-top:14px;border-radius:16px;padding:16px;background:#e9f8ef;color:#0f5132;font-weight:600;font-size:16px;line-height:1.45}
+.ok b{display:block;font-size:20px;margin-bottom:4px}
+.hint{display:none;margin-top:12px;border-radius:14px;padding:14px;background:#fff7e6;color:#7a4b00;font-size:15px;line-height:1.5}
+.hint code{font-family:'JetBrains Mono',monospace;background:#fff;padding:2px 6px;border-radius:6px;white-space:pre-wrap}
+.status{font-size:13px;color:var(--gray);margin-top:10px;text-align:center}
+.cert{margin-top:18px;border-radius:24px;padding:28px 24px;text-align:center;background:linear-gradient(160deg,#fff,#f3f1ff 60%,#fff2f7);box-shadow:0 10px 40px rgba(124,58,237,.18);border:1.5px solid #e8e3ff}
+.cert .seal{width:64px;height:64px;margin:0 auto;border-radius:18px;background:linear-gradient(140deg,#6366f1,#7c3aed 55%,#2dd4bf);display:grid;place-items:center;font:700 20px 'JetBrains Mono',monospace;color:#fff}
+.cert h2{font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--gray);margin-top:18px}
+.cert .name{font-size:32px;font-weight:800;letter-spacing:-.03em;margin-top:10px}
+.cert .what{font-size:16px;line-height:1.5;color:#3a3a3c;margin-top:10px}
+.cert .time{display:inline-block;margin-top:16px;font-weight:700;font-size:15px;background:#fff;border-radius:999px;padding:8px 16px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.cert .foot{font-size:12px;color:var(--gray);margin-top:16px}
+.hide{display:none}
+@keyframes pop{0%{transform:scale(.9);opacity:0}100%{transform:scale(1);opacity:1}}
+.pop{animation:pop .35s ease-out}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><div class="logo"><i>&lt;/&gt;</i>Champ Lab</div>
+    <div class="lang"><button data-l="en" class="on">EN</button><button data-l="kn">ಕನ್ನಡ</button><button data-l="hi">हिन्दी</button></div></div>
+
+  <!-- start -->
+  <section id="start">
+    <h1 data-t="hello"></h1>
+    <p class="lead" data-t="intro"></p>
+    <div class="card">
+      <label data-t="yourName"></label><input id="name" type="text" autocomplete="name" placeholder="Dr. …">
+      <label data-t="yourDept"></label><input id="dept" type="text" placeholder="Pharmaceutics, Ayurveda, …">
+      <button class="btn blue" id="go" data-t="start"></button>
+      <p class="status" id="load"></p>
+    </div>
+  </section>
+
+  <!-- challenge -->
+  <section id="ch" class="hide">
+    <div class="steps"><b></b><b></b><b></b></div>
+    <p class="eyebrow" id="cnum"></p>
+    <h1 id="ctitle" style="font-size:28px;margin-top:6px"></h1>
+    <p class="task" id="ctask"></p>
+    <div class="expect"><small data-t="expected"></small><span id="cexp"></span></div>
+    <textarea id="code" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false"></textarea>
+    <div class="keys" id="keys"></div>
+    <div class="row"><button class="btn ghost" id="hintb" data-t="hint"></button><button class="btn blue" id="run" data-t="run"></button></div>
+    <div class="out" id="out"></div>
+    <div class="hint" id="hint"></div>
+    <div class="ok" id="ok"></div>
+    <button class="btn hide" id="next"></button>
+  </section>
+
+  <!-- certificate -->
+  <section id="done" class="hide">
+    <h1 data-t="doneTitle"></h1>
+    <div class="cert pop">
+      <div class="seal">&lt;/&gt;</div>
+      <h2 data-t="certTitle"></h2>
+      <p class="name" id="cname"></p>
+      <p class="what" id="cwhat"></p>
+      <span class="time" id="ctime"></span>
+      <p class="foot">Champ Lab · Campus Champ · <span id="cdate"></span></p>
+    </div>
+    <p class="lead" data-t="share" style="text-align:center;margin-top:16px"></p>
+  </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+<script>
+const T = {
+  en: { hello: 'Write your first <span class="g">Python program</span> in 10 minutes.', intro: 'Three small pharmacy challenges. On your phone. Nothing to install.',
+    yourName: 'Your name', yourDept: 'Department', start: 'Start the challenge', expected: 'Your output should be exactly',
+    run: '▶ Run', hint: 'Hint', next: 'Next challenge →', finish: 'Finish ✓', loading: 'Getting Python ready…', ready: 'Python is ready ✓', fail: 'Python could not load. Check the internet and refresh.',
+    right: 'Correct! 🎉', almost: 'Close! Compare your output with the expected one, character by character.',
+    doneTitle: 'You’re a <span class="g">programmer</span> now.', certTitle: 'Founding Faculty · Champ Lab',
+    certWhat: (n) => `wrote, ran and debugged ${n} real Python programs for pharmacy`, time: (m, s) => `Done in ${m} min ${s} s`,
+    share: 'Take a screenshot and share it with your colleagues. Your students can do this too.', step: (i) => `Challenge ${i} of 3` },
+  kn: { hello: 'ನಿಮ್ಮ ಮೊದಲ <span class="g">Python program</span> ಅನ್ನು 10 ನಿಮಿಷದಲ್ಲಿ ಬರೆಯಿರಿ.', intro: 'ಮೂರು ಚಿಕ್ಕ pharmacy challenges. ನಿಮ್ಮ phone ನಲ್ಲೇ. ಏನೂ install ಮಾಡಬೇಕಿಲ್ಲ.',
+    yourName: 'ನಿಮ್ಮ ಹೆಸರು', yourDept: 'ವಿಭಾಗ', start: 'Challenge ಶುರು ಮಾಡಿ', expected: 'ನಿಮ್ಮ output ಸರಿಯಾಗಿ ಹೀಗಿರಬೇಕು',
+    run: '▶ Run', hint: 'ಸುಳಿವು', next: 'ಮುಂದಿನ challenge →', finish: 'ಮುಗಿಸಿ ✓', loading: 'Python ಸಿದ್ಧವಾಗುತ್ತಿದೆ…', ready: 'Python ಸಿದ್ಧ ✓', fail: 'Python load ಆಗಲಿಲ್ಲ. Internet check ಮಾಡಿ refresh ಮಾಡಿ.',
+    right: 'ಸರಿ! 🎉', almost: 'ಹತ್ತಿರ ಬಂದಿದ್ದೀರಿ! ನಿಮ್ಮ output ಅನ್ನು ನಿರೀಕ್ಷಿತ output ಜೊತೆ ಅಕ್ಷರ ಅಕ್ಷರವಾಗಿ ಹೋಲಿಸಿ.',
+    doneTitle: 'ಈಗ ನೀವು <span class="g">programmer</span>.', certTitle: 'Founding Faculty · Champ Lab',
+    certWhat: (n) => `pharmacy ಗಾಗಿ ${n} ನಿಜವಾದ Python programs ಬರೆದು, run ಮಾಡಿ, ಸರಿ ಮಾಡಿದ್ದಾರೆ`, time: (m, s) => `${m} ನಿಮಿಷ ${s} ಸೆಕೆಂಡ್‌ನಲ್ಲಿ ಮುಗಿಸಿದರು`,
+    share: 'Screenshot ತೆಗೆದು ಸಹೋದ್ಯೋಗಿಗಳ ಜೊತೆ share ಮಾಡಿ. ನಿಮ್ಮ ವಿದ್ಯಾರ್ಥಿಗಳೂ ಇದನ್ನು ಮಾಡಬಹುದು.', step: (i) => `Challenge ${i} / 3` },
+  hi: { hello: 'अपना पहला <span class="g">Python program</span> 10 मिनट में लिखिए।', intro: 'तीन छोटे pharmacy challenges. आपके phone पर. कुछ भी install नहीं करना.',
+    yourName: 'आपका नाम', yourDept: 'विभाग', start: 'Challenge शुरू कीजिए', expected: 'आपका output बिल्कुल ऐसा होना चाहिए',
+    run: '▶ Run', hint: 'संकेत', next: 'अगला challenge →', finish: 'पूरा ✓', loading: 'Python तैयार हो रहा है…', ready: 'Python तैयार ✓', fail: 'Python load नहीं हुआ. Internet जाँचकर refresh कीजिए.',
+    right: 'सही! 🎉', almost: 'करीब हैं! अपना output अपेक्षित output से अक्षर-अक्षर मिलाइए.',
+    doneTitle: 'अब आप <span class="g">programmer</span> हैं।', certTitle: 'Founding Faculty · Champ Lab',
+    certWhat: (n) => `pharmacy के लिए ${n} असली Python programs लिखे, चलाए और ठीक किए`, time: (m, s) => `${m} मिनट ${s} सेकंड में पूरा किया`,
+    share: 'Screenshot लेकर साथियों से share कीजिए. आपके students भी यह कर सकते हैं.', step: (i) => `Challenge ${i} / 3` },
+};
+const C = [
+  { en: ['Print a medicine label', 'Make the computer show this label. Type print, then the text inside brackets and quotes.'],
+    kn: ['Medicine label print ಮಾಡಿ', 'Computer ಈ label ತೋರಿಸುವ ಹಾಗೆ ಮಾಡಿ. print ಬರೆದು, brackets ಮತ್ತು quotes ಒಳಗೆ text ಬರೆಯಿರಿ.'],
+    hi: ['Medicine label print कीजिए', 'Computer से यह label दिखवाइए. print लिखिए, फिर brackets और quotes के अंदर text.'],
+    expect: 'Paracetamol 500 mg', start: '# Print the label\n', hint: ['print("…") shows whatever is inside the quotes.', 'print("Paracetamol 500 mg")'] },
+  { en: ['Calculate a daily dose', 'The patient takes 500 mg, 3 times a day. Use the variables to print the daily dose.'],
+    kn: ['ದಿನದ dose ಲೆಕ್ಕ ಹಾಕಿ', 'Patient ದಿನಕ್ಕೆ 3 ಸಲ 500 mg ತೆಗೆದುಕೊಳ್ಳುತ್ತಾರೆ. Variables ಬಳಸಿ ದಿನದ dose print ಮಾಡಿ.'],
+    hi: ['रोज़ का dose निकालिए', 'Patient दिन में 3 बार 500 mg लेता है. Variables से रोज़ का dose print कीजिए.'],
+    expect: 'Daily dose: 1500 mg', start: 'dose = 500\ntimes = 3\n# Print the daily dose\n', hint: ['* multiplies: dose * times', 'print("Daily dose:", dose * times, "mg")'] },
+  { en: ['Check for fever', 'If the temperature is 38.0 or more, print "Fever". Otherwise print "No fever". Press ⇥ for the 4 spaces.'],
+    kn: ['ಜ್ವರ check ಮಾಡಿ', 'Temperature 38.0 ಅಥವಾ ಹೆಚ್ಚು ಇದ್ದರೆ "Fever" print ಮಾಡಿ. ಇಲ್ಲದಿದ್ದರೆ "No fever". 4 spaces ಗೆ ⇥ ಒತ್ತಿ.'],
+    hi: ['बुखार जाँचिए', 'Temperature 38.0 या ज़्यादा हो तो "Fever" print कीजिए. वरना "No fever". 4 spaces के लिए ⇥ दबाइए.'],
+    expect: 'Fever', start: 'temp = 38.6\n# If temp is 38.0 or more: Fever, else: No fever\n', hint: ['if temp >= 38.0: then an indented print. Then else:', 'if temp >= 38.0:\n    print("Fever")\nelse:\n    print("No fever")'] },
+];
+let L = 'en', cur = 0, hints = 0, py = null, t0 = 0, solved = [false, false, false];
+const $ = (id) => document.getElementById(id);
+function tr() {
+  document.querySelectorAll('[data-t]').forEach((e) => { const v = T[L][e.dataset.t]; if (typeof v === 'string') e.innerHTML = v; });
+  document.querySelectorAll('.lang button').forEach((b) => b.classList.toggle('on', b.dataset.l === L));
+  if (!$('ch').classList.contains('hide')) paint(false);
+  if (!$('done').classList.contains('hide')) cert();
+  status();
+}
+document.querySelectorAll('.lang button').forEach((b) => (b.onclick = () => { L = b.dataset.l; try { localStorage.setItem('cc-lang', L); } catch (e) {} tr(); }));
+try { L = localStorage.getItem('cc-lang') || 'en'; $('name').value = localStorage.getItem('cc-name') || ''; $('dept').value = localStorage.getItem('cc-dept') || ''; } catch (e) {}
+let pyState = 'loading';
+function status() { $('load').textContent = pyState === 'ready' ? T[L].ready : pyState === 'fail' ? T[L].fail : T[L].loading; }
+(async () => { try { py = await loadPyodide(); pyState = 'ready'; } catch (e) { pyState = 'fail'; } status(); })();
+$('go').onclick = () => {
+  try { localStorage.setItem('cc-name', $('name').value); localStorage.setItem('cc-dept', $('dept').value); } catch (e) {}
+  $('start').classList.add('hide'); $('ch').classList.remove('hide'); t0 = Date.now(); cur = 0; paint(true);
+};
+const KEYS = ['⇥', '"', '(', ')', ':', '=', '*', ',', '>='];
+$('keys').innerHTML = KEYS.map((k) => `<button data-k="${k}">${k}</button>`).join('');
+$('keys').onclick = (ev) => { const k = ev.target.dataset.k; if (!k) return; ins(k === '⇥' ? '    ' : k === '(' ? '()' : k === '"' ? '""' : k, k === '(' || k === '"'); };
+function ins(s, inside) { const a = $('code'); const p = a.selectionStart; a.value = a.value.slice(0, p) + s + a.value.slice(a.selectionEnd); const q = inside ? p + 1 : p + s.length; a.focus(); a.setSelectionRange(q, q); }
+$('code').addEventListener('keydown', (e) => { if (e.key === 'Tab') { e.preventDefault(); ins('    '); } });
+function paint(reset) {
+  const c = C[cur];
+  $('cnum').textContent = T[L].step(cur + 1); $('ctitle').textContent = c[L][0]; $('ctask').textContent = c[L][1]; $('cexp').textContent = c.expect;
+  if (reset) { $('code').value = c.start; $('out').textContent = ''; $('ok').style.display = 'none'; $('hint').style.display = 'none'; $('next').classList.add('hide'); hints = 0; }
+  document.querySelectorAll('.steps b').forEach((b, i) => (b.className = solved[i] ? 'done' : i === cur ? 'on' : ''));
+  $('next').textContent = cur === 2 ? T[L].finish : T[L].next;
+}
+const clean = (s) => s.replace(/[“”„]/g, '"').replace(/[‘’]/g, "'").replace(/ /g, ' ').replace(/\t/g, '    ');
+$('run').onclick = async () => {
+  if (!py) { status(); return; }
+  const code = clean($('code').value); $('code').value = code;
+  py.globals.set('SRC', code);
+  let res;
+  try {
+    res = py.runPython(`
+import sys, io, traceback
+_o = io.StringIO(); sys.stdout = _o
+_err = ''
+try:
+    exec(SRC, {})
+except Exception as e:
+    tb = traceback.extract_tb(e.__traceback__)
+    line = [f for f in tb if f.filename == '<string>']
+    _err = (f"Line {line[-1].lineno}: " if line else '') + type(e).__name__ + ': ' + str(e)
+sys.stdout = sys.__stdout__
+(_o.getvalue(), _err)`).toJs();
+  } catch (e) { res = ['', String(e).split('\n').pop()]; }
+  const [out, err] = res; const o = $('out');
+  o.innerHTML = ''; o.textContent = out;
+  if (err) { const s = document.createElement('div'); s.className = 'err'; s.textContent = err; o.appendChild(s); }
+  const good = !err && out.replace(/\s+$/, '') === C[cur].expect;
+  const ok = $('ok');
+  if (good) { solved[cur] = true; ok.innerHTML = `<b>${T[L].right}</b>`; ok.style.display = 'block'; ok.classList.remove('pop'); void ok.offsetWidth; ok.classList.add('pop'); $('next').classList.remove('hide'); paint(false); }
+  else if (!err && out) { ok.style.display = 'block'; ok.style.background = '#fff7e6'; ok.style.color = '#7a4b00'; ok.innerHTML = T[L].almost; setTimeout(() => { ok.style.background = ''; ok.style.color = ''; }, 50); }
+  else ok.style.display = 'none';
+};
+$('hintb').onclick = () => { const h = C[cur].hint; const i = Math.min(hints, h.length - 1); $('hint').innerHTML = i === 0 ? h[0] : `<code>${h[1].replace(/</g, '&lt;')}</code>`; $('hint').style.display = 'block'; hints++; };
+$('next').onclick = () => { if (cur < 2) { cur++; paint(true); window.scrollTo({ top: 0, behavior: 'smooth' }); } else { $('ch').classList.add('hide'); $('done').classList.remove('hide'); cert(); window.scrollTo({ top: 0 }); } };
+let secs = 0;
+function cert() {
+  if (!secs) secs = Math.round((Date.now() - t0) / 1000);
+  $('cname').textContent = $('name').value.trim() || 'Faculty member';
+  $('cwhat').textContent = T[L].certWhat(3) + ($('dept').value.trim() ? ` · ${$('dept').value.trim()}` : '');
+  $('ctime').textContent = T[L].time(Math.floor(secs / 60), secs % 60);
+  $('cdate').textContent = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+tr();
+</script>
+</body>
+</html>
