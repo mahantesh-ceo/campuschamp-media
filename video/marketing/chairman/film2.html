@@ -1,0 +1,185 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Kannada:wght@600;700&family=Noto+Sans+Devanagari:wght@600;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap">
+<style>
+:root{--ink:#1d1d1f;--gray:#6e6e73;--hair:#d2d2d7;--tile:#f5f5f7}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow:hidden;background:#fbfbfd;font-family:Inter,-apple-system,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+body.V{width:1080px;height:1920px}body.H{width:1920px;height:1080px}
+.sc{position:absolute;inset:0;overflow:hidden;opacity:0}
+.bg{position:absolute;inset:0}
+.lay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:6vmin}
+.V .lay{flex-direction:column;justify-content:flex-start;padding:22vmin 8vmin 0}
+.H .lay{flex-direction:row;padding:0 9vmin}
+.txt{flex:none}
+.V .txt{width:100%}.H .txt{width:52%}
+.vis{position:relative;flex:none;display:flex;align-items:center;justify-content:center}
+.V .vis{width:100%;height:92vmin}.H .vis{width:40%;height:80vmin}
+.center .txt{text-align:center}.H .center .txt{width:80%}.H .center{flex-direction:column;justify-content:center;gap:5vmin}
+.V .center{justify-content:center;padding-top:0}
+h1{font-weight:800;letter-spacing:-.045em;line-height:1.02}
+.h1{font-size:9.6vmin}.h1b{font-size:12.5vmin}.h1s{font-size:7.4vmin}
+.sub{font-weight:600;color:var(--gray);letter-spacing:-.02em;font-size:4.6vmin;line-height:1.2;margin-top:2.6vmin}
+.eyebrow{font-weight:700;font-size:2.5vmin;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:2.4vmin}
+.g{background:linear-gradient(90deg,#0071e3,#7c3aed 45%,#e5397a 75%,#ff8a00);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gw{background:linear-gradient(90deg,#ff8a00,#e5397a 50%,#7c3aed);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gb{background:linear-gradient(90deg,#0071e3,#34c3ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.w{display:inline-block;opacity:0}
+.tile{background:#fff;border-radius:3.2vmin;box-shadow:0 1px 2px rgba(0,0,0,.04),0 2vmin 6vmin rgba(0,0,0,.07)}
+.phone{position:absolute;width:30vmin;height:63vmin;border-radius:5.5vmin;background:#1d1d1f;padding:1vmin;box-shadow:0 4vmin 10vmin rgba(0,0,0,.18)}
+.phone .scr{width:100%;height:100%;border-radius:4.6vmin;overflow:hidden;background:#fff;position:relative}
+.phone img{width:100%;display:block}
+.phone .isl{position:absolute;left:50%;top:1.4vmin;width:9vmin;height:2.6vmin;border-radius:2vmin;background:#000;transform:translateX(-50%)}
+.chip{display:inline-block;font-weight:700;border-radius:999px;padding:1.4vmin 3.2vmin;font-size:3vmin;background:#fff;box-shadow:0 1vmin 3vmin rgba(0,0,0,.08)}
+.pill{display:inline-block;font-weight:700;font-size:2.6vmin;border-radius:999px;padding:1.3vmin 3vmin;color:#fff;background:#1d1d1f;letter-spacing:.02em}
+.stack{display:grid}.stack>*{grid-area:1/1;position:static!important}
+.blob{position:absolute;border-radius:50%;filter:blur(9vmin);opacity:0}
+#cap{position:absolute;left:8vmin;right:8vmin;z-index:70;text-align:center;font-weight:600;font-size:3.5vmin;line-height:1.35;color:#1d1d1f;letter-spacing:-.01em}
+.V #cap{bottom:13vmin}.H #cap{bottom:5.5vmin;font-size:3vmin}
+#cap span{background:rgba(255,255,255,.82);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:.4vmin 1.6vmin;border-radius:1.2vmin}
+#mark{position:absolute;z-index:70;display:flex;align-items:center;gap:1.4vmin;font-weight:700;font-size:2.4vmin;color:#1d1d1f}
+.V #mark{left:0;right:0;justify-content:center;top:7vmin}.H #mark{left:5vmin;top:5vmin}
+#mark i{width:4vmin;height:4vmin;border-radius:1.2vmin;background:linear-gradient(140deg,#6366f1,#7c3aed 55%,#2dd4bf);display:grid;place-items:center;font:700 1.5vmin ui-monospace,monospace;font-style:normal;color:#fff}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;z-index:60;pointer-events:none}
+</style></head><body class="__MODE__">
+<div id="stage"></div><div id="flash"></div>
+<div id="mark"><i>&lt;/&gt;</i>Campus Champ</div>
+<div id="cap"></div>
+<script>
+const TL = __TIMELINE__; const QR = '__QR__';
+const $ = (q, el = document) => el.querySelector(q), $$ = (q, el = document) => [...el.querySelectorAll(q)];
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x)); const ease = (x) => { x = clamp(x); return 1 - Math.pow(1 - x, 3); };
+const ap = (t, a, d = 0.6) => ease((t - a) / d); const lerp = (a, b, k) => a + (b - a) * k;
+const SC = {}; TL.scenes.forEach((s) => (SC[s.id] = s));
+const LN = (sc) => TL.lines.filter((l) => l.scene === sc); const S = (sc, k) => (LN(sc)[k] || {}).start ?? 1e9; const Dd = (sc, k) => (LN(sc)[k] || {}).dur ?? 1;
+const words = (txt, cls = '') => txt.split(' ').map((w) => `<span class="w ${cls}">${w}</span>`).join(' ');
+const reveal = (el, t, a, per = 0.09) => el && $$('.w', el).forEach((w, i) => { const p = ap(t, a + i * per, 0.55); w.style.opacity = p; w.style.transform = `translateY(${(1 - p) * 0.4}em)`; w.style.filter = `blur(${(1 - p) * 10}px)`; });
+const show = (el, p, dy = 4, sc = 1) => { if (!el) return; el.style.opacity = p; el.style.transform = `translateY(${(1 - p) * dy}vmin) scale(${lerp(sc, 1, p)})`; };
+const phone = (img, extra = '') => `<div class="phone" ${extra}><div class="scr"><img src="shots/${img}"><div class="isl"></div></div></div>`;
+const blobs = (cols) => cols.map(([c, x, y, s], i) => `<div class="blob" data-i="${i}" style="background:${c};left:${x}%;top:${y}%;width:${s}vmin;height:${s}vmin"></div>`).join('');
+
+const B = {
+open: () => `<div class="bg" style="background:#fff"></div><div class="lay center"><div class="txt">
+  <h1 class="h1b" id="o1" style="font-size:11vmin">${words('Every college has a moment it’s remembered for.')}</h1>
+  <p class="sub" id="o2" style="opacity:0">For some, it comes once in a generation.</p></div></div>`,
+shift: () => `<div class="bg" style="background:#fbfbfd"></div><div class="lay"><div class="txt">
+  <p class="eyebrow" id="se" style="opacity:0">PCI · B.Pharm</p>
+  <h1 style="font-size:17vmin" id="yr"><span class="g">2026–27</span></h1>
+  <p class="sub" id="ss" style="opacity:0">AI enters every year of B.Pharm. Every college must teach it.</p></div>
+  <div class="vis"><div style="display:grid;grid-template-columns:1fr 1fr;gap:2.4vmin;width:100%">
+  ${[['BP101T', 'Sem I', 'Python Programming'], ['BP201T', 'Sem II', 'Biostatistics & Data Analytics'], ['BP301T', 'Sem III', 'Machine Learning'], ['BP604T', 'Sem VI', 'AI Applications'], ['BP703T', 'Sem VII', 'AI in Clinical Applications'], ['BP801T', 'Sem VIII', 'Ethical AI in Pharmacy']].map(([c, s, n]) => `<div class="tile pc" style="opacity:0;padding:3vmin 3.2vmin;height:20vmin;display:flex;flex-direction:column"><div style="display:flex;justify-content:space-between;font-weight:700;font-size:2.6vmin;color:#0071e3">${c}<span style="color:var(--gray)">${s}</span></div><p style="margin-top:auto;font-weight:700;font-size:3.3vmin;line-height:1.15;letter-spacing:-.02em">${n}</p></div>`).join('')}</div></div></div>`,
+insp: () => `<div class="bg" id="ib" style="background:#f2f2f4"></div><div class="lay center"><div class="txt">
+  <p class="eyebrow">The inspection</p>
+  <h1 class="h1b" id="q">${words('“How are you teaching AI?”')}</h1>
+  <p class="sub" id="sil" style="opacity:0">…and a silence in the room.</p></div>
+  <div class="vis" style="height:30vmin"><div class="tile" id="clip" style="width:46vmin;padding:4vmin;opacity:0"><p style="font-weight:700;font-size:2.4vmin;color:var(--gray);letter-spacing:.1em">INSPECTION CHECKLIST</p>
+   ${['AI papers: teaching plan', 'Practical records', 'Student progress'].map((x) => `<div style="display:flex;justify-content:space-between;align-items:center;margin-top:2.6vmin;font-weight:600;font-size:3vmin">${x}<span class="qm" style="width:4.4vmin;height:4.4vmin;border-radius:50%;border:.4vmin solid #d2d2d7;display:grid;place-items:center;color:#c7c7cc;font-weight:800;font-size:2.6vmin">?</span></div>`).join('')}</div></div></div>`,
+parent: () => `<div class="bg" style="background:#f2f2f4"></div><div class="lay"><div class="txt">
+  <p class="eyebrow">The admission desk</p>
+  <h1 class="h1" id="pn">${words('He walks to the')}<br>${words('college next door.')}</h1></div>
+  <div class="vis"><div style="width:100%;max-width:70vmin">
+   <div id="bub" style="opacity:0;margin-left:auto;width:max-content;max-width:62vmin;background:#0a84ff;color:#fff;font-weight:600;font-size:3.6vmin;line-height:1.3;padding:2.6vmin 3.6vmin;border-radius:4vmin 4vmin 1vmin 4vmin">Will my daughter learn AI here?</div>
+   <div id="read" style="opacity:0;text-align:right;font-weight:600;color:var(--gray);font-size:2.2vmin;margin-top:1.2vmin">Read</div>
+   <div style="display:flex;justify-content:space-between;align-items:center;margin-top:7vmin">
+    <div class="tile" id="c1" style="width:28vmin;padding:3vmin;text-align:center"><div style="font-size:8vmin">🏛️</div><p style="font-weight:700;font-size:2.8vmin;margin-top:1vmin">Your college</p></div>
+    <div id="arrow" style="font-size:7vmin;color:#c7c7cc;opacity:0">→</div>
+    <div class="tile" id="c2" style="width:28vmin;padding:3vmin;text-align:center;opacity:.5"><div style="font-size:8vmin">🏛️</div><p style="font-weight:700;font-size:2.8vmin;margin-top:1vmin">Next door</p></div></div></div></div></div>`,
+student: () => `<div class="bg" style="background:#f2f2f4"></div><div class="lay"><div class="txt">
+  <p class="eyebrow">The first interview</p>
+  <p class="sub" id="sb1" style="opacity:0;margin:0 0 2vmin;font-size:5vmin">Brilliant in pharmacy.</p>
+  <h1 class="h1" id="sb2">${words('Unable to answer')}<br>${words('one question about AI.')}</h1></div>
+  <div class="vis"><div class="tile" style="width:100%;max-width:70vmin;padding:4vmin"><p style="font-weight:700;font-size:2.4vmin;color:var(--gray);letter-spacing:.1em">INTERVIEW · Q3</p>
+   <p style="font-weight:700;font-size:3.6vmin;margin-top:2vmin;letter-spacing:-.02em;line-height:1.25">How could AI help detect adverse drug reactions?</p>
+   <div style="margin-top:3vmin;height:16vmin;border-radius:2vmin;background:var(--tile);padding:2.4vmin;font-size:3vmin;color:var(--gray)"><span id="cur" style="display:inline-block;width:.35vmin;height:4vmin;background:#1d1d1f;vertical-align:middle"></span></div></div></div></div>`,
+teacher: () => `<div class="bg" id="tbg" style="background:#f2f2f4"></div><div class="lay"><div class="txt"><p class="eyebrow">The teacher</p><div class="stack">
+  <h1 class="h1" id="ta">${words('You did the right thing.')}</h1>
+  <h1 class="h1" id="tb" style="opacity:0;position:absolute">One teacher.<br><span style="color:var(--gray)">Six papers.</span><br><span style="color:#aeaeb2">Four years.</span></h1>
+  <h1 class="h1b" id="tc" style="opacity:0;position:absolute">The chair<br>is empty.</h1></div></div>
+  <div class="vis"><div id="stack" style="position:relative;width:52vmin;height:60vmin">
+   ${['BP101T Python', 'BP201T Biostatistics', 'BP301T Machine Learning', 'BP604T AI Applications', 'BP703T Clinical AI', 'BP801T Ethical AI'].map((x, i) => `<div class="tile pp" style="position:absolute;left:0;right:0;top:${i * 7.4}vmin;padding:2.4vmin 3vmin;font-weight:700;font-size:3vmin;opacity:0">${x}</div>`).join('')}
+   <div id="person" style="position:absolute;left:50%;bottom:0;transform:translateX(-50%);text-align:center"><div style="width:14vmin;height:14vmin;border-radius:50%;background:#1d1d1f;margin:0 auto"></div><div style="width:26vmin;height:13vmin;border-radius:13vmin 13vmin 2vmin 2vmin;background:#1d1d1f;margin-top:1.2vmin"></div></div>
+   <svg id="chair" viewBox="0 0 120 160" style="position:absolute;left:50%;bottom:0;width:24vmin;transform:translateX(-50%);opacity:0" fill="none" stroke="#1d1d1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M30 10 L30 92 M90 10 L90 92 M30 14 L90 14 M30 40 L90 40 M30 66 L90 66 M20 92 L100 92 L100 102 L20 102 Z M26 102 L26 156 M94 102 L94 156 M40 102 L40 140 M80 102 L80 140"/></svg>
+   <div id="letter" class="tile" style="position:absolute;right:-4vmin;bottom:4vmin;padding:2vmin 3vmin;font-family:Newsreader,serif;font-style:italic;font-size:3vmin;opacity:0;transform:rotate(-6deg)">Resignation</div></div></div></div>`,
+black: () => `<div class="bg" style="background:#e8e8ed"></div><div class="lay center"><div class="txt"><h1 class="h1b" id="who">${words('Who carries your college then?')}</h1></div></div>`,
+turn: () => `<div class="bg" style="background:#fff"></div>${blobs([['#ffb36b', 10, 30, 70], ['#ff6fa5', 55, 20, 70], ['#7c8cff', 35, 55, 80]])}<div class="lay center"><div class="txt"><h1 class="h1b" id="imag">${words('But imagine')}<br>${words('the other story.', 'gw')}</h1></div></div>`,
+tongue: () => `<div class="bg" style="background:#fff"></div>${blobs([['#ffd3a8', 60, 40, 60], ['#c9d4ff', 0, 10, 50]])}<div class="lay"><div class="txt">
+  <p class="eyebrow">NEP 2020, as envisioned</p>
+  <h1 class="h1" id="mt">${words('Learning AI in their')} <span class="w gw">mother</span> <span class="w gw">tongue.</span></h1>
+  <p class="sub" id="ms" style="opacity:0">The language they dream in.</p></div>
+  <div class="vis">${phone('m-lesson.png', 'id="ph1" style="left:50%;top:50%;transform:translate(-50%,-50%)"')}
+   ${[['ಕನ್ನಡ', "'Noto Sans Kannada'", -36, -20], ['हिन्दी', "'Noto Sans Devanagari'", 22, -30], ['English', 'Inter', -34, 18], ['Hinglish', 'Inter', 22, 26]].map(([w, f, x, y], i) => `<div class="chip lg" style="position:absolute;left:calc(50% + ${x}vmin);top:calc(50% + ${y}vmin);font-family:${f};font-size:3.6vmin;opacity:0">${w}</div>`).join('')}</div></div>`,
+teacher2: () => `<div class="bg" style="background:#fbfbfd"></div><div class="lay"><div class="txt">
+  <h1 class="h1" id="na">${words('Your teacher,')} <span class="w g">never</span> <span class="w g">alone.</span></h1>
+  <p class="sub" id="nb" style="opacity:0">Teachers may come and go.<br><b style="color:#1d1d1f">Your college’s strength stays.</b></p></div>
+  <div class="vis"><div style="position:relative;width:100%;height:100%">
+   <div id="lap" style="position:absolute;left:0;right:0;top:12%;opacity:0"><div style="background:#1d1d1f;border-radius:2.4vmin 2.4vmin 0 0;padding:1.2vmin"><img src="shots/dashboard.png" style="width:100%;display:block;border-radius:1.2vmin"></div><div style="height:2vmin;background:linear-gradient(#d2d2d7,#a1a1a6);border-radius:0 0 3vmin 3vmin;margin:0 -3vmin"></div></div>
+   <div style="position:absolute;left:0;right:0;bottom:2%;display:flex;flex-wrap:wrap;gap:1.6vmin;justify-content:center">${['Lessons ready', 'Practicals prepared', 'Quizzes auto-graded', 'Progress recorded'].map((x) => `<span class="chip ok" style="opacity:0;font-size:2.7vmin">✓ ${x}</span>`).join('')}</div></div></div></div>`,
+naac: () => `<div class="bg" style="background:#fbfbfd"></div><div class="lay"><div class="txt">
+  <h1 class="h1" id="ia">${words('Inspectors leave')} <span class="w gb">impressed.</span></h1>
+  <div id="ck" style="margin-top:4vmin">${['Modern, technology-enabled teaching', 'Measurable learning outcomes', 'A best practice that’s yours'].map((x) => `<div class="tk" style="display:flex;gap:2.4vmin;align-items:center;margin-top:2.4vmin;opacity:0"><span style="flex:none;width:5vmin;height:5vmin;border-radius:50%;background:#34c759;color:#fff;display:grid;place-items:center;font-weight:800;font-size:2.8vmin">✓</span><span style="font-weight:600;font-size:3.6vmin;letter-spacing:-.02em">${x}</span></div>`).join('')}</div></div>
+  <div class="vis"><div id="rep" class="tile" style="width:60vmin;padding:1.6vmin;opacity:0"><p style="font-weight:700;font-size:2.2vmin;color:#0071e3;letter-spacing:.12em;padding:1.4vmin 1.6vmin 0">NAAC · EVIDENCE</p><img src="shots/report.png" style="width:100%;display:block;border-radius:2vmin;margin-top:1vmin"></div></div></div>`,
+parents: () => `<div class="bg" style="background:#fff"></div>${blobs([['#ffd3a8', 5, 40, 70], ['#ffc2dc', 60, 30, 60]])}<div class="lay center"><div class="txt"><p class="eyebrow">What parents say</p>
+  <h1 class="h1b" id="pr">${words('“This college is ready')}<br>${words('for the future.”', 'gw')}</h1></div></div>`,
+fame: () => `<div class="bg" style="background:#fff"></div>${blobs([['#c9d4ff', 0, 0, 80], ['#ffd3a8', 60, 50, 70], ['#ffc2dc', 50, 0, 50]])}<div class="lay"><div class="txt stack">
+  <div id="fa"><p class="eyebrow">Name and fame</p><h1 class="h1s" id="f1">${words('Your college’s name in the newspapers.')}</h1>
+  <div id="chips" style="margin-top:3vmin;display:flex;flex-wrap:wrap;gap:1.6vmin">${['🏛️ Colleges visit to learn', '🏥 Hospitals', '🏭 Industry', '🔬 Research'].map((x) => `<span class="chip fc" style="opacity:0">${x}</span>`).join('')}</div></div>
+  <div id="fb" style="opacity:0;position:absolute"><p class="sub" style="font-size:6vmin;margin:0;color:#86868b">Not following.</p><h1 id="lead" style="font-size:17vmin;opacity:0"><span class="g">Leading.</span></h1></div></div>
+  <div class="vis"><div id="paper" class="tile" style="width:62vmin;padding:4vmin 4.4vmin 4.6vmin;opacity:0;border-radius:1.2vmin">
+   <div style="display:flex;justify-content:space-between;border-bottom:.4vmin double #1d1d1f;padding-bottom:1.2vmin;font-weight:700;font-size:1.8vmin;color:#6e6e73;letter-spacing:.1em"><span>EDUCATION</span><span>KARNATAKA EDITION</span></div>
+   <p style="font-family:Newsreader,serif;font-weight:700;font-size:5vmin;text-align:center;margin-top:1.6vmin">The Daily Chronicle</p>
+   <div style="border-top:.25vmin solid #1d1d1f;border-bottom:.25vmin solid #1d1d1f;margin-top:1.4vmin;padding:2.6vmin 0 3vmin"><p style="font-family:Newsreader,serif;font-weight:700;font-size:6.6vmin;line-height:1.02;text-align:center">Your College leads<br>B.Pharm into the AI era</p></div>
+   <p style="font-weight:500;font-size:2.2vmin;line-height:1.45;color:#515154;margin-top:2vmin;text-align:center">Students learn AI in their mother tongue; other colleges visit to learn from the model.</p></div></div></div>`,
+proof: () => `<div class="bg" style="background:#fbfbfd"></div><div class="lay"><div class="txt"><p class="eyebrow">It has already begun</p>
+  <h1 style="font-size:24vmin;line-height:.95" id="num"><span class="g">0</span></h1>
+  <p class="sub" id="pt" style="opacity:0;font-size:5vmin;color:#1d1d1f">pharmacy students in Bagalkot<br><span style="color:var(--gray)">are learning this way, today.</span></p></div>
+  <div class="vis">${phone('m-walk.png', 'id="pa" style="left:6%;top:12%;transform:rotate(-6deg);opacity:0"')}${phone('f-lab.png', 'id="pb" style="left:34%;top:4%;z-index:2;opacity:0"')}${phone('f-quiz.png', 'id="pc" style="right:6%;top:12%;transform:rotate(6deg);opacity:0"')}</div></div>`,
+cta: () => `<div class="bg" style="background:#fff"></div>${blobs([['#c9d4ff', 10, 10, 60], ['#ffd3a8', 55, 55, 60]])}<div class="lay center"><div class="txt">
+  <div id="badge" style="opacity:0"><span class="pill">Founding Partner Colleges · 2026–27</span><p style="margin-top:1.6vmin;font-weight:600;color:var(--gray);font-size:2.6vmin;letter-spacing:.12em">LIMITED THIS YEAR</p></div>
+  <p class="sub" id="ten" style="margin-top:4vmin">${words('In ten years, people will ask which college led the way.')}</p>
+  <h1 class="h1b" id="yours" style="opacity:0;margin-top:3vmin">Let the answer be <span class="g">yours.</span></h1></div>
+  <div class="vis" style="height:auto"><div id="end" class="tile" style="opacity:0;display:flex;gap:3.4vmin;align-items:center;padding:3vmin 3.6vmin"><img src="${QR}" style="width:18vmin;height:18vmin"><div style="text-align:left"><p style="font-weight:800;font-size:3.6vmin;letter-spacing:-.02em">Book a 20-minute meeting</p><p style="font-weight:700;font-size:3vmin;color:#0071e3;margin-top:1vmin">campuschamp.in/colleges</p></div></div></div></div>`,
+};
+
+const U = {
+open: (el, t) => { reveal($('#o1', el), t, S('open', 0) - 0.2, 0.1); show($('#o2', el), ap(t, S('open', 1), 0.7), 2); },
+shift: (el, t) => { show($('#se', el), ap(t, S('shift', 0) - 0.3, 0.5), 2); const p = ap(t, S('shift', 0) - 0.2, 0.9); $('#yr', el).style.opacity = p; $('#yr', el).style.transform = `scale(${lerp(0.88, 1, p)})`; $('#yr', el).style.filter = `blur(${(1 - p) * 16}px)`;
+  show($('#ss', el), ap(t, S('shift', 2), 0.6), 2); $$('.pc', el).forEach((c, i) => show(c, ap(t, S('shift', 1) + 0.4 + i * 0.7, 0.6), 4, 0.94)); },
+insp: (el, t) => { reveal($('#q', el), t, S('insp', 1) + 0.5, 0.15); show($('#sil', el), ap(t, S('insp', 2), 0.8), 2); show($('#clip', el), ap(t, S('insp', 0), 0.7), 4, 0.96); $$('.qm', el).forEach((q, i) => { const p = ap(t, S('insp', 2) + i * 0.3, 0.4); q.style.borderColor = p > 0.5 ? '#ff3b30' : '#d2d2d7'; q.style.color = p > 0.5 ? '#ff3b30' : '#c7c7cc'; }); },
+parent: (el, t) => { show($('#bub', el), ap(t, S('parent', 0) + 1.3, 0.5), 3, 0.9); show($('#read', el), ap(t, S('parent', 0) + 3.4, 0.4), 1); reveal($('#pn', el), t, S('parent', 1) - 0.1, 0.1);
+  const m = ap(t, S('parent', 1) + 0.6, 1.2); $('#arrow', el).style.opacity = m; $('#arrow', el).style.color = m > .5 ? '#ff3b30' : '#c7c7cc'; $('#c1', el).style.opacity = 1 - m * 0.55; $('#c2', el).style.opacity = 0.5 + m * 0.5; $('#c2', el).style.transform = `scale(${1 + m * 0.06})`; },
+student: (el, t) => { show($('#sb1', el), ap(t, S('student', 0) + 0.3, 0.6), 2); reveal($('#sb2', el), t, S('student', 1) + 0.2, 0.1); $('#cur', el).style.opacity = Math.floor(t * 2) % 2; },
+teacher: (el, t) => { const b = S('teacher', 2) - 0.1;
+  reveal($('#ta', el), t, S('teacher', 0), 0.1); $('#ta', el).style.opacity = 1 - ap(t, S('teacher', 1) - 0.3, 0.3);
+  $('#tb', el).style.opacity = ap(t, S('teacher', 1) - 0.1, 0.4) * (1 - ap(t, b - 0.2, 0.3)); show($('#tc', el), ap(t, b + 0.5, 0.6), 2);
+  $$('.pp', el).forEach((p, i) => show(p, ap(t, S('teacher', 1) + i * (Dd('teacher', 1) / 7), 0.4) * (1 - ap(t, b, 0.5) * 0.85), 4, 0.95));
+  $('#person', el).style.opacity = 1 - ap(t, b, 0.6); $('#chair', el).style.opacity = ap(t, b + 0.3, 0.8); show($('#letter', el), ap(t, S('teacher', 3), 0.6), 3);
+  $('#tbg', el).style.background = `rgb(${lerp(242, 232, ap(t, b, 1))},${lerp(242, 232, ap(t, b, 1))},${lerp(244, 237, ap(t, b, 1))})`; },
+black: (el, t) => reveal($('#who', el), t, S('black', 0) - 0.05, 0.16),
+turn: (el, t, s) => { reveal($('#imag', el), t, S('turn', 0) - 0.1, 0.13); $$('.blob', el).forEach((b, i) => { b.style.opacity = ap(t, s.start + 0.2 + i * 0.3, 1.6) * 0.75; b.style.transform = `scale(${0.6 + ap(t, s.start, 3) * 0.6})`; }); },
+tongue: (el, t, s) => { reveal($('#mt', el), t, S('tongue', 0), 0.1); show($('#ms', el), ap(t, S('tongue', 0) + 2.6, 0.6), 2); const p = ap(t, s.start + 0.2, 1); $('#ph1', el).style.opacity = p; $('#ph1', el).style.transform = `translate(-50%,${-50 + (1 - p) * 10}%)`; $$('.lg', el).forEach((c, i) => show(c, ap(t, S('tongue', 0) + 1 + i * 0.5, 0.5), 3, 0.8)); $$('.blob', el).forEach((b) => (b.style.opacity = 0.6)); },
+teacher2: (el, t) => { reveal($('#na', el), t, S('teacher2', 0), 0.1); show($('#nb', el), ap(t, S('teacher2', 1), 0.7), 2); show($('#lap', el), ap(t, S('teacher2', 0) + 0.4, 0.8), 6, 0.96); $$('.ok', el).forEach((c, i) => show(c, ap(t, S('teacher2', 0) + 1.6 + i * 0.6, 0.5), 2, 0.9)); },
+naac: (el, t) => { reveal($('#ia', el), t, S('naac', 0), 0.1); show($('#rep', el), ap(t, S('naac', 1) - 0.4, 0.8), 6, 0.95); const d = Dd('naac', 1); $$('.tk', el).forEach((k, i) => show(k, ap(t, S('naac', 1) + d * (0.3 + i * 0.22), 0.4), 2)); },
+parents: (el, t, s) => { reveal($('#pr', el), t, S('parents', 0) + 1.5, 0.11); $$('.blob', el).forEach((b) => (b.style.opacity = ap(t, s.start, 1.2) * 0.7)); },
+fame: (el, t, s) => { $$('.blob', el).forEach((b) => (b.style.opacity = 0.65)); reveal($('#f1', el), t, S('fame', 0), 0.09);
+  const p = ap(t, S('fame', 0) - 0.1, 0.7); $('#paper', el).style.opacity = p; $('#paper', el).style.transform = `rotate(${lerp(-8, -2, p)}deg) scale(${lerp(1.25, 1, p)})`;
+  $$('.fc', el).forEach((c, i) => show(c, ap(t, (i === 0 ? S('fame', 1) : S('fame', 2) + (i - 1) * 0.6), 0.5), 2, 0.9));
+  const sw = ap(t, S('fame', 3) - 0.35, 0.35); $('#fa', el).style.opacity = 1 - sw; $('#fb', el).style.opacity = sw;
+  const l = ap(t, S('fame', 4) - 0.05, 0.4); $('#lead', el).style.opacity = l; $('#lead', el).style.transform = `scale(${lerp(1.3, 1, l)})`; },
+proof: (el, t) => { const p = clamp((t - S('proof', 0) - 1.2) / 2.2); $('#num span', el).textContent = Math.round(ease(p) * 100); show($('#pt', el), ap(t, S('proof', 0) + 2.6, 0.6), 2); ['#pa', '#pb', '#pc'].forEach((q, i) => { const e = $(q, el); const k = ap(t, S('proof', 0) + 0.4 + i * 0.3, 0.8); e.style.opacity = k; e.style.marginTop = `${(1 - k) * 8}vmin`; }); },
+cta: (el, t) => { show($('#badge', el), ap(t, S('cta', 0), 0.7), 2, 0.9); reveal($('#ten', el), t, S('cta', 1), 0.08); const y = ap(t, S('cta', 2) - 0.1, 0.7); $('#yours', el).style.opacity = y; $('#yours', el).style.transform = `scale(${lerp(1.1, 1, y)})`; show($('#end', el), ap(t, S('cta', 2) + 1.6, 0.8), 4, 0.95); },
+};
+
+const stage = document.getElementById('stage'); const built = {};
+TL.scenes.forEach((s) => { const d = document.createElement('div'); d.className = 'sc'; d.innerHTML = B[s.id](); stage.appendChild(d); built[s.id] = d; });
+function chunk(text) { const parts = text.match(/[^,.?!:;—]+[,.?!:;—”]*\s*/g) || [text]; const out = []; let c = ''; for (const p of parts) { if ((c + p).length > 50 && c) { out.push(c.trim()); c = p; } else c += p; } if (c.trim()) out.push(c.trim()); return out; }
+const NOCAP = new Set([6, 7, 16, 17, 24, 28, 29, 33]);
+window.renderAt = (t) => {
+  TL.scenes.forEach((s, i) => { const el = built[s.id]; const op = ap(t, s.start - 0.05, 0.5) * (i === TL.scenes.length - 1 ? 1 : 1 - ap(t, s.end - 0.25, 0.4));
+    el.style.opacity = op; el.style.display = op > 0.001 ? 'block' : 'none';
+    if (op > 0.001) { const lay = $('.lay', el); if (lay) lay.style.transform = `scale(${1 + (t - s.start) * 0.0025})`; U[s.id](el, t, s); } });
+  const lt = S('fame', 4); document.getElementById('flash').style.opacity = t > lt - 0.05 && t < lt + 0.7 ? 0.7 * (1 - (t - lt + 0.05) / 0.75) : 0;
+  const line = TL.lines.find((l) => t >= l.start && t < l.start + l.dur + 0.15 && !NOCAP.has(l.i)); const cap = document.getElementById('cap');
+  if (line) { const cs = chunk(line.text); const tot = cs.reduce((a, c) => a + c.length, 0); let acc = 0, pick = cs[cs.length - 1]; for (const c of cs) { acc += c.length; if ((t - line.start) / line.dur <= acc / tot) { pick = c; break; } } cap.innerHTML = `<span>${pick}</span>`; } else cap.innerHTML = '';
+  document.getElementById('mark').style.opacity = t > SC.cta.start ? ap(t, SC.cta.start, 0.6) : (t < 3.5 ? ap(t, 0.2, 0.8) : 1 - ap(t, 3.5, 0.6));
+};
+window.renderAt(0);
+</script></body></html>

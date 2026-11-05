@@ -1,0 +1,320 @@
+{
+ "duration": 157.38,
+ "scenes": [
+  {
+   "id": "open",
+   "start": 0,
+   "end": 7.971
+  },
+  {
+   "id": "shift",
+   "start": 7.971,
+   "end": 22.504
+  },
+  {
+   "id": "insp",
+   "start": 22.504,
+   "end": 32.586
+  },
+  {
+   "id": "parent",
+   "start": 32.586,
+   "end": 41.651
+  },
+  {
+   "id": "student",
+   "start": 41.651,
+   "end": 51.186
+  },
+  {
+   "id": "teacher",
+   "start": 51.186,
+   "end": 71.223
+  },
+  {
+   "id": "black",
+   "start": 71.223,
+   "end": 74.947
+  },
+  {
+   "id": "turn",
+   "start": 74.947,
+   "end": 78.093
+  },
+  {
+   "id": "tongue",
+   "start": 78.093,
+   "end": 86.958
+  },
+  {
+   "id": "teacher2",
+   "start": 86.958,
+   "end": 98.461
+  },
+  {
+   "id": "naac",
+   "start": 98.461,
+   "end": 111.714
+  },
+  {
+   "id": "parents",
+   "start": 111.714,
+   "end": 118.082
+  },
+  {
+   "id": "fame",
+   "start": 118.082,
+   "end": 133.922
+  },
+  {
+   "id": "proof",
+   "start": 133.922,
+   "end": 142.123
+  },
+  {
+   "id": "cta",
+   "start": 142.123,
+   "end": 157.38
+  }
+ ],
+ "lines": [
+  {
+   "i": 0,
+   "scene": "open",
+   "start": 1.2,
+   "dur": 2.847,
+   "text": "Every college has a moment it's remembered for."
+  },
+  {
+   "i": 1,
+   "scene": "open",
+   "start": 4.367,
+   "dur": 3.004,
+   "text": "For some, it comes once in a generation."
+  },
+  {
+   "i": 2,
+   "scene": "shift",
+   "start": 8.371,
+   "dur": 1.881,
+   "text": "That moment is now."
+  },
+  {
+   "i": 3,
+   "scene": "shift",
+   "start": 10.752,
+   "dur": 6.269,
+   "text": "From 2026\u201327, artificial intelligence enters every year of B.Pharm."
+  },
+  {
+   "i": 4,
+   "scene": "shift",
+   "start": 17.342,
+   "dur": 4.362,
+   "text": "Six new papers. Every pharmacy college must teach them."
+  },
+  {
+   "i": 5,
+   "scene": "insp",
+   "start": 22.904,
+   "dur": 1.411,
+   "text": "Imagine the inspection."
+  },
+  {
+   "i": 6,
+   "scene": "insp",
+   "start": 24.635,
+   "dur": 4.127,
+   "text": "One simple question: \u201cHow are you teaching AI?\u201d"
+  },
+  {
+   "i": 7,
+   "scene": "insp",
+   "start": 29.862,
+   "dur": 1.724,
+   "text": "And a silence in the room."
+  },
+  {
+   "i": 8,
+   "scene": "parent",
+   "start": 32.986,
+   "dur": 5.251,
+   "text": "Imagine the admission desk. A father asks: \u201cWill my daughter learn AI here?\u201d"
+  },
+  {
+   "i": 9,
+   "scene": "parent",
+   "start": 38.557,
+   "dur": 2.194,
+   "text": "And then he walks to the college next door."
+  },
+  {
+   "i": 10,
+   "scene": "student",
+   "start": 42.051,
+   "dur": 3.082,
+   "text": "Imagine your students, brilliant in pharmacy,"
+  },
+  {
+   "i": 11,
+   "scene": "student",
+   "start": 45.453,
+   "dur": 4.833,
+   "text": "in their first interview, unable to answer one question about AI."
+  },
+  {
+   "i": 12,
+   "scene": "teacher",
+   "start": 51.586,
+   "dur": 3.004,
+   "text": "You did the right thing. You hired a teacher."
+  },
+  {
+   "i": 13,
+   "scene": "teacher",
+   "start": 54.91,
+   "dur": 6.531,
+   "text": "One teacher. Six new papers. Four years of students."
+  },
+  {
+   "i": 14,
+   "scene": "teacher",
+   "start": 61.761,
+   "dur": 4.676,
+   "text": "Then, one day, in the middle of the semester, the chair is empty."
+  },
+  {
+   "i": 15,
+   "scene": "teacher",
+   "start": 66.757,
+   "dur": 3.866,
+   "text": "And everything they built walks out of the door with them."
+  },
+  {
+   "i": 16,
+   "scene": "black",
+   "start": 72.123,
+   "dur": 1.724,
+   "text": "Who carries your college then?"
+  },
+  {
+   "i": 17,
+   "scene": "turn",
+   "start": 75.547,
+   "dur": 1.646,
+   "text": "But imagine the other story."
+  },
+  {
+   "i": 18,
+   "scene": "tongue",
+   "start": 78.493,
+   "dur": 4.598,
+   "text": "Your students learning AI in their mother tongue, the language they dream in,"
+  },
+  {
+   "i": 19,
+   "scene": "tongue",
+   "start": 83.41,
+   "dur": 2.847,
+   "text": "just as NEP 2020 envisions."
+  },
+  {
+   "i": 20,
+   "scene": "teacher2",
+   "start": 87.358,
+   "dur": 5.878,
+   "text": "Your teacher, never alone. Every lesson ready. Every practical prepared."
+  },
+  {
+   "i": 21,
+   "scene": "teacher2",
+   "start": 93.555,
+   "dur": 4.206,
+   "text": "Teachers may come and go. Your college's strength stays."
+  },
+  {
+   "i": 22,
+   "scene": "naac",
+   "start": 98.861,
+   "dur": 2.194,
+   "text": "Inspectors leave impressed."
+  },
+  {
+   "i": 23,
+   "scene": "naac",
+   "start": 101.375,
+   "dur": 9.639,
+   "text": "And at NAAC, you present the evidence: modern teaching, measurable learning, a best practice that's yours."
+  },
+  {
+   "i": 24,
+   "scene": "parents",
+   "start": 112.114,
+   "dur": 5.068,
+   "text": "Parents leave your campus saying: \u201cThis college is ready for the future.\u201d"
+  },
+  {
+   "i": 25,
+   "scene": "fame",
+   "start": 118.482,
+   "dur": 2.194,
+   "text": "Your college's name in the newspapers."
+  },
+  {
+   "i": 26,
+   "scene": "fame",
+   "start": 120.996,
+   "dur": 2.847,
+   "text": "Other colleges coming to learn from you."
+  },
+  {
+   "i": 27,
+   "scene": "fame",
+   "start": 124.164,
+   "dur": 5.068,
+   "text": "Your students carrying your name into hospitals, industry and research."
+  },
+  {
+   "i": 28,
+   "scene": "fame",
+   "start": 129.551,
+   "dur": 0.993,
+   "text": "Not following."
+  },
+  {
+   "i": 29,
+   "scene": "fame",
+   "start": 131.094,
+   "dur": 1.228,
+   "text": "Leading."
+  },
+  {
+   "i": 30,
+   "scene": "proof",
+   "start": 134.322,
+   "dur": 7.001,
+   "text": "It has already begun. A hundred pharmacy students in Bagalkot are learning this way, today."
+  },
+  {
+   "i": 31,
+   "scene": "cta",
+   "start": 142.523,
+   "dur": 3.788,
+   "text": "We're choosing only a few founding partner colleges this year."
+  },
+  {
+   "i": 32,
+   "scene": "cta",
+   "start": 146.63,
+   "dur": 4.362,
+   "text": "In ten years, people will ask which college led the way."
+  },
+  {
+   "i": 33,
+   "scene": "cta",
+   "start": 151.313,
+   "dur": 1.567,
+   "text": "Let the answer be yours."
+  }
+ ]
+}
