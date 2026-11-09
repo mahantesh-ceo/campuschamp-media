@@ -1,0 +1,346 @@
+{
+  "hook": {
+    "title": "Pharmacy counter kabhi nahi rukta",
+    "md": "Bheed wale pharmacy counter par patients ki queue din bhar badhti-ghatti rehti hai. Items cart mein jaate hain aur nikalte hain. Closing time par koi poochhta hai: aaj sabse zyada kya bika, aur kya reorder karna hai?\n\nData bhi aisa hi hai: woh **badalta** hai. Aaj aap iske roz ke tools seekhenge: items jodna aur hataana, sort karna, sabse chhota, sabse bada aur average nikaalna, aur dictionary se ginti karna. Code ki yeh kuch lines pharmacy software din mein hazaaron baar chalaata hai."
+  },
+  "learn": [
+    "**append()**, **insert()** aur **extend()** se items **jodna**",
+    "**remove()** aur **pop()** se items **hataana**",
+    "**Sort** karna, aur **min()**, **max()**, **sum()** va **count()** se numbers ka saar nikaalna",
+    "Dictionary par **keys()**, **values()**, **update()** aur **pop()**, aur dictionary se **ginti**"
+  ],
+  "explanation": [
+    {
+      "heading": "List mein items jodna",
+      "md": "List ke apne functions hote hain, jinhe **methods** kehte hain, aur yeh dot ke baad likhe jaate hain. `append()` ek item **aakhir mein** jodta hai; `insert()` use **kisi index par** jodta hai:\n\n```python\nqueue = [\"Ravi\", \"Meena\"]\nqueue.append(\"Anil\")\nqueue.insert(0, \"Sita\")\nprint(queue)\nprint(len(queue))\n```\n\nYeh print karta hai:\n\n```\n['Sita', 'Ravi', 'Meena', 'Anil']\n4\n```\n\nSita sabse aage gayi, index 0 par. Doosri list se **kai** items ek saath jodne hon to `extend()` use kijiye: `queue.extend([\"Raju\", \"Asha\"])`.",
+      "callout": {
+        "title": "Method",
+        "md": "Kisi value ka apna function, jo dot ke baad likha jaata hai: queue.append(\"Anil\"). Lists, strings aur dictionaries, sabke apne methods hain."
+      }
+    },
+    {
+      "heading": "Items hataana",
+      "md": "`remove()` **us value wala** pehla item hataata hai. `pop()` **aakhri** item hatakar aapko wapas deta hai; `pop(0)` pehla hataayega:\n\n```python\ncart = [\"Paracetamol\", \"Cetirizine\", \"Ibuprofen\", \"ORS\"]\ncart.remove(\"Ibuprofen\")\nlast = cart.pop()\nprint(last)\nprint(cart)\n```\n\nYeh print karta hai:\n\n```\nORS\n['Paracetamol', 'Cetirizine']\n```\n\n`del cart[0]` bhi index se item hataata hai, par use wapas nahi deta."
+    },
+    {
+      "heading": "Numbers ko sort karna aur saar nikaalna",
+      "md": "Readings ke baare mein jo sawaal aap roz poochhte hain, unke liye Python mein built-in functions hain:\n\n```python\nsugar = [140, 98, 126, 110, 98]\nprint(sorted(sugar))\nprint(min(sugar), max(sugar))\nprint(sum(sugar) / len(sugar))\nprint(sugar.count(98))\n```\n\nYeh print karta hai:\n\n```\n[98, 98, 110, 126, 140]\n98 140\n114.4\n2\n```\n\n- `sorted(list)` ek **nayi** sorted list deta hai aur original ko waisa hi chhodta hai.\n- `list.sort()` list ko **khud** sort karta hai aur kuch return nahi karta. Sabse bada pehle chahiye to dono mein `reverse=True` jodiye.\n- `min()`, `max()` aur `sum()` numbers ki kisi bhi list par chalte hain; `sum() / len()` average hai.\n- `count(x)` batata hai `x` kitni baar aaya; `index(x)` uski pehli position deta hai.",
+      "callout": {
+        "title": "sort() None lautaata hai",
+        "md": "result = sugar.sort() karne par result None rehta hai. sugar.sort() alag line par likhiye, ya result = sorted(sugar)."
+      }
+    },
+    {
+      "heading": "Dictionaries par operations",
+      "md": "`keys()`, `values()` aur `items()` keys, values aur pairs dete hain. `pop(key)` ek pair hataata hai, aur `update()` kai pairs ek saath jodta ya badalta hai:\n\n```python\nstock = {\"Paracetamol\": 120, \"Cetirizine\": 45, \"ORS\": 0}\nprint(list(stock.keys()))\nprint(sum(stock.values()))\nstock.pop(\"ORS\")\nstock.update({\"Ibuprofen\": 60})\nprint(stock)\n```\n\nYeh print karta hai:\n\n```\n['Paracetamol', 'Cetirizine', 'ORS']\n165\n{'Paracetamol': 120, 'Cetirizine': 45, 'Ibuprofen': 60}\n```\n\nORS ka shelf khaali tha, isliye use stock list se pop kiya gaya; Ibuprofen `update()` se judi. `sum(stock.values())` saari strips jodta hai: 120 + 45 + 0 = 165."
+    },
+    {
+      "heading": "Dictionary se ginti",
+      "md": "Cheezein **ginne** ka swaabhaavik tareeka dictionary hai: key woh hai jo gin rahe hain, value kitni baar. Drug pehli baar aaye to `get(drug, 0)` 0 deta hai:\n\n```python\nsold = [\"Paracetamol\", \"ORS\", \"Paracetamol\", \"Cetirizine\", \"Paracetamol\"]\ncounts = {}\nfor drug in sold:\n    counts[drug] = counts.get(drug, 0) + 1\nprint(counts)\n```\n\nYeh print karta hai:\n\n```\n{'Paracetamol': 3, 'ORS': 1, 'Cetirizine': 1}\n```\n\nYeh chhota pattern aise sawaalon ka jawaab deta hai: \"aaj sabse zyada kaun-si drug biki?\" ya \"har gaon se kitne patients aaye?\"",
+      "callout": {
+        "title": "Ginti ka pattern",
+        "md": "Loop se pehle counts = {}, phir uske andar counts[item] = counts.get(item, 0) + 1. Ise yaad rakhiye; Unit IV mein bhi kaam aayega."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "Yeh program stock check karta hai aur 50 strips se kam wali har drug ki sorted reorder list banata hai.",
+    "keyTerms": [
+      {
+        "meaning": "Nateeje jama karne ke liye khaali list se shuru karo."
+      },
+      {
+        "meaning": "Har drug aur uski quantity, ek-ek pair karke."
+      },
+      {
+        "meaning": "Drug ko list ke aakhir mein jodo."
+      },
+      {
+        "meaning": "List ko khud, alphabetical kram mein sort karo."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Yeh program har kam stock wali drug dhoondhta hai, aur ek reorder list banata hai."
+      },
+      {
+        "say": "Comment niyam batata hai: pachaas strips se kam wali har cheez reorder karo."
+      },
+      {
+        "say": "stock drug ke naamon aur shelf par strips ki sankhya ki dictionary hai."
+      },
+      {
+        "say": "low ek khaali list se shuru hoti hai. Reorder wali drugs ismein jodi jaayengi."
+      },
+      {
+        "say": "items ek baar mein ek pair deta hai. Pehla hai Paracetamol, ek sau bees strips ke saath."
+      },
+      {
+        "say": "Ek sau bees, pachaas se kam nahi hai, isliye kuch nahi judta."
+      },
+      {
+        "say": "Agla hai Cetirizine, paintaalis ke saath. Yeh pachaas se kam hai, isliye append ise low mein jodta hai."
+      },
+      {
+        "say": "Phir ORS, bees ke saath. Yeh bhi judta hai."
+      },
+      {
+        "say": "sort list ko alphabetical kram mein rakhta hai, list ko khud badalkar."
+      },
+      {
+        "say": "print reorder list dikhaata hai."
+      },
+      {
+        "say": "len use ginta hai: reorder ke liye do items."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "List methods ke saath yeh do errors sabse aam hain.",
+    "examples": [
+      {
+        "title": "Aisi value hataana jo list mein nahi hai",
+        "md": "`remove()` tabhi chalta hai jab value maujood ho. Pehle check kijiye: `if \"Aspirin\" in cart: cart.remove(\"Aspirin\")`."
+      },
+      {
+        "title": "sort() ke nateeje ko use karna",
+        "md": "`sort()` list ko usi mein sort karta hai aur `None` lautaata hai, isliye `lowest` None hai. Nayi list ke liye `sorted(sugar)` use kijiye, ya seedhe `min(sugar)`."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "`result = data.sort()` likhkar `result` use karna",
+      "see": "result None hai",
+      "fix": "`data.sort()` alag se call kijiye, ya `result = sorted(data)`."
+    },
+    {
+      "mistake": "append ko do items dena: `cart.append(\"ORS\", \"Zinc\")`",
+      "see": "TypeError: list.append() takes exactly one argument (2 given)",
+      "fix": "Ek-ek karke append kijiye, ya `cart.extend([\"ORS\", \"Zinc\"])`."
+    },
+    {
+      "mistake": "Do lists jodne ke liye append: `a.append(b)`",
+      "see": "Koi error nahi, par list ke andar list banti hai: `[1, 2, [3, 4]]`",
+      "fix": "Items ek-ek jodne ke liye `a.extend(b)` use kijiye."
+    },
+    {
+      "mistake": "Khaali list par `pop()` call karna",
+      "see": "IndexError: pop from empty list",
+      "fix": "Pehle check kijiye: `if queue: queue.pop()`."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Queue sambhaaliye",
+      "md": "Anil abhi aaye hain: unhe queue ke **aakhir mein** jodiye. Sita emergency hai: unhe **sabse aage** rakhiye. Phir queue print kijiye. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "append() aakhir mein jodta hai; insert(0, ...) sabse aage.",
+        "queue.append(\"Anil\")\nqueue.insert(0, \"Sita\")"
+      ]
+    },
+    {
+      "title": "Sabse halka, sabse bhaari, average",
+      "md": "Yeh paanch patients ke wazan (kg) hain. **min()**, **max()** aur **sum()** se sabse halka, sabse bhaari aur average wazan print kijiye. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "print(\"Lightest:\", min(weights))",
+        "Average hai sum(weights) / len(weights)."
+      ]
+    },
+    {
+      "title": "Stock mein kul strips",
+      "md": "Dictionary ki **values** jodkar shelf par kul strips print kijiye. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "stock.values() sirf quantities deta hai.",
+        "print(\"Total strips:\", sum(stock.values()))"
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "Is program ko ginna hai ki har drug kitni baar biki, par yeh pehli drug par hi KeyError ke saath crash ho jaata hai. Ginti wali line theek kijiye taaki output bilkul yeh ho:",
+      "hints": [
+        "Pehli baar drug aane par counts mein uski key abhi nahi hai.",
+        "counts[drug] = counts.get(drug, 0) + 1"
+      ],
+      "solutionNote": "counts[drug] pehli baar fail hota hai kyunki key abhi hai hi nahi. counts.get(drug, 0) har nayi drug ko 0 se shuru karta hai."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "x = [1, 2]\nx.append(3)\nprint(x)\n\nYeh kya print karta hai?",
+      "why": "append item ko aakhir mein jodta hai."
+    },
+    {
+      "q": "Kaun-sa method list ka aakhri item hatakar wapas deta hai?",
+      "why": "Bina index ke pop() aakhri item hatakar lautaata hai."
+    },
+    {
+      "q": "a = [3, 1, 2]\nb = a.sort()\nprint(b)\n\nYeh kya print karta hai?",
+      "why": "sort() khud a ko badalta hai aur None lautaata hai."
+    },
+    {
+      "q": "d = {\"a\": 1, \"b\": 2}\nprint(sum(d.values()))\n\nYeh kya print karta hai?",
+      "why": "values() 1 aur 2 deta hai, aur sum unhe jodta hai."
+    },
+    {
+      "q": "Kaun-sa method doosri list ka har item list ke aakhir mein jodta hai?",
+      "why": "extend() items ek-ek karke jodta hai; append() poori list ko ek item bana dega."
+    },
+    {
+      "q": "counts[d] = counts.get(d, 0) + 1 mein get(d, 0) kya karta hai?",
+      "why": "get maujooda ginti deta hai, ya pehli baar default 0."
+    }
+  ],
+  "exam": {
+    "note": "Practice ke liye important questions. University ke asli questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 3.3 · Operations",
+    "children": [
+      {
+        "label": "Jodna",
+        "children": [
+          {
+            "label": "append(x)"
+          },
+          {
+            "label": "insert(i, x)"
+          },
+          {
+            "label": "extend(list)"
+          }
+        ]
+      },
+      {
+        "label": "Hataana",
+        "children": [
+          {
+            "label": "remove(x)"
+          },
+          {
+            "label": "pop() wapas deta hai"
+          },
+          {
+            "label": "del list[i]"
+          }
+        ]
+      },
+      {
+        "label": "Kram aur saar",
+        "children": [
+          {
+            "label": "sort() usi mein"
+          },
+          {
+            "label": "sorted() nayi list"
+          },
+          {
+            "label": "min max sum count"
+          }
+        ]
+      },
+      {
+        "label": "Dictionary",
+        "children": [
+          {
+            "label": "keys() values()"
+          },
+          {
+            "label": "items()"
+          },
+          {
+            "label": "update() pop()"
+          }
+        ]
+      },
+      {
+        "label": "Ginti",
+        "children": [
+          {
+            "label": "counts = {}"
+          },
+          {
+            "label": "get(k, 0) + 1"
+          },
+          {
+            "label": "Kuch bhi gino"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "ValueError: not in list"
+          },
+          {
+            "label": "sort() se None"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "Methods dot ke baad likhe jaate hain. **append()** aakhir mein jodta hai, **insert(i, x)** kisi index par, **extend()** kai items.",
+    "**remove(x)** ek value hataata hai; **pop()** aakhri item hatakar lautaata hai.",
+    "**sorted()** nayi sorted list deta hai; **sort()** usi mein sort karke None lautaata hai. **min()**, **max()**, **sum()** aur **count()** saar nikaalte hain.",
+    "Dictionaries ke paas **keys()**, **values()**, **items()**, **update()** aur **pop()** hain.",
+    "Cheezein ginne ke liye: loop ke andar `counts[item] = counts.get(item, 0) + 1`."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "low ek khaali list se shuru hoti hai, abhi usmein kuch nahi hai."
+        },
+        {
+          "say": "append Cetirizine ko aakhir mein jodta hai. Ab list mein ek item hai, index zero par."
+        },
+        {
+          "say": "append uske baad ORS jodta hai, index ek par."
+        },
+        {
+          "say": "pop aakhri item list se nikaalkar wapas deta hai, isliye print ORS dikhaata hai."
+        },
+        {
+          "say": "List mein sirf Cetirizine bacha hai."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Kisi value ka apna function, dot ke baad likha jaata hai: queue.append(\"Anil\")."
+    },
+    {
+      "meaning": "List ke aakhir mein ek item jodta hai."
+    },
+    {
+      "meaning": "Di gayi value wala pehla item hataata hai. Value na ho to ValueError."
+    },
+    {
+      "meaning": "Item hatakar wapas deta hai: default mein aakhri, ya index i ke liye pop(i)."
+    },
+    {
+      "meaning": "List ko usi mein sort karta hai aur None lautaata hai."
+    },
+    {
+      "meaning": "Nayi sorted list lautaata hai aur original ko waisa hi chhodta hai."
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+"""Lesson 3.3 (English). Run to write content/bp101t/3-3/en.json."""
+import json
+import os
+import subprocess
+import sys
+
+C_ADD = "```python\nqueue = [\"Ravi\", \"Meena\"]\nqueue.append(\"Anil\")\nqueue.insert(0, \"Sita\")\nprint(queue)\nprint(len(queue))\n```"
+O_ADD = "```\n['Sita', 'Ravi', 'Meena', 'Anil']\n4\n```"
+C_REMOVE = "```python\ncart = [\"Paracetamol\", \"Cetirizine\", \"Ibuprofen\", \"ORS\"]\ncart.remove(\"Ibuprofen\")\nlast = cart.pop()\nprint(last)\nprint(cart)\n```"
+O_REMOVE = "```\nORS\n['Paracetamol', 'Cetirizine']\n```"
+C_SORT = "```python\nsugar = [140, 98, 126, 110, 98]\nprint(sorted(sugar))\nprint(min(sugar), max(sugar))\nprint(sum(sugar) / len(sugar))\nprint(sugar.count(98))\n```"
+O_SORT = "```\n[98, 98, 110, 126, 140]\n98 140\n114.4\n2\n```"
+C_DICTOPS = "```python\nstock = {\"Paracetamol\": 120, \"Cetirizine\": 45, \"ORS\": 0}\nprint(list(stock.keys()))\nprint(sum(stock.values()))\nstock.pop(\"ORS\")\nstock.update({\"Ibuprofen\": 60})\nprint(stock)\n```"
+O_DICTOPS = "```\n['Paracetamol', 'Cetirizine', 'ORS']\n165\n{'Paracetamol': 120, 'Cetirizine': 45, 'Ibuprofen': 60}\n```"
+C_COUNT = "```python\nsold = [\"Paracetamol\", \"ORS\", \"Paracetamol\", \"Cetirizine\", \"Paracetamol\"]\ncounts = {}\nfor drug in sold:\n    counts[drug] = counts.get(drug, 0) + 1\nprint(counts)\n```"
+O_COUNT = "```\n{'Paracetamol': 3, 'ORS': 1, 'Cetirizine': 1}\n```"
+
+L = {
+    "id": "3-3",
+    "course": "bp101t",
+    "unit": "Unit III",
+    "unitTitle": "Data Structures & File Handling",
+    "number": "3.3",
+    "title": "Operations on lists and dictionaries",
+    "minutes": 20,
+    "free": False,
+    "audioLanguages": ["en", "hi", "kn"],
+    "hook": {
+        "title": "A pharmacy counter never stands still",
+        "md": "At a busy pharmacy counter, the patient queue grows and shrinks all day. Items go into a cart and come out of it. At closing time someone asks: what sold most today, and what do we need to reorder?\n\nData is the same: it **changes**. Today you'll learn the everyday tools for that: adding and removing items, sorting, finding the smallest, largest and average, and counting with a dictionary. These few lines of code are what pharmacy software runs thousands of times a day.",
+    },
+    "learn": [
+        "How to **add** items with **append()**, **insert()** and **extend()**",
+        "How to **remove** items with **remove()** and **pop()**",
+        "How to **sort** and summarise numbers with **min()**, **max()**, **sum()** and **count()**",
+        "How to use **keys()**, **values()**, **update()** and **pop()** on a dictionary, and **count** things with one",
+    ],
+    "explanation": [
+        {
+            "heading": "Adding items to a list",
+            "md": "A list has its own functions, called **methods**, that you write after a dot. `append()` adds one item **at the end**; `insert()` adds it **at an index**:\n\n" + C_ADD + "\n\nThis prints:\n\n" + O_ADD + "\n\nSita went to the front, at index 0. To add **several** items from another list at once, use `extend()`: `queue.extend([\"Raju\", \"Asha\"])`.",
+            "callout": {"type": "definition", "title": "Method", "md": "A function that belongs to a value and is written after a dot: queue.append(\"Anil\"). Lists, strings and dictionaries each have their own methods."},
+        },
+        {
+            "heading": "Removing items",
+            "md": "`remove()` deletes the first item **with that value**. `pop()` removes the **last** item and gives it back to you; `pop(0)` would remove the first:\n\n" + C_REMOVE + "\n\nThis prints:\n\n" + O_REMOVE + "\n\n`del cart[0]` also deletes an item by index, without giving it back.",
+        },
+        {
+            "heading": "Sorting and summarising numbers",
+            "md": "Python has built-in functions for the questions you ask about readings every day:\n\n" + C_SORT + "\n\nThis prints:\n\n" + O_SORT + "\n\n- `sorted(list)` gives a **new** sorted list and leaves the original as it was.\n- `list.sort()` sorts the list **itself** and returns nothing. Add `reverse=True` to either for largest first.\n- `min()`, `max()` and `sum()` work on any list of numbers; `sum() / len()` is the average.\n- `count(x)` says how many times `x` appears; `index(x)` gives its first position.",
+            "callout": {"type": "warning", "title": "sort() returns None", "md": "result = sugar.sort() leaves result as None. Use sugar.sort() on its own line, or result = sorted(sugar)."},
+        },
+        {
+            "heading": "Operations on dictionaries",
+            "md": "`keys()`, `values()` and `items()` give the keys, the values and the pairs. `pop(key)` removes a pair, and `update()` adds or changes several pairs at once:\n\n" + C_DICTOPS + "\n\nThis prints:\n\n" + O_DICTOPS + "\n\nThe ORS shelf was empty, so it was popped out of the stock list; Ibuprofen was added with `update()`. `sum(stock.values())` adds up all the strips: 120 + 45 + 0 = 165.",
+        },
+        {
+            "heading": "Counting with a dictionary",
+            "md": "A dictionary is the natural way to **count** things: the key is what you count, the value is how many. `get(drug, 0)` returns 0 the first time a drug appears:\n\n" + C_COUNT + "\n\nThis prints:\n\n" + O_COUNT + "\n\nThis small pattern answers questions like \"which drug sold most today?\" or \"how many patients came from each village?\".",
+            "callout": {"type": "tip", "title": "The counting pattern", "md": "counts = {} before the loop, then counts[item] = counts.get(item, 0) + 1 inside it. Remember this one; you'll use it in Unit IV too."},
+        },
+    ],
+    "walkthrough": {
+        "intro": "This program checks the stock and builds a sorted reorder list of every drug below 50 strips.",
+        "filename": "reorder.py",
+        "code": "# Restock alert: find drugs below 50 strips\nstock = {\"Paracetamol\": 120, \"Cetirizine\": 45, \"ORS\": 20}\nlow = []\nfor drug, qty in stock.items():\n    if qty < 50:\n        low.append(drug)\nlow.sort()\nprint(\"Reorder:\", low)\nprint(\"Items to reorder:\", len(low))",
+        "output": "Reorder: ['Cetirizine', 'ORS']\nItems to reorder: 2",
+        "steps": [
+            {"line": None, "say": "This program finds every drug that is running low, and builds a reorder list.", "output": None, "audio": "step-01.mp3"},
+            {"line": 1, "say": "The comment gives the rule: reorder anything below fifty strips.", "output": None, "audio": "step-02.mp3"},
+            {"line": 2, "say": "stock is a dictionary of drug names and the number of strips on the shelf.", "output": None, "audio": "step-03.mp3", "vars": {"stock": "{3 pairs}"}},
+            {"line": 3, "say": "low starts as an empty list. The drugs to reorder will be added to it.", "output": None, "audio": "step-04.mp3", "vars": {"low": "[]"}},
+            {"line": 4, "say": "items gives one pair at a time. The first is Paracetamol, with one hundred and twenty strips.", "output": None, "audio": "step-05.mp3", "vars": {"drug": "'Paracetamol'", "qty": "120"}},
+            {"line": 5, "say": "One hundred and twenty is not below fifty, so nothing is added.", "output": None, "audio": "step-06.mp3"},
+            {"line": 6, "say": "Next comes Cetirizine, with forty five. That is below fifty, so append adds it to low.", "output": None, "audio": "step-07.mp3", "vars": {"drug": "'Cetirizine'", "qty": "45", "low": "['Cetirizine']"}},
+            {"line": 6, "say": "Then ORS, with twenty. It is added too.", "output": None, "audio": "step-08.mp3", "vars": {"drug": "'ORS'", "qty": "20", "low": "['Cetirizine', 'ORS']"}},
+            {"line": 7, "say": "sort puts the list in alphabetical order, changing the list itself.", "output": None, "audio": "step-09.mp3"},
+            {"line": 8, "say": "print shows the reorder list.", "output": "Reorder: ['Cetirizine', 'ORS']", "audio": "step-10.mp3"},
+            {"line": 9, "say": "len counts it: two items to reorder.", "output": "Items to reorder: 2", "audio": "step-11.mp3"},
+        ],
+        "keyTerms": [
+            {"term": "low = []", "meaning": "Start with an empty list to collect results."},
+            {"term": "stock.items()", "meaning": "Each drug and its quantity, one pair at a time."},
+            {"term": "low.append(drug)", "meaning": "Add the drug at the end of the list."},
+            {"term": "low.sort()", "meaning": "Sort the list itself, in alphabetical order."},
+        ],
+    },
+    "errors": {
+        "intro": "These two errors are the most common ones with list methods.",
+        "examples": [
+            {
+                "title": "Removing a value that isn't in the list",
+                "code": "cart = [\"Paracetamol\", \"ORS\"]\ncart.remove(\"Aspirin\")",
+                "output": "ValueError: list.remove(x): x not in list",
+                "errorLine": 2,
+                "md": "`remove()` only works if the value is there. Check first: `if \"Aspirin\" in cart: cart.remove(\"Aspirin\")`.",
+            },
+            {
+                "title": "Using the result of sort()",
+                "code": "sugar = [140, 98, 126]\nlowest = sugar.sort()\nprint(lowest[0])",
+                "output": "TypeError: 'NoneType' object is not subscriptable",
+                "errorLine": 3,
+                "md": "`sort()` sorts the list in place and returns `None`, so `lowest` is None. Use `sorted(sugar)` to get a new list, or simply `min(sugar)`.",
+            },
+        ],
+    },
+    "mistakes": [
+        {"mistake": "Writing `result = data.sort()` and using `result`", "see": "result is None", "fix": "Call `data.sort()` on its own, or use `result = sorted(data)`."},
+        {"mistake": "Passing two items to append: `cart.append(\"ORS\", \"Zinc\")`", "see": "TypeError: list.append() takes exactly one argument (2 given)", "fix": "Append one at a time, or use `cart.extend([\"ORS\", \"Zinc\"])`."},
+        {"mistake": "Using append to join two lists: `a.append(b)`", "see": "No error, but you get a list inside a list: `[1, 2, [3, 4]]`", "fix": "Use `a.extend(b)` to add the items one by one."},
+        {"mistake": "Calling `pop()` on an empty list", "see": "IndexError: pop from empty list", "fix": "Check first: `if queue: queue.pop()`."},
+    ],
+    "tasks": [
+        {
+            "id": "t1",
+            "title": "Manage the queue",
+            "md": "Anil has just arrived: add him **at the end** of the queue. Sita is an emergency: put her **at the front**. Then print the queue. The output must be exactly:",
+            "expectedOutput": "['Sita', 'Ravi', 'Meena', 'Anil']",
+            "starterCode": "queue = [\"Ravi\", \"Meena\"]\n\n# Add Anil at the end and Sita at the front\n\nprint(queue)",
+            "hints": ["append() adds at the end; insert(0, ...) adds at the front.", "queue.append(\"Anil\")\nqueue.insert(0, \"Sita\")"],
+            "solution": "queue = [\"Ravi\", \"Meena\"]\n\n# Add Anil at the end and Sita at the front\nqueue.append(\"Anil\")\nqueue.insert(0, \"Sita\")\nprint(queue)",
+            "check": {"type": "exactOutput", "mustContain": [".append(", ".insert("]},
+        },
+        {
+            "id": "t2",
+            "title": "Lightest, heaviest, average",
+            "md": "These are the body weights (kg) of five patients. Print the lightest, the heaviest and the average weight, using **min()**, **max()** and **sum()**. The output must be exactly:",
+            "expectedOutput": "Lightest: 48\nHeaviest: 80\nAverage: 64.0",
+            "starterCode": "weights = [62, 48, 75, 55, 80]\n\n# Print the lightest, heaviest and average weight\n",
+            "hints": ["print(\"Lightest:\", min(weights))", "The average is sum(weights) / len(weights)."],
+            "solution": "weights = [62, 48, 75, 55, 80]\n\n# Print the lightest, heaviest and average weight\nprint(\"Lightest:\", min(weights))\nprint(\"Heaviest:\", max(weights))\nprint(\"Average:\", sum(weights) / len(weights))",
+            "check": {"type": "exactOutput", "mustContain": ["min(", "max(", "sum("]},
+        },
+        {
+            "id": "t3",
+            "title": "Total strips in stock",
+            "md": "Print the total number of strips on the shelf by adding up the **values** of the dictionary. The output must be exactly:",
+            "expectedOutput": "Total strips: 200",
+            "starterCode": "stock = {\"Paracetamol\": 120, \"Cetirizine\": 45, \"ORS\": 35}\n\n# Print the total of all the values\n",
+            "hints": ["stock.values() gives just the quantities.", "print(\"Total strips:\", sum(stock.values()))"],
+            "solution": "stock = {\"Paracetamol\": 120, \"Cetirizine\": 45, \"ORS\": 35}\n\n# Print the total of all the values\nprint(\"Total strips:\", sum(stock.values()))",
+            "check": {"type": "exactOutput", "mustContain": ["values()"]},
+        },
+        {
+            "id": "t4",
+            "title": "Find the bug",
+            "md": "This program should count how many times each drug was sold, but it crashes with a KeyError on the first drug. Fix the counting line so the output is exactly:",
+            "expectedOutput": "{'ORS': 2, 'Paracetamol': 1}",
+            "starterCode": "sold = [\"ORS\", \"Paracetamol\", \"ORS\"]\ncounts = {}\nfor drug in sold:\n    counts[drug] = counts[drug] + 1\nprint(counts)",
+            "hints": ["The first time a drug appears, counts has no key for it yet.", "counts[drug] = counts.get(drug, 0) + 1"],
+            "solution": "sold = [\"ORS\", \"Paracetamol\", \"ORS\"]\ncounts = {}\nfor drug in sold:\n    counts[drug] = counts.get(drug, 0) + 1\nprint(counts)",
+            "solutionNote": "counts[drug] fails the first time because the key doesn't exist yet. counts.get(drug, 0) starts each new drug at 0.",
+            "check": {"type": "exactOutput", "mustContain": [".get("]},
+        },
+    ],
+    "quiz": [
+        {"q": "x = [1, 2]\nx.append(3)\nprint(x)\n\nWhat does this print?", "options": ["[3, 1, 2]", "[1, 2, 3]", "[1, 2]", "[1, 2, [3]]"], "answer": 1, "why": "append adds the item at the end.", "code": True},
+        {"q": "Which method removes the last item of a list and gives it back?", "options": ["remove()", "del", "pop()", "clear()"], "answer": 2, "why": "pop() with no index removes and returns the last item.", "code": False},
+        {"q": "a = [3, 1, 2]\nb = a.sort()\nprint(b)\n\nWhat does this print?", "options": ["[1, 2, 3]", "[3, 1, 2]", "None", "An error"], "answer": 2, "why": "sort() changes a itself and returns None.", "code": True},
+        {"q": "d = {\"a\": 1, \"b\": 2}\nprint(sum(d.values()))\n\nWhat does this print?", "options": ["3", "ab", "2", "An error"], "answer": 0, "why": "values() gives 1 and 2, and sum adds them.", "code": True},
+        {"q": "Which method adds every item of another list to the end of a list?", "options": ["append()", "insert()", "extend()", "add()"], "answer": 2, "why": "extend() adds the items one by one; append() would add the whole list as one item.", "code": False},
+        {"q": "In counts[d] = counts.get(d, 0) + 1, what does get(d, 0) do?", "options": ["Deletes d", "Returns the current count, or 0 if d is new", "Always returns 0", "Sorts the counts"], "answer": 1, "why": "get returns the existing count, or the default 0 the first time.", "code": True},
+    ],
+    "exam": {
+        "note": "Important questions for practice. Actual university questions may differ.",
+        "short": [
+            {"q": "Differentiate between sort() and sorted().", "marks": 2,
+             "md": "- `list.sort()` is a **list method**; it sorts the list **in place** and returns `None`.\n- `sorted(iterable)` is a **built-in function**; it returns a **new** sorted list and leaves the original unchanged.\n\n```python\na = [3, 1, 2]\nb = sorted(a)   # b = [1, 2, 3], a unchanged\na.sort()        # a = [1, 2, 3]\n```\n\nBoth accept `reverse=True`."},
+            {"q": "Differentiate between append() and extend() with an example.", "marks": 2,
+             "md": "`append(x)` adds **one** item, `x`, at the end. `extend(list)` adds **each item** of another list.\n\n```python\na = [1, 2]\na.append([3, 4])   # [1, 2, [3, 4]]\nb = [1, 2]\nb.extend([3, 4])   # [1, 2, 3, 4]\n```"},
+        ],
+        "long": [
+            {"q": "Explain the common operations on lists and dictionaries in Python with suitable examples.", "marks": 5,
+             "md": "**List operations**\n\n| Operation | Example | Meaning |\n|---|---|---|\n| `append(x)` | `queue.append(\"Anil\")` | add at the end |\n| `insert(i, x)` | `queue.insert(0, \"Sita\")` | add at index i |\n| `extend(list)` | `a.extend([3, 4])` | add several items |\n| `remove(x)` | `cart.remove(\"ORS\")` | delete first x (ValueError if absent) |\n| `pop(i)` | `cart.pop()` | remove and return (last by default) |\n| `sort()` / `sorted()` | `a.sort()` | sort in place / return new list |\n| `count(x)`, `index(x)` | `a.count(98)` | occurrences / position |\n| `len`, `min`, `max`, `sum` | `sum(a) / len(a)` | size, smallest, largest, total |\n\n**Dictionary operations**\n\n| Operation | Example | Meaning |\n|---|---|---|\n| `d[key] = v` | `stock[\"ORS\"] = 20` | add or update |\n| `get(key, default)` | `stock.get(\"Zinc\", 0)` | safe lookup |\n| `keys()`, `values()`, `items()` | `sum(stock.values())` | keys, values, pairs |\n| `update(d2)` | `stock.update({\"Zinc\": 30})` | add/change several pairs |\n| `pop(key)` | `stock.pop(\"ORS\")` | remove a pair |\n| `in` | `\"ORS\" in stock` | is the key present? |\n\n**Example: counting with a dictionary**\n\n```python\nsold = [\"ORS\", \"Paracetamol\", \"ORS\"]\ncounts = {}\nfor drug in sold:\n    counts[drug] = counts.get(drug, 0) + 1\nprint(counts)   # {'ORS': 2, 'Paracetamol': 1}\n```\n\nThese operations are used for managing queues, carts, stock registers and for summarising readings."},
+        ],
+    },
+    "mindmap": {
+        "label": "Lesson 3.3 · Operations",
+        "children": [
+            {"label": "Add", "children": [{"label": "append(x)"}, {"label": "insert(i, x)"}, {"label": "extend(list)"}]},
+            {"label": "Remove", "children": [{"label": "remove(x)"}, {"label": "pop() returns it"}, {"label": "del list[i]"}]},
+            {"label": "Order & stats", "children": [{"label": "sort() in place"}, {"label": "sorted() new list"}, {"label": "min max sum count"}]},
+            {"label": "Dictionary", "children": [{"label": "keys() values()"}, {"label": "items()"}, {"label": "update() pop()"}]},
+            {"label": "Count", "children": [{"label": "counts = {}"}, {"label": "get(k, 0) + 1"}, {"label": "Tally anything"}]},
+            {"label": "Errors", "children": [{"label": "ValueError: not in list"}, {"label": "sort() gives None"}]},
+        ],
+    },
+    "summary": [
+        "Methods are written after a dot. **append()** adds at the end, **insert(i, x)** at an index, **extend()** adds several items.",
+        "**remove(x)** deletes a value; **pop()** removes the last item and returns it.",
+        "**sorted()** returns a new sorted list; **sort()** sorts in place and returns None. **min()**, **max()**, **sum()** and **count()** summarise.",
+        "Dictionaries have **keys()**, **values()**, **items()**, **update()** and **pop()**.",
+        "To count things: `counts[item] = counts.get(item, 0) + 1` inside a loop.",
+    ],
+    "video": {"videoUrl": None, "searchTerms": ["python list methods append insert remove pop sort", "python dictionary methods keys values items update"]},
+    "animations": [
+        {
+            "id": "grow",
+            "title": "A list growing and shrinking",
+            "afterExplanation": 1,
+            "canvas": {"desktop": {"w": 800, "h": 460}, "mobile": {"w": 360, "h": 600}},
+            "actors": [
+                {"id": "code", "type": "card", "title": "reorder.py", "icon": "📦", "color": "indigo", "mono": True,
+                 "lines": ["low = []", "low.append(\"Cetirizine\")", "low.append(\"ORS\")", "print(low.pop())", "print(low)"],
+                 "desktop": {"x": 40, "y": 30, "w": 440, "h": 200}, "mobile": {"x": 16, "y": 12, "w": 328, "h": 170}},
+                {"id": "empty", "type": "pill", "text": "low = [ ]  (empty)", "color": "indigo",
+                 "desktop": {"x": 510, "y": 40, "w": 250, "h": 30}, "mobile": {"x": 30, "y": 200, "w": 300, "h": 30}},
+                {"id": "s0", "type": "box", "label": "[0]", "value": "Cetirizine", "color": "amber",
+                 "desktop": {"x": 510, "y": 40, "w": 250, "h": 80}, "mobile": {"x": 16, "y": 195, "w": 156, "h": 80}},
+                {"id": "s1", "type": "box", "label": "[1]", "value": "ORS", "color": "emerald",
+                 "desktop": {"x": 510, "y": 135, "w": 250, "h": 80}, "mobile": {"x": 188, "y": 195, "w": 156, "h": 80}},
+                {"id": "out", "type": "terminal", "title": "Output",
+                 "desktop": {"x": 40, "y": 255, "w": 720, "h": 180}, "mobile": {"x": 16, "y": 300, "w": 328, "h": 200}},
+            ],
+            "steps": [
+                {"say": "low starts as an empty list, with nothing inside yet.", "audio": "anim-grow-01.mp3",
+                 "actions": [{"do": "show", "target": "code"}, {"do": "show", "target": "out"}, {"do": "highlightLine", "target": "code", "line": 0}, {"do": "show", "target": "empty"}]},
+                {"say": "append adds Cetirizine at the end. The list now has one item, at index zero.", "audio": "anim-grow-02.mp3",
+                 "actions": [{"do": "highlightLine", "target": "code", "line": 1}, {"do": "hide", "target": "empty"}, {"do": "show", "target": "s0"}, {"do": "pulse", "target": "s0"}]},
+                {"say": "append adds ORS after it, at index one.", "audio": "anim-grow-03.mp3",
+                 "actions": [{"do": "highlightLine", "target": "code", "line": 2}, {"do": "show", "target": "s1"}, {"do": "pulse", "target": "s1"}]},
+                {"say": "pop takes the last item out of the list and hands it back, so print shows ORS.", "audio": "anim-grow-04.mp3",
+                 "actions": [{"do": "highlightLine", "target": "code", "line": 3}, {"do": "hide", "target": "s1"}, {"do": "appendOutput", "target": "out", "text": "ORS"}]},
+                {"say": "Only Cetirizine is left in the list.", "audio": "anim-grow-05.mp3",
+                 "actions": [{"do": "highlightLine", "target": "code", "line": 4}, {"do": "pulse", "target": "s0"}, {"do": "appendOutput", "target": "out", "text": "['Cetirizine']"}]},
+            ],
+        }
+    ],
+}
+
+if __name__ == "__main__":
+    root = os.path.join(os.path.dirname(__file__), "..", "..")
+    out = os.path.join(root, "content", "bp101t", "3-3", "en.json")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    json.dump(L, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    print("wrote", out)
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "..", "glossary_bp101t.py")], check=True, stdout=subprocess.DEVNULL)

@@ -1,0 +1,346 @@
+{
+  "hook": {
+    "title": "Pharmacy counter कभी नहीं रुकता",
+    "md": "भीड़ वाले pharmacy counter पर patients की queue दिन भर बढ़ती-घटती रहती है। Items cart में जाते हैं और निकलते हैं। Closing time पर कोई पूछता है: आज सबसे ज़्यादा क्या बिका, और क्या reorder करना है?\n\nData भी ऐसा ही है: वह **बदलता** है। आज आप इसके रोज़ के tools सीखेंगे: items जोड़ना और हटाना, sort करना, सबसे छोटा, सबसे बड़ा और average निकालना, और dictionary से गिनती करना। Code की ये कुछ lines pharmacy software दिन में हज़ारों बार चलाता है।"
+  },
+  "learn": [
+    "**append()**, **insert()** और **extend()** से items **जोड़ना**",
+    "**remove()** और **pop()** से items **हटाना**",
+    "**Sort** करना, और **min()**, **max()**, **sum()** व **count()** से numbers का सार निकालना",
+    "Dictionary पर **keys()**, **values()**, **update()** और **pop()**, और dictionary से **गिनती**"
+  ],
+  "explanation": [
+    {
+      "heading": "List में items जोड़ना",
+      "md": "List के अपने functions होते हैं, जिन्हें **methods** कहते हैं, और ये dot के बाद लिखे जाते हैं। `append()` एक item **आखिर में** जोड़ता है; `insert()` उसे **किसी index पर** जोड़ता है:\n\n```python\nqueue = [\"Ravi\", \"Meena\"]\nqueue.append(\"Anil\")\nqueue.insert(0, \"Sita\")\nprint(queue)\nprint(len(queue))\n```\n\nयह print करता है:\n\n```\n['Sita', 'Ravi', 'Meena', 'Anil']\n4\n```\n\nSita सबसे आगे गई, index 0 पर। दूसरी list से **कई** items एक साथ जोड़ने हों तो `extend()` use कीजिए: `queue.extend([\"Raju\", \"Asha\"])`।",
+      "callout": {
+        "title": "Method",
+        "md": "किसी value का अपना function, जो dot के बाद लिखा जाता है: queue.append(\"Anil\")। Lists, strings और dictionaries, सबके अपने methods हैं।"
+      }
+    },
+    {
+      "heading": "Items हटाना",
+      "md": "`remove()` **उस value वाला** पहला item हटाता है। `pop()` **आखिरी** item हटाकर आपको वापस देता है; `pop(0)` पहला हटाएगा:\n\n```python\ncart = [\"Paracetamol\", \"Cetirizine\", \"Ibuprofen\", \"ORS\"]\ncart.remove(\"Ibuprofen\")\nlast = cart.pop()\nprint(last)\nprint(cart)\n```\n\nयह print करता है:\n\n```\nORS\n['Paracetamol', 'Cetirizine']\n```\n\n`del cart[0]` भी index से item हटाता है, पर उसे वापस नहीं देता।"
+    },
+    {
+      "heading": "Numbers को sort करना और सार निकालना",
+      "md": "Readings के बारे में जो सवाल आप रोज़ पूछते हैं, उनके लिए Python में built-in functions हैं:\n\n```python\nsugar = [140, 98, 126, 110, 98]\nprint(sorted(sugar))\nprint(min(sugar), max(sugar))\nprint(sum(sugar) / len(sugar))\nprint(sugar.count(98))\n```\n\nयह print करता है:\n\n```\n[98, 98, 110, 126, 140]\n98 140\n114.4\n2\n```\n\n- `sorted(list)` एक **नई** sorted list देता है और original को वैसा ही छोड़ता है।\n- `list.sort()` list को **खुद** sort करता है और कुछ return नहीं करता। सबसे बड़ा पहले चाहिए तो दोनों में `reverse=True` जोड़िए।\n- `min()`, `max()` और `sum()` numbers की किसी भी list पर चलते हैं; `sum() / len()` average है।\n- `count(x)` बताता है `x` कितनी बार आया; `index(x)` उसकी पहली position देता है।",
+      "callout": {
+        "title": "sort() None लौटाता है",
+        "md": "result = sugar.sort() करने पर result None रहता है। sugar.sort() अलग line पर लिखिए, या result = sorted(sugar)।"
+      }
+    },
+    {
+      "heading": "Dictionaries पर operations",
+      "md": "`keys()`, `values()` और `items()` keys, values और pairs देते हैं। `pop(key)` एक pair हटाता है, और `update()` कई pairs एक साथ जोड़ता या बदलता है:\n\n```python\nstock = {\"Paracetamol\": 120, \"Cetirizine\": 45, \"ORS\": 0}\nprint(list(stock.keys()))\nprint(sum(stock.values()))\nstock.pop(\"ORS\")\nstock.update({\"Ibuprofen\": 60})\nprint(stock)\n```\n\nयह print करता है:\n\n```\n['Paracetamol', 'Cetirizine', 'ORS']\n165\n{'Paracetamol': 120, 'Cetirizine': 45, 'Ibuprofen': 60}\n```\n\nORS का shelf खाली था, इसलिए उसे stock list से pop किया गया; Ibuprofen `update()` से जुड़ी। `sum(stock.values())` सारी strips जोड़ता है: 120 + 45 + 0 = 165।"
+    },
+    {
+      "heading": "Dictionary से गिनती",
+      "md": "चीज़ें **गिनने** का स्वाभाविक तरीका dictionary है: key वह है जो गिन रहे हैं, value कितनी बार। Drug पहली बार आए तो `get(drug, 0)` 0 देता है:\n\n```python\nsold = [\"Paracetamol\", \"ORS\", \"Paracetamol\", \"Cetirizine\", \"Paracetamol\"]\ncounts = {}\nfor drug in sold:\n    counts[drug] = counts.get(drug, 0) + 1\nprint(counts)\n```\n\nयह print करता है:\n\n```\n{'Paracetamol': 3, 'ORS': 1, 'Cetirizine': 1}\n```\n\nयह छोटा pattern ऐसे सवालों का जवाब देता है: \"आज सबसे ज़्यादा कौन-सी drug बिकी?\" या \"हर गाँव से कितने patients आए?\"",
+      "callout": {
+        "title": "गिनती का pattern",
+        "md": "Loop से पहले counts = {}, फिर उसके अंदर counts[item] = counts.get(item, 0) + 1। इसे याद रखिए; Unit IV में भी काम आएगा।"
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "यह program stock check करता है और 50 strips से कम वाली हर drug की sorted reorder list बनाता है।",
+    "keyTerms": [
+      {
+        "meaning": "नतीजे जमा करने के लिए खाली list से शुरू करो।"
+      },
+      {
+        "meaning": "हर drug और उसकी quantity, एक-एक pair करके।"
+      },
+      {
+        "meaning": "Drug को list के आखिर में जोड़ो।"
+      },
+      {
+        "meaning": "List को खुद, alphabetical क्रम में sort करो।"
+      }
+    ],
+    "steps": [
+      {
+        "say": "यह program हर कम stock वाली drug ढूँढता है, और एक reorder list बनाता है।"
+      },
+      {
+        "say": "Comment नियम बताता है: पचास strips से कम वाली हर चीज़ reorder करो।"
+      },
+      {
+        "say": "stock drug के नामों और shelf पर strips की संख्या की dictionary है।"
+      },
+      {
+        "say": "low एक खाली list से शुरू होती है। Reorder वाली drugs इसमें जोड़ी जाएँगी।"
+      },
+      {
+        "say": "items एक बार में एक pair देता है। पहला है Paracetamol, एक सौ बीस strips के साथ।"
+      },
+      {
+        "say": "एक सौ बीस, पचास से कम नहीं है, इसलिए कुछ नहीं जुड़ता।"
+      },
+      {
+        "say": "अगला है Cetirizine, पैंतालीस के साथ। यह पचास से कम है, इसलिए append इसे low में जोड़ता है।"
+      },
+      {
+        "say": "फिर ORS, बीस के साथ। यह भी जुड़ता है।"
+      },
+      {
+        "say": "sort list को alphabetical क्रम में रखता है, list को खुद बदलकर।"
+      },
+      {
+        "say": "print reorder list दिखाता है।"
+      },
+      {
+        "say": "len उसे गिनता है: reorder के लिए दो items।"
+      }
+    ]
+  },
+  "errors": {
+    "intro": "List methods के साथ ये दो errors सबसे आम हैं।",
+    "examples": [
+      {
+        "title": "ऐसी value हटाना जो list में नहीं है",
+        "md": "`remove()` तभी चलता है जब value मौजूद हो। पहले check कीजिए: `if \"Aspirin\" in cart: cart.remove(\"Aspirin\")`।"
+      },
+      {
+        "title": "sort() के नतीजे को use करना",
+        "md": "`sort()` list को उसी में sort करता है और `None` लौटाता है, इसलिए `lowest` None है। नई list के लिए `sorted(sugar)` use कीजिए, या सीधे `min(sugar)`।"
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "`result = data.sort()` लिखकर `result` use करना",
+      "see": "result None है",
+      "fix": "`data.sort()` अलग से call कीजिए, या `result = sorted(data)`।"
+    },
+    {
+      "mistake": "append को दो items देना: `cart.append(\"ORS\", \"Zinc\")`",
+      "see": "TypeError: list.append() takes exactly one argument (2 given)",
+      "fix": "एक-एक करके append कीजिए, या `cart.extend([\"ORS\", \"Zinc\"])`।"
+    },
+    {
+      "mistake": "दो lists जोड़ने के लिए append: `a.append(b)`",
+      "see": "कोई error नहीं, पर list के अंदर list बनती है: `[1, 2, [3, 4]]`",
+      "fix": "Items एक-एक जोड़ने के लिए `a.extend(b)` use कीजिए।"
+    },
+    {
+      "mistake": "खाली list पर `pop()` call करना",
+      "see": "IndexError: pop from empty list",
+      "fix": "पहले check कीजिए: `if queue: queue.pop()`।"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Queue संभालिए",
+      "md": "Anil अभी आए हैं: उन्हें queue के **आखिर में** जोड़िए। Sita emergency है: उन्हें **सबसे आगे** रखिए। फिर queue print कीजिए। Output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "append() आखिर में जोड़ता है; insert(0, ...) सबसे आगे।",
+        "queue.append(\"Anil\")\nqueue.insert(0, \"Sita\")"
+      ]
+    },
+    {
+      "title": "सबसे हल्का, सबसे भारी, average",
+      "md": "ये पाँच patients के वज़न (kg) हैं। **min()**, **max()** और **sum()** से सबसे हल्का, सबसे भारी और average वज़न print कीजिए। Output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "print(\"Lightest:\", min(weights))",
+        "Average है sum(weights) / len(weights)।"
+      ]
+    },
+    {
+      "title": "Stock में कुल strips",
+      "md": "Dictionary की **values** जोड़कर shelf पर कुल strips print कीजिए। Output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "stock.values() सिर्फ़ quantities देता है।",
+        "print(\"Total strips:\", sum(stock.values()))"
+      ]
+    },
+    {
+      "title": "Bug ढूँढिए",
+      "md": "इस program को गिनना है कि हर drug कितनी बार बिकी, पर यह पहली drug पर ही KeyError के साथ crash हो जाता है। गिनती वाली line ठीक कीजिए ताकि output बिल्कुल यह हो:",
+      "hints": [
+        "पहली बार drug आने पर counts में उसकी key अभी नहीं है।",
+        "counts[drug] = counts.get(drug, 0) + 1"
+      ],
+      "solutionNote": "counts[drug] पहली बार fail होता है क्योंकि key अभी है ही नहीं। counts.get(drug, 0) हर नई drug को 0 से शुरू करता है।"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "x = [1, 2]\nx.append(3)\nprint(x)\n\nयह क्या print करता है?",
+      "why": "append item को आखिर में जोड़ता है।"
+    },
+    {
+      "q": "कौन-सा method list का आखिरी item हटाकर वापस देता है?",
+      "why": "बिना index के pop() आखिरी item हटाकर लौटाता है।"
+    },
+    {
+      "q": "a = [3, 1, 2]\nb = a.sort()\nprint(b)\n\nयह क्या print करता है?",
+      "why": "sort() खुद a को बदलता है और None लौटाता है।"
+    },
+    {
+      "q": "d = {\"a\": 1, \"b\": 2}\nprint(sum(d.values()))\n\nयह क्या print करता है?",
+      "why": "values() 1 और 2 देता है, और sum उन्हें जोड़ता है।"
+    },
+    {
+      "q": "कौन-सा method दूसरी list का हर item list के आखिर में जोड़ता है?",
+      "why": "extend() items एक-एक करके जोड़ता है; append() पूरी list को एक item बना देगा।"
+    },
+    {
+      "q": "counts[d] = counts.get(d, 0) + 1 में get(d, 0) क्या करता है?",
+      "why": "get मौजूदा गिनती देता है, या पहली बार default 0।"
+    }
+  ],
+  "exam": {
+    "note": "Practice के लिए important questions। University के असली questions अलग हो सकते हैं।"
+  },
+  "mindmap": {
+    "label": "Lesson 3.3 · Operations",
+    "children": [
+      {
+        "label": "जोड़ना",
+        "children": [
+          {
+            "label": "append(x)"
+          },
+          {
+            "label": "insert(i, x)"
+          },
+          {
+            "label": "extend(list)"
+          }
+        ]
+      },
+      {
+        "label": "हटाना",
+        "children": [
+          {
+            "label": "remove(x)"
+          },
+          {
+            "label": "pop() वापस देता है"
+          },
+          {
+            "label": "del list[i]"
+          }
+        ]
+      },
+      {
+        "label": "क्रम और सार",
+        "children": [
+          {
+            "label": "sort() उसी में"
+          },
+          {
+            "label": "sorted() नई list"
+          },
+          {
+            "label": "min max sum count"
+          }
+        ]
+      },
+      {
+        "label": "Dictionary",
+        "children": [
+          {
+            "label": "keys() values()"
+          },
+          {
+            "label": "items()"
+          },
+          {
+            "label": "update() pop()"
+          }
+        ]
+      },
+      {
+        "label": "गिनती",
+        "children": [
+          {
+            "label": "counts = {}"
+          },
+          {
+            "label": "get(k, 0) + 1"
+          },
+          {
+            "label": "कुछ भी गिनो"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "ValueError: not in list"
+          },
+          {
+            "label": "sort() से None"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "Methods dot के बाद लिखे जाते हैं। **append()** आखिर में जोड़ता है, **insert(i, x)** किसी index पर, **extend()** कई items।",
+    "**remove(x)** एक value हटाता है; **pop()** आखिरी item हटाकर लौटाता है।",
+    "**sorted()** नई sorted list देता है; **sort()** उसी में sort करके None लौटाता है। **min()**, **max()**, **sum()** और **count()** सार निकालते हैं।",
+    "Dictionaries के पास **keys()**, **values()**, **items()**, **update()** और **pop()** हैं।",
+    "चीज़ें गिनने के लिए: loop के अंदर `counts[item] = counts.get(item, 0) + 1`।"
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "low एक खाली list से शुरू होती है, अभी उसमें कुछ नहीं है।"
+        },
+        {
+          "say": "append Cetirizine को आखिर में जोड़ता है। अब list में एक item है, index zero पर।"
+        },
+        {
+          "say": "append उसके बाद ORS जोड़ता है, index एक पर।"
+        },
+        {
+          "say": "pop आखिरी item list से निकालकर वापस देता है, इसलिए print ORS दिखाता है।"
+        },
+        {
+          "say": "List में सिर्फ़ Cetirizine बचा है।"
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "किसी value का अपना function, dot के बाद लिखा जाता है: queue.append(\"Anil\")।"
+    },
+    {
+      "meaning": "List के आखिर में एक item जोड़ता है।"
+    },
+    {
+      "meaning": "दी गई value वाला पहला item हटाता है। Value न हो तो ValueError।"
+    },
+    {
+      "meaning": "Item हटाकर वापस देता है: default में आखिरी, या index i के लिए pop(i)।"
+    },
+    {
+      "meaning": "List को उसी में sort करता है और None लौटाता है।"
+    },
+    {
+      "meaning": "नई sorted list लौटाता है और original को वैसा ही छोड़ता है।"
+    }
+  ]
+}

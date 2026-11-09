@@ -655,6 +655,38 @@ G = {
             "hinglish": "Key ko surakshit dhoondhta hai: d.get(key, default) KeyError ki jagah default deta hai.",
             "kn": "Key ಅನ್ನು ಸುರಕ್ಷಿತವಾಗಿ ಹುಡುಕುತ್ತೆ: d.get(key, default) KeyError ಬದಲು default ಕೊಡುತ್ತೆ."}),
     ],
+    "3-3": [
+        ("Method", {
+            "en": "A function that belongs to a value, written after a dot: queue.append(\"Anil\").",
+            "hi": "किसी value का अपना function, dot के बाद लिखा जाता है: queue.append(\"Anil\")।",
+            "hinglish": "Kisi value ka apna function, dot ke baad likha jaata hai: queue.append(\"Anil\").",
+            "kn": "ಒಂದು value ಗೆ ಸೇರಿದ function, dot ನಂತರ ಬರೆಯುತ್ತಾರೆ: queue.append(\"Anil\")."}),
+        ("append()", {
+            "en": "Adds one item at the end of a list.",
+            "hi": "List के आखिर में एक item जोड़ता है।",
+            "hinglish": "List ke aakhir mein ek item jodta hai.",
+            "kn": "List ನ ಕೊನೆಗೆ ಒಂದು item ಸೇರಿಸುತ್ತೆ."}),
+        ("remove()", {
+            "en": "Deletes the first item with a given value. ValueError if the value isn't there.",
+            "hi": "दी गई value वाला पहला item हटाता है। Value न हो तो ValueError।",
+            "hinglish": "Di gayi value wala pehla item hataata hai. Value na ho to ValueError.",
+            "kn": "ಕೊಟ್ಟ value ಇರುವ ಮೊದಲ item ತೆಗೆಯುತ್ತೆ. Value ಇಲ್ಲದಿದ್ದರೆ ValueError."}),
+        ("pop()", {
+            "en": "Removes an item and gives it back: the last one by default, or pop(i) for index i.",
+            "hi": "Item हटाकर वापस देता है: default में आखिरी, या index i के लिए pop(i)।",
+            "hinglish": "Item hatakar wapas deta hai: default mein aakhri, ya index i ke liye pop(i).",
+            "kn": "Item ತೆಗೆದು ಹಿಂದೆ ಕೊಡುತ್ತೆ: default ಆಗಿ ಕೊನೆಯದು, ಅಥವಾ index i ಗೆ pop(i)."}),
+        ("sort()", {
+            "en": "Sorts a list in place and returns None.",
+            "hi": "List को उसी में sort करता है और None लौटाता है।",
+            "hinglish": "List ko usi mein sort karta hai aur None lautaata hai.",
+            "kn": "List ಅನ್ನು ಅದರಲ್ಲೇ sort ಮಾಡಿ None ಕೊಡುತ್ತೆ."}),
+        ("sorted()", {
+            "en": "Returns a new sorted list and leaves the original unchanged.",
+            "hi": "नई sorted list लौटाता है और original को वैसा ही छोड़ता है।",
+            "hinglish": "Nayi sorted list lautaata hai aur original ko waisa hi chhodta hai.",
+            "kn": "ಹೊಸ sorted list ಕೊಡುತ್ತೆ, original ಅನ್ನು ಹಾಗೇ ಬಿಡುತ್ತೆ."}),
+    ],
 }
 
 

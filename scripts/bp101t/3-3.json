@@ -1,0 +1,181 @@
+{
+  "course": "bp101t",
+  "lesson": "3-3",
+  "voices": {
+    "en": "Ritu",
+    "hi": "Ritu",
+    "kn": "Chaitra"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program finds every drug that is running low, and builds a reorder list.",
+        "The comment gives the rule: reorder anything below fifty strips.",
+        "stock is a dictionary of drug names and the number of strips on the shelf.",
+        "low starts as an empty list. The drugs to reorder will be added to it.",
+        "items gives one pair at a time. The first is Paracetamol, with one hundred and twenty strips.",
+        "One hundred and twenty is not below fifty, so nothing is added.",
+        "Next comes Cetirizine, with forty five. That is below fifty, so append adds it to low.",
+        "Then ORS, with twenty. It is added too.",
+        "sort puts the list in alphabetical order, changing the list itself.",
+        "print shows the reorder list.",
+        "len counts it: two items to reorder."
+      ],
+      "display": [
+        "This program finds every drug that is running low, and builds a reorder list.",
+        "The comment gives the rule: reorder anything below fifty strips.",
+        "stock is a dictionary of drug names and the number of strips on the shelf.",
+        "low starts as an empty list. The drugs to reorder will be added to it.",
+        "items gives one pair at a time. The first is Paracetamol, with one hundred and twenty strips.",
+        "One hundred and twenty is not below fifty, so nothing is added.",
+        "Next comes Cetirizine, with forty five. That is below fifty, so append adds it to low.",
+        "Then ORS, with twenty. It is added too.",
+        "sort puts the list in alphabetical order, changing the list itself.",
+        "print shows the reorder list.",
+        "len counts it: two items to reorder."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह program हर कम stock वाली drug ढूँढता है, और एक reorder list बनाता है।",
+        "Comment नियम बताता है: पचास strips से कम वाली हर चीज़ reorder करो।",
+        "stock drug के नामों और shelf पर strips की संख्या की dictionary है।",
+        "low एक खाली list से शुरू होती है। Reorder वाली drugs इसमें जोड़ी जाएँगी।",
+        "items एक बार में एक pair देता है। पहला है Paracetamol, एक सौ बीस strips के साथ।",
+        "एक सौ बीस, पचास से कम नहीं है, इसलिए कुछ नहीं जुड़ता।",
+        "अगला है Cetirizine, पैंतालीस के साथ। यह पचास से कम है, इसलिए append इसे low में जोड़ता है।",
+        "फिर ORS, बीस के साथ। यह भी जुड़ता है।",
+        "sort list को alphabetical क्रम में रखता है, list को खुद बदलकर।",
+        "print reorder list दिखाता है।",
+        "len उसे गिनता है: reorder के लिए दो items।"
+      ],
+      "display": [
+        "यह program हर कम stock वाली drug ढूँढता है, और एक reorder list बनाता है।",
+        "Comment नियम बताता है: पचास strips से कम वाली हर चीज़ reorder करो।",
+        "stock drug के नामों और shelf पर strips की संख्या की dictionary है।",
+        "low एक खाली list से शुरू होती है। Reorder वाली drugs इसमें जोड़ी जाएँगी।",
+        "items एक बार में एक pair देता है। पहला है Paracetamol, एक सौ बीस strips के साथ।",
+        "एक सौ बीस, पचास से कम नहीं है, इसलिए कुछ नहीं जुड़ता।",
+        "अगला है Cetirizine, पैंतालीस के साथ। यह पचास से कम है, इसलिए append इसे low में जोड़ता है।",
+        "फिर ORS, बीस के साथ। यह भी जुड़ता है।",
+        "sort list को alphabetical क्रम में रखता है, list को खुद बदलकर।",
+        "print reorder list दिखाता है।",
+        "len उसे गिनता है: reorder के लिए दो items।"
+      ],
+      "displayHinglish": [
+        "Yeh program har kam stock wali drug dhoondhta hai, aur ek reorder list banata hai.",
+        "Comment niyam batata hai: pachaas strips se kam wali har cheez reorder karo.",
+        "stock drug ke naamon aur shelf par strips ki sankhya ki dictionary hai.",
+        "low ek khaali list se shuru hoti hai. Reorder wali drugs ismein jodi jaayengi.",
+        "items ek baar mein ek pair deta hai. Pehla hai Paracetamol, ek sau bees strips ke saath.",
+        "Ek sau bees, pachaas se kam nahi hai, isliye kuch nahi judta.",
+        "Agla hai Cetirizine, paintaalis ke saath. Yeh pachaas se kam hai, isliye append ise low mein jodta hai.",
+        "Phir ORS, bees ke saath. Yeh bhi judta hai.",
+        "sort list ko alphabetical kram mein rakhta hai, list ko khud badalkar.",
+        "print reorder list dikhaata hai.",
+        "len use ginta hai: reorder ke liye do items."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ program stock ಕಡಿಮೆ ಇರುವ ಪ್ರತಿ drug ಹುಡುಕಿ, reorder list ಮಾಡುತ್ತೆ.",
+        "Comment ನಿಯಮ ಹೇಳುತ್ತೆ: ಐವತ್ತು strips ಗಿಂತ ಕಡಿಮೆ ಇರುವ ಎಲ್ಲವನ್ನೂ reorder ಮಾಡು.",
+        "stock, drug ಹೆಸರುಗಳು ಮತ್ತು shelf ಮೇಲಿನ strips ಸಂಖ್ಯೆಯ dictionary.",
+        "low ಖಾಲಿ list ಆಗಿ ಶುರು. Reorder ಮಾಡಬೇಕಾದ drugs ಇದಕ್ಕೆ ಸೇರುತ್ತವೆ.",
+        "items ಒಂದು ಸಲಕ್ಕೆ ಒಂದು pair ಕೊಡುತ್ತೆ. ಮೊದಲದು Paracetamol, ನೂರ ಇಪ್ಪತ್ತು strips.",
+        "ನೂರ ಇಪ್ಪತ್ತು ಐವತ್ತಕ್ಕಿಂತ ಕಡಿಮೆ ಅಲ್ಲ, ಹಾಗಾಗಿ ಏನೂ ಸೇರಲ್ಲ.",
+        "ಮುಂದೆ Cetirizine, ನಲವತ್ತೈದು. ಇದು ಐವತ್ತಕ್ಕಿಂತ ಕಡಿಮೆ, ಹಾಗಾಗಿ append ಇದನ್ನು low ಗೆ ಸೇರಿಸುತ್ತೆ.",
+        "ನಂತರ ORS, ಇಪ್ಪತ್ತು. ಇದೂ ಸೇರುತ್ತೆ.",
+        "sort list ಅನ್ನು alphabetical ಕ್ರಮಕ್ಕೆ ತರುತ್ತೆ, list ಅನ್ನೇ ಬದಲಾಯಿಸಿ.",
+        "print reorder list ತೋರಿಸುತ್ತೆ.",
+        "len ಅದನ್ನು ಎಣಿಸುತ್ತೆ: reorder ಗೆ ಎರಡು items."
+      ],
+      "display": [
+        "ಈ program stock ಕಡಿಮೆ ಇರುವ ಪ್ರತಿ drug ಹುಡುಕಿ, reorder list ಮಾಡುತ್ತೆ.",
+        "Comment ನಿಯಮ ಹೇಳುತ್ತೆ: ಐವತ್ತು strips ಗಿಂತ ಕಡಿಮೆ ಇರುವ ಎಲ್ಲವನ್ನೂ reorder ಮಾಡು.",
+        "stock, drug ಹೆಸರುಗಳು ಮತ್ತು shelf ಮೇಲಿನ strips ಸಂಖ್ಯೆಯ dictionary.",
+        "low ಖಾಲಿ list ಆಗಿ ಶುರು. Reorder ಮಾಡಬೇಕಾದ drugs ಇದಕ್ಕೆ ಸೇರುತ್ತವೆ.",
+        "items ಒಂದು ಸಲಕ್ಕೆ ಒಂದು pair ಕೊಡುತ್ತೆ. ಮೊದಲದು Paracetamol, ನೂರ ಇಪ್ಪತ್ತು strips.",
+        "ನೂರ ಇಪ್ಪತ್ತು ಐವತ್ತಕ್ಕಿಂತ ಕಡಿಮೆ ಅಲ್ಲ, ಹಾಗಾಗಿ ಏನೂ ಸೇರಲ್ಲ.",
+        "ಮುಂದೆ Cetirizine, ನಲವತ್ತೈದು. ಇದು ಐವತ್ತಕ್ಕಿಂತ ಕಡಿಮೆ, ಹಾಗಾಗಿ append ಇದನ್ನು low ಗೆ ಸೇರಿಸುತ್ತೆ.",
+        "ನಂತರ ORS, ಇಪ್ಪತ್ತು. ಇದೂ ಸೇರುತ್ತೆ.",
+        "sort list ಅನ್ನು alphabetical ಕ್ರಮಕ್ಕೆ ತರುತ್ತೆ, list ಅನ್ನೇ ಬದಲಾಯಿಸಿ.",
+        "print reorder list ತೋರಿಸುತ್ತೆ.",
+        "len ಅದನ್ನು ಎಣಿಸುತ್ತೆ: reorder ಗೆ ಎರಡು items."
+      ]
+    },
+    {
+      "id": "anim-grow",
+      "prefix": "anim-grow-",
+      "lang": "en",
+      "tts": [
+        "low starts as an empty list, with nothing inside yet.",
+        "append adds Cetirizine at the end. The list now has one item, at index zero.",
+        "append adds ORS after it, at index one.",
+        "pop takes the last item out of the list and hands it back, so print shows ORS.",
+        "Only Cetirizine is left in the list."
+      ],
+      "display": [
+        "low starts as an empty list, with nothing inside yet.",
+        "append adds Cetirizine at the end. The list now has one item, at index zero.",
+        "append adds ORS after it, at index one.",
+        "pop takes the last item out of the list and hands it back, so print shows ORS.",
+        "Only Cetirizine is left in the list."
+      ]
+    },
+    {
+      "id": "anim-grow",
+      "prefix": "anim-grow-",
+      "lang": "hi",
+      "tts": [
+        "low एक खाली list से शुरू होती है, अभी उसमें कुछ नहीं है।",
+        "append Cetirizine को आखिर में जोड़ता है। अब list में एक item है, index zero पर।",
+        "append उसके बाद ORS जोड़ता है, index एक पर।",
+        "pop आखिरी item list से निकालकर वापस देता है, इसलिए print ORS दिखाता है।",
+        "List में सिर्फ़ Cetirizine बचा है।"
+      ],
+      "display": [
+        "low एक खाली list से शुरू होती है, अभी उसमें कुछ नहीं है।",
+        "append Cetirizine को आखिर में जोड़ता है। अब list में एक item है, index zero पर।",
+        "append उसके बाद ORS जोड़ता है, index एक पर।",
+        "pop आखिरी item list से निकालकर वापस देता है, इसलिए print ORS दिखाता है।",
+        "List में सिर्फ़ Cetirizine बचा है।"
+      ],
+      "displayHinglish": [
+        "low ek khaali list se shuru hoti hai, abhi usmein kuch nahi hai.",
+        "append Cetirizine ko aakhir mein jodta hai. Ab list mein ek item hai, index zero par.",
+        "append uske baad ORS jodta hai, index ek par.",
+        "pop aakhri item list se nikaalkar wapas deta hai, isliye print ORS dikhaata hai.",
+        "List mein sirf Cetirizine bacha hai."
+      ]
+    },
+    {
+      "id": "anim-grow",
+      "prefix": "anim-grow-",
+      "lang": "kn",
+      "tts": [
+        "low ಖಾಲಿ list ಆಗಿ ಶುರು, ಇನ್ನೂ ಒಳಗೆ ಏನೂ ಇಲ್ಲ.",
+        "append Cetirizine ಅನ್ನು ಕೊನೆಗೆ ಸೇರಿಸುತ್ತೆ. ಈಗ list ನಲ್ಲಿ ಒಂದು item, index zero ನಲ್ಲಿ.",
+        "append ಅದರ ನಂತರ ORS ಸೇರಿಸುತ್ತೆ, index ಒಂದರಲ್ಲಿ.",
+        "pop ಕೊನೆಯ item ಅನ್ನು list ಇಂದ ತೆಗೆದು ಹಿಂದೆ ಕೊಡುತ್ತೆ, ಹಾಗಾಗಿ print ORS ತೋರಿಸುತ್ತೆ.",
+        "List ನಲ್ಲಿ Cetirizine ಮಾತ್ರ ಉಳಿದಿದೆ."
+      ],
+      "display": [
+        "low ಖಾಲಿ list ಆಗಿ ಶುರು, ಇನ್ನೂ ಒಳಗೆ ಏನೂ ಇಲ್ಲ.",
+        "append Cetirizine ಅನ್ನು ಕೊನೆಗೆ ಸೇರಿಸುತ್ತೆ. ಈಗ list ನಲ್ಲಿ ಒಂದು item, index zero ನಲ್ಲಿ.",
+        "append ಅದರ ನಂತರ ORS ಸೇರಿಸುತ್ತೆ, index ಒಂದರಲ್ಲಿ.",
+        "pop ಕೊನೆಯ item ಅನ್ನು list ಇಂದ ತೆಗೆದು ಹಿಂದೆ ಕೊಡುತ್ತೆ, ಹಾಗಾಗಿ print ORS ತೋರಿಸುತ್ತೆ.",
+        "List ನಲ್ಲಿ Cetirizine ಮಾತ್ರ ಉಳಿದಿದೆ."
+      ]
+    }
+  ]
+}

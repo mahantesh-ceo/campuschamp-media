@@ -209,8 +209,12 @@
         {
           "id": "3-3",
           "title": "Operations on lists and dictionaries",
-          "available": false,
-          "translations": []
+          "available": true,
+          "translations": [
+            "hi",
+            "hinglish",
+            "kn"
+          ]
         },
         {
           "id": "3-4",
