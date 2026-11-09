@@ -613,6 +613,48 @@ G = {
             "hinglish": "Jab list mein na hone wala index maangein tab aane wali error, jaise 3 items wali list mein [3].",
             "kn": "List ನಲ್ಲಿ ಇಲ್ಲದ index ಕೇಳಿದಾಗ ಬರುವ error, 3 items ಇರುವ list ನಲ್ಲಿ [3] ತರಹ."}),
     ],
+    "3-2": [
+        ("Tuple", {
+            "en": "An ordered collection in round brackets, like (128, 84). It can be read like a list but never changed.",
+            "hi": "Round brackets में क्रम वाला collection, जैसे (128, 84)। इसे list की तरह पढ़ सकते हैं पर कभी बदल नहीं सकते।",
+            "hinglish": "Round brackets mein kram wala collection, jaise (128, 84). Ise list ki tarah padh sakte hain par kabhi badal nahi sakte.",
+            "kn": "Round brackets ಒಳಗಿನ ಕ್ರಮದ collection, (128, 84) ತರಹ. List ತರಹ ಓದಬಹುದು ಆದರೆ ಯಾವತ್ತೂ ಬದಲಾಯಿಸಲು ಆಗಲ್ಲ."}),
+        ("Immutable", {
+            "en": "Cannot be changed after it is made. Tuples and strings are immutable.",
+            "hi": "बनने के बाद बदला नहीं जा सकता। Tuples और strings immutable हैं।",
+            "hinglish": "Banne ke baad badla nahi ja sakta. Tuples aur strings immutable hain.",
+            "kn": "ಮಾಡಿದ ನಂತರ ಬದಲಾಯಿಸಲು ಆಗಲ್ಲ. Tuples ಮತ್ತು strings immutable."}),
+        ("Unpacking", {
+            "en": "Splitting a tuple into separate variables in one line: name, strength = (\"Amoxicillin\", 500).",
+            "hi": "एक line में tuple को अलग variables में बाँटना: name, strength = (\"Amoxicillin\", 500)।",
+            "hinglish": "Ek line mein tuple ko alag variables mein baantna: name, strength = (\"Amoxicillin\", 500).",
+            "kn": "ಒಂದೇ line ನಲ್ಲಿ tuple ಅನ್ನು ಬೇರೆ variables ಆಗಿ ಒಡೆಯುವುದು: name, strength = (\"Amoxicillin\", 500)."}),
+        ("Dictionary", {
+            "en": "A collection of key: value pairs in curly braces. You find a value by its key, not by position.",
+            "hi": "Curly braces में key: value pairs का collection। Value को position से नहीं, उसकी key से ढूँढते हैं।",
+            "hinglish": "Curly braces mein key: value pairs ka collection. Value ko position se nahi, uski key se dhoondhte hain.",
+            "kn": "Curly braces ಒಳಗಿನ key: value pairs ನ collection. Value ಅನ್ನು position ಇಂದ ಅಲ್ಲ, ಅದರ key ಇಂದ ಹುಡುಕುತ್ತೀರಿ."}),
+        ("Key", {
+            "en": "The name you look a value up by, like \"Ibuprofen\" in a dose dictionary. Each key appears only once.",
+            "hi": "वह नाम जिससे value ढूँढते हैं, जैसे dose dictionary में \"Ibuprofen\"। हर key सिर्फ़ एक बार आती है।",
+            "hinglish": "Woh naam jisse value dhoondhte hain, jaise dose dictionary mein \"Ibuprofen\". Har key sirf ek baar aati hai.",
+            "kn": "Value ಹುಡುಕುವ ಹೆಸರು, dose dictionary ನಲ್ಲಿ \"Ibuprofen\" ತರಹ. ಪ್ರತಿ key ಒಂದೇ ಸಲ ಬರುತ್ತೆ."}),
+        ("Value", {
+            "en": "What is stored under a key: the 400 in \"Ibuprofen\": 400. It can be any type.",
+            "hi": "Key के नीचे जो रखा है: \"Ibuprofen\": 400 में 400। यह किसी भी type का हो सकता है।",
+            "hinglish": "Key ke neeche jo rakha hai: \"Ibuprofen\": 400 mein 400. Yeh kisi bhi type ka ho sakta hai.",
+            "kn": "Key ಕೆಳಗೆ ಇಟ್ಟಿರುವುದು: \"Ibuprofen\": 400 ನಲ್ಲಿ 400. ಇದು ಯಾವ type ಆದರೂ ಆಗಬಹುದು."}),
+        ("KeyError", {
+            "en": "The error when you look up a key the dictionary doesn't have.",
+            "hi": "जब dictionary में न होने वाली key ढूँढें तब आने वाली error।",
+            "hinglish": "Jab dictionary mein na hone wali key dhoondhein tab aane wali error.",
+            "kn": "Dictionary ನಲ್ಲಿ ಇಲ್ಲದ key ಹುಡುಕಿದಾಗ ಬರುವ error."}),
+        ("get()", {
+            "en": "Looks up a key safely: d.get(key, default) returns the default instead of a KeyError.",
+            "hi": "Key को सुरक्षित ढूँढता है: d.get(key, default) KeyError की जगह default देता है।",
+            "hinglish": "Key ko surakshit dhoondhta hai: d.get(key, default) KeyError ki jagah default deta hai.",
+            "kn": "Key ಅನ್ನು ಸುರಕ್ಷಿತವಾಗಿ ಹುಡುಕುತ್ತೆ: d.get(key, default) KeyError ಬದಲು default ಕೊಡುತ್ತೆ."}),
+    ],
 }
 
 

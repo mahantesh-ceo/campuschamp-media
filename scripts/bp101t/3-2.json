@@ -1,0 +1,153 @@
+{
+  "course": "bp101t",
+  "lesson": "3-2",
+  "voices": {
+    "en": "Ritu",
+    "hi": "Ritu",
+    "kn": "Chaitra"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program is a tiny formulary. It finds a dose by the drug's name, and then adds a new drug.",
+        "The comment says the doses are in milligrams and are looked up by drug name.",
+        "Curly braces make a dictionary. Each drug name is a key, and its dose is the value. There are three pairs.",
+        "drug holds the name we want to look up: Ibuprofen.",
+        "doses of drug finds the key Ibuprofen and gives its value, four hundred. No positions to count.",
+        "Amoxicillin isn't a key yet, so this line adds a new pair: Amoxicillin, five hundred.",
+        "len counts the pairs. There are now four drugs.",
+        "in checks the keys. Aspirin isn't one of them, so it prints False."
+      ],
+      "display": [
+        "This program is a tiny formulary. It finds a dose by the drug's name, and then adds a new drug.",
+        "The comment says the doses are in milligrams and are looked up by drug name.",
+        "Curly braces make a dictionary. Each drug name is a key, and its dose is the value. There are three pairs.",
+        "drug holds the name we want to look up: Ibuprofen.",
+        "doses of drug finds the key Ibuprofen and gives its value, four hundred. No positions to count.",
+        "Amoxicillin isn't a key yet, so this line adds a new pair: Amoxicillin, five hundred.",
+        "len counts the pairs. There are now four drugs.",
+        "in checks the keys. Aspirin isn't one of them, so it prints False."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह program एक छोटी formulary है। यह drug के नाम से dose ढूँढता है, और फिर एक नई drug जोड़ता है।",
+        "Comment बताता है कि doses milligrams में हैं और drug के नाम से ढूँढे जाते हैं।",
+        "Curly braces dictionary बनाते हैं। हर drug का नाम key है, और उसका dose value है। तीन pairs हैं।",
+        "drug में वह नाम है जो हमें ढूँढना है: Ibuprofen।",
+        "doses of drug, key Ibuprofen ढूँढता है और उसकी value देता है, चार सौ। कोई position नहीं गिननी।",
+        "Amoxicillin अभी key नहीं है, इसलिए यह line नया pair जोड़ती है: Amoxicillin, पाँच सौ।",
+        "len pairs गिनता है। अब चार drugs हैं।",
+        "in keys check करता है। Aspirin उनमें नहीं है, इसलिए False print होता है।"
+      ],
+      "display": [
+        "यह program एक छोटी formulary है। यह drug के नाम से dose ढूँढता है, और फिर एक नई drug जोड़ता है।",
+        "Comment बताता है कि doses milligrams में हैं और drug के नाम से ढूँढे जाते हैं।",
+        "Curly braces dictionary बनाते हैं। हर drug का नाम key है, और उसका dose value है। तीन pairs हैं।",
+        "drug में वह नाम है जो हमें ढूँढना है: Ibuprofen।",
+        "doses of drug, key Ibuprofen ढूँढता है और उसकी value देता है, चार सौ। कोई position नहीं गिननी।",
+        "Amoxicillin अभी key नहीं है, इसलिए यह line नया pair जोड़ती है: Amoxicillin, पाँच सौ।",
+        "len pairs गिनता है। अब चार drugs हैं।",
+        "in keys check करता है। Aspirin उनमें नहीं है, इसलिए False print होता है।"
+      ],
+      "displayHinglish": [
+        "Yeh program ek chhoti formulary hai. Yeh drug ke naam se dose dhoondhta hai, aur phir ek nayi drug jodta hai.",
+        "Comment batata hai ki doses milligrams mein hain aur drug ke naam se dhoondhe jaate hain.",
+        "Curly braces dictionary banaate hain. Har drug ka naam key hai, aur uska dose value hai. Teen pairs hain.",
+        "drug mein woh naam hai jo humein dhoondhna hai: Ibuprofen.",
+        "doses of drug, key Ibuprofen dhoondhta hai aur uski value deta hai, chaar sau. Koi position nahi ginni.",
+        "Amoxicillin abhi key nahi hai, isliye yeh line naya pair jodti hai: Amoxicillin, paanch sau.",
+        "len pairs ginta hai. Ab chaar drugs hain.",
+        "in keys check karta hai. Aspirin unmein nahi hai, isliye False print hota hai."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ program ಒಂದು ಸಣ್ಣ formulary. ಇದು drug ಹೆಸರಿನಿಂದ dose ಹುಡುಕುತ್ತೆ, ನಂತರ ಹೊಸ drug ಸೇರಿಸುತ್ತೆ.",
+        "Comment doses milligrams ನಲ್ಲಿವೆ, drug ಹೆಸರಿನಿಂದ ಹುಡುಕುತ್ತಾರೆ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "Curly braces dictionary ಮಾಡುತ್ತವೆ. ಪ್ರತಿ drug ಹೆಸರು key, ಅದರ dose value. ಮೂರು pairs ಇವೆ.",
+        "drug ನಲ್ಲಿ ನಾವು ಹುಡುಕಬೇಕಾದ ಹೆಸರು ಇದೆ: Ibuprofen.",
+        "doses of drug, key Ibuprofen ಹುಡುಕಿ ಅದರ value ಕೊಡುತ್ತೆ, ನಾನೂರು. ಯಾವ position ಎಣಿಸುವ ಅಗತ್ಯ ಇಲ್ಲ.",
+        "Amoxicillin ಇನ್ನೂ key ಅಲ್ಲ, ಹಾಗಾಗಿ ಈ line ಹೊಸ pair ಸೇರಿಸುತ್ತೆ: Amoxicillin, ಐನೂರು.",
+        "len pairs ಎಣಿಸುತ್ತೆ. ಈಗ ನಾಲ್ಕು drugs.",
+        "in keys check ಮಾಡುತ್ತೆ. Aspirin ಅದರಲ್ಲಿ ಇಲ್ಲ, ಹಾಗಾಗಿ False print ಆಗುತ್ತೆ."
+      ],
+      "display": [
+        "ಈ program ಒಂದು ಸಣ್ಣ formulary. ಇದು drug ಹೆಸರಿನಿಂದ dose ಹುಡುಕುತ್ತೆ, ನಂತರ ಹೊಸ drug ಸೇರಿಸುತ್ತೆ.",
+        "Comment doses milligrams ನಲ್ಲಿವೆ, drug ಹೆಸರಿನಿಂದ ಹುಡುಕುತ್ತಾರೆ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "Curly braces dictionary ಮಾಡುತ್ತವೆ. ಪ್ರತಿ drug ಹೆಸರು key, ಅದರ dose value. ಮೂರು pairs ಇವೆ.",
+        "drug ನಲ್ಲಿ ನಾವು ಹುಡುಕಬೇಕಾದ ಹೆಸರು ಇದೆ: Ibuprofen.",
+        "doses of drug, key Ibuprofen ಹುಡುಕಿ ಅದರ value ಕೊಡುತ್ತೆ, ನಾನೂರು. ಯಾವ position ಎಣಿಸುವ ಅಗತ್ಯ ಇಲ್ಲ.",
+        "Amoxicillin ಇನ್ನೂ key ಅಲ್ಲ, ಹಾಗಾಗಿ ಈ line ಹೊಸ pair ಸೇರಿಸುತ್ತೆ: Amoxicillin, ಐನೂರು.",
+        "len pairs ಎಣಿಸುತ್ತೆ. ಈಗ ನಾಲ್ಕು drugs.",
+        "in keys check ಮಾಡುತ್ತೆ. Aspirin ಅದರಲ್ಲಿ ಇಲ್ಲ, ಹಾಗಾಗಿ False print ಆಗುತ್ತೆ."
+      ]
+    },
+    {
+      "id": "anim-lookup",
+      "prefix": "anim-lookup-",
+      "lang": "en",
+      "tts": [
+        "A dictionary stores pairs. Each drug name is a key, and its dose is the value.",
+        "Python goes straight to the key Ibuprofen and gives back its value, four hundred. There are no positions to count.",
+        "Assigning to a new key adds a new pair: Amoxicillin, five hundred.",
+        "in checks the keys. Aspirin isn't one of them, so the answer is False."
+      ],
+      "display": [
+        "A dictionary stores pairs. Each drug name is a key, and its dose is the value.",
+        "Python goes straight to the key Ibuprofen and gives back its value, four hundred. There are no positions to count.",
+        "Assigning to a new key adds a new pair: Amoxicillin, five hundred.",
+        "in checks the keys. Aspirin isn't one of them, so the answer is False."
+      ]
+    },
+    {
+      "id": "anim-lookup",
+      "prefix": "anim-lookup-",
+      "lang": "hi",
+      "tts": [
+        "Dictionary pairs रखती है। हर drug का नाम key है, और उसका dose value।",
+        "पाइथन सीधे key Ibuprofen पर जाता है और उसकी value लौटाता है, चार सौ। कोई position नहीं गिननी पड़ती।",
+        "नई key को value देने से नया pair जुड़ता है: Amoxicillin, पाँच सौ।",
+        "in keys check करता है। Aspirin उनमें नहीं है, इसलिए जवाब False है।"
+      ],
+      "display": [
+        "Dictionary pairs रखती है। हर drug का नाम key है, और उसका dose value।",
+        "Python सीधे key Ibuprofen पर जाता है और उसकी value लौटाता है, चार सौ। कोई position नहीं गिननी पड़ती।",
+        "नई key को value देने से नया pair जुड़ता है: Amoxicillin, पाँच सौ।",
+        "in keys check करता है। Aspirin उनमें नहीं है, इसलिए जवाब False है।"
+      ],
+      "displayHinglish": [
+        "Dictionary pairs rakhti hai. Har drug ka naam key hai, aur uska dose value.",
+        "Python seedhe key Ibuprofen par jaata hai aur uski value lautaata hai, chaar sau. Koi position nahi ginni padti.",
+        "Nayi key ko value dene se naya pair judta hai: Amoxicillin, paanch sau.",
+        "in keys check karta hai. Aspirin unmein nahi hai, isliye jawaab False hai."
+      ]
+    },
+    {
+      "id": "anim-lookup",
+      "prefix": "anim-lookup-",
+      "lang": "kn",
+      "tts": [
+        "Dictionary pairs ಇಡುತ್ತೆ. ಪ್ರತಿ drug ಹೆಸರು key, ಅದರ dose value.",
+        "ಪೈಥಾನ್ ನೇರವಾಗಿ key Ibuprofen ಗೆ ಹೋಗಿ ಅದರ value ಕೊಡುತ್ತೆ, ನಾನೂರು. ಯಾವ position ಎಣಿಸಬೇಕಿಲ್ಲ.",
+        "ಹೊಸ key ಗೆ value ಕೊಟ್ಟರೆ ಹೊಸ pair ಸೇರುತ್ತೆ: Amoxicillin, ಐನೂರು.",
+        "in keys check ಮಾಡುತ್ತೆ. Aspirin ಅದರಲ್ಲಿ ಇಲ್ಲ, ಹಾಗಾಗಿ ಉತ್ತರ False."
+      ],
+      "display": [
+        "Dictionary pairs ಇಡುತ್ತೆ. ಪ್ರತಿ drug ಹೆಸರು key, ಅದರ dose value.",
+        "Python ನೇರವಾಗಿ key Ibuprofen ಗೆ ಹೋಗಿ ಅದರ value ಕೊಡುತ್ತೆ, ನಾನೂರು. ಯಾವ position ಎಣಿಸಬೇಕಿಲ್ಲ.",
+        "ಹೊಸ key ಗೆ value ಕೊಟ್ಟರೆ ಹೊಸ pair ಸೇರುತ್ತೆ: Amoxicillin, ಐನೂರು.",
+        "in keys check ಮಾಡುತ್ತೆ. Aspirin ಅದರಲ್ಲಿ ಇಲ್ಲ, ಹಾಗಾಗಿ ಉತ್ತರ False."
+      ]
+    }
+  ]
+}

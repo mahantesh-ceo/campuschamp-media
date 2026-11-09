@@ -1,0 +1,340 @@
+{
+  "hook": {
+    "title": "नाम से ढूँढो, number से नहीं",
+    "md": "Pharmacist यह नहीं कहता कि \"formulary की तीसरी drug दो\"। वह पूछता है \"**Ibuprofen** का adult dose क्या है?\" Patient की file भी position से नहीं पढ़ी जाती: आप **age**, **blood group**, **allergies** ढूँढते हैं।\n\nक्रम वाली readings के लिए lists बढ़िया हैं। पर जो जानकारी **नाम से** ढूँढी जाती है, उसके लिए Python के पास **dictionary** है। और छोटे records के लिए जो कभी नहीं बदलने चाहिए, जैसे 128 over 84 का blood pressure, उसके पास **tuple** है।"
+  },
+  "learn": [
+    "**Tuple** एक fixed record कैसे रखता है, और उसे क्यों नहीं बदल सकते",
+    "Tuple को अलग variables में **unpack** करना",
+    "**Dictionary** **key: value** pairs कैसे रखती है, जो key से ढूँढे जाते हैं",
+    "Values जोड़ना, बदलना, **get()** से सुरक्षित ढूँढना, और dictionary पर loop चलाना"
+  ],
+  "explanation": [
+    {
+      "heading": "Tuples: records जो नहीं बदलते",
+      "md": "**Tuple** list जैसा है, पर **round brackets** से लिखा जाता है, और बनने के बाद **बदला नहीं जा सकता**:\n\n```python\nbp = (128, 84)\nprint(bp)\nprint(\"Systolic:\", bp[0])\nprint(\"Diastolic:\", bp[1])\nprint(len(bp))\n```\n\nयह print करता है:\n\n```\n(128, 84)\nSystolic: 128\nDiastolic: 84\n2\n```\n\nIndexing, slicing और `len()` बिल्कुल lists की तरह काम करते हैं। पर `bp[0] = 130` error देता है, क्योंकि tuples **immutable** हैं। यह खूबी है: दर्ज की गई reading, या drug का (name, strength) pair, गलती से नहीं बदलना चाहिए।",
+      "callout": {
+        "title": "Tuple",
+        "md": "Round brackets में क्रम वाला collection, जैसे (128, 84)। इसे list की तरह पढ़ सकते हैं पर कभी बदल नहीं सकते।"
+      }
+    },
+    {
+      "heading": "Tuple को unpack करना",
+      "md": "एक line में tuple को अलग-अलग variables में बाँट सकते हैं। इसे **unpacking** कहते हैं:\n\n```python\ndrug = (\"Amoxicillin\", 500, \"mg\")\nname, strength, unit = drug\nprint(name)\nprint(strength, unit)\n```\n\nयह print करता है:\n\n```\nAmoxicillin\n500 mg\n```\n\nबाईं ओर variables की संख्या tuple के items की संख्या के बराबर होनी चाहिए। एक बात और: एक item वाले tuple को comma चाहिए, `(\"Aspirin\",)`, क्योंकि `(\"Aspirin\")` brackets में सिर्फ़ एक string है।"
+    },
+    {
+      "heading": "Dictionaries: key और value",
+      "md": "**Dictionary** **curly braces** के अंदर **key: value** के pairs रखती है। Value को उसकी key से square brackets में ढूँढते हैं:\n\n```python\npatient = {\"name\": \"Ravi\", \"age\": 54, \"blood_group\": \"B+\"}\nprint(patient[\"name\"])\nprint(patient[\"age\"])\nprint(len(patient))\n```\n\nयह print करता है:\n\n```\nRavi\n54\n3\n```\n\nKeys आमतौर पर strings होती हैं, जैसे `\"name\"` या किसी drug का नाम। Values कुछ भी हो सकती हैं: numbers, strings, यहाँ तक कि lists भी। `len()` pairs गिनता है।",
+      "callout": {
+        "title": "Dictionary",
+        "md": "Curly braces में key: value pairs का collection, जैसे {\"name\": \"Ravi\", \"age\": 54}। Value को position से नहीं, key से ढूँढते हैं।"
+      }
+    },
+    {
+      "heading": "बदलना और जोड़ना",
+      "md": "Dictionaries mutable हैं। पहले से मौजूद key को value देने पर वह **update** होती है; नई key को value देने पर नया pair **जुड़ता** है:\n\n```python\npatient = {\"name\": \"Ravi\", \"age\": 54, \"blood_group\": \"B+\"}\npatient[\"age\"] = 55\npatient[\"allergy\"] = \"Penicillin\"\nprint(patient)\n```\n\nयह print करता है:\n\n```\n{'name': 'Ravi', 'age': 55, 'blood_group': 'B+', 'allergy': 'Penicillin'}\n```\n\nDictionary में हर key सिर्फ़ एक बार आती है, इसलिए age बदली गई, दोहराई नहीं गई।"
+    },
+    {
+      "heading": "सुरक्षित lookup और loop",
+      "md": "जो key नहीं है उसे माँगने पर `KeyError` आता है। `get()` इससे बचाता है: वह उसकी जगह default value देता है। `in` keys check करता है, और `.items()` loop के लिए हर key और value देता है:\n\n```python\nstock = {\"Paracetamol\": 120, \"Cetirizine\": 45}\nprint(stock.get(\"Aspirin\", 0))\nprint(\"Cetirizine\" in stock)\nfor drug, qty in stock.items():\n    print(drug, qty)\n```\n\nयह print करता है:\n\n```\n0\nTrue\nParacetamol 120\nCetirizine 45\n```\n\nAspirin stock में नहीं है, इसलिए `get` ने default, 0, लौटाया।",
+      "callout": {
+        "title": "List, tuple या dictionary?",
+        "md": "क्रम वाली readings जो बढ़ सकती हैं, उनके लिए list। Fixed record के लिए tuple। जब नाम से ढूँढना हो, तब dictionary।"
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "यह program adult doses एक dictionary में रखता है, drug के नाम से एक dose ढूँढता है, फिर एक नई drug जोड़ता है।",
+    "keyTerms": [
+      {
+        "meaning": "key: value pairs वाली dictionary।"
+      },
+      {
+        "meaning": "drug में रखी key की value ढूँढो।"
+      },
+      {
+        "meaning": "नया pair जोड़ो (key पहले से हो तो update करो)।"
+      },
+      {
+        "meaning": "True, अगर Aspirin keys में से एक है।"
+      }
+    ],
+    "steps": [
+      {
+        "say": "यह program एक छोटी formulary है। यह drug के नाम से dose ढूँढता है, और फिर एक नई drug जोड़ता है।"
+      },
+      {
+        "say": "Comment बताता है कि doses milligrams में हैं और drug के नाम से ढूँढे जाते हैं।"
+      },
+      {
+        "say": "Curly braces dictionary बनाते हैं। हर drug का नाम key है, और उसका dose value है। तीन pairs हैं।"
+      },
+      {
+        "say": "drug में वह नाम है जो हमें ढूँढना है: Ibuprofen।"
+      },
+      {
+        "say": "doses of drug, key Ibuprofen ढूँढता है और उसकी value देता है, चार सौ। कोई position नहीं गिननी।"
+      },
+      {
+        "say": "Amoxicillin अभी key नहीं है, इसलिए यह line नया pair जोड़ती है: Amoxicillin, पाँच सौ।"
+      },
+      {
+        "say": "len pairs गिनता है। अब चार drugs हैं।"
+      },
+      {
+        "say": "in keys check करता है। Aspirin उनमें नहीं है, इसलिए False print होता है।"
+      }
+    ]
+  },
+  "errors": {
+    "intro": "एक error न होने वाली key से आती है, दूसरी tuple बदलने की कोशिश से।",
+    "examples": [
+      {
+        "title": "ऐसी key ढूँढना जो है ही नहीं",
+        "md": "`\"Aspirin\"` नाम की कोई key नहीं है। पहले `\"Aspirin\" in doses` से check कीजिए, या error की जगह default पाने के लिए `doses.get(\"Aspirin\", 0)` use कीजिए। Keys case-sensitive भी हैं: `\"paracetamol\"` और `\"Paracetamol\"` एक नहीं।"
+      },
+      {
+        "title": "Tuple का item बदलना",
+        "md": "Tuples बदले नहीं जा सकते। उसकी जगह नया tuple बनाइए, `bp = (130, 84)`, या अगर values सच में बदलनी हैं तो list use कीजिए।"
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Dictionary पर index लगाना: `patient[0]`",
+      "see": "KeyError: 0",
+      "fix": "Dictionaries key से ढूँढी जाती हैं: `patient[\"name\"]`।"
+    },
+    {
+      "mistake": "एक item का tuple बिना comma के लिखना: `(\"Aspirin\")`",
+      "see": "कोई error नहीं, पर यह tuple नहीं, string है",
+      "fix": "Comma लगाइए: `(\"Aspirin\",)`।"
+    },
+    {
+      "mistake": "Key में अलग case लिखना: `doses[\"paracetamol\"]`",
+      "see": "KeyError: 'paracetamol'",
+      "fix": "Keys बिल्कुल मिलनी चाहिए, capital letters समेत।"
+    },
+    {
+      "mistake": "गलत संख्या के variables में unpack करना: `name, strength = (\"Amoxicillin\", 500, \"mg\")`",
+      "see": "ValueError: too many values to unpack",
+      "fix": "हर item के लिए एक variable: `name, strength, unit = ...`।"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Tuple पढ़िए",
+      "md": "एक blood pressure reading tuple में रखी है। **Indexing** से दोनों values print कीजिए ताकि output बिल्कुल यह हो:",
+      "hints": [
+        "पहली value bp[0] है, दूसरी bp[1]।",
+        "print(\"Systolic:\", bp[0])"
+      ]
+    },
+    {
+      "title": "Patient की जानकारी ढूँढिए",
+      "md": "Dictionary **patient** से patient का नाम और वज़न print कीजिए, ताकि output बिल्कुल यह हो:",
+      "hints": [
+        "patient[\"name\"] से \"Meena\" मिलता है।",
+        "print(patient[\"name\"], \"weighs\", patient[\"weight\"], \"kg\")"
+      ]
+    },
+    {
+      "title": "Stock update कीजिए",
+      "md": "Cetirizine की पाँच strips बिकीं, इसलिए उसका stock अब **40** है। Azithromycin भी आई: **30** strips। Dictionary में इन्हें update और add कीजिए, फिर उसे print कीजिए। Output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "stock[\"Cetirizine\"] = 40 मौजूदा key को update करता है।",
+        "stock[\"Azithromycin\"] = 30 नया pair जोड़ता है।"
+      ]
+    },
+    {
+      "title": "Bug ढूँढिए",
+      "md": "यह program patient की allergy check करता है, पर Anil की कोई allergy दर्ज नहीं, और program KeyError के साथ crash हो जाता है। **get()** से इसे ठीक कीजिए ताकि output बिल्कुल यह हो:",
+      "hints": [
+        "get() key और एक default value लेता है।",
+        "print(allergies.get(\"Anil\", \"None recorded\"))"
+      ],
+      "solutionNote": "allergies[\"Anil\"] fail होता है क्योंकि वह key है ही नहीं। get() KeyError देने की जगह default value लौटाता है।"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "कौन-से brackets dictionary बनाते हैं?",
+      "why": "Dictionaries key: value pairs के साथ curly braces use करती हैं।"
+    },
+    {
+      "q": "t = (5, 10)\nt[0] = 7\n\nक्या होता है?",
+      "why": "Tuples immutable हैं, इसलिए item assignment से TypeError आता है।"
+    },
+    {
+      "q": "d = {\"a\": 1, \"b\": 2}\nprint(d[\"b\"])\n\nयह क्या print करता है?",
+      "why": "Key \"b\" की value 2 है।"
+    },
+    {
+      "q": "जब \"x\" key न हो तो d[\"x\"] क्या देता है?",
+      "why": "न होने वाली key KeyError देती है; get() इससे बचाता है।"
+    },
+    {
+      "q": "stock = {\"Aspirin\": 20}\nprint(stock.get(\"Insulin\", 0))\n\nयह क्या print करता है?",
+      "why": "Insulin key नहीं है, इसलिए get() default, 0, लौटाता है।"
+    },
+    {
+      "q": "Patient की details field के नाम से (name, age, blood group) रखने के लिए सबसे अच्छा क्या है?",
+      "why": "Dictionary से हर detail उसके नाम से ढूँढी जा सकती है।"
+    }
+  ],
+  "exam": {
+    "note": "Practice के लिए important questions। University के असली questions अलग हो सकते हैं।"
+  },
+  "mindmap": {
+    "label": "Lesson 3.2 · Tuples और dictionaries",
+    "children": [
+      {
+        "label": "Tuple",
+        "children": [
+          {
+            "label": "(a, b) round brackets"
+          },
+          {
+            "label": "Immutable"
+          },
+          {
+            "label": "Fixed records"
+          }
+        ]
+      },
+      {
+        "label": "Unpack",
+        "children": [
+          {
+            "label": "a, b = t"
+          },
+          {
+            "label": "संख्या मिलनी चाहिए"
+          },
+          {
+            "label": "(x,) एक item"
+          }
+        ]
+      },
+      {
+        "label": "Dictionary",
+        "children": [
+          {
+            "label": "{key: value}"
+          },
+          {
+            "label": "d[key]"
+          },
+          {
+            "label": "Keys unique"
+          }
+        ]
+      },
+      {
+        "label": "बदलना",
+        "children": [
+          {
+            "label": "d[key] = new"
+          },
+          {
+            "label": "नई key जुड़ती है"
+          },
+          {
+            "label": "Tuples नहीं"
+          }
+        ]
+      },
+      {
+        "label": "सुरक्षित use",
+        "children": [
+          {
+            "label": "d.get(key, default)"
+          },
+          {
+            "label": "key in d"
+          },
+          {
+            "label": "for k, v in d.items()"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "KeyError: key नहीं"
+          },
+          {
+            "label": "TypeError: tuple assignment"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Tuple** round brackets में लिखा जाता है, `(128, 84)`; उसे list की तरह पढ़ते हैं पर **बदल नहीं सकते**।",
+    "**Unpacking** tuple को variables में बाँटता है: `name, strength = (\"Amoxicillin\", 500)`।",
+    "**Dictionary** curly braces में **key: value** pairs रखती है और key से ढूँढी जाती है: `doses[\"Ibuprofen\"]`।",
+    "`d[key] = value` मौजूदा key को update करता है या नई जोड़ता है; keys unique और case-sensitive हैं।",
+    "न होने वाली key **KeyError** देती है; `d.get(key, default)` और `key in d` इससे बचाते हैं, और `d.items()` pairs पर loop चलाता है।"
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Dictionary pairs रखती है। हर drug का नाम key है, और उसका dose value।"
+        },
+        {
+          "say": "Python सीधे key Ibuprofen पर जाता है और उसकी value लौटाता है, चार सौ। कोई position नहीं गिननी पड़ती।"
+        },
+        {
+          "say": "नई key को value देने से नया pair जुड़ता है: Amoxicillin, पाँच सौ।"
+        },
+        {
+          "say": "in keys check करता है। Aspirin उनमें नहीं है, इसलिए जवाब False है।"
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Round brackets में क्रम वाला collection, जैसे (128, 84)। इसे list की तरह पढ़ सकते हैं पर कभी बदल नहीं सकते।"
+    },
+    {
+      "meaning": "बनने के बाद बदला नहीं जा सकता। Tuples और strings immutable हैं।"
+    },
+    {
+      "meaning": "एक line में tuple को अलग variables में बाँटना: name, strength = (\"Amoxicillin\", 500)।"
+    },
+    {
+      "meaning": "Curly braces में key: value pairs का collection। Value को position से नहीं, उसकी key से ढूँढते हैं।"
+    },
+    {
+      "meaning": "वह नाम जिससे value ढूँढते हैं, जैसे dose dictionary में \"Ibuprofen\"। हर key सिर्फ़ एक बार आती है।"
+    },
+    {
+      "meaning": "Key के नीचे जो रखा है: \"Ibuprofen\": 400 में 400। यह किसी भी type का हो सकता है।"
+    },
+    {
+      "meaning": "जब dictionary में न होने वाली key ढूँढें तब आने वाली error।"
+    },
+    {
+      "meaning": "Key को सुरक्षित ढूँढता है: d.get(key, default) KeyError की जगह default देता है।"
+    }
+  ]
+}

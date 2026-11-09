@@ -199,8 +199,12 @@
         {
           "id": "3-2",
           "title": "Tuples and dictionaries",
-          "available": false,
-          "translations": []
+          "available": true,
+          "translations": [
+            "hi",
+            "hinglish",
+            "kn"
+          ]
         },
         {
           "id": "3-3",

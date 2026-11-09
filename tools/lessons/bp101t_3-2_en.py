@@ -1,0 +1,237 @@
+"""Lesson 3.2 (English). Run to write content/bp101t/3-2/en.json."""
+import json
+import os
+import subprocess
+import sys
+
+C_TUPLE = "```python\nbp = (128, 84)\nprint(bp)\nprint(\"Systolic:\", bp[0])\nprint(\"Diastolic:\", bp[1])\nprint(len(bp))\n```"
+O_TUPLE = "```\n(128, 84)\nSystolic: 128\nDiastolic: 84\n2\n```"
+C_UNPACK = "```python\ndrug = (\"Amoxicillin\", 500, \"mg\")\nname, strength, unit = drug\nprint(name)\nprint(strength, unit)\n```"
+O_UNPACK = "```\nAmoxicillin\n500 mg\n```"
+C_DICT = "```python\npatient = {\"name\": \"Ravi\", \"age\": 54, \"blood_group\": \"B+\"}\nprint(patient[\"name\"])\nprint(patient[\"age\"])\nprint(len(patient))\n```"
+O_DICT = "```\nRavi\n54\n3\n```"
+C_CHANGE = "```python\npatient = {\"name\": \"Ravi\", \"age\": 54, \"blood_group\": \"B+\"}\npatient[\"age\"] = 55\npatient[\"allergy\"] = \"Penicillin\"\nprint(patient)\n```"
+O_CHANGE = "```\n{'name': 'Ravi', 'age': 55, 'blood_group': 'B+', 'allergy': 'Penicillin'}\n```"
+C_GET = "```python\nstock = {\"Paracetamol\": 120, \"Cetirizine\": 45}\nprint(stock.get(\"Aspirin\", 0))\nprint(\"Cetirizine\" in stock)\nfor drug, qty in stock.items():\n    print(drug, qty)\n```"
+O_GET = "```\n0\nTrue\nParacetamol 120\nCetirizine 45\n```"
+
+L = {
+    "id": "3-2",
+    "course": "bp101t",
+    "unit": "Unit III",
+    "unitTitle": "Data Structures & File Handling",
+    "number": "3.2",
+    "title": "Tuples and dictionaries",
+    "minutes": 20,
+    "free": False,
+    "audioLanguages": ["en", "hi", "kn"],
+    "hook": {
+        "title": "Look it up by name, not by number",
+        "md": "A pharmacist doesn't say \"give me the third drug in the formulary\". They say \"what's the adult dose of **Ibuprofen**?\" A patient file isn't read by position either: you look for the **age**, the **blood group**, the **allergies**.\n\nLists are perfect for readings in order. But for information you look up **by name**, Python has the **dictionary**. And for small records that must never change, like a blood pressure reading of 128 over 84, it has the **tuple**.",
+    },
+    "learn": [
+        "How a **tuple** stores a fixed record, and why it can't be changed",
+        "How to **unpack** a tuple into separate variables",
+        "How a **dictionary** stores **key: value** pairs, looked up by key",
+        "How to add, update and safely look up values with **get()**, and loop over a dictionary",
+    ],
+    "explanation": [
+        {
+            "heading": "Tuples: records that don't change",
+            "md": "A **tuple** is like a list, but written with **round brackets**, and once made it **cannot be changed**:\n\n" + C_TUPLE + "\n\nThis prints:\n\n" + O_TUPLE + "\n\nIndexing, slicing and `len()` work exactly as with lists. But `bp[0] = 130` gives an error, because tuples are **immutable**. That's a feature: a recorded reading, or a drug's (name, strength) pair, shouldn't change by accident.",
+            "callout": {"type": "definition", "title": "Tuple", "md": "An ordered collection in round brackets, like (128, 84). It can be read like a list but never changed."},
+        },
+        {
+            "heading": "Unpacking a tuple",
+            "md": "You can take a tuple apart into separate variables in one line. This is called **unpacking**:\n\n" + C_UNPACK + "\n\nThis prints:\n\n" + O_UNPACK + "\n\nThe number of variables on the left must match the number of items in the tuple. One more detail: a tuple with one item needs a comma, `(\"Aspirin\",)`, because `(\"Aspirin\")` is just a string in brackets.",
+        },
+        {
+            "heading": "Dictionaries: key and value",
+            "md": "A **dictionary** stores pairs of **key: value** inside **curly braces**. You look a value up by its key, in square brackets:\n\n" + C_DICT + "\n\nThis prints:\n\n" + O_DICT + "\n\nKeys are usually strings, like `\"name\"` or a drug name. Values can be anything: numbers, strings, even lists. `len()` counts the pairs.",
+            "callout": {"type": "definition", "title": "Dictionary", "md": "A collection of key: value pairs in curly braces, like {\"name\": \"Ravi\", \"age\": 54}. You find a value by its key, not by position."},
+        },
+        {
+            "heading": "Updating and adding",
+            "md": "Dictionaries are mutable. Assigning to a key that exists **updates** it; assigning to a new key **adds** a pair:\n\n" + C_CHANGE + "\n\nThis prints:\n\n" + O_CHANGE + "\n\nEach key appears only once in a dictionary, so the age was replaced, not duplicated.",
+        },
+        {
+            "heading": "Safe lookups and looping",
+            "md": "Asking for a key that isn't there gives a `KeyError`. `get()` avoids that: it returns a default value instead. `in` checks the keys, and `.items()` gives each key and value for a loop:\n\n" + C_GET + "\n\nThis prints:\n\n" + O_GET + "\n\nAspirin isn't in stock, so `get` returned the default, 0.",
+            "callout": {"type": "tip", "title": "List, tuple or dictionary?", "md": "A list for readings in order that may grow. A tuple for a fixed record. A dictionary when you look things up by name."},
+        },
+    ],
+    "walkthrough": {
+        "intro": "This program keeps adult doses in a dictionary, looks one up by drug name, then adds a new drug.",
+        "filename": "formulary.py",
+        "code": "# Adult doses (mg), looked up by drug name\ndoses = {\"Paracetamol\": 500, \"Ibuprofen\": 400, \"Cetirizine\": 10}\ndrug = \"Ibuprofen\"\nprint(drug, doses[drug], \"mg\")\ndoses[\"Amoxicillin\"] = 500\nprint(len(doses), \"drugs\")\nprint(\"Aspirin\" in doses)",
+        "output": "Ibuprofen 400 mg\n4 drugs\nFalse",
+        "steps": [
+            {"line": None, "say": "This program is a tiny formulary. It finds a dose by the drug's name, and then adds a new drug.", "output": None, "audio": "step-01.mp3"},
+            {"line": 1, "say": "The comment says the doses are in milligrams and are looked up by drug name.", "output": None, "audio": "step-02.mp3"},
+            {"line": 2, "say": "Curly braces make a dictionary. Each drug name is a key, and its dose is the value. There are three pairs.", "output": None, "audio": "step-03.mp3", "vars": {"doses": "{3 pairs}"}},
+            {"line": 3, "say": "drug holds the name we want to look up: Ibuprofen.", "output": None, "audio": "step-04.mp3", "vars": {"drug": "'Ibuprofen'"}},
+            {"line": 4, "say": "doses of drug finds the key Ibuprofen and gives its value, four hundred. No positions to count.", "output": "Ibuprofen 400 mg", "audio": "step-05.mp3"},
+            {"line": 5, "say": "Amoxicillin isn't a key yet, so this line adds a new pair: Amoxicillin, five hundred.", "output": None, "audio": "step-06.mp3", "vars": {"doses": "{4 pairs}"}},
+            {"line": 6, "say": "len counts the pairs. There are now four drugs.", "output": "4 drugs", "audio": "step-07.mp3"},
+            {"line": 7, "say": "in checks the keys. Aspirin isn't one of them, so it prints False.", "output": "False", "audio": "step-08.mp3"},
+        ],
+        "keyTerms": [
+            {"term": "{\"Paracetamol\": 500, ...}", "meaning": "A dictionary of key: value pairs."},
+            {"term": "doses[drug]", "meaning": "Look up the value for the key held in drug."},
+            {"term": "doses[\"Amoxicillin\"] = 500", "meaning": "Add a new pair (or update it if the key exists)."},
+            {"term": "\"Aspirin\" in doses", "meaning": "True if Aspirin is one of the keys."},
+        ],
+    },
+    "errors": {
+        "intro": "One error comes from a missing key, the other from trying to change a tuple.",
+        "examples": [
+            {
+                "title": "Looking up a key that isn't there",
+                "code": "doses = {\"Paracetamol\": 500, \"Ibuprofen\": 400}\nprint(doses[\"Aspirin\"])",
+                "output": "KeyError: 'Aspirin'",
+                "errorLine": 2,
+                "md": "There is no key `\"Aspirin\"`. Check with `\"Aspirin\" in doses` first, or use `doses.get(\"Aspirin\", 0)` to get a default instead of an error. Keys are case-sensitive too: `\"paracetamol\"` is not `\"Paracetamol\"`.",
+            },
+            {
+                "title": "Changing an item of a tuple",
+                "code": "bp = (128, 84)\nbp[0] = 130",
+                "output": "TypeError: 'tuple' object does not support item assignment",
+                "errorLine": 2,
+                "md": "Tuples can't be changed. Make a new tuple instead, `bp = (130, 84)`, or use a list if the values really need to change.",
+            },
+        ],
+    },
+    "mistakes": [
+        {"mistake": "Using an index on a dictionary: `patient[0]`", "see": "KeyError: 0", "fix": "Dictionaries are looked up by key: `patient[\"name\"]`."},
+        {"mistake": "Writing a one-item tuple without a comma: `(\"Aspirin\")`", "see": "No error, but it's a string, not a tuple", "fix": "Add a comma: `(\"Aspirin\",)`."},
+        {"mistake": "Using a different case in the key: `doses[\"paracetamol\"]`", "see": "KeyError: 'paracetamol'", "fix": "Keys must match exactly, including capital letters."},
+        {"mistake": "Unpacking into the wrong number of variables: `name, strength = (\"Amoxicillin\", 500, \"mg\")`", "see": "ValueError: too many values to unpack", "fix": "Use one variable for each item: `name, strength, unit = ...`."},
+    ],
+    "tasks": [
+        {
+            "id": "t1",
+            "title": "Read a tuple",
+            "md": "A blood pressure reading is stored as a tuple. Use **indexing** to print the two values so the output is exactly:",
+            "expectedOutput": "Systolic: 142\nDiastolic: 92",
+            "starterCode": "bp = (142, 92)\n\n# Print the systolic and diastolic values\n",
+            "hints": ["The first value is bp[0], the second is bp[1].", "print(\"Systolic:\", bp[0])"],
+            "solution": "bp = (142, 92)\n\n# Print the systolic and diastolic values\nprint(\"Systolic:\", bp[0])\nprint(\"Diastolic:\", bp[1])",
+            "check": {"type": "exactOutput", "mustContain": ["bp[0]", "bp[1]"]},
+        },
+        {
+            "id": "t2",
+            "title": "Look up a patient",
+            "md": "Use the dictionary **patient** to print the patient's name and weight, so the output is exactly:",
+            "expectedOutput": "Meena weighs 58 kg",
+            "starterCode": "patient = {\"name\": \"Meena\", \"age\": 61, \"weight\": 58}\n\n# Print: Meena weighs 58 kg\n",
+            "hints": ["patient[\"name\"] gives \"Meena\".", "print(patient[\"name\"], \"weighs\", patient[\"weight\"], \"kg\")"],
+            "solution": "patient = {\"name\": \"Meena\", \"age\": 61, \"weight\": 58}\n\n# Print: Meena weighs 58 kg\nprint(patient[\"name\"], \"weighs\", patient[\"weight\"], \"kg\")",
+            "check": {"type": "exactOutput", "mustContain": ["patient["]},
+        },
+        {
+            "id": "t3",
+            "title": "Update the stock",
+            "md": "Five strips of Cetirizine were sold, so its stock is now **40**. Azithromycin also arrived: **30** strips. Update and add these in the dictionary, then print it. The output must be exactly:",
+            "expectedOutput": "{'Paracetamol': 120, 'Cetirizine': 40, 'Azithromycin': 30}",
+            "starterCode": "stock = {\"Paracetamol\": 120, \"Cetirizine\": 45}\n\n# Set Cetirizine to 40 and add Azithromycin: 30\n\nprint(stock)",
+            "hints": ["stock[\"Cetirizine\"] = 40 updates an existing key.", "stock[\"Azithromycin\"] = 30 adds a new pair."],
+            "solution": "stock = {\"Paracetamol\": 120, \"Cetirizine\": 45}\n\n# Set Cetirizine to 40 and add Azithromycin: 30\nstock[\"Cetirizine\"] = 40\nstock[\"Azithromycin\"] = 30\nprint(stock)",
+            "check": {"type": "exactOutput", "mustContain": ["stock[", "Azithromycin"]},
+        },
+        {
+            "id": "t4",
+            "title": "Find the bug",
+            "md": "This program checks a patient's allergy, but Anil has no allergy recorded and the program crashes with a KeyError. Fix it with **get()** so the output is exactly:",
+            "expectedOutput": "None recorded",
+            "starterCode": "allergies = {\"Ravi\": \"Penicillin\", \"Meena\": \"Sulfa\"}\nprint(allergies[\"Anil\"])",
+            "hints": ["get() takes the key and a default value.", "print(allergies.get(\"Anil\", \"None recorded\"))"],
+            "solution": "allergies = {\"Ravi\": \"Penicillin\", \"Meena\": \"Sulfa\"}\nprint(allergies.get(\"Anil\", \"None recorded\"))",
+            "solutionNote": "allergies[\"Anil\"] fails because the key doesn't exist. get() returns the default value instead of raising KeyError.",
+            "check": {"type": "exactOutput", "mustContain": [".get("]},
+        },
+    ],
+    "quiz": [
+        {"q": "Which brackets make a dictionary?", "options": ["[ ]", "( )", "{ }", "< >"], "answer": 2, "why": "Dictionaries use curly braces with key: value pairs.", "code": False},
+        {"q": "t = (5, 10)\nt[0] = 7\n\nWhat happens?", "options": ["t becomes (7, 10)", "TypeError: tuples can't be changed", "t becomes (5, 7)", "Nothing happens"], "answer": 1, "why": "Tuples are immutable, so item assignment gives a TypeError.", "code": True},
+        {"q": "d = {\"a\": 1, \"b\": 2}\nprint(d[\"b\"])\n\nWhat does this print?", "options": ["1", "2", "b", "KeyError"], "answer": 1, "why": "The key \"b\" has the value 2.", "code": True},
+        {"q": "What does d[\"x\"] give when \"x\" is not a key?", "options": ["None", "0", "KeyError", "An empty string"], "answer": 2, "why": "A missing key raises KeyError; get() avoids it.", "code": True},
+        {"q": "stock = {\"Aspirin\": 20}\nprint(stock.get(\"Insulin\", 0))\n\nWhat does this print?", "options": ["20", "0", "None", "KeyError"], "answer": 1, "why": "Insulin isn't a key, so get() returns the default, 0.", "code": True},
+        {"q": "Which is best for storing a patient's details by field name (name, age, blood group)?", "options": ["A list", "A tuple", "A dictionary", "A string"], "answer": 2, "why": "A dictionary lets you look each detail up by its name.", "code": False},
+    ],
+    "exam": {
+        "note": "Important questions for practice. Actual university questions may differ.",
+        "short": [
+            {"q": "Differentiate between a list and a tuple.", "marks": 2,
+             "md": "| List | Tuple |\n|---|---|\n| Square brackets: `[128, 84]` | Round brackets: `(128, 84)` |\n| **Mutable**: items can be changed, added, removed | **Immutable**: cannot be changed after creation |\n| Used for data that grows or changes | Used for fixed records, e.g. a (systolic, diastolic) reading |\n\nBoth are ordered and support indexing and slicing."},
+            {"q": "What is a dictionary? How do you access and add elements?", "marks": 2,
+             "md": "A **dictionary** is a mutable collection of **key: value** pairs in curly braces, where each key is unique.\n\n```python\ndoses = {\"Paracetamol\": 500}\nprint(doses[\"Paracetamol\"])   # access: 500\ndoses[\"Ibuprofen\"] = 400       # add a pair\n```\n\nA missing key gives `KeyError`; `doses.get(key, default)` returns a default instead."},
+        ],
+        "long": [
+            {"q": "Explain tuples and dictionaries in Python with examples. Compare list, tuple and dictionary.", "marks": 5,
+             "md": "**Tuple**: an ordered, **immutable** collection in round brackets.\n\n```python\nbp = (128, 84)\nprint(bp[0])                 # 128\nname, strength = (\"Amoxicillin\", 500)   # unpacking\n```\n\nTuples support indexing, slicing and `len()`, but item assignment gives `TypeError`. A one-item tuple needs a comma: `(\"Aspirin\",)`.\n\n**Dictionary**: a mutable, unordered-by-position collection of **key: value** pairs in curly braces. Keys are unique.\n\n```python\npatient = {\"name\": \"Ravi\", \"age\": 54}\nprint(patient[\"name\"])       # access by key\npatient[\"age\"] = 55          # update\npatient[\"allergy\"] = \"Penicillin\"   # add\nprint(patient.get(\"weight\", \"NA\"))   # safe lookup\nfor key, value in patient.items():\n    print(key, value)\n```\n\nA missing key gives `KeyError`.\n\n**Comparison:**\n\n| | List | Tuple | Dictionary |\n|---|---|---|---|\n| Brackets | `[ ]` | `( )` | `{ }` |\n| Access | by index | by index | by key |\n| Mutable | Yes | No | Yes |\n| Use | readings in order | fixed records | look-up by name |\n\nIn pharmacy data, a list stores a series of readings, a tuple stores a fixed (drug, strength) pair, and a dictionary stores a drug formulary or a patient record."},
+        ],
+    },
+    "mindmap": {
+        "label": "Lesson 3.2 · Tuples and dictionaries",
+        "children": [
+            {"label": "Tuple", "children": [{"label": "(a, b) round brackets"}, {"label": "Immutable"}, {"label": "Fixed records"}]},
+            {"label": "Unpack", "children": [{"label": "a, b = t"}, {"label": "Counts must match"}, {"label": "(x,) one item"}]},
+            {"label": "Dictionary", "children": [{"label": "{key: value}"}, {"label": "d[key]"}, {"label": "Keys unique"}]},
+            {"label": "Change", "children": [{"label": "d[key] = new"}, {"label": "New key adds"}, {"label": "Tuples can't"}]},
+            {"label": "Safe use", "children": [{"label": "d.get(key, default)"}, {"label": "key in d"}, {"label": "for k, v in d.items()"}]},
+            {"label": "Errors", "children": [{"label": "KeyError: missing key"}, {"label": "TypeError: tuple assignment"}]},
+        ],
+    },
+    "summary": [
+        "A **tuple** is written in round brackets, `(128, 84)`; it is read like a list but **cannot be changed**.",
+        "**Unpacking** splits a tuple into variables: `name, strength = (\"Amoxicillin\", 500)`.",
+        "A **dictionary** stores **key: value** pairs in curly braces and is looked up by key: `doses[\"Ibuprofen\"]`.",
+        "`d[key] = value` updates an existing key or adds a new one; keys are unique and case-sensitive.",
+        "A missing key gives **KeyError**; `d.get(key, default)` and `key in d` avoid it, and `d.items()` loops over pairs.",
+    ],
+    "video": {"videoUrl": None, "searchTerms": ["python tuples and dictionaries for beginners", "python dictionary get items keyerror"]},
+    "animations": [
+        {
+            "id": "lookup",
+            "title": "Looking a value up by its key",
+            "afterExplanation": 2,
+            "canvas": {"desktop": {"w": 800, "h": 460}, "mobile": {"w": 360, "h": 600}},
+            "actors": [
+                {"id": "code", "type": "card", "title": "formulary.py", "icon": "💊", "color": "indigo", "mono": True,
+                 "lines": ["doses = {\"Paracetamol\": 500,", "         \"Ibuprofen\": 400,", "         \"Cetirizine\": 10}", "print(doses[\"Ibuprofen\"])", "doses[\"Amoxicillin\"] = 500", "print(\"Aspirin\" in doses)"],
+                 "desktop": {"x": 40, "y": 30, "w": 440, "h": 220}, "mobile": {"x": 16, "y": 12, "w": 328, "h": 190}},
+                {"id": "kp", "type": "box", "label": "\"Paracetamol\"", "value": "500", "color": "amber",
+                 "desktop": {"x": 510, "y": 30, "w": 250, "h": 75}, "mobile": {"x": 16, "y": 215, "w": 156, "h": 75}},
+                {"id": "ki", "type": "box", "label": "\"Ibuprofen\"", "value": "400", "color": "amber",
+                 "desktop": {"x": 510, "y": 115, "w": 250, "h": 75}, "mobile": {"x": 188, "y": 215, "w": 156, "h": 75}},
+                {"id": "kc", "type": "box", "label": "\"Cetirizine\"", "value": "10", "color": "amber",
+                 "desktop": {"x": 510, "y": 200, "w": 250, "h": 75}, "mobile": {"x": 16, "y": 300, "w": 156, "h": 75}},
+                {"id": "ka", "type": "box", "label": "\"Amoxicillin\"", "value": "500", "color": "emerald",
+                 "desktop": {"x": 510, "y": 285, "w": 250, "h": 75}, "mobile": {"x": 188, "y": 300, "w": 156, "h": 75}},
+                {"id": "find", "type": "pill", "text": "doses[\"Ibuprofen\"] → 400", "color": "indigo",
+                 "desktop": {"x": 40, "y": 265, "w": 440, "h": 30}, "mobile": {"x": 30, "y": 385, "w": 300, "h": 30}},
+                {"id": "out", "type": "terminal", "title": "Output",
+                 "desktop": {"x": 40, "y": 310, "w": 440, "h": 130}, "mobile": {"x": 16, "y": 425, "w": 328, "h": 160}},
+            ],
+            "steps": [
+                {"say": "A dictionary stores pairs. Each drug name is a key, and its dose is the value.", "audio": "anim-lookup-01.mp3",
+                 "actions": [{"do": "show", "target": "code"}, {"do": "show", "target": "out"}, {"do": "highlightLine", "target": "code", "line": 0},
+                             {"do": "show", "target": "kp"}, {"do": "show", "target": "ki"}, {"do": "show", "target": "kc"}]},
+                {"say": "Python goes straight to the key Ibuprofen and gives back its value, four hundred. There are no positions to count.", "audio": "anim-lookup-02.mp3",
+                 "actions": [{"do": "highlightLine", "target": "code", "line": 3}, {"do": "pulse", "target": "ki"}, {"do": "show", "target": "find"}, {"do": "appendOutput", "target": "out", "text": "400"}]},
+                {"say": "Assigning to a new key adds a new pair: Amoxicillin, five hundred.", "audio": "anim-lookup-03.mp3",
+                 "actions": [{"do": "highlightLine", "target": "code", "line": 4}, {"do": "show", "target": "ka"}, {"do": "pulse", "target": "ka"}]},
+                {"say": "in checks the keys. Aspirin isn't one of them, so the answer is False.", "audio": "anim-lookup-04.mp3",
+                 "actions": [{"do": "highlightLine", "target": "code", "line": 5}, {"do": "appendOutput", "target": "out", "text": "False"}]},
+            ],
+        }
+    ],
+}
+
+if __name__ == "__main__":
+    root = os.path.join(os.path.dirname(__file__), "..", "..")
+    out = os.path.join(root, "content", "bp101t", "3-2", "en.json")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    json.dump(L, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    print("wrote", out)
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "..", "glossary_bp101t.py")], check=True, stdout=subprocess.DEVNULL)
