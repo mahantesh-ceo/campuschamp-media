@@ -1,0 +1,350 @@
+{
+  "hook": {
+    "title": "ಪ್ರತಿ pharmacy ಹತ್ತಿರ ಈಗಾಗಲೇ ಇರುವ file",
+    "md": "ಪ್ರತಿ hospital pharmacy ಯ billing software ನಲ್ಲಿ ಒಂದು **Export** button ಇರುತ್ತೆ. ಅದನ್ನು ಒತ್ತಿ, `stock.csv` ತರಹದ ಒಂದು file ಸಿಗುತ್ತೆ. Excel ನಲ್ಲಿ ತೆರೆದರೆ ಅಚ್ಚುಕಟ್ಟಾದ table. Notepad ನಲ್ಲಿ ತೆರೆದರೆ commas ಇರುವ text lines.\n\nಈ ಸರಳ format, **CSV**, lab instruments, hospital systems ಮತ್ತು ಸರ್ಕಾರಿ health portals ನಡುವೆ data ಹಂಚುವ ದಾರಿ. ಇಲ್ಲಿವರೆಗೆ ನಿಮ್ಮ data program ಒಳಗೇ ಇದ್ದು, program ಮುಗಿದಾಗ ಮಾಯವಾಗುತ್ತಿತ್ತು. ಇವತ್ತು ನಿಮ್ಮ programs data ಅನ್ನು file ನಲ್ಲಿ **save** ಮಾಡಿ ಮತ್ತೆ **ಓದಲು** ಕಲಿಯುತ್ತವೆ: ನಿಜವಾದ datasets ಜೊತೆ ಕೆಲಸದ ಮೊದಲ ಹೆಜ್ಜೆ."
+  },
+  "learn": [
+    "**CSV** file ಅಂದ್ರೆ ಏನು, ಮತ್ತು **with open()** ಇಂದ file **ತೆರೆಯುವುದು**, **ಬರೆಯುವುದು**, **ಓದುವುದು**",
+    "File **modes** \"r\", \"w\" ಮತ್ತು \"a\" ನಡುವಿನ ವ್ಯತ್ಯಾಸ",
+    "**csv.reader** ಮತ್ತು **csv.DictReader** ಪ್ರತಿ line ಅನ್ನು list ಅಥವಾ dictionary ಆಗಿ ಹೇಗೆ ಬದಲಾಯಿಸುತ್ತವೆ",
+    "**csv.writer** ಇಂದ rows **ಬರೆಯುವುದು**, ಮತ್ತು maths ಮುಂಚೆ values **convert** ಮಾಡುವುದು ಯಾಕೆ ಮುಖ್ಯ"
+  ],
+  "explanation": [
+    {
+      "heading": "CSV file ಅಂದ್ರೆ ಏನು, ಮತ್ತು ಅದನ್ನು ಬರೆಯುವುದು",
+      "md": "**CSV** ಅಂದ್ರೆ **Comma-Separated Values**. ಇದು ಸರಳ text: ಮೊದಲ line **header**, ಅದರಲ್ಲಿ columns ಹೆಸರುಗಳು, ನಂತರದ ಪ್ರತಿ line ಒಂದು record:\n\n```\ndrug,strips,price\nParacetamol,120,25.5\nCetirizine,45,18.0\n```\n\nFile ಮಾಡಲು ಅದನ್ನು **write mode**, `\"w\"`, ನಲ್ಲಿ open ಮಾಡಿ `write()` ಇಂದ text ಬರೆಯಿರಿ. ಪ್ರತಿ line `\\n`, ಅಂದ್ರೆ newline character, ಇಂದ ಮುಗಿಯಬೇಕು:\n\n```python\nwith open(\"stock.csv\", \"w\") as f:\n    f.write(\"drug,strips\\n\")\n    f.write(\"Paracetamol,120\\n\")\n    f.write(\"Cetirizine,45\\n\")\n\nwith open(\"stock.csv\") as f:\n    for line in f:\n        print(line.strip())\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\ndrug,strips\nParacetamol,120\nCetirizine,45\n```\n\n`with open(...) as f:` file open ಮಾಡಿ, indent ಮಾಡಿದ block ಮುಗಿದಾಗ ಅದನ್ನು **ತಾನಾಗೇ close** ಮಾಡುತ್ತೆ. Mode ಇಲ್ಲದೆ open ಮಾಡಿದರೆ **read** mode. `line.strip()` ಪ್ರತಿ line ನ ಕೊನೆಯ `\\n` ತೆಗೆಯುತ್ತೆ.",
+      "callout": {
+        "title": "Champ Lab ನಲ್ಲಿ files",
+        "md": "Phone ನಲ್ಲಿ Champ Lab file ಅನ್ನು program ಓಡುವವರೆಗೆ ಮಾತ್ರ ಇಡುತ್ತೆ, ಹಾಗಾಗಿ ಇಲ್ಲಿನ ಪ್ರತಿ example ಮೊದಲು ತನ್ನ file ಬರೆಯುತ್ತೆ. Computer ನಲ್ಲಿ ಇದೇ code stock.csv ಅನ್ನು ನಿಮ್ಮ program ಪಕ್ಕದಲ್ಲಿ save ಮಾಡುತ್ತೆ, Excel ಅದನ್ನು ತೆರೆಯಬಹುದು."
+      }
+    },
+    {
+      "heading": "csv.reader ಇಂದ rows ಓದುವುದು",
+      "md": "ಪ್ರತಿ line ಅನ್ನು ನೀವೇ commas ಹತ್ತಿರ ಒಡೆಯಬಹುದು, ಆದರೆ **csv** module ಇದನ್ನು ಸರಿಯಾಗಿ ಮಾಡುತ್ತೆ, quotes ಒಳಗೆ commas ಇರುವ values ಗೂ. `csv.reader` ಪ್ರತಿ line ಅನ್ನು **list** ಆಗಿ ಕೊಡುತ್ತೆ:\n\n```python\nimport csv\n\nwith open(\"stock.csv\", \"w\") as f:\n    f.write(\"drug,strips\\nParacetamol,120\\nCetirizine,45\\n\")\n\nwith open(\"stock.csv\") as f:\n    for row in csv.reader(f):\n        print(row)\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\n['drug', 'strips']\n['Paracetamol', '120']\n['Cetirizine', '45']\n```\n\nಎರಡು ವಿಷಯ ಗಮನಿಸಿ. Header ಮೊದಲು ಬರುತ್ತೆ, data ಮಾತ್ರ ಬೇಕಾದರೆ `next(reader)` ಇಂದ ಅದನ್ನು ಬಿಡಿ. ಮತ್ತು **ಪ್ರತಿ value string**, `'120'` ಕೂಡ.",
+      "callout": {
+        "title": "CSV values text",
+        "md": "\"120\" + 5 error. ಮೊದಲು convert ಮಾಡಿ: ಪೂರ್ಣ numbers ಗೆ int(row[1]), decimals ಗೆ float(...)."
+      }
+    },
+    {
+      "heading": "Rows ಅನ್ನು dictionaries ಆಗಿ ಓದುವುದು",
+      "md": "`csv.DictReader` header ಹೆಸರುಗಳನ್ನು **keys** ಆಗಿ ಬಳಸುತ್ತೆ, ಹಾಗಾಗಿ ಪ್ರತಿ row ಒಂದು **dictionary**, ನೀವು values ಅನ್ನು column ಹೆಸರಿನಿಂದ ಹುಡುಕುತ್ತೀರಿ. ಇದು ಹೆಚ್ಚು ಸ್ಪಷ್ಟ, columns ಕ್ರಮ ಬದಲಾದರೂ ಮುರಿಯಲ್ಲ:\n\n```python\nimport csv\n\nwith open(\"stock.csv\", \"w\") as f:\n    f.write(\"drug,strips\\nParacetamol,120\\nCetirizine,45\\n\")\n\ntotal = 0\nwith open(\"stock.csv\") as f:\n    for row in csv.DictReader(f):\n        print(row[\"drug\"], row[\"strips\"])\n        total += int(row[\"strips\"])\nprint(\"Total:\", total)\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nParacetamol 120\nCetirizine 45\nTotal: 165\n```\n\nHeader line print ಆಗಲಿಲ್ಲ: DictReader ಅದನ್ನು keys ಗೆ ಬಳಸಿತು. `int()` ಪ್ರತಿ text value ಅನ್ನು number ಮಾಡಿತು, ಹಾಗಾಗಿ total ಗೆ ಸೇರಿಸಲು ಸಾಧ್ಯವಾಯಿತು.",
+      "callout": {
+        "title": "Header",
+        "md": "CSV file ನ ಮೊದಲ line, columns ಹೆಸರುಗಳು ಇರುವುದು, drug,strips ತರಹ. DictReader ಇದನ್ನು ಪ್ರತಿ row ನ keys ಆಗಿ ಬಳಸುತ್ತೆ."
+      }
+    },
+    {
+      "heading": "csv.writer ಇಂದ rows ಬರೆಯುವುದು",
+      "md": "ಹಲವು rows ಬರೆಯಲು ಅವನ್ನು lists ನ list ಆಗಿ ಇಡಿ, commas ಮತ್ತು newlines ಅನ್ನು `csv.writer` ಸೇರಿಸಲಿ. File ಅನ್ನು `newline=\"\"` ಜೊತೆ open ಮಾಡಿ, ಇದರಿಂದ Windows ನಲ್ಲಿ rows ನಡುವೆ ಖಾಲಿ lines ಬರಲ್ಲ:\n\n```python\nimport csv\n\nrows = [[\"patient\", \"dose_mg\"], [\"Ravi\", 500], [\"Meena\", 250]]\nwith open(\"doses.csv\", \"w\", newline=\"\") as f:\n    csv.writer(f).writerows(rows)\n\nwith open(\"doses.csv\") as f:\n    for line in f:\n        print(line.strip())\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\npatient,dose_mg\nRavi,500\nMeena,250\n```\n\n`writerow(row)` ಒಂದು row ಬರೆಯುತ್ತೆ; `writerows(rows)` ಎಲ್ಲವನ್ನೂ. Numbers ತಾನಾಗೇ text ಆಗಿ ಬರೆಯಲ್ಪಡುತ್ತವೆ."
+    },
+    {
+      "heading": "File ಗೆ ಸೇರಿಸುವುದು, ಎಲ್ಲಾ lines ಓದುವುದು",
+      "md": "`\"w\"` ಇಂದ open ಮಾಡಿದರೆ file ಮೊದಲು **ಅಳಿಸಿಹೋಗುತ್ತೆ**. ಕೊನೆಗೆ lines ಸೇರಿಸಲು **append mode**, `\"a\"`, ಬಳಸಿ. `readlines()` ಪ್ರತಿ line ಅನ್ನು ಒಂದು list ಗೆ ಓದುತ್ತೆ:\n\n```python\nwith open(\"log.csv\", \"w\") as f:\n    f.write(\"time,temp\\n\")\n\nwith open(\"log.csv\", \"a\") as f:\n    f.write(\"08:00,37.2\\n\")\n    f.write(\"12:00,38.1\\n\")\n\nwith open(\"log.csv\") as f:\n    lines = f.readlines()\nprint(len(lines), \"lines\")\nprint(lines[-1].strip())\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\n3 lines\n12:00,38.1\n```\n\nHeader ಮತ್ತು ಎರಡು readings ಸೇರಿ 3 lines, `lines[-1]` latest reading. ಹೀಗೆ program ಒಂದು ನಡೆಯುತ್ತಿರುವ log ಇಡಬಹುದು, ಪ್ರತಿ measurement ಗೆ ಒಂದು line.",
+      "callout": {
+        "title": "\"w\" ಅಳಿಸುತ್ತೆ",
+        "md": "ಇರುವ file ಅನ್ನು \"w\" ಇಂದ open ಮಾಡಿದರೆ ಅದರಲ್ಲಿದ್ದುದೆಲ್ಲಾ ಅಳಿಸಿಹೋಗುತ್ತೆ. ಸೇರಿಸಲು \"a\", ಓದಲು ಮಾತ್ರ \"r\" (ಅಥವಾ mode ಇಲ್ಲದೆ) ಬಳಸಿ."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "ಈ program ಒಂದು ಸಣ್ಣ temperature log ಅನ್ನು CSV file ಆಗಿ save ಮಾಡಿ, DictReader ಇಂದ ಮತ್ತೆ ಓದಿ, ಅತಿ ಹೆಚ್ಚಿನ reading ಹುಡುಕುತ್ತೆ.",
+    "keyTerms": [
+      {
+        "meaning": "File ಮಾಡು (ಅಥವಾ ಅಳಿಸು), ಬರೆಯಲು open ಮಾಡು."
+      },
+      {
+        "meaning": "File ಅನ್ನು f ಆಗಿ ಬಳಸು, ನಂತರ ತಾನಾಗೇ close ಮಾಡು."
+      },
+      {
+        "meaning": "ಪ್ರತಿ row ಅನ್ನು header keys ಇರುವ dictionary ಆಗಿ ಓದು."
+      },
+      {
+        "meaning": "Text value ಅನ್ನು number ಆಗಿ ಬದಲಾಯಿಸು."
+      }
+    ],
+    "steps": [
+      {
+        "say": "ಈ program ಒಂದು temperature log ಅನ್ನು CSV file ಆಗಿ save ಮಾಡಿ, ಮತ್ತೆ ಓದಿ ಅತಿ ಹೆಚ್ಚಿನ reading ಹುಡುಕುತ್ತೆ."
+      },
+      {
+        "say": "import csv, Python ನ CSV files module load ಮಾಡುತ್ತೆ."
+      },
+      {
+        "say": "w ಜೊತೆ open, temps dot csv file ಅನ್ನು write mode ನಲ್ಲಿ ಮಾಡುತ್ತೆ. with ಅದನ್ನು ತಾನಾಗೇ close ಮಾಡುತ್ತೆ."
+      },
+      {
+        "say": "write file ಗೆ ನಾಲ್ಕು lines ಹಾಕುತ್ತೆ: header, time comma temp, ಮತ್ತು ಮೂರು readings. ಪ್ರತಿ backslash n ಒಂದು line ಮುಗಿಸುತ್ತೆ."
+      },
+      {
+        "say": "temps ಖಾಲಿ list ಆಗಿ ಶುರು, readings ಅನ್ನು numbers ಆಗಿ ಸಂಗ್ರಹಿಸಲು ಸಿದ್ಧ."
+      },
+      {
+        "say": "ಈಗ file ಮತ್ತೆ open ಆಗುತ್ತೆ, ಈ ಸಲ ಓದಲು."
+      },
+      {
+        "say": "DictReader ಮೊದಲು header ಓದುತ್ತೆ. ನಂತರ ಪ್ರತಿ row ಒಂದು dictionary ಆಗುತ್ತೆ. ಮೊದಲ row ನಲ್ಲಿ time zero eight hundred, temp ಮೂವತ್ತೇಳು ಪಾಯಿಂಟ್ ಎರಡು, ಇನ್ನೂ text."
+      },
+      {
+        "say": "float text ಅನ್ನು number ಮಾಡುತ್ತೆ, append ಅದನ್ನು temps ಗೆ ಸೇರಿಸುತ್ತೆ."
+      },
+      {
+        "say": "Loop ಉಳಿದ ಎರಡು rows ಗೂ ಇದನ್ನೇ ಮಾಡುತ್ತೆ."
+      },
+      {
+        "say": "print ಮೂರೂ readings ತೋರಿಸುತ್ತೆ, ಈಗ numbers ಆಗಿ."
+      },
+      {
+        "say": "max ಅತಿ ಹೆಚ್ಚಿನದನ್ನು ಹುಡುಕುತ್ತೆ: ಮೂವತ್ತೆಂಟು ಪಾಯಿಂಟ್ ನಾಲ್ಕು, ಮಧ್ಯಾಹ್ನ."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "ಈ ಎರಡು errors ಬಹುತೇಕ ಪ್ರತಿ ಮೊದಲ file program ನಲ್ಲೂ ಬರುತ್ತವೆ.",
+    "examples": [
+      {
+        "title": "ಇಲ್ಲದ file open ಮಾಡುವುದು",
+        "md": "Read mode ಗೆ file ಇರಬೇಕು. ಇಲ್ಲಿ ಹೆಸರು ತಪ್ಪಾಗಿದೆ (`stock` ಬದಲು `stok`). Spelling ಮತ್ತು folder check ಮಾಡಿ; computer ನಲ್ಲಿ file ನಿಮ್ಮ program ಪಕ್ಕದಲ್ಲಿ ಇರಬೇಕು, ಅಥವಾ ಅದರ ಪೂರ್ಣ path ಕೊಡಿ. (Champ Lab ನಲ್ಲಿ Errno ನಂತರದ number ಬೇರೆ ಇರಬಹುದು; message ಅದೇ.)"
+      },
+      {
+        "title": "Header ಅನ್ನು number ಮಾಡುವುದು",
+        "md": "ಮೊದಲ row header, ಹಾಗಾಗಿ `row[1]` ಅಂದ್ರೆ `strips` ಪದ, ಅದು number ಆಗಲ್ಲ. ಮೊದಲು `next(reader)` ಇಂದ header ಬಿಡಿ, ಅಥವಾ `csv.DictReader` ಬಳಸಿ."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Line ಸೇರಿಸಬೇಕಿತ್ತು ಆದರೆ `\"w\"` ಇಂದ open ಮಾಡಿದ್ದು",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ file ನಲ್ಲಿದ್ದುದೆಲ್ಲಾ ಹೋಯಿತು",
+      "fix": "ಕೊನೆಗೆ ಸೇರಿಸಲು `\"a\"` (append) ಬಳಸಿ."
+    },
+    {
+      "mistake": "ಪ್ರತಿ `write()` ಕೊನೆಯಲ್ಲಿ `\\n` ಮರೆಯುವುದು",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ ಎಲ್ಲವೂ ಒಂದೇ ಉದ್ದ line ನಲ್ಲಿ",
+      "fix": "ಪ್ರತಿ line ಅನ್ನು `\\n` ಇಂದ ಮುಗಿಸಿ, ಅಥವಾ `csv.writer` ಬಳಸಿ."
+    },
+    {
+      "mistake": "File ಇಂದ ಬಂದ value ಮೇಲೆ ನೇರ maths: `row[\"strips\"] + 5`",
+      "see": "TypeError: can only concatenate str (not \"int\") to str",
+      "fix": "ಮೊದಲು convert ಮಾಡಿ: `int(row[\"strips\"]) + 5`."
+    },
+    {
+      "mistake": "`with` ಇಲ್ಲದೆ file open ಮಾಡಿ `close()` ಮರೆಯುವುದು",
+      "see": "Data save ಆಗದಿರಬಹುದು, ಅಥವಾ file lock ಆಗಿರುತ್ತೆ",
+      "fix": "ಯಾವಾಗಲೂ `with open(...) as f:` ಬಳಸಿ."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "File ಬರೆಯಿರಿ",
+      "md": "ಮೊದಲ `with` block ಒಳಗೆ stock.csv ಗೆ header `drug,strips` ಮತ್ತು row `ORS,30` **ಬರೆಯಿರಿ**, ಪ್ರತಿಯೊಂದೂ `\\n` ಇಂದ ಮುಗಿಯಲಿ. ಓದುವ ಭಾಗ ನಿಮಗಾಗಿ ಸಿದ್ಧವಿದೆ. Output ನಿಖರವಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "ಪ್ರತಿ f.write() text ಸೇರಿಸುತ್ತೆ; ಪ್ರತಿ line ಅನ್ನು \\n ಇಂದ ಮುಗಿಸಿ.",
+        "f.write(\"drug,strips\\n\")\n    f.write(\"ORS,30\\n\")"
+      ]
+    },
+    {
+      "title": "Header ಬಿಡಿ",
+      "md": "**reader** ಮೇಲೆ **next()** ಬಳಸಿ header row ಬಿಡಿ, ನಂತರ ಪ್ರತಿ row ಇಂದ drug ಹೆಸರು ಮಾತ್ರ print ಮಾಡಿ. Output ನಿಖರವಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "next(reader) ಒಂದು row ಓದಿ ಬಿಸಾಡುತ್ತೆ.",
+        "next(reader)\n    for row in reader:\n        print(row[0])"
+      ]
+    },
+    {
+      "title": "CSV ಇಂದ total",
+      "md": "stock.csv ಅನ್ನು **csv.DictReader** ಇಂದ ಓದಿ **strips** column ಕೂಡಿಸಿ. ಪ್ರತಿ value ಅನ್ನು **int()** ಇಂದ convert ಮಾಡುವುದನ್ನು ಮರೆಯಬೇಡಿ. Output ನಿಖರವಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "with open(\"stock.csv\") as f:\n    for row in csv.DictReader(f):",
+        "        total += int(row[\"strips\"])"
+      ]
+    },
+    {
+      "title": "Bug ಹುಡುಕಿ",
+      "md": "ಈ program header ಇಟ್ಟುಕೊಂಡು ಅದರ ಕೆಳಗೆ ಒಂದು reading ಸೇರಿಸಬೇಕು, ಆದರೆ header ಮಾಯವಾಗುತ್ತೆ. **ಒಂದು mode** ಬದಲಾಯಿಸಿ, output ನಿಖರವಾಗಿ ಹೀಗಿರಲಿ:",
+      "hints": [
+        "\"w\" ಬರೆಯುವ ಮುಂಚೆ file ಅಳಿಸುತ್ತೆ.",
+        "ಎರಡನೇ ಸಲ file ಅನ್ನು \"a\" ಇಂದ open ಮಾಡಿ, ಸೇರಿಸಲು."
+      ],
+      "solutionNote": "ಎರಡನೇ open ನಲ್ಲಿ \"w\" ಇತ್ತು, ಅದು header ಅಳಿಸಿತು. \"a\" (append) ಇರುವುದನ್ನು ಉಳಿಸಿ ಹೊಸ line ಅನ್ನು ಕೊನೆಗೆ ಸೇರಿಸುತ್ತೆ."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "CSV ಯ ಪೂರ್ಣ ರೂಪ ಏನು?",
+      "why": "CSV files values ಅನ್ನು commas ಇಂದ ಬೇರ್ಪಡಿಸುತ್ತವೆ."
+    },
+    {
+      "q": "File ಅಳಿಸದೆ ಅದರ ಕೊನೆಗೆ lines ಸೇರಿಸುವ mode ಯಾವುದು?",
+      "why": "\"a\" append mode."
+    },
+    {
+      "q": "csv.reader ಕೊಡುವ values ಯಾವ type?",
+      "why": "Text file ಇಂದ ಓದಿದ ಎಲ್ಲವೂ convert ಮಾಡುವವರೆಗೆ string."
+    },
+    {
+      "q": "ನಾವು with open(...) as f: ಯಾಕೆ ಬರೆಯುತ್ತೇವೆ?",
+      "why": "with ನಿಮಗಾಗಿ file close ಮಾಡುತ್ತೆ, error ಬಂದರೂ."
+    },
+    {
+      "q": "csv.DictReader ಇಂದ ಪ್ರತಿ row ಏನು?",
+      "why": "DictReader header ಹೆಸರುಗಳನ್ನು keys ಆಗಿ ಬಳಸುತ್ತೆ."
+    },
+    {
+      "q": "ಇರುವ file ಅನ್ನು \"w\" ಇಂದ open ಮಾಡಿದರೆ ಏನಾಗುತ್ತೆ?",
+      "why": "Write mode ಬರೆಯುವ ಮುಂಚೆ file ಅಳಿಸುತ್ತೆ."
+    }
+  ],
+  "exam": {
+    "note": "Practice ಗಾಗಿ important questions. University ನ ನಿಜವಾದ questions ಬೇರೆ ಇರಬಹುದು."
+  },
+  "mindmap": {
+    "label": "Lesson 3.5 · CSV files",
+    "children": [
+      {
+        "label": "CSV file",
+        "children": [
+          {
+            "label": "ಸರಳ text"
+          },
+          {
+            "label": "Values ನಡುವೆ commas"
+          },
+          {
+            "label": "ಮೊದಲ line = header"
+          }
+        ]
+      },
+      {
+        "label": "Open",
+        "children": [
+          {
+            "label": "with open(name, mode)"
+          },
+          {
+            "label": "\"r\" \"w\" \"a\""
+          },
+          {
+            "label": "ತಾನಾಗೇ close"
+          }
+        ]
+      },
+      {
+        "label": "ಓದು",
+        "children": [
+          {
+            "label": "csv.reader → lists"
+          },
+          {
+            "label": "csv.DictReader → dicts"
+          },
+          {
+            "label": "next() header ಬಿಡುತ್ತೆ"
+          }
+        ]
+      },
+      {
+        "label": "ಬರೆ",
+        "children": [
+          {
+            "label": "f.write(text + \\n)"
+          },
+          {
+            "label": "csv.writer"
+          },
+          {
+            "label": "writerow / writerows"
+          }
+        ]
+      },
+      {
+        "label": "Convert",
+        "children": [
+          {
+            "label": "Values text"
+          },
+          {
+            "label": "int() / float()"
+          },
+          {
+            "label": "ನಂತರ ಲೆಕ್ಕ"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "FileNotFoundError"
+          },
+          {
+            "label": "ValueError: header"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**CSV** file ಸರಳ text: ಒಂದು **header** line, ನಂತರ ಪ್ರತಿ line ನಲ್ಲಿ ಒಂದು record, values commas ಇಂದ ಬೇರೆ.",
+    "`with open(name, mode) as f:` file open ಮಾಡಿ ತಾನಾಗೇ close ಮಾಡುತ್ತೆ. Modes: **\"r\"** ಓದು, **\"w\"** ಬರೆ (ಅಳಿಸಿ), **\"a\"** ಸೇರಿಸು.",
+    "**csv.reader** ಪ್ರತಿ row ಅನ್ನು list ಆಗಿ; **csv.DictReader** header keys ಇರುವ dictionary ಆಗಿ ಕೊಡುತ್ತೆ. `next(reader)` header ಬಿಡುತ್ತೆ.",
+    "**csv.writer** `writerow()` / `writerows()` ಇಂದ rows ಬರೆಯುತ್ತೆ; `newline=\"\"` ಜೊತೆ open ಮಾಡಿ.",
+    "File ಇಂದ ಓದಿದ ಪ್ರತಿ value **text**: maths ಮುಂಚೆ `int()` ಅಥವಾ `float()` ಇಂದ convert ಮಾಡಿ."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "CSV file ಸರಳ text. ಮೊದಲ line header. ಉಳಿದ ಪ್ರತಿ line ಒಂದು record, values ನಡುವೆ commas."
+        },
+        {
+          "say": "DictReader ಮೊದಲು header ಓದಿ, ಅದರ ಹೆಸರುಗಳಾದ time ಮತ್ತು temp ಅನ್ನು keys ಆಗಿ ಇಡುತ್ತೆ."
+        },
+        {
+          "say": "ಮುಂದಿನ line ಒಂದು dictionary ಆಗುತ್ತೆ: time zero eight hundred, temp ಮೂವತ್ತೇಳು ಪಾಯಿಂಟ್ ಎರಡು. ಇದು ಇನ್ನೂ text."
+        },
+        {
+          "say": "float text ಅನ್ನು number ಮಾಡುತ್ತೆ, append ಅದನ್ನು list ಗೆ ಸೇರಿಸುತ್ತೆ."
+        },
+        {
+          "say": "ಪ್ರತಿ line ಗೂ ಇದೇ ಆಗುತ್ತೆ. ಈಗ max ಅತಿ ಹೆಚ್ಚಿನ reading ಹುಡುಕಬಹುದು."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Comma-Separated Values: plain text table, ಪ್ರತಿ line ನಲ್ಲಿ ಒಂದು record, values commas ಇಂದ ಬೇರೆ."
+    },
+    {
+      "meaning": "CSV file ನ ಮೊದಲ line, columns ಹೆಸರುಗಳು ಇರುತ್ತವೆ, drug,strips ತರಹ."
+    },
+    {
+      "meaning": "File ಹೇಗೆ open ಆಗುತ್ತೆ: \"r\" ಓದಲು, \"w\" ಬರೆಯಲು (ಮೊದಲು ಅಳಿಸಿ), \"a\" ಕೊನೆಗೆ ಸೇರಿಸಲು."
+    },
+    {
+      "meaning": "with open(...) as f: file open ಮಾಡಿ, block ಮುಗಿದಾಗ ತಾನಾಗೇ close ಮಾಡುತ್ತೆ."
+    },
+    {
+      "meaning": "CSV file ಓದಿ ಪ್ರತಿ row ಅನ್ನು strings ನ list ಆಗಿ ಕೊಡುತ್ತೆ."
+    },
+    {
+      "meaning": "CSV file ಓದಿ ಪ್ರತಿ row ಅನ್ನು dictionary ಆಗಿ ಕೊಡುತ್ತೆ, header ಹೆಸರುಗಳು keys ಆಗುತ್ತವೆ."
+    }
+  ]
+}

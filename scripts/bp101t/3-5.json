@@ -1,0 +1,181 @@
+{
+  "course": "bp101t",
+  "lesson": "3-5",
+  "voices": {
+    "en": "Ritu",
+    "hi": "Ritu",
+    "kn": "Chaitra"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program saves a temperature log as a CSV file, then reads it back and finds the highest reading.",
+        "import csv loads Python's module for CSV files.",
+        "open with w creates the file temps dot csv in write mode. with will close it automatically.",
+        "write puts four lines into the file: the header, time comma temp, and three readings. Each backslash n ends a line.",
+        "temps starts as an empty list, ready to collect the readings as numbers.",
+        "Now the file is opened again, this time for reading.",
+        "DictReader reads the header first. Then each row becomes a dictionary. The first row has time zero eight hundred, and temp thirty seven point two, still as text.",
+        "float turns the text into a number, and append adds it to temps.",
+        "The loop does the same for the other two rows.",
+        "print shows all three readings, now as numbers.",
+        "max finds the highest: thirty eight point four, at noon."
+      ],
+      "display": [
+        "This program saves a temperature log as a CSV file, then reads it back and finds the highest reading.",
+        "import csv loads Python's module for CSV files.",
+        "open with w creates the file temps dot csv in write mode. with will close it automatically.",
+        "write puts four lines into the file: the header, time comma temp, and three readings. Each backslash n ends a line.",
+        "temps starts as an empty list, ready to collect the readings as numbers.",
+        "Now the file is opened again, this time for reading.",
+        "DictReader reads the header first. Then each row becomes a dictionary. The first row has time zero eight hundred, and temp thirty seven point two, still as text.",
+        "float turns the text into a number, and append adds it to temps.",
+        "The loop does the same for the other two rows.",
+        "print shows all three readings, now as numbers.",
+        "max finds the highest: thirty eight point four, at noon."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह program एक temperature log को CSV file में save करता है, फिर उसे वापस पढ़कर सबसे ऊँची reading ढूँढता है।",
+        "import csv, पाइथन का CSV files वाला module load करता है।",
+        "w के साथ open, temps dot csv file को write mode में बनाता है। with उसे अपने आप बंद करेगा।",
+        "write file में चार lines डालता है: header, time comma temp, और तीन readings। हर backslash n एक line खत्म करता है।",
+        "temps एक खाली list से शुरू होती है, readings को numbers के रूप में जमा करने के लिए तैयार।",
+        "अब file फिर से खुलती है, इस बार पढ़ने के लिए।",
+        "DictReader पहले header पढ़ता है। फिर हर row एक dictionary बनती है। पहली row में time zero eight hundred है, और temp सैंतीस दशमलव दो, अभी भी text।",
+        "float text को number बनाता है, और append उसे temps में जोड़ता है।",
+        "Loop बाकी दो rows के लिए भी यही करता है।",
+        "print तीनों readings दिखाता है, अब numbers के रूप में।",
+        "max सबसे ऊँची ढूँढता है: अड़तीस दशमलव चार, दोपहर में।"
+      ],
+      "display": [
+        "यह program एक temperature log को CSV file में save करता है, फिर उसे वापस पढ़कर सबसे ऊँची reading ढूँढता है।",
+        "import csv, Python का CSV files वाला module load करता है।",
+        "w के साथ open, temps dot csv file को write mode में बनाता है। with उसे अपने आप बंद करेगा।",
+        "write file में चार lines डालता है: header, time comma temp, और तीन readings। हर backslash n एक line खत्म करता है।",
+        "temps एक खाली list से शुरू होती है, readings को numbers के रूप में जमा करने के लिए तैयार।",
+        "अब file फिर से खुलती है, इस बार पढ़ने के लिए।",
+        "DictReader पहले header पढ़ता है। फिर हर row एक dictionary बनती है। पहली row में time zero eight hundred है, और temp सैंतीस दशमलव दो, अभी भी text।",
+        "float text को number बनाता है, और append उसे temps में जोड़ता है।",
+        "Loop बाकी दो rows के लिए भी यही करता है।",
+        "print तीनों readings दिखाता है, अब numbers के रूप में।",
+        "max सबसे ऊँची ढूँढता है: अड़तीस दशमलव चार, दोपहर में।"
+      ],
+      "displayHinglish": [
+        "Yeh program ek temperature log ko CSV file mein save karta hai, phir use wapas padhkar sabse oonchi reading dhoondhta hai.",
+        "import csv, Python ka CSV files wala module load karta hai.",
+        "w ke saath open, temps dot csv file ko write mode mein banata hai. with use apne aap band karega.",
+        "write file mein chaar lines daalta hai: header, time comma temp, aur teen readings. Har backslash n ek line khatam karta hai.",
+        "temps ek khaali list se shuru hoti hai, readings ko numbers ke roop mein jama karne ke liye taiyaar.",
+        "Ab file phir se khulti hai, is baar padhne ke liye.",
+        "DictReader pehle header padhta hai. Phir har row ek dictionary banti hai. Pehli row mein time zero eight hundred hai, aur temp saintees dashamlav do, abhi bhi text.",
+        "float text ko number banaata hai, aur append use temps mein jodta hai.",
+        "Loop baaki do rows ke liye bhi yahi karta hai.",
+        "print teenon readings dikhaata hai, ab numbers ke roop mein.",
+        "max sabse oonchi dhoondhta hai: adtees dashamlav chaar, dopahar mein."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ program ಒಂದು temperature log ಅನ್ನು CSV file ಆಗಿ save ಮಾಡಿ, ಮತ್ತೆ ಓದಿ ಅತಿ ಹೆಚ್ಚಿನ reading ಹುಡುಕುತ್ತೆ.",
+        "import csv, ಪೈಥಾನ್ ನ CSV files module load ಮಾಡುತ್ತೆ.",
+        "w ಜೊತೆ open, temps dot csv file ಅನ್ನು write mode ನಲ್ಲಿ ಮಾಡುತ್ತೆ. with ಅದನ್ನು ತಾನಾಗೇ close ಮಾಡುತ್ತೆ.",
+        "write file ಗೆ ನಾಲ್ಕು lines ಹಾಕುತ್ತೆ: header, time comma temp, ಮತ್ತು ಮೂರು readings. ಪ್ರತಿ backslash n ಒಂದು line ಮುಗಿಸುತ್ತೆ.",
+        "temps ಖಾಲಿ list ಆಗಿ ಶುರು, readings ಅನ್ನು numbers ಆಗಿ ಸಂಗ್ರಹಿಸಲು ಸಿದ್ಧ.",
+        "ಈಗ file ಮತ್ತೆ open ಆಗುತ್ತೆ, ಈ ಸಲ ಓದಲು.",
+        "DictReader ಮೊದಲು header ಓದುತ್ತೆ. ನಂತರ ಪ್ರತಿ row ಒಂದು dictionary ಆಗುತ್ತೆ. ಮೊದಲ row ನಲ್ಲಿ time zero eight hundred, temp ಮೂವತ್ತೇಳು ಪಾಯಿಂಟ್ ಎರಡು, ಇನ್ನೂ text.",
+        "float text ಅನ್ನು number ಮಾಡುತ್ತೆ, append ಅದನ್ನು temps ಗೆ ಸೇರಿಸುತ್ತೆ.",
+        "Loop ಉಳಿದ ಎರಡು rows ಗೂ ಇದನ್ನೇ ಮಾಡುತ್ತೆ.",
+        "print ಮೂರೂ readings ತೋರಿಸುತ್ತೆ, ಈಗ numbers ಆಗಿ.",
+        "max ಅತಿ ಹೆಚ್ಚಿನದನ್ನು ಹುಡುಕುತ್ತೆ: ಮೂವತ್ತೆಂಟು ಪಾಯಿಂಟ್ ನಾಲ್ಕು, ಮಧ್ಯಾಹ್ನ."
+      ],
+      "display": [
+        "ಈ program ಒಂದು temperature log ಅನ್ನು CSV file ಆಗಿ save ಮಾಡಿ, ಮತ್ತೆ ಓದಿ ಅತಿ ಹೆಚ್ಚಿನ reading ಹುಡುಕುತ್ತೆ.",
+        "import csv, Python ನ CSV files module load ಮಾಡುತ್ತೆ.",
+        "w ಜೊತೆ open, temps dot csv file ಅನ್ನು write mode ನಲ್ಲಿ ಮಾಡುತ್ತೆ. with ಅದನ್ನು ತಾನಾಗೇ close ಮಾಡುತ್ತೆ.",
+        "write file ಗೆ ನಾಲ್ಕು lines ಹಾಕುತ್ತೆ: header, time comma temp, ಮತ್ತು ಮೂರು readings. ಪ್ರತಿ backslash n ಒಂದು line ಮುಗಿಸುತ್ತೆ.",
+        "temps ಖಾಲಿ list ಆಗಿ ಶುರು, readings ಅನ್ನು numbers ಆಗಿ ಸಂಗ್ರಹಿಸಲು ಸಿದ್ಧ.",
+        "ಈಗ file ಮತ್ತೆ open ಆಗುತ್ತೆ, ಈ ಸಲ ಓದಲು.",
+        "DictReader ಮೊದಲು header ಓದುತ್ತೆ. ನಂತರ ಪ್ರತಿ row ಒಂದು dictionary ಆಗುತ್ತೆ. ಮೊದಲ row ನಲ್ಲಿ time zero eight hundred, temp ಮೂವತ್ತೇಳು ಪಾಯಿಂಟ್ ಎರಡು, ಇನ್ನೂ text.",
+        "float text ಅನ್ನು number ಮಾಡುತ್ತೆ, append ಅದನ್ನು temps ಗೆ ಸೇರಿಸುತ್ತೆ.",
+        "Loop ಉಳಿದ ಎರಡು rows ಗೂ ಇದನ್ನೇ ಮಾಡುತ್ತೆ.",
+        "print ಮೂರೂ readings ತೋರಿಸುತ್ತೆ, ಈಗ numbers ಆಗಿ.",
+        "max ಅತಿ ಹೆಚ್ಚಿನದನ್ನು ಹುಡುಕುತ್ತೆ: ಮೂವತ್ತೆಂಟು ಪಾಯಿಂಟ್ ನಾಲ್ಕು, ಮಧ್ಯಾಹ್ನ."
+      ]
+    },
+    {
+      "id": "anim-rows",
+      "prefix": "anim-rows-",
+      "lang": "en",
+      "tts": [
+        "A CSV file is plain text. The first line is the header. Every other line is one record, with commas between the values.",
+        "DictReader reads the header first, and keeps its names, time and temp, as the keys.",
+        "The next line becomes a dictionary: time is zero eight hundred, and temp is thirty seven point two. It is still text.",
+        "float turns the text into a number, and append adds it to the list.",
+        "The same happens for every line. Now max can find the highest reading."
+      ],
+      "display": [
+        "A CSV file is plain text. The first line is the header. Every other line is one record, with commas between the values.",
+        "DictReader reads the header first, and keeps its names, time and temp, as the keys.",
+        "The next line becomes a dictionary: time is zero eight hundred, and temp is thirty seven point two. It is still text.",
+        "float turns the text into a number, and append adds it to the list.",
+        "The same happens for every line. Now max can find the highest reading."
+      ]
+    },
+    {
+      "id": "anim-rows",
+      "prefix": "anim-rows-",
+      "lang": "hi",
+      "tts": [
+        "CSV file सादा text है। पहली line header है। बाकी हर line एक record है, values के बीच commas के साथ।",
+        "DictReader पहले header पढ़ता है, और उसके नाम, time और temp, keys के रूप में रखता है।",
+        "अगली line एक dictionary बनती है: time zero eight hundred है, और temp सैंतीस दशमलव दो। यह अभी भी text है।",
+        "float text को number बनाता है, और append उसे list में जोड़ता है।",
+        "हर line के साथ यही होता है। अब max सबसे ऊँची reading ढूँढ सकता है।"
+      ],
+      "display": [
+        "CSV file सादा text है। पहली line header है। बाकी हर line एक record है, values के बीच commas के साथ।",
+        "DictReader पहले header पढ़ता है, और उसके नाम, time और temp, keys के रूप में रखता है।",
+        "अगली line एक dictionary बनती है: time zero eight hundred है, और temp सैंतीस दशमलव दो। यह अभी भी text है।",
+        "float text को number बनाता है, और append उसे list में जोड़ता है।",
+        "हर line के साथ यही होता है। अब max सबसे ऊँची reading ढूँढ सकता है।"
+      ],
+      "displayHinglish": [
+        "CSV file saada text hai. Pehli line header hai. Baaki har line ek record hai, values ke beech commas ke saath.",
+        "DictReader pehle header padhta hai, aur uske naam, time aur temp, keys ke roop mein rakhta hai.",
+        "Agli line ek dictionary banti hai: time zero eight hundred hai, aur temp saintees dashamlav do. Yeh abhi bhi text hai.",
+        "float text ko number banaata hai, aur append use list mein jodta hai.",
+        "Har line ke saath yahi hota hai. Ab max sabse oonchi reading dhoondh sakta hai."
+      ]
+    },
+    {
+      "id": "anim-rows",
+      "prefix": "anim-rows-",
+      "lang": "kn",
+      "tts": [
+        "CSV file ಸರಳ text. ಮೊದಲ line header. ಉಳಿದ ಪ್ರತಿ line ಒಂದು record, values ನಡುವೆ commas.",
+        "DictReader ಮೊದಲು header ಓದಿ, ಅದರ ಹೆಸರುಗಳಾದ time ಮತ್ತು temp ಅನ್ನು keys ಆಗಿ ಇಡುತ್ತೆ.",
+        "ಮುಂದಿನ line ಒಂದು dictionary ಆಗುತ್ತೆ: time zero eight hundred, temp ಮೂವತ್ತೇಳು ಪಾಯಿಂಟ್ ಎರಡು. ಇದು ಇನ್ನೂ text.",
+        "float text ಅನ್ನು number ಮಾಡುತ್ತೆ, append ಅದನ್ನು list ಗೆ ಸೇರಿಸುತ್ತೆ.",
+        "ಪ್ರತಿ line ಗೂ ಇದೇ ಆಗುತ್ತೆ. ಈಗ max ಅತಿ ಹೆಚ್ಚಿನ reading ಹುಡುಕಬಹುದು."
+      ],
+      "display": [
+        "CSV file ಸರಳ text. ಮೊದಲ line header. ಉಳಿದ ಪ್ರತಿ line ಒಂದು record, values ನಡುವೆ commas.",
+        "DictReader ಮೊದಲು header ಓದಿ, ಅದರ ಹೆಸರುಗಳಾದ time ಮತ್ತು temp ಅನ್ನು keys ಆಗಿ ಇಡುತ್ತೆ.",
+        "ಮುಂದಿನ line ಒಂದು dictionary ಆಗುತ್ತೆ: time zero eight hundred, temp ಮೂವತ್ತೇಳು ಪಾಯಿಂಟ್ ಎರಡು. ಇದು ಇನ್ನೂ text.",
+        "float text ಅನ್ನು number ಮಾಡುತ್ತೆ, append ಅದನ್ನು list ಗೆ ಸೇರಿಸುತ್ತೆ.",
+        "ಪ್ರತಿ line ಗೂ ಇದೇ ಆಗುತ್ತೆ. ಈಗ max ಅತಿ ಹೆಚ್ಚಿನ reading ಹುಡುಕಬಹುದು."
+      ]
+    }
+  ]
+}

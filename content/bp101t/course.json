@@ -229,8 +229,12 @@
         {
           "id": "3-5",
           "title": "Reading and writing CSV files",
-          "available": false,
-          "translations": []
+          "available": true,
+          "translations": [
+            "hi",
+            "hinglish",
+            "kn"
+          ]
         },
         {
           "id": "3-6",

@@ -1,0 +1,350 @@
+{
+  "hook": {
+    "title": "Woh file jo har pharmacy ke paas pehle se hai",
+    "md": "Har hospital pharmacy ke billing software mein ek **Export** button hota hai. Use dabaaiye, aur aapko `stock.csv` jaisi ek file milti hai. Excel mein kholein to saaf table hai. Notepad mein kholein to commas wali text ki lines.\n\nYahi saada format, **CSV**, lab instruments, hospital systems aur sarkari health portals ke beech data baantne ka tareeka hai. Ab tak aapka data program ke andar rehta tha aur program khatam hote hi gaayab ho jaata tha. Aaj aapke programs data ko file mein **save** karna aur wapas **padhna** seekhenge: asli datasets ke saath kaam ka pehla kadam."
+  },
+  "learn": [
+    "**CSV** file kya hai, aur **with open()** se file **kholna**, **likhna** aur **padhna**",
+    "File **modes** \"r\", \"w\" aur \"a\" mein farq",
+    "**csv.reader** aur **csv.DictReader** har line ko list ya dictionary kaise banaate hain",
+    "**csv.writer** se rows **likhna**, aur maths se pehle values ko **convert** karna kyun zaroori hai"
+  ],
+  "explanation": [
+    {
+      "heading": "CSV file kya hai, aur use likhna",
+      "md": "**CSV** matlab **Comma-Separated Values**. Yeh saada text hai: pehli line **header** hai jismein columns ke naam hain, aur uske baad har line ek record hai:\n\n```\ndrug,strips,price\nParacetamol,120,25.5\nCetirizine,45,18.0\n```\n\nFile banaane ke liye use **write mode**, `\"w\"`, mein kholiye aur `write()` se usmein text likhiye. Har line `\\n`, yaani newline character, se khatam honi chahiye:\n\n```python\nwith open(\"stock.csv\", \"w\") as f:\n    f.write(\"drug,strips\\n\")\n    f.write(\"Paracetamol,120\\n\")\n    f.write(\"Cetirizine,45\\n\")\n\nwith open(\"stock.csv\") as f:\n    for line in f:\n        print(line.strip())\n```\n\nYeh print karta hai:\n\n```\ndrug,strips\nParacetamol,120\nCetirizine,45\n```\n\n`with open(...) as f:` file kholta hai aur indent wala block khatam hote hi use **apne aap band** karta hai. Bina mode ke kholne ka matlab **read** mode. `line.strip()` har line ke aakhir ka `\\n` hataata hai.",
+      "callout": {
+        "title": "Champ Lab mein files",
+        "md": "Phone par Champ Lab file ko sirf program chalne tak rakhta hai, isliye yahaan har example pehle apni file likhta hai. Computer par yahi code stock.csv ko aapke program ke bagal mein save karta hai, aur Excel use khol sakta hai."
+      }
+    },
+    {
+      "heading": "csv.reader se rows padhna",
+      "md": "Aap har line ko khud commas par tod sakte hain, par **csv** module yeh sahi tareeke se karta hai, quotes ke andar commas wali values ke liye bhi. `csv.reader` har line ko **list** ke roop mein deta hai:\n\n```python\nimport csv\n\nwith open(\"stock.csv\", \"w\") as f:\n    f.write(\"drug,strips\\nParacetamol,120\\nCetirizine,45\\n\")\n\nwith open(\"stock.csv\") as f:\n    for row in csv.reader(f):\n        print(row)\n```\n\nYeh print karta hai:\n\n```\n['drug', 'strips']\n['Paracetamol', '120']\n['Cetirizine', '45']\n```\n\nDo baatein dhyaan dijiye. Header pehle aata hai, isliye sirf data chahiye to `next(reader)` se use chhod dijiye. Aur **har value string hai**, `'120'` bhi.",
+      "callout": {
+        "title": "CSV values text hain",
+        "md": "\"120\" + 5 error hai. Pehle convert kijiye: poore numbers ke liye int(row[1]), decimals ke liye float(...)."
+      }
+    },
+    {
+      "heading": "Rows ko dictionaries ki tarah padhna",
+      "md": "`csv.DictReader` header ke naamon ko **keys** banaata hai, isliye har row ek **dictionary** hai aur aap values ko column ke naam se dhoondhte hain. Yeh zyada saaf hai aur columns ka kram badalne par bhi nahi toot-ta:\n\n```python\nimport csv\n\nwith open(\"stock.csv\", \"w\") as f:\n    f.write(\"drug,strips\\nParacetamol,120\\nCetirizine,45\\n\")\n\ntotal = 0\nwith open(\"stock.csv\") as f:\n    for row in csv.DictReader(f):\n        print(row[\"drug\"], row[\"strips\"])\n        total += int(row[\"strips\"])\nprint(\"Total:\", total)\n```\n\nYeh print karta hai:\n\n```\nParacetamol 120\nCetirizine 45\nTotal: 165\n```\n\nHeader line print nahi hui: DictReader ne use keys ke liye use kiya. `int()` ne har text value ko number banaaya taaki woh total mein jud sake.",
+      "callout": {
+        "title": "Header",
+        "md": "CSV file ki pehli line, jismein columns ke naam hain, jaise drug,strips. DictReader ise har row ki keys ke roop mein use karta hai."
+      }
+    },
+    {
+      "heading": "csv.writer se rows likhna",
+      "md": "Kai rows likhni hon to unhe lists ki list mein rakhiye aur commas va newlines `csv.writer` ko jodne dijiye. File ko `newline=\"\"` ke saath kholiye, isse Windows par rows ke beech khaali lines nahi aati:\n\n```python\nimport csv\n\nrows = [[\"patient\", \"dose_mg\"], [\"Ravi\", 500], [\"Meena\", 250]]\nwith open(\"doses.csv\", \"w\", newline=\"\") as f:\n    csv.writer(f).writerows(rows)\n\nwith open(\"doses.csv\") as f:\n    for line in f:\n        print(line.strip())\n```\n\nYeh print karta hai:\n\n```\npatient,dose_mg\nRavi,500\nMeena,250\n```\n\n`writerow(row)` ek row likhta hai; `writerows(rows)` saari. Numbers apne aap text ke roop mein likhe jaate hain."
+    },
+    {
+      "heading": "File mein jodna, aur saari lines padhna",
+      "md": "`\"w\"` se kholne par file pehle **mit** jaati hai. Aakhir mein lines jodni hon to **append mode**, `\"a\"`, use kijiye. `readlines()` har line ko ek list mein padhta hai:\n\n```python\nwith open(\"log.csv\", \"w\") as f:\n    f.write(\"time,temp\\n\")\n\nwith open(\"log.csv\", \"a\") as f:\n    f.write(\"08:00,37.2\\n\")\n    f.write(\"12:00,38.1\\n\")\n\nwith open(\"log.csv\") as f:\n    lines = f.readlines()\nprint(len(lines), \"lines\")\nprint(lines[-1].strip())\n```\n\nYeh print karta hai:\n\n```\n3 lines\n12:00,38.1\n```\n\nHeader aur do readings milaakar 3 lines hain, aur `lines[-1]` latest reading hai. Isi tarah program ek chalta hua log rakh sakta hai, har measurement ki ek line.",
+      "callout": {
+        "title": "\"w\" mita deta hai",
+        "md": "Maujooda file ko \"w\" se kholne par usmein jo tha sab mit jaata hai. Jodne ke liye \"a\", aur sirf padhne ke liye \"r\" (ya koi mode nahi) use kijiye."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "Yeh program ek chhota temperature log CSV file mein save karta hai, DictReader se wapas padhta hai aur sabse oonchi reading dhoondhta hai.",
+    "keyTerms": [
+      {
+        "meaning": "File banao (ya mitaao) aur likhne ke liye kholo."
+      },
+      {
+        "meaning": "File ko f ke roop mein use karo, aur baad mein apne aap band karo."
+      },
+      {
+        "meaning": "Har row ko header ki keys wali dictionary ke roop mein padho."
+      },
+      {
+        "meaning": "Text value ko number mein badlo."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Yeh program ek temperature log ko CSV file mein save karta hai, phir use wapas padhkar sabse oonchi reading dhoondhta hai."
+      },
+      {
+        "say": "import csv, Python ka CSV files wala module load karta hai."
+      },
+      {
+        "say": "w ke saath open, temps dot csv file ko write mode mein banata hai. with use apne aap band karega."
+      },
+      {
+        "say": "write file mein chaar lines daalta hai: header, time comma temp, aur teen readings. Har backslash n ek line khatam karta hai."
+      },
+      {
+        "say": "temps ek khaali list se shuru hoti hai, readings ko numbers ke roop mein jama karne ke liye taiyaar."
+      },
+      {
+        "say": "Ab file phir se khulti hai, is baar padhne ke liye."
+      },
+      {
+        "say": "DictReader pehle header padhta hai. Phir har row ek dictionary banti hai. Pehli row mein time zero eight hundred hai, aur temp saintees dashamlav do, abhi bhi text."
+      },
+      {
+        "say": "float text ko number banaata hai, aur append use temps mein jodta hai."
+      },
+      {
+        "say": "Loop baaki do rows ke liye bhi yahi karta hai."
+      },
+      {
+        "say": "print teenon readings dikhaata hai, ab numbers ke roop mein."
+      },
+      {
+        "say": "max sabse oonchi dhoondhta hai: adtees dashamlav chaar, dopahar mein."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Yeh do errors lagbhag har pehle file program mein aati hain.",
+    "examples": [
+      {
+        "title": "Aisi file kholna jo hai hi nahi",
+        "md": "Read mode ke liye file maujood honi chahiye. Yahaan naam galat likha hai (`stock` ki jagah `stok`). Spelling aur folder check kijiye; computer par file aapke program ke bagal mein honi chahiye, ya uska poora path dijiye. (Champ Lab mein Errno ke baad ka number alag ho sakta hai; message wahi hai.)"
+      },
+      {
+        "title": "Header ko number banaana",
+        "md": "Pehli row header hai, isliye `row[1]` shabd `strips` hai, jo number nahi ban sakta. Pehle `next(reader)` se header chhodiye, ya `csv.DictReader` use kijiye."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Line jodni thi par `\"w\"` se khol diya",
+      "see": "Koi error nahi, par file mein jo tha sab chala gaya",
+      "fix": "Aakhir mein jodne ke liye `\"a\"` (append) use kijiye."
+    },
+    {
+      "mistake": "Har `write()` ke aakhir mein `\\n` bhool jaana",
+      "see": "Koi error nahi, par sab ek lambi line mein aa jaata hai",
+      "fix": "Har line `\\n` se khatam kijiye, ya `csv.writer` use kijiye."
+    },
+    {
+      "mistake": "File se aayi value se seedhe maths: `row[\"strips\"] + 5`",
+      "see": "TypeError: can only concatenate str (not \"int\") to str",
+      "fix": "Pehle convert kijiye: `int(row[\"strips\"]) + 5`."
+    },
+    {
+      "mistake": "Bina `with` ke file kholna aur `close()` bhool jaana",
+      "see": "Data save nahi ho sakta, ya file locked rehti hai",
+      "fix": "Hamesha `with open(...) as f:` use kijiye."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "File likhiye",
+      "md": "Pehle `with` block ke andar stock.csv mein header `drug,strips` aur row `ORS,30` **likhiye**, har ek `\\n` se khatam. Padhne wala hissa aapke liye taiyaar hai. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "Har f.write() text jodta hai; har line \\n se khatam kijiye.",
+        "f.write(\"drug,strips\\n\")\n    f.write(\"ORS,30\\n\")"
+      ]
+    },
+    {
+      "title": "Header chhodiye",
+      "md": "**reader** se **next()** lagaakar header row chhodiye, phir har row se sirf drug ka naam print kijiye. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "next(reader) ek row padhkar phenk deta hai.",
+        "next(reader)\n    for row in reader:\n        print(row[0])"
+      ]
+    },
+    {
+      "title": "CSV se total",
+      "md": "stock.csv ko **csv.DictReader** se padhiye aur **strips** column jodiye. Har value ko **int()** se convert karna yaad rakhiye. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "with open(\"stock.csv\") as f:\n    for row in csv.DictReader(f):",
+        "        total += int(row[\"strips\"])"
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "Is program ko header rakhkar uske neeche ek reading jodni hai, par header gaayab ho jaata hai. **Ek mode** badaliye taaki output bilkul yeh ho:",
+      "hints": [
+        "\"w\" likhne se pehle file mita deta hai.",
+        "Doosri baar file ko \"a\" se kholiye taaki usmein jude."
+      ],
+      "solutionNote": "Doosre open mein \"w\" tha, jisne header mita diya. \"a\" (append) jo hai use rakhta hai aur nayi line aakhir mein jodta hai."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "CSV ka poora naam kya hai?",
+      "why": "CSV files values ko commas se alag karti hain."
+    },
+    {
+      "q": "Kaun-sa mode file ko mitaaye bina uske aakhir mein lines jodta hai?",
+      "why": "\"a\" append mode hai."
+    },
+    {
+      "q": "csv.reader se milne wali values kis type ki hoti hain?",
+      "why": "Text file se padhi gayi har cheez convert karne tak string hoti hai."
+    },
+    {
+      "q": "Hum with open(...) as f: kyun likhte hain?",
+      "why": "with aapke liye file band karta hai, error aane par bhi."
+    },
+    {
+      "q": "csv.DictReader se har row kya hoti hai?",
+      "why": "DictReader header ke naamon ko keys banaata hai."
+    },
+    {
+      "q": "Maujooda file ko \"w\" se kholne par kya hota hai?",
+      "why": "Write mode likhne se pehle file mita deta hai."
+    }
+  ],
+  "exam": {
+    "note": "Practice ke liye important questions. University ke asli questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 3.5 · CSV files",
+    "children": [
+      {
+        "label": "CSV file",
+        "children": [
+          {
+            "label": "Saada text"
+          },
+          {
+            "label": "Values ke beech commas"
+          },
+          {
+            "label": "Pehli line = header"
+          }
+        ]
+      },
+      {
+        "label": "Kholna",
+        "children": [
+          {
+            "label": "with open(name, mode)"
+          },
+          {
+            "label": "\"r\" \"w\" \"a\""
+          },
+          {
+            "label": "Apne aap band"
+          }
+        ]
+      },
+      {
+        "label": "Padhna",
+        "children": [
+          {
+            "label": "csv.reader → lists"
+          },
+          {
+            "label": "csv.DictReader → dicts"
+          },
+          {
+            "label": "next() header chhodta hai"
+          }
+        ]
+      },
+      {
+        "label": "Likhna",
+        "children": [
+          {
+            "label": "f.write(text + \\n)"
+          },
+          {
+            "label": "csv.writer"
+          },
+          {
+            "label": "writerow / writerows"
+          }
+        ]
+      },
+      {
+        "label": "Convert",
+        "children": [
+          {
+            "label": "Values text hain"
+          },
+          {
+            "label": "int() / float()"
+          },
+          {
+            "label": "Phir hisaab"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "FileNotFoundError"
+          },
+          {
+            "label": "ValueError: header"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**CSV** file saada text hai: ek **header** line, phir har line mein ek record, values commas se alag.",
+    "`with open(name, mode) as f:` file kholta hai aur apne aap band karta hai. Modes: **\"r\"** padhna, **\"w\"** likhna (mitaakar), **\"a\"** jodna.",
+    "**csv.reader** har row ko list deta hai; **csv.DictReader** header ki keys wali dictionary. `next(reader)` header chhodta hai.",
+    "**csv.writer** `writerow()` / `writerows()` se rows likhta hai; `newline=\"\"` ke saath kholiye.",
+    "File se padhi har value **text** hai: maths se pehle `int()` ya `float()` se convert kijiye."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "CSV file saada text hai. Pehli line header hai. Baaki har line ek record hai, values ke beech commas ke saath."
+        },
+        {
+          "say": "DictReader pehle header padhta hai, aur uske naam, time aur temp, keys ke roop mein rakhta hai."
+        },
+        {
+          "say": "Agli line ek dictionary banti hai: time zero eight hundred hai, aur temp saintees dashamlav do. Yeh abhi bhi text hai."
+        },
+        {
+          "say": "float text ko number banaata hai, aur append use list mein jodta hai."
+        },
+        {
+          "say": "Har line ke saath yahi hota hai. Ab max sabse oonchi reading dhoondh sakta hai."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Comma-Separated Values: plain text ki table, har line mein ek record, values commas se alag."
+    },
+    {
+      "meaning": "CSV file ki pehli line, jismein columns ke naam hote hain, jaise drug,strips."
+    },
+    {
+      "meaning": "File kaise khulti hai: \"r\" padhne, \"w\" likhne (pehle mitaakar), \"a\" aakhir mein jodne ke liye."
+    },
+    {
+      "meaning": "with open(...) as f: file kholta hai aur block khatam hote hi use apne aap band karta hai."
+    },
+    {
+      "meaning": "CSV file padhkar har row ko strings ki list ke roop mein deta hai."
+    },
+    {
+      "meaning": "CSV file padhkar har row ko dictionary ke roop mein deta hai, header ke naam keys bante hain."
+    }
+  ]
+}

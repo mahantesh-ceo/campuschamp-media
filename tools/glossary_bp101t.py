@@ -719,6 +719,38 @@ G = {
             "hinglish": "Condition se bana True aur False ka array; arr[mask] sirf True wale items rakhta hai.",
             "kn": "Condition ಇಂದ ಬರುವ True ಮತ್ತು False ನ array; arr[mask] True items ಮಾತ್ರ ಉಳಿಸುತ್ತೆ."}),
     ],
+    "3-5": [
+        ("CSV", {
+            "en": "Comma-Separated Values: a plain-text table, one record per line, values separated by commas.",
+            "hi": "Comma-Separated Values: plain text की table, हर line में एक record, values commas से अलग।",
+            "hinglish": "Comma-Separated Values: plain text ki table, har line mein ek record, values commas se alag.",
+            "kn": "Comma-Separated Values: plain text table, ಪ್ರತಿ line ನಲ್ಲಿ ಒಂದು record, values commas ಇಂದ ಬೇರೆ."}),
+        ("Header", {
+            "en": "The first line of a CSV file, with the column names, like drug,strips.",
+            "hi": "CSV file की पहली line, जिसमें columns के नाम होते हैं, जैसे drug,strips।",
+            "hinglish": "CSV file ki pehli line, jismein columns ke naam hote hain, jaise drug,strips.",
+            "kn": "CSV file ನ ಮೊದಲ line, columns ಹೆಸರುಗಳು ಇರುತ್ತವೆ, drug,strips ತರಹ."}),
+        ("File mode", {
+            "en": "How a file is opened: \"r\" to read, \"w\" to write (erases first), \"a\" to add at the end.",
+            "hi": "File कैसे खुलती है: \"r\" पढ़ने, \"w\" लिखने (पहले मिटाकर), \"a\" आखिर में जोड़ने के लिए।",
+            "hinglish": "File kaise khulti hai: \"r\" padhne, \"w\" likhne (pehle mitaakar), \"a\" aakhir mein jodne ke liye.",
+            "kn": "File ಹೇಗೆ open ಆಗುತ್ತೆ: \"r\" ಓದಲು, \"w\" ಬರೆಯಲು (ಮೊದಲು ಅಳಿಸಿ), \"a\" ಕೊನೆಗೆ ಸೇರಿಸಲು."}),
+        ("with", {
+            "en": "with open(...) as f: opens a file and closes it automatically when the block ends.",
+            "hi": "with open(...) as f: file खोलता है और block खत्म होते ही उसे अपने आप बंद करता है।",
+            "hinglish": "with open(...) as f: file kholta hai aur block khatam hote hi use apne aap band karta hai.",
+            "kn": "with open(...) as f: file open ಮಾಡಿ, block ಮುಗಿದಾಗ ತಾನಾಗೇ close ಮಾಡುತ್ತೆ."}),
+        ("csv.reader", {
+            "en": "Reads a CSV file and gives each row as a list of strings.",
+            "hi": "CSV file पढ़कर हर row को strings की list के रूप में देता है।",
+            "hinglish": "CSV file padhkar har row ko strings ki list ke roop mein deta hai.",
+            "kn": "CSV file ಓದಿ ಪ್ರತಿ row ಅನ್ನು strings ನ list ಆಗಿ ಕೊಡುತ್ತೆ."}),
+        ("csv.DictReader", {
+            "en": "Reads a CSV file and gives each row as a dictionary, using the header names as keys.",
+            "hi": "CSV file पढ़कर हर row को dictionary के रूप में देता है, header के नाम keys बनते हैं।",
+            "hinglish": "CSV file padhkar har row ko dictionary ke roop mein deta hai, header ke naam keys bante hain.",
+            "kn": "CSV file ಓದಿ ಪ್ರತಿ row ಅನ್ನು dictionary ಆಗಿ ಕೊಡುತ್ತೆ, header ಹೆಸರುಗಳು keys ಆಗುತ್ತವೆ."}),
+    ],
 }
 
 

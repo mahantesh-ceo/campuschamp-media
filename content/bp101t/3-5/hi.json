@@ -1,0 +1,350 @@
+{
+  "hook": {
+    "title": "वह file जो हर pharmacy के पास पहले से है",
+    "md": "हर hospital pharmacy के billing software में एक **Export** button होता है। उसे दबाइए, और आपको `stock.csv` जैसी एक file मिलती है। Excel में खोलें तो साफ़ table है। Notepad में खोलें तो commas वाली text की lines।\n\nयही सादा format, **CSV**, lab instruments, hospital systems और सरकारी health portals के बीच data बाँटने का तरीका है। अब तक आपका data program के अंदर रहता था और program खत्म होते ही गायब हो जाता था। आज आपके programs data को file में **save** करना और वापस **पढ़ना** सीखेंगे: असली datasets के साथ काम का पहला कदम।"
+  },
+  "learn": [
+    "**CSV** file क्या है, और **with open()** से file **खोलना**, **लिखना** और **पढ़ना**",
+    "File **modes** \"r\", \"w\" और \"a\" में फ़र्क",
+    "**csv.reader** और **csv.DictReader** हर line को list या dictionary कैसे बनाते हैं",
+    "**csv.writer** से rows **लिखना**, और maths से पहले values को **convert** करना क्यों ज़रूरी है"
+  ],
+  "explanation": [
+    {
+      "heading": "CSV file क्या है, और उसे लिखना",
+      "md": "**CSV** मतलब **Comma-Separated Values**। यह सादा text है: पहली line **header** है जिसमें columns के नाम हैं, और उसके बाद हर line एक record है:\n\n```\ndrug,strips,price\nParacetamol,120,25.5\nCetirizine,45,18.0\n```\n\nFile बनाने के लिए उसे **write mode**, `\"w\"`, में खोलिए और `write()` से उसमें text लिखिए। हर line `\\n`, यानी newline character, से खत्म होनी चाहिए:\n\n```python\nwith open(\"stock.csv\", \"w\") as f:\n    f.write(\"drug,strips\\n\")\n    f.write(\"Paracetamol,120\\n\")\n    f.write(\"Cetirizine,45\\n\")\n\nwith open(\"stock.csv\") as f:\n    for line in f:\n        print(line.strip())\n```\n\nयह print करता है:\n\n```\ndrug,strips\nParacetamol,120\nCetirizine,45\n```\n\n`with open(...) as f:` file खोलता है और indent वाला block खत्म होते ही उसे **अपने आप बंद** करता है। बिना mode के खोलने का मतलब **read** mode। `line.strip()` हर line के आखिर का `\\n` हटाता है।",
+      "callout": {
+        "title": "Champ Lab में files",
+        "md": "Phone पर Champ Lab file को सिर्फ़ program चलने तक रखता है, इसलिए यहाँ हर example पहले अपनी file लिखता है। Computer पर यही code stock.csv को आपके program के बगल में save करता है, और Excel उसे खोल सकता है।"
+      }
+    },
+    {
+      "heading": "csv.reader से rows पढ़ना",
+      "md": "आप हर line को खुद commas पर तोड़ सकते हैं, पर **csv** module यह सही तरीके से करता है, quotes के अंदर commas वाली values के लिए भी। `csv.reader` हर line को **list** के रूप में देता है:\n\n```python\nimport csv\n\nwith open(\"stock.csv\", \"w\") as f:\n    f.write(\"drug,strips\\nParacetamol,120\\nCetirizine,45\\n\")\n\nwith open(\"stock.csv\") as f:\n    for row in csv.reader(f):\n        print(row)\n```\n\nयह print करता है:\n\n```\n['drug', 'strips']\n['Paracetamol', '120']\n['Cetirizine', '45']\n```\n\nदो बातें ध्यान दीजिए। Header पहले आता है, इसलिए सिर्फ़ data चाहिए तो `next(reader)` से उसे छोड़ दीजिए। और **हर value string है**, `'120'` भी।",
+      "callout": {
+        "title": "CSV values text हैं",
+        "md": "\"120\" + 5 error है। पहले convert कीजिए: पूरे numbers के लिए int(row[1]), decimals के लिए float(...)।"
+      }
+    },
+    {
+      "heading": "Rows को dictionaries की तरह पढ़ना",
+      "md": "`csv.DictReader` header के नामों को **keys** बनाता है, इसलिए हर row एक **dictionary** है और आप values को column के नाम से ढूँढते हैं। यह ज़्यादा साफ़ है और columns का क्रम बदलने पर भी नहीं टूटता:\n\n```python\nimport csv\n\nwith open(\"stock.csv\", \"w\") as f:\n    f.write(\"drug,strips\\nParacetamol,120\\nCetirizine,45\\n\")\n\ntotal = 0\nwith open(\"stock.csv\") as f:\n    for row in csv.DictReader(f):\n        print(row[\"drug\"], row[\"strips\"])\n        total += int(row[\"strips\"])\nprint(\"Total:\", total)\n```\n\nयह print करता है:\n\n```\nParacetamol 120\nCetirizine 45\nTotal: 165\n```\n\nHeader line print नहीं हुई: DictReader ने उसे keys के लिए use किया। `int()` ने हर text value को number बनाया ताकि वह total में जुड़ सके।",
+      "callout": {
+        "title": "Header",
+        "md": "CSV file की पहली line, जिसमें columns के नाम हैं, जैसे drug,strips। DictReader इसे हर row की keys के रूप में use करता है।"
+      }
+    },
+    {
+      "heading": "csv.writer से rows लिखना",
+      "md": "कई rows लिखनी हों तो उन्हें lists की list में रखिए और commas व newlines `csv.writer` को जोड़ने दीजिए। File को `newline=\"\"` के साथ खोलिए, इससे Windows पर rows के बीच खाली lines नहीं आतीं:\n\n```python\nimport csv\n\nrows = [[\"patient\", \"dose_mg\"], [\"Ravi\", 500], [\"Meena\", 250]]\nwith open(\"doses.csv\", \"w\", newline=\"\") as f:\n    csv.writer(f).writerows(rows)\n\nwith open(\"doses.csv\") as f:\n    for line in f:\n        print(line.strip())\n```\n\nयह print करता है:\n\n```\npatient,dose_mg\nRavi,500\nMeena,250\n```\n\n`writerow(row)` एक row लिखता है; `writerows(rows)` सारी। Numbers अपने आप text के रूप में लिखे जाते हैं।"
+    },
+    {
+      "heading": "File में जोड़ना, और सारी lines पढ़ना",
+      "md": "`\"w\"` से खोलने पर file पहले **मिट** जाती है। आखिर में lines जोड़नी हों तो **append mode**, `\"a\"`, use कीजिए। `readlines()` हर line को एक list में पढ़ता है:\n\n```python\nwith open(\"log.csv\", \"w\") as f:\n    f.write(\"time,temp\\n\")\n\nwith open(\"log.csv\", \"a\") as f:\n    f.write(\"08:00,37.2\\n\")\n    f.write(\"12:00,38.1\\n\")\n\nwith open(\"log.csv\") as f:\n    lines = f.readlines()\nprint(len(lines), \"lines\")\nprint(lines[-1].strip())\n```\n\nयह print करता है:\n\n```\n3 lines\n12:00,38.1\n```\n\nHeader और दो readings मिलाकर 3 lines हैं, और `lines[-1]` latest reading है। इसी तरह program एक चलता हुआ log रख सकता है, हर measurement की एक line।",
+      "callout": {
+        "title": "\"w\" मिटा देता है",
+        "md": "मौजूदा file को \"w\" से खोलने पर उसमें जो था सब मिट जाता है। जोड़ने के लिए \"a\", और सिर्फ़ पढ़ने के लिए \"r\" (या कोई mode नहीं) use कीजिए।"
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "यह program एक छोटा temperature log CSV file में save करता है, DictReader से वापस पढ़ता है और सबसे ऊँची reading ढूँढता है।",
+    "keyTerms": [
+      {
+        "meaning": "File बनाओ (या मिटाओ) और लिखने के लिए खोलो।"
+      },
+      {
+        "meaning": "File को f के रूप में use करो, और बाद में अपने आप बंद करो।"
+      },
+      {
+        "meaning": "हर row को header की keys वाली dictionary के रूप में पढ़ो।"
+      },
+      {
+        "meaning": "Text value को number में बदलो।"
+      }
+    ],
+    "steps": [
+      {
+        "say": "यह program एक temperature log को CSV file में save करता है, फिर उसे वापस पढ़कर सबसे ऊँची reading ढूँढता है।"
+      },
+      {
+        "say": "import csv, Python का CSV files वाला module load करता है।"
+      },
+      {
+        "say": "w के साथ open, temps dot csv file को write mode में बनाता है। with उसे अपने आप बंद करेगा।"
+      },
+      {
+        "say": "write file में चार lines डालता है: header, time comma temp, और तीन readings। हर backslash n एक line खत्म करता है।"
+      },
+      {
+        "say": "temps एक खाली list से शुरू होती है, readings को numbers के रूप में जमा करने के लिए तैयार।"
+      },
+      {
+        "say": "अब file फिर से खुलती है, इस बार पढ़ने के लिए।"
+      },
+      {
+        "say": "DictReader पहले header पढ़ता है। फिर हर row एक dictionary बनती है। पहली row में time zero eight hundred है, और temp सैंतीस दशमलव दो, अभी भी text।"
+      },
+      {
+        "say": "float text को number बनाता है, और append उसे temps में जोड़ता है।"
+      },
+      {
+        "say": "Loop बाकी दो rows के लिए भी यही करता है।"
+      },
+      {
+        "say": "print तीनों readings दिखाता है, अब numbers के रूप में।"
+      },
+      {
+        "say": "max सबसे ऊँची ढूँढता है: अड़तीस दशमलव चार, दोपहर में।"
+      }
+    ]
+  },
+  "errors": {
+    "intro": "ये दो errors लगभग हर पहले file program में आती हैं।",
+    "examples": [
+      {
+        "title": "ऐसी file खोलना जो है ही नहीं",
+        "md": "Read mode के लिए file मौजूद होनी चाहिए। यहाँ नाम गलत लिखा है (`stock` की जगह `stok`)। Spelling और folder check कीजिए; computer पर file आपके program के बगल में होनी चाहिए, या उसका पूरा path दीजिए। (Champ Lab में Errno के बाद का number अलग हो सकता है; message वही है।)"
+      },
+      {
+        "title": "Header को number बनाना",
+        "md": "पहली row header है, इसलिए `row[1]` शब्द `strips` है, जो number नहीं बन सकता। पहले `next(reader)` से header छोड़िए, या `csv.DictReader` use कीजिए।"
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Line जोड़नी थी पर `\"w\"` से खोल दिया",
+      "see": "कोई error नहीं, पर file में जो था सब चला गया",
+      "fix": "आखिर में जोड़ने के लिए `\"a\"` (append) use कीजिए।"
+    },
+    {
+      "mistake": "हर `write()` के आखिर में `\\n` भूल जाना",
+      "see": "कोई error नहीं, पर सब एक लंबी line में आ जाता है",
+      "fix": "हर line `\\n` से खत्म कीजिए, या `csv.writer` use कीजिए।"
+    },
+    {
+      "mistake": "File से आई value से सीधे maths: `row[\"strips\"] + 5`",
+      "see": "TypeError: can only concatenate str (not \"int\") to str",
+      "fix": "पहले convert कीजिए: `int(row[\"strips\"]) + 5`।"
+    },
+    {
+      "mistake": "बिना `with` के file खोलना और `close()` भूल जाना",
+      "see": "Data save नहीं हो सकता, या file locked रहती है",
+      "fix": "हमेशा `with open(...) as f:` use कीजिए।"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "File लिखिए",
+      "md": "पहले `with` block के अंदर stock.csv में header `drug,strips` और row `ORS,30` **लिखिए**, हर एक `\\n` से खत्म। पढ़ने वाला हिस्सा आपके लिए तैयार है। Output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "हर f.write() text जोड़ता है; हर line \\n से खत्म कीजिए।",
+        "f.write(\"drug,strips\\n\")\n    f.write(\"ORS,30\\n\")"
+      ]
+    },
+    {
+      "title": "Header छोड़िए",
+      "md": "**reader** से **next()** लगाकर header row छोड़िए, फिर हर row से सिर्फ़ drug का नाम print कीजिए। Output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "next(reader) एक row पढ़कर फेंक देता है।",
+        "next(reader)\n    for row in reader:\n        print(row[0])"
+      ]
+    },
+    {
+      "title": "CSV से total",
+      "md": "stock.csv को **csv.DictReader** से पढ़िए और **strips** column जोड़िए। हर value को **int()** से convert करना याद रखिए। Output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "with open(\"stock.csv\") as f:\n    for row in csv.DictReader(f):",
+        "        total += int(row[\"strips\"])"
+      ]
+    },
+    {
+      "title": "Bug ढूँढिए",
+      "md": "इस program को header रखकर उसके नीचे एक reading जोड़नी है, पर header गायब हो जाता है। **एक mode** बदलिए ताकि output बिल्कुल यह हो:",
+      "hints": [
+        "\"w\" लिखने से पहले file मिटा देता है।",
+        "दूसरी बार file को \"a\" से खोलिए ताकि उसमें जुड़े।"
+      ],
+      "solutionNote": "दूसरे open में \"w\" था, जिसने header मिटा दिया। \"a\" (append) जो है उसे रखता है और नई line आखिर में जोड़ता है।"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "CSV का पूरा नाम क्या है?",
+      "why": "CSV files values को commas से अलग करती हैं।"
+    },
+    {
+      "q": "कौन-सा mode file को मिटाए बिना उसके आखिर में lines जोड़ता है?",
+      "why": "\"a\" append mode है।"
+    },
+    {
+      "q": "csv.reader से मिलने वाली values किस type की होती हैं?",
+      "why": "Text file से पढ़ी गई हर चीज़ convert करने तक string होती है।"
+    },
+    {
+      "q": "हम with open(...) as f: क्यों लिखते हैं?",
+      "why": "with आपके लिए file बंद करता है, error आने पर भी।"
+    },
+    {
+      "q": "csv.DictReader से हर row क्या होती है?",
+      "why": "DictReader header के नामों को keys बनाता है।"
+    },
+    {
+      "q": "मौजूदा file को \"w\" से खोलने पर क्या होता है?",
+      "why": "Write mode लिखने से पहले file मिटा देता है।"
+    }
+  ],
+  "exam": {
+    "note": "Practice के लिए important questions। University के असली questions अलग हो सकते हैं।"
+  },
+  "mindmap": {
+    "label": "Lesson 3.5 · CSV files",
+    "children": [
+      {
+        "label": "CSV file",
+        "children": [
+          {
+            "label": "सादा text"
+          },
+          {
+            "label": "Values के बीच commas"
+          },
+          {
+            "label": "पहली line = header"
+          }
+        ]
+      },
+      {
+        "label": "खोलना",
+        "children": [
+          {
+            "label": "with open(name, mode)"
+          },
+          {
+            "label": "\"r\" \"w\" \"a\""
+          },
+          {
+            "label": "अपने आप बंद"
+          }
+        ]
+      },
+      {
+        "label": "पढ़ना",
+        "children": [
+          {
+            "label": "csv.reader → lists"
+          },
+          {
+            "label": "csv.DictReader → dicts"
+          },
+          {
+            "label": "next() header छोड़ता है"
+          }
+        ]
+      },
+      {
+        "label": "लिखना",
+        "children": [
+          {
+            "label": "f.write(text + \\n)"
+          },
+          {
+            "label": "csv.writer"
+          },
+          {
+            "label": "writerow / writerows"
+          }
+        ]
+      },
+      {
+        "label": "Convert",
+        "children": [
+          {
+            "label": "Values text हैं"
+          },
+          {
+            "label": "int() / float()"
+          },
+          {
+            "label": "फिर हिसाब"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "FileNotFoundError"
+          },
+          {
+            "label": "ValueError: header"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**CSV** file सादा text है: एक **header** line, फिर हर line में एक record, values commas से अलग।",
+    "`with open(name, mode) as f:` file खोलता है और अपने आप बंद करता है। Modes: **\"r\"** पढ़ना, **\"w\"** लिखना (मिटाकर), **\"a\"** जोड़ना।",
+    "**csv.reader** हर row को list देता है; **csv.DictReader** header की keys वाली dictionary। `next(reader)` header छोड़ता है।",
+    "**csv.writer** `writerow()` / `writerows()` से rows लिखता है; `newline=\"\"` के साथ खोलिए।",
+    "File से पढ़ी हर value **text** है: maths से पहले `int()` या `float()` से convert कीजिए।"
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "CSV file सादा text है। पहली line header है। बाकी हर line एक record है, values के बीच commas के साथ।"
+        },
+        {
+          "say": "DictReader पहले header पढ़ता है, और उसके नाम, time और temp, keys के रूप में रखता है।"
+        },
+        {
+          "say": "अगली line एक dictionary बनती है: time zero eight hundred है, और temp सैंतीस दशमलव दो। यह अभी भी text है।"
+        },
+        {
+          "say": "float text को number बनाता है, और append उसे list में जोड़ता है।"
+        },
+        {
+          "say": "हर line के साथ यही होता है। अब max सबसे ऊँची reading ढूँढ सकता है।"
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Comma-Separated Values: plain text की table, हर line में एक record, values commas से अलग।"
+    },
+    {
+      "meaning": "CSV file की पहली line, जिसमें columns के नाम होते हैं, जैसे drug,strips।"
+    },
+    {
+      "meaning": "File कैसे खुलती है: \"r\" पढ़ने, \"w\" लिखने (पहले मिटाकर), \"a\" आखिर में जोड़ने के लिए।"
+    },
+    {
+      "meaning": "with open(...) as f: file खोलता है और block खत्म होते ही उसे अपने आप बंद करता है।"
+    },
+    {
+      "meaning": "CSV file पढ़कर हर row को strings की list के रूप में देता है।"
+    },
+    {
+      "meaning": "CSV file पढ़कर हर row को dictionary के रूप में देता है, header के नाम keys बनते हैं।"
+    }
+  ]
+}
