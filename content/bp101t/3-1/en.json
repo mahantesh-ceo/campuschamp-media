@@ -1,0 +1,761 @@
+{
+  "id": "3-1",
+  "course": "bp101t",
+  "unit": "Unit III",
+  "unitTitle": "Data Structures & File Handling",
+  "number": "3.1",
+  "title": "Lists, indexing and slicing",
+  "minutes": 18,
+  "free": false,
+  "audioLanguages": [
+    "en",
+    "hi",
+    "kn"
+  ],
+  "hook": {
+    "title": "Seven readings, one name",
+    "md": "A patient's blood pressure is checked every morning for a week. With what you know so far, you would need seven variables: `bp1`, `bp2`, `bp3` and so on. Now imagine a month of readings, or a ward of forty patients.\n\nPython has a better way: keep all the readings, in order, under **one name**. That container is a **list**. Lists are where real data work starts: every dataset you will meet in this unit, from a stock register to a clinical trial, is built from lists."
+  },
+  "learn": [
+    "How to make a **list** with square brackets, and count it with **len()**",
+    "How **indexing** picks one item by position, starting from **0**, and from the end with **-1**",
+    "How to **change** an item, because lists are **mutable**",
+    "How **slicing** takes a part of a list, and how to loop over a list"
+  ],
+  "explanation": [
+    {
+      "heading": "Making a list",
+      "md": "A **list** is written with **square brackets**, with the items separated by commas:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nprint(medicines)\nprint(len(medicines))\nprint(type(medicines))\n```\n\nThis prints:\n\n```\n['Paracetamol', 'Amoxicillin', 'Cetirizine']\n3\n<class 'list'>\n```\n\nThe list keeps the items **in the order you wrote them**. `len()` counts the items, just as it counted the letters of a string in Lesson 1.6. A list can hold numbers, strings, or a mix, and `[]` is an empty list.",
+      "callout": {
+        "type": "definition",
+        "title": "List",
+        "md": "An ordered collection of items, written in square brackets and separated by commas. One variable holds all of them."
+      }
+    },
+    {
+      "heading": "Indexing: picking one item",
+      "md": "Each item has a position number called its **index**. Python starts counting at **0**, so the first item is at index 0:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\", \"Metformin\"]\nprint(medicines[0])\nprint(medicines[2])\nprint(medicines[-1])\n```\n\nThis prints:\n\n```\nParacetamol\nCetirizine\nMetformin\n```\n\n**Negative indexes** count from the end: `-1` is the last item, `-2` the one before it. That's handy when you want the latest reading and don't know how long the list is.",
+      "callout": {
+        "type": "warning",
+        "title": "The first item is [0], not [1]",
+        "md": "A list of 4 items has indexes 0, 1, 2 and 3. Asking for index 4 gives IndexError: list index out of range."
+      }
+    },
+    {
+      "heading": "Changing an item",
+      "md": "Unlike a string, a list can be changed after it is made. Put an index on the left of `=` to replace that item:\n\n```python\nstock = [40, 0, 25]\nstock[1] = 60\nprint(stock)\n```\n\nThis prints:\n\n```\n[40, 60, 25]\n```\n\nThe second shelf was empty (0); after restocking it holds 60. Because lists can be changed, we say they are **mutable**."
+    },
+    {
+      "heading": "Slicing: taking a part of a list",
+      "md": "A **slice** `list[start:stop]` gives a new list from index `start` up to, but **not including**, index `stop`:\n\n```python\nbp = [128, 135, 142, 130, 126, 138]\nprint(bp[1:4])\nprint(bp[:3])\nprint(bp[3:])\nprint(bp[-2:])\nprint(bp[::2])\n```\n\nThis prints:\n\n```\n[135, 142, 130]\n[128, 135, 142]\n[130, 126, 138]\n[126, 138]\n[128, 142, 126]\n```\n\n- `bp[1:4]` takes indexes 1, 2 and 3.\n- Leave out `start` to begin at the first item: `bp[:3]`.\n- Leave out `stop` to go to the end: `bp[3:]`.\n- `bp[-2:]` gives the last two readings.\n- A third number is the **step**: `bp[::2]` takes every second reading.\n\nSlicing never changes the original list; it makes a new one.",
+      "callout": {
+        "type": "tip",
+        "title": "Count the items in a slice",
+        "md": "stop minus start: bp[1:4] has 4 - 1 = 3 items. Slices work exactly the same way on strings."
+      }
+    },
+    {
+      "heading": "Going through a list",
+      "md": "A `for` loop (Lesson 2.3) visits each item of a list in order, and `in` checks whether a value is in the list:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nfor drug in medicines:\n    print(\"Dispense:\", drug)\nprint(\"Aspirin\" in medicines)\n```\n\nThis prints:\n\n```\nDispense: Paracetamol\nDispense: Amoxicillin\nDispense: Cetirizine\nFalse\n```\n\n`\"Aspirin\" in medicines` is `False` because Aspirin is not on this prescription. In the next lessons you'll add, remove and sort items, and meet tuples and dictionaries."
+    }
+  ],
+  "walkthrough": {
+    "intro": "This program keeps five days of fasting blood sugar readings in one list, then picks readings out by position.",
+    "filename": "sugar_log.py",
+    "code": "# Fasting blood sugar for 5 days (mg/dL)\nsugar = [110, 126, 98, 140, 105]\nprint(\"First day:\", sugar[0])\nprint(\"Last day:\", sugar[-1])\nprint(\"Middle three:\", sugar[1:4])\nprint(\"Readings:\", len(sugar))",
+    "output": "First day: 110\nLast day: 105\nMiddle three: [126, 98, 140]\nReadings: 5",
+    "steps": [
+      {
+        "line": null,
+        "say": "This program keeps five days of blood sugar readings in one list, then picks readings out by their position.",
+        "output": null,
+        "audio": "step-01.mp3"
+      },
+      {
+        "line": 1,
+        "say": "The comment says what the numbers are: fasting blood sugar, in milligrams per decilitre.",
+        "output": null,
+        "audio": "step-02.mp3"
+      },
+      {
+        "line": 2,
+        "say": "Square brackets make a list. sugar now holds five numbers, in the order they were written.",
+        "output": null,
+        "audio": "step-03.mp3",
+        "vars": {
+          "sugar": "[110, 126, 98, 140, 105]"
+        }
+      },
+      {
+        "line": 3,
+        "say": "sugar of zero is the first reading. Python counts positions from zero, so this is one hundred and ten.",
+        "output": "First day: 110",
+        "audio": "step-04.mp3"
+      },
+      {
+        "line": 4,
+        "say": "Minus one counts from the end, so sugar of minus one is the last reading: one hundred and five.",
+        "output": "Last day: 105",
+        "audio": "step-05.mp3"
+      },
+      {
+        "line": 5,
+        "say": "The slice one to four starts at position one and stops just before position four. That gives three readings.",
+        "output": "Middle three: [126, 98, 140]",
+        "audio": "step-06.mp3"
+      },
+      {
+        "line": 6,
+        "say": "len counts the items in the list: five readings.",
+        "output": "Readings: 5",
+        "audio": "step-07.mp3"
+      }
+    ],
+    "keyTerms": [
+      {
+        "term": "sugar = [110, 126, ...]",
+        "meaning": "Make a list of five readings, in order."
+      },
+      {
+        "term": "sugar[0]",
+        "meaning": "The item at index 0: the first reading."
+      },
+      {
+        "term": "sugar[-1]",
+        "meaning": "The last item, counted from the end."
+      },
+      {
+        "term": "sugar[1:4]",
+        "meaning": "A slice: indexes 1, 2 and 3 (stop is not included)."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "These two errors come from using an index that doesn't work.",
+    "examples": [
+      {
+        "title": "Asking for an index that doesn't exist",
+        "code": "medicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nprint(medicines[3])",
+        "output": "IndexError: list index out of range",
+        "errorLine": 2,
+        "md": "The list has 3 items, so its indexes are 0, 1 and 2. There is no index 3. For the last item use `medicines[2]`, or better, `medicines[-1]`."
+      },
+      {
+        "title": "Using a decimal number as an index",
+        "code": "doses = [250, 500, 650]\nmiddle = len(doses) / 2\nprint(doses[middle])",
+        "output": "TypeError: list indices must be integers or slices, not float",
+        "errorLine": 3,
+        "md": "`/` always gives a float, so `middle` is 1.5, and there is no item 1.5. Use floor division to get a whole number: `middle = len(doses) // 2`."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Using `medicines[1]` for the first item",
+      "see": "No error, but you get the second item",
+      "fix": "Indexes start at 0: the first item is `medicines[0]`."
+    },
+    {
+      "mistake": "Expecting `bp[1:3]` to include index 3",
+      "see": "No error, but the slice has one item fewer than expected",
+      "fix": "The stop index is not included: `bp[1:4]` gives indexes 1, 2 and 3."
+    },
+    {
+      "mistake": "Using round brackets: `medicines(0)`",
+      "see": "TypeError: 'list' object is not callable",
+      "fix": "Indexes go in square brackets: `medicines[0]`."
+    },
+    {
+      "mistake": "Forgetting quotes around a text item: `[\"Paracetamol\", Ibuprofen]`",
+      "see": "NameError: name 'Ibuprofen' is not defined",
+      "fix": "Every text item needs quotes: `[\"Paracetamol\", \"Ibuprofen\"]`."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1",
+      "title": "Make a list",
+      "md": "Make a list named **drugs** with `\"Aspirin\"`, `\"Atorvastatin\"` and `\"Amlodipine\"`, in that order. Print the list, then its length. The output must be exactly:",
+      "expectedOutput": "['Aspirin', 'Atorvastatin', 'Amlodipine']\n3",
+      "starterCode": "# Make the list drugs here\n\n\n# Print the list, then its length\n",
+      "hints": [
+        "drugs = [\"Aspirin\", \"Atorvastatin\", \"Amlodipine\"]",
+        "print(drugs) shows the list; print(len(drugs)) shows how many items it has."
+      ],
+      "solution": "# Make the list drugs here\ndrugs = [\"Aspirin\", \"Atorvastatin\", \"Amlodipine\"]\n\n# Print the list, then its length\nprint(drugs)\nprint(len(drugs))",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "drugs",
+          "len("
+        ]
+      }
+    },
+    {
+      "id": "t2",
+      "title": "First and last reading",
+      "md": "A patient's temperature was taken five times. Use **indexing** to print the **first** reading and then the **last** reading. The output must be exactly:",
+      "expectedOutput": "36.8\n37.0",
+      "starterCode": "temps = [36.8, 37.2, 38.5, 37.9, 37.0]\n\n# Print the first reading\n\n# Print the last reading\n",
+      "hints": [
+        "The first item is at index 0.",
+        "The last item is at index -1: print(temps[-1])"
+      ],
+      "solution": "temps = [36.8, 37.2, 38.5, 37.9, 37.0]\n\n# Print the first reading\nprint(temps[0])\n# Print the last reading\nprint(temps[-1])",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "temps["
+        ]
+      }
+    },
+    {
+      "id": "t3",
+      "title": "Slice the middle of the week",
+      "md": "These are pulse readings for 7 days. Print the readings of **days 3, 4 and 5** (indexes 2, 3 and 4) with **one slice**. The output must be exactly:",
+      "expectedOutput": "[88, 91, 79]",
+      "starterCode": "pulse = [72, 75, 88, 91, 79, 74, 70]\n\n# Print days 3 to 5 with a slice\n",
+      "hints": [
+        "A slice is pulse[start:stop], and stop is not included.",
+        "print(pulse[2:5])"
+      ],
+      "solution": "pulse = [72, 75, 88, 91, 79, 74, 70]\n\n# Print days 3 to 5 with a slice\nprint(pulse[2:5])",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "pulse[",
+          ":"
+        ]
+      }
+    },
+    {
+      "id": "t4",
+      "title": "Find the bug",
+      "md": "Amoxicillin, the **second** item, was restocked to 200 strips. But this program changes the third item instead. Fix it so the output is exactly:",
+      "expectedOutput": "[120, 200, 300]",
+      "starterCode": "stock = [120, 45, 300]\n# Amoxicillin (the second item) was restocked to 200\nstock[2] = 200\nprint(stock)",
+      "hints": [
+        "Which index does the second item have?",
+        "Indexes start at 0, so the second item is stock[1]."
+      ],
+      "solution": "stock = [120, 45, 300]\n# Amoxicillin (the second item) was restocked to 200\nstock[1] = 200\nprint(stock)",
+      "solutionNote": "Indexes start at 0, so the second item is at index 1. stock[2] was the third item, 300.",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "stock[1]"
+        ]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "q": "meds = [\"Aspirin\", \"Insulin\", \"Digoxin\"]\nprint(meds[1])\n\nWhat does this print?",
+      "options": [
+        "Aspirin",
+        "Insulin",
+        "Digoxin",
+        "An error"
+      ],
+      "answer": 1,
+      "why": "Indexes start at 0, so meds[1] is the second item, Insulin.",
+      "code": true
+    },
+    {
+      "q": "What is the index of the first item in a list?",
+      "options": [
+        "1",
+        "0",
+        "-1",
+        "It depends on the list"
+      ],
+      "answer": 1,
+      "why": "Python always counts list positions from 0.",
+      "code": false
+    },
+    {
+      "q": "x = [10, 20, 30, 40, 50]\nprint(x[1:3])\n\nWhat does this print?",
+      "options": [
+        "[20, 30, 40]",
+        "[20, 30]",
+        "[10, 20, 30]",
+        "[30]"
+      ],
+      "answer": 1,
+      "why": "The slice takes indexes 1 and 2; the stop index 3 is not included.",
+      "code": true
+    },
+    {
+      "q": "What does readings[-1] give?",
+      "options": [
+        "The first item",
+        "The last item",
+        "An error",
+        "The second item"
+      ],
+      "answer": 1,
+      "why": "Negative indexes count from the end; -1 is the last item.",
+      "code": true
+    },
+    {
+      "q": "A list has 4 items. What happens with print(items[4])?",
+      "options": [
+        "It prints the last item",
+        "It prints None",
+        "IndexError: list index out of range",
+        "It prints an empty list"
+      ],
+      "answer": 2,
+      "why": "The indexes are 0 to 3, so index 4 doesn't exist.",
+      "code": true
+    },
+    {
+      "q": "Which statement about lists is true?",
+      "options": [
+        "A list can hold only numbers",
+        "A list can be changed after it is made",
+        "List indexes start at 1",
+        "A slice includes its stop index"
+      ],
+      "answer": 1,
+      "why": "Lists are mutable: you can replace, add and remove items.",
+      "code": false
+    }
+  ],
+  "exam": {
+    "note": "Important questions for practice. Actual university questions may differ.",
+    "short": [
+      {
+        "q": "What is a list in Python? How is it different from a string?",
+        "marks": 2,
+        "md": "A **list** is an ordered collection of items written in square brackets, e.g. `drugs = [\"Aspirin\", \"Insulin\"]`. It can hold items of any type.\n\nDifferences from a string:\n- A string holds only characters; a list can hold numbers, strings or other objects.\n- A list is **mutable** (items can be changed: `drugs[0] = \"Digoxin\"`); a string is **immutable**."
+      },
+      {
+        "q": "Explain positive and negative indexing with an example.",
+        "marks": 2,
+        "md": "Each item of a list has an **index**. **Positive indexes** start at 0 from the left; **negative indexes** start at -1 from the right.\n\n```python\nbp = [128, 135, 142]\nprint(bp[0])   # 128 (first)\nprint(bp[-1])  # 142 (last)\n```\n\nAn index outside the range gives `IndexError`."
+      }
+    ],
+    "long": [
+      {
+        "q": "What is a list? Explain how to create a list, access its elements using positive and negative indexing, modify an element and extract a part of it using slicing, with suitable examples.",
+        "marks": 5,
+        "md": "A **list** is an ordered, **mutable** collection of items enclosed in square brackets and separated by commas. One variable stores many values.\n\n**1. Creating a list**\n\n```python\ndrugs = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\", \"Metformin\"]\nempty = []\nprint(len(drugs))   # 4\n```\n\n**2. Indexing**: each item has a position number.\n- Positive indexes start at **0**: `drugs[0]` is `\"Paracetamol\"`, `drugs[2]` is `\"Cetirizine\"`.\n- Negative indexes count from the end: `drugs[-1]` is `\"Metformin\"`.\n- An index outside the list gives `IndexError: list index out of range`.\n\n**3. Modifying an element**: lists are mutable.\n\n```python\ndrugs[1] = \"Azithromycin\"\n```\n\n**4. Slicing**: `list[start:stop:step]` returns a new list from `start` up to but **not including** `stop`.\n\n```python\nbp = [128, 135, 142, 130, 126, 138]\nprint(bp[1:4])   # [135, 142, 130]\nprint(bp[:3])    # [128, 135, 142]\nprint(bp[-2:])   # [126, 138]\nprint(bp[::2])   # [128, 142, 126]\n```\n\n**5. Traversing**: `for item in drugs:` visits every item; `\"Aspirin\" in drugs` tests membership.\n\nLists are used to store series of readings, stock quantities and records, and are the basis of the data structures used in data analysis."
+      }
+    ]
+  },
+  "mindmap": {
+    "label": "Lesson 3.1 · Lists",
+    "children": [
+      {
+        "label": "Make",
+        "children": [
+          {
+            "label": "[a, b, c]"
+          },
+          {
+            "label": "len() counts"
+          },
+          {
+            "label": "[] is empty"
+          }
+        ]
+      },
+      {
+        "label": "Index",
+        "children": [
+          {
+            "label": "Starts at 0"
+          },
+          {
+            "label": "-1 is last"
+          },
+          {
+            "label": "list[i]"
+          }
+        ]
+      },
+      {
+        "label": "Change",
+        "children": [
+          {
+            "label": "list[i] = new"
+          },
+          {
+            "label": "Mutable"
+          },
+          {
+            "label": "Strings are not"
+          }
+        ]
+      },
+      {
+        "label": "Slice",
+        "children": [
+          {
+            "label": "[start:stop]"
+          },
+          {
+            "label": "Stop not included"
+          },
+          {
+            "label": "[::2] step"
+          }
+        ]
+      },
+      {
+        "label": "Go through",
+        "children": [
+          {
+            "label": "for item in list"
+          },
+          {
+            "label": "x in list"
+          },
+          {
+            "label": "Order kept"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "IndexError: out of range"
+          },
+          {
+            "label": "TypeError: float index"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "A **list** holds many items, in order, in one variable: `drugs = [\"Aspirin\", \"Insulin\"]`. `len()` counts them.",
+    "**Indexing** picks one item: the first is `[0]`, the last is `[-1]`. A missing index gives **IndexError**.",
+    "Lists are **mutable**: `stock[1] = 60` replaces an item.",
+    "A **slice** `list[start:stop]` makes a new list up to, but not including, `stop`; `[::2]` takes every second item.",
+    "`for item in list:` visits every item, and `x in list` checks if a value is there."
+  ],
+  "video": {
+    "videoUrl": null,
+    "searchTerms": [
+      "python lists for beginners indexing slicing",
+      "python list negative index slice"
+    ]
+  },
+  "animations": [
+    {
+      "id": "index",
+      "title": "Every item has a numbered place",
+      "afterExplanation": 1,
+      "canvas": {
+        "desktop": {
+          "w": 800,
+          "h": 460
+        },
+        "mobile": {
+          "w": 360,
+          "h": 600
+        }
+      },
+      "actors": [
+        {
+          "id": "code",
+          "type": "card",
+          "title": "sugar_log.py",
+          "icon": "🩸",
+          "color": "indigo",
+          "mono": true,
+          "lines": [
+            "sugar = [110, 126, 98, 140, 105]",
+            "print(sugar[0])",
+            "print(sugar[-1])",
+            "print(sugar[1:4])"
+          ],
+          "desktop": {
+            "x": 40,
+            "y": 30,
+            "w": 440,
+            "h": 170
+          },
+          "mobile": {
+            "x": 16,
+            "y": 12,
+            "w": 328,
+            "h": 160
+          }
+        },
+        {
+          "id": "b0",
+          "type": "box",
+          "label": "[0]",
+          "value": "110",
+          "color": "amber",
+          "desktop": {
+            "x": 40,
+            "y": 220,
+            "w": 130,
+            "h": 80
+          },
+          "mobile": {
+            "x": 16,
+            "y": 190,
+            "w": 60,
+            "h": 80
+          }
+        },
+        {
+          "id": "b1",
+          "type": "box",
+          "label": "[1]",
+          "value": "126",
+          "color": "amber",
+          "desktop": {
+            "x": 185,
+            "y": 220,
+            "w": 130,
+            "h": 80
+          },
+          "mobile": {
+            "x": 83,
+            "y": 190,
+            "w": 60,
+            "h": 80
+          }
+        },
+        {
+          "id": "b2",
+          "type": "box",
+          "label": "[2]",
+          "value": "98",
+          "color": "amber",
+          "desktop": {
+            "x": 330,
+            "y": 220,
+            "w": 130,
+            "h": 80
+          },
+          "mobile": {
+            "x": 150,
+            "y": 190,
+            "w": 60,
+            "h": 80
+          }
+        },
+        {
+          "id": "b3",
+          "type": "box",
+          "label": "[3]",
+          "value": "140",
+          "color": "amber",
+          "desktop": {
+            "x": 475,
+            "y": 220,
+            "w": 130,
+            "h": 80
+          },
+          "mobile": {
+            "x": 217,
+            "y": 190,
+            "w": 60,
+            "h": 80
+          }
+        },
+        {
+          "id": "b4",
+          "type": "box",
+          "label": "[4] or [-1]",
+          "value": "105",
+          "color": "emerald",
+          "desktop": {
+            "x": 620,
+            "y": 220,
+            "w": 140,
+            "h": 80
+          },
+          "mobile": {
+            "x": 284,
+            "y": 190,
+            "w": 60,
+            "h": 80
+          }
+        },
+        {
+          "id": "slice",
+          "type": "pill",
+          "text": "sugar[1:4] → [126, 98, 140]",
+          "color": "indigo",
+          "desktop": {
+            "x": 185,
+            "y": 312,
+            "w": 420,
+            "h": 30
+          },
+          "mobile": {
+            "x": 30,
+            "y": 290,
+            "w": 300,
+            "h": 30
+          }
+        },
+        {
+          "id": "out",
+          "type": "terminal",
+          "title": "Output",
+          "desktop": {
+            "x": 40,
+            "y": 355,
+            "w": 720,
+            "h": 90
+          },
+          "mobile": {
+            "x": 16,
+            "y": 340,
+            "w": 328,
+            "h": 160
+          }
+        }
+      ],
+      "steps": [
+        {
+          "say": "The list sugar holds five readings. Each one sits in its own numbered place, and the numbering starts at zero.",
+          "audio": "anim-index-01.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "code"
+            },
+            {
+              "do": "show",
+              "target": "out"
+            },
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 0
+            },
+            {
+              "do": "show",
+              "target": "b0"
+            },
+            {
+              "do": "show",
+              "target": "b1"
+            },
+            {
+              "do": "show",
+              "target": "b2"
+            },
+            {
+              "do": "show",
+              "target": "b3"
+            },
+            {
+              "do": "show",
+              "target": "b4"
+            }
+          ]
+        },
+        {
+          "say": "sugar of zero is the first place: one hundred and ten.",
+          "audio": "anim-index-02.mp3",
+          "actions": [
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 1
+            },
+            {
+              "do": "pulse",
+              "target": "b0"
+            },
+            {
+              "do": "appendOutput",
+              "target": "out",
+              "text": "110"
+            }
+          ]
+        },
+        {
+          "say": "Minus one counts from the end, so sugar of minus one is the last place: one hundred and five.",
+          "audio": "anim-index-03.mp3",
+          "actions": [
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 2
+            },
+            {
+              "do": "pulse",
+              "target": "b4"
+            },
+            {
+              "do": "appendOutput",
+              "target": "out",
+              "text": "105"
+            }
+          ]
+        },
+        {
+          "say": "The slice one to four takes places one, two and three. It stops before place four.",
+          "audio": "anim-index-04.mp3",
+          "actions": [
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 3
+            },
+            {
+              "do": "pulse",
+              "target": "b1"
+            },
+            {
+              "do": "pulse",
+              "target": "b2"
+            },
+            {
+              "do": "pulse",
+              "target": "b3"
+            },
+            {
+              "do": "show",
+              "target": "slice"
+            },
+            {
+              "do": "appendOutput",
+              "target": "out",
+              "text": "[126, 98, 140]"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "List",
+      "meaning": "An ordered collection of items in square brackets, held in one variable: [\"Aspirin\", \"Insulin\"]."
+    },
+    {
+      "term": "Index",
+      "meaning": "The position number of an item in a list. Counting starts at 0, so the first item is list[0]."
+    },
+    {
+      "term": "Negative index",
+      "meaning": "An index counted from the end: list[-1] is the last item, list[-2] the one before it."
+    },
+    {
+      "term": "Slice",
+      "meaning": "A part of a list, list[start:stop], from start up to but not including stop. It makes a new list."
+    },
+    {
+      "term": "Mutable",
+      "meaning": "Can be changed after it is made. Lists are mutable (stock[1] = 60 works); strings are not."
+    },
+    {
+      "term": "IndexError",
+      "meaning": "The error when you ask for an index the list doesn't have, like [3] in a list of 3 items."
+    }
+  ]
+}

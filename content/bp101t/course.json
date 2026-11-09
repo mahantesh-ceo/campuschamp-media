@@ -189,8 +189,12 @@
         {
           "id": "3-1",
           "title": "Lists, indexing and slicing",
-          "available": false,
-          "translations": []
+          "available": true,
+          "translations": [
+            "hi",
+            "hinglish",
+            "kn"
+          ]
         },
         {
           "id": "3-2",

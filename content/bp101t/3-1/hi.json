@@ -1,0 +1,331 @@
+{
+  "hook": {
+    "title": "सात readings, एक नाम",
+    "md": "एक patient का blood pressure हफ़्ते भर हर सुबह check होता है। अब तक जो आप जानते हैं, उससे सात variables चाहिए होंगे: `bp1`, `bp2`, `bp3` वगैरह। अब सोचिए एक महीने की readings, या चालीस patients वाला ward।\n\nPython के पास बेहतर तरीका है: सारी readings, क्रम से, **एक नाम** के नीचे रखो। यह container है **list**। असली data का काम lists से शुरू होता है: इस unit में मिलने वाला हर dataset, stock register से clinical trial तक, lists से बना है।"
+  },
+  "learn": [
+    "Square brackets से **list** बनाना, और **len()** से गिनना",
+    "**Indexing** से position के हिसाब से एक item चुनना, **0** से शुरू करके, और आखिर से **-1** से",
+    "किसी item को **बदलना**, क्योंकि lists **mutable** हैं",
+    "**Slicing** से list का एक हिस्सा लेना, और list पर loop चलाना"
+  ],
+  "explanation": [
+    {
+      "heading": "List बनाना",
+      "md": "**List** **square brackets** से लिखी जाती है, items commas से अलग:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nprint(medicines)\nprint(len(medicines))\nprint(type(medicines))\n```\n\nयह print करता है:\n\n```\n['Paracetamol', 'Amoxicillin', 'Cetirizine']\n3\n<class 'list'>\n```\n\nList items को **उसी क्रम में** रखती है जिसमें आपने लिखा। `len()` items गिनता है, जैसे Lesson 1.6 में उसने string के letters गिने थे। List में numbers, strings, या दोनों हो सकते हैं, और `[]` खाली list है।",
+      "callout": {
+        "title": "List",
+        "md": "Items का क्रम वाला collection, square brackets में, commas से अलग। एक variable सबको रखता है।"
+      }
+    },
+    {
+      "heading": "Indexing: एक item चुनना",
+      "md": "हर item का एक position number होता है जिसे **index** कहते हैं। Python गिनती **0** से शुरू करता है, इसलिए पहला item index 0 पर है:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\", \"Metformin\"]\nprint(medicines[0])\nprint(medicines[2])\nprint(medicines[-1])\n```\n\nयह print करता है:\n\n```\nParacetamol\nCetirizine\nMetformin\n```\n\n**Negative indexes** आखिर से गिनते हैं: `-1` आखिरी item है, `-2` उससे पहले वाला। यह तब काम आता है जब आपको latest reading चाहिए और पता नहीं list कितनी लंबी है।",
+      "callout": {
+        "title": "पहला item [0] है, [1] नहीं",
+        "md": "4 items वाली list के indexes 0, 1, 2 और 3 हैं। Index 4 माँगने पर IndexError: list index out of range आता है।"
+      }
+    },
+    {
+      "heading": "Item बदलना",
+      "md": "String से अलग, list बनने के बाद बदली जा सकती है। किसी item को बदलने के लिए `=` के बाईं ओर index लगाइए:\n\n```python\nstock = [40, 0, 25]\nstock[1] = 60\nprint(stock)\n```\n\nयह print करता है:\n\n```\n[40, 60, 25]\n```\n\nदूसरा shelf खाली था (0); restock के बाद उसमें 60 हैं। क्योंकि lists बदली जा सकती हैं, इसलिए उन्हें **mutable** कहते हैं।"
+    },
+    {
+      "heading": "Slicing: list का एक हिस्सा लेना",
+      "md": "**Slice** `list[start:stop]` index `start` से index `stop` तक की नई list देता है, पर `stop` **शामिल नहीं** होता:\n\n```python\nbp = [128, 135, 142, 130, 126, 138]\nprint(bp[1:4])\nprint(bp[:3])\nprint(bp[3:])\nprint(bp[-2:])\nprint(bp[::2])\n```\n\nयह print करता है:\n\n```\n[135, 142, 130]\n[128, 135, 142]\n[130, 126, 138]\n[126, 138]\n[128, 142, 126]\n```\n\n- `bp[1:4]` indexes 1, 2 और 3 लेता है।\n- पहले item से शुरू करना हो तो `start` छोड़ दीजिए: `bp[:3]`।\n- आखिर तक जाना हो तो `stop` छोड़ दीजिए: `bp[3:]`।\n- `bp[-2:]` आखिरी दो readings देता है।\n- तीसरा number **step** है: `bp[::2]` हर दूसरी reading लेता है।\n\nSlicing original list को कभी नहीं बदलता; वह नई list बनाता है।",
+      "callout": {
+        "title": "Slice में items गिनिए",
+        "md": "stop घटा start: bp[1:4] में 4 - 1 = 3 items हैं। Slices strings पर भी बिल्कुल ऐसे ही काम करते हैं।"
+      }
+    },
+    {
+      "heading": "List के हर item से गुज़रना",
+      "md": "`for` loop (Lesson 2.3) list के हर item पर क्रम से जाता है, और `in` check करता है कि कोई value list में है या नहीं:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nfor drug in medicines:\n    print(\"Dispense:\", drug)\nprint(\"Aspirin\" in medicines)\n```\n\nयह print करता है:\n\n```\nDispense: Paracetamol\nDispense: Amoxicillin\nDispense: Cetirizine\nFalse\n```\n\n`\"Aspirin\" in medicines` `False` है क्योंकि इस prescription में Aspirin नहीं है। अगले lessons में आप items जोड़ेंगे, हटाएँगे और sort करेंगे, और tuples व dictionaries से मिलेंगे।"
+    }
+  ],
+  "walkthrough": {
+    "intro": "यह program पाँच दिन की fasting blood sugar readings एक list में रखता है, फिर position से readings निकालता है।",
+    "keyTerms": [
+      {
+        "meaning": "पाँच readings की list बनाओ, क्रम से।"
+      },
+      {
+        "meaning": "Index 0 वाला item: पहली reading।"
+      },
+      {
+        "meaning": "आखिरी item, आखिर से गिनकर।"
+      },
+      {
+        "meaning": "एक slice: indexes 1, 2 और 3 (stop शामिल नहीं)।"
+      }
+    ],
+    "steps": [
+      {
+        "say": "यह program पाँच दिन की blood sugar readings एक list में रखता है, फिर उनकी position से readings निकालता है।"
+      },
+      {
+        "say": "Comment बताता है ये numbers क्या हैं: fasting blood sugar, milligrams per decilitre में।"
+      },
+      {
+        "say": "Square brackets list बनाते हैं। sugar में अब पाँच numbers हैं, उसी क्रम में जिसमें लिखे गए।"
+      },
+      {
+        "say": "sugar of zero पहली reading है। Python positions zero से गिनता है, इसलिए यह एक सौ दस है।"
+      },
+      {
+        "say": "Minus one आखिर से गिनता है, इसलिए sugar of minus one आखिरी reading है: एक सौ पाँच।"
+      },
+      {
+        "say": "Slice one to four, position एक से शुरू होकर position चार से ठीक पहले रुकता है। इससे तीन readings मिलती हैं।"
+      },
+      {
+        "say": "len list के items गिनता है: पाँच readings।"
+      }
+    ]
+  },
+  "errors": {
+    "intro": "ये दो errors ऐसा index use करने से आती हैं जो काम नहीं करता।",
+    "examples": [
+      {
+        "title": "ऐसा index माँगना जो है ही नहीं",
+        "md": "List में 3 items हैं, इसलिए उसके indexes 0, 1 और 2 हैं। Index 3 नहीं है। आखिरी item के लिए `medicines[2]` लिखिए, या उससे बेहतर, `medicines[-1]`।"
+      },
+      {
+        "title": "Index में decimal number use करना",
+        "md": "`/` हमेशा float देता है, इसलिए `middle` 1.5 है, और item 1.5 जैसा कुछ नहीं होता। पूरा number पाने के लिए floor division use कीजिए: `middle = len(doses) // 2`।"
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "पहले item के लिए `medicines[1]` लिखना",
+      "see": "कोई error नहीं, पर दूसरा item मिलता है",
+      "fix": "Indexes 0 से शुरू होते हैं: पहला item `medicines[0]` है।"
+    },
+    {
+      "mistake": "उम्मीद करना कि `bp[1:3]` में index 3 शामिल होगा",
+      "see": "कोई error नहीं, पर slice में उम्मीद से एक item कम है",
+      "fix": "Stop index शामिल नहीं होता: `bp[1:4]` indexes 1, 2 और 3 देता है।"
+    },
+    {
+      "mistake": "गोल brackets use करना: `medicines(0)`",
+      "see": "TypeError: 'list' object is not callable",
+      "fix": "Index square brackets में जाता है: `medicines[0]`।"
+    },
+    {
+      "mistake": "Text item के quotes भूल जाना: `[\"Paracetamol\", Ibuprofen]`",
+      "see": "NameError: name 'Ibuprofen' is not defined",
+      "fix": "हर text item को quotes चाहिए: `[\"Paracetamol\", \"Ibuprofen\"]`।"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "List बनाइए",
+      "md": "**drugs** नाम की list बनाइए जिसमें `\"Aspirin\"`, `\"Atorvastatin\"` और `\"Amlodipine\"` इसी क्रम में हों। List print कीजिए, फिर उसकी length। Output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "drugs = [\"Aspirin\", \"Atorvastatin\", \"Amlodipine\"]",
+        "print(drugs) list दिखाता है; print(len(drugs)) बताता है उसमें कितने items हैं।"
+      ]
+    },
+    {
+      "title": "पहली और आखिरी reading",
+      "md": "एक patient का temperature पाँच बार लिया गया। **Indexing** से **पहली** reading और फिर **आखिरी** reading print कीजिए। Output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "पहला item index 0 पर है।",
+        "आखिरी item index -1 पर है: print(temps[-1])"
+      ]
+    },
+    {
+      "title": "हफ़्ते के बीच का slice",
+      "md": "ये 7 दिन की pulse readings हैं। **दिन 3, 4 और 5** (indexes 2, 3 और 4) की readings **एक slice** से print कीजिए। Output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "Slice pulse[start:stop] है, और stop शामिल नहीं होता।",
+        "print(pulse[2:5])"
+      ]
+    },
+    {
+      "title": "Bug ढूँढिए",
+      "md": "Amoxicillin, यानी **दूसरा** item, 200 strips तक restock हुआ। पर यह program तीसरा item बदल देता है। इसे ठीक कीजिए ताकि output बिल्कुल यह हो:",
+      "hints": [
+        "दूसरे item का index क्या है?",
+        "Indexes 0 से शुरू होते हैं, इसलिए दूसरा item stock[1] है।"
+      ],
+      "solutionNote": "Indexes 0 से शुरू होते हैं, इसलिए दूसरा item index 1 पर है। stock[2] तीसरा item था, 300।"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "meds = [\"Aspirin\", \"Insulin\", \"Digoxin\"]\nprint(meds[1])\n\nयह क्या print करता है?",
+      "why": "Indexes 0 से शुरू होते हैं, इसलिए meds[1] दूसरा item है, Insulin।"
+    },
+    {
+      "q": "List के पहले item का index क्या है?",
+      "why": "Python list positions हमेशा 0 से गिनता है।"
+    },
+    {
+      "q": "x = [10, 20, 30, 40, 50]\nprint(x[1:3])\n\nयह क्या print करता है?",
+      "why": "Slice indexes 1 और 2 लेता है; stop index 3 शामिल नहीं।"
+    },
+    {
+      "q": "readings[-1] क्या देता है?",
+      "why": "Negative indexes आखिर से गिनते हैं; -1 आखिरी item है।"
+    },
+    {
+      "q": "एक list में 4 items हैं। print(items[4]) से क्या होता है?",
+      "why": "Indexes 0 से 3 हैं, इसलिए index 4 है ही नहीं।"
+    },
+    {
+      "q": "Lists के बारे में कौन-सी बात सही है?",
+      "why": "Lists mutable हैं: items बदल, जोड़ और हटा सकते हैं।"
+    }
+  ],
+  "exam": {
+    "note": "Practice के लिए important questions। University के असली questions अलग हो सकते हैं।"
+  },
+  "mindmap": {
+    "label": "Lesson 3.1 · Lists",
+    "children": [
+      {
+        "label": "बनाना",
+        "children": [
+          {
+            "label": "[a, b, c]"
+          },
+          {
+            "label": "len() गिनता है"
+          },
+          {
+            "label": "[] खाली है"
+          }
+        ]
+      },
+      {
+        "label": "Index",
+        "children": [
+          {
+            "label": "0 से शुरू"
+          },
+          {
+            "label": "-1 आखिरी"
+          },
+          {
+            "label": "list[i]"
+          }
+        ]
+      },
+      {
+        "label": "बदलना",
+        "children": [
+          {
+            "label": "list[i] = new"
+          },
+          {
+            "label": "Mutable"
+          },
+          {
+            "label": "Strings नहीं"
+          }
+        ]
+      },
+      {
+        "label": "Slice",
+        "children": [
+          {
+            "label": "[start:stop]"
+          },
+          {
+            "label": "Stop शामिल नहीं"
+          },
+          {
+            "label": "[::2] step"
+          }
+        ]
+      },
+      {
+        "label": "गुज़रना",
+        "children": [
+          {
+            "label": "for item in list"
+          },
+          {
+            "label": "x in list"
+          },
+          {
+            "label": "क्रम बना रहता है"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "IndexError: out of range"
+          },
+          {
+            "label": "TypeError: float index"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**List** कई items को, क्रम से, एक variable में रखती है: `drugs = [\"Aspirin\", \"Insulin\"]`। `len()` उन्हें गिनता है।",
+    "**Indexing** एक item चुनता है: पहला `[0]` है, आखिरी `[-1]`। न होने वाला index **IndexError** देता है।",
+    "Lists **mutable** हैं: `stock[1] = 60` एक item बदल देता है।",
+    "**Slice** `list[start:stop]` नई list बनाता है, `stop` तक पर उसे शामिल किए बिना; `[::2]` हर दूसरा item लेता है।",
+    "`for item in list:` हर item पर जाता है, और `x in list` check करता है कि value मौजूद है या नहीं।"
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "List sugar में पाँच readings हैं। हर reading अपनी numbered जगह पर है, और numbering zero से शुरू होती है।"
+        },
+        {
+          "say": "sugar of zero पहली जगह है: एक सौ दस।"
+        },
+        {
+          "say": "Minus one आखिर से गिनता है, इसलिए sugar of minus one आखिरी जगह है: एक सौ पाँच।"
+        },
+        {
+          "say": "Slice one to four जगह एक, दो और तीन लेता है। यह जगह चार से पहले रुक जाता है।"
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Square brackets में items का क्रम वाला collection, एक variable में: [\"Aspirin\", \"Insulin\"]।"
+    },
+    {
+      "meaning": "List में किसी item का position number। गिनती 0 से शुरू होती है, इसलिए पहला item list[0] है।"
+    },
+    {
+      "meaning": "आखिर से गिना गया index: list[-1] आखिरी item है, list[-2] उससे पहले वाला।"
+    },
+    {
+      "meaning": "List का एक हिस्सा, list[start:stop], start से stop तक पर stop शामिल नहीं। यह नई list बनाता है।"
+    },
+    {
+      "meaning": "बनने के बाद बदला जा सकता है। Lists mutable हैं (stock[1] = 60 चलता है); strings नहीं।"
+    },
+    {
+      "meaning": "जब list में न होने वाला index माँगें तब आने वाली error, जैसे 3 items वाली list में [3]।"
+    }
+  ]
+}

@@ -581,6 +581,38 @@ G = {
             "hinglish": "Aisa program jo loop mein choices ki list dikhaata hai, user ki chuni hui chalaata hai, aur exit chunne tak dohraata hai.",
             "kn": "Loop ನಲ್ಲಿ choices ನ list ತೋರಿಸಿ, user ಆರಿಸಿದ್ದನ್ನು run ಮಾಡಿ, user exit ಆರಿಸುವವರೆಗೆ ಪುನರಾವರ್ತಿಸುವ program."}),
     ],
+    "3-1": [
+        ("List", {
+            "en": "An ordered collection of items in square brackets, held in one variable: [\"Aspirin\", \"Insulin\"].",
+            "hi": "Square brackets में items का क्रम वाला collection, एक variable में: [\"Aspirin\", \"Insulin\"]।",
+            "hinglish": "Square brackets mein items ka kram wala collection, ek variable mein: [\"Aspirin\", \"Insulin\"].",
+            "kn": "Square brackets ಒಳಗಿನ items ನ ಕ್ರಮದ collection, ಒಂದೇ variable ನಲ್ಲಿ: [\"Aspirin\", \"Insulin\"]."}),
+        ("Index", {
+            "en": "The position number of an item in a list. Counting starts at 0, so the first item is list[0].",
+            "hi": "List में किसी item का position number। गिनती 0 से शुरू होती है, इसलिए पहला item list[0] है।",
+            "hinglish": "List mein kisi item ka position number. Ginti 0 se shuru hoti hai, isliye pehla item list[0] hai.",
+            "kn": "List ನಲ್ಲಿ ಒಂದು item ನ position number. ಎಣಿಕೆ 0 ಇಂದ ಶುರು, ಹಾಗಾಗಿ ಮೊದಲ item list[0]."}),
+        ("Negative index", {
+            "en": "An index counted from the end: list[-1] is the last item, list[-2] the one before it.",
+            "hi": "आखिर से गिना गया index: list[-1] आखिरी item है, list[-2] उससे पहले वाला।",
+            "hinglish": "Aakhir se gina gaya index: list[-1] aakhri item hai, list[-2] usse pehle wala.",
+            "kn": "ಕೊನೆಯಿಂದ ಎಣಿಸಿದ index: list[-1] ಕೊನೆಯ item, list[-2] ಅದರ ಹಿಂದಿನದು."}),
+        ("Slice", {
+            "en": "A part of a list, list[start:stop], from start up to but not including stop. It makes a new list.",
+            "hi": "List का एक हिस्सा, list[start:stop], start से stop तक पर stop शामिल नहीं। यह नई list बनाता है।",
+            "hinglish": "List ka ek hissa, list[start:stop], start se stop tak par stop shaamil nahi. Yeh nayi list banata hai.",
+            "kn": "List ನ ಒಂದು ಭಾಗ, list[start:stop], start ಇಂದ stop ವರೆಗೆ ಆದರೆ stop ಸೇರಲ್ಲ. ಇದು ಹೊಸ list ಮಾಡುತ್ತೆ."}),
+        ("Mutable", {
+            "en": "Can be changed after it is made. Lists are mutable (stock[1] = 60 works); strings are not.",
+            "hi": "बनने के बाद बदला जा सकता है। Lists mutable हैं (stock[1] = 60 चलता है); strings नहीं।",
+            "hinglish": "Banne ke baad badla ja sakta hai. Lists mutable hain (stock[1] = 60 chalta hai); strings nahi.",
+            "kn": "ಮಾಡಿದ ನಂತರ ಬದಲಾಯಿಸಬಹುದು. Lists mutable (stock[1] = 60 ಕೆಲಸ ಮಾಡುತ್ತೆ); strings ಅಲ್ಲ."}),
+        ("IndexError", {
+            "en": "The error when you ask for an index the list doesn't have, like [3] in a list of 3 items.",
+            "hi": "जब list में न होने वाला index माँगें तब आने वाली error, जैसे 3 items वाली list में [3]।",
+            "hinglish": "Jab list mein na hone wala index maangein tab aane wali error, jaise 3 items wali list mein [3].",
+            "kn": "List ನಲ್ಲಿ ಇಲ್ಲದ index ಕೇಳಿದಾಗ ಬರುವ error, 3 items ಇರುವ list ನಲ್ಲಿ [3] ತರಹ."}),
+    ],
 }
 
 

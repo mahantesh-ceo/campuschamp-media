@@ -1,0 +1,146 @@
+{
+  "course": "bp101t",
+  "lesson": "3-1",
+  "voices": {
+    "en": "Ritu",
+    "hi": "Ritu",
+    "kn": "Chaitra"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program keeps five days of blood sugar readings in one list, then picks readings out by their position.",
+        "The comment says what the numbers are: fasting blood sugar, in milligrams per decilitre.",
+        "Square brackets make a list. sugar now holds five numbers, in the order they were written.",
+        "sugar of zero is the first reading. Python counts positions from zero, so this is one hundred and ten.",
+        "Minus one counts from the end, so sugar of minus one is the last reading: one hundred and five.",
+        "The slice one to four starts at position one and stops just before position four. That gives three readings.",
+        "len counts the items in the list: five readings."
+      ],
+      "display": [
+        "This program keeps five days of blood sugar readings in one list, then picks readings out by their position.",
+        "The comment says what the numbers are: fasting blood sugar, in milligrams per decilitre.",
+        "Square brackets make a list. sugar now holds five numbers, in the order they were written.",
+        "sugar of zero is the first reading. Python counts positions from zero, so this is one hundred and ten.",
+        "Minus one counts from the end, so sugar of minus one is the last reading: one hundred and five.",
+        "The slice one to four starts at position one and stops just before position four. That gives three readings.",
+        "len counts the items in the list: five readings."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह program पाँच दिन की blood sugar readings एक list में रखता है, फिर उनकी position से readings निकालता है।",
+        "Comment बताता है ये numbers क्या हैं: fasting blood sugar, milligrams per decilitre में।",
+        "Square brackets list बनाते हैं। sugar में अब पाँच numbers हैं, उसी क्रम में जिसमें लिखे गए।",
+        "sugar of zero पहली reading है। पाइथन positions zero से गिनता है, इसलिए यह एक सौ दस है।",
+        "Minus one आखिर से गिनता है, इसलिए sugar of minus one आखिरी reading है: एक सौ पाँच।",
+        "Slice one to four, position एक से शुरू होकर position चार से ठीक पहले रुकता है। इससे तीन readings मिलती हैं।",
+        "len list के items गिनता है: पाँच readings।"
+      ],
+      "display": [
+        "यह program पाँच दिन की blood sugar readings एक list में रखता है, फिर उनकी position से readings निकालता है।",
+        "Comment बताता है ये numbers क्या हैं: fasting blood sugar, milligrams per decilitre में।",
+        "Square brackets list बनाते हैं। sugar में अब पाँच numbers हैं, उसी क्रम में जिसमें लिखे गए।",
+        "sugar of zero पहली reading है। Python positions zero से गिनता है, इसलिए यह एक सौ दस है।",
+        "Minus one आखिर से गिनता है, इसलिए sugar of minus one आखिरी reading है: एक सौ पाँच।",
+        "Slice one to four, position एक से शुरू होकर position चार से ठीक पहले रुकता है। इससे तीन readings मिलती हैं।",
+        "len list के items गिनता है: पाँच readings।"
+      ],
+      "displayHinglish": [
+        "Yeh program paanch din ki blood sugar readings ek list mein rakhta hai, phir unki position se readings nikaalta hai.",
+        "Comment batata hai yeh numbers kya hain: fasting blood sugar, milligrams per decilitre mein.",
+        "Square brackets list banaate hain. sugar mein ab paanch numbers hain, usi kram mein jismein likhe gaye.",
+        "sugar of zero pehli reading hai. Python positions zero se ginta hai, isliye yeh ek sau das hai.",
+        "Minus one aakhir se ginta hai, isliye sugar of minus one aakhri reading hai: ek sau paanch.",
+        "Slice one to four, position ek se shuru hokar position chaar se theek pehle rukta hai. Isse teen readings milti hain.",
+        "len list ke items ginta hai: paanch readings."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ program ಐದು ದಿನದ blood sugar readings ಅನ್ನು ಒಂದು list ನಲ್ಲಿ ಇಡುತ್ತೆ, ನಂತರ ಅವುಗಳ position ಪ್ರಕಾರ readings ತೆಗೆಯುತ್ತೆ.",
+        "Comment ಈ numbers ಏನು ಅಂತ ಹೇಳುತ್ತೆ: fasting blood sugar, milligrams per decilitre ನಲ್ಲಿ.",
+        "Square brackets list ಮಾಡುತ್ತವೆ. sugar ನಲ್ಲಿ ಈಗ ಐದು numbers, ಬರೆದ ಕ್ರಮದಲ್ಲೇ.",
+        "sugar of zero ಮೊದಲ reading. ಪೈಥಾನ್ positions ಅನ್ನು zero ಇಂದ ಎಣಿಸುತ್ತೆ, ಹಾಗಾಗಿ ಇದು ನೂರ ಹತ್ತು.",
+        "Minus one ಕೊನೆಯಿಂದ ಎಣಿಸುತ್ತೆ, ಹಾಗಾಗಿ sugar of minus one ಕೊನೆಯ reading: ನೂರ ಐದು.",
+        "Slice one to four, position ಒಂದರಿಂದ ಶುರುವಾಗಿ position ನಾಲ್ಕಕ್ಕೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ. ಇದರಿಂದ ಮೂರು readings ಸಿಗುತ್ತವೆ.",
+        "len list ನ items ಎಣಿಸುತ್ತೆ: ಐದು readings."
+      ],
+      "display": [
+        "ಈ program ಐದು ದಿನದ blood sugar readings ಅನ್ನು ಒಂದು list ನಲ್ಲಿ ಇಡುತ್ತೆ, ನಂತರ ಅವುಗಳ position ಪ್ರಕಾರ readings ತೆಗೆಯುತ್ತೆ.",
+        "Comment ಈ numbers ಏನು ಅಂತ ಹೇಳುತ್ತೆ: fasting blood sugar, milligrams per decilitre ನಲ್ಲಿ.",
+        "Square brackets list ಮಾಡುತ್ತವೆ. sugar ನಲ್ಲಿ ಈಗ ಐದು numbers, ಬರೆದ ಕ್ರಮದಲ್ಲೇ.",
+        "sugar of zero ಮೊದಲ reading. Python positions ಅನ್ನು zero ಇಂದ ಎಣಿಸುತ್ತೆ, ಹಾಗಾಗಿ ಇದು ನೂರ ಹತ್ತು.",
+        "Minus one ಕೊನೆಯಿಂದ ಎಣಿಸುತ್ತೆ, ಹಾಗಾಗಿ sugar of minus one ಕೊನೆಯ reading: ನೂರ ಐದು.",
+        "Slice one to four, position ಒಂದರಿಂದ ಶುರುವಾಗಿ position ನಾಲ್ಕಕ್ಕೆ ಸ್ವಲ್ಪ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ. ಇದರಿಂದ ಮೂರು readings ಸಿಗುತ್ತವೆ.",
+        "len list ನ items ಎಣಿಸುತ್ತೆ: ಐದು readings."
+      ]
+    },
+    {
+      "id": "anim-index",
+      "prefix": "anim-index-",
+      "lang": "en",
+      "tts": [
+        "The list sugar holds five readings. Each one sits in its own numbered place, and the numbering starts at zero.",
+        "sugar of zero is the first place: one hundred and ten.",
+        "Minus one counts from the end, so sugar of minus one is the last place: one hundred and five.",
+        "The slice one to four takes places one, two and three. It stops before place four."
+      ],
+      "display": [
+        "The list sugar holds five readings. Each one sits in its own numbered place, and the numbering starts at zero.",
+        "sugar of zero is the first place: one hundred and ten.",
+        "Minus one counts from the end, so sugar of minus one is the last place: one hundred and five.",
+        "The slice one to four takes places one, two and three. It stops before place four."
+      ]
+    },
+    {
+      "id": "anim-index",
+      "prefix": "anim-index-",
+      "lang": "hi",
+      "tts": [
+        "List sugar में पाँच readings हैं। हर reading अपनी numbered जगह पर है, और numbering zero से शुरू होती है।",
+        "sugar of zero पहली जगह है: एक सौ दस।",
+        "Minus one आखिर से गिनता है, इसलिए sugar of minus one आखिरी जगह है: एक सौ पाँच।",
+        "Slice one to four जगह एक, दो और तीन लेता है। यह जगह चार से पहले रुक जाता है।"
+      ],
+      "display": [
+        "List sugar में पाँच readings हैं। हर reading अपनी numbered जगह पर है, और numbering zero से शुरू होती है।",
+        "sugar of zero पहली जगह है: एक सौ दस।",
+        "Minus one आखिर से गिनता है, इसलिए sugar of minus one आखिरी जगह है: एक सौ पाँच।",
+        "Slice one to four जगह एक, दो और तीन लेता है। यह जगह चार से पहले रुक जाता है।"
+      ],
+      "displayHinglish": [
+        "List sugar mein paanch readings hain. Har reading apni numbered jagah par hai, aur numbering zero se shuru hoti hai.",
+        "sugar of zero pehli jagah hai: ek sau das.",
+        "Minus one aakhir se ginta hai, isliye sugar of minus one aakhri jagah hai: ek sau paanch.",
+        "Slice one to four jagah ek, do aur teen leta hai. Yeh jagah chaar se pehle ruk jaata hai."
+      ]
+    },
+    {
+      "id": "anim-index",
+      "prefix": "anim-index-",
+      "lang": "kn",
+      "tts": [
+        "List sugar ನಲ್ಲಿ ಐದು readings ಇವೆ. ಪ್ರತಿ reading ತನ್ನದೇ numbered ಜಾಗದಲ್ಲಿ ಇದೆ, numbering zero ಇಂದ ಶುರು.",
+        "sugar of zero ಮೊದಲ ಜಾಗ: ನೂರ ಹತ್ತು.",
+        "Minus one ಕೊನೆಯಿಂದ ಎಣಿಸುತ್ತೆ, ಹಾಗಾಗಿ sugar of minus one ಕೊನೆಯ ಜಾಗ: ನೂರ ಐದು.",
+        "Slice one to four ಜಾಗ ಒಂದು, ಎರಡು ಮತ್ತು ಮೂರು ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ. ಜಾಗ ನಾಲ್ಕರ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ."
+      ],
+      "display": [
+        "List sugar ನಲ್ಲಿ ಐದು readings ಇವೆ. ಪ್ರತಿ reading ತನ್ನದೇ numbered ಜಾಗದಲ್ಲಿ ಇದೆ, numbering zero ಇಂದ ಶುರು.",
+        "sugar of zero ಮೊದಲ ಜಾಗ: ನೂರ ಹತ್ತು.",
+        "Minus one ಕೊನೆಯಿಂದ ಎಣಿಸುತ್ತೆ, ಹಾಗಾಗಿ sugar of minus one ಕೊನೆಯ ಜಾಗ: ನೂರ ಐದು.",
+        "Slice one to four ಜಾಗ ಒಂದು, ಎರಡು ಮತ್ತು ಮೂರು ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ. ಜಾಗ ನಾಲ್ಕರ ಮುಂಚೆ ನಿಲ್ಲುತ್ತೆ."
+      ]
+    }
+  ]
+}

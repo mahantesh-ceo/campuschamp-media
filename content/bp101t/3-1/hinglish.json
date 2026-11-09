@@ -1,0 +1,331 @@
+{
+  "hook": {
+    "title": "Saat readings, ek naam",
+    "md": "Ek patient ka blood pressure hafte bhar har subah check hota hai. Ab tak jo aap jaante hain, usse saat variables chahiye honge: `bp1`, `bp2`, `bp3` wagairah. Ab sochiye ek mahine ki readings, ya chaalis patients wala ward.\n\nPython ke paas behtar tareeka hai: saari readings, kram se, **ek naam** ke neeche rakho. Yeh container hai **list**. Asli data ka kaam lists se shuru hota hai: is unit mein milne wala har dataset, stock register se clinical trial tak, lists se bana hai."
+  },
+  "learn": [
+    "Square brackets se **list** banana, aur **len()** se ginna",
+    "**Indexing** se position ke hisaab se ek item chunna, **0** se shuru karke, aur aakhir se **-1** se",
+    "Kisi item ko **badalna**, kyunki lists **mutable** hain",
+    "**Slicing** se list ka ek hissa lena, aur list par loop chalana"
+  ],
+  "explanation": [
+    {
+      "heading": "List banana",
+      "md": "**List** **square brackets** se likhi jaati hai, items commas se alag:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nprint(medicines)\nprint(len(medicines))\nprint(type(medicines))\n```\n\nYeh print karta hai:\n\n```\n['Paracetamol', 'Amoxicillin', 'Cetirizine']\n3\n<class 'list'>\n```\n\nList items ko **usi kram mein** rakhti hai jismein aapne likha. `len()` items ginta hai, jaise Lesson 1.6 mein usne string ke letters gine the. List mein numbers, strings, ya dono ho sakte hain, aur `[]` khaali list hai.",
+      "callout": {
+        "title": "List",
+        "md": "Items ka kram wala collection, square brackets mein, commas se alag. Ek variable sabko rakhta hai."
+      }
+    },
+    {
+      "heading": "Indexing: ek item chunna",
+      "md": "Har item ka ek position number hota hai jise **index** kehte hain. Python ginti **0** se shuru karta hai, isliye pehla item index 0 par hai:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\", \"Metformin\"]\nprint(medicines[0])\nprint(medicines[2])\nprint(medicines[-1])\n```\n\nYeh print karta hai:\n\n```\nParacetamol\nCetirizine\nMetformin\n```\n\n**Negative indexes** aakhir se ginte hain: `-1` aakhri item hai, `-2` usse pehle wala. Yeh tab kaam aata hai jab aapko latest reading chahiye aur pata nahi list kitni lambi hai.",
+      "callout": {
+        "title": "Pehla item [0] hai, [1] nahi",
+        "md": "4 items wali list ke indexes 0, 1, 2 aur 3 hain. Index 4 maangne par IndexError: list index out of range aata hai."
+      }
+    },
+    {
+      "heading": "Item badalna",
+      "md": "String se alag, list banne ke baad badli ja sakti hai. Kisi item ko badalne ke liye `=` ke baayin taraf index lagaiye:\n\n```python\nstock = [40, 0, 25]\nstock[1] = 60\nprint(stock)\n```\n\nYeh print karta hai:\n\n```\n[40, 60, 25]\n```\n\nDoosra shelf khaali tha (0); restock ke baad usmein 60 hain. Kyunki lists badli ja sakti hain, isliye unhe **mutable** kehte hain."
+    },
+    {
+      "heading": "Slicing: list ka ek hissa lena",
+      "md": "**Slice** `list[start:stop]` index `start` se index `stop` tak ki nayi list deta hai, par `stop` **shaamil nahi** hota:\n\n```python\nbp = [128, 135, 142, 130, 126, 138]\nprint(bp[1:4])\nprint(bp[:3])\nprint(bp[3:])\nprint(bp[-2:])\nprint(bp[::2])\n```\n\nYeh print karta hai:\n\n```\n[135, 142, 130]\n[128, 135, 142]\n[130, 126, 138]\n[126, 138]\n[128, 142, 126]\n```\n\n- `bp[1:4]` indexes 1, 2 aur 3 leta hai.\n- Pehle item se shuru karna ho to `start` chhod dijiye: `bp[:3]`.\n- Aakhir tak jaana ho to `stop` chhod dijiye: `bp[3:]`.\n- `bp[-2:]` aakhri do readings deta hai.\n- Teesra number **step** hai: `bp[::2]` har doosri reading leta hai.\n\nSlicing original list ko kabhi nahi badalta; woh nayi list banata hai.",
+      "callout": {
+        "title": "Slice mein items giniye",
+        "md": "stop ghata start: bp[1:4] mein 4 - 1 = 3 items hain. Slices strings par bhi bilkul aise hi kaam karte hain."
+      }
+    },
+    {
+      "heading": "List ke har item se guzarna",
+      "md": "`for` loop (Lesson 2.3) list ke har item par kram se jaata hai, aur `in` check karta hai ki koi value list mein hai ya nahi:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nfor drug in medicines:\n    print(\"Dispense:\", drug)\nprint(\"Aspirin\" in medicines)\n```\n\nYeh print karta hai:\n\n```\nDispense: Paracetamol\nDispense: Amoxicillin\nDispense: Cetirizine\nFalse\n```\n\n`\"Aspirin\" in medicines` `False` hai kyunki is prescription mein Aspirin nahi hai. Agle lessons mein aap items jodenge, hataayenge aur sort karenge, aur tuples va dictionaries se milenge."
+    }
+  ],
+  "walkthrough": {
+    "intro": "Yeh program paanch din ki fasting blood sugar readings ek list mein rakhta hai, phir position se readings nikaalta hai.",
+    "keyTerms": [
+      {
+        "meaning": "Paanch readings ki list banao, kram se."
+      },
+      {
+        "meaning": "Index 0 wala item: pehli reading."
+      },
+      {
+        "meaning": "Aakhri item, aakhir se ginkar."
+      },
+      {
+        "meaning": "Ek slice: indexes 1, 2 aur 3 (stop shaamil nahi)."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Yeh program paanch din ki blood sugar readings ek list mein rakhta hai, phir unki position se readings nikaalta hai."
+      },
+      {
+        "say": "Comment batata hai yeh numbers kya hain: fasting blood sugar, milligrams per decilitre mein."
+      },
+      {
+        "say": "Square brackets list banaate hain. sugar mein ab paanch numbers hain, usi kram mein jismein likhe gaye."
+      },
+      {
+        "say": "sugar of zero pehli reading hai. Python positions zero se ginta hai, isliye yeh ek sau das hai."
+      },
+      {
+        "say": "Minus one aakhir se ginta hai, isliye sugar of minus one aakhri reading hai: ek sau paanch."
+      },
+      {
+        "say": "Slice one to four, position ek se shuru hokar position chaar se theek pehle rukta hai. Isse teen readings milti hain."
+      },
+      {
+        "say": "len list ke items ginta hai: paanch readings."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Yeh do errors aisa index use karne se aati hain jo kaam nahi karta.",
+    "examples": [
+      {
+        "title": "Aisa index maangna jo hai hi nahi",
+        "md": "List mein 3 items hain, isliye uske indexes 0, 1 aur 2 hain. Index 3 nahi hai. Aakhri item ke liye `medicines[2]` likhiye, ya usse behtar, `medicines[-1]`."
+      },
+      {
+        "title": "Index mein decimal number use karna",
+        "md": "`/` hamesha float deta hai, isliye `middle` 1.5 hai, aur item 1.5 jaisa kuch nahi hota. Poora number paane ke liye floor division use kijiye: `middle = len(doses) // 2`."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Pehle item ke liye `medicines[1]` likhna",
+      "see": "Koi error nahi, par doosra item milta hai",
+      "fix": "Indexes 0 se shuru hote hain: pehla item `medicines[0]` hai."
+    },
+    {
+      "mistake": "Ummeed karna ki `bp[1:3]` mein index 3 shaamil hoga",
+      "see": "Koi error nahi, par slice mein ummeed se ek item kam hai",
+      "fix": "Stop index shaamil nahi hota: `bp[1:4]` indexes 1, 2 aur 3 deta hai."
+    },
+    {
+      "mistake": "Gol brackets use karna: `medicines(0)`",
+      "see": "TypeError: 'list' object is not callable",
+      "fix": "Index square brackets mein jaata hai: `medicines[0]`."
+    },
+    {
+      "mistake": "Text item ke quotes bhool jaana: `[\"Paracetamol\", Ibuprofen]`",
+      "see": "NameError: name 'Ibuprofen' is not defined",
+      "fix": "Har text item ko quotes chahiye: `[\"Paracetamol\", \"Ibuprofen\"]`."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "List banaiye",
+      "md": "**drugs** naam ki list banaiye jismein `\"Aspirin\"`, `\"Atorvastatin\"` aur `\"Amlodipine\"` isi kram mein hon. List print kijiye, phir uski length. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "drugs = [\"Aspirin\", \"Atorvastatin\", \"Amlodipine\"]",
+        "print(drugs) list dikhata hai; print(len(drugs)) batata hai usmein kitne items hain."
+      ]
+    },
+    {
+      "title": "Pehli aur aakhri reading",
+      "md": "Ek patient ka temperature paanch baar liya gaya. **Indexing** se **pehli** reading aur phir **aakhri** reading print kijiye. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "Pehla item index 0 par hai.",
+        "Aakhri item index -1 par hai: print(temps[-1])"
+      ]
+    },
+    {
+      "title": "Hafte ke beech ka slice",
+      "md": "Yeh 7 din ki pulse readings hain. **Din 3, 4 aur 5** (indexes 2, 3 aur 4) ki readings **ek slice** se print kijiye. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "Slice pulse[start:stop] hai, aur stop shaamil nahi hota.",
+        "print(pulse[2:5])"
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "Amoxicillin, yaani **doosra** item, 200 strips tak restock hua. Par yeh program teesra item badal deta hai. Ise theek kijiye taaki output bilkul yeh ho:",
+      "hints": [
+        "Doosre item ka index kya hai?",
+        "Indexes 0 se shuru hote hain, isliye doosra item stock[1] hai."
+      ],
+      "solutionNote": "Indexes 0 se shuru hote hain, isliye doosra item index 1 par hai. stock[2] teesra item tha, 300."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "meds = [\"Aspirin\", \"Insulin\", \"Digoxin\"]\nprint(meds[1])\n\nYeh kya print karta hai?",
+      "why": "Indexes 0 se shuru hote hain, isliye meds[1] doosra item hai, Insulin."
+    },
+    {
+      "q": "List ke pehle item ka index kya hai?",
+      "why": "Python list positions hamesha 0 se ginta hai."
+    },
+    {
+      "q": "x = [10, 20, 30, 40, 50]\nprint(x[1:3])\n\nYeh kya print karta hai?",
+      "why": "Slice indexes 1 aur 2 leta hai; stop index 3 shaamil nahi."
+    },
+    {
+      "q": "readings[-1] kya deta hai?",
+      "why": "Negative indexes aakhir se ginte hain; -1 aakhri item hai."
+    },
+    {
+      "q": "Ek list mein 4 items hain. print(items[4]) se kya hota hai?",
+      "why": "Indexes 0 se 3 hain, isliye index 4 hai hi nahi."
+    },
+    {
+      "q": "Lists ke baare mein kaun-si baat sahi hai?",
+      "why": "Lists mutable hain: items badal, jod aur hata sakte hain."
+    }
+  ],
+  "exam": {
+    "note": "Practice ke liye important questions. University ke asli questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 3.1 · Lists",
+    "children": [
+      {
+        "label": "Banana",
+        "children": [
+          {
+            "label": "[a, b, c]"
+          },
+          {
+            "label": "len() ginta hai"
+          },
+          {
+            "label": "[] khaali hai"
+          }
+        ]
+      },
+      {
+        "label": "Index",
+        "children": [
+          {
+            "label": "0 se shuru"
+          },
+          {
+            "label": "-1 aakhri"
+          },
+          {
+            "label": "list[i]"
+          }
+        ]
+      },
+      {
+        "label": "Badalna",
+        "children": [
+          {
+            "label": "list[i] = new"
+          },
+          {
+            "label": "Mutable"
+          },
+          {
+            "label": "Strings nahi"
+          }
+        ]
+      },
+      {
+        "label": "Slice",
+        "children": [
+          {
+            "label": "[start:stop]"
+          },
+          {
+            "label": "Stop shaamil nahi"
+          },
+          {
+            "label": "[::2] step"
+          }
+        ]
+      },
+      {
+        "label": "Guzarna",
+        "children": [
+          {
+            "label": "for item in list"
+          },
+          {
+            "label": "x in list"
+          },
+          {
+            "label": "Kram bana rehta hai"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "IndexError: out of range"
+          },
+          {
+            "label": "TypeError: float index"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**List** kai items ko, kram se, ek variable mein rakhti hai: `drugs = [\"Aspirin\", \"Insulin\"]`. `len()` unhe ginta hai.",
+    "**Indexing** ek item chunta hai: pehla `[0]` hai, aakhri `[-1]`. Na hone wala index **IndexError** deta hai.",
+    "Lists **mutable** hain: `stock[1] = 60` ek item badal deta hai.",
+    "**Slice** `list[start:stop]` nayi list banata hai, `stop` tak par use shaamil kiye bina; `[::2]` har doosra item leta hai.",
+    "`for item in list:` har item par jaata hai, aur `x in list` check karta hai ki value maujood hai ya nahi."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "List sugar mein paanch readings hain. Har reading apni numbered jagah par hai, aur numbering zero se shuru hoti hai."
+        },
+        {
+          "say": "sugar of zero pehli jagah hai: ek sau das."
+        },
+        {
+          "say": "Minus one aakhir se ginta hai, isliye sugar of minus one aakhri jagah hai: ek sau paanch."
+        },
+        {
+          "say": "Slice one to four jagah ek, do aur teen leta hai. Yeh jagah chaar se pehle ruk jaata hai."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Square brackets mein items ka kram wala collection, ek variable mein: [\"Aspirin\", \"Insulin\"]."
+    },
+    {
+      "meaning": "List mein kisi item ka position number. Ginti 0 se shuru hoti hai, isliye pehla item list[0] hai."
+    },
+    {
+      "meaning": "Aakhir se gina gaya index: list[-1] aakhri item hai, list[-2] usse pehle wala."
+    },
+    {
+      "meaning": "List ka ek hissa, list[start:stop], start se stop tak par stop shaamil nahi. Yeh nayi list banata hai."
+    },
+    {
+      "meaning": "Banne ke baad badla ja sakta hai. Lists mutable hain (stock[1] = 60 chalta hai); strings nahi."
+    },
+    {
+      "meaning": "Jab list mein na hone wala index maangein tab aane wali error, jaise 3 items wali list mein [3]."
+    }
+  ]
+}
