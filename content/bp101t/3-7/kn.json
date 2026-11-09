@@ -1,0 +1,352 @@
+{
+  "hook": {
+    "title": "Release ಅಥವಾ reject: ನಿರ್ಧಾರ ನಿಮ್ಮದು",
+    "md": "Pharmaceutical plant ನಲ್ಲಿ ತಯಾರಾದ tablets ನ ಪ್ರತಿ batch factory ಇಂದ ಹೊರಡುವ ಮುಂಚೆ test ಆಗುತ್ತೆ. **Assay** ಪ್ರತಿ tablet ನಲ್ಲಿ ಸರಿಯಾದ ಪ್ರಮಾಣದ drug ಇದೆಯಾ ಅಂತ check ಮಾಡುತ್ತೆ. **Dissolution test** ದೇಹದಲ್ಲಿ drug ನಿಜವಾಗಿ tablet ಇಂದ ಹೊರಬರುತ್ತಾ ಅಂತ check ಮಾಡುತ್ತೆ. Quality control lab ಫಲಿತಾಂಶಗಳನ್ನು file ಆಗಿ ಕಳಿಸುತ್ತೆ, ಪ್ರತಿ batch ಗೆ ನಿರ್ಧಾರ ಮಾಡಬೇಕು: **release** ಅಥವಾ **reject**.\n\nಈ project lesson ನಲ್ಲಿ Unit III ನ ಎಲ್ಲವನ್ನೂ ಬಳಸಿ ಆ ನಿರ್ಧಾರವನ್ನು Python ನಲ್ಲಿ ಕಟ್ಟುತ್ತೀರಿ: CSV file ಓದುವುದು, values convert ಮಾಡುವುದು, ಪ್ರತಿ batch ಅನ್ನು specification ಜೊತೆ check ಮಾಡುವುದು, NumPy ಇಂದ ಸಾರಾಂಶ, drugs ಹೋಲಿಕೆ, ಮತ್ತು report file ಬರೆಯುವುದು."
+  },
+  "learn": [
+    "CSV dataset ಅನ್ನು list of dictionaries ಗೆ **load** ಮಾಡುವುದು, text ಅನ್ನು numbers ಆಗಿ ಬದಲಾಯಿಸುತ್ತಾ",
+    "Function ಇಂದ ಪ್ರತಿ record ಅನ್ನು **specification** ಜೊತೆ **check** ಮಾಡುವುದು",
+    "NumPy ಇಂದ column ನ **ಸಾರಾಂಶ** ಮತ್ತು **groups** ಹೋಲಿಕೆ",
+    "ಫಲಿತಾಂಶಗಳನ್ನು report file ಗೆ **ಬರೆಯುವುದು**: ಒಂದು ಪೂರ್ಣ ಸಣ್ಣ **data pipeline**"
+  ],
+  "explanation": [
+    {
+      "heading": "Step 1: dataset load ಮಾಡಿ",
+      "md": "QC lab file ನಲ್ಲಿ ಪ್ರತಿ batch ಗೆ ಒಂದು row: batch number, drug, **assay** (label claim ನ %) ಮತ್ತು **dissolution** (30 minutes ನಲ್ಲಿ ಕರಗಿದ %):\n\n```\nbatch,drug,assay,dissolution\nB101,Paracetamol,99.2,92\nB102,Paracetamol,94.1,88\nB103,Metformin,101.5,76\nB104,Metformin,100.3,85\nB105,Paracetamol,103.8,90\n```\n\nಇದನ್ನು `csv.DictReader` ಇಂದ load ಮಾಡಿ, numbers ಅನ್ನು **load ಮಾಡುವಾಗಲೇ** convert ಮಾಡಿ, ಆಗ ಮುಂದಿನ ಪ್ರತಿ step ನೇರವಾಗಿ maths ಮಾಡಬಹುದು:\n\n```python\nimport csv\n\nwith open(\"qc.csv\", \"w\") as f:\n    f.write(\"batch,drug,assay,dissolution\\n\")\n    f.write(\"B101,Paracetamol,99.2,92\\nB102,Paracetamol,94.1,88\\n\")\n    f.write(\"B103,Metformin,101.5,76\\nB104,Metformin,100.3,85\\n\")\n    f.write(\"B105,Paracetamol,103.8,90\\n\")\n\nbatches = []\nwith open(\"qc.csv\") as f:\n    for row in csv.DictReader(f):\n        row[\"assay\"] = float(row[\"assay\"])\n        row[\"dissolution\"] = int(row[\"dissolution\"])\n        batches.append(row)\nprint(len(batches), \"batches loaded\")\nprint(batches[0])\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\n5 batches loaded\n{'batch': 'B101', 'drug': 'Paracetamol', 'assay': 99.2, 'dissolution': 92}\n```\n\n`batches` ಈಗ ಐದು dictionaries ನ list, ಒಳಗೆ ನಿಜವಾದ numbers. ಮುಂದಿನ steps ಈ list ಇಂದಲೇ ಶುರು.",
+      "callout": {
+        "title": "Specification",
+        "md": "Release ಆಗಲು product ಪೂರೈಸಬೇಕಾದ limits. ಈ lesson ನಲ್ಲಿ: assay label claim ನ 95% ಇಂದ 105% ನಡುವೆ, ಮತ್ತು ಕನಿಷ್ಠ 80% ಕರಗಬೇಕು. ನಿಜವಾದ limits ಅನ್ನು pharmacopoeia ನಿಗದಿ ಮಾಡುತ್ತೆ, product ಇಂದ product ಗೆ ಬೇರೆ."
+      }
+    },
+    {
+      "heading": "Step 2: ಪ್ರತಿ batch check ಮಾಡಿ",
+      "md": "Specification ಅನ್ನು ಒಂದು **function** (Lesson 2.5) ನಲ್ಲಿ ಇಡಿ, ನಿಯಮ ಒಂದೇ ಜಾಗದಲ್ಲಿ ಇರಲಿ. ಇದು batch fail ಆದ tests ನ list ಕೊಡುತ್ತೆ; ಖಾಲಿ list ಅಂದ್ರೆ pass:\n\n```python\nbatches = [\n    {\"batch\": \"B101\", \"drug\": \"Paracetamol\", \"assay\": 99.2, \"dissolution\": 92},\n    {\"batch\": \"B102\", \"drug\": \"Paracetamol\", \"assay\": 94.1, \"dissolution\": 88},\n    {\"batch\": \"B103\", \"drug\": \"Metformin\", \"assay\": 101.5, \"dissolution\": 76},\n    {\"batch\": \"B104\", \"drug\": \"Metformin\", \"assay\": 100.3, \"dissolution\": 85},\n    {\"batch\": \"B105\", \"drug\": \"Paracetamol\", \"assay\": 103.8, \"dissolution\": 90},\n]\n\ndef check(b):\n    problems = []\n    if not 95 <= b[\"assay\"] <= 105:\n        problems.append(\"assay\")\n    if b[\"dissolution\"] < 80:\n        problems.append(\"dissolution\")\n    return problems\n\nfor b in batches:\n    problems = check(b)\n    if problems:\n        print(b[\"batch\"], \"FAIL:\", problems)\n    else:\n        print(b[\"batch\"], \"PASS\")\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nB101 PASS\nB102 FAIL: ['assay']\nB103 FAIL: ['dissolution']\nB104 PASS\nB105 PASS\n```\n\nList ನಲ್ಲಿ ಏನಾದರೂ ಇದ್ದರೆ `if problems:` True. B102 ನಲ್ಲಿ drug ಕಡಿಮೆ; B103 ನಲ್ಲಿ ಪ್ರಮಾಣ ಸರಿ, ಆದರೆ ಕಡಿಮೆ ಭಾಗ ಕರಗುತ್ತೆ.",
+      "callout": {
+        "title": "ಒಂದು ನಿಯಮ, ಒಂದು ಜಾಗ",
+        "md": "Limits ಬದಲಾದರೆ check() function ಮಾತ್ರ ಬದಲಾಯಿಸಿ. ಅದನ್ನು call ಮಾಡುವ program ನ ಪ್ರತಿ ಭಾಗ ಹೊಸ ನಿಯಮ ಬಳಸುತ್ತೆ."
+      }
+    },
+    {
+      "heading": "Step 3: NumPy ಇಂದ ಸಾರಾಂಶ",
+      "md": "ಒಂದು column ಅನ್ನು NumPy array (Lesson 3.4) ಗೆ ಸಂಗ್ರಹಿಸಿ, ಸಾರಾಂಶ ಮೂರು lines:\n\n```python\nimport numpy as np\n\nbatches = [\n    {\"batch\": \"B101\", \"drug\": \"Paracetamol\", \"assay\": 99.2, \"dissolution\": 92},\n    {\"batch\": \"B102\", \"drug\": \"Paracetamol\", \"assay\": 94.1, \"dissolution\": 88},\n    {\"batch\": \"B103\", \"drug\": \"Metformin\", \"assay\": 101.5, \"dissolution\": 76},\n    {\"batch\": \"B104\", \"drug\": \"Metformin\", \"assay\": 100.3, \"dissolution\": 85},\n    {\"batch\": \"B105\", \"drug\": \"Paracetamol\", \"assay\": 103.8, \"dissolution\": 90},\n]\n\nvalues = []\nfor b in batches:\n    values.append(b[\"assay\"])\nassay = np.array(values)\nprint(\"Mean assay:\", round(assay.mean(), 2))\nprint(\"Lowest assay:\", assay.min())\nprint(\"Batches below 95%:\", (assay < 95).sum())\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nMean assay: 99.78\nLowest assay: 94.1\nBatches below 95%: 1\n```\n\nAverage 99.78% ನಲ್ಲಿ ಸರಿಯಾಗಿ ಕಾಣುತ್ತೆ, ಆದರೆ minimum ಒಂದು batch limit ಗಿಂತ ಕೆಳಗೆ ಇರುವುದನ್ನು ತೋರಿಸುತ್ತೆ. ಹಾಗಾಗಿ ಯಾವಾಗಲೂ extremes ನೋಡಿ, average ಮಾತ್ರ ಅಲ್ಲ."
+    },
+    {
+      "heading": "Step 4: drugs ಹೋಲಿಕೆ",
+      "md": "ಪ್ರತಿ drug ನ pass rate ನೋಡಲು Lesson 3.6 ನ grouping pattern ಬಳಸಿ:\n\n```python\nbatches = [\n    {\"batch\": \"B101\", \"drug\": \"Paracetamol\", \"assay\": 99.2, \"dissolution\": 92},\n    {\"batch\": \"B102\", \"drug\": \"Paracetamol\", \"assay\": 94.1, \"dissolution\": 88},\n    {\"batch\": \"B103\", \"drug\": \"Metformin\", \"assay\": 101.5, \"dissolution\": 76},\n    {\"batch\": \"B104\", \"drug\": \"Metformin\", \"assay\": 100.3, \"dissolution\": 85},\n    {\"batch\": \"B105\", \"drug\": \"Paracetamol\", \"assay\": 103.8, \"dissolution\": 90},\n]\n\ntotal = {}\npassed = {}\nfor b in batches:\n    d = b[\"drug\"]\n    total[d] = total.get(d, 0) + 1\n    if 95 <= b[\"assay\"] <= 105 and b[\"dissolution\"] >= 80:\n        passed[d] = passed.get(d, 0) + 1\nfor d in total:\n    print(d, passed.get(d, 0), \"of\", total[d], \"passed\")\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nParacetamol 2 of 3 passed\nMetformin 1 of 2 passed\n```\n\nಒಂದು product ಮತ್ತೆ ಮತ್ತೆ ಅದೇ test ನಲ್ಲಿ fail ಆದರೆ, process ಪರಿಶೀಲಿಸಲು ಸೂಚನೆ: raw material, granulation ಅಥವಾ compression."
+    },
+    {
+      "heading": "Step 5: report ಬರೆಯಿರಿ",
+      "md": "ಕೊನೆಯಲ್ಲಿ ಪ್ರತಿ batch ನ ನಿರ್ಧಾರವನ್ನು QA team Excel ನಲ್ಲಿ ತೆರೆಯಬಹುದಾದ **ಹೊಸ** CSV file ಗೆ ಬರೆಯಿರಿ:\n\n```python\nimport csv\n\nbatches = [\n    {\"batch\": \"B101\", \"drug\": \"Paracetamol\", \"assay\": 99.2, \"dissolution\": 92},\n    {\"batch\": \"B102\", \"drug\": \"Paracetamol\", \"assay\": 94.1, \"dissolution\": 88},\n    {\"batch\": \"B103\", \"drug\": \"Metformin\", \"assay\": 101.5, \"dissolution\": 76},\n    {\"batch\": \"B104\", \"drug\": \"Metformin\", \"assay\": 100.3, \"dissolution\": 85},\n    {\"batch\": \"B105\", \"drug\": \"Paracetamol\", \"assay\": 103.8, \"dissolution\": 90},\n]\n\nwith open(\"qc_report.csv\", \"w\", newline=\"\") as f:\n    writer = csv.writer(f)\n    writer.writerow([\"batch\", \"result\"])\n    for b in batches:\n        result = \"PASS\"\n        if not 95 <= b[\"assay\"] <= 105 or b[\"dissolution\"] < 80:\n            result = \"FAIL\"\n        writer.writerow([b[\"batch\"], result])\n\nwith open(\"qc_report.csv\") as f:\n    for line in f:\n        print(line.strip())\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nbatch,result\nB101,PASS\nB102,FAIL\nB103,FAIL\nB104,PASS\nB105,PASS\n```\n\nReport `qc_report.csv` ಗೆ ಹೋಗುತ್ತೆ, ಹೊಸ ಹೆಸರು, ಹಾಗಾಗಿ `qc.csv` ನ original data ಯಾವತ್ತೂ overwrite ಆಗಲ್ಲ. ಓದು → convert → check → ಸಾರಾಂಶ → report: ನೀವು ಒಂದು ಪೂರ್ಣ **data pipeline** ಕಟ್ಟಿದ್ದೀರಿ. Unit IV ನಲ್ಲಿ Pandas ಇವುಗಳ ಪ್ರತಿ step ಅನ್ನು ಒಂದೇ line ನಲ್ಲಿ ಮಾಡುತ್ತೆ.",
+      "callout": {
+        "title": "Raw data ಯಾವತ್ತೂ overwrite ಮಾಡಬೇಡಿ",
+        "md": "ಫಲಿತಾಂಶಗಳನ್ನು ಯಾವಾಗಲೂ ಹೊಸ file ಗೆ ಬರೆಯಿರಿ. qc.csv ಅನ್ನು \"w\" ಇಂದ open ಮಾಡಿದರೆ lab ನ original ಫಲಿತಾಂಶಗಳು ಹೋಗುತ್ತವೆ."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "ಈ program CSV file ಇಂದ ಮೂರು batches ಓದಿ, ಪ್ರತಿಯೊಂದನ್ನೂ specification ಜೊತೆ check ಮಾಡಿ, ಯಾವ batches fail ಆದವು ಅಂತ ಹೇಳುತ್ತೆ.",
+    "keyTerms": [
+      {
+        "meaning": "ಪ್ರತಿ batch ಅನ್ನು dictionary ಆಗಿ ಓದು."
+      },
+      {
+        "meaning": "File ನ text ಅನ್ನು number ಆಗಿ ಬದಲಾಯಿಸು."
+      },
+      {
+        "meaning": "Batch ಯಾವುದಾದರೂ test ನಲ್ಲಿ fail ಆದರೆ True."
+      },
+      {
+        "meaning": "Fail ಆದ batch number ನೆನಪಿಡು."
+      }
+    ],
+    "steps": [
+      {
+        "say": "ಈ program tablets ನ ಮೂರು batches ಗೆ release ನಿರ್ಧಾರ ಮಾಡುತ್ತೆ."
+      },
+      {
+        "say": "import csv, CSV module load ಮಾಡುತ್ತೆ."
+      },
+      {
+        "say": "ಈ ಎರಡು lines lab ಫಲಿತಾಂಶಗಳನ್ನು qc dot csv ಆಗಿ save ಮಾಡುತ್ತವೆ: ಒಂದು header ಮತ್ತು ಮೂರು batches. ನಿಜ ಜೀವನದಲ್ಲಿ ಈ file lab ಇಂದ ಬರುತ್ತೆ."
+      },
+      {
+        "say": "total batches ಎಣಿಸುತ್ತೆ. ಇದು zero ಇಂದ ಶುರು."
+      },
+      {
+        "say": "failed, fail ಆದ batches ನ numbers ಸಂಗ್ರಹಿಸುತ್ತೆ."
+      },
+      {
+        "say": "DictReader ಒಂದು ಸಲಕ್ಕೆ ಒಂದು batch ಕೊಡುತ್ತೆ. ಮೊದಲದು B one oh one."
+      },
+      {
+        "say": "total ಒಂದು ಆಗುತ್ತೆ."
+      },
+      {
+        "say": "Assay ಮತ್ತು dissolution file ನಲ್ಲಿ text, ಹಾಗಾಗಿ float ಅವನ್ನು numbers ಮಾಡುತ್ತೆ: ತೊಂಬತ್ತೊಂಬತ್ತು ಪಾಯಿಂಟ್ ಎರಡು, ಮತ್ತು ತೊಂಬತ್ತೆರಡು."
+      },
+      {
+        "say": "ಇದು specification. Assay ತೊಂಬತ್ತೈದು ಇಂದ ನೂರ ಐದು ಹೊರಗೆ ಇದ್ದರೆ, ಅಥವಾ ಎಂಬತ್ತು percent ಗಿಂತ ಕಡಿಮೆ ಕರಗಿದರೆ batch fail. B one oh one ಎರಡೂ tests pass ಮಾಡುತ್ತೆ."
+      },
+      {
+        "say": "B one oh two ನ assay ತೊಂಬತ್ತನಾಲ್ಕು ಪಾಯಿಂಟ್ ಒಂದು, limit ಗಿಂತ ಕೆಳಗೆ, ಹಾಗಾಗಿ failed ಗೆ ಸೇರುತ್ತೆ."
+      },
+      {
+        "say": "B one oh three ನ assay ಚೆನ್ನಾಗಿದೆ, ಆದರೆ ಎಪ್ಪತ್ತಾರು percent ಮಾತ್ರ ಕರಗುತ್ತೆ. ಇದೂ fail."
+      },
+      {
+        "say": "print fail ಆದ batches list ತೋರಿಸುತ್ತೆ."
+      },
+      {
+        "say": "ಮೂರು batches ಕಳೆ ಎರಡು failures: ಒಂದು batch release ಆಗಬಹುದು."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "ಎರಡೂ errors check ಮುಂಚೆ ಸಿದ್ಧಪಡಿಸದ data ಇಂದ ಬರುತ್ತವೆ.",
+    "examples": [
+      {
+        "title": "Text ಅನ್ನು number ಜೊತೆ ಹೋಲಿಸುವುದು",
+        "md": "CSV file ನ values text, ಮತ್ತು Python text ಅನ್ನು number ಜೊತೆ ಹೋಲಿಸಲ್ಲ. ಮೊದಲು convert ಮಾಡಿ: `if float(row[\"assay\"]) < 95:`."
+      },
+      {
+        "title": "File ನಲ್ಲಿ ಖಾಲಿ cell",
+        "md": "B102 ನ assay cell ಖಾಲಿ, ಖಾಲಿ string number ಆಗಲ್ಲ. Lesson 3.6 ತರಹ ಮೊದಲು check ಮಾಡಿ: `if row[\"assay\"] == \"\": print(row[\"batch\"], \"assay missing\")`."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Fail ನಿಯಮದಲ್ಲಿ `and` ಬರೆಯುವುದು: `assay < 95 and diss < 80`",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ ಒಂದೇ test ನಲ್ಲಿ fail ಆದ batches release ಆಗುತ್ತವೆ",
+      "fix": "Batch **ಯಾವುದಾದರೂ** test ನಲ್ಲಿ fail ಆದರೆ fail: `or` ಬಳಸಿ."
+    },
+    {
+      "mistake": "Batches ಸಂಖ್ಯೆ type ಮಾಡುವುದು: `print(3 - len(failed))`",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ file ನಲ್ಲಿ ಹೆಚ್ಚು batches ಇದ್ದಾಗ ಉತ್ತರ ತಪ್ಪು",
+      "fix": "ಓದುವಾಗ rows ಎಣಿಸಿ, ಅಥವಾ `len(batches)` ಬಳಸಿ."
+    },
+    {
+      "mistake": "Report ಅನ್ನು data file ಗೆ ಬರೆಯುವುದು: `open(\"qc.csv\", \"w\")`",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ lab ನ original ಫಲಿತಾಂಶಗಳು ಅಳಿಸಿಹೋಗುತ್ತವೆ",
+      "fix": "ಫಲಿತಾಂಶಗಳನ್ನು ಹೊಸ file ಗೆ ಬರೆಯಿರಿ, `qc_report.csv` ತರಹ."
+    },
+    {
+      "mistake": "Average ಮಾತ್ರ ನೋಡುವುದು",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ fail batch ಒಳ್ಳೆಯ mean ಹಿಂದೆ ಮರೆಯಾಗುತ್ತೆ",
+      "fix": "`min()`, `max()` ಮತ್ತು limit ಹೊರಗೆ ಎಷ್ಟು ಅಂತ ಕೂಡ check ಮಾಡಿ."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Batches ಎಣಿಸಿ",
+      "md": "qc.csv file ನಿಮಗಾಗಿ ಈಗಾಗಲೇ ಬರೆದಿದೆ. ಅದನ್ನು **csv.DictReader** ಇಂದ ಓದಿ rows ಎಣಿಸಿ. Output ನಿಖರವಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "with open(\"qc.csv\") as f:\n    for row in csv.DictReader(f):",
+        "        count += 1"
+      ]
+    },
+    {
+      "title": "NumPy ಇಂದ mean assay",
+      "md": "**assay** list ಇಂದ NumPy array ಮಾಡಿ, ಅದರ mean ಅನ್ನು 1 decimal ಗೆ round ಮಾಡಿ print ಮಾಡಿ. Output ನಿಖರವಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "assay = np.array(assay_values)",
+        "print(\"Mean assay:\", round(assay.mean(), 1))"
+      ]
+    },
+    {
+      "title": "Dissolution failures",
+      "md": "**dissolution** 80 ಕ್ಕಿಂತ ಕಡಿಮೆ ಇರುವ batches ನ numbers list ಮಾಡಿ print ಮಾಡಿ. Output ನಿಖರವಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "batches ಮೇಲೆ loop ಓಡಿಸಿ b[\"dissolution\"] < 80 test ಮಾಡಿ.",
+        "for b in batches:\n    if b[\"dissolution\"] < 80:\n        low.append(b[\"batch\"])"
+      ]
+    },
+    {
+      "title": "Bug ಹುಡುಕಿ",
+      "md": "B201 assay ನಲ್ಲಿ fail, B202 dissolution ನಲ್ಲಿ fail, ಹಾಗಾಗಿ ಎರಡೂ reject ಆಗಬೇಕು. ಆದರೆ ಈ program ಏನೂ print ಮಾಡಲ್ಲ. ನಿಯಮ ಸರಿ ಮಾಡಿ, output ನಿಖರವಾಗಿ ಹೀಗಿರಲಿ:",
+      "hints": [
+        "Reject ಆಗಲು batch ಎರಡೂ tests ನಲ್ಲಿ fail ಆಗಬೇಕಾ, ಅಥವಾ ಒಂದರಲ್ಲಿ ಸಾಕಾ?",
+        "and ಅನ್ನು or ಆಗಿ ಬದಲಾಯಿಸಿ."
+      ],
+      "solutionNote": "and ಇದ್ದಾಗ batch ಎರಡೂ tests ನಲ್ಲಿ fail ಆದರೆ ಮಾತ್ರ reject ಆಗುತ್ತಿತ್ತು, ಯಾವುದೂ ಹಾಗಾಗಲಿಲ್ಲ. ಯಾವುದಾದರೂ test ನಲ್ಲಿ fail ಆದರೆ reject ಆಗಬೇಕು, ಹಾಗಾಗಿ ನಿಯಮಕ್ಕೆ or ಬೇಕು."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "CSV file ಇಂದ ಒಂದು row ಓದಿದ್ದೀರಿ. ಅದರ numbers ಹೋಲಿಸುವ ಮುಂಚೆ ಸಾಮಾನ್ಯವಾಗಿ ಏನು ಮಾಡಬೇಕು?",
+      "why": "CSV values text; ಹೋಲಿಕೆ ಮತ್ತು maths ಗೆ numbers ಬೇಕು."
+    },
+    {
+      "q": "Assay limit 95 ಇಂದ 105. Pass ಆಗುವ assay a ಗೆ ಯಾವ condition True?",
+      "why": "Chained comparison range ನ ಎರಡೂ ತುದಿ check ಮಾಡುತ್ತೆ."
+    },
+    {
+      "q": "Batch assay OR dissolution test ನಲ್ಲಿ fail ಆದರೆ reject. ಎರಡು fail conditions ಅನ್ನು ಯಾವ operator ಸೇರಿಸುತ್ತೆ?",
+      "why": "Reject ಗೆ ಯಾವುದಾದರೂ ಒಂದು test fail ಆದರೆ ಸಾಕು."
+    },
+    {
+      "q": "qc.csv ಅನ್ನು \"w\" ಇಂದ open ಮಾಡುವ ಬದಲು report ಅನ್ನು qc_report.csv ಗೆ ಯಾಕೆ ಬರೆಯಬೇಕು?",
+      "why": "Write mode ಮೊದಲು file ಅಳಿಸುತ್ತೆ; raw data ಯಾವತ್ತೂ overwrite ಮಾಡಬೇಡಿ."
+    },
+    {
+      "q": "assay = np.array([99.2, 94.1, 101.5])\nprint((assay < 95).sum())\n\nಇದು ಏನು print ಮಾಡುತ್ತೆ?",
+      "why": "ಒಂದು value 95 ಕ್ಕಿಂತ ಕಡಿಮೆ, True ಅನ್ನು 1 ಅಂತ ಎಣಿಸುತ್ತಾರೆ."
+    },
+    {
+      "q": "ಈ ಸಣ್ಣ data pipeline ನ ಸರಿಯಾದ ಕ್ರಮ ಯಾವುದು?",
+      "why": "ಓದದ, convert ಮಾಡದ data ಅನ್ನು check ಅಥವಾ summarise ಮಾಡಲು ಆಗಲ್ಲ."
+    }
+  ],
+  "exam": {
+    "note": "Practice ಗಾಗಿ important questions. University ನ ನಿಜವಾದ questions ಬೇರೆ ಇರಬಹುದು."
+  },
+  "mindmap": {
+    "label": "Lesson 3.7 · QC dataset project",
+    "children": [
+      {
+        "label": "ಓದು",
+        "children": [
+          {
+            "label": "csv.DictReader"
+          },
+          {
+            "label": "ಪ್ರತಿ batch ಗೆ dict"
+          },
+          {
+            "label": "Rows ಎಣಿಸು"
+          }
+        ]
+      },
+      {
+        "label": "Convert",
+        "children": [
+          {
+            "label": "float() / int()"
+          },
+          {
+            "label": "ಖಾಲಿ cells"
+          },
+          {
+            "label": "Load ಮಾಡುವಾಗಲೇ"
+          }
+        ]
+      },
+      {
+        "label": "Spec check",
+        "children": [
+          {
+            "label": "95 <= assay <= 105"
+          },
+          {
+            "label": "dissolution >= 80"
+          },
+          {
+            "label": "ಯಾವುದು fail ಆದರೂ: or"
+          }
+        ]
+      },
+      {
+        "label": "ಸಾರಾಂಶ",
+        "children": [
+          {
+            "label": "NumPy mean()"
+          },
+          {
+            "label": "min() max()"
+          },
+          {
+            "label": "(arr < 95).sum()"
+          }
+        ]
+      },
+      {
+        "label": "Group ಮತ್ತು report",
+        "children": [
+          {
+            "label": "ಪ್ರತಿ drug pass count"
+          },
+          {
+            "label": "csv.writer"
+          },
+          {
+            "label": "ಹೊಸ file ಹೆಸರು"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "TypeError: str < int"
+          },
+          {
+            "label": "ValueError: ಖಾಲಿ cell"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Data pipeline**: ಓದು → convert → check → ಸಾರಾಂಶ → report.",
+    "CSV ಅನ್ನು `csv.DictReader` ಇಂದ list of dictionaries ಗೆ load ಮಾಡಿ, numbers ಅನ್ನು **load ಮಾಡುವಾಗಲೇ** convert ಮಾಡಿ.",
+    "**Specification** ಅನ್ನು ಒಂದು function ನಲ್ಲಿ ಇಡಿ; batch **ಯಾವುದಾದರೂ** test ನಲ್ಲಿ fail ಆದರೆ fail, ಹಾಗಾಗಿ fail ನಿಯಮದಲ್ಲಿ `or`.",
+    "NumPy ಇಂದ column ಸಾರಾಂಶ (`mean()`, `min()`, `(arr < 95).sum()`), ಎಣಿಕೆಯ pattern ಇಂದ **groups** ಹೋಲಿಕೆ.",
+    "ಫಲಿತಾಂಶಗಳನ್ನು `csv.writer` ಇಂದ **ಹೊಸ** file ಗೆ ಬರೆಯಿರಿ; raw data ಯಾವತ್ತೂ overwrite ಮಾಡಬೇಡಿ."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Quality control ಫಲಿತಾಂಶಗಳು CSV file ಆಗಿ ಬರುತ್ತವೆ: ಪ್ರತಿ batch ಗೆ ಒಂದು row, ಅದರ assay ಮತ್ತು dissolution ಜೊತೆ."
+        },
+        {
+          "say": "Step ಒಂದು: DictReader ಪ್ರತಿ row ಅನ್ನು dictionary ಆಗಿ ಓದುತ್ತೆ."
+        },
+        {
+          "say": "Step ಎರಡು: values text, ಹಾಗಾಗಿ float ಅವನ್ನು numbers ಮಾಡುತ್ತೆ."
+        },
+        {
+          "say": "Step ಮೂರು: ಪ್ರತಿ batch specification ಜೊತೆ check ಆಗುತ್ತೆ. B one oh two ನ assay ತೊಂಬತ್ತನಾಲ್ಕು ಪಾಯಿಂಟ್ ಒಂದು, ತೊಂಬತ್ತೈದಕ್ಕಿಂತ ಕೆಳಗೆ, ಹಾಗಾಗಿ fail."
+        },
+        {
+          "say": "B one oh three ಎಪ್ಪತ್ತಾರು percent ಮಾತ್ರ ಕರಗುತ್ತೆ, ಎಂಬತ್ತಕ್ಕಿಂತ ಕೆಳಗೆ. ಇದೂ fail."
+        },
+        {
+          "say": "ಒಂದು batch release ಆಗಬಹುದು, ಎರಡು reject. ಇದು release ನಿರ್ಧಾರ, ನಿಮ್ಮ program ಮಾಡಿದ್ದು."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "ಒಟ್ಟಿಗೆ ತಯಾರಾದ product ನ ಒಂದು lot, ತನ್ನದೇ batch number ಜೊತೆ, release ಮುಂಚೆ test ಆಗುತ್ತೆ."
+    },
+    {
+      "meaning": "Tablet ನಲ್ಲಿ ಎಷ್ಟು drug ಇದೆ ಎಂಬ test, label ಮೇಲಿನ ಪ್ರಮಾಣದ % ಆಗಿ."
+    },
+    {
+      "meaning": "ನಿಗದಿತ ಸಮಯದಲ್ಲಿ tablet ಇಂದ ಎಷ್ಟು drug liquid ಗೆ ಬರುತ್ತೆ ಅಂತ ಅಳೆಯುತ್ತೆ."
+    },
+    {
+      "meaning": "Release ಆಗಲು product ಪೂರೈಸಬೇಕಾದ limits, assay 95% ಇಂದ 105% ತರಹ."
+    },
+    {
+      "meaning": "Data ಹಾದುಹೋಗುವ ಹಂತಗಳು: ಓದು, convert, check, ಸಾರಾಂಶ, report."
+    }
+  ]
+}

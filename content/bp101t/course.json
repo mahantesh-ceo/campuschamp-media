@@ -249,8 +249,12 @@
         {
           "id": "3-7",
           "title": "Working with a pharmaceutical dataset",
-          "available": false,
-          "translations": []
+          "available": true,
+          "translations": [
+            "hi",
+            "hinglish",
+            "kn"
+          ]
         }
       ]
     },

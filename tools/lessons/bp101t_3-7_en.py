@@ -1,0 +1,246 @@
+"""Lesson 3.7 (English). Run to write content/bp101t/3-7/en.json."""
+import json
+import os
+import subprocess
+import sys
+
+F_QC = "```\nbatch,drug,assay,dissolution\nB101,Paracetamol,99.2,92\nB102,Paracetamol,94.1,88\nB103,Metformin,101.5,76\nB104,Metformin,100.3,85\nB105,Paracetamol,103.8,90\n```"
+WRITE_QC = "with open(\"qc.csv\", \"w\") as f:\n    f.write(\"batch,drug,assay,dissolution\\n\")\n    f.write(\"B101,Paracetamol,99.2,92\\nB102,Paracetamol,94.1,88\\n\")\n    f.write(\"B103,Metformin,101.5,76\\nB104,Metformin,100.3,85\\n\")\n    f.write(\"B105,Paracetamol,103.8,90\\n\")\n"
+BATCHES = "batches = [\n    {\"batch\": \"B101\", \"drug\": \"Paracetamol\", \"assay\": 99.2, \"dissolution\": 92},\n    {\"batch\": \"B102\", \"drug\": \"Paracetamol\", \"assay\": 94.1, \"dissolution\": 88},\n    {\"batch\": \"B103\", \"drug\": \"Metformin\", \"assay\": 101.5, \"dissolution\": 76},\n    {\"batch\": \"B104\", \"drug\": \"Metformin\", \"assay\": 100.3, \"dissolution\": 85},\n    {\"batch\": \"B105\", \"drug\": \"Paracetamol\", \"assay\": 103.8, \"dissolution\": 90},\n]\n"
+C_LOAD = "```python\nimport csv\n\n" + WRITE_QC + "\nbatches = []\nwith open(\"qc.csv\") as f:\n    for row in csv.DictReader(f):\n        row[\"assay\"] = float(row[\"assay\"])\n        row[\"dissolution\"] = int(row[\"dissolution\"])\n        batches.append(row)\nprint(len(batches), \"batches loaded\")\nprint(batches[0])\n```"
+O_LOAD = "```\n5 batches loaded\n{'batch': 'B101', 'drug': 'Paracetamol', 'assay': 99.2, 'dissolution': 92}\n```"
+C_CHECK = "```python\n" + BATCHES + "\ndef check(b):\n    problems = []\n    if not 95 <= b[\"assay\"] <= 105:\n        problems.append(\"assay\")\n    if b[\"dissolution\"] < 80:\n        problems.append(\"dissolution\")\n    return problems\n\nfor b in batches:\n    problems = check(b)\n    if problems:\n        print(b[\"batch\"], \"FAIL:\", problems)\n    else:\n        print(b[\"batch\"], \"PASS\")\n```"
+O_CHECK = "```\nB101 PASS\nB102 FAIL: ['assay']\nB103 FAIL: ['dissolution']\nB104 PASS\nB105 PASS\n```"
+C_STATS = "```python\nimport numpy as np\n\n" + BATCHES + "\nvalues = []\nfor b in batches:\n    values.append(b[\"assay\"])\nassay = np.array(values)\nprint(\"Mean assay:\", round(assay.mean(), 2))\nprint(\"Lowest assay:\", assay.min())\nprint(\"Batches below 95%:\", (assay < 95).sum())\n```"
+O_STATS = "```\nMean assay: 99.78\nLowest assay: 94.1\nBatches below 95%: 1\n```"
+C_GROUP = "```python\n" + BATCHES + "\ntotal = {}\npassed = {}\nfor b in batches:\n    d = b[\"drug\"]\n    total[d] = total.get(d, 0) + 1\n    if 95 <= b[\"assay\"] <= 105 and b[\"dissolution\"] >= 80:\n        passed[d] = passed.get(d, 0) + 1\nfor d in total:\n    print(d, passed.get(d, 0), \"of\", total[d], \"passed\")\n```"
+O_GROUP = "```\nParacetamol 2 of 3 passed\nMetformin 1 of 2 passed\n```"
+C_REPORT = "```python\nimport csv\n\n" + BATCHES + "\nwith open(\"qc_report.csv\", \"w\", newline=\"\") as f:\n    writer = csv.writer(f)\n    writer.writerow([\"batch\", \"result\"])\n    for b in batches:\n        result = \"PASS\"\n        if not 95 <= b[\"assay\"] <= 105 or b[\"dissolution\"] < 80:\n            result = \"FAIL\"\n        writer.writerow([b[\"batch\"], result])\n\nwith open(\"qc_report.csv\") as f:\n    for line in f:\n        print(line.strip())\n```"
+O_REPORT = "```\nbatch,result\nB101,PASS\nB102,FAIL\nB103,FAIL\nB104,PASS\nB105,PASS\n```"
+
+L = {
+    "id": "3-7",
+    "course": "bp101t",
+    "unit": "Unit III",
+    "unitTitle": "Data Structures & File Handling",
+    "number": "3.7",
+    "title": "Working with a pharmaceutical dataset",
+    "minutes": 25,
+    "free": False,
+    "audioLanguages": ["en", "hi", "kn"],
+    "hook": {
+        "title": "Release or reject: you decide",
+        "md": "Every batch of tablets made in a pharmaceutical plant is tested before it can leave the factory. The **assay** checks that each tablet has the right amount of drug. The **dissolution test** checks that the drug actually comes out of the tablet in the body. The quality control lab sends the results as a file, and a decision has to be made for every batch: **release** or **reject**.\n\nIn this project lesson you'll build that decision in Python, using everything from Unit III: reading a CSV file, converting values, checking each batch against the specification, summarising with NumPy, comparing drugs, and writing a report file.",
+    },
+    "learn": [
+        "How to **load** a CSV dataset into a list of dictionaries, converting text to numbers",
+        "How to **check** every record against a **specification** with a function",
+        "How to **summarise** a column with NumPy and compare **groups**",
+        "How to **write** the results to a report file: a complete small **data pipeline**",
+    ],
+    "explanation": [
+        {
+            "heading": "Step 1: load the dataset",
+            "md": "The QC lab's file has one row per batch: the batch number, the drug, the **assay** (% of the label claim) and the **dissolution** (% dissolved in 30 minutes):\n\n" + F_QC + "\n\nLoad it with `csv.DictReader` and convert the numbers **as you load**, so every later step can do maths straight away:\n\n" + C_LOAD + "\n\nThis prints:\n\n" + O_LOAD + "\n\n`batches` is now a list of five dictionaries, with real numbers inside. In the next steps we start from this list.",
+            "callout": {"type": "definition", "title": "Specification", "md": "The limits a product must meet to be released. In this lesson: assay between 95% and 105% of the label claim, and at least 80% dissolved. Real limits are set by the pharmacopoeia and differ from product to product."},
+        },
+        {
+            "heading": "Step 2: check each batch",
+            "md": "Put the specification in a **function** (Lesson 2.5), so the rule lives in one place. It returns a list of the tests a batch failed; an empty list means it passed:\n\n" + C_CHECK + "\n\nThis prints:\n\n" + O_CHECK + "\n\n`if problems:` is True when the list has anything in it. B102 has too little drug; B103 has the right amount, but too little of it dissolves.",
+            "callout": {"type": "tip", "title": "One rule, one place", "md": "If the limits change, you edit only the check() function. Every part of the program that calls it uses the new rule."},
+        },
+        {
+            "heading": "Step 3: summarise with NumPy",
+            "md": "Collect one column into a NumPy array (Lesson 3.4) and the summary takes three lines:\n\n" + C_STATS + "\n\nThis prints:\n\n" + O_STATS + "\n\nThe average looks fine at 99.78%, but the minimum shows one batch below the limit. That's why you always look at the extremes, not just the average.",
+        },
+        {
+            "heading": "Step 4: compare the drugs",
+            "md": "Use the grouping pattern from Lesson 3.6 to see the pass rate for each drug:\n\n" + C_GROUP + "\n\nThis prints:\n\n" + O_GROUP + "\n\nIf one product keeps failing the same test, that's a signal to investigate the process: the raw material, granulation or compression.",
+        },
+        {
+            "heading": "Step 5: write the report",
+            "md": "Finally, write the decision for every batch to a **new** CSV file that the QA team can open in Excel:\n\n" + C_REPORT + "\n\nThis prints:\n\n" + O_REPORT + "\n\nThe report goes to `qc_report.csv`, a new name, so the original data in `qc.csv` is never overwritten. Read → convert → check → summarise → report: you've built a complete **data pipeline**. In Unit IV, Pandas will do each of these steps in a single line.",
+            "callout": {"type": "warning", "title": "Never overwrite the raw data", "md": "Always write results to a new file. If you open qc.csv with \"w\", the lab's original results are gone."},
+        },
+    ],
+    "walkthrough": {
+        "intro": "This program reads three batches from a CSV file, checks each one against the specification, and reports which batches failed.",
+        "filename": "qc_check.py",
+        "code": "import csv\n# Quality control results for three batches\nwith open(\"qc.csv\", \"w\") as f:\n    f.write(\"batch,assay,dissolution\\nB101,99.2,92\\nB102,94.1,88\\nB103,101.5,76\\n\")\ntotal = 0\nfailed = []\nwith open(\"qc.csv\") as f:\n    for row in csv.DictReader(f):\n        total += 1\n        assay = float(row[\"assay\"])\n        diss = float(row[\"dissolution\"])\n        if not 95 <= assay <= 105 or diss < 80:\n            failed.append(row[\"batch\"])\nprint(\"Failed batches:\", failed)\nprint(\"Passed:\", total - len(failed), \"of\", total)",
+        "output": "Failed batches: ['B102', 'B103']\nPassed: 1 of 3",
+        "steps": [
+            {"line": None, "say": "This program makes the release decision for three batches of tablets.", "output": None, "audio": "step-01.mp3"},
+            {"line": 1, "say": "import csv loads the CSV module.", "output": None, "audio": "step-02.mp3"},
+            {"line": 3, "say": "These two lines save the lab's results as qc dot csv: a header and three batches. In real life this file would come from the lab.", "output": None, "audio": "step-03.mp3"},
+            {"line": 5, "say": "total will count the batches. It starts at zero.", "output": None, "audio": "step-04.mp3", "vars": {"total": "0"}},
+            {"line": 6, "say": "failed will collect the numbers of the batches that fail.", "output": None, "audio": "step-05.mp3", "vars": {"failed": "[]"}},
+            {"line": 8, "say": "DictReader gives one batch at a time. The first is B one oh one.", "output": None, "audio": "step-06.mp3", "vars": {"row": "{'batch': 'B101', ...}"}},
+            {"line": 9, "say": "total goes up to one.", "output": None, "audio": "step-07.mp3", "vars": {"total": "1"}},
+            {"line": 10, "say": "The assay and the dissolution are text in the file, so float turns them into numbers: ninety nine point two, and ninety two.", "output": None, "audio": "step-08.mp3", "vars": {"assay": "99.2", "diss": "92.0"}},
+            {"line": 12, "say": "This is the specification. The batch fails if the assay is outside ninety five to one hundred and five, or if less than eighty percent dissolves. B one oh one passes both tests.", "output": None, "audio": "step-09.mp3"},
+            {"line": 13, "say": "B one oh two has an assay of ninety four point one, below the limit, so it is added to failed.", "output": None, "audio": "step-10.mp3", "vars": {"total": "2", "assay": "94.1", "failed": "['B102']"}},
+            {"line": 13, "say": "B one oh three has a good assay, but only seventy six percent dissolves. It fails too.", "output": None, "audio": "step-11.mp3", "vars": {"total": "3", "diss": "76.0", "failed": "['B102', 'B103']"}},
+            {"line": 14, "say": "print lists the failed batches.", "output": "Failed batches: ['B102', 'B103']", "audio": "step-12.mp3"},
+            {"line": 15, "say": "Three batches minus two failures: one batch can be released.", "output": "Passed: 1 of 3", "audio": "step-13.mp3"},
+        ],
+        "keyTerms": [
+            {"term": "csv.DictReader(f)", "meaning": "Read each batch as a dictionary."},
+            {"term": "float(row[\"assay\"])", "meaning": "Convert the text from the file into a number."},
+            {"term": "not 95 <= assay <= 105 or diss < 80", "meaning": "True if the batch fails either test."},
+            {"term": "failed.append(row[\"batch\"])", "meaning": "Remember the batch number of a failure."},
+        ],
+    },
+    "errors": {
+        "intro": "Both errors come from data that wasn't prepared before the check.",
+        "examples": [
+            {
+                "title": "Comparing text with a number",
+                "code": "import csv\nwith open(\"qc.csv\", \"w\") as f:\n    f.write(\"batch,assay\\nB101,99.2\\n\")\nwith open(\"qc.csv\") as f:\n    for row in csv.DictReader(f):\n        if row[\"assay\"] < 95:\n            print(row[\"batch\"], \"low\")",
+                "output": "TypeError: '<' not supported between instances of 'str' and 'int'",
+                "errorLine": 6,
+                "md": "Values from a CSV file are text, and Python won't compare text with a number. Convert first: `if float(row[\"assay\"]) < 95:`.",
+            },
+            {
+                "title": "A blank cell in the file",
+                "code": "import csv\nwith open(\"qc.csv\", \"w\") as f:\n    f.write(\"batch,assay\\nB101,99.2\\nB102,\\n\")\nwith open(\"qc.csv\") as f:\n    for row in csv.DictReader(f):\n        print(row[\"batch\"], float(row[\"assay\"]))",
+                "output": "ValueError: could not convert string to float: ''",
+                "errorLine": 6,
+                "md": "B102's assay cell is empty, and an empty string can't become a number. Check first, as in Lesson 3.6: `if row[\"assay\"] == \"\": print(row[\"batch\"], \"assay missing\")`.",
+            },
+        ],
+    },
+    "mistakes": [
+        {"mistake": "Writing `and` in the fail rule: `assay < 95 and diss < 80`", "see": "No error, but batches that fail only one test are released", "fix": "A batch fails if **any** test fails: use `or`."},
+        {"mistake": "Typing the number of batches: `print(3 - len(failed))`", "see": "No error, but the answer is wrong when the file has more batches", "fix": "Count the rows as you read them, or use `len(batches)`."},
+        {"mistake": "Writing the report into the data file: `open(\"qc.csv\", \"w\")`", "see": "No error, but the lab's original results are erased", "fix": "Write results to a new file, like `qc_report.csv`."},
+        {"mistake": "Looking only at the average", "see": "No error, but a failing batch hides behind a good mean", "fix": "Also check `min()`, `max()` and how many fall outside the limits."},
+    ],
+    "tasks": [
+        {
+            "id": "t1",
+            "title": "Count the batches",
+            "md": "The file qc.csv has already been written for you. Read it with **csv.DictReader** and count the rows. The output must be exactly:",
+            "expectedOutput": "Batches: 4",
+            "starterCode": "import csv\nwith open(\"qc.csv\", \"w\") as f:\n    f.write(\"batch,assay\\nB101,99.2\\nB102,94.1\\nB103,101.5\\nB104,100.3\\n\")\n\ncount = 0\n# Read qc.csv and count the batches\n\nprint(\"Batches:\", count)",
+            "hints": ["with open(\"qc.csv\") as f:\n    for row in csv.DictReader(f):", "        count += 1"],
+            "solution": "import csv\nwith open(\"qc.csv\", \"w\") as f:\n    f.write(\"batch,assay\\nB101,99.2\\nB102,94.1\\nB103,101.5\\nB104,100.3\\n\")\n\ncount = 0\n# Read qc.csv and count the batches\nwith open(\"qc.csv\") as f:\n    for row in csv.DictReader(f):\n        count += 1\nprint(\"Batches:\", count)",
+            "check": {"type": "exactOutput", "mustContain": ["DictReader"]},
+        },
+        {
+            "id": "t2",
+            "title": "Mean assay with NumPy",
+            "md": "Make a NumPy array from the **assay** list and print its mean, rounded to 1 decimal place. The output must be exactly:",
+            "expectedOutput": "Mean assay: 100.1",
+            "starterCode": "import numpy as np\n\nassay_values = [99.2, 101.0, 100.1]\n# Print the mean assay, rounded to 1 decimal\n",
+            "hints": ["assay = np.array(assay_values)", "print(\"Mean assay:\", round(assay.mean(), 1))"],
+            "solution": "import numpy as np\n\nassay_values = [99.2, 101.0, 100.1]\n# Print the mean assay, rounded to 1 decimal\nassay = np.array(assay_values)\nprint(\"Mean assay:\", round(assay.mean(), 1))",
+            "check": {"type": "exactOutput", "mustContain": ["np.array(", ".mean()"]},
+        },
+        {
+            "id": "t3",
+            "title": "Dissolution failures",
+            "md": "Build a list of the batch numbers whose **dissolution** is below 80, and print it. The output must be exactly:",
+            "expectedOutput": "Low dissolution: ['B103']",
+            "starterCode": "batches = [\n    {\"batch\": \"B101\", \"dissolution\": 92},\n    {\"batch\": \"B102\", \"dissolution\": 88},\n    {\"batch\": \"B103\", \"dissolution\": 76},\n]\nlow = []\n# Add the batch numbers with dissolution below 80\n\nprint(\"Low dissolution:\", low)",
+            "hints": ["Loop through batches and test b[\"dissolution\"] < 80.", "for b in batches:\n    if b[\"dissolution\"] < 80:\n        low.append(b[\"batch\"])"],
+            "solution": "batches = [\n    {\"batch\": \"B101\", \"dissolution\": 92},\n    {\"batch\": \"B102\", \"dissolution\": 88},\n    {\"batch\": \"B103\", \"dissolution\": 76},\n]\nlow = []\n# Add the batch numbers with dissolution below 80\nfor b in batches:\n    if b[\"dissolution\"] < 80:\n        low.append(b[\"batch\"])\nprint(\"Low dissolution:\", low)",
+            "check": {"type": "exactOutput", "mustContain": ["80", ".append("]},
+        },
+        {
+            "id": "t4",
+            "title": "Find the bug",
+            "md": "B201 fails the assay and B202 fails dissolution, so both should be rejected. But this program prints nothing. Fix the rule so the output is exactly:",
+            "expectedOutput": "B201 FAIL\nB202 FAIL",
+            "starterCode": "batches = [\n    {\"batch\": \"B201\", \"assay\": 93.5, \"dissolution\": 90},\n    {\"batch\": \"B202\", \"assay\": 99.0, \"dissolution\": 72},\n    {\"batch\": \"B203\", \"assay\": 100.2, \"dissolution\": 88},\n]\nfor b in batches:\n    if b[\"assay\"] < 95 and b[\"dissolution\"] < 80:\n        print(b[\"batch\"], \"FAIL\")",
+            "hints": ["Does a batch need to fail both tests to be rejected, or just one?", "Change and to or."],
+            "solution": "batches = [\n    {\"batch\": \"B201\", \"assay\": 93.5, \"dissolution\": 90},\n    {\"batch\": \"B202\", \"assay\": 99.0, \"dissolution\": 72},\n    {\"batch\": \"B203\", \"assay\": 100.2, \"dissolution\": 88},\n]\nfor b in batches:\n    if b[\"assay\"] < 95 or b[\"dissolution\"] < 80:\n        print(b[\"batch\"], \"FAIL\")",
+            "solutionNote": "With and, a batch was rejected only if it failed both tests, and none did. A batch must be rejected if it fails any test, so the rule needs or.",
+            "check": {"type": "exactOutput", "mustContain": [" or "]},
+        },
+    ],
+    "quiz": [
+        {"q": "You read a row from a CSV file. What should you usually do before comparing its numbers?", "options": ["Sort it", "Convert the text values with float() or int()", "Write it to a new file", "Nothing"], "answer": 1, "why": "CSV values are text; comparisons and maths need numbers.", "code": False},
+        {"q": "The assay limit is 95 to 105. Which condition is True for a passing assay a?", "options": ["a > 95 or a < 105", "95 <= a <= 105", "a == 100", "a < 95 and a > 105"], "answer": 1, "why": "A chained comparison checks both ends of the range.", "code": True},
+        {"q": "A batch must be rejected if it fails the assay OR the dissolution test. Which operator joins the two fail conditions?", "options": ["and", "or", "not", "=="], "answer": 1, "why": "Failing any one test is enough to reject the batch.", "code": True},
+        {"q": "Why write the report to qc_report.csv instead of opening qc.csv with \"w\"?", "options": ["It's faster", "\"w\" would erase the original lab results", "CSV files can't be reopened", "The report must be a different format"], "answer": 1, "why": "Write mode erases a file first; never overwrite the raw data.", "code": False},
+        {"q": "assay = np.array([99.2, 94.1, 101.5])\nprint((assay < 95).sum())\n\nWhat does this print?", "options": ["94.1", "1", "2", "True"], "answer": 1, "why": "One value is below 95, and True counts as 1.", "code": True},
+        {"q": "What is the right order for this small data pipeline?", "options": ["Report → read → check", "Read → convert → check → summarise → report", "Check → read → report", "Summarise → read → convert"], "answer": 1, "why": "You can't check or summarise data you haven't read and converted.", "code": False},
+    ],
+    "exam": {
+        "note": "Important questions for practice. Actual university questions may differ.",
+        "short": [
+            {"q": "List the steps involved in analysing a dataset stored in a CSV file using Python.", "marks": 2,
+             "md": "1. **Read** the file (`csv.DictReader`).\n2. **Clean/convert**: convert text to numbers (`float()`, `int()`), handle missing values.\n3. **Check/filter** records against a condition or specification.\n4. **Summarise**: totals, averages, min/max (NumPy), group-wise counts.\n5. **Report**: print or write results to a new file (`csv.writer`)."},
+            {"q": "Write a Python program to read batch assay values from a CSV file and print the batches outside the limit of 95–105%.", "marks": 2,
+             "md": "```python\nimport csv\nwith open(\"qc.csv\") as f:\n    for row in csv.DictReader(f):\n        assay = float(row[\"assay\"])\n        if not 95 <= assay <= 105:\n            print(row[\"batch\"], assay)\n```"},
+        ],
+        "long": [
+            {"q": "Describe, with a Python program, how you would analyse a pharmaceutical quality control dataset stored as a CSV file: reading, converting, checking specifications, summarising and writing a report.", "marks": 5,
+             "md": "A QC file has one row per batch: `batch,drug,assay,dissolution`. The specification used here: assay 95–105% of label claim and dissolution ≥ 80%.\n\n```python\nimport csv\nimport numpy as np\n\n# 1. Read and convert\nbatches = []\nwith open(\"qc.csv\") as f:\n    for row in csv.DictReader(f):\n        row[\"assay\"] = float(row[\"assay\"])\n        row[\"dissolution\"] = float(row[\"dissolution\"])\n        batches.append(row)\n\n# 2. Check against the specification\ndef passes(b):\n    return 95 <= b[\"assay\"] <= 105 and b[\"dissolution\"] >= 80\n\n# 3. Summarise\nvalues = []\nfor b in batches:\n    values.append(b[\"assay\"])\nassay = np.array(values)\nprint(\"Mean assay:\", round(assay.mean(), 2), \"Min:\", assay.min())\n\n# 4. Group: pass count per drug\ntotal, passed = {}, {}\nfor b in batches:\n    d = b[\"drug\"]\n    total[d] = total.get(d, 0) + 1\n    if passes(b):\n        passed[d] = passed.get(d, 0) + 1\n\n# 5. Report to a new file\nwith open(\"qc_report.csv\", \"w\", newline=\"\") as f:\n    w = csv.writer(f)\n    w.writerow([\"batch\", \"result\"])\n    for b in batches:\n        result = \"PASS\"\n        if not passes(b):\n            result = \"FAIL\"\n        w.writerow([b[\"batch\"], result])\n```\n\n**Explanation**\n- Values read from a CSV are strings, so they are converted before comparison.\n- The specification is kept in one function, so a change in limits is made in one place.\n- A batch fails if **any** test fails (`or` in the fail condition; `and` in the pass condition).\n- NumPy gives the mean and extremes; the minimum reveals failures hidden by a good average.\n- Results go to a **new** file so the raw data is never overwritten.\n\nThis read → convert → check → summarise → report sequence is a **data pipeline**, the same process used for batch release, stability studies and dissolution data in industry."},
+        ],
+    },
+    "mindmap": {
+        "label": "Lesson 3.7 · QC dataset project",
+        "children": [
+            {"label": "Read", "children": [{"label": "csv.DictReader"}, {"label": "One dict per batch"}, {"label": "Count the rows"}]},
+            {"label": "Convert", "children": [{"label": "float() / int()"}, {"label": "Blank cells"}, {"label": "Do it while loading"}]},
+            {"label": "Check spec", "children": [{"label": "95 <= assay <= 105"}, {"label": "dissolution >= 80"}, {"label": "Fail if any: or"}]},
+            {"label": "Summarise", "children": [{"label": "NumPy mean()"}, {"label": "min() max()"}, {"label": "(arr < 95).sum()"}]},
+            {"label": "Group & report", "children": [{"label": "Pass count per drug"}, {"label": "csv.writer"}, {"label": "New file name"}]},
+            {"label": "Errors", "children": [{"label": "TypeError: str < int"}, {"label": "ValueError: blank cell"}]},
+        ],
+    },
+    "summary": [
+        "A **data pipeline** is read → convert → check → summarise → report.",
+        "Load a CSV with `csv.DictReader` into a list of dictionaries, converting numbers **as you load**.",
+        "Keep the **specification** in one function; a batch fails if **any** test fails, so the fail rule uses `or`.",
+        "Summarise a column with NumPy (`mean()`, `min()`, `(arr < 95).sum()`) and compare **groups** with the counting pattern.",
+        "Write results to a **new** file with `csv.writer`; never overwrite the raw data.",
+    ],
+    "video": {"videoUrl": None, "searchTerms": ["python csv data analysis project beginners", "pharmaceutical quality control assay dissolution data analysis python"]},
+    "animations": [
+        {
+            "id": "pipeline",
+            "title": "From the lab's file to a release decision",
+            "afterExplanation": 1,
+            "canvas": {"desktop": {"w": 800, "h": 460}, "mobile": {"w": 360, "h": 600}},
+            "actors": [
+                {"id": "file", "type": "card", "title": "qc.csv", "icon": "🧪", "color": "indigo", "mono": True,
+                 "lines": ["batch,assay,dissolution", "B101,99.2,92", "B102,94.1,88", "B103,101.5,76"],
+                 "desktop": {"x": 40, "y": 30, "w": 340, "h": 160}, "mobile": {"x": 16, "y": 12, "w": 328, "h": 140}},
+                {"id": "s1", "type": "pill", "text": "1. Read each row", "color": "indigo",
+                 "desktop": {"x": 410, "y": 40, "w": 350, "h": 30}, "mobile": {"x": 16, "y": 165, "w": 328, "h": 30}},
+                {"id": "s2", "type": "pill", "text": "2. Convert text → numbers", "color": "amber",
+                 "desktop": {"x": 410, "y": 85, "w": 350, "h": 30}, "mobile": {"x": 16, "y": 205, "w": 328, "h": 30}},
+                {"id": "s3", "type": "pill", "text": "3. Check: assay 95–105, dissolution ≥ 80", "color": "emerald",
+                 "desktop": {"x": 410, "y": 130, "w": 350, "h": 30}, "mobile": {"x": 16, "y": 245, "w": 328, "h": 30}},
+                {"id": "failed", "type": "box", "label": "failed", "value": "[]", "color": "rose",
+                 "desktop": {"x": 410, "y": 180, "w": 350, "h": 85}, "mobile": {"x": 16, "y": 290, "w": 328, "h": 75}},
+                {"id": "out", "type": "terminal", "title": "Output",
+                 "desktop": {"x": 40, "y": 290, "w": 720, "h": 150}, "mobile": {"x": 16, "y": 380, "w": 328, "h": 170}},
+            ],
+            "steps": [
+                {"say": "The quality control results arrive as a CSV file: one row per batch, with its assay and its dissolution.", "audio": "anim-pipeline-01.mp3",
+                 "actions": [{"do": "show", "target": "file"}, {"do": "show", "target": "out"}, {"do": "show", "target": "failed"}, {"do": "highlightLine", "target": "file", "line": 0}]},
+                {"say": "Step one: DictReader reads each row as a dictionary.", "audio": "anim-pipeline-02.mp3",
+                 "actions": [{"do": "show", "target": "s1"}, {"do": "pulse", "target": "s1"}, {"do": "highlightLine", "target": "file", "line": 1}]},
+                {"say": "Step two: the values are text, so float turns them into numbers.", "audio": "anim-pipeline-03.mp3",
+                 "actions": [{"do": "show", "target": "s2"}, {"do": "pulse", "target": "s2"}]},
+                {"say": "Step three: each batch is checked against the specification. B one oh two has an assay of ninety four point one, below ninety five, so it fails.", "audio": "anim-pipeline-04.mp3",
+                 "actions": [{"do": "show", "target": "s3"}, {"do": "pulse", "target": "s3"}, {"do": "highlightLine", "target": "file", "line": 2}, {"do": "setValue", "target": "failed", "value": "['B102']"}, {"do": "pulse", "target": "failed"}]},
+                {"say": "B one oh three dissolves only seventy six percent, below eighty. It fails too.", "audio": "anim-pipeline-05.mp3",
+                 "actions": [{"do": "highlightLine", "target": "file", "line": 3}, {"do": "setValue", "target": "failed", "value": "['B102', 'B103']"}, {"do": "pulse", "target": "failed"}]},
+                {"say": "One batch can be released, and two are rejected. That is the release decision, made by your program.", "audio": "anim-pipeline-06.mp3",
+                 "actions": [{"do": "appendOutput", "target": "out", "text": "Failed batches: ['B102', 'B103']"}, {"do": "appendOutput", "target": "out", "text": "Passed: 1 of 3"}]},
+            ],
+        }
+    ],
+}
+
+if __name__ == "__main__":
+    root = os.path.join(os.path.dirname(__file__), "..", "..")
+    out = os.path.join(root, "content", "bp101t", "3-7", "en.json")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    json.dump(L, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    print("wrote", out)
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "..", "glossary_bp101t.py")], check=True, stdout=subprocess.DEVNULL)

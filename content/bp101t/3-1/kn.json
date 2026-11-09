@@ -40,7 +40,7 @@
     },
     {
       "heading": "List ನ ಪ್ರತಿ item ಮೂಲಕ ಹೋಗುವುದು",
-      "md": "`for` loop (Lesson 2.3) list ನ ಪ್ರತಿ item ಗೆ ಕ್ರಮವಾಗಿ ಹೋಗುತ್ತೆ, ಮತ್ತು `in` ಒಂದು value list ನಲ್ಲಿ ಇದೆಯಾ ಅಂತ check ಮಾಡುತ್ತೆ:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nfor drug in medicines:\n    print(\"Dispense:\", drug)\nprint(\"Aspirin\" in medicines)\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nDispense: Paracetamol\nDispense: Amoxicillin\nDispense: Cetirizine\nFalse\n```\n\n`\"Aspirin\" in medicines` `False`, ಯಾಕಂದ್ರೆ ಈ prescription ನಲ್ಲಿ Aspirin ಇಲ್ಲ. ಮುಂದಿನ lessons ನಲ್ಲಿ ನೀವು items ಸೇರಿಸುತ್ತೀರಿ, ತೆಗೆಯುತ್ತೀರಿ, sort ಮಾಡುತ್ತೀರಿ, ಮತ್ತು tuples ಹಾಗೂ dictionaries ಪರಿಚಯ ಆಗುತ್ತೆ."
+      "md": "`for` loop (Lesson 2.3) list ನ ಪ್ರತಿ item ಗೆ ಕ್ರಮವಾಗಿ ಹೋಗುತ್ತೆ, ಮತ್ತು `in` ಒಂದು value list ನಲ್ಲಿ ಇದೆಯಾ ಅಂತ check ಮಾಡುತ್ತೆ:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nfor drug in medicines:\n    print(\"Dispense:\", drug)\nprint(\"Aspirin\" in medicines)\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nDispense: Paracetamol\nDispense: Amoxicillin\nDispense: Cetirizine\nFalse\n```\n\n`\"Aspirin\" in medicines` `False`, ಯಾಕಂದ್ರೆ ಈ prescription ನಲ್ಲಿ Aspirin ಇಲ್ಲ. ಮುಂದಿನ lessons ನಲ್ಲಿ data ಇಡುವ ಇನ್ನೂ ಎರಡು ದಾರಿಗಳನ್ನು ಕಲಿಯುತ್ತೀರಿ, ನಂತರ items ಸೇರಿಸುತ್ತೀರಿ, ತೆಗೆಯುತ್ತೀರಿ, sort ಮಾಡುತ್ತೀರಿ."
     }
   ],
   "walkthrough": {
@@ -309,6 +309,9 @@
     "glossary"
   ],
   "glossary": [
+    {
+      "meaning": "Analysis ಗಾಗಿ ಸಂಬಂಧಿತ data ಸಂಗ್ರಹ, ಒಂದು ವಾರದ readings ಅಥವಾ patients register ತರಹ."
+    },
     {
       "meaning": "Square brackets ಒಳಗಿನ items ನ ಕ್ರಮದ collection, ಒಂದೇ variable ನಲ್ಲಿ: [\"Aspirin\", \"Insulin\"]."
     },

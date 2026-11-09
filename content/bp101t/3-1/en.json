@@ -56,7 +56,7 @@
     },
     {
       "heading": "Going through a list",
-      "md": "A `for` loop (Lesson 2.3) visits each item of a list in order, and `in` checks whether a value is in the list:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nfor drug in medicines:\n    print(\"Dispense:\", drug)\nprint(\"Aspirin\" in medicines)\n```\n\nThis prints:\n\n```\nDispense: Paracetamol\nDispense: Amoxicillin\nDispense: Cetirizine\nFalse\n```\n\n`\"Aspirin\" in medicines` is `False` because Aspirin is not on this prescription. In the next lessons you'll add, remove and sort items, and meet tuples and dictionaries."
+      "md": "A `for` loop (Lesson 2.3) visits each item of a list in order, and `in` checks whether a value is in the list:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nfor drug in medicines:\n    print(\"Dispense:\", drug)\nprint(\"Aspirin\" in medicines)\n```\n\nThis prints:\n\n```\nDispense: Paracetamol\nDispense: Amoxicillin\nDispense: Cetirizine\nFalse\n```\n\n`\"Aspirin\" in medicines` is `False` because Aspirin is not on this prescription. In the next lessons you'll meet two more ways to store data, then add, remove and sort items."
     }
   ],
   "walkthrough": {
@@ -733,6 +733,10 @@
     }
   ],
   "glossary": [
+    {
+      "term": "Dataset",
+      "meaning": "A collection of related data, like a week of readings or a register of patients, used for analysis."
+    },
     {
       "term": "List",
       "meaning": "An ordered collection of items in square brackets, held in one variable: [\"Aspirin\", \"Insulin\"]."

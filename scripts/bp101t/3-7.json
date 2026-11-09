@@ -1,0 +1,202 @@
+{
+  "course": "bp101t",
+  "lesson": "3-7",
+  "voices": {
+    "en": "Ritu",
+    "hi": "Ritu",
+    "kn": "Chaitra"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program makes the release decision for three batches of tablets.",
+        "import csv loads the CSV module.",
+        "These two lines save the lab's results as qc dot csv: a header and three batches. In real life this file would come from the lab.",
+        "total will count the batches. It starts at zero.",
+        "failed will collect the numbers of the batches that fail.",
+        "DictReader gives one batch at a time. The first is B one oh one.",
+        "total goes up to one.",
+        "The assay and the dissolution are text in the file, so float turns them into numbers: ninety nine point two, and ninety two.",
+        "This is the specification. The batch fails if the assay is outside ninety five to one hundred and five, or if less than eighty percent dissolves. B one oh one passes both tests.",
+        "B one oh two has an assay of ninety four point one, below the limit, so it is added to failed.",
+        "B one oh three has a good assay, but only seventy six percent dissolves. It fails too.",
+        "print lists the failed batches.",
+        "Three batches minus two failures: one batch can be released."
+      ],
+      "display": [
+        "This program makes the release decision for three batches of tablets.",
+        "import csv loads the CSV module.",
+        "These two lines save the lab's results as qc dot csv: a header and three batches. In real life this file would come from the lab.",
+        "total will count the batches. It starts at zero.",
+        "failed will collect the numbers of the batches that fail.",
+        "DictReader gives one batch at a time. The first is B one oh one.",
+        "total goes up to one.",
+        "The assay and the dissolution are text in the file, so float turns them into numbers: ninety nine point two, and ninety two.",
+        "This is the specification. The batch fails if the assay is outside ninety five to one hundred and five, or if less than eighty percent dissolves. B one oh one passes both tests.",
+        "B one oh two has an assay of ninety four point one, below the limit, so it is added to failed.",
+        "B one oh three has a good assay, but only seventy six percent dissolves. It fails too.",
+        "print lists the failed batches.",
+        "Three batches minus two failures: one batch can be released."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह program tablets के तीन batches के लिए release का फ़ैसला करता है।",
+        "import csv, CSV module load करता है।",
+        "ये दो lines lab के नतीजे qc dot csv में save करती हैं: एक header और तीन batches। असली ज़िंदगी में यह file lab से आती।",
+        "total batches गिनेगा। यह zero से शुरू होता है।",
+        "failed, fail होने वाले batches के numbers जमा करेगा।",
+        "DictReader एक बार में एक batch देता है। पहला है B one oh one।",
+        "total एक हो जाता है।",
+        "Assay और dissolution file में text हैं, इसलिए float उन्हें numbers बनाता है: निन्यानवे दशमलव दो, और बानवे।",
+        "यह specification है। Batch fail है अगर assay पचानवे से एक सौ पाँच के बाहर हो, या अस्सी percent से कम घुले। B one oh one दोनों tests pass करता है।",
+        "B one oh two का assay चौरानवे दशमलव एक है, limit से नीचे, इसलिए यह failed में जुड़ता है।",
+        "B one oh three का assay अच्छा है, पर सिर्फ़ छिहत्तर percent घुलता है। यह भी fail है।",
+        "print fail हुए batches की list दिखाता है।",
+        "तीन batches घटा दो failures: एक batch release हो सकता है।"
+      ],
+      "display": [
+        "यह program tablets के तीन batches के लिए release का फ़ैसला करता है।",
+        "import csv, CSV module load करता है।",
+        "ये दो lines lab के नतीजे qc dot csv में save करती हैं: एक header और तीन batches। असली ज़िंदगी में यह file lab से आती।",
+        "total batches गिनेगा। यह zero से शुरू होता है।",
+        "failed, fail होने वाले batches के numbers जमा करेगा।",
+        "DictReader एक बार में एक batch देता है। पहला है B one oh one।",
+        "total एक हो जाता है।",
+        "Assay और dissolution file में text हैं, इसलिए float उन्हें numbers बनाता है: निन्यानवे दशमलव दो, और बानवे।",
+        "यह specification है। Batch fail है अगर assay पचानवे से एक सौ पाँच के बाहर हो, या अस्सी percent से कम घुले। B one oh one दोनों tests pass करता है।",
+        "B one oh two का assay चौरानवे दशमलव एक है, limit से नीचे, इसलिए यह failed में जुड़ता है।",
+        "B one oh three का assay अच्छा है, पर सिर्फ़ छिहत्तर percent घुलता है। यह भी fail है।",
+        "print fail हुए batches की list दिखाता है।",
+        "तीन batches घटा दो failures: एक batch release हो सकता है।"
+      ],
+      "displayHinglish": [
+        "Yeh program tablets ke teen batches ke liye release ka faisla karta hai.",
+        "import csv, CSV module load karta hai.",
+        "Yeh do lines lab ke nateeje qc dot csv mein save karti hain: ek header aur teen batches. Asli zindagi mein yeh file lab se aati.",
+        "total batches ginega. Yeh zero se shuru hota hai.",
+        "failed, fail hone wale batches ke numbers jama karega.",
+        "DictReader ek baar mein ek batch deta hai. Pehla hai B one oh one.",
+        "total ek ho jaata hai.",
+        "Assay aur dissolution file mein text hain, isliye float unhe numbers banaata hai: ninyaanve dashamlav do, aur baanve.",
+        "Yeh specification hai. Batch fail hai agar assay pachaanve se ek sau paanch ke bahar ho, ya assi percent se kam ghule. B one oh one dono tests pass karta hai.",
+        "B one oh two ka assay chauraanve dashamlav ek hai, limit se neeche, isliye yeh failed mein judta hai.",
+        "B one oh three ka assay achha hai, par sirf chhihattar percent ghulta hai. Yeh bhi fail hai.",
+        "print fail hue batches ki list dikhaata hai.",
+        "Teen batches ghata do failures: ek batch release ho sakta hai."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ program tablets ನ ಮೂರು batches ಗೆ release ನಿರ್ಧಾರ ಮಾಡುತ್ತೆ.",
+        "import csv, CSV module load ಮಾಡುತ್ತೆ.",
+        "ಈ ಎರಡು lines lab ಫಲಿತಾಂಶಗಳನ್ನು qc dot csv ಆಗಿ save ಮಾಡುತ್ತವೆ: ಒಂದು header ಮತ್ತು ಮೂರು batches. ನಿಜ ಜೀವನದಲ್ಲಿ ಈ file lab ಇಂದ ಬರುತ್ತೆ.",
+        "total batches ಎಣಿಸುತ್ತೆ. ಇದು zero ಇಂದ ಶುರು.",
+        "failed, fail ಆದ batches ನ numbers ಸಂಗ್ರಹಿಸುತ್ತೆ.",
+        "DictReader ಒಂದು ಸಲಕ್ಕೆ ಒಂದು batch ಕೊಡುತ್ತೆ. ಮೊದಲದು B one oh one.",
+        "total ಒಂದು ಆಗುತ್ತೆ.",
+        "Assay ಮತ್ತು dissolution file ನಲ್ಲಿ text, ಹಾಗಾಗಿ float ಅವನ್ನು numbers ಮಾಡುತ್ತೆ: ತೊಂಬತ್ತೊಂಬತ್ತು ಪಾಯಿಂಟ್ ಎರಡು, ಮತ್ತು ತೊಂಬತ್ತೆರಡು.",
+        "ಇದು specification. Assay ತೊಂಬತ್ತೈದು ಇಂದ ನೂರ ಐದು ಹೊರಗೆ ಇದ್ದರೆ, ಅಥವಾ ಎಂಬತ್ತು percent ಗಿಂತ ಕಡಿಮೆ ಕರಗಿದರೆ batch fail. B one oh one ಎರಡೂ tests pass ಮಾಡುತ್ತೆ.",
+        "B one oh two ನ assay ತೊಂಬತ್ತನಾಲ್ಕು ಪಾಯಿಂಟ್ ಒಂದು, limit ಗಿಂತ ಕೆಳಗೆ, ಹಾಗಾಗಿ failed ಗೆ ಸೇರುತ್ತೆ.",
+        "B one oh three ನ assay ಚೆನ್ನಾಗಿದೆ, ಆದರೆ ಎಪ್ಪತ್ತಾರು percent ಮಾತ್ರ ಕರಗುತ್ತೆ. ಇದೂ fail.",
+        "print fail ಆದ batches list ತೋರಿಸುತ್ತೆ.",
+        "ಮೂರು batches ಕಳೆ ಎರಡು failures: ಒಂದು batch release ಆಗಬಹುದು."
+      ],
+      "display": [
+        "ಈ program tablets ನ ಮೂರು batches ಗೆ release ನಿರ್ಧಾರ ಮಾಡುತ್ತೆ.",
+        "import csv, CSV module load ಮಾಡುತ್ತೆ.",
+        "ಈ ಎರಡು lines lab ಫಲಿತಾಂಶಗಳನ್ನು qc dot csv ಆಗಿ save ಮಾಡುತ್ತವೆ: ಒಂದು header ಮತ್ತು ಮೂರು batches. ನಿಜ ಜೀವನದಲ್ಲಿ ಈ file lab ಇಂದ ಬರುತ್ತೆ.",
+        "total batches ಎಣಿಸುತ್ತೆ. ಇದು zero ಇಂದ ಶುರು.",
+        "failed, fail ಆದ batches ನ numbers ಸಂಗ್ರಹಿಸುತ್ತೆ.",
+        "DictReader ಒಂದು ಸಲಕ್ಕೆ ಒಂದು batch ಕೊಡುತ್ತೆ. ಮೊದಲದು B one oh one.",
+        "total ಒಂದು ಆಗುತ್ತೆ.",
+        "Assay ಮತ್ತು dissolution file ನಲ್ಲಿ text, ಹಾಗಾಗಿ float ಅವನ್ನು numbers ಮಾಡುತ್ತೆ: ತೊಂಬತ್ತೊಂಬತ್ತು ಪಾಯಿಂಟ್ ಎರಡು, ಮತ್ತು ತೊಂಬತ್ತೆರಡು.",
+        "ಇದು specification. Assay ತೊಂಬತ್ತೈದು ಇಂದ ನೂರ ಐದು ಹೊರಗೆ ಇದ್ದರೆ, ಅಥವಾ ಎಂಬತ್ತು percent ಗಿಂತ ಕಡಿಮೆ ಕರಗಿದರೆ batch fail. B one oh one ಎರಡೂ tests pass ಮಾಡುತ್ತೆ.",
+        "B one oh two ನ assay ತೊಂಬತ್ತನಾಲ್ಕು ಪಾಯಿಂಟ್ ಒಂದು, limit ಗಿಂತ ಕೆಳಗೆ, ಹಾಗಾಗಿ failed ಗೆ ಸೇರುತ್ತೆ.",
+        "B one oh three ನ assay ಚೆನ್ನಾಗಿದೆ, ಆದರೆ ಎಪ್ಪತ್ತಾರು percent ಮಾತ್ರ ಕರಗುತ್ತೆ. ಇದೂ fail.",
+        "print fail ಆದ batches list ತೋರಿಸುತ್ತೆ.",
+        "ಮೂರು batches ಕಳೆ ಎರಡು failures: ಒಂದು batch release ಆಗಬಹುದು."
+      ]
+    },
+    {
+      "id": "anim-pipeline",
+      "prefix": "anim-pipeline-",
+      "lang": "en",
+      "tts": [
+        "The quality control results arrive as a CSV file: one row per batch, with its assay and its dissolution.",
+        "Step one: DictReader reads each row as a dictionary.",
+        "Step two: the values are text, so float turns them into numbers.",
+        "Step three: each batch is checked against the specification. B one oh two has an assay of ninety four point one, below ninety five, so it fails.",
+        "B one oh three dissolves only seventy six percent, below eighty. It fails too.",
+        "One batch can be released, and two are rejected. That is the release decision, made by your program."
+      ],
+      "display": [
+        "The quality control results arrive as a CSV file: one row per batch, with its assay and its dissolution.",
+        "Step one: DictReader reads each row as a dictionary.",
+        "Step two: the values are text, so float turns them into numbers.",
+        "Step three: each batch is checked against the specification. B one oh two has an assay of ninety four point one, below ninety five, so it fails.",
+        "B one oh three dissolves only seventy six percent, below eighty. It fails too.",
+        "One batch can be released, and two are rejected. That is the release decision, made by your program."
+      ]
+    },
+    {
+      "id": "anim-pipeline",
+      "prefix": "anim-pipeline-",
+      "lang": "hi",
+      "tts": [
+        "Quality control के नतीजे CSV file में आते हैं: हर batch की एक row, उसके assay और dissolution के साथ।",
+        "Step एक: DictReader हर row को dictionary के रूप में पढ़ता है।",
+        "Step दो: values text हैं, इसलिए float उन्हें numbers बनाता है।",
+        "Step तीन: हर batch specification से check होता है। B one oh two का assay चौरानवे दशमलव एक है, पचानवे से नीचे, इसलिए यह fail है।",
+        "B one oh three सिर्फ़ छिहत्तर percent घुलता है, अस्सी से नीचे। यह भी fail है।",
+        "एक batch release हो सकता है, और दो reject होते हैं। यह release का फ़ैसला है, आपके program ने किया।"
+      ],
+      "display": [
+        "Quality control के नतीजे CSV file में आते हैं: हर batch की एक row, उसके assay और dissolution के साथ।",
+        "Step एक: DictReader हर row को dictionary के रूप में पढ़ता है।",
+        "Step दो: values text हैं, इसलिए float उन्हें numbers बनाता है।",
+        "Step तीन: हर batch specification से check होता है। B one oh two का assay चौरानवे दशमलव एक है, पचानवे से नीचे, इसलिए यह fail है।",
+        "B one oh three सिर्फ़ छिहत्तर percent घुलता है, अस्सी से नीचे। यह भी fail है।",
+        "एक batch release हो सकता है, और दो reject होते हैं। यह release का फ़ैसला है, आपके program ने किया।"
+      ],
+      "displayHinglish": [
+        "Quality control ke nateeje CSV file mein aate hain: har batch ki ek row, uske assay aur dissolution ke saath.",
+        "Step ek: DictReader har row ko dictionary ke roop mein padhta hai.",
+        "Step do: values text hain, isliye float unhe numbers banaata hai.",
+        "Step teen: har batch specification se check hota hai. B one oh two ka assay chauraanve dashamlav ek hai, pachaanve se neeche, isliye yeh fail hai.",
+        "B one oh three sirf chhihattar percent ghulta hai, assi se neeche. Yeh bhi fail hai.",
+        "Ek batch release ho sakta hai, aur do reject hote hain. Yeh release ka faisla hai, aapke program ne kiya."
+      ]
+    },
+    {
+      "id": "anim-pipeline",
+      "prefix": "anim-pipeline-",
+      "lang": "kn",
+      "tts": [
+        "Quality control ಫಲಿತಾಂಶಗಳು CSV file ಆಗಿ ಬರುತ್ತವೆ: ಪ್ರತಿ batch ಗೆ ಒಂದು row, ಅದರ assay ಮತ್ತು dissolution ಜೊತೆ.",
+        "Step ಒಂದು: DictReader ಪ್ರತಿ row ಅನ್ನು dictionary ಆಗಿ ಓದುತ್ತೆ.",
+        "Step ಎರಡು: values text, ಹಾಗಾಗಿ float ಅವನ್ನು numbers ಮಾಡುತ್ತೆ.",
+        "Step ಮೂರು: ಪ್ರತಿ batch specification ಜೊತೆ check ಆಗುತ್ತೆ. B one oh two ನ assay ತೊಂಬತ್ತನಾಲ್ಕು ಪಾಯಿಂಟ್ ಒಂದು, ತೊಂಬತ್ತೈದಕ್ಕಿಂತ ಕೆಳಗೆ, ಹಾಗಾಗಿ fail.",
+        "B one oh three ಎಪ್ಪತ್ತಾರು percent ಮಾತ್ರ ಕರಗುತ್ತೆ, ಎಂಬತ್ತಕ್ಕಿಂತ ಕೆಳಗೆ. ಇದೂ fail.",
+        "ಒಂದು batch release ಆಗಬಹುದು, ಎರಡು reject. ಇದು release ನಿರ್ಧಾರ, ನಿಮ್ಮ program ಮಾಡಿದ್ದು."
+      ],
+      "display": [
+        "Quality control ಫಲಿತಾಂಶಗಳು CSV file ಆಗಿ ಬರುತ್ತವೆ: ಪ್ರತಿ batch ಗೆ ಒಂದು row, ಅದರ assay ಮತ್ತು dissolution ಜೊತೆ.",
+        "Step ಒಂದು: DictReader ಪ್ರತಿ row ಅನ್ನು dictionary ಆಗಿ ಓದುತ್ತೆ.",
+        "Step ಎರಡು: values text, ಹಾಗಾಗಿ float ಅವನ್ನು numbers ಮಾಡುತ್ತೆ.",
+        "Step ಮೂರು: ಪ್ರತಿ batch specification ಜೊತೆ check ಆಗುತ್ತೆ. B one oh two ನ assay ತೊಂಬತ್ತನಾಲ್ಕು ಪಾಯಿಂಟ್ ಒಂದು, ತೊಂಬತ್ತೈದಕ್ಕಿಂತ ಕೆಳಗೆ, ಹಾಗಾಗಿ fail.",
+        "B one oh three ಎಪ್ಪತ್ತಾರು percent ಮಾತ್ರ ಕರಗುತ್ತೆ, ಎಂಬತ್ತಕ್ಕಿಂತ ಕೆಳಗೆ. ಇದೂ fail.",
+        "ಒಂದು batch release ಆಗಬಹುದು, ಎರಡು reject. ಇದು release ನಿರ್ಧಾರ, ನಿಮ್ಮ program ಮಾಡಿದ್ದು."
+      ]
+    }
+  ]
+}

@@ -40,7 +40,7 @@
     },
     {
       "heading": "List के हर item से गुज़रना",
-      "md": "`for` loop (Lesson 2.3) list के हर item पर क्रम से जाता है, और `in` check करता है कि कोई value list में है या नहीं:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nfor drug in medicines:\n    print(\"Dispense:\", drug)\nprint(\"Aspirin\" in medicines)\n```\n\nयह print करता है:\n\n```\nDispense: Paracetamol\nDispense: Amoxicillin\nDispense: Cetirizine\nFalse\n```\n\n`\"Aspirin\" in medicines` `False` है क्योंकि इस prescription में Aspirin नहीं है। अगले lessons में आप items जोड़ेंगे, हटाएँगे और sort करेंगे, और tuples व dictionaries से मिलेंगे।"
+      "md": "`for` loop (Lesson 2.3) list के हर item पर क्रम से जाता है, और `in` check करता है कि कोई value list में है या नहीं:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nfor drug in medicines:\n    print(\"Dispense:\", drug)\nprint(\"Aspirin\" in medicines)\n```\n\nयह print करता है:\n\n```\nDispense: Paracetamol\nDispense: Amoxicillin\nDispense: Cetirizine\nFalse\n```\n\n`\"Aspirin\" in medicines` `False` है क्योंकि इस prescription में Aspirin नहीं है। अगले lessons में आप data रखने के दो और तरीके सीखेंगे, फिर items जोड़ेंगे, हटाएँगे और sort करेंगे।"
     }
   ],
   "walkthrough": {
@@ -309,6 +309,9 @@
     "glossary"
   ],
   "glossary": [
+    {
+      "meaning": "Analysis के लिए जुड़े हुए data का collection, जैसे हफ़्ते भर की readings या patients का register।"
+    },
     {
       "meaning": "Square brackets में items का क्रम वाला collection, एक variable में: [\"Aspirin\", \"Insulin\"]।"
     },

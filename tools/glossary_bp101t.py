@@ -582,6 +582,11 @@ G = {
             "kn": "Loop ನಲ್ಲಿ choices ನ list ತೋರಿಸಿ, user ಆರಿಸಿದ್ದನ್ನು run ಮಾಡಿ, user exit ಆರಿಸುವವರೆಗೆ ಪುನರಾವರ್ತಿಸುವ program."}),
     ],
     "3-1": [
+        ("Dataset", {
+            "en": "A collection of related data, like a week of readings or a register of patients, used for analysis.",
+            "hi": "Analysis के लिए जुड़े हुए data का collection, जैसे हफ़्ते भर की readings या patients का register।",
+            "hinglish": "Analysis ke liye jude hue data ka collection, jaise hafte bhar ki readings ya patients ka register.",
+            "kn": "Analysis ಗಾಗಿ ಸಂಬಂಧಿತ data ಸಂಗ್ರಹ, ಒಂದು ವಾರದ readings ಅಥವಾ patients register ತರಹ."}),
         ("List", {
             "en": "An ordered collection of items in square brackets, held in one variable: [\"Aspirin\", \"Insulin\"].",
             "hi": "Square brackets में items का क्रम वाला collection, एक variable में: [\"Aspirin\", \"Insulin\"]।",
@@ -782,6 +787,33 @@ G = {
             "hi": "नाम, phone number और दूसरी पहचान हटाना ताकि record किसी व्यक्ति तक न पहुँचे।",
             "hinglish": "Naam, phone number aur doosri pehchaan hataana taaki record kisi vyakti tak na pahunche.",
             "kn": "Record ಒಬ್ಬ ವ್ಯಕ್ತಿಗೆ ಸಂಬಂಧಿಸದಂತೆ ಹೆಸರು, phone number ಮತ್ತು ಇತರ ಗುರುತುಗಳನ್ನು ತೆಗೆಯುವುದು."}),
+    ],
+    "3-7": [
+        ("Batch", {
+            "en": "One lot of a product made together, with its own batch number, tested before release.",
+            "hi": "एक साथ बना product का एक lot, अपने batch number के साथ, release से पहले test होता है।",
+            "hinglish": "Ek saath bana product ka ek lot, apne batch number ke saath, release se pehle test hota hai.",
+            "kn": "ಒಟ್ಟಿಗೆ ತಯಾರಾದ product ನ ಒಂದು lot, ತನ್ನದೇ batch number ಜೊತೆ, release ಮುಂಚೆ test ಆಗುತ್ತೆ."}),
+        ("Assay", {
+            "en": "The test of how much drug a tablet contains, as a % of the amount on the label.",
+            "hi": "Tablet में कितनी drug है उसका test, label पर लिखी मात्रा के % में।",
+            "hinglish": "Tablet mein kitni drug hai uska test, label par likhi maatra ke % mein.",
+            "kn": "Tablet ನಲ್ಲಿ ಎಷ್ಟು drug ಇದೆ ಎಂಬ test, label ಮೇಲಿನ ಪ್ರಮಾಣದ % ಆಗಿ."}),
+        ("Dissolution test", {
+            "en": "Measures how much of the drug comes out of a tablet into liquid in a set time.",
+            "hi": "तय समय में tablet से कितनी drug liquid में निकलती है, यह मापता है।",
+            "hinglish": "Tay samay mein tablet se kitni drug liquid mein nikalti hai, yeh maapta hai.",
+            "kn": "ನಿಗದಿತ ಸಮಯದಲ್ಲಿ tablet ಇಂದ ಎಷ್ಟು drug liquid ಗೆ ಬರುತ್ತೆ ಅಂತ ಅಳೆಯುತ್ತೆ."}),
+        ("Specification", {
+            "en": "The limits a product must meet to be released, like assay 95% to 105%.",
+            "hi": "Release होने के लिए product को जो limits पूरी करनी हैं, जैसे assay 95% से 105%।",
+            "hinglish": "Release hone ke liye product ko jo limits poori karni hain, jaise assay 95% se 105%.",
+            "kn": "Release ಆಗಲು product ಪೂರೈಸಬೇಕಾದ limits, assay 95% ಇಂದ 105% ತರಹ."}),
+        ("Data pipeline", {
+            "en": "The steps data goes through: read, convert, check, summarise, report.",
+            "hi": "वे steps जिनसे data गुज़रता है: पढ़ना, convert, check, सार, report।",
+            "hinglish": "Woh steps jinse data guzarta hai: padhna, convert, check, saar, report.",
+            "kn": "Data ಹಾದುಹೋಗುವ ಹಂತಗಳು: ಓದು, convert, check, ಸಾರಾಂಶ, report."}),
     ],
 }
 

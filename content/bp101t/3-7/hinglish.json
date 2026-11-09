@@ -1,0 +1,352 @@
+{
+  "hook": {
+    "title": "Release ya reject: faisla aapka",
+    "md": "Pharmaceutical plant mein bani tablets ka har batch factory se nikalne se pehle test hota hai. **Assay** check karta hai ki har tablet mein drug ki sahi maatra hai. **Dissolution test** check karta hai ki drug shareer mein sach mein tablet se bahar nikalti hai. Quality control lab nateeje ek file mein bhejta hai, aur har batch ke liye faisla karna hota hai: **release** ya **reject**.\n\nIs project lesson mein aap woh faisla Python mein banaayenge, Unit III ki har cheez se: CSV file padhna, values convert karna, har batch ko specification se check karna, NumPy se saar nikaalna, drugs ki tulna karna, aur report file likhna."
+  },
+  "learn": [
+    "CSV dataset ko list of dictionaries mein **load** karna, text ko numbers mein badalte hue",
+    "Function se har record ko **specification** ke against **check** karna",
+    "NumPy se column ka **saar** nikaalna aur **groups** ki tulna karna",
+    "Nateejon ko report file mein **likhna**: ek poori chhoti **data pipeline**"
+  ],
+  "explanation": [
+    {
+      "heading": "Step 1: dataset load kijiye",
+      "md": "QC lab ki file mein har batch ki ek row hai: batch number, drug, **assay** (label claim ka %) aur **dissolution** (30 minutes mein % ghula):\n\n```\nbatch,drug,assay,dissolution\nB101,Paracetamol,99.2,92\nB102,Paracetamol,94.1,88\nB103,Metformin,101.5,76\nB104,Metformin,100.3,85\nB105,Paracetamol,103.8,90\n```\n\nIse `csv.DictReader` se load kijiye aur numbers ko **load karte samay hi** convert kijiye, taaki aage ka har step seedhe maths kar sake:\n\n```python\nimport csv\n\nwith open(\"qc.csv\", \"w\") as f:\n    f.write(\"batch,drug,assay,dissolution\\n\")\n    f.write(\"B101,Paracetamol,99.2,92\\nB102,Paracetamol,94.1,88\\n\")\n    f.write(\"B103,Metformin,101.5,76\\nB104,Metformin,100.3,85\\n\")\n    f.write(\"B105,Paracetamol,103.8,90\\n\")\n\nbatches = []\nwith open(\"qc.csv\") as f:\n    for row in csv.DictReader(f):\n        row[\"assay\"] = float(row[\"assay\"])\n        row[\"dissolution\"] = int(row[\"dissolution\"])\n        batches.append(row)\nprint(len(batches), \"batches loaded\")\nprint(batches[0])\n```\n\nYeh print karta hai:\n\n```\n5 batches loaded\n{'batch': 'B101', 'drug': 'Paracetamol', 'assay': 99.2, 'dissolution': 92}\n```\n\n`batches` ab paanch dictionaries ki list hai, andar asli numbers ke saath. Agle steps isi list se shuru hote hain.",
+      "callout": {
+        "title": "Specification",
+        "md": "Woh limits jo product ko release hone ke liye poori karni hoti hain. Is lesson mein: assay label claim ke 95% se 105% ke beech, aur kam se kam 80% ghula hua. Asli limits pharmacopoeia tay karti hai aur har product ke liye alag hoti hain."
+      }
+    },
+    {
+      "heading": "Step 2: har batch check kijiye",
+      "md": "Specification ko ek **function** (Lesson 2.5) mein rakhiye, taaki niyam ek hi jagah rahe. Yeh batch ke fail hue tests ki list lautaata hai; khaali list matlab pass:\n\n```python\nbatches = [\n    {\"batch\": \"B101\", \"drug\": \"Paracetamol\", \"assay\": 99.2, \"dissolution\": 92},\n    {\"batch\": \"B102\", \"drug\": \"Paracetamol\", \"assay\": 94.1, \"dissolution\": 88},\n    {\"batch\": \"B103\", \"drug\": \"Metformin\", \"assay\": 101.5, \"dissolution\": 76},\n    {\"batch\": \"B104\", \"drug\": \"Metformin\", \"assay\": 100.3, \"dissolution\": 85},\n    {\"batch\": \"B105\", \"drug\": \"Paracetamol\", \"assay\": 103.8, \"dissolution\": 90},\n]\n\ndef check(b):\n    problems = []\n    if not 95 <= b[\"assay\"] <= 105:\n        problems.append(\"assay\")\n    if b[\"dissolution\"] < 80:\n        problems.append(\"dissolution\")\n    return problems\n\nfor b in batches:\n    problems = check(b)\n    if problems:\n        print(b[\"batch\"], \"FAIL:\", problems)\n    else:\n        print(b[\"batch\"], \"PASS\")\n```\n\nYeh print karta hai:\n\n```\nB101 PASS\nB102 FAIL: ['assay']\nB103 FAIL: ['dissolution']\nB104 PASS\nB105 PASS\n```\n\nList mein kuch bhi ho to `if problems:` True hai. B102 mein drug kam hai; B103 mein maatra sahi hai, par uska kam hissa ghulta hai.",
+      "callout": {
+        "title": "Ek niyam, ek jagah",
+        "md": "Limits badlein to sirf check() function badaliye. Program ka har hissa jo ise call karta hai, naya niyam use karega."
+      }
+    },
+    {
+      "heading": "Step 3: NumPy se saar",
+      "md": "Ek column ko NumPy array (Lesson 3.4) mein jama kijiye, aur saar teen lines mein:\n\n```python\nimport numpy as np\n\nbatches = [\n    {\"batch\": \"B101\", \"drug\": \"Paracetamol\", \"assay\": 99.2, \"dissolution\": 92},\n    {\"batch\": \"B102\", \"drug\": \"Paracetamol\", \"assay\": 94.1, \"dissolution\": 88},\n    {\"batch\": \"B103\", \"drug\": \"Metformin\", \"assay\": 101.5, \"dissolution\": 76},\n    {\"batch\": \"B104\", \"drug\": \"Metformin\", \"assay\": 100.3, \"dissolution\": 85},\n    {\"batch\": \"B105\", \"drug\": \"Paracetamol\", \"assay\": 103.8, \"dissolution\": 90},\n]\n\nvalues = []\nfor b in batches:\n    values.append(b[\"assay\"])\nassay = np.array(values)\nprint(\"Mean assay:\", round(assay.mean(), 2))\nprint(\"Lowest assay:\", assay.min())\nprint(\"Batches below 95%:\", (assay < 95).sum())\n```\n\nYeh print karta hai:\n\n```\nMean assay: 99.78\nLowest assay: 94.1\nBatches below 95%: 1\n```\n\nAverage 99.78% par theek dikhta hai, par minimum ek batch ko limit se neeche dikhaata hai. Isiliye hamesha extremes bhi dekhiye, sirf average nahi."
+    },
+    {
+      "heading": "Step 4: drugs ki tulna",
+      "md": "Har drug ka pass rate dekhne ke liye Lesson 3.6 ka grouping pattern use kijiye:\n\n```python\nbatches = [\n    {\"batch\": \"B101\", \"drug\": \"Paracetamol\", \"assay\": 99.2, \"dissolution\": 92},\n    {\"batch\": \"B102\", \"drug\": \"Paracetamol\", \"assay\": 94.1, \"dissolution\": 88},\n    {\"batch\": \"B103\", \"drug\": \"Metformin\", \"assay\": 101.5, \"dissolution\": 76},\n    {\"batch\": \"B104\", \"drug\": \"Metformin\", \"assay\": 100.3, \"dissolution\": 85},\n    {\"batch\": \"B105\", \"drug\": \"Paracetamol\", \"assay\": 103.8, \"dissolution\": 90},\n]\n\ntotal = {}\npassed = {}\nfor b in batches:\n    d = b[\"drug\"]\n    total[d] = total.get(d, 0) + 1\n    if 95 <= b[\"assay\"] <= 105 and b[\"dissolution\"] >= 80:\n        passed[d] = passed.get(d, 0) + 1\nfor d in total:\n    print(d, passed.get(d, 0), \"of\", total[d], \"passed\")\n```\n\nYeh print karta hai:\n\n```\nParacetamol 2 of 3 passed\nMetformin 1 of 2 passed\n```\n\nAgar ek product baar-baar ek hi test mein fail ho, to yeh process jaanchne ka sanket hai: raw material, granulation ya compression."
+    },
+    {
+      "heading": "Step 5: report likhiye",
+      "md": "Aakhir mein har batch ka faisla ek **nayi** CSV file mein likhiye jise QA team Excel mein khol sake:\n\n```python\nimport csv\n\nbatches = [\n    {\"batch\": \"B101\", \"drug\": \"Paracetamol\", \"assay\": 99.2, \"dissolution\": 92},\n    {\"batch\": \"B102\", \"drug\": \"Paracetamol\", \"assay\": 94.1, \"dissolution\": 88},\n    {\"batch\": \"B103\", \"drug\": \"Metformin\", \"assay\": 101.5, \"dissolution\": 76},\n    {\"batch\": \"B104\", \"drug\": \"Metformin\", \"assay\": 100.3, \"dissolution\": 85},\n    {\"batch\": \"B105\", \"drug\": \"Paracetamol\", \"assay\": 103.8, \"dissolution\": 90},\n]\n\nwith open(\"qc_report.csv\", \"w\", newline=\"\") as f:\n    writer = csv.writer(f)\n    writer.writerow([\"batch\", \"result\"])\n    for b in batches:\n        result = \"PASS\"\n        if not 95 <= b[\"assay\"] <= 105 or b[\"dissolution\"] < 80:\n            result = \"FAIL\"\n        writer.writerow([b[\"batch\"], result])\n\nwith open(\"qc_report.csv\") as f:\n    for line in f:\n        print(line.strip())\n```\n\nYeh print karta hai:\n\n```\nbatch,result\nB101,PASS\nB102,FAIL\nB103,FAIL\nB104,PASS\nB105,PASS\n```\n\nReport `qc_report.csv` mein jaati hai, naya naam, taaki `qc.csv` ka original data kabhi overwrite na ho. Padhna → convert → check → saar → report: aapne ek poori **data pipeline** bana li. Unit IV mein Pandas inmein se har step ek line mein karega.",
+      "callout": {
+        "title": "Raw data kabhi overwrite mat kijiye",
+        "md": "Nateeje hamesha nayi file mein likhiye. qc.csv ko \"w\" se khola to lab ke original nateeje chale jaayenge."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "Yeh program CSV file se teen batches padhta hai, har ek ko specification se check karta hai, aur batata hai kaun-se batches fail hue.",
+    "keyTerms": [
+      {
+        "meaning": "Har batch ko dictionary ke roop mein padho."
+      },
+      {
+        "meaning": "File ke text ko number mein badlo."
+      },
+      {
+        "meaning": "True, agar batch kisi bhi test mein fail ho."
+      },
+      {
+        "meaning": "Fail hue batch ka number yaad rakho."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Yeh program tablets ke teen batches ke liye release ka faisla karta hai."
+      },
+      {
+        "say": "import csv, CSV module load karta hai."
+      },
+      {
+        "say": "Yeh do lines lab ke nateeje qc dot csv mein save karti hain: ek header aur teen batches. Asli zindagi mein yeh file lab se aati."
+      },
+      {
+        "say": "total batches ginega. Yeh zero se shuru hota hai."
+      },
+      {
+        "say": "failed, fail hone wale batches ke numbers jama karega."
+      },
+      {
+        "say": "DictReader ek baar mein ek batch deta hai. Pehla hai B one oh one."
+      },
+      {
+        "say": "total ek ho jaata hai."
+      },
+      {
+        "say": "Assay aur dissolution file mein text hain, isliye float unhe numbers banaata hai: ninyaanve dashamlav do, aur baanve."
+      },
+      {
+        "say": "Yeh specification hai. Batch fail hai agar assay pachaanve se ek sau paanch ke bahar ho, ya assi percent se kam ghule. B one oh one dono tests pass karta hai."
+      },
+      {
+        "say": "B one oh two ka assay chauraanve dashamlav ek hai, limit se neeche, isliye yeh failed mein judta hai."
+      },
+      {
+        "say": "B one oh three ka assay achha hai, par sirf chhihattar percent ghulta hai. Yeh bhi fail hai."
+      },
+      {
+        "say": "print fail hue batches ki list dikhaata hai."
+      },
+      {
+        "say": "Teen batches ghata do failures: ek batch release ho sakta hai."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Dono errors us data se aati hain jise check se pehle taiyaar nahi kiya gaya.",
+    "examples": [
+      {
+        "title": "Text ki number se tulna",
+        "md": "CSV file ki values text hoti hain, aur Python text ki number se tulna nahi karta. Pehle convert kijiye: `if float(row[\"assay\"]) < 95:`."
+      },
+      {
+        "title": "File mein khaali cell",
+        "md": "B102 ka assay cell khaali hai, aur khaali string number nahi ban sakti. Lesson 3.6 ki tarah pehle check kijiye: `if row[\"assay\"] == \"\": print(row[\"batch\"], \"assay missing\")`."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Fail niyam mein `and` likhna: `assay < 95 and diss < 80`",
+      "see": "Koi error nahi, par sirf ek test mein fail hone wale batches release ho jaate hain",
+      "fix": "Batch **kisi bhi** test mein fail ho to fail hai: `or` use kijiye."
+    },
+    {
+      "mistake": "Batches ki sankhya type karna: `print(3 - len(failed))`",
+      "see": "Koi error nahi, par file mein zyada batches hone par jawaab galat",
+      "fix": "Padhte samay rows giniye, ya `len(batches)` use kijiye."
+    },
+    {
+      "mistake": "Report ko data file mein likhna: `open(\"qc.csv\", \"w\")`",
+      "see": "Koi error nahi, par lab ke original nateeje mit jaate hain",
+      "fix": "Nateeje nayi file mein likhiye, jaise `qc_report.csv`."
+    },
+    {
+      "mistake": "Sirf average dekhna",
+      "see": "Koi error nahi, par fail batch achhe mean ke peechhe chhip jaata hai",
+      "fix": "`min()`, `max()` aur limit se bahar kitne hain, yeh bhi check kijiye."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Batches giniye",
+      "md": "qc.csv file aapke liye pehle se likh di gayi hai. Ise **csv.DictReader** se padhiye aur rows giniye. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "with open(\"qc.csv\") as f:\n    for row in csv.DictReader(f):",
+        "        count += 1"
+      ]
+    },
+    {
+      "title": "NumPy se mean assay",
+      "md": "**assay** list se NumPy array banaiye aur uska mean 1 decimal tak round karke print kijiye. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "assay = np.array(assay_values)",
+        "print(\"Mean assay:\", round(assay.mean(), 1))"
+      ]
+    },
+    {
+      "title": "Dissolution failures",
+      "md": "Jin batches ki **dissolution** 80 se kam hai, unke numbers ki list banaiye aur print kijiye. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "batches par loop chalaaiye aur b[\"dissolution\"] < 80 test kijiye.",
+        "for b in batches:\n    if b[\"dissolution\"] < 80:\n        low.append(b[\"batch\"])"
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "B201 assay mein fail hai aur B202 dissolution mein, isliye dono reject hone chahiye. Par yeh program kuch print nahi karta. Niyam theek kijiye taaki output bilkul yeh ho:",
+      "hints": [
+        "Reject hone ke liye batch ko dono tests mein fail hona hai, ya sirf ek mein?",
+        "and ko or mein badaliye."
+      ],
+      "solutionNote": "and ke saath batch tabhi reject hota jab dono tests mein fail ho, aur koi nahi hua. Batch kisi bhi test mein fail ho to reject hona chahiye, isliye niyam mein or chahiye."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Aapne CSV file se ek row padhi. Uske numbers ki tulna se pehle aam taur par kya karna chahiye?",
+      "why": "CSV values text hain; tulna aur maths ke liye numbers chahiye."
+    },
+    {
+      "q": "Assay ki limit 95 se 105 hai. Pass hone wale assay a ke liye kaun-si condition True hai?",
+      "why": "Chained comparison range ke dono sire check karta hai."
+    },
+    {
+      "q": "Batch assay OR dissolution test mein fail ho to reject hona chahiye. Dono fail conditions ko kaun-sa operator jodta hai?",
+      "why": "Reject ke liye kisi ek test mein fail hona kaafi hai."
+    },
+    {
+      "q": "qc.csv ko \"w\" se kholne ki jagah report qc_report.csv mein kyun likhein?",
+      "why": "Write mode pehle file mitaata hai; raw data kabhi overwrite mat kijiye."
+    },
+    {
+      "q": "assay = np.array([99.2, 94.1, 101.5])\nprint((assay < 95).sum())\n\nYeh kya print karta hai?",
+      "why": "Ek value 95 se kam hai, aur True ko 1 gina jaata hai."
+    },
+    {
+      "q": "Is chhoti data pipeline ka sahi kram kya hai?",
+      "why": "Jo data padha aur convert nahi hua, use check ya summarise nahi kar sakte."
+    }
+  ],
+  "exam": {
+    "note": "Practice ke liye important questions. University ke asli questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 3.7 · QC dataset project",
+    "children": [
+      {
+        "label": "Padhna",
+        "children": [
+          {
+            "label": "csv.DictReader"
+          },
+          {
+            "label": "Har batch ki dict"
+          },
+          {
+            "label": "Rows gino"
+          }
+        ]
+      },
+      {
+        "label": "Convert",
+        "children": [
+          {
+            "label": "float() / int()"
+          },
+          {
+            "label": "Khaali cells"
+          },
+          {
+            "label": "Load karte samay"
+          }
+        ]
+      },
+      {
+        "label": "Spec check",
+        "children": [
+          {
+            "label": "95 <= assay <= 105"
+          },
+          {
+            "label": "dissolution >= 80"
+          },
+          {
+            "label": "Koi bhi fail: or"
+          }
+        ]
+      },
+      {
+        "label": "Saar",
+        "children": [
+          {
+            "label": "NumPy mean()"
+          },
+          {
+            "label": "min() max()"
+          },
+          {
+            "label": "(arr < 95).sum()"
+          }
+        ]
+      },
+      {
+        "label": "Group aur report",
+        "children": [
+          {
+            "label": "Har drug ka pass count"
+          },
+          {
+            "label": "csv.writer"
+          },
+          {
+            "label": "Naya file name"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "TypeError: str < int"
+          },
+          {
+            "label": "ValueError: khaali cell"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Data pipeline** hai: padhna → convert → check → saar → report.",
+    "CSV ko `csv.DictReader` se list of dictionaries mein load kijiye, numbers ko **load karte samay** convert karte hue.",
+    "**Specification** ek function mein rakhiye; batch **kisi bhi** test mein fail ho to fail hai, isliye fail niyam mein `or`.",
+    "NumPy se column ka saar nikaaliye (`mean()`, `min()`, `(arr < 95).sum()`) aur ginti wale pattern se **groups** ki tulna kijiye.",
+    "Nateeje `csv.writer` se **nayi** file mein likhiye; raw data kabhi overwrite mat kijiye."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Quality control ke nateeje CSV file mein aate hain: har batch ki ek row, uske assay aur dissolution ke saath."
+        },
+        {
+          "say": "Step ek: DictReader har row ko dictionary ke roop mein padhta hai."
+        },
+        {
+          "say": "Step do: values text hain, isliye float unhe numbers banaata hai."
+        },
+        {
+          "say": "Step teen: har batch specification se check hota hai. B one oh two ka assay chauraanve dashamlav ek hai, pachaanve se neeche, isliye yeh fail hai."
+        },
+        {
+          "say": "B one oh three sirf chhihattar percent ghulta hai, assi se neeche. Yeh bhi fail hai."
+        },
+        {
+          "say": "Ek batch release ho sakta hai, aur do reject hote hain. Yeh release ka faisla hai, aapke program ne kiya."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Ek saath bana product ka ek lot, apne batch number ke saath, release se pehle test hota hai."
+    },
+    {
+      "meaning": "Tablet mein kitni drug hai uska test, label par likhi maatra ke % mein."
+    },
+    {
+      "meaning": "Tay samay mein tablet se kitni drug liquid mein nikalti hai, yeh maapta hai."
+    },
+    {
+      "meaning": "Release hone ke liye product ko jo limits poori karni hain, jaise assay 95% se 105%."
+    },
+    {
+      "meaning": "Woh steps jinse data guzarta hai: padhna, convert, check, saar, report."
+    }
+  ]
+}

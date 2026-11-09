@@ -45,7 +45,7 @@ T["hi"] = {
         },
         {
             "heading": "List के हर item से गुज़रना",
-            "md": "`for` loop (Lesson 2.3) list के हर item पर क्रम से जाता है, और `in` check करता है कि कोई value list में है या नहीं:\n\n" + E.C_LOOP + "\n\nयह print करता है:\n\n" + E.O_LOOP + "\n\n`\"Aspirin\" in medicines` `False` है क्योंकि इस prescription में Aspirin नहीं है। अगले lessons में आप items जोड़ेंगे, हटाएँगे और sort करेंगे, और tuples व dictionaries से मिलेंगे।",
+            "md": "`for` loop (Lesson 2.3) list के हर item पर क्रम से जाता है, और `in` check करता है कि कोई value list में है या नहीं:\n\n" + E.C_LOOP + "\n\nयह print करता है:\n\n" + E.O_LOOP + "\n\n`\"Aspirin\" in medicines` `False` है क्योंकि इस prescription में Aspirin नहीं है। अगले lessons में आप data रखने के दो और तरीके सीखेंगे, फिर items जोड़ेंगे, हटाएँगे और sort करेंगे।",
         },
     ],
     "walkthrough": {
@@ -143,7 +143,7 @@ T["hinglish"] = {
         },
         {
             "heading": "List ke har item se guzarna",
-            "md": "`for` loop (Lesson 2.3) list ke har item par kram se jaata hai, aur `in` check karta hai ki koi value list mein hai ya nahi:\n\n" + E.C_LOOP + "\n\nYeh print karta hai:\n\n" + E.O_LOOP + "\n\n`\"Aspirin\" in medicines` `False` hai kyunki is prescription mein Aspirin nahi hai. Agle lessons mein aap items jodenge, hataayenge aur sort karenge, aur tuples va dictionaries se milenge.",
+            "md": "`for` loop (Lesson 2.3) list ke har item par kram se jaata hai, aur `in` check karta hai ki koi value list mein hai ya nahi:\n\n" + E.C_LOOP + "\n\nYeh print karta hai:\n\n" + E.O_LOOP + "\n\n`\"Aspirin\" in medicines` `False` hai kyunki is prescription mein Aspirin nahi hai. Agle lessons mein aap data rakhne ke do aur tareeke seekhenge, phir items jodenge, hataayenge aur sort karenge.",
         },
     ],
     "walkthrough": {
@@ -241,7 +241,7 @@ T["kn"] = {
         },
         {
             "heading": "List ನ ಪ್ರತಿ item ಮೂಲಕ ಹೋಗುವುದು",
-            "md": "`for` loop (Lesson 2.3) list ನ ಪ್ರತಿ item ಗೆ ಕ್ರಮವಾಗಿ ಹೋಗುತ್ತೆ, ಮತ್ತು `in` ಒಂದು value list ನಲ್ಲಿ ಇದೆಯಾ ಅಂತ check ಮಾಡುತ್ತೆ:\n\n" + E.C_LOOP + "\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n" + E.O_LOOP + "\n\n`\"Aspirin\" in medicines` `False`, ಯಾಕಂದ್ರೆ ಈ prescription ನಲ್ಲಿ Aspirin ಇಲ್ಲ. ಮುಂದಿನ lessons ನಲ್ಲಿ ನೀವು items ಸೇರಿಸುತ್ತೀರಿ, ತೆಗೆಯುತ್ತೀರಿ, sort ಮಾಡುತ್ತೀರಿ, ಮತ್ತು tuples ಹಾಗೂ dictionaries ಪರಿಚಯ ಆಗುತ್ತೆ.",
+            "md": "`for` loop (Lesson 2.3) list ನ ಪ್ರತಿ item ಗೆ ಕ್ರಮವಾಗಿ ಹೋಗುತ್ತೆ, ಮತ್ತು `in` ಒಂದು value list ನಲ್ಲಿ ಇದೆಯಾ ಅಂತ check ಮಾಡುತ್ತೆ:\n\n" + E.C_LOOP + "\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n" + E.O_LOOP + "\n\n`\"Aspirin\" in medicines` `False`, ಯಾಕಂದ್ರೆ ಈ prescription ನಲ್ಲಿ Aspirin ಇಲ್ಲ. ಮುಂದಿನ lessons ನಲ್ಲಿ data ಇಡುವ ಇನ್ನೂ ಎರಡು ದಾರಿಗಳನ್ನು ಕಲಿಯುತ್ತೀರಿ, ನಂತರ items ಸೇರಿಸುತ್ತೀರಿ, ತೆಗೆಯುತ್ತೀರಿ, sort ಮಾಡುತ್ತೀರಿ.",
         },
     ],
     "walkthrough": {

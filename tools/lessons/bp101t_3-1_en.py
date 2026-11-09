@@ -57,7 +57,7 @@ L = {
         },
         {
             "heading": "Going through a list",
-            "md": "A `for` loop (Lesson 2.3) visits each item of a list in order, and `in` checks whether a value is in the list:\n\n" + C_LOOP + "\n\nThis prints:\n\n" + O_LOOP + "\n\n`\"Aspirin\" in medicines` is `False` because Aspirin is not on this prescription. In the next lessons you'll add, remove and sort items, and meet tuples and dictionaries.",
+            "md": "A `for` loop (Lesson 2.3) visits each item of a list in order, and `in` checks whether a value is in the list:\n\n" + C_LOOP + "\n\nThis prints:\n\n" + O_LOOP + "\n\n`\"Aspirin\" in medicines` is `False` because Aspirin is not on this prescription. In the next lessons you'll meet two more ways to store data, then add, remove and sort items.",
         },
     ],
     "walkthrough": {

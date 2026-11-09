@@ -40,7 +40,7 @@
     },
     {
       "heading": "List ke har item se guzarna",
-      "md": "`for` loop (Lesson 2.3) list ke har item par kram se jaata hai, aur `in` check karta hai ki koi value list mein hai ya nahi:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nfor drug in medicines:\n    print(\"Dispense:\", drug)\nprint(\"Aspirin\" in medicines)\n```\n\nYeh print karta hai:\n\n```\nDispense: Paracetamol\nDispense: Amoxicillin\nDispense: Cetirizine\nFalse\n```\n\n`\"Aspirin\" in medicines` `False` hai kyunki is prescription mein Aspirin nahi hai. Agle lessons mein aap items jodenge, hataayenge aur sort karenge, aur tuples va dictionaries se milenge."
+      "md": "`for` loop (Lesson 2.3) list ke har item par kram se jaata hai, aur `in` check karta hai ki koi value list mein hai ya nahi:\n\n```python\nmedicines = [\"Paracetamol\", \"Amoxicillin\", \"Cetirizine\"]\nfor drug in medicines:\n    print(\"Dispense:\", drug)\nprint(\"Aspirin\" in medicines)\n```\n\nYeh print karta hai:\n\n```\nDispense: Paracetamol\nDispense: Amoxicillin\nDispense: Cetirizine\nFalse\n```\n\n`\"Aspirin\" in medicines` `False` hai kyunki is prescription mein Aspirin nahi hai. Agle lessons mein aap data rakhne ke do aur tareeke seekhenge, phir items jodenge, hataayenge aur sort karenge."
     }
   ],
   "walkthrough": {
@@ -309,6 +309,9 @@
     "glossary"
   ],
   "glossary": [
+    {
+      "meaning": "Analysis ke liye jude hue data ka collection, jaise hafte bhar ki readings ya patients ka register."
+    },
     {
       "meaning": "Square brackets mein items ka kram wala collection, ek variable mein: [\"Aspirin\", \"Insulin\"]."
     },
