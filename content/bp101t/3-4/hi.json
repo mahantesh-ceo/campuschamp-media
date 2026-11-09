@@ -1,0 +1,334 @@
+{
+  "hook": {
+    "title": "पाँच सौ patients के लिए एक line",
+    "md": "एक clinical trial में 500 patients का dose milligrams में दर्ज है, और report में grams चाहिए। List के साथ आप `for` loop लिखकर हर एक को divide करेंगे। **NumPy** के साथ आप `doses / 1000` लिखते हैं, और सभी 500 एक साथ बदल जाते हैं।\n\n**NumPy** (Numerical Python) वह library है जो Python को numbers के साथ तेज़ बनाती है। Unit IV का Pandas और Unit V का Matplotlib इसी पर बने हैं, और आगे course में मिलने वाले machine learning tools भी। सब कुछ एक object से शुरू होता है: **array**।"
+  },
+  "learn": [
+    "**NumPy import** करना और list से **array** बनाना",
+    "**Vectorised** maths हर item पर एक साथ कैसे चलता है, और list अलग क्यों बर्ताव करती है",
+    "Readings का **mean**, **max**, **min** और **standard deviation** निकालना",
+    "Condition से array **filter** करना, जैसे 125 से ऊपर की सारी readings"
+  ],
+  "explanation": [
+    {
+      "heading": "Array बनाना",
+      "md": "NumPy ऊपर एक बार import होता है, रिवाज़ के मुताबिक छोटे नाम **np** से। `np.array()` list को **array** में बदलता है:\n\n```python\nimport numpy as np\n\ndoses = np.array([250, 500, 650])\nprint(doses)\nprint(doses.shape)\nprint(doses[0], doses[-1])\n```\n\nयह print करता है:\n\n```\n[250 500 650]\n(3,)\n250 650\n```\n\nArray बिना commas के print होता है। `.shape` उसका size देता है: `(3,)` मतलब एक row में 3 items। Indexing और slicing बिल्कुल lists जैसे चलते हैं। List से अलग, array में **एक ही type** की values होती हैं, आमतौर पर numbers।",
+      "callout": {
+        "title": "Array",
+        "md": "एक type की values का NumPy grid, np.array() से बनता है। Array पर maths हर item पर एक साथ होता है।"
+      }
+    },
+    {
+      "heading": "पूरे array पर maths",
+      "md": "यह है बड़ा idea। Array पर कोई operation **हर item** पर लगता है, बिना loop के। इसे **vectorised** maths कहते हैं:\n\n```python\nimport numpy as np\n\ndoses_mg = np.array([250, 500, 650])\nprint(doses_mg / 1000)\nprint(doses_mg * 2)\n\nplain_list = [250, 500, 650]\nprint(plain_list * 2)\n```\n\nयह print करता है:\n\n```\n[0.25 0.5  0.65]\n[ 500 1000 1300]\n[250, 500, 650, 250, 500, 650]\n```\n\nआखिरी line ध्यान से देखिए: **list** पर `* 2` list को दोहराता है, पर **array** पर हर number को दुगुना करता है। इसी फ़र्क की वजह से scientists data के लिए arrays use करते हैं।",
+      "callout": {
+        "title": "list * 2, array * 2 नहीं है",
+        "md": "List दोहराती है; array हिसाब लगाता है। Readings पर maths करने से पहले उन्हें np.array() से बदलिए।"
+      }
+    },
+    {
+      "heading": "दो arrays एक साथ",
+      "md": "एक ही length के दो arrays **item-दर-item** जुड़ते हैं: पहला पहले से, दूसरा दूसरे से। यहाँ हर बच्चे का dose है weight गुणा mg per kg:\n\n```python\nimport numpy as np\n\nweight = np.array([12, 20, 35])\nmg_per_kg = np.array([15, 15, 10])\nprint(weight * mg_per_kg)\n```\n\nयह print करता है:\n\n```\n[180 300 350]\n```\n\n12 × 15 = 180, 20 × 15 = 300 और 35 × 10 = 350, एक line में। Lengths न मिलें तो NumPy error देता है।"
+    },
+    {
+      "heading": "एक शब्द में statistics",
+      "md": "हर lab report में लगने वाले सार के लिए arrays के पास methods हैं:\n\n```python\nimport numpy as np\n\nsugar = np.array([110, 126, 98, 140, 105])\nprint(sugar.mean())\nprint(sugar.max(), sugar.min())\nprint(round(sugar.std(), 2))\n```\n\nयह print करता है:\n\n```\n115.8\n140 98\n15.21\n```\n\n- `mean()` average है, `max()` और `min()` सबसे बड़ा और सबसे छोटा, `sum()` कुल जोड़।\n- `std()` **standard deviation** है: readings कितनी फैली हुई हैं। छोटी value मतलब readings एक जैसी हैं।\n- `np.median(sugar)` readings sort करने पर बीच की value देता है।"
+    },
+    {
+      "heading": "Condition से filter करना",
+      "md": "Array पर comparison से `True` और `False` का array मिलता है, हर item के लिए एक। उसे square brackets के अंदर रखने पर सिर्फ़ `True` वाले items बचते हैं:\n\n```python\nimport numpy as np\n\nsugar = np.array([110, 126, 98, 140, 105])\nprint(sugar > 125)\nprint(sugar[sugar > 125])\nprint((sugar > 125).sum())\n```\n\nयह print करता है:\n\n```\n[False  True False  True False]\n[126 140]\n2\n```\n\nदो readings 125 से ऊपर थीं। `True` को 1 गिना जाता है, इसलिए `.sum()` उन्हें गिनता है। Conditions जोड़ने के लिए `&` (and) या `|` (or) use कीजिए, **हर condition के चारों ओर brackets** के साथ: `sugar[(sugar > 100) & (sugar < 130)]`।",
+      "callout": {
+        "title": "बने-बनाए arrays",
+        "md": "np.arange(0, 25, 6) देता है [0 6 12 18 24], range() जैसा। np.linspace(0, 24, 5) 0 से 24 तक बराबर दूरी के 5 numbers देता है: Unit V में time points के लिए use करेंगे।"
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "यह program एक batch की छह tablets का वज़न check करता है: average, range, और 490 से 510 mg के बाहर कोई tablet।",
+    "keyTerms": [
+      {
+        "meaning": "NumPy को छोटे नाम np से load करो।"
+      },
+      {
+        "meaning": "List को NumPy array में बदलो।"
+      },
+      {
+        "meaning": "सारी values का average।"
+      },
+      {
+        "meaning": "सिर्फ़ condition से मेल खाने वाली values रखो।"
+      }
+    ],
+    "steps": [
+      {
+        "say": "यह program एक batch की छह tablets की quality जल्दी check करता है।"
+      },
+      {
+        "say": "import numpy as n p, NumPy को छोटे नाम n p से load करता है।"
+      },
+      {
+        "say": "Comment बताता है कि ये tablets के वज़न milligrams में हैं।"
+      },
+      {
+        "say": "n p dot array छह वज़नों की list को NumPy array w में बदलता है।"
+      },
+      {
+        "say": "w dot mean छहों वज़न जोड़कर छह से divide करता है। Average ठीक पाँच सौ है।"
+      },
+      {
+        "say": "min और max सबसे हल्की और सबसे भारी tablet देते हैं: चार सौ अट्ठासी और पाँच सौ दस।"
+      },
+      {
+        "say": "यह mask चार सौ नब्बे से कम, या पाँच सौ दस से ज़्यादा वाली tablets रखता है। हर condition brackets में है, bar के निशान से जुड़ी, जिसका मतलब है or।"
+      },
+      {
+        "say": "सिर्फ़ एक tablet, चार सौ अट्ठासी milligrams, limit से बाहर है।"
+      }
+    ]
+  },
+  "errors": {
+    "intro": "NumPy के साथ beginners को सबसे पहले ये दो errors मिलती हैं।",
+    "examples": [
+      {
+        "title": "Import किए बिना np use करना",
+        "md": "जब तक import न करें, Python `np` को नहीं जानता। Program के ऊपर `import numpy as np` जोड़िए।"
+      },
+      {
+        "title": "अलग length के arrays जोड़ना",
+        "md": "Item-दर-item maths के लिए दोनों तरफ़ बराबर items चाहिए: यहाँ 3 weights हैं पर सिर्फ़ 2 doses। Arrays की length बराबर कीजिए।"
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "List पर maths करना: `[250, 500] * 2`",
+      "see": "कोई error नहीं, पर `[250, 500, 250, 500]` मिलता है",
+      "fix": "पहले array बनाइए: `np.array([250, 500]) * 2`।"
+    },
+    {
+      "mistake": "Filter में `and` / `or` use करना: `w[w > 490 and w < 510]`",
+      "see": "ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()",
+      "fix": "Brackets के साथ `&` और `|` use कीजिए: `w[(w > 490) & (w < 510)]`।"
+    },
+    {
+      "mistake": "Brackets छोड़ देना: `w[w > 490 & w < 510]`",
+      "see": "Error या गलत नतीजा, क्योंकि `&` पहले हल होता है",
+      "fix": "हर condition के चारों ओर brackets लगाइए।"
+    },
+    {
+      "mistake": "Text और numbers मिलाना: `np.array([250, \"500\"])`",
+      "see": "कोई error नहीं, पर हर item text बन जाता है और maths fail होता है",
+      "fix": "Array में सिर्फ़ numbers रखिए; text को पहले int() या float() से बदलिए।"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Milligrams से grams",
+      "md": "**doses_mg** को NumPy array में बदलिए और **एक** calculation से हर dose **grams** में print कीजिए (1000 से divide)। Output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "arr = np.array(doses_mg) array बनाता है।",
+        "print(np.array(doses_mg) / 1000)"
+      ]
+    },
+    {
+      "title": "तीन बच्चों के doses",
+      "md": "Dose है शरीर के वज़न के **हर kg पर 15 mg**। **weight** array को 15 से गुणा करके doses print कीजिए। Output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "एक गुणा पूरे array पर चलता है।",
+        "print(weight * 15)"
+      ]
+    },
+    {
+      "title": "Average और सबसे ज़्यादा temperature",
+      "md": "**Mean** temperature 1 decimal तक round करके, और **सबसे ज़्यादा** temperature print कीजिए। Output बिल्कुल यह होना चाहिए:",
+      "hints": [
+        "round(temps.mean(), 1) average को 1 decimal तक round करता है।",
+        "print(\"Max:\", temps.max())"
+      ]
+    },
+    {
+      "title": "Bug ढूँढिए",
+      "md": "इस program को fever वाली readings (38 से ऊपर और 39.5 से नीचे) दिखानी हैं, पर यह ValueError के साथ crash होता है। Filter ठीक कीजिए ताकि output बिल्कुल यह हो:",
+      "hints": [
+        "and पूरे arrays पर काम नहीं करता। NumPy उसकी जगह & use करता है।",
+        "fever = temps[(temps > 38) & (temps < 39.5)]"
+      ],
+      "solutionNote": "and को एक True या False चाहिए, पर temps > 38 उनका पूरा array है। & दोनों arrays को item-दर-item जोड़ता है, और हर condition को अपने brackets चाहिए।"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "import numpy as np\na = np.array([1, 2, 3])\nprint(a * 2)\n\nयह क्या print करता है?",
+      "why": "Array पर maths हर item पर होता है।"
+    },
+    {
+      "q": "print([1, 2, 3] * 2)\n\nयह क्या print करता है?",
+      "why": "List पर * list को दोहराता है।"
+    },
+    {
+      "q": "import numpy as np क्या करता है?",
+      "why": "यह library को छोटे नाम np से load करता है।"
+    },
+    {
+      "q": "a = np.array([10, 20, 30])\nprint(a.mean())\n\nयह क्या print करता है?",
+      "why": "Mean है (10 + 20 + 30) / 3 = 20.0।"
+    },
+    {
+      "q": "a = np.array([10, 20, 30]) के लिए a[a > 15] क्या देता है?",
+      "why": "Mask सिर्फ़ वे items रखता है जहाँ condition True है।"
+    },
+    {
+      "q": "NumPy filter में दो conditions कैसे जोड़ते हैं?",
+      "why": "& या | use कीजिए और हर condition को brackets में रखिए।"
+    }
+  ],
+  "exam": {
+    "note": "Practice के लिए important questions। University के असली questions अलग हो सकते हैं।"
+  },
+  "mindmap": {
+    "label": "Lesson 3.4 · NumPy arrays",
+    "children": [
+      {
+        "label": "बनाना",
+        "children": [
+          {
+            "label": "import numpy as np"
+          },
+          {
+            "label": "np.array(list)"
+          },
+          {
+            "label": ".shape"
+          }
+        ]
+      },
+      {
+        "label": "Vector maths",
+        "children": [
+          {
+            "label": "arr / 1000"
+          },
+          {
+            "label": "arr1 * arr2"
+          },
+          {
+            "label": "Loop नहीं चाहिए"
+          }
+        ]
+      },
+      {
+        "label": "Statistics",
+        "children": [
+          {
+            "label": "mean()"
+          },
+          {
+            "label": "max() min() sum()"
+          },
+          {
+            "label": "std() फैलाव"
+          }
+        ]
+      },
+      {
+        "label": "Filter",
+        "children": [
+          {
+            "label": "arr > 125 → True/False"
+          },
+          {
+            "label": "arr[arr > 125]"
+          },
+          {
+            "label": "& | brackets के साथ"
+          }
+        ]
+      },
+      {
+        "label": "list से फ़र्क",
+        "children": [
+          {
+            "label": "list * 2 दोहराता है"
+          },
+          {
+            "label": "array * 2 दुगुना करता है"
+          },
+          {
+            "label": "Array में एक type"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError: np"
+          },
+          {
+            "label": "ValueError: shapes"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**NumPy** `import numpy as np` से load होता है; `np.array(list)` एक type का **array** बनाता है।",
+    "Array पर maths **vectorised** है: `doses / 1000` हर item बदलता है, बिना loop के। List पर `* 2` दोहराता है।",
+    "बराबर length के दो arrays **item-दर-item** जुड़ते हैं: `weight * mg_per_kg`।",
+    "`mean()`, `max()`, `min()`, `sum()` और `std()` एक शब्द में readings का सार देते हैं।",
+    "Condition से array filter होता है: `sugar[sugar > 125]`; conditions `&` और `|` से जोड़िए, हर एक brackets में।"
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Array में तीन doses हैं, milligrams में, एक के बगल में एक।"
+        },
+        {
+          "say": "Array को हज़ार से divide करने पर हर item एक ही समय पर divide होता है। कोई loop नहीं।"
+        },
+        {
+          "say": "print नया array दिखाता है, grams में।"
+        },
+        {
+          "say": "सादी list के साथ यही करने के लिए for loop चाहिए होता। पाँच सौ patients के साथ array कहीं तेज़ है।"
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Numerical Python: arrays पर तेज़ maths की library। import numpy as np से load होती है।"
+    },
+    {
+      "meaning": "एक type की values का NumPy collection, np.array() से बनता है। इस पर maths हर item पर चलता है।"
+    },
+    {
+      "meaning": "Array के हर item पर एक साथ, बिना loop के: doses / 1000।"
+    },
+    {
+      "meaning": "Average: कुल जोड़ भाग values की संख्या। NumPy में arr.mean()।"
+    },
+    {
+      "meaning": "Values mean के आसपास कितनी फैली हैं। arr.std(); छोटा मतलब readings एक जैसी हैं।"
+    },
+    {
+      "meaning": "Condition से बना True और False का array; arr[mask] सिर्फ़ True वाले items रखता है।"
+    }
+  ]
+}

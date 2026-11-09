@@ -687,6 +687,38 @@ G = {
             "hinglish": "Nayi sorted list lautaata hai aur original ko waisa hi chhodta hai.",
             "kn": "ಹೊಸ sorted list ಕೊಡುತ್ತೆ, original ಅನ್ನು ಹಾಗೇ ಬಿಡುತ್ತೆ."}),
     ],
+    "3-4": [
+        ("NumPy", {
+            "en": "Numerical Python: the library for fast maths on arrays. Loaded with import numpy as np.",
+            "hi": "Numerical Python: arrays पर तेज़ maths की library। import numpy as np से load होती है।",
+            "hinglish": "Numerical Python: arrays par tez maths ki library. import numpy as np se load hoti hai.",
+            "kn": "Numerical Python: arrays ಮೇಲೆ ವೇಗದ maths ಮಾಡುವ library. import numpy as np ಇಂದ load ಆಗುತ್ತೆ."}),
+        ("Array", {
+            "en": "NumPy's collection of values of one type, made with np.array(). Maths on it works on every item.",
+            "hi": "एक type की values का NumPy collection, np.array() से बनता है। इस पर maths हर item पर चलता है।",
+            "hinglish": "Ek type ki values ka NumPy collection, np.array() se banta hai. Is par maths har item par chalta hai.",
+            "kn": "ಒಂದೇ type ನ values ಇರುವ NumPy collection, np.array() ಇಂದ ಮಾಡುತ್ತಾರೆ. ಇದರ ಮೇಲಿನ maths ಪ್ರತಿ item ಮೇಲೂ ಆಗುತ್ತೆ."}),
+        ("Vectorised", {
+            "en": "Done on every item of an array at once, with no loop: doses / 1000.",
+            "hi": "Array के हर item पर एक साथ, बिना loop के: doses / 1000।",
+            "hinglish": "Array ke har item par ek saath, bina loop ke: doses / 1000.",
+            "kn": "Array ನ ಪ್ರತಿ item ಮೇಲೆ ಒಂದೇ ಸಲ, loop ಇಲ್ಲದೆ: doses / 1000."}),
+        ("Mean", {
+            "en": "The average: the total divided by the number of values. arr.mean() in NumPy.",
+            "hi": "Average: कुल जोड़ भाग values की संख्या। NumPy में arr.mean()।",
+            "hinglish": "Average: kul jod bhaag values ki sankhya. NumPy mein arr.mean().",
+            "kn": "Average: ಒಟ್ಟು ಮೊತ್ತ ಭಾಗಿಸು values ಸಂಖ್ಯೆ. NumPy ನಲ್ಲಿ arr.mean()."}),
+        ("Standard deviation", {
+            "en": "How spread out the values are around the mean. arr.std(); small means consistent readings.",
+            "hi": "Values mean के आसपास कितनी फैली हैं। arr.std(); छोटा मतलब readings एक जैसी हैं।",
+            "hinglish": "Values mean ke aaspaas kitni phaili hain. arr.std(); chhota matlab readings ek jaisi hain.",
+            "kn": "Values mean ಸುತ್ತ ಎಷ್ಟು ಹರಡಿವೆ. arr.std(); ಕಡಿಮೆ ಅಂದ್ರೆ readings ಒಂದೇ ತರಹ ಇವೆ."}),
+        ("Boolean mask", {
+            "en": "An array of True and False from a condition; arr[mask] keeps the True items.",
+            "hi": "Condition से बना True और False का array; arr[mask] सिर्फ़ True वाले items रखता है।",
+            "hinglish": "Condition se bana True aur False ka array; arr[mask] sirf True wale items rakhta hai.",
+            "kn": "Condition ಇಂದ ಬರುವ True ಮತ್ತು False ನ array; arr[mask] True items ಮಾತ್ರ ಉಳಿಸುತ್ತೆ."}),
+    ],
 }
 
 

@@ -1,0 +1,153 @@
+{
+  "course": "bp101t",
+  "lesson": "3-4",
+  "voices": {
+    "en": "Ritu",
+    "hi": "Ritu",
+    "kn": "Chaitra"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program does a quick quality check on six tablets from one batch.",
+        "import numpy as N P loads NumPy, under the short name N P.",
+        "The comment says these are tablet weights in milligrams.",
+        "N P dot array turns the list of six weights into a NumPy array, called w.",
+        "w dot mean adds all six weights and divides by six. The average is exactly five hundred.",
+        "min and max give the lightest and heaviest tablets: four eighty eight and five ten.",
+        "This mask keeps tablets below four ninety, or above five ten. Each condition is in brackets, joined by the bar sign, which means or.",
+        "Only one tablet, four eighty eight milligrams, is outside the limit."
+      ],
+      "display": [
+        "This program does a quick quality check on six tablets from one batch.",
+        "import numpy as n p loads NumPy, under the short name n p.",
+        "The comment says these are tablet weights in milligrams.",
+        "n p dot array turns the list of six weights into a NumPy array, called w.",
+        "w dot mean adds all six weights and divides by six. The average is exactly five hundred.",
+        "min and max give the lightest and heaviest tablets: four eighty eight and five ten.",
+        "This mask keeps tablets below four ninety, or above five ten. Each condition is in brackets, joined by the bar sign, which means or.",
+        "Only one tablet, four eighty eight milligrams, is outside the limit."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह program एक batch की छह tablets की quality जल्दी check करता है।",
+        "import numpy as n p, NumPy को छोटे नाम n p से load करता है।",
+        "Comment बताता है कि ये tablets के वज़न milligrams में हैं।",
+        "n p dot array छह वज़नों की list को NumPy array w में बदलता है।",
+        "w dot mean छहों वज़न जोड़कर छह से divide करता है। Average ठीक पाँच सौ है।",
+        "min और max सबसे हल्की और सबसे भारी tablet देते हैं: चार सौ अट्ठासी और पाँच सौ दस।",
+        "यह mask चार सौ नब्बे से कम, या पाँच सौ दस से ज़्यादा वाली tablets रखता है। हर condition brackets में है, bar के निशान से जुड़ी, जिसका मतलब है or।",
+        "सिर्फ़ एक tablet, चार सौ अट्ठासी milligrams, limit से बाहर है।"
+      ],
+      "display": [
+        "यह program एक batch की छह tablets की quality जल्दी check करता है।",
+        "import numpy as n p, NumPy को छोटे नाम n p से load करता है।",
+        "Comment बताता है कि ये tablets के वज़न milligrams में हैं।",
+        "n p dot array छह वज़नों की list को NumPy array w में बदलता है।",
+        "w dot mean छहों वज़न जोड़कर छह से divide करता है। Average ठीक पाँच सौ है।",
+        "min और max सबसे हल्की और सबसे भारी tablet देते हैं: चार सौ अट्ठासी और पाँच सौ दस।",
+        "यह mask चार सौ नब्बे से कम, या पाँच सौ दस से ज़्यादा वाली tablets रखता है। हर condition brackets में है, bar के निशान से जुड़ी, जिसका मतलब है or।",
+        "सिर्फ़ एक tablet, चार सौ अट्ठासी milligrams, limit से बाहर है।"
+      ],
+      "displayHinglish": [
+        "Yeh program ek batch ki chhah tablets ki quality jaldi check karta hai.",
+        "import numpy as n p, NumPy ko chhote naam n p se load karta hai.",
+        "Comment batata hai ki yeh tablets ke wazan milligrams mein hain.",
+        "n p dot array chhah wazanon ki list ko NumPy array w mein badalta hai.",
+        "w dot mean chhahon wazan jodkar chhah se divide karta hai. Average theek paanch sau hai.",
+        "min aur max sabse halki aur sabse bhaari tablet dete hain: chaar sau atthaasi aur paanch sau das.",
+        "Yeh mask chaar sau nabbe se kam, ya paanch sau das se zyada wali tablets rakhta hai. Har condition brackets mein hai, bar ke nishaan se judi, jiska matlab hai or.",
+        "Sirf ek tablet, chaar sau atthaasi milligrams, limit se bahar hai."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ program ಒಂದು batch ನ ಆರು tablets ನ quality ಬೇಗ check ಮಾಡುತ್ತೆ.",
+        "import numpy as n p, NumPy ಅನ್ನು n p ಎಂಬ ಸಣ್ಣ ಹೆಸರಿನಲ್ಲಿ load ಮಾಡುತ್ತೆ.",
+        "Comment ಇವು tablets ನ ತೂಕ, milligrams ನಲ್ಲಿ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "n p dot array ಆರು ತೂಕಗಳ list ಅನ್ನು NumPy array w ಆಗಿ ಬದಲಾಯಿಸುತ್ತೆ.",
+        "w dot mean ಆರೂ ತೂಕಗಳನ್ನು ಕೂಡಿಸಿ ಆರರಿಂದ divide ಮಾಡುತ್ತೆ. Average ಸರಿಯಾಗಿ ಐನೂರು.",
+        "min ಮತ್ತು max ಅತಿ ಹಗುರ ಮತ್ತು ಅತಿ ಭಾರದ tablets ಕೊಡುತ್ತವೆ: ನಾನೂರ ಎಂಬತ್ತೆಂಟು ಮತ್ತು ಐನೂರ ಹತ್ತು.",
+        "ಈ mask ನಾನೂರ ತೊಂಬತ್ತಕ್ಕಿಂತ ಕಡಿಮೆ, ಅಥವಾ ಐನೂರ ಹತ್ತಕ್ಕಿಂತ ಹೆಚ್ಚು ಇರುವ tablets ಉಳಿಸುತ್ತೆ. ಪ್ರತಿ condition brackets ನಲ್ಲಿ, bar ಚಿಹ್ನೆಯಿಂದ ಸೇರಿದೆ, ಅಂದ್ರೆ or.",
+        "ಒಂದೇ tablet, ನಾನೂರ ಎಂಬತ್ತೆಂಟು milligrams, limit ಹೊರಗೆ ಇದೆ."
+      ],
+      "display": [
+        "ಈ program ಒಂದು batch ನ ಆರು tablets ನ quality ಬೇಗ check ಮಾಡುತ್ತೆ.",
+        "import numpy as n p, NumPy ಅನ್ನು n p ಎಂಬ ಸಣ್ಣ ಹೆಸರಿನಲ್ಲಿ load ಮಾಡುತ್ತೆ.",
+        "Comment ಇವು tablets ನ ತೂಕ, milligrams ನಲ್ಲಿ ಅಂತ ಹೇಳುತ್ತೆ.",
+        "n p dot array ಆರು ತೂಕಗಳ list ಅನ್ನು NumPy array w ಆಗಿ ಬದಲಾಯಿಸುತ್ತೆ.",
+        "w dot mean ಆರೂ ತೂಕಗಳನ್ನು ಕೂಡಿಸಿ ಆರರಿಂದ divide ಮಾಡುತ್ತೆ. Average ಸರಿಯಾಗಿ ಐನೂರು.",
+        "min ಮತ್ತು max ಅತಿ ಹಗುರ ಮತ್ತು ಅತಿ ಭಾರದ tablets ಕೊಡುತ್ತವೆ: ನಾನೂರ ಎಂಬತ್ತೆಂಟು ಮತ್ತು ಐನೂರ ಹತ್ತು.",
+        "ಈ mask ನಾನೂರ ತೊಂಬತ್ತಕ್ಕಿಂತ ಕಡಿಮೆ, ಅಥವಾ ಐನೂರ ಹತ್ತಕ್ಕಿಂತ ಹೆಚ್ಚು ಇರುವ tablets ಉಳಿಸುತ್ತೆ. ಪ್ರತಿ condition brackets ನಲ್ಲಿ, bar ಚಿಹ್ನೆಯಿಂದ ಸೇರಿದೆ, ಅಂದ್ರೆ or.",
+        "ಒಂದೇ tablet, ನಾನೂರ ಎಂಬತ್ತೆಂಟು milligrams, limit ಹೊರಗೆ ಇದೆ."
+      ]
+    },
+    {
+      "id": "anim-vector",
+      "prefix": "anim-vector-",
+      "lang": "en",
+      "tts": [
+        "The array holds three doses in milligrams, side by side.",
+        "Dividing the array by a thousand divides every item at the same time. There is no loop.",
+        "print shows the new array, in grams.",
+        "With a plain list, you would need a for loop to do the same. With five hundred patients, the array is far faster."
+      ],
+      "display": [
+        "The array holds three doses in milligrams, side by side.",
+        "Dividing the array by a thousand divides every item at the same time. There is no loop.",
+        "print shows the new array, in grams.",
+        "With a plain list, you would need a for loop to do the same. With five hundred patients, the array is far faster."
+      ]
+    },
+    {
+      "id": "anim-vector",
+      "prefix": "anim-vector-",
+      "lang": "hi",
+      "tts": [
+        "Array में तीन doses हैं, milligrams में, एक के बगल में एक।",
+        "Array को हज़ार से divide करने पर हर item एक ही समय पर divide होता है। कोई loop नहीं।",
+        "print नया array दिखाता है, grams में।",
+        "सादी list के साथ यही करने के लिए for loop चाहिए होता। पाँच सौ patients के साथ array कहीं तेज़ है।"
+      ],
+      "display": [
+        "Array में तीन doses हैं, milligrams में, एक के बगल में एक।",
+        "Array को हज़ार से divide करने पर हर item एक ही समय पर divide होता है। कोई loop नहीं।",
+        "print नया array दिखाता है, grams में।",
+        "सादी list के साथ यही करने के लिए for loop चाहिए होता। पाँच सौ patients के साथ array कहीं तेज़ है।"
+      ],
+      "displayHinglish": [
+        "Array mein teen doses hain, milligrams mein, ek ke bagal mein ek.",
+        "Array ko hazaar se divide karne par har item ek hi samay par divide hota hai. Koi loop nahi.",
+        "print naya array dikhaata hai, grams mein.",
+        "Saadi list ke saath yahi karne ke liye for loop chahiye hota. Paanch sau patients ke saath array kahin tez hai."
+      ]
+    },
+    {
+      "id": "anim-vector",
+      "prefix": "anim-vector-",
+      "lang": "kn",
+      "tts": [
+        "Array ನಲ್ಲಿ ಮೂರು doses, milligrams ನಲ್ಲಿ, ಒಂದರ ಪಕ್ಕ ಒಂದು.",
+        "Array ಅನ್ನು ಸಾವಿರದಿಂದ divide ಮಾಡಿದರೆ ಪ್ರತಿ item ಒಂದೇ ಸಮಯದಲ್ಲಿ divide ಆಗುತ್ತೆ. Loop ಇಲ್ಲ.",
+        "print ಹೊಸ array ತೋರಿಸುತ್ತೆ, grams ನಲ್ಲಿ.",
+        "ಸಾಧಾರಣ list ಜೊತೆ ಇದೇ ಮಾಡಲು for loop ಬೇಕಾಗುತ್ತಿತ್ತು. ಐನೂರು patients ಇದ್ದಾಗ array ತುಂಬಾ ವೇಗ."
+      ],
+      "display": [
+        "Array ನಲ್ಲಿ ಮೂರು doses, milligrams ನಲ್ಲಿ, ಒಂದರ ಪಕ್ಕ ಒಂದು.",
+        "Array ಅನ್ನು ಸಾವಿರದಿಂದ divide ಮಾಡಿದರೆ ಪ್ರತಿ item ಒಂದೇ ಸಮಯದಲ್ಲಿ divide ಆಗುತ್ತೆ. Loop ಇಲ್ಲ.",
+        "print ಹೊಸ array ತೋರಿಸುತ್ತೆ, grams ನಲ್ಲಿ.",
+        "ಸಾಧಾರಣ list ಜೊತೆ ಇದೇ ಮಾಡಲು for loop ಬೇಕಾಗುತ್ತಿತ್ತು. ಐನೂರು patients ಇದ್ದಾಗ array ತುಂಬಾ ವೇಗ."
+      ]
+    }
+  ]
+}

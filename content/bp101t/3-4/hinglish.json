@@ -1,0 +1,334 @@
+{
+  "hook": {
+    "title": "Paanch sau patients ke liye ek line",
+    "md": "Ek clinical trial mein 500 patients ka dose milligrams mein darj hai, aur report mein grams chahiye. List ke saath aap `for` loop likhkar har ek ko divide karenge. **NumPy** ke saath aap `doses / 1000` likhte hain, aur sabhi 500 ek saath badal jaate hain.\n\n**NumPy** (Numerical Python) woh library hai jo Python ko numbers ke saath tez banaati hai. Unit IV ka Pandas aur Unit V ka Matplotlib isi par bane hain, aur aage course mein milne wale machine learning tools bhi. Sab kuch ek object se shuru hota hai: **array**."
+  },
+  "learn": [
+    "**NumPy import** karna aur list se **array** banana",
+    "**Vectorised** maths har item par ek saath kaise chalta hai, aur list alag kyun bartaav karti hai",
+    "Readings ka **mean**, **max**, **min** aur **standard deviation** nikaalna",
+    "Condition se array **filter** karna, jaise 125 se upar ki saari readings"
+  ],
+  "explanation": [
+    {
+      "heading": "Array banana",
+      "md": "NumPy upar ek baar import hota hai, riwaaz ke mutaabik chhote naam **np** se. `np.array()` list ko **array** mein badalta hai:\n\n```python\nimport numpy as np\n\ndoses = np.array([250, 500, 650])\nprint(doses)\nprint(doses.shape)\nprint(doses[0], doses[-1])\n```\n\nYeh print karta hai:\n\n```\n[250 500 650]\n(3,)\n250 650\n```\n\nArray bina commas ke print hota hai. `.shape` uska size deta hai: `(3,)` matlab ek row mein 3 items. Indexing aur slicing bilkul lists jaise chalte hain. List se alag, array mein **ek hi type** ki values hoti hain, aam taur par numbers.",
+      "callout": {
+        "title": "Array",
+        "md": "Ek type ki values ka NumPy grid, np.array() se banta hai. Array par maths har item par ek saath hota hai."
+      }
+    },
+    {
+      "heading": "Poore array par maths",
+      "md": "Yeh hai bada idea. Array par koi operation **har item** par lagta hai, bina loop ke. Ise **vectorised** maths kehte hain:\n\n```python\nimport numpy as np\n\ndoses_mg = np.array([250, 500, 650])\nprint(doses_mg / 1000)\nprint(doses_mg * 2)\n\nplain_list = [250, 500, 650]\nprint(plain_list * 2)\n```\n\nYeh print karta hai:\n\n```\n[0.25 0.5  0.65]\n[ 500 1000 1300]\n[250, 500, 650, 250, 500, 650]\n```\n\nAakhri line dhyaan se dekhiye: **list** par `* 2` list ko dohraata hai, par **array** par har number ko dugna karta hai. Isi farq ki wajah se scientists data ke liye arrays use karte hain.",
+      "callout": {
+        "title": "list * 2, array * 2 nahi hai",
+        "md": "List dohraati hai; array hisaab lagaata hai. Readings par maths karne se pehle unhe np.array() se badaliye."
+      }
+    },
+    {
+      "heading": "Do arrays ek saath",
+      "md": "Ek hi length ke do arrays **item-dar-item** judte hain: pehla pehle se, doosra doosre se. Yahaan har bachche ka dose hai weight guna mg per kg:\n\n```python\nimport numpy as np\n\nweight = np.array([12, 20, 35])\nmg_per_kg = np.array([15, 15, 10])\nprint(weight * mg_per_kg)\n```\n\nYeh print karta hai:\n\n```\n[180 300 350]\n```\n\n12 × 15 = 180, 20 × 15 = 300 aur 35 × 10 = 350, ek line mein. Lengths na milein to NumPy error deta hai."
+    },
+    {
+      "heading": "Ek shabd mein statistics",
+      "md": "Har lab report mein lagne wale saar ke liye arrays ke paas methods hain:\n\n```python\nimport numpy as np\n\nsugar = np.array([110, 126, 98, 140, 105])\nprint(sugar.mean())\nprint(sugar.max(), sugar.min())\nprint(round(sugar.std(), 2))\n```\n\nYeh print karta hai:\n\n```\n115.8\n140 98\n15.21\n```\n\n- `mean()` average hai, `max()` aur `min()` sabse bada aur sabse chhota, `sum()` kul jod.\n- `std()` **standard deviation** hai: readings kitni phaili hui hain. Chhoti value matlab readings ek jaisi hain.\n- `np.median(sugar)` readings sort karne par beech ki value deta hai."
+    },
+    {
+      "heading": "Condition se filter karna",
+      "md": "Array par comparison se `True` aur `False` ka array milta hai, har item ke liye ek. Use square brackets ke andar rakhne par sirf `True` wale items bachte hain:\n\n```python\nimport numpy as np\n\nsugar = np.array([110, 126, 98, 140, 105])\nprint(sugar > 125)\nprint(sugar[sugar > 125])\nprint((sugar > 125).sum())\n```\n\nYeh print karta hai:\n\n```\n[False  True False  True False]\n[126 140]\n2\n```\n\nDo readings 125 se upar thi. `True` ko 1 gina jaata hai, isliye `.sum()` unhe ginta hai. Conditions jodne ke liye `&` (and) ya `|` (or) use kijiye, **har condition ke chaaron or brackets** ke saath: `sugar[(sugar > 100) & (sugar < 130)]`.",
+      "callout": {
+        "title": "Bane-banaaye arrays",
+        "md": "np.arange(0, 25, 6) deta hai [0 6 12 18 24], range() jaisa. np.linspace(0, 24, 5) 0 se 24 tak barabar doori ke 5 numbers deta hai: Unit V mein time points ke liye use karenge."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "Yeh program ek batch ki chhah tablets ka wazan check karta hai: average, range, aur 490 se 510 mg ke bahar koi tablet.",
+    "keyTerms": [
+      {
+        "meaning": "NumPy ko chhote naam np se load karo."
+      },
+      {
+        "meaning": "List ko NumPy array mein badlo."
+      },
+      {
+        "meaning": "Saari values ka average."
+      },
+      {
+        "meaning": "Sirf condition se mel khaane wali values rakho."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Yeh program ek batch ki chhah tablets ki quality jaldi check karta hai."
+      },
+      {
+        "say": "import numpy as n p, NumPy ko chhote naam n p se load karta hai."
+      },
+      {
+        "say": "Comment batata hai ki yeh tablets ke wazan milligrams mein hain."
+      },
+      {
+        "say": "n p dot array chhah wazanon ki list ko NumPy array w mein badalta hai."
+      },
+      {
+        "say": "w dot mean chhahon wazan jodkar chhah se divide karta hai. Average theek paanch sau hai."
+      },
+      {
+        "say": "min aur max sabse halki aur sabse bhaari tablet dete hain: chaar sau atthaasi aur paanch sau das."
+      },
+      {
+        "say": "Yeh mask chaar sau nabbe se kam, ya paanch sau das se zyada wali tablets rakhta hai. Har condition brackets mein hai, bar ke nishaan se judi, jiska matlab hai or."
+      },
+      {
+        "say": "Sirf ek tablet, chaar sau atthaasi milligrams, limit se bahar hai."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "NumPy ke saath beginners ko sabse pehle yeh do errors milti hain.",
+    "examples": [
+      {
+        "title": "Import kiye bina np use karna",
+        "md": "Jab tak import na karein, Python `np` ko nahi jaanta. Program ke upar `import numpy as np` jodiye."
+      },
+      {
+        "title": "Alag length ke arrays jodna",
+        "md": "Item-dar-item maths ke liye dono taraf barabar items chahiye: yahaan 3 weights hain par sirf 2 doses. Arrays ki length barabar kijiye."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "List par maths karna: `[250, 500] * 2`",
+      "see": "Koi error nahi, par `[250, 500, 250, 500]` milta hai",
+      "fix": "Pehle array banaiye: `np.array([250, 500]) * 2`."
+    },
+    {
+      "mistake": "Filter mein `and` / `or` use karna: `w[w > 490 and w < 510]`",
+      "see": "ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()",
+      "fix": "Brackets ke saath `&` aur `|` use kijiye: `w[(w > 490) & (w < 510)]`."
+    },
+    {
+      "mistake": "Brackets chhod dena: `w[w > 490 & w < 510]`",
+      "see": "Error ya galat nateeja, kyunki `&` pehle hal hota hai",
+      "fix": "Har condition ke chaaron or brackets lagaiye."
+    },
+    {
+      "mistake": "Text aur numbers milaana: `np.array([250, \"500\"])`",
+      "see": "Koi error nahi, par har item text ban jaata hai aur maths fail hota hai",
+      "fix": "Array mein sirf numbers rakhiye; text ko pehle int() ya float() se badaliye."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Milligrams se grams",
+      "md": "**doses_mg** ko NumPy array mein badaliye aur **ek** calculation se har dose **grams** mein print kijiye (1000 se divide). Output bilkul yeh hona chahiye:",
+      "hints": [
+        "arr = np.array(doses_mg) array banata hai.",
+        "print(np.array(doses_mg) / 1000)"
+      ]
+    },
+    {
+      "title": "Teen bachchon ke doses",
+      "md": "Dose hai shareer ke wazan ke **har kg par 15 mg**. **weight** array ko 15 se guna karke doses print kijiye. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "Ek guna poore array par chalta hai.",
+        "print(weight * 15)"
+      ]
+    },
+    {
+      "title": "Average aur sabse zyada temperature",
+      "md": "**Mean** temperature 1 decimal tak round karke, aur **sabse zyada** temperature print kijiye. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "round(temps.mean(), 1) average ko 1 decimal tak round karta hai.",
+        "print(\"Max:\", temps.max())"
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "Is program ko fever wali readings (38 se upar aur 39.5 se neeche) dikhaani hain, par yeh ValueError ke saath crash hota hai. Filter theek kijiye taaki output bilkul yeh ho:",
+      "hints": [
+        "and poore arrays par kaam nahi karta. NumPy uski jagah & use karta hai.",
+        "fever = temps[(temps > 38) & (temps < 39.5)]"
+      ],
+      "solutionNote": "and ko ek True ya False chahiye, par temps > 38 unka poora array hai. & dono arrays ko item-dar-item jodta hai, aur har condition ko apne brackets chahiye."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "import numpy as np\na = np.array([1, 2, 3])\nprint(a * 2)\n\nYeh kya print karta hai?",
+      "why": "Array par maths har item par hota hai."
+    },
+    {
+      "q": "print([1, 2, 3] * 2)\n\nYeh kya print karta hai?",
+      "why": "List par * list ko dohraata hai."
+    },
+    {
+      "q": "import numpy as np kya karta hai?",
+      "why": "Yeh library ko chhote naam np se load karta hai."
+    },
+    {
+      "q": "a = np.array([10, 20, 30])\nprint(a.mean())\n\nYeh kya print karta hai?",
+      "why": "Mean hai (10 + 20 + 30) / 3 = 20.0."
+    },
+    {
+      "q": "a = np.array([10, 20, 30]) ke liye a[a > 15] kya deta hai?",
+      "why": "Mask sirf woh items rakhta hai jahaan condition True hai."
+    },
+    {
+      "q": "NumPy filter mein do conditions kaise jodte hain?",
+      "why": "& ya | use kijiye aur har condition ko brackets mein rakhiye."
+    }
+  ],
+  "exam": {
+    "note": "Practice ke liye important questions. University ke asli questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 3.4 · NumPy arrays",
+    "children": [
+      {
+        "label": "Banana",
+        "children": [
+          {
+            "label": "import numpy as np"
+          },
+          {
+            "label": "np.array(list)"
+          },
+          {
+            "label": ".shape"
+          }
+        ]
+      },
+      {
+        "label": "Vector maths",
+        "children": [
+          {
+            "label": "arr / 1000"
+          },
+          {
+            "label": "arr1 * arr2"
+          },
+          {
+            "label": "Loop nahi chahiye"
+          }
+        ]
+      },
+      {
+        "label": "Statistics",
+        "children": [
+          {
+            "label": "mean()"
+          },
+          {
+            "label": "max() min() sum()"
+          },
+          {
+            "label": "std() phailaav"
+          }
+        ]
+      },
+      {
+        "label": "Filter",
+        "children": [
+          {
+            "label": "arr > 125 → True/False"
+          },
+          {
+            "label": "arr[arr > 125]"
+          },
+          {
+            "label": "& | brackets ke saath"
+          }
+        ]
+      },
+      {
+        "label": "list se farq",
+        "children": [
+          {
+            "label": "list * 2 dohraata hai"
+          },
+          {
+            "label": "array * 2 dugna karta hai"
+          },
+          {
+            "label": "Array mein ek type"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError: np"
+          },
+          {
+            "label": "ValueError: shapes"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**NumPy** `import numpy as np` se load hota hai; `np.array(list)` ek type ka **array** banata hai.",
+    "Array par maths **vectorised** hai: `doses / 1000` har item badalta hai, bina loop ke. List par `* 2` dohraata hai.",
+    "Barabar length ke do arrays **item-dar-item** judte hain: `weight * mg_per_kg`.",
+    "`mean()`, `max()`, `min()`, `sum()` aur `std()` ek shabd mein readings ka saar dete hain.",
+    "Condition se array filter hota hai: `sugar[sugar > 125]`; conditions `&` aur `|` se jodiye, har ek brackets mein."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Array mein teen doses hain, milligrams mein, ek ke bagal mein ek."
+        },
+        {
+          "say": "Array ko hazaar se divide karne par har item ek hi samay par divide hota hai. Koi loop nahi."
+        },
+        {
+          "say": "print naya array dikhaata hai, grams mein."
+        },
+        {
+          "say": "Saadi list ke saath yahi karne ke liye for loop chahiye hota. Paanch sau patients ke saath array kahin tez hai."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Numerical Python: arrays par tez maths ki library. import numpy as np se load hoti hai."
+    },
+    {
+      "meaning": "Ek type ki values ka NumPy collection, np.array() se banta hai. Is par maths har item par chalta hai."
+    },
+    {
+      "meaning": "Array ke har item par ek saath, bina loop ke: doses / 1000."
+    },
+    {
+      "meaning": "Average: kul jod bhaag values ki sankhya. NumPy mein arr.mean()."
+    },
+    {
+      "meaning": "Values mean ke aaspaas kitni phaili hain. arr.std(); chhota matlab readings ek jaisi hain."
+    },
+    {
+      "meaning": "Condition se bana True aur False ka array; arr[mask] sirf True wale items rakhta hai."
+    }
+  ]
+}

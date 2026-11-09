@@ -1,0 +1,334 @@
+{
+  "hook": {
+    "title": "ಐನೂರು patients ಗೆ ಒಂದೇ line",
+    "md": "ಒಂದು clinical trial ನಲ್ಲಿ 500 patients ನ dose milligrams ನಲ್ಲಿ ದಾಖಲಾಗಿದೆ, report ಗೆ grams ಬೇಕು. List ಜೊತೆ `for` loop ಬರೆದು ಪ್ರತಿಯೊಂದನ್ನೂ divide ಮಾಡಬೇಕು. **NumPy** ಜೊತೆ `doses / 1000` ಬರೆದರೆ ಸಾಕು, ಎಲ್ಲಾ 500 ಒಂದೇ ಸಲ ಬದಲಾಗುತ್ತವೆ.\n\n**NumPy** (Numerical Python) Python ಅನ್ನು numbers ಜೊತೆ ವೇಗವಾಗಿಸುವ library. Unit IV ನ Pandas ಮತ್ತು Unit V ನ Matplotlib ಇದರ ಮೇಲೆಯೇ ಕಟ್ಟಲಾಗಿದೆ, course ನಲ್ಲಿ ಮುಂದೆ ಸಿಗುವ machine learning tools ಕೂಡ. ಎಲ್ಲವೂ ಒಂದು object ಇಂದ ಶುರು: **array**."
+  },
+  "learn": [
+    "**NumPy import** ಮಾಡಿ list ಇಂದ **array** ಮಾಡುವುದು",
+    "**Vectorised** maths ಪ್ರತಿ item ಮೇಲೆ ಒಂದೇ ಸಲ ಹೇಗೆ ಆಗುತ್ತೆ, list ಯಾಕೆ ಬೇರೆ ತರಹ ವರ್ತಿಸುತ್ತೆ",
+    "Readings ನ **mean**, **max**, **min** ಮತ್ತು **standard deviation**",
+    "Condition ಇಂದ array **filter** ಮಾಡುವುದು, 125 ಕ್ಕಿಂತ ಹೆಚ್ಚಿನ ಎಲ್ಲಾ readings ತರಹ"
+  ],
+  "explanation": [
+    {
+      "heading": "Array ಮಾಡುವುದು",
+      "md": "NumPy ಅನ್ನು ಮೇಲೆ ಒಮ್ಮೆ import ಮಾಡುತ್ತಾರೆ, ರೂಢಿಯಂತೆ **np** ಎಂಬ ಸಣ್ಣ ಹೆಸರಿನಲ್ಲಿ. `np.array()` list ಅನ್ನು **array** ಆಗಿ ಬದಲಾಯಿಸುತ್ತೆ:\n\n```python\nimport numpy as np\n\ndoses = np.array([250, 500, 650])\nprint(doses)\nprint(doses.shape)\nprint(doses[0], doses[-1])\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\n[250 500 650]\n(3,)\n250 650\n```\n\nArray commas ಇಲ್ಲದೆ print ಆಗುತ್ತೆ. `.shape` ಅದರ size ಕೊಡುತ್ತೆ: `(3,)` ಅಂದ್ರೆ ಒಂದು row ನಲ್ಲಿ 3 items. Indexing ಮತ್ತು slicing lists ತರಹವೇ. List ಹಾಗಲ್ಲ, array ನಲ್ಲಿ **ಒಂದೇ type** ನ values ಇರುತ್ತವೆ, ಸಾಮಾನ್ಯವಾಗಿ numbers.",
+      "callout": {
+        "title": "Array",
+        "md": "ಒಂದೇ type ನ values ಇರುವ NumPy grid, np.array() ಇಂದ ಮಾಡುತ್ತಾರೆ. Array ಮೇಲಿನ maths ಪ್ರತಿ item ಮೇಲೆ ಒಂದೇ ಸಲ ಆಗುತ್ತೆ."
+      }
+    },
+    {
+      "heading": "ಇಡೀ array ಮೇಲೆ maths",
+      "md": "ಇದೇ ದೊಡ್ಡ idea. Array ಮೇಲಿನ ಒಂದು operation **ಪ್ರತಿ item** ಗೂ ಅನ್ವಯ ಆಗುತ್ತೆ, loop ಇಲ್ಲದೆ. ಇದನ್ನು **vectorised** maths ಅಂತಾರೆ:\n\n```python\nimport numpy as np\n\ndoses_mg = np.array([250, 500, 650])\nprint(doses_mg / 1000)\nprint(doses_mg * 2)\n\nplain_list = [250, 500, 650]\nprint(plain_list * 2)\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\n[0.25 0.5  0.65]\n[ 500 1000 1300]\n[250, 500, 650, 250, 500, 650]\n```\n\nಕೊನೆಯ line ಗಮನಿಸಿ: **list** ಮೇಲೆ `* 2` list ಅನ್ನು ಪುನರಾವರ್ತಿಸುತ್ತೆ, ಆದರೆ **array** ಮೇಲೆ ಪ್ರತಿ number ಅನ್ನು ಎರಡರಷ್ಟು ಮಾಡುತ್ತೆ. ಈ ವ್ಯತ್ಯಾಸದಿಂದಲೇ scientists data ಗೆ arrays ಬಳಸುತ್ತಾರೆ.",
+      "callout": {
+        "title": "list * 2, array * 2 ಅಲ್ಲ",
+        "md": "List ಪುನರಾವರ್ತಿಸುತ್ತೆ; array ಲೆಕ್ಕ ಹಾಕುತ್ತೆ. Readings ಮೇಲೆ maths ಮಾಡುವ ಮುಂಚೆ np.array() ಇಂದ ಬದಲಾಯಿಸಿ."
+      }
+    },
+    {
+      "heading": "ಎರಡು arrays ಒಟ್ಟಿಗೆ",
+      "md": "ಒಂದೇ length ನ ಎರಡು arrays **item-by-item** ಸೇರುತ್ತವೆ: ಮೊದಲದು ಮೊದಲದರ ಜೊತೆ, ಎರಡನೇದು ಎರಡನೇದರ ಜೊತೆ. ಇಲ್ಲಿ ಪ್ರತಿ ಮಗುವಿನ dose ಅಂದ್ರೆ weight ಗುಣಿಸು mg per kg:\n\n```python\nimport numpy as np\n\nweight = np.array([12, 20, 35])\nmg_per_kg = np.array([15, 15, 10])\nprint(weight * mg_per_kg)\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\n[180 300 350]\n```\n\n12 × 15 = 180, 20 × 15 = 300 ಮತ್ತು 35 × 10 = 350, ಒಂದೇ line ನಲ್ಲಿ. Lengths ಹೊಂದದಿದ್ದರೆ NumPy error ಕೊಡುತ್ತೆ."
+    },
+    {
+      "heading": "ಒಂದೇ ಪದದಲ್ಲಿ statistics",
+      "md": "ಪ್ರತಿ lab report ಗೆ ಬೇಕಾದ ಸಾರಾಂಶಕ್ಕೆ arrays ಗೆ methods ಇವೆ:\n\n```python\nimport numpy as np\n\nsugar = np.array([110, 126, 98, 140, 105])\nprint(sugar.mean())\nprint(sugar.max(), sugar.min())\nprint(round(sugar.std(), 2))\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\n115.8\n140 98\n15.21\n```\n\n- `mean()` average, `max()` ಮತ್ತು `min()` ಗರಿಷ್ಠ ಮತ್ತು ಕನಿಷ್ಠ, `sum()` ಒಟ್ಟು.\n- `std()` **standard deviation**: readings ಎಷ್ಟು ಹರಡಿವೆ. ಕಡಿಮೆ value ಅಂದ್ರೆ readings ಒಂದೇ ತರಹ.\n- `np.median(sugar)` readings sort ಮಾಡಿದಾಗ ಮಧ್ಯದ value ಕೊಡುತ್ತೆ."
+    },
+    {
+      "heading": "Condition ಇಂದ filter",
+      "md": "Array ಮೇಲಿನ comparison `True` ಮತ್ತು `False` ನ array ಕೊಡುತ್ತೆ, ಪ್ರತಿ item ಗೆ ಒಂದು. ಅದನ್ನು square brackets ಒಳಗೆ ಹಾಕಿದರೆ `True` items ಮಾತ್ರ ಉಳಿಯುತ್ತವೆ:\n\n```python\nimport numpy as np\n\nsugar = np.array([110, 126, 98, 140, 105])\nprint(sugar > 125)\nprint(sugar[sugar > 125])\nprint((sugar > 125).sum())\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\n[False  True False  True False]\n[126 140]\n2\n```\n\nಎರಡು readings 125 ಕ್ಕಿಂತ ಹೆಚ್ಚು. `True` ಅನ್ನು 1 ಅಂತ ಎಣಿಸುತ್ತಾರೆ, ಹಾಗಾಗಿ `.sum()` ಅವನ್ನು ಎಣಿಸುತ್ತೆ. Conditions ಸೇರಿಸಲು `&` (and) ಅಥವಾ `|` (or) ಬಳಸಿ, **ಪ್ರತಿ condition ಸುತ್ತ brackets** ಜೊತೆ: `sugar[(sugar > 100) & (sugar < 130)]`.",
+      "callout": {
+        "title": "ಸಿದ್ಧ arrays",
+        "md": "np.arange(0, 25, 6) ಕೊಡುತ್ತೆ [0 6 12 18 24], range() ತರಹ. np.linspace(0, 24, 5) 0 ಇಂದ 24 ವರೆಗೆ ಸಮ ಅಂತರದ 5 numbers ಕೊಡುತ್ತೆ: Unit V ನಲ್ಲಿ time points ಗೆ ಬಳಸುತ್ತೀರಿ."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "ಈ program ಒಂದು batch ನ ಆರು tablets ತೂಕ check ಮಾಡುತ್ತೆ: average, range, ಮತ್ತು 490 ಇಂದ 510 mg ಹೊರಗಿನ tablet.",
+    "keyTerms": [
+      {
+        "meaning": "NumPy ಅನ್ನು np ಎಂಬ ಸಣ್ಣ ಹೆಸರಿನಲ್ಲಿ load ಮಾಡು."
+      },
+      {
+        "meaning": "List ಅನ್ನು NumPy array ಆಗಿ ಬದಲಾಯಿಸು."
+      },
+      {
+        "meaning": "ಎಲ್ಲಾ values ನ average."
+      },
+      {
+        "meaning": "Condition ಗೆ ಹೊಂದುವ values ಮಾತ್ರ ಇಡು."
+      }
+    ],
+    "steps": [
+      {
+        "say": "ಈ program ಒಂದು batch ನ ಆರು tablets ನ quality ಬೇಗ check ಮಾಡುತ್ತೆ."
+      },
+      {
+        "say": "import numpy as n p, NumPy ಅನ್ನು n p ಎಂಬ ಸಣ್ಣ ಹೆಸರಿನಲ್ಲಿ load ಮಾಡುತ್ತೆ."
+      },
+      {
+        "say": "Comment ಇವು tablets ನ ತೂಕ, milligrams ನಲ್ಲಿ ಅಂತ ಹೇಳುತ್ತೆ."
+      },
+      {
+        "say": "n p dot array ಆರು ತೂಕಗಳ list ಅನ್ನು NumPy array w ಆಗಿ ಬದಲಾಯಿಸುತ್ತೆ."
+      },
+      {
+        "say": "w dot mean ಆರೂ ತೂಕಗಳನ್ನು ಕೂಡಿಸಿ ಆರರಿಂದ divide ಮಾಡುತ್ತೆ. Average ಸರಿಯಾಗಿ ಐನೂರು."
+      },
+      {
+        "say": "min ಮತ್ತು max ಅತಿ ಹಗುರ ಮತ್ತು ಅತಿ ಭಾರದ tablets ಕೊಡುತ್ತವೆ: ನಾನೂರ ಎಂಬತ್ತೆಂಟು ಮತ್ತು ಐನೂರ ಹತ್ತು."
+      },
+      {
+        "say": "ಈ mask ನಾನೂರ ತೊಂಬತ್ತಕ್ಕಿಂತ ಕಡಿಮೆ, ಅಥವಾ ಐನೂರ ಹತ್ತಕ್ಕಿಂತ ಹೆಚ್ಚು ಇರುವ tablets ಉಳಿಸುತ್ತೆ. ಪ್ರತಿ condition brackets ನಲ್ಲಿ, bar ಚಿಹ್ನೆಯಿಂದ ಸೇರಿದೆ, ಅಂದ್ರೆ or."
+      },
+      {
+        "say": "ಒಂದೇ tablet, ನಾನೂರ ಎಂಬತ್ತೆಂಟು milligrams, limit ಹೊರಗೆ ಇದೆ."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "NumPy ಜೊತೆ beginners ಗೆ ಮೊದಲು ಸಿಗುವ ಎರಡು errors ಇವು.",
+    "examples": [
+      {
+        "title": "Import ಮಾಡದೆ np ಬಳಸುವುದು",
+        "md": "Import ಮಾಡುವವರೆಗೆ Python ಗೆ `np` ಗೊತ್ತಿಲ್ಲ. Program ನ ಮೇಲೆ `import numpy as np` ಸೇರಿಸಿ."
+      },
+      {
+        "title": "ಬೇರೆ length ನ arrays ಸೇರಿಸುವುದು",
+        "md": "Item-by-item maths ಗೆ ಎರಡೂ ಕಡೆ ಸಮ items ಬೇಕು: ಇಲ್ಲಿ 3 weights ಇವೆ ಆದರೆ 2 doses ಮಾತ್ರ. Arrays ನ length ಸಮ ಮಾಡಿ."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "List ಮೇಲೆ maths: `[250, 500] * 2`",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ `[250, 500, 250, 500]` ಸಿಗುತ್ತೆ",
+      "fix": "ಮೊದಲು array ಮಾಡಿ: `np.array([250, 500]) * 2`."
+    },
+    {
+      "mistake": "Filter ನಲ್ಲಿ `and` / `or` ಬಳಸುವುದು: `w[w > 490 and w < 510]`",
+      "see": "ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()",
+      "fix": "Brackets ಜೊತೆ `&` ಮತ್ತು `|` ಬಳಸಿ: `w[(w > 490) & (w < 510)]`."
+    },
+    {
+      "mistake": "Brackets ಬಿಡುವುದು: `w[w > 490 & w < 510]`",
+      "see": "Error ಅಥವಾ ತಪ್ಪು ಫಲಿತಾಂಶ, ಯಾಕಂದ್ರೆ `&` ಮೊದಲು ಲೆಕ್ಕ ಆಗುತ್ತೆ",
+      "fix": "ಪ್ರತಿ condition ಸುತ್ತ brackets ಹಾಕಿ."
+    },
+    {
+      "mistake": "Text ಮತ್ತು numbers ಬೆರೆಸುವುದು: `np.array([250, \"500\"])`",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ ಪ್ರತಿ item text ಆಗುತ್ತೆ, maths fail ಆಗುತ್ತೆ",
+      "fix": "Array ನಲ್ಲಿ numbers ಮಾತ್ರ ಇಡಿ; text ಅನ್ನು ಮೊದಲು int() ಅಥವಾ float() ಇಂದ ಬದಲಾಯಿಸಿ."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Milligrams ಇಂದ grams",
+      "md": "**doses_mg** ಅನ್ನು NumPy array ಮಾಡಿ, **ಒಂದೇ** calculation ಇಂದ ಪ್ರತಿ dose ಅನ್ನು **grams** ನಲ್ಲಿ print ಮಾಡಿ (1000 ಇಂದ divide). Output ನಿಖರವಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "arr = np.array(doses_mg) array ಮಾಡುತ್ತೆ.",
+        "print(np.array(doses_mg) / 1000)"
+      ]
+    },
+    {
+      "title": "ಮೂರು ಮಕ್ಕಳ doses",
+      "md": "Dose ದೇಹದ ತೂಕದ **ಪ್ರತಿ kg ಗೆ 15 mg**. **weight** array ಅನ್ನು 15 ಇಂದ ಗುಣಿಸಿ doses print ಮಾಡಿ. Output ನಿಖರವಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "ಒಂದೇ ಗುಣಾಕಾರ ಇಡೀ array ಮೇಲೆ ಕೆಲಸ ಮಾಡುತ್ತೆ.",
+        "print(weight * 15)"
+      ]
+    },
+    {
+      "title": "Average ಮತ್ತು ಗರಿಷ್ಠ temperature",
+      "md": "**Mean** temperature ಅನ್ನು 1 decimal ಗೆ round ಮಾಡಿ, ಮತ್ತು **ಗರಿಷ್ಠ** temperature print ಮಾಡಿ. Output ನಿಖರವಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "round(temps.mean(), 1) average ಅನ್ನು 1 decimal ಗೆ round ಮಾಡುತ್ತೆ.",
+        "print(\"Max:\", temps.max())"
+      ]
+    },
+    {
+      "title": "Bug ಹುಡುಕಿ",
+      "md": "ಈ program fever readings (38 ಕ್ಕಿಂತ ಹೆಚ್ಚು ಮತ್ತು 39.5 ಕ್ಕಿಂತ ಕಡಿಮೆ) ತೋರಿಸಬೇಕು, ಆದರೆ ValueError ಜೊತೆ crash ಆಗುತ್ತೆ. Filter ಸರಿ ಮಾಡಿ, output ನಿಖರವಾಗಿ ಹೀಗಿರಲಿ:",
+      "hints": [
+        "and ಇಡೀ arrays ಮೇಲೆ ಕೆಲಸ ಮಾಡಲ್ಲ. NumPy ಅದರ ಬದಲು & ಬಳಸುತ್ತೆ.",
+        "fever = temps[(temps > 38) & (temps < 39.5)]"
+      ],
+      "solutionNote": "and ಗೆ ಒಂದು True ಅಥವಾ False ಬೇಕು, ಆದರೆ temps > 38 ಅವುಗಳ ಇಡೀ array. & ಎರಡೂ arrays ಅನ್ನು item-by-item ಸೇರಿಸುತ್ತೆ, ಪ್ರತಿ condition ಗೆ ತನ್ನದೇ brackets ಬೇಕು."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "import numpy as np\na = np.array([1, 2, 3])\nprint(a * 2)\n\nಇದು ಏನು print ಮಾಡುತ್ತೆ?",
+      "why": "Array ಮೇಲಿನ maths ಪ್ರತಿ item ಮೇಲೆ ಆಗುತ್ತೆ."
+    },
+    {
+      "q": "print([1, 2, 3] * 2)\n\nಇದು ಏನು print ಮಾಡುತ್ತೆ?",
+      "why": "List ಮೇಲೆ * list ಅನ್ನು ಪುನರಾವರ್ತಿಸುತ್ತೆ."
+    },
+    {
+      "q": "import numpy as np ಏನು ಮಾಡುತ್ತೆ?",
+      "why": "ಇದು library ಅನ್ನು np ಎಂಬ ಸಣ್ಣ ಹೆಸರಿನಲ್ಲಿ load ಮಾಡುತ್ತೆ."
+    },
+    {
+      "q": "a = np.array([10, 20, 30])\nprint(a.mean())\n\nಇದು ಏನು print ಮಾಡುತ್ತೆ?",
+      "why": "Mean = (10 + 20 + 30) / 3 = 20.0."
+    },
+    {
+      "q": "a = np.array([10, 20, 30]) ಗೆ a[a > 15] ಏನು ಕೊಡುತ್ತೆ?",
+      "why": "Mask condition True ಇರುವ items ಮಾತ್ರ ಉಳಿಸುತ್ತೆ."
+    },
+    {
+      "q": "NumPy filter ನಲ್ಲಿ ಎರಡು conditions ಹೇಗೆ ಸೇರಿಸುತ್ತೀರಿ?",
+      "why": "& ಅಥವಾ | ಬಳಸಿ, ಪ್ರತಿ condition ಅನ್ನು brackets ನಲ್ಲಿ ಇಡಿ."
+    }
+  ],
+  "exam": {
+    "note": "Practice ಗಾಗಿ important questions. University ನ ನಿಜವಾದ questions ಬೇರೆ ಇರಬಹುದು."
+  },
+  "mindmap": {
+    "label": "Lesson 3.4 · NumPy arrays",
+    "children": [
+      {
+        "label": "ಮಾಡುವುದು",
+        "children": [
+          {
+            "label": "import numpy as np"
+          },
+          {
+            "label": "np.array(list)"
+          },
+          {
+            "label": ".shape"
+          }
+        ]
+      },
+      {
+        "label": "Vector maths",
+        "children": [
+          {
+            "label": "arr / 1000"
+          },
+          {
+            "label": "arr1 * arr2"
+          },
+          {
+            "label": "Loop ಬೇಡ"
+          }
+        ]
+      },
+      {
+        "label": "Statistics",
+        "children": [
+          {
+            "label": "mean()"
+          },
+          {
+            "label": "max() min() sum()"
+          },
+          {
+            "label": "std() ಹರಡಿಕೆ"
+          }
+        ]
+      },
+      {
+        "label": "Filter",
+        "children": [
+          {
+            "label": "arr > 125 → True/False"
+          },
+          {
+            "label": "arr[arr > 125]"
+          },
+          {
+            "label": "& | brackets ಜೊತೆ"
+          }
+        ]
+      },
+      {
+        "label": "list ಇಂದ ವ್ಯತ್ಯಾಸ",
+        "children": [
+          {
+            "label": "list * 2 ಪುನರಾವರ್ತನೆ"
+          },
+          {
+            "label": "array * 2 ಎರಡರಷ್ಟು"
+          },
+          {
+            "label": "Array ನಲ್ಲಿ ಒಂದೇ type"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError: np"
+          },
+          {
+            "label": "ValueError: shapes"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**NumPy** `import numpy as np` ಇಂದ load ಆಗುತ್ತೆ; `np.array(list)` ಒಂದೇ type ನ **array** ಮಾಡುತ್ತೆ.",
+    "Array ಮೇಲಿನ maths **vectorised**: `doses / 1000` ಪ್ರತಿ item ಬದಲಾಯಿಸುತ್ತೆ, loop ಇಲ್ಲದೆ. List ಮೇಲೆ `* 2` ಪುನರಾವರ್ತಿಸುತ್ತೆ.",
+    "ಸಮ length ನ ಎರಡು arrays **item-by-item** ಸೇರುತ್ತವೆ: `weight * mg_per_kg`.",
+    "`mean()`, `max()`, `min()`, `sum()` ಮತ್ತು `std()` ಒಂದೇ ಪದದಲ್ಲಿ readings ನ ಸಾರಾಂಶ ಕೊಡುತ್ತವೆ.",
+    "Condition array ಅನ್ನು filter ಮಾಡುತ್ತೆ: `sugar[sugar > 125]`; conditions ಅನ್ನು `&` ಮತ್ತು `|` ಇಂದ ಸೇರಿಸಿ, ಪ್ರತಿಯೊಂದೂ brackets ನಲ್ಲಿ."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Array ನಲ್ಲಿ ಮೂರು doses, milligrams ನಲ್ಲಿ, ಒಂದರ ಪಕ್ಕ ಒಂದು."
+        },
+        {
+          "say": "Array ಅನ್ನು ಸಾವಿರದಿಂದ divide ಮಾಡಿದರೆ ಪ್ರತಿ item ಒಂದೇ ಸಮಯದಲ್ಲಿ divide ಆಗುತ್ತೆ. Loop ಇಲ್ಲ."
+        },
+        {
+          "say": "print ಹೊಸ array ತೋರಿಸುತ್ತೆ, grams ನಲ್ಲಿ."
+        },
+        {
+          "say": "ಸಾಧಾರಣ list ಜೊತೆ ಇದೇ ಮಾಡಲು for loop ಬೇಕಾಗುತ್ತಿತ್ತು. ಐನೂರು patients ಇದ್ದಾಗ array ತುಂಬಾ ವೇಗ."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Numerical Python: arrays ಮೇಲೆ ವೇಗದ maths ಮಾಡುವ library. import numpy as np ಇಂದ load ಆಗುತ್ತೆ."
+    },
+    {
+      "meaning": "ಒಂದೇ type ನ values ಇರುವ NumPy collection, np.array() ಇಂದ ಮಾಡುತ್ತಾರೆ. ಇದರ ಮೇಲಿನ maths ಪ್ರತಿ item ಮೇಲೂ ಆಗುತ್ತೆ."
+    },
+    {
+      "meaning": "Array ನ ಪ್ರತಿ item ಮೇಲೆ ಒಂದೇ ಸಲ, loop ಇಲ್ಲದೆ: doses / 1000."
+    },
+    {
+      "meaning": "Average: ಒಟ್ಟು ಮೊತ್ತ ಭಾಗಿಸು values ಸಂಖ್ಯೆ. NumPy ನಲ್ಲಿ arr.mean()."
+    },
+    {
+      "meaning": "Values mean ಸುತ್ತ ಎಷ್ಟು ಹರಡಿವೆ. arr.std(); ಕಡಿಮೆ ಅಂದ್ರೆ readings ಒಂದೇ ತರಹ ಇವೆ."
+    },
+    {
+      "meaning": "Condition ಇಂದ ಬರುವ True ಮತ್ತು False ನ array; arr[mask] True items ಮಾತ್ರ ಉಳಿಸುತ್ತೆ."
+    }
+  ]
+}

@@ -1,0 +1,741 @@
+{
+  "id": "3-4",
+  "course": "bp101t",
+  "unit": "Unit III",
+  "unitTitle": "Data Structures & File Handling",
+  "number": "3.4",
+  "title": "NumPy arrays",
+  "minutes": 22,
+  "free": false,
+  "audioLanguages": [
+    "en",
+    "hi",
+    "kn"
+  ],
+  "hook": {
+    "title": "One line for five hundred patients",
+    "md": "A clinical trial records the dose of 500 patients in milligrams, and the report needs them in grams. With a list you would write a `for` loop and divide each one. With **NumPy** you write `doses / 1000`, and all 500 are converted at once.\n\n**NumPy** (Numerical Python) is the library that makes Python fast with numbers. Pandas in Unit IV and Matplotlib in Unit V are built on it, and so are the machine learning tools you'll meet later in the course. It all starts with one object: the **array**."
+  },
+  "learn": [
+    "How to **import NumPy** and make an **array** from a list",
+    "How **vectorised** maths works on every item at once, and why a list behaves differently",
+    "How to get the **mean**, **max**, **min** and **standard deviation** of readings",
+    "How to **filter** an array with a condition, like all readings above 125"
+  ],
+  "explanation": [
+    {
+      "heading": "Making an array",
+      "md": "NumPy is imported once at the top, by custom with the short name **np**. `np.array()` turns a list into an **array**:\n\n```python\nimport numpy as np\n\ndoses = np.array([250, 500, 650])\nprint(doses)\nprint(doses.shape)\nprint(doses[0], doses[-1])\n```\n\nThis prints:\n\n```\n[250 500 650]\n(3,)\n250 650\n```\n\nAn array prints without commas. `.shape` gives its size: `(3,)` means 3 items in one row. Indexing and slicing work exactly as with lists. Unlike a list, an array holds **one type** of value, usually numbers.",
+      "callout": {
+        "type": "definition",
+        "title": "Array",
+        "md": "NumPy's grid of values of one type, made with np.array(). Maths on an array is done on every item at once."
+      }
+    },
+    {
+      "heading": "Maths on the whole array",
+      "md": "Here's the big idea. An operation on an array is applied to **every item**, with no loop. This is called **vectorised** maths:\n\n```python\nimport numpy as np\n\ndoses_mg = np.array([250, 500, 650])\nprint(doses_mg / 1000)\nprint(doses_mg * 2)\n\nplain_list = [250, 500, 650]\nprint(plain_list * 2)\n```\n\nThis prints:\n\n```\n[0.25 0.5  0.65]\n[ 500 1000 1300]\n[250, 500, 650, 250, 500, 650]\n```\n\nLook at the last line carefully: `* 2` on a **list** repeats the list, but on an **array** it doubles every number. That difference is why scientists use arrays for data.",
+      "callout": {
+        "type": "warning",
+        "title": "list * 2 is not array * 2",
+        "md": "A list repeats; an array calculates. Convert readings with np.array() before doing maths on them."
+      }
+    },
+    {
+      "heading": "Two arrays together",
+      "md": "Two arrays of the same length combine **item by item**: the first with the first, the second with the second. Here each child's dose is weight times mg per kg:\n\n```python\nimport numpy as np\n\nweight = np.array([12, 20, 35])\nmg_per_kg = np.array([15, 15, 10])\nprint(weight * mg_per_kg)\n```\n\nThis prints:\n\n```\n[180 300 350]\n```\n\n12 × 15 = 180, 20 × 15 = 300 and 35 × 10 = 350, in one line. If the lengths don't match, NumPy gives an error."
+    },
+    {
+      "heading": "Statistics in one word",
+      "md": "Arrays have methods for the summaries you need in every lab report:\n\n```python\nimport numpy as np\n\nsugar = np.array([110, 126, 98, 140, 105])\nprint(sugar.mean())\nprint(sugar.max(), sugar.min())\nprint(round(sugar.std(), 2))\n```\n\nThis prints:\n\n```\n115.8\n140 98\n15.21\n```\n\n- `mean()` is the average, `max()` and `min()` the extremes, `sum()` the total.\n- `std()` is the **standard deviation**: how spread out the readings are. A small value means consistent readings.\n- `np.median(sugar)` gives the middle value when the readings are sorted."
+    },
+    {
+      "heading": "Filtering with a condition",
+      "md": "A comparison on an array gives an array of `True` and `False`, one for each item. Putting that inside square brackets keeps only the `True` items:\n\n```python\nimport numpy as np\n\nsugar = np.array([110, 126, 98, 140, 105])\nprint(sugar > 125)\nprint(sugar[sugar > 125])\nprint((sugar > 125).sum())\n```\n\nThis prints:\n\n```\n[False  True False  True False]\n[126 140]\n2\n```\n\nTwo readings were above 125. `True` counts as 1, so `.sum()` counts them. To combine conditions, use `&` (and) or `|` (or), with **brackets around each condition**: `sugar[(sugar > 100) & (sugar < 130)]`.",
+      "callout": {
+        "type": "tip",
+        "title": "Ready-made arrays",
+        "md": "np.arange(0, 25, 6) gives [0 6 12 18 24], like range(). np.linspace(0, 24, 5) gives 5 evenly spaced numbers from 0 to 24: you'll use it for time points in Unit V."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "This program checks the weights of six tablets from one batch: the average, the range, and any tablet outside 490 to 510 mg.",
+    "filename": "tablet_qc.py",
+    "code": "import numpy as np\n# Weights (mg) of 6 tablets from one batch\nw = np.array([498, 503, 495, 510, 488, 506])\nprint(\"Average:\", w.mean())\nprint(\"Range:\", w.min(), \"to\", w.max())\nout = w[(w < 490) | (w > 510)]\nprint(\"Out of limit:\", out)",
+    "output": "Average: 500.0\nRange: 488 to 510\nOut of limit: [488]",
+    "steps": [
+      {
+        "line": null,
+        "say": "This program does a quick quality check on six tablets from one batch.",
+        "output": null,
+        "audio": "step-01.mp3"
+      },
+      {
+        "line": 1,
+        "say": "import numpy as n p loads NumPy, under the short name n p.",
+        "output": null,
+        "audio": "step-02.mp3"
+      },
+      {
+        "line": 2,
+        "say": "The comment says these are tablet weights in milligrams.",
+        "output": null,
+        "audio": "step-03.mp3"
+      },
+      {
+        "line": 3,
+        "say": "n p dot array turns the list of six weights into a NumPy array, called w.",
+        "output": null,
+        "audio": "step-04.mp3",
+        "vars": {
+          "w": "[498 503 495 510 488 506]"
+        }
+      },
+      {
+        "line": 4,
+        "say": "w dot mean adds all six weights and divides by six. The average is exactly five hundred.",
+        "output": "Average: 500.0",
+        "audio": "step-05.mp3"
+      },
+      {
+        "line": 5,
+        "say": "min and max give the lightest and heaviest tablets: four eighty eight and five ten.",
+        "output": "Range: 488 to 510",
+        "audio": "step-06.mp3"
+      },
+      {
+        "line": 6,
+        "say": "This mask keeps tablets below four ninety, or above five ten. Each condition is in brackets, joined by the bar sign, which means or.",
+        "output": null,
+        "audio": "step-07.mp3",
+        "vars": {
+          "out": "[488]"
+        }
+      },
+      {
+        "line": 7,
+        "say": "Only one tablet, four eighty eight milligrams, is outside the limit.",
+        "output": "Out of limit: [488]",
+        "audio": "step-08.mp3"
+      }
+    ],
+    "keyTerms": [
+      {
+        "term": "import numpy as np",
+        "meaning": "Load NumPy with the short name np."
+      },
+      {
+        "term": "np.array([...])",
+        "meaning": "Turn a list into a NumPy array."
+      },
+      {
+        "term": "w.mean()",
+        "meaning": "The average of all the values."
+      },
+      {
+        "term": "w[(w < 490) | (w > 510)]",
+        "meaning": "Keep only the values that match the condition."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "These two errors are the ones beginners meet first with NumPy.",
+    "examples": [
+      {
+        "title": "Using np without importing it",
+        "code": "doses = np.array([250, 500])\nprint(doses)",
+        "output": "NameError: name 'np' is not defined",
+        "errorLine": 1,
+        "md": "Python doesn't know `np` until you import it. Add `import numpy as np` at the top of the program."
+      },
+      {
+        "title": "Combining arrays of different lengths",
+        "code": "import numpy as np\nweight = np.array([12, 20, 35])\nmg_per_kg = np.array([15, 10])\nprint(weight * mg_per_kg)",
+        "output": "ValueError: operands could not be broadcast together with shapes (3,) (2,)",
+        "errorLine": 4,
+        "md": "Item-by-item maths needs the same number of items on both sides: 3 weights but only 2 doses here. Make the arrays the same length."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Doing maths on a list: `[250, 500] * 2`",
+      "see": "No error, but you get `[250, 500, 250, 500]`",
+      "fix": "Make an array first: `np.array([250, 500]) * 2`."
+    },
+    {
+      "mistake": "Using `and` / `or` in a filter: `w[w > 490 and w < 510]`",
+      "see": "ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()",
+      "fix": "Use `&` and `|`, with brackets: `w[(w > 490) & (w < 510)]`."
+    },
+    {
+      "mistake": "Leaving out the brackets: `w[w > 490 & w < 510]`",
+      "see": "An error or a wrong result, because `&` is worked out first",
+      "fix": "Put brackets around each condition."
+    },
+    {
+      "mistake": "Mixing text and numbers: `np.array([250, \"500\"])`",
+      "see": "No error, but every item becomes text and maths fails",
+      "fix": "Keep an array to numbers only; convert text with int() or float() first."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1",
+      "title": "Milligrams to grams",
+      "md": "Turn **doses_mg** into a NumPy array and print every dose in **grams** (divide by 1000) with **one** calculation. The output must be exactly:",
+      "expectedOutput": "[0.25 0.5  0.75]",
+      "starterCode": "import numpy as np\n\ndoses_mg = [250, 500, 750]\n# Make an array and print the doses in grams\n",
+      "hints": [
+        "arr = np.array(doses_mg) makes the array.",
+        "print(np.array(doses_mg) / 1000)"
+      ],
+      "solution": "import numpy as np\n\ndoses_mg = [250, 500, 750]\n# Make an array and print the doses in grams\narr = np.array(doses_mg)\nprint(arr / 1000)",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "np.array("
+        ]
+      }
+    },
+    {
+      "id": "t2",
+      "title": "Doses for three children",
+      "md": "The dose is **15 mg per kg** of body weight. Multiply the **weight** array by 15 and print the doses. The output must be exactly:",
+      "expectedOutput": "[150 270 375]",
+      "starterCode": "import numpy as np\n\nweight = np.array([10, 18, 25])\n# Print the dose for each child (15 mg per kg)\n",
+      "hints": [
+        "One multiplication works on the whole array.",
+        "print(weight * 15)"
+      ],
+      "solution": "import numpy as np\n\nweight = np.array([10, 18, 25])\n# Print the dose for each child (15 mg per kg)\nprint(weight * 15)",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "15"
+        ]
+      }
+    },
+    {
+      "id": "t3",
+      "title": "Average and highest temperature",
+      "md": "Print the **mean** temperature rounded to 1 decimal place, and the **highest** temperature. The output must be exactly:",
+      "expectedOutput": "Mean: 37.8\nMax: 39.0",
+      "starterCode": "import numpy as np\n\ntemps = np.array([37.2, 38.1, 36.9, 39.0, 37.8])\n# Print the mean (1 decimal) and the max\n",
+      "hints": [
+        "round(temps.mean(), 1) rounds the average to 1 decimal place.",
+        "print(\"Max:\", temps.max())"
+      ],
+      "solution": "import numpy as np\n\ntemps = np.array([37.2, 38.1, 36.9, 39.0, 37.8])\n# Print the mean (1 decimal) and the max\nprint(\"Mean:\", round(temps.mean(), 1))\nprint(\"Max:\", temps.max())",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          ".mean()",
+          ".max()"
+        ]
+      }
+    },
+    {
+      "id": "t4",
+      "title": "Find the bug",
+      "md": "This program should list the readings that show fever (above 38 and below 39.5), but it crashes with a ValueError. Fix the filter so the output is exactly:",
+      "expectedOutput": "[38.1 39.2]",
+      "starterCode": "import numpy as np\n\ntemps = np.array([37.2, 38.1, 36.9, 39.2, 37.8])\nfever = temps[temps > 38 and temps < 39.5]\nprint(fever)",
+      "hints": [
+        "and doesn't work on whole arrays. NumPy uses & instead.",
+        "fever = temps[(temps > 38) & (temps < 39.5)]"
+      ],
+      "solution": "import numpy as np\n\ntemps = np.array([37.2, 38.1, 36.9, 39.2, 37.8])\nfever = temps[(temps > 38) & (temps < 39.5)]\nprint(fever)",
+      "solutionNote": "and needs one True or False, but temps > 38 is a whole array of them. & combines the two arrays item by item, and each condition needs its own brackets.",
+      "check": {
+        "type": "exactOutput",
+        "mustContain": [
+          "&"
+        ]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "q": "import numpy as np\na = np.array([1, 2, 3])\nprint(a * 2)\n\nWhat does this print?",
+      "options": [
+        "[1, 2, 3, 1, 2, 3]",
+        "[2 4 6]",
+        "[1 2 3 1 2 3]",
+        "An error"
+      ],
+      "answer": 1,
+      "why": "Maths on an array is done on every item.",
+      "code": true
+    },
+    {
+      "q": "print([1, 2, 3] * 2)\n\nWhat does this print?",
+      "options": [
+        "[2, 4, 6]",
+        "[1, 2, 3, 1, 2, 3]",
+        "[2 4 6]",
+        "An error"
+      ],
+      "answer": 1,
+      "why": "* on a list repeats the list.",
+      "code": true
+    },
+    {
+      "q": "What does import numpy as np do?",
+      "options": [
+        "Installs NumPy",
+        "Loads NumPy so you can use it as np",
+        "Makes an array called np",
+        "Nothing"
+      ],
+      "answer": 1,
+      "why": "It loads the library under the short name np.",
+      "code": false
+    },
+    {
+      "q": "a = np.array([10, 20, 30])\nprint(a.mean())\n\nWhat does this print?",
+      "options": [
+        "60",
+        "20.0",
+        "30",
+        "10"
+      ],
+      "answer": 1,
+      "why": "The mean is (10 + 20 + 30) / 3 = 20.0.",
+      "code": true
+    },
+    {
+      "q": "What does a[a > 15] give for a = np.array([10, 20, 30])?",
+      "options": [
+        "[False True True]",
+        "[20 30]",
+        "[10]",
+        "2"
+      ],
+      "answer": 1,
+      "why": "The mask keeps only the items where the condition is True.",
+      "code": true
+    },
+    {
+      "q": "How do you combine two conditions in a NumPy filter?",
+      "options": [
+        "and / or",
+        "& / | with brackets around each condition",
+        "+ / -",
+        "You can't"
+      ],
+      "answer": 1,
+      "why": "Use & or | and put each condition in brackets.",
+      "code": false
+    }
+  ],
+  "exam": {
+    "note": "Important questions for practice. Actual university questions may differ.",
+    "short": [
+      {
+        "q": "What is NumPy? Why is a NumPy array preferred over a list for numerical data?",
+        "marks": 2,
+        "md": "**NumPy** (Numerical Python) is a Python library for fast numerical computing, built around the **ndarray** (array) object.\n\nArrays are preferred because:\n- operations are **vectorised**: `doses / 1000` works on every item without a loop;\n- they are faster and use less memory than lists;\n- they provide built-in statistics (`mean`, `std`, `max`) and filtering;\n- `list * 2` repeats a list, while `array * 2` multiplies each value."
+      },
+      {
+        "q": "Explain any four NumPy functions with examples.",
+        "marks": 2,
+        "md": "```python\nimport numpy as np\na = np.array([110, 126, 98])   # create an array\nprint(a.mean())                 # average: 111.33...\nprint(a.max(), a.min())         # 126 98\nprint(np.arange(0, 10, 2))      # [0 2 4 6 8]\n```\n\nOthers: `std()` (standard deviation), `sum()`, `np.median()`, `np.linspace(start, stop, n)`."
+      }
+    ],
+    "long": [
+      {
+        "q": "Explain NumPy arrays: creation, vectorised (element-wise) operations, statistical functions and boolean indexing, with suitable pharmaceutical examples.",
+        "marks": 5,
+        "md": "**NumPy** is imported as `import numpy as np`. Its central object is the **array**, a collection of values of one type.\n\n**1. Creation**\n\n```python\ndoses = np.array([250, 500, 650])\nprint(doses.shape)          # (3,)\nt = np.arange(0, 25, 6)     # [ 0  6 12 18 24]\nx = np.linspace(0, 24, 5)   # 5 evenly spaced values\n```\n\n**2. Vectorised (element-wise) operations**: an operation applies to every element without a loop.\n\n```python\nprint(doses / 1000)                     # mg to g: [0.25 0.5  0.65]\nweight = np.array([12, 20, 35])\nmg_per_kg = np.array([15, 15, 10])\nprint(weight * mg_per_kg)               # [180 300 350]\n```\n\nArrays must have compatible shapes, otherwise `ValueError: operands could not be broadcast together`.\n\n**3. Statistical functions**\n\n```python\nsugar = np.array([110, 126, 98, 140, 105])\nsugar.mean()   # 115.8\nsugar.max(), sugar.min(), sugar.sum()\nsugar.std()    # spread of the readings\nnp.median(sugar)\n```\n\n**4. Boolean indexing (filtering)**: a condition gives a True/False array; using it as an index keeps the True elements.\n\n```python\nprint(sugar[sugar > 125])                   # [126 140]\nw = np.array([498, 503, 495, 510, 488, 506])\nprint(w[(w < 490) | (w > 510)])             # tablets out of limit: [488]\n```\n\nConditions are combined with `&` and `|`, each in brackets.\n\n**Applications**: dose conversions, tablet weight variation tests, summarising lab readings, and as the base of Pandas and Matplotlib."
+      }
+    ]
+  },
+  "mindmap": {
+    "label": "Lesson 3.4 · NumPy arrays",
+    "children": [
+      {
+        "label": "Make",
+        "children": [
+          {
+            "label": "import numpy as np"
+          },
+          {
+            "label": "np.array(list)"
+          },
+          {
+            "label": ".shape"
+          }
+        ]
+      },
+      {
+        "label": "Vector maths",
+        "children": [
+          {
+            "label": "arr / 1000"
+          },
+          {
+            "label": "arr1 * arr2"
+          },
+          {
+            "label": "No loop needed"
+          }
+        ]
+      },
+      {
+        "label": "Statistics",
+        "children": [
+          {
+            "label": "mean()"
+          },
+          {
+            "label": "max() min() sum()"
+          },
+          {
+            "label": "std() spread"
+          }
+        ]
+      },
+      {
+        "label": "Filter",
+        "children": [
+          {
+            "label": "arr > 125 → True/False"
+          },
+          {
+            "label": "arr[arr > 125]"
+          },
+          {
+            "label": "& | with brackets"
+          }
+        ]
+      },
+      {
+        "label": "vs list",
+        "children": [
+          {
+            "label": "list * 2 repeats"
+          },
+          {
+            "label": "array * 2 doubles"
+          },
+          {
+            "label": "One type per array"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "NameError: np"
+          },
+          {
+            "label": "ValueError: shapes"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**NumPy** is loaded with `import numpy as np`; `np.array(list)` makes an **array** of one type.",
+    "Maths on an array is **vectorised**: `doses / 1000` converts every item, with no loop. On a list, `* 2` repeats instead.",
+    "Two arrays of the same length combine **item by item**: `weight * mg_per_kg`.",
+    "`mean()`, `max()`, `min()`, `sum()` and `std()` summarise readings in one word.",
+    "A condition filters an array: `sugar[sugar > 125]`; combine conditions with `&` and `|`, each in brackets."
+  ],
+  "video": {
+    "videoUrl": null,
+    "searchTerms": [
+      "numpy arrays for beginners python",
+      "numpy boolean indexing mean std"
+    ]
+  },
+  "animations": [
+    {
+      "id": "vector",
+      "title": "One operation, every item",
+      "afterExplanation": 1,
+      "canvas": {
+        "desktop": {
+          "w": 800,
+          "h": 460
+        },
+        "mobile": {
+          "w": 360,
+          "h": 600
+        }
+      },
+      "actors": [
+        {
+          "id": "code",
+          "type": "card",
+          "title": "convert.py",
+          "icon": "🧮",
+          "color": "indigo",
+          "mono": true,
+          "lines": [
+            "import numpy as np",
+            "mg = np.array([250, 500, 650])",
+            "g = mg / 1000",
+            "print(g)"
+          ],
+          "desktop": {
+            "x": 40,
+            "y": 30,
+            "w": 440,
+            "h": 170
+          },
+          "mobile": {
+            "x": 16,
+            "y": 12,
+            "w": 328,
+            "h": 160
+          }
+        },
+        {
+          "id": "b0",
+          "type": "box",
+          "label": "mg[0]",
+          "value": "250",
+          "color": "amber",
+          "desktop": {
+            "x": 40,
+            "y": 220,
+            "w": 140,
+            "h": 80
+          },
+          "mobile": {
+            "x": 16,
+            "y": 190,
+            "w": 100,
+            "h": 80
+          }
+        },
+        {
+          "id": "b1",
+          "type": "box",
+          "label": "mg[1]",
+          "value": "500",
+          "color": "amber",
+          "desktop": {
+            "x": 195,
+            "y": 220,
+            "w": 140,
+            "h": 80
+          },
+          "mobile": {
+            "x": 130,
+            "y": 190,
+            "w": 100,
+            "h": 80
+          }
+        },
+        {
+          "id": "b2",
+          "type": "box",
+          "label": "mg[2]",
+          "value": "650",
+          "color": "amber",
+          "desktop": {
+            "x": 350,
+            "y": 220,
+            "w": 140,
+            "h": 80
+          },
+          "mobile": {
+            "x": 244,
+            "y": 190,
+            "w": 100,
+            "h": 80
+          }
+        },
+        {
+          "id": "op",
+          "type": "pill",
+          "text": "÷ 1000 → all three at once",
+          "color": "emerald",
+          "desktop": {
+            "x": 510,
+            "y": 245,
+            "w": 260,
+            "h": 30
+          },
+          "mobile": {
+            "x": 30,
+            "y": 285,
+            "w": 300,
+            "h": 30
+          }
+        },
+        {
+          "id": "loop",
+          "type": "pill",
+          "text": "A list would need a for loop",
+          "color": "rose",
+          "desktop": {
+            "x": 510,
+            "y": 60,
+            "w": 260,
+            "h": 30
+          },
+          "mobile": {
+            "x": 30,
+            "y": 325,
+            "w": 300,
+            "h": 30
+          }
+        },
+        {
+          "id": "out",
+          "type": "terminal",
+          "title": "Output",
+          "desktop": {
+            "x": 40,
+            "y": 320,
+            "w": 720,
+            "h": 120
+          },
+          "mobile": {
+            "x": 16,
+            "y": 370,
+            "w": 328,
+            "h": 160
+          }
+        }
+      ],
+      "steps": [
+        {
+          "say": "The array holds three doses in milligrams, side by side.",
+          "audio": "anim-vector-01.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "code"
+            },
+            {
+              "do": "show",
+              "target": "out"
+            },
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 1
+            },
+            {
+              "do": "show",
+              "target": "b0"
+            },
+            {
+              "do": "show",
+              "target": "b1"
+            },
+            {
+              "do": "show",
+              "target": "b2"
+            }
+          ]
+        },
+        {
+          "say": "Dividing the array by a thousand divides every item at the same time. There is no loop.",
+          "audio": "anim-vector-02.mp3",
+          "actions": [
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 2
+            },
+            {
+              "do": "show",
+              "target": "op"
+            },
+            {
+              "do": "setValue",
+              "target": "b0",
+              "value": "0.25"
+            },
+            {
+              "do": "setValue",
+              "target": "b1",
+              "value": "0.5"
+            },
+            {
+              "do": "setValue",
+              "target": "b2",
+              "value": "0.65"
+            },
+            {
+              "do": "pulse",
+              "target": "b0"
+            },
+            {
+              "do": "pulse",
+              "target": "b1"
+            },
+            {
+              "do": "pulse",
+              "target": "b2"
+            }
+          ]
+        },
+        {
+          "say": "print shows the new array, in grams.",
+          "audio": "anim-vector-03.mp3",
+          "actions": [
+            {
+              "do": "highlightLine",
+              "target": "code",
+              "line": 3
+            },
+            {
+              "do": "appendOutput",
+              "target": "out",
+              "text": "[0.25 0.5  0.65]"
+            }
+          ]
+        },
+        {
+          "say": "With a plain list, you would need a for loop to do the same. With five hundred patients, the array is far faster.",
+          "audio": "anim-vector-04.mp3",
+          "actions": [
+            {
+              "do": "show",
+              "target": "loop"
+            },
+            {
+              "do": "pulse",
+              "target": "loop"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "NumPy",
+      "meaning": "Numerical Python: the library for fast maths on arrays. Loaded with import numpy as np."
+    },
+    {
+      "term": "Array",
+      "meaning": "NumPy's collection of values of one type, made with np.array(). Maths on it works on every item."
+    },
+    {
+      "term": "Vectorised",
+      "meaning": "Done on every item of an array at once, with no loop: doses / 1000."
+    },
+    {
+      "term": "Mean",
+      "meaning": "The average: the total divided by the number of values. arr.mean() in NumPy."
+    },
+    {
+      "term": "Standard deviation",
+      "meaning": "How spread out the values are around the mean. arr.std(); small means consistent readings."
+    },
+    {
+      "term": "Boolean mask",
+      "meaning": "An array of True and False from a condition; arr[mask] keeps the True items."
+    }
+  ]
+}

@@ -219,8 +219,12 @@
         {
           "id": "3-4",
           "title": "NumPy arrays",
-          "available": false,
-          "translations": []
+          "available": true,
+          "translations": [
+            "hi",
+            "hinglish",
+            "kn"
+          ]
         },
         {
           "id": "3-5",
