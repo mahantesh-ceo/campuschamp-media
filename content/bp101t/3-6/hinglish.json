@@ -1,0 +1,349 @@
+{
+  "hook": {
+    "title": "Har patient visit ek row hai",
+    "md": "Jab patient OPD aata hai, hospital har baar wahi cheezein darj karta hai: ek ID, age, sex, diagnosis, likhi gayi drugs. Pharmacovigilance centre har adverse reaction report ke liye wahi fields darj karta hai. Hazaaron visits, sabke **ek jaise fields**, milkar ek **structured dataset** banaate hain.\n\nClinical research, drug safety aur hospital planning isi tarah ke data par chalte hain. Aaj aap lists aur dictionaries se, jo aap pehle se jaante hain, aisa dataset rakhenge, patients chunenge, groups ki tulna karenge, kharaab data pakdenge, aur patient ki privacy bachaayenge."
+  },
+  "learn": [
+    "**Records**, **fields** aur **structured data** kya hain",
+    "Dataset ko **list of dictionaries** ke roop mein rakhna, aur condition se records chunna",
+    "**Group** ke hisaab se saar nikaalna, jaise purushon aur mahilaon ki average sugar",
+    "**Missing** aur asambhav values pakadna, aur privacy ke liye **identifiers** hataana"
+  ],
+  "explanation": [
+    {
+      "heading": "Records aur fields",
+      "md": "Structured data ek **table** hai. Har **row** ek **record** hai (ek patient, ek visit, ek report) aur har **column** ek **field** hai (age, sex, sugar):\n\n| id | age | sex | sugar (mg/dL) |\n|---|---|---|---|\n| P01 | 54 | M | 142 |\n| P02 | 61 | F | 118 |\n| P03 | 47 | F | 165 |\n\nPython mein ise rakhne ka swaabhaavik tareeka hai **list of dictionaries**: har record ki ek dictionary, field ke naam keys ke roop mein:\n\n```python\npatients = [\n    {\"id\": \"P01\", \"age\": 54, \"sex\": \"M\", \"sugar\": 142},\n    {\"id\": \"P02\", \"age\": 61, \"sex\": \"F\", \"sugar\": 118},\n    {\"id\": \"P03\", \"age\": 47, \"sex\": \"F\", \"sugar\": 165},\n]\nprint(len(patients), \"records\")\nprint(patients[0][\"sugar\"])\nfor p in patients:\n    print(p[\"id\"], p[\"age\"])\n```\n\nYeh print karta hai:\n\n```\n3 records\n142\nP01 54\nP02 61\nP03 47\n```\n\n`patients[0]` pehla record hai; `patients[0][\"sugar\"]` uska ek field. `for` loop har record par jaata hai.",
+      "callout": {
+        "title": "Structured data",
+        "md": "Records mein vyavasthit data jinke fields ek jaise hon, table ki tarah. Spreadsheets, CSV files aur hospital registers structured hain; doctors ke free-text notes nahi."
+      }
+    },
+    {
+      "heading": "Records chunna",
+      "md": "Condition se mel khaane wale records chunne ke liye dataset par loop chalaaiye aur jo chahiye unhe rakhiye. 126 mg/dL ya usse zyada fasting blood sugar diabetes ki or ishaara karti hai:\n\n```python\npatients = [\n    {\"id\": \"P01\", \"age\": 54, \"sex\": \"M\", \"sugar\": 142},\n    {\"id\": \"P02\", \"age\": 61, \"sex\": \"F\", \"sugar\": 118},\n    {\"id\": \"P03\", \"age\": 47, \"sex\": \"F\", \"sugar\": 165},\n]\nhigh = []\nfor p in patients:\n    if p[\"sugar\"] >= 126:\n        high.append(p[\"id\"])\nprint(\"High fasting sugar:\", high)\n```\n\nYeh print karta hai:\n\n```\nHigh fasting sugar: ['P01', 'P03']\n```\n\nExcel ka filter theek yahi karta hai, aur Unit IV mein Pandas ise ek line mein karega."
+    },
+    {
+      "heading": "Group ke hisaab se saar",
+      "md": "Aksar aap groups ki tulna karna chahte hain: purush aur mahilaayein, wards, age groups. Lesson 3.3 ka ginti wala pattern do baar use kijiye, ek baar totals ke liye aur ek baar counts ke liye:\n\n```python\npatients = [\n    {\"id\": \"P01\", \"age\": 54, \"sex\": \"M\", \"sugar\": 142},\n    {\"id\": \"P02\", \"age\": 61, \"sex\": \"F\", \"sugar\": 118},\n    {\"id\": \"P03\", \"age\": 47, \"sex\": \"F\", \"sugar\": 165},\n]\ntotals = {}\ncounts = {}\nfor p in patients:\n    s = p[\"sex\"]\n    totals[s] = totals.get(s, 0) + p[\"sugar\"]\n    counts[s] = counts.get(s, 0) + 1\nfor s in totals:\n    print(s, totals[s] / counts[s])\n```\n\nYeh print karta hai:\n\n```\nM 142.0\nF 141.5\n```\n\nDono mahilaon ki readings ka average (118 + 165) / 2 = 141.5 hai. Teen patients ke saath yeh haath se aasaan hai; teen hazaar ke saath bhi yahi saat lines kaam karti hain."
+    },
+    {
+      "heading": "Missing aur asambhav values",
+      "md": "Asli datasets kabhi perfect nahi hote. Koi field **missing** ho sakta hai (Python `None` use karta hai, Excel khaali dikhaata hai) ya **asambhav**, jaise 540 ki age jo 54 honi thi. Hisaab se pehle check kijiye:\n\n```python\nrecords = [\n    {\"id\": \"P04\", \"age\": 39, \"sugar\": 104},\n    {\"id\": \"P05\", \"age\": None, \"sugar\": 131},\n    {\"id\": \"P06\", \"age\": 540, \"sugar\": 98},\n]\nfor r in records:\n    if r[\"age\"] is None:\n        print(r[\"id\"], \"age missing\")\n    elif not 0 < r[\"age\"] < 120:\n        print(r[\"id\"], \"age looks wrong:\", r[\"age\"])\n```\n\nYeh print karta hai:\n\n```\nP05 age missing\nP06 age looks wrong: 540\n```\n\n`is None` missing value ki jaanch karta hai. `0 < age < 120` ek baar mein range check karta hai. In problems ko dhoondhna **data cleaning** kehlaata hai, aur zyaadatar asli projects mein ismein analysis se bhi zyada samay lagta hai.",
+      "callout": {
+        "title": "Missing value ka kabhi andaaza mat lagaaiye",
+        "md": "Missing age ya dose ki jagah chupchaap 0 mat daaliye: average galat hoga. Use flag kijiye, source se poochhiye, ya record chhodkar report mein bataaiye."
+      }
+    },
+    {
+      "heading": "Privacy: patient ki pehchaan hataaiye",
+      "md": "Naam, phone numbers, pate aur Aadhaar numbers patient ki **pehchaan** karaate hain. Bharat ke **Digital Personal Data Protection Act, 2023** ke tahat health data surakshit rakhna zaroori hai. Analysis se pehle sirf zaroori fields rakhiye aur naam ki jagah `P01` jaisa code use kijiye:\n\n```python\nvisit = {\"name\": \"Ravi Kumar\", \"phone\": \"98450 12345\", \"age\": 54, \"drug\": \"Metformin\"}\nsafe = {}\nfor key, value in visit.items():\n    if key not in (\"name\", \"phone\"):\n        safe[key] = value\nprint(safe)\n```\n\nYeh print karta hai:\n\n```\n{'age': 54, 'drug': 'Metformin'}\n```\n\nAnalysis phir bhi chalta hai, aur file padhne wala koi nahi bata sakta ki patient kaun hai. Ise **de-identification** (ya anonymisation) kehte hain.",
+      "callout": {
+        "title": "Data dictionary rakhiye",
+        "md": "Data dictionary har field ki list hai: uska naam, type, unit aur allowed values (age: int, years, 0 se 120). Jab kai log data bharte hain to yeh dataset ko ek jaisa rakhti hai."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "Yeh program teen adverse drug reaction (ADR) reports padhta hai, har drug ki reports ginta hai aur serious wali ginta hai.",
+    "keyTerms": [
+      {
+        "meaning": "Ek dataset: har record ki ek dictionary wali list."
+      },
+      {
+        "meaning": "Maujooda record ka ek field."
+      },
+      {
+        "meaning": "Har drug ke records gino."
+      },
+      {
+        "meaning": "Sirf un records ke liye chalta hai jahaan serious True hai."
+      }
+    ],
+    "steps": [
+      {
+        "say": "Yeh program adverse drug reaction reports ka saar nikaalta hai, waisi reports jo pharmacists rashtriya pharmacovigilance programme ko bhejte hain."
+      },
+      {
+        "say": "Comment batata hai ki data kya hai: A D R reports."
+      },
+      {
+        "say": "reports dictionaries ki list hai. Har dictionary ek record hai, wahi teen fields ke saath: drug, reaction aur serious."
+      },
+      {
+        "say": "by_drug har drug ki reports ginega. Yeh khaali shuru hota hai."
+      },
+      {
+        "say": "serious, serious reactions ginega. Yeh zero se shuru hota hai."
+      },
+      {
+        "say": "Loop ek baar mein ek record leta hai. Pehla hai Amoxicillin, rash ke saath."
+      },
+      {
+        "say": "Yeh ginti ka pattern hai. Amoxicillin naya hai, isliye get zero deta hai, aur uski ginti ek ho jaati hai."
+      },
+      {
+        "say": "Rash serious nahi hai, isliye serious ginti zero par rehti hai."
+      },
+      {
+        "say": "Doosra record Ibuprofen hai. Uski ginti ek hoti hai."
+      },
+      {
+        "say": "Teesra phir Amoxicillin hai, ab do. Aur anaphylaxis serious hai, isliye serious ek ho jaata hai."
+      },
+      {
+        "say": "print har drug ki reports ki sankhya dikhaata hai."
+      },
+      {
+        "say": "Aur ek serious reaction, jise asli practice mein jaldi report karna zaroori hai."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "Dono errors aise records se aati hain jo program ki ummeed jaise nahi dikhte.",
+    "examples": [
+      {
+        "title": "Field ka naam alag spelling mein",
+        "md": "Field `\"sugar\"` hai, chhote s ke saath. Field ke naam bilkul milne chahiye. Har field ki spelling tay karne wali data dictionary, kai logon ke data bharne par isse bachaati hai."
+      },
+      {
+        "title": "Missing value ki tulna",
+        "md": "P05 ki age nahi hai, isliye Python se poochha jaata hai ki kya None 40 se kam hai, jiska koi matlab nahi. Pehle missing values check kijiye: `if r[\"age\"] is not None and r[\"age\"] < 40:`."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "Kuch records mein field ki spelling alag: `\"Age\"` aur `\"age\"`",
+      "see": "Kuch records ke liye KeyError",
+      "fix": "Data dictionary mein field ke naam tay kijiye aur har jagah wahi use kijiye."
+    },
+    {
+      "mistake": "Units milaana: kuch doses mg mein, kuch g mein",
+      "see": "Koi error nahi, par averages aur totals galat",
+      "fix": "Har value ek unit mein rakhiye; data bharte samay convert kijiye."
+    },
+    {
+      "mistake": "Khaali ya \"NA\" value ko convert karna: `int(\"NA\")`",
+      "see": "ValueError: invalid literal for int() with base 10: 'NA'",
+      "fix": "Convert karne se pehle missing values check kijiye."
+    },
+    {
+      "mistake": "Analysis wali files mein naam aur phone numbers rakhna",
+      "see": "Koi error nahi, par file share hone par privacy ka ullanghan",
+      "fix": "Identifiers hataaiye aur P01 jaise patient codes use kijiye."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Har record dikhaaiye",
+      "md": "**patients** par loop chalaaiye aur har patient ki id aur sugar reading print kijiye. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "for p in patients: har record par jaata hai.",
+        "for p in patients:\n    print(p[\"id\"], p[\"sugar\"])"
+      ]
+    },
+    {
+      "title": "Mahilaon ko giniye",
+      "md": "Giniye ki kitne records mein sex **\"F\"** hai. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "Records par loop chalaaiye aur p[\"sex\"] == \"F\" test kijiye.",
+        "for p in patients:\n    if p[\"sex\"] == \"F\":\n        count += 1"
+      ]
+    },
+    {
+      "title": "Average age",
+      "md": "Har record ka **age** field jodiye aur average age print kijiye. Output bilkul yeh hona chahiye:",
+      "hints": [
+        "Loop ke andar total += p[\"age\"].",
+        "print(\"Average age:\", total / len(patients))"
+      ]
+    },
+    {
+      "title": "Bug dhoondhiye",
+      "md": "Is program ko 60 se upar ke patients dikhaane hain, par yeh P05 par crash hota hai, jiski age missing hai. Condition theek kijiye taaki missing ages chhoot jaayein aur output bilkul yeh ho:",
+      "hints": [
+        "None ki number se tulna nahi ho sakti. Pehle use check kijiye.",
+        "if r[\"age\"] is not None and r[\"age\"] > 60:"
+      ],
+      "solutionNote": "and pehle baayin taraf check karta hai: P05 ke liye r[\"age\"] is not None False hai, isliye Python None > 60 kabhi nahi aazmaata."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Dataset ki table mein ek row kya hai?",
+      "why": "Har row ek record hai: ek patient, visit ya report."
+    },
+    {
+      "q": "Dataset ki table mein ek column kya hai?",
+      "why": "Har column ek field hai, jaise age ya sugar."
+    },
+    {
+      "q": "Patient records ka dataset rakhne ke liye sabse achhi Python structure kaun-si hai?",
+      "why": "Har record ki ek dictionary, sab ek list ke andar."
+    },
+    {
+      "q": "Kaise check karein ki koi field missing (None) hai?",
+      "why": "is None, Python ki missing value check karta hai."
+    },
+    {
+      "q": "Inmein se kaun-si cheez seedhe patient ki pehchaan karaati hai?",
+      "why": "Phone number ek vyakti ki or ishaara karta hai; analysis se pehle use hataaiye."
+    },
+    {
+      "q": "Data dictionary kis liye hai?",
+      "why": "Yeh data bharne wale sabko ek jaisa rakhti hai."
+    }
+  ],
+  "exam": {
+    "note": "Practice ke liye important questions. University ke asli questions alag ho sakte hain."
+  },
+  "mindmap": {
+    "label": "Lesson 3.6 · Healthcare datasets",
+    "children": [
+      {
+        "label": "Dataset",
+        "children": [
+          {
+            "label": "Records ki table"
+          },
+          {
+            "label": "Row = record"
+          },
+          {
+            "label": "Column = field"
+          }
+        ]
+      },
+      {
+        "label": "Python mein",
+        "children": [
+          {
+            "label": "List of dicts"
+          },
+          {
+            "label": "records[0][\"age\"]"
+          },
+          {
+            "label": "for r in records"
+          }
+        ]
+      },
+      {
+        "label": "Chunna aur group",
+        "children": [
+          {
+            "label": "if condition → append"
+          },
+          {
+            "label": "get() se ginti"
+          },
+          {
+            "label": "Har group ka average"
+          }
+        ]
+      },
+      {
+        "label": "Data quality",
+        "children": [
+          {
+            "label": "Missing: None"
+          },
+          {
+            "label": "Range se bahar values"
+          },
+          {
+            "label": "Ek jaisi units aur naam"
+          }
+        ]
+      },
+      {
+        "label": "Privacy",
+        "children": [
+          {
+            "label": "Naam, phone hataao"
+          },
+          {
+            "label": "Patient IDs use karo"
+          },
+          {
+            "label": "DPDP Act 2023"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "KeyError: field name"
+          },
+          {
+            "label": "TypeError: None compare"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Structured data** ek table hai: har **row** ek **record**, har **column** ek **field**.",
+    "Python mein dataset ek **list of dictionaries** hai: `patients[0][\"sugar\"]` ek record ka ek field hai.",
+    "Loop aur `if` se records chuniye; `get()` se totals aur counts banaakar **group** ke hisaab se saar nikaaliye.",
+    "Hisaab se pehle **missing** (`is None`) aur **asambhav** values check kijiye; missing value ka kabhi andaaza mat lagaaiye.",
+    "Privacy bachaaiye: **identifiers** (naam, phone, Aadhaar) hataaiye aur `P01` jaise codes use kijiye, jaisa DPDP Act 2023 kehta hai."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Structured dataset ek table hai. Har row ek report hai, aur har column ek field."
+        },
+        {
+          "say": "Pehli report Amoxicillin ki hai. Uski ginti ek ho jaati hai."
+        },
+        {
+          "say": "Doosri Ibuprofen ki hai, isliye Ibuprofen ki ginti ek ho jaati hai."
+        },
+        {
+          "say": "Teesri phir Amoxicillin ki hai, aur serious hai: anaphylaxis. Amoxicillin do par jaata hai, aur serious ek par."
+        },
+        {
+          "say": "Teen rows, ek baar mein. Yahi loop tees hazaar reports ka saar nikaal dega."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "Aise records mein rakha data jinke fields ek jaise hon, table ki tarah."
+    },
+    {
+      "meaning": "Dataset ki ek row: ek patient, ek visit ya ek report."
+    },
+    {
+      "meaning": "Dataset ka ek column, jaise age ya sugar. Python mein har record ki dictionary ki ek key."
+    },
+    {
+      "meaning": "Jis field mein data darj na ho: Python mein None, Excel mein khaali cell."
+    },
+    {
+      "meaning": "Har field ki list, uske naam, type, unit aur allowed values ke saath."
+    },
+    {
+      "meaning": "Naam, phone number aur doosri pehchaan hataana taaki record kisi vyakti tak na pahunche."
+    }
+  ]
+}

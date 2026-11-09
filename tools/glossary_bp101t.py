@@ -751,6 +751,38 @@ G = {
             "hinglish": "CSV file padhkar har row ko dictionary ke roop mein deta hai, header ke naam keys bante hain.",
             "kn": "CSV file ಓದಿ ಪ್ರತಿ row ಅನ್ನು dictionary ಆಗಿ ಕೊಡುತ್ತೆ, header ಹೆಸರುಗಳು keys ಆಗುತ್ತವೆ."}),
     ],
+    "3-6": [
+        ("Structured data", {
+            "en": "Data organised as records that all have the same fields, like a table.",
+            "hi": "ऐसे records में रखा data जिनके fields एक जैसे हों, table की तरह।",
+            "hinglish": "Aise records mein rakha data jinke fields ek jaise hon, table ki tarah.",
+            "kn": "ಒಂದೇ fields ಇರುವ records ಆಗಿ ಜೋಡಿಸಿದ data, table ತರಹ."}),
+        ("Record", {
+            "en": "One row of a dataset: one patient, one visit or one report.",
+            "hi": "Dataset की एक row: एक patient, एक visit या एक report।",
+            "hinglish": "Dataset ki ek row: ek patient, ek visit ya ek report.",
+            "kn": "Dataset ನ ಒಂದು row: ಒಬ್ಬ patient, ಒಂದು visit ಅಥವಾ ಒಂದು report."}),
+        ("Field", {
+            "en": "One column of a dataset, like age or sugar. In Python, a key of each record's dictionary.",
+            "hi": "Dataset का एक column, जैसे age या sugar। Python में हर record की dictionary की एक key।",
+            "hinglish": "Dataset ka ek column, jaise age ya sugar. Python mein har record ki dictionary ki ek key.",
+            "kn": "Dataset ನ ಒಂದು column, age ಅಥವಾ sugar ತರಹ. Python ನಲ್ಲಿ ಪ್ರತಿ record dictionary ನ ಒಂದು key."}),
+        ("Missing value", {
+            "en": "A field with no data recorded: None in Python, a blank cell in Excel.",
+            "hi": "जिस field में data दर्ज न हो: Python में None, Excel में खाली cell।",
+            "hinglish": "Jis field mein data darj na ho: Python mein None, Excel mein khaali cell.",
+            "kn": "Data ದಾಖಲಾಗದ field: Python ನಲ್ಲಿ None, Excel ನಲ್ಲಿ ಖಾಲಿ cell."}),
+        ("Data dictionary", {
+            "en": "A list of every field with its name, type, unit and allowed values.",
+            "hi": "हर field की list, उसके नाम, type, unit और allowed values के साथ।",
+            "hinglish": "Har field ki list, uske naam, type, unit aur allowed values ke saath.",
+            "kn": "ಪ್ರತಿ field ನ ಹೆಸರು, type, unit ಮತ್ತು allowed values ಇರುವ list."}),
+        ("De-identification", {
+            "en": "Removing names, phone numbers and other identifiers so a record can't be traced to a person.",
+            "hi": "नाम, phone number और दूसरी पहचान हटाना ताकि record किसी व्यक्ति तक न पहुँचे।",
+            "hinglish": "Naam, phone number aur doosri pehchaan hataana taaki record kisi vyakti tak na pahunche.",
+            "kn": "Record ಒಬ್ಬ ವ್ಯಕ್ತಿಗೆ ಸಂಬಂಧಿಸದಂತೆ ಹೆಸರು, phone number ಮತ್ತು ಇತರ ಗುರುತುಗಳನ್ನು ತೆಗೆಯುವುದು."}),
+    ],
 }
 
 

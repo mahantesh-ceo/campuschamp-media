@@ -1,0 +1,349 @@
+{
+  "hook": {
+    "title": "ಪ್ರತಿ patient visit ಒಂದು row",
+    "md": "Patient OPD ಗೆ ಬಂದಾಗ hospital ಪ್ರತಿ ಸಲ ಅದೇ ವಿಷಯಗಳನ್ನು ದಾಖಲಿಸುತ್ತೆ: ಒಂದು ID, age, sex, diagnosis, ಬರೆದ drugs. Pharmacovigilance centre ಪ್ರತಿ adverse reaction report ಗೆ ಅದೇ fields ದಾಖಲಿಸುತ್ತೆ. ಸಾವಿರಾರು visits, ಎಲ್ಲಕ್ಕೂ **ಒಂದೇ fields**, ಸೇರಿ ಒಂದು **structured dataset** ಆಗುತ್ತೆ.\n\nClinical research, drug safety ಮತ್ತು hospital planning ಇಂತಹ data ಮೇಲೆ ನಡೆಯುತ್ತವೆ. ಇವತ್ತು ನಿಮಗೆ ಈಗಾಗಲೇ ಗೊತ್ತಿರುವ lists ಮತ್ತು dictionaries ಬಳಸಿ ಅಂತಹ dataset ಇಡುತ್ತೀರಿ, patients ಆರಿಸುತ್ತೀರಿ, groups ಹೋಲಿಸುತ್ತೀರಿ, ಕೆಟ್ಟ data ಹಿಡಿಯುತ್ತೀರಿ, patient privacy ಕಾಪಾಡುತ್ತೀರಿ."
+  },
+  "learn": [
+    "**Records**, **fields** ಮತ್ತು **structured data** ಅಂದ್ರೆ ಏನು",
+    "Dataset ಅನ್ನು **list of dictionaries** ಆಗಿ ಇಡುವುದು, condition ಇಂದ records ಆರಿಸುವುದು",
+    "**Group** ಪ್ರಕಾರ ಸಾರಾಂಶ, ಗಂಡಸರು ಮತ್ತು ಹೆಂಗಸರ average sugar ತರಹ",
+    "**Missing** ಮತ್ತು ಅಸಾಧ್ಯ values ಹಿಡಿಯುವುದು, privacy ಗಾಗಿ **identifiers** ತೆಗೆಯುವುದು"
+  ],
+  "explanation": [
+    {
+      "heading": "Records ಮತ್ತು fields",
+      "md": "Structured data ಒಂದು **table**. ಪ್ರತಿ **row** ಒಂದು **record** (ಒಬ್ಬ patient, ಒಂದು visit, ಒಂದು report), ಪ್ರತಿ **column** ಒಂದು **field** (age, sex, sugar):\n\n| id | age | sex | sugar (mg/dL) |\n|---|---|---|---|\n| P01 | 54 | M | 142 |\n| P02 | 61 | F | 118 |\n| P03 | 47 | F | 165 |\n\nPython ನಲ್ಲಿ ಇದನ್ನು ಇಡಲು ಸಹಜ ದಾರಿ **list of dictionaries**: ಪ್ರತಿ record ಗೆ ಒಂದು dictionary, field ಹೆಸರುಗಳು keys ಆಗಿ:\n\n```python\npatients = [\n    {\"id\": \"P01\", \"age\": 54, \"sex\": \"M\", \"sugar\": 142},\n    {\"id\": \"P02\", \"age\": 61, \"sex\": \"F\", \"sugar\": 118},\n    {\"id\": \"P03\", \"age\": 47, \"sex\": \"F\", \"sugar\": 165},\n]\nprint(len(patients), \"records\")\nprint(patients[0][\"sugar\"])\nfor p in patients:\n    print(p[\"id\"], p[\"age\"])\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\n3 records\n142\nP01 54\nP02 61\nP03 47\n```\n\n`patients[0]` ಮೊದಲ record; `patients[0][\"sugar\"]` ಅದರ ಒಂದು field. `for` loop ಪ್ರತಿ record ಗೆ ಹೋಗುತ್ತೆ.",
+      "callout": {
+        "title": "Structured data",
+        "md": "ಒಂದೇ fields ಇರುವ records ಆಗಿ ಜೋಡಿಸಿದ data, table ತರಹ. Spreadsheets, CSV files ಮತ್ತು hospital registers structured; doctors ನ free-text notes ಅಲ್ಲ."
+      }
+    },
+    {
+      "heading": "Records ಆರಿಸುವುದು",
+      "md": "Condition ಗೆ ಹೊಂದುವ records ಆರಿಸಲು dataset ಮೇಲೆ loop ಓಡಿಸಿ, ಬೇಕಾದವನ್ನು ಉಳಿಸಿ. 126 mg/dL ಅಥವಾ ಅದಕ್ಕಿಂತ ಹೆಚ್ಚಿನ fasting blood sugar diabetes ಸೂಚಿಸುತ್ತೆ:\n\n```python\npatients = [\n    {\"id\": \"P01\", \"age\": 54, \"sex\": \"M\", \"sugar\": 142},\n    {\"id\": \"P02\", \"age\": 61, \"sex\": \"F\", \"sugar\": 118},\n    {\"id\": \"P03\", \"age\": 47, \"sex\": \"F\", \"sugar\": 165},\n]\nhigh = []\nfor p in patients:\n    if p[\"sugar\"] >= 126:\n        high.append(p[\"id\"])\nprint(\"High fasting sugar:\", high)\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nHigh fasting sugar: ['P01', 'P03']\n```\n\nExcel ನ filter ಇದನ್ನೇ ಮಾಡುತ್ತೆ, Unit IV ನಲ್ಲಿ Pandas ಇದನ್ನು ಒಂದೇ line ನಲ್ಲಿ ಮಾಡುತ್ತೆ."
+    },
+    {
+      "heading": "Group ಪ್ರಕಾರ ಸಾರಾಂಶ",
+      "md": "ಸಾಮಾನ್ಯವಾಗಿ groups ಹೋಲಿಸಬೇಕಾಗುತ್ತೆ: ಗಂಡಸರು ಮತ್ತು ಹೆಂಗಸರು, wards, age groups. Lesson 3.3 ನ ಎಣಿಕೆಯ pattern ಅನ್ನು ಎರಡು ಸಲ ಬಳಸಿ, ಒಮ್ಮೆ totals ಗೆ, ಒಮ್ಮೆ counts ಗೆ:\n\n```python\npatients = [\n    {\"id\": \"P01\", \"age\": 54, \"sex\": \"M\", \"sugar\": 142},\n    {\"id\": \"P02\", \"age\": 61, \"sex\": \"F\", \"sugar\": 118},\n    {\"id\": \"P03\", \"age\": 47, \"sex\": \"F\", \"sugar\": 165},\n]\ntotals = {}\ncounts = {}\nfor p in patients:\n    s = p[\"sex\"]\n    totals[s] = totals.get(s, 0) + p[\"sugar\"]\n    counts[s] = counts.get(s, 0) + 1\nfor s in totals:\n    print(s, totals[s] / counts[s])\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nM 142.0\nF 141.5\n```\n\nಇಬ್ಬರು ಹೆಂಗಸರ readings average (118 + 165) / 2 = 141.5. ಮೂರು patients ಇದ್ದಾಗ ಕೈಯಲ್ಲೇ ಸುಲಭ; ಮೂರು ಸಾವಿರ ಇದ್ದರೂ ಇದೇ ಏಳು lines ಕೆಲಸ ಮಾಡುತ್ತವೆ."
+    },
+    {
+      "heading": "Missing ಮತ್ತು ಅಸಾಧ್ಯ values",
+      "md": "ನಿಜವಾದ datasets ಯಾವತ್ತೂ perfect ಅಲ್ಲ. ಒಂದು field **missing** ಇರಬಹುದು (Python `None` ಬಳಸುತ್ತೆ, Excel ಖಾಲಿ ತೋರಿಸುತ್ತೆ) ಅಥವಾ **ಅಸಾಧ್ಯ**, 54 ಆಗಬೇಕಿದ್ದ 540 age ತರಹ. ಲೆಕ್ಕ ಹಾಕುವ ಮುಂಚೆ check ಮಾಡಿ:\n\n```python\nrecords = [\n    {\"id\": \"P04\", \"age\": 39, \"sugar\": 104},\n    {\"id\": \"P05\", \"age\": None, \"sugar\": 131},\n    {\"id\": \"P06\", \"age\": 540, \"sugar\": 98},\n]\nfor r in records:\n    if r[\"age\"] is None:\n        print(r[\"id\"], \"age missing\")\n    elif not 0 < r[\"age\"] < 120:\n        print(r[\"id\"], \"age looks wrong:\", r[\"age\"])\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\nP05 age missing\nP06 age looks wrong: 540\n```\n\n`is None` missing value ಪರೀಕ್ಷಿಸುತ್ತೆ. `0 < age < 120` ಒಂದೇ ಸಲ range check ಮಾಡುತ್ತೆ. ಈ ಸಮಸ್ಯೆಗಳನ್ನು ಹುಡುಕುವುದನ್ನು **data cleaning** ಅಂತಾರೆ, ಹೆಚ್ಚಿನ ನಿಜ projects ನಲ್ಲಿ ಇದಕ್ಕೆ analysis ಗಿಂತ ಹೆಚ್ಚು ಸಮಯ ಬೇಕಾಗುತ್ತೆ.",
+      "callout": {
+        "title": "Missing value ಅನ್ನು ಯಾವತ್ತೂ ಊಹಿಸಬೇಡಿ",
+        "md": "Missing age ಅಥವಾ dose ಬದಲು ಸುಮ್ಮನೆ 0 ಹಾಕಬೇಡಿ: average ತಪ್ಪಾಗುತ್ತೆ. Flag ಮಾಡಿ, source ಕೇಳಿ, ಅಥವಾ record ಬಿಟ್ಟು report ನಲ್ಲಿ ತಿಳಿಸಿ."
+      }
+    },
+    {
+      "heading": "Privacy: patient ಗುರುತು ತೆಗೆಯಿರಿ",
+      "md": "ಹೆಸರು, phone numbers, ವಿಳಾಸ ಮತ್ತು Aadhaar numbers patient ಅನ್ನು **ಗುರುತಿಸುತ್ತವೆ**. ಭಾರತದ **Digital Personal Data Protection Act, 2023** ಪ್ರಕಾರ health data ಸುರಕ್ಷಿತವಾಗಿಡಬೇಕು. Analysis ಮುಂಚೆ ಬೇಕಾದ fields ಮಾತ್ರ ಇಡಿ, ಹೆಸರಿನ ಬದಲು `P01` ತರಹದ code ಬಳಸಿ:\n\n```python\nvisit = {\"name\": \"Ravi Kumar\", \"phone\": \"98450 12345\", \"age\": 54, \"drug\": \"Metformin\"}\nsafe = {}\nfor key, value in visit.items():\n    if key not in (\"name\", \"phone\"):\n        safe[key] = value\nprint(safe)\n```\n\nಇದು print ಮಾಡುತ್ತೆ:\n\n```\n{'age': 54, 'drug': 'Metformin'}\n```\n\nAnalysis ಇನ್ನೂ ಕೆಲಸ ಮಾಡುತ್ತೆ, file ಓದುವ ಯಾರಿಗೂ patient ಯಾರು ಅಂತ ಗೊತ್ತಾಗಲ್ಲ. ಇದನ್ನು **de-identification** (ಅಥವಾ anonymisation) ಅಂತಾರೆ.",
+      "callout": {
+        "title": "Data dictionary ಇಡಿ",
+        "md": "Data dictionary ಪ್ರತಿ field ನ list: ಅದರ ಹೆಸರು, type, unit ಮತ್ತು allowed values (age: int, years, 0 ಇಂದ 120). ಹಲವರು data ತುಂಬುವಾಗ ಇದು dataset ಅನ್ನು ಏಕರೂಪವಾಗಿಡುತ್ತೆ."
+      }
+    }
+  ],
+  "walkthrough": {
+    "intro": "ಈ program ಮೂರು adverse drug reaction (ADR) reports ಓದಿ, ಪ್ರತಿ drug ನ reports ಎಣಿಸಿ, serious ಆದವನ್ನು ಎಣಿಸುತ್ತೆ.",
+    "keyTerms": [
+      {
+        "meaning": "ಒಂದು dataset: ಪ್ರತಿ record ಗೆ ಒಂದು dictionary ಇರುವ list."
+      },
+      {
+        "meaning": "ಈಗಿನ record ನ ಒಂದು field."
+      },
+      {
+        "meaning": "ಪ್ರತಿ drug ನ records ಎಣಿಸು."
+      },
+      {
+        "meaning": "serious True ಇರುವ records ಗೆ ಮಾತ್ರ ಓಡುತ್ತೆ."
+      }
+    ],
+    "steps": [
+      {
+        "say": "ಈ program adverse drug reaction reports ನ ಸಾರಾಂಶ ಮಾಡುತ್ತೆ, pharmacists ರಾಷ್ಟ್ರೀಯ pharmacovigilance programme ಗೆ ಕಳಿಸುವ ತರಹದ reports."
+      },
+      {
+        "say": "Comment data ಏನು ಅಂತ ಹೇಳುತ್ತೆ: A D R reports."
+      },
+      {
+        "say": "reports dictionaries ನ list. ಪ್ರತಿ dictionary ಒಂದು record, ಅದೇ ಮೂರು fields ಜೊತೆ: drug, reaction ಮತ್ತು serious."
+      },
+      {
+        "say": "by_drug ಪ್ರತಿ drug ನ reports ಎಣಿಸುತ್ತೆ. ಇದು ಖಾಲಿಯಾಗಿ ಶುರು."
+      },
+      {
+        "say": "serious, serious reactions ಎಣಿಸುತ್ತೆ. ಇದು zero ಇಂದ ಶುರು."
+      },
+      {
+        "say": "Loop ಒಂದು ಸಲಕ್ಕೆ ಒಂದು record ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ. ಮೊದಲದು Amoxicillin, rash ಜೊತೆ."
+      },
+      {
+        "say": "ಇದು ಎಣಿಕೆಯ pattern. Amoxicillin ಹೊಸದು, ಹಾಗಾಗಿ get zero ಕೊಡುತ್ತೆ, ಅದರ ಎಣಿಕೆ ಒಂದು ಆಗುತ್ತೆ."
+      },
+      {
+        "say": "Rash serious ಅಲ್ಲ, ಹಾಗಾಗಿ serious ಎಣಿಕೆ zero ನಲ್ಲೇ ಇರುತ್ತೆ."
+      },
+      {
+        "say": "ಎರಡನೇ record Ibuprofen. ಅದರ ಎಣಿಕೆ ಒಂದು ಆಗುತ್ತೆ."
+      },
+      {
+        "say": "ಮೂರನೇದು ಮತ್ತೆ Amoxicillin, ಈಗ ಎರಡು. Anaphylaxis serious, ಹಾಗಾಗಿ serious ಒಂದು ಆಗುತ್ತೆ."
+      },
+      {
+        "say": "print ಪ್ರತಿ drug ನ reports ಸಂಖ್ಯೆ ತೋರಿಸುತ್ತೆ."
+      },
+      {
+        "say": "ಮತ್ತು ಒಂದು serious reaction, ನಿಜ practice ನಲ್ಲಿ ಇದನ್ನು ಬೇಗ report ಮಾಡಬೇಕು."
+      }
+    ]
+  },
+  "errors": {
+    "intro": "ಎರಡೂ errors program ನಿರೀಕ್ಷಿಸಿದಂತೆ ಕಾಣದ records ಇಂದ ಬರುತ್ತವೆ.",
+    "examples": [
+      {
+        "title": "Field ಹೆಸರು ಬೇರೆ spelling ನಲ್ಲಿ",
+        "md": "Field `\"sugar\"`, ಸಣ್ಣ s ಜೊತೆ. Field ಹೆಸರುಗಳು ನಿಖರವಾಗಿ ಹೊಂದಬೇಕು. ಪ್ರತಿ field ನ spelling ನಿಗದಿ ಮಾಡುವ data dictionary, ಹಲವರು data ತುಂಬುವಾಗ ಇದನ್ನು ತಡೆಯುತ್ತೆ."
+      },
+      {
+        "title": "Missing value ಹೋಲಿಸುವುದು",
+        "md": "P05 ಗೆ age ಇಲ್ಲ, ಹಾಗಾಗಿ None 40 ಕ್ಕಿಂತ ಕಡಿಮೆಯಾ ಅಂತ Python ಕೇಳುತ್ತೆ, ಅದಕ್ಕೆ ಅರ್ಥ ಇಲ್ಲ. ಮೊದಲು missing values check ಮಾಡಿ: `if r[\"age\"] is not None and r[\"age\"] < 40:`."
+      }
+    ]
+  },
+  "mistakes": [
+    {
+      "mistake": "ಕೆಲವು records ನಲ್ಲಿ field ಬೇರೆ spelling: `\"Age\"` ಮತ್ತು `\"age\"`",
+      "see": "ಕೆಲವು records ಗೆ KeyError",
+      "fix": "Data dictionary ನಲ್ಲಿ field ಹೆಸರುಗಳನ್ನು ನಿಗದಿ ಮಾಡಿ, ಎಲ್ಲೆಡೆ ಅವನ್ನೇ ಬಳಸಿ."
+    },
+    {
+      "mistake": "Units ಬೆರೆಸುವುದು: ಕೆಲವು doses mg ನಲ್ಲಿ, ಕೆಲವು g ನಲ್ಲಿ",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ averages ಮತ್ತು totals ತಪ್ಪು",
+      "fix": "ಪ್ರತಿ value ಒಂದೇ unit ನಲ್ಲಿ ಇಡಿ; data ತುಂಬುವಾಗ convert ಮಾಡಿ."
+    },
+    {
+      "mistake": "ಖಾಲಿ ಅಥವಾ \"NA\" value convert ಮಾಡುವುದು: `int(\"NA\")`",
+      "see": "ValueError: invalid literal for int() with base 10: 'NA'",
+      "fix": "Convert ಮಾಡುವ ಮುಂಚೆ missing values check ಮಾಡಿ."
+    },
+    {
+      "mistake": "Analysis files ನಲ್ಲಿ ಹೆಸರು ಮತ್ತು phone numbers ಇಡುವುದು",
+      "see": "Error ಇಲ್ಲ, ಆದರೆ file share ಆದರೆ privacy ಉಲ್ಲಂಘನೆ",
+      "fix": "Identifiers ತೆಗೆದು P01 ತರಹದ patient codes ಬಳಸಿ."
+    }
+  ],
+  "tasks": [
+    {
+      "title": "ಪ್ರತಿ record ತೋರಿಸಿ",
+      "md": "**patients** ಮೇಲೆ loop ಓಡಿಸಿ, ಪ್ರತಿ patient ನ id ಮತ್ತು sugar reading print ಮಾಡಿ. Output ನಿಖರವಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "for p in patients: ಪ್ರತಿ record ಗೆ ಹೋಗುತ್ತೆ.",
+        "for p in patients:\n    print(p[\"id\"], p[\"sugar\"])"
+      ]
+    },
+    {
+      "title": "ಹೆಂಗಸರನ್ನು ಎಣಿಸಿ",
+      "md": "ಎಷ್ಟು records ನಲ್ಲಿ sex **\"F\"** ಇದೆ ಅಂತ ಎಣಿಸಿ. Output ನಿಖರವಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "Records ಮೇಲೆ loop ಓಡಿಸಿ p[\"sex\"] == \"F\" test ಮಾಡಿ.",
+        "for p in patients:\n    if p[\"sex\"] == \"F\":\n        count += 1"
+      ]
+    },
+    {
+      "title": "Average age",
+      "md": "ಪ್ರತಿ record ನ **age** field ಕೂಡಿಸಿ average age print ಮಾಡಿ. Output ನಿಖರವಾಗಿ ಹೀಗಿರಬೇಕು:",
+      "hints": [
+        "Loop ಒಳಗೆ total += p[\"age\"].",
+        "print(\"Average age:\", total / len(patients))"
+      ]
+    },
+    {
+      "title": "Bug ಹುಡುಕಿ",
+      "md": "ಈ program 60 ಕ್ಕಿಂತ ಹೆಚ್ಚಿನ patients ತೋರಿಸಬೇಕು, ಆದರೆ age missing ಇರುವ P05 ಹತ್ತಿರ crash ಆಗುತ್ತೆ. Missing ages ಬಿಟ್ಟುಹೋಗುವಂತೆ condition ಸರಿ ಮಾಡಿ, output ನಿಖರವಾಗಿ ಹೀಗಿರಲಿ:",
+      "hints": [
+        "None ಅನ್ನು number ಜೊತೆ ಹೋಲಿಸಲು ಆಗಲ್ಲ. ಮೊದಲು ಅದನ್ನು check ಮಾಡಿ.",
+        "if r[\"age\"] is not None and r[\"age\"] > 60:"
+      ],
+      "solutionNote": "and ಮೊದಲು ಎಡಭಾಗ check ಮಾಡುತ್ತೆ: P05 ಗೆ r[\"age\"] is not None False, ಹಾಗಾಗಿ Python None > 60 ಪ್ರಯತ್ನಿಸುವುದೇ ಇಲ್ಲ."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Dataset table ನಲ್ಲಿ ಒಂದು row ಏನು?",
+      "why": "ಪ್ರತಿ row ಒಂದು record: ಒಬ್ಬ patient, visit ಅಥವಾ report."
+    },
+    {
+      "q": "Dataset table ನಲ್ಲಿ ಒಂದು column ಏನು?",
+      "why": "ಪ್ರತಿ column ಒಂದು field, age ಅಥವಾ sugar ತರಹ."
+    },
+    {
+      "q": "Patient records dataset ಇಡಲು ಉತ್ತಮ Python structure ಯಾವುದು?",
+      "why": "ಪ್ರತಿ record ಗೆ ಒಂದು dictionary, ಎಲ್ಲವೂ ಒಂದು list ಒಳಗೆ."
+    },
+    {
+      "q": "ಒಂದು field missing (None) ಇದೆಯಾ ಅಂತ ಹೇಗೆ check ಮಾಡುತ್ತೀರಿ?",
+      "why": "is None Python ನ missing value check ಮಾಡುತ್ತೆ."
+    },
+    {
+      "q": "ಇವುಗಳಲ್ಲಿ ಯಾವುದು patient ಅನ್ನು ನೇರವಾಗಿ ಗುರುತಿಸುತ್ತೆ?",
+      "why": "Phone number ಒಬ್ಬ ವ್ಯಕ್ತಿಯನ್ನು ಸೂಚಿಸುತ್ತೆ; analysis ಮುಂಚೆ ತೆಗೆಯಿರಿ."
+    },
+    {
+      "q": "Data dictionary ಯಾಕೆ?",
+      "why": "Data ತುಂಬುವ ಎಲ್ಲರನ್ನೂ ಏಕರೂಪವಾಗಿಡುತ್ತೆ."
+    }
+  ],
+  "exam": {
+    "note": "Practice ಗಾಗಿ important questions. University ನ ನಿಜವಾದ questions ಬೇರೆ ಇರಬಹುದು."
+  },
+  "mindmap": {
+    "label": "Lesson 3.6 · Healthcare datasets",
+    "children": [
+      {
+        "label": "Dataset",
+        "children": [
+          {
+            "label": "Records ನ table"
+          },
+          {
+            "label": "Row = record"
+          },
+          {
+            "label": "Column = field"
+          }
+        ]
+      },
+      {
+        "label": "Python ನಲ್ಲಿ",
+        "children": [
+          {
+            "label": "List of dicts"
+          },
+          {
+            "label": "records[0][\"age\"]"
+          },
+          {
+            "label": "for r in records"
+          }
+        ]
+      },
+      {
+        "label": "ಆರಿಸು ಮತ್ತು group",
+        "children": [
+          {
+            "label": "if condition → append"
+          },
+          {
+            "label": "get() ಇಂದ ಎಣಿಕೆ"
+          },
+          {
+            "label": "ಪ್ರತಿ group average"
+          }
+        ]
+      },
+      {
+        "label": "Data quality",
+        "children": [
+          {
+            "label": "Missing: None"
+          },
+          {
+            "label": "Range ಹೊರಗಿನ values"
+          },
+          {
+            "label": "ಒಂದೇ units ಮತ್ತು ಹೆಸರು"
+          }
+        ]
+      },
+      {
+        "label": "Privacy",
+        "children": [
+          {
+            "label": "ಹೆಸರು, phone ತೆಗೆ"
+          },
+          {
+            "label": "Patient IDs ಬಳಸು"
+          },
+          {
+            "label": "DPDP Act 2023"
+          }
+        ]
+      },
+      {
+        "label": "Errors",
+        "children": [
+          {
+            "label": "KeyError: field name"
+          },
+          {
+            "label": "TypeError: None compare"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": [
+    "**Structured data** ಒಂದು table: ಪ್ರತಿ **row** ಒಂದು **record**, ಪ್ರತಿ **column** ಒಂದು **field**.",
+    "Python ನಲ್ಲಿ dataset ಒಂದು **list of dictionaries**: `patients[0][\"sugar\"]` ಒಂದು record ನ ಒಂದು field.",
+    "Loop ಮತ್ತು `if` ಇಂದ records ಆರಿಸಿ; `get()` ಇಂದ totals ಮತ್ತು counts ಮಾಡಿ **group** ಪ್ರಕಾರ ಸಾರಾಂಶ ತೆಗೆಯಿರಿ.",
+    "ಲೆಕ್ಕದ ಮುಂಚೆ **missing** (`is None`) ಮತ್ತು **ಅಸಾಧ್ಯ** values check ಮಾಡಿ; missing value ಅನ್ನು ಯಾವತ್ತೂ ಊಹಿಸಬೇಡಿ.",
+    "Privacy ಕಾಪಾಡಿ: **identifiers** (ಹೆಸರು, phone, Aadhaar) ತೆಗೆದು `P01` ತರಹದ codes ಬಳಸಿ, DPDP Act 2023 ಹೇಳುವಂತೆ."
+  ],
+  "animations": [
+    {
+      "steps": [
+        {
+          "say": "Structured dataset ಒಂದು table. ಪ್ರತಿ row ಒಂದು report, ಪ್ರತಿ column ಒಂದು field."
+        },
+        {
+          "say": "ಮೊದಲ report Amoxicillin ದು. ಅದರ ಎಣಿಕೆ ಒಂದು ಆಗುತ್ತೆ."
+        },
+        {
+          "say": "ಎರಡನೇದು Ibuprofen ದು, ಹಾಗಾಗಿ Ibuprofen ಎಣಿಕೆ ಒಂದು ಆಗುತ್ತೆ."
+        },
+        {
+          "say": "ಮೂರನೇದು ಮತ್ತೆ Amoxicillin, ಮತ್ತು serious: anaphylaxis. Amoxicillin ಎರಡಕ್ಕೆ, serious ಒಂದಕ್ಕೆ ಹೋಗುತ್ತೆ."
+        },
+        {
+          "say": "ಮೂರು rows, ಒಂದೇ ಸುತ್ತು. ಇದೇ loop ಮೂವತ್ತು ಸಾವಿರ reports ನ ಸಾರಾಂಶ ಮಾಡುತ್ತೆ."
+        }
+      ]
+    }
+  ],
+  "translatedSections": [
+    "hook",
+    "learn",
+    "explanation",
+    "walkthrough",
+    "errors",
+    "mistakes",
+    "tasks",
+    "quiz",
+    "exam",
+    "mindmap",
+    "summary",
+    "animations",
+    "glossary"
+  ],
+  "glossary": [
+    {
+      "meaning": "ಒಂದೇ fields ಇರುವ records ಆಗಿ ಜೋಡಿಸಿದ data, table ತರಹ."
+    },
+    {
+      "meaning": "Dataset ನ ಒಂದು row: ಒಬ್ಬ patient, ಒಂದು visit ಅಥವಾ ಒಂದು report."
+    },
+    {
+      "meaning": "Dataset ನ ಒಂದು column, age ಅಥವಾ sugar ತರಹ. Python ನಲ್ಲಿ ಪ್ರತಿ record dictionary ನ ಒಂದು key."
+    },
+    {
+      "meaning": "Data ದಾಖಲಾಗದ field: Python ನಲ್ಲಿ None, Excel ನಲ್ಲಿ ಖಾಲಿ cell."
+    },
+    {
+      "meaning": "ಪ್ರತಿ field ನ ಹೆಸರು, type, unit ಮತ್ತು allowed values ಇರುವ list."
+    },
+    {
+      "meaning": "Record ಒಬ್ಬ ವ್ಯಕ್ತಿಗೆ ಸಂಬಂಧಿಸದಂತೆ ಹೆಸರು, phone number ಮತ್ತು ಇತರ ಗುರುತುಗಳನ್ನು ತೆಗೆಯುವುದು."
+    }
+  ]
+}

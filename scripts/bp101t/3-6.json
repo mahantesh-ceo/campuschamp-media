@@ -1,0 +1,188 @@
+{
+  "course": "bp101t",
+  "lesson": "3-6",
+  "voices": {
+    "en": "Ritu",
+    "hi": "Ritu",
+    "kn": "Chaitra"
+  },
+  "tracks": [
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "en",
+      "tts": [
+        "This program summarises adverse drug reaction reports, the kind pharmacists send to the national pharmacovigilance programme.",
+        "The comment says what the data is: A D R reports.",
+        "reports is a list of dictionaries. Each dictionary is one record, with the same three fields: drug, reaction and serious.",
+        "by drug will count the reports for each drug. It starts empty.",
+        "serious will count the serious reactions. It starts at zero.",
+        "The loop takes one record at a time. The first is Amoxicillin, with a rash.",
+        "This is the counting pattern. Amoxicillin is new, so get gives zero, and its count becomes one.",
+        "A rash isn't marked serious, so the serious count stays at zero.",
+        "The second record is Ibuprofen. It gets a count of one.",
+        "The third is Amoxicillin again, now two. And anaphylaxis is serious, so serious goes up to one.",
+        "print shows the number of reports for each drug.",
+        "And one serious reaction, which in real practice must be reported quickly."
+      ],
+      "display": [
+        "This program summarises adverse drug reaction reports, the kind pharmacists send to the national pharmacovigilance programme.",
+        "The comment says what the data is: A D R reports.",
+        "reports is a list of dictionaries. Each dictionary is one record, with the same three fields: drug, reaction and serious.",
+        "by_drug will count the reports for each drug. It starts empty.",
+        "serious will count the serious reactions. It starts at zero.",
+        "The loop takes one record at a time. The first is Amoxicillin, with a rash.",
+        "This is the counting pattern. Amoxicillin is new, so get gives zero, and its count becomes one.",
+        "A rash isn't marked serious, so the serious count stays at zero.",
+        "The second record is Ibuprofen. It gets a count of one.",
+        "The third is Amoxicillin again, now two. And anaphylaxis is serious, so serious goes up to one.",
+        "print shows the number of reports for each drug.",
+        "And one serious reaction, which in real practice must be reported quickly."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "hi",
+      "tts": [
+        "यह program adverse drug reaction reports का सार निकालता है, वैसी reports जो pharmacists राष्ट्रीय pharmacovigilance programme को भेजते हैं।",
+        "Comment बताता है कि data क्या है: A D R reports।",
+        "reports dictionaries की list है। हर dictionary एक record है, वही तीन fields के साथ: drug, reaction और serious।",
+        "by_drug हर drug की reports गिनेगा। यह खाली शुरू होता है।",
+        "serious, serious reactions गिनेगा। यह zero से शुरू होता है।",
+        "Loop एक बार में एक record लेता है। पहला है Amoxicillin, rash के साथ।",
+        "यह गिनती का pattern है। Amoxicillin नया है, इसलिए get zero देता है, और उसकी गिनती एक हो जाती है।",
+        "Rash serious नहीं है, इसलिए serious गिनती zero पर रहती है।",
+        "दूसरा record Ibuprofen है। उसकी गिनती एक होती है।",
+        "तीसरा फिर Amoxicillin है, अब दो। और anaphylaxis serious है, इसलिए serious एक हो जाता है।",
+        "print हर drug की reports की संख्या दिखाता है।",
+        "और एक serious reaction, जिसे असली practice में जल्दी report करना ज़रूरी है।"
+      ],
+      "display": [
+        "यह program adverse drug reaction reports का सार निकालता है, वैसी reports जो pharmacists राष्ट्रीय pharmacovigilance programme को भेजते हैं।",
+        "Comment बताता है कि data क्या है: A D R reports।",
+        "reports dictionaries की list है। हर dictionary एक record है, वही तीन fields के साथ: drug, reaction और serious।",
+        "by_drug हर drug की reports गिनेगा। यह खाली शुरू होता है।",
+        "serious, serious reactions गिनेगा। यह zero से शुरू होता है।",
+        "Loop एक बार में एक record लेता है। पहला है Amoxicillin, rash के साथ।",
+        "यह गिनती का pattern है। Amoxicillin नया है, इसलिए get zero देता है, और उसकी गिनती एक हो जाती है।",
+        "Rash serious नहीं है, इसलिए serious गिनती zero पर रहती है।",
+        "दूसरा record Ibuprofen है। उसकी गिनती एक होती है।",
+        "तीसरा फिर Amoxicillin है, अब दो। और anaphylaxis serious है, इसलिए serious एक हो जाता है।",
+        "print हर drug की reports की संख्या दिखाता है।",
+        "और एक serious reaction, जिसे असली practice में जल्दी report करना ज़रूरी है।"
+      ],
+      "displayHinglish": [
+        "Yeh program adverse drug reaction reports ka saar nikaalta hai, waisi reports jo pharmacists rashtriya pharmacovigilance programme ko bhejte hain.",
+        "Comment batata hai ki data kya hai: A D R reports.",
+        "reports dictionaries ki list hai. Har dictionary ek record hai, wahi teen fields ke saath: drug, reaction aur serious.",
+        "by_drug har drug ki reports ginega. Yeh khaali shuru hota hai.",
+        "serious, serious reactions ginega. Yeh zero se shuru hota hai.",
+        "Loop ek baar mein ek record leta hai. Pehla hai Amoxicillin, rash ke saath.",
+        "Yeh ginti ka pattern hai. Amoxicillin naya hai, isliye get zero deta hai, aur uski ginti ek ho jaati hai.",
+        "Rash serious nahi hai, isliye serious ginti zero par rehti hai.",
+        "Doosra record Ibuprofen hai. Uski ginti ek hoti hai.",
+        "Teesra phir Amoxicillin hai, ab do. Aur anaphylaxis serious hai, isliye serious ek ho jaata hai.",
+        "print har drug ki reports ki sankhya dikhaata hai.",
+        "Aur ek serious reaction, jise asli practice mein jaldi report karna zaroori hai."
+      ]
+    },
+    {
+      "id": "narrator",
+      "prefix": "step-",
+      "lang": "kn",
+      "tts": [
+        "ಈ program adverse drug reaction reports ನ ಸಾರಾಂಶ ಮಾಡುತ್ತೆ, pharmacists ರಾಷ್ಟ್ರೀಯ pharmacovigilance programme ಗೆ ಕಳಿಸುವ ತರಹದ reports.",
+        "Comment data ಏನು ಅಂತ ಹೇಳುತ್ತೆ: A D R reports.",
+        "reports dictionaries ನ list. ಪ್ರತಿ dictionary ಒಂದು record, ಅದೇ ಮೂರು fields ಜೊತೆ: drug, reaction ಮತ್ತು serious.",
+        "by_drug ಪ್ರತಿ drug ನ reports ಎಣಿಸುತ್ತೆ. ಇದು ಖಾಲಿಯಾಗಿ ಶುರು.",
+        "serious, serious reactions ಎಣಿಸುತ್ತೆ. ಇದು zero ಇಂದ ಶುರು.",
+        "Loop ಒಂದು ಸಲಕ್ಕೆ ಒಂದು record ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ. ಮೊದಲದು Amoxicillin, rash ಜೊತೆ.",
+        "ಇದು ಎಣಿಕೆಯ pattern. Amoxicillin ಹೊಸದು, ಹಾಗಾಗಿ get zero ಕೊಡುತ್ತೆ, ಅದರ ಎಣಿಕೆ ಒಂದು ಆಗುತ್ತೆ.",
+        "Rash serious ಅಲ್ಲ, ಹಾಗಾಗಿ serious ಎಣಿಕೆ zero ನಲ್ಲೇ ಇರುತ್ತೆ.",
+        "ಎರಡನೇ record Ibuprofen. ಅದರ ಎಣಿಕೆ ಒಂದು ಆಗುತ್ತೆ.",
+        "ಮೂರನೇದು ಮತ್ತೆ Amoxicillin, ಈಗ ಎರಡು. Anaphylaxis serious, ಹಾಗಾಗಿ serious ಒಂದು ಆಗುತ್ತೆ.",
+        "print ಪ್ರತಿ drug ನ reports ಸಂಖ್ಯೆ ತೋರಿಸುತ್ತೆ.",
+        "ಮತ್ತು ಒಂದು serious reaction, ನಿಜ practice ನಲ್ಲಿ ಇದನ್ನು ಬೇಗ report ಮಾಡಬೇಕು."
+      ],
+      "display": [
+        "ಈ program adverse drug reaction reports ನ ಸಾರಾಂಶ ಮಾಡುತ್ತೆ, pharmacists ರಾಷ್ಟ್ರೀಯ pharmacovigilance programme ಗೆ ಕಳಿಸುವ ತರಹದ reports.",
+        "Comment data ಏನು ಅಂತ ಹೇಳುತ್ತೆ: A D R reports.",
+        "reports dictionaries ನ list. ಪ್ರತಿ dictionary ಒಂದು record, ಅದೇ ಮೂರು fields ಜೊತೆ: drug, reaction ಮತ್ತು serious.",
+        "by_drug ಪ್ರತಿ drug ನ reports ಎಣಿಸುತ್ತೆ. ಇದು ಖಾಲಿಯಾಗಿ ಶುರು.",
+        "serious, serious reactions ಎಣಿಸುತ್ತೆ. ಇದು zero ಇಂದ ಶುರು.",
+        "Loop ಒಂದು ಸಲಕ್ಕೆ ಒಂದು record ತೆಗೆದುಕೊಳ್ಳುತ್ತೆ. ಮೊದಲದು Amoxicillin, rash ಜೊತೆ.",
+        "ಇದು ಎಣಿಕೆಯ pattern. Amoxicillin ಹೊಸದು, ಹಾಗಾಗಿ get zero ಕೊಡುತ್ತೆ, ಅದರ ಎಣಿಕೆ ಒಂದು ಆಗುತ್ತೆ.",
+        "Rash serious ಅಲ್ಲ, ಹಾಗಾಗಿ serious ಎಣಿಕೆ zero ನಲ್ಲೇ ಇರುತ್ತೆ.",
+        "ಎರಡನೇ record Ibuprofen. ಅದರ ಎಣಿಕೆ ಒಂದು ಆಗುತ್ತೆ.",
+        "ಮೂರನೇದು ಮತ್ತೆ Amoxicillin, ಈಗ ಎರಡು. Anaphylaxis serious, ಹಾಗಾಗಿ serious ಒಂದು ಆಗುತ್ತೆ.",
+        "print ಪ್ರತಿ drug ನ reports ಸಂಖ್ಯೆ ತೋರಿಸುತ್ತೆ.",
+        "ಮತ್ತು ಒಂದು serious reaction, ನಿಜ practice ನಲ್ಲಿ ಇದನ್ನು ಬೇಗ report ಮಾಡಬೇಕು."
+      ]
+    },
+    {
+      "id": "anim-table",
+      "prefix": "anim-table-",
+      "lang": "en",
+      "tts": [
+        "A structured dataset is a table. Each row is one report, and each column is a field.",
+        "The first report is for Amoxicillin. Its count becomes one.",
+        "The second is for Ibuprofen, so Ibuprofen's count becomes one.",
+        "The third is Amoxicillin again, and it is serious: anaphylaxis. Amoxicillin goes to two, and serious to one.",
+        "Three rows, one pass. The same loop would summarise thirty thousand reports."
+      ],
+      "display": [
+        "A structured dataset is a table. Each row is one report, and each column is a field.",
+        "The first report is for Amoxicillin. Its count becomes one.",
+        "The second is for Ibuprofen, so Ibuprofen's count becomes one.",
+        "The third is Amoxicillin again, and it is serious: anaphylaxis. Amoxicillin goes to two, and serious to one.",
+        "Three rows, one pass. The same loop would summarise thirty thousand reports."
+      ]
+    },
+    {
+      "id": "anim-table",
+      "prefix": "anim-table-",
+      "lang": "hi",
+      "tts": [
+        "Structured dataset एक table है। हर row एक report है, और हर column एक field।",
+        "पहली report Amoxicillin की है। उसकी गिनती एक हो जाती है।",
+        "दूसरी Ibuprofen की है, इसलिए Ibuprofen की गिनती एक हो जाती है।",
+        "तीसरी फिर Amoxicillin की है, और serious है: anaphylaxis। Amoxicillin दो पर जाता है, और serious एक पर।",
+        "तीन rows, एक बार में। यही loop तीस हज़ार reports का सार निकाल देगा।"
+      ],
+      "display": [
+        "Structured dataset एक table है। हर row एक report है, और हर column एक field।",
+        "पहली report Amoxicillin की है। उसकी गिनती एक हो जाती है।",
+        "दूसरी Ibuprofen की है, इसलिए Ibuprofen की गिनती एक हो जाती है।",
+        "तीसरी फिर Amoxicillin की है, और serious है: anaphylaxis। Amoxicillin दो पर जाता है, और serious एक पर।",
+        "तीन rows, एक बार में। यही loop तीस हज़ार reports का सार निकाल देगा।"
+      ],
+      "displayHinglish": [
+        "Structured dataset ek table hai. Har row ek report hai, aur har column ek field.",
+        "Pehli report Amoxicillin ki hai. Uski ginti ek ho jaati hai.",
+        "Doosri Ibuprofen ki hai, isliye Ibuprofen ki ginti ek ho jaati hai.",
+        "Teesri phir Amoxicillin ki hai, aur serious hai: anaphylaxis. Amoxicillin do par jaata hai, aur serious ek par.",
+        "Teen rows, ek baar mein. Yahi loop tees hazaar reports ka saar nikaal dega."
+      ]
+    },
+    {
+      "id": "anim-table",
+      "prefix": "anim-table-",
+      "lang": "kn",
+      "tts": [
+        "Structured dataset ಒಂದು table. ಪ್ರತಿ row ಒಂದು report, ಪ್ರತಿ column ಒಂದು field.",
+        "ಮೊದಲ report Amoxicillin ದು. ಅದರ ಎಣಿಕೆ ಒಂದು ಆಗುತ್ತೆ.",
+        "ಎರಡನೇದು Ibuprofen ದು, ಹಾಗಾಗಿ Ibuprofen ಎಣಿಕೆ ಒಂದು ಆಗುತ್ತೆ.",
+        "ಮೂರನೇದು ಮತ್ತೆ Amoxicillin, ಮತ್ತು serious: anaphylaxis. Amoxicillin ಎರಡಕ್ಕೆ, serious ಒಂದಕ್ಕೆ ಹೋಗುತ್ತೆ.",
+        "ಮೂರು rows, ಒಂದೇ ಸುತ್ತು. ಇದೇ loop ಮೂವತ್ತು ಸಾವಿರ reports ನ ಸಾರಾಂಶ ಮಾಡುತ್ತೆ."
+      ],
+      "display": [
+        "Structured dataset ಒಂದು table. ಪ್ರತಿ row ಒಂದು report, ಪ್ರತಿ column ಒಂದು field.",
+        "ಮೊದಲ report Amoxicillin ದು. ಅದರ ಎಣಿಕೆ ಒಂದು ಆಗುತ್ತೆ.",
+        "ಎರಡನೇದು Ibuprofen ದು, ಹಾಗಾಗಿ Ibuprofen ಎಣಿಕೆ ಒಂದು ಆಗುತ್ತೆ.",
+        "ಮೂರನೇದು ಮತ್ತೆ Amoxicillin, ಮತ್ತು serious: anaphylaxis. Amoxicillin ಎರಡಕ್ಕೆ, serious ಒಂದಕ್ಕೆ ಹೋಗುತ್ತೆ.",
+        "ಮೂರು rows, ಒಂದೇ ಸುತ್ತು. ಇದೇ loop ಮೂವತ್ತು ಸಾವಿರ reports ನ ಸಾರಾಂಶ ಮಾಡುತ್ತೆ."
+      ]
+    }
+  ]
+}
