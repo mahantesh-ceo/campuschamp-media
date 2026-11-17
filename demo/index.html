@@ -3,9 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Champ Lab · Faculty Challenge</title>
-<meta name="description" content="Write your first Python program in 10 minutes, on your phone.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&family=Noto+Sans+Kannada:wght@500;700&family=Noto+Sans+Devanagari:wght@500;700&display=swap">
+<title>Champ Lab Challenge · Campus Champ</title>
+<meta name="description" content="Write your first Python program for pharmacy in 10 minutes, on your phone, and get your certificate.">
+<meta property="og:title" content="Champ Lab Challenge: write your first Python program in 10 minutes">
+<meta property="og:description" content="Three small pharmacy challenges on your phone. Finish them and get your Campus Champ certificate.">
+<meta property="og:image" content="https://mahantesh-ceo.github.io/campuschamp-media/demo/og.png">
+<meta property="og:url" content="https://campuschamp.in/challenge">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+Kannada:wght@500;700;800&family=Noto+Sans+Devanagari:wght@500;700;800&display=swap">
 <style>
 :root{--ink:#1d1d1f;--gray:#6e6e73;--hair:#e5e5ea;--tile:#f5f5f7;--blue:#0071e3;--green:#1f9d55;--red:#d70015;--bg:#fbfbfd}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -23,8 +28,13 @@ h1{font-size:34px;line-height:1.08;letter-spacing:-.035em;font-weight:800}
 .lead{color:var(--gray);font-size:17px;line-height:1.45;margin-top:10px}
 .card{background:#fff;border-radius:20px;padding:20px;margin-top:18px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 28px rgba(0,0,0,.06)}
 label{display:block;font-weight:600;font-size:14px;color:var(--gray);margin:14px 0 6px}
-input[type=text]{width:100%;font:500 17px inherit;font-family:inherit;padding:14px;border:1.5px solid var(--hair);border-radius:12px;background:#fff;color:var(--ink)}
-.btn{display:block;width:100%;border:0;border-radius:14px;padding:16px;font:700 17px inherit;font-family:inherit;background:var(--ink);color:#fff;margin-top:18px}
+input[type=text],input[type=tel],select{width:100%;font:500 17px inherit;font-family:inherit;padding:14px;border:1.5px solid var(--hair);border-radius:12px;background:#fff;color:var(--ink);-webkit-appearance:none}
+.ph{display:flex;align-items:stretch}.ph span{display:grid;place-items:center;padding:0 12px;border:1.5px solid var(--hair);border-right:0;border-radius:12px 0 0 12px;background:var(--tile);font-weight:700}.ph input{border-radius:0 12px 12px 0}
+.roles{display:flex;gap:8px}.roles button{flex:1;border:1.5px solid var(--hair);background:#fff;border-radius:12px;padding:13px;font:600 16px inherit;font-family:inherit;color:var(--ink)}.roles button.on{border-color:var(--blue);background:#eef5ff;color:var(--blue)}
+.consent{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:14px;line-height:1.45;color:#3a3a3c}.consent input{width:20px;height:20px;margin-top:2px;flex:none;accent-color:var(--blue)}
+.ferr{color:var(--red);font-size:14px;font-weight:600;margin-top:10px;min-height:1px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.btn{display:block;width:100%;border:0;border-radius:14px;padding:16px;font:700 17px inherit;font-family:inherit;background:var(--ink);color:#fff;margin-top:18px;text-align:center;text-decoration:none}
 .btn.blue{background:var(--blue)}.btn.ghost{background:var(--tile);color:var(--ink);font-weight:600}
 .btn:disabled{opacity:.45}
 .steps{display:flex;gap:6px;margin:4px 0 14px}.steps b{flex:1;height:5px;border-radius:3px;background:var(--hair)}.steps b.on{background:var(--blue)}.steps b.done{background:var(--green)}
@@ -39,17 +49,21 @@ textarea{font-variant-ligatures:none;width:100%;min-height:170px;margin-top:14px
 .out .err{color:#fda4af}
 .row{display:flex;gap:10px}.row .btn{margin-top:12px}
 .ok{display:none;margin-top:14px;border-radius:16px;padding:16px;background:#e9f8ef;color:#0f5132;font-weight:600;font-size:16px;line-height:1.45}
+.ok.warn{background:#fff7e6;color:#7a4b00}
 .ok b{display:block;font-size:20px;margin-bottom:4px}
+.ok code{font-family:'JetBrains Mono',monospace;background:#fff;padding:1px 6px;border-radius:6px}
 .hint{display:none;margin-top:12px;border-radius:14px;padding:14px;background:#fff7e6;color:#7a4b00;font-size:15px;line-height:1.5}
 .hint code{font-family:'JetBrains Mono',monospace;background:#fff;padding:2px 6px;border-radius:6px;white-space:pre-wrap}
 .status{font-size:13px;color:var(--gray);margin-top:10px;text-align:center}
-.cert{margin-top:18px;border-radius:24px;padding:28px 24px;text-align:center;background:linear-gradient(160deg,#fff,#f3f1ff 60%,#fff2f7);box-shadow:0 10px 40px rgba(124,58,237,.18);border:1.5px solid #e8e3ff}
-.cert .seal{width:64px;height:64px;margin:0 auto;border-radius:18px;background:linear-gradient(140deg,#6366f1,#7c3aed 55%,#2dd4bf);display:grid;place-items:center;font:700 20px 'JetBrains Mono',monospace;color:#fff}
-.cert h2{font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--gray);margin-top:18px}
-.cert .name{font-size:32px;font-weight:800;letter-spacing:-.03em;margin-top:10px}
-.cert .what{font-size:16px;line-height:1.5;color:#3a3a3c;margin-top:10px}
-.cert .time{display:inline-block;margin-top:16px;font-weight:700;font-size:15px;background:#fff;border-radius:999px;padding:8px 16px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-.cert .foot{font-size:12px;color:var(--gray);margin-top:16px}
+#certimg{width:100%;display:block;border-radius:18px;margin-top:16px;box-shadow:0 12px 40px rgba(124,58,237,.22)}
+.share{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.share button{border:0;border-radius:14px;padding:15px 10px;font:700 16px inherit;font-family:inherit;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px}
+.share .wa{background:#25D366}.share .li{background:#0A66C2}.share .ig{background:linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF)}.share .dl{background:var(--ink)}
+.share svg{width:20px;height:20px;fill:#fff}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#1d1d1f;color:#fff;padding:12px 18px;border-radius:12px;font-size:14px;font-weight:600;max-width:90vw;text-align:center;opacity:0;transition:opacity .25s;pointer-events:none;z-index:9}
+.toast.on{opacity:1}
+.next{margin-top:22px;border-radius:20px;padding:20px;background:linear-gradient(135deg,#eef2ff,#fdf2f8)}
+.next h3{font-size:20px;letter-spacing:-.02em}.next p{color:#3a3a3c;font-size:15px;line-height:1.45;margin-top:6px}
 .hide{display:none}
 @keyframes pop{0%{transform:scale(.9);opacity:0}100%{transform:scale(1);opacity:1}}
 .pop{animation:pop .35s ease-out}
@@ -64,12 +78,18 @@ textarea{font-variant-ligatures:none;width:100%;min-height:170px;margin-top:14px
   <section id="start">
     <h1 data-t="hello"></h1>
     <p class="lead" data-t="intro"></p>
-    <div class="card">
-      <label data-t="yourName"></label><input id="name" type="text" autocomplete="name" placeholder="Your full name">
-      <label data-t="yourDept"></label><input id="dept" type="text" placeholder="B.Pharm Sem I, or your department">
-      <button class="btn blue" id="go" data-t="start"></button>
+    <form class="card" id="form" novalidate>
+      <label for="name" data-t="yourName"></label><input id="name" type="text" autocomplete="name" maxlength="60">
+      <label for="phone" data-t="yourPhone"></label><div class="ph"><span>+91</span><input id="phone" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="10" placeholder="98765 43210"></div>
+      <label for="college" data-t="yourCollege"></label><input id="college" type="text" maxlength="120" autocomplete="organization">
+      <label for="place" data-t="yourPlace"></label><input id="place" type="text" maxlength="60" autocomplete="address-level2">
+      <label data-t="iAm"></label><div class="roles" id="roles"><button type="button" data-r="Student" class="on" data-t="student"></button><button type="button" data-r="Faculty" data-t="faculty"></button></div>
+      <input class="hp" id="hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="consent"><input type="checkbox" id="consent"><span data-t="consent"></span></label>
+      <p class="ferr" id="ferr" role="alert"></p>
+      <button class="btn blue" id="go" type="submit" data-t="start"></button>
       <p class="status" id="load"></p>
-    </div>
+    </form>
   </section>
 
   <!-- challenge -->
@@ -91,79 +111,131 @@ textarea{font-variant-ligatures:none;width:100%;min-height:170px;margin-top:14px
   <!-- certificate -->
   <section id="done" class="hide">
     <h1 data-t="doneTitle"></h1>
-    <div class="cert pop">
-      <div class="seal">&lt;/&gt;</div>
-      <h2 data-t="certTitle"></h2>
-      <p class="name" id="cname"></p>
-      <p class="what" id="cwhat"></p>
-      <span class="time" id="ctime"></span>
-      <p class="foot">Champ Lab · Campus Champ · <span id="cdate"></span></p>
+    <p class="lead" data-t="doneLead"></p>
+    <img id="certimg" alt="Your Champ Lab certificate">
+    <div class="share">
+      <button class="wa" id="sh-wa"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>WhatsApp</button>
+      <button class="li" id="sh-li"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.2c0-1.2 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z"/></svg>LinkedIn</button>
+      <button class="ig" id="sh-ig"><svg viewBox="0 0 24 24"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21.9 7c-.1-1.6-.4-3-1.6-4.2S17.6 1.2 16 1.1C14.4 1 9.6 1 8 1.1 6.4 1.2 5 1.5 3.8 2.7S2.2 5.4 2.1 7C2 8.6 2 13.4 2.1 15c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.6.1 6.4.1 8 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.1-1.6.1-6.4 0-8zM19.8 18a3.3 3.3 0 0 1-1.8 1.8c-1.3.5-4.3.4-5.9.4s-4.6.1-5.9-.4A3.3 3.3 0 0 1 4.4 18c-.5-1.3-.4-4.3-.4-5.9s-.1-4.6.4-5.9A3.3 3.3 0 0 1 6.2 4.4c1.3-.5 4.3-.4 5.9-.4s4.6-.1 5.9.4a3.3 3.3 0 0 1 1.8 1.8c.5 1.3.4 4.3.4 5.9s.1 4.6-.4 5.9z"/></svg>Instagram</button>
+      <button class="dl" id="sh-dl"><svg viewBox="0 0 24 24"><path d="M12 3v11m0 0 4.5-4.5M12 14 7.5 9.5M4 17v3h16v-3" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-t="download"></span></button>
     </div>
-    <p class="lead" data-t="share" style="text-align:center;margin-top:16px"></p>
+    <div class="next">
+      <h3 data-t="nextTitle"></h3>
+      <p data-t="nextText"></p>
+      <a class="btn blue" href="https://campuschamp.in/learn/bp101t/1-1?utm_source=challenge&utm_medium=certificate" data-t="nextBtn"></a>
+    </div>
   </section>
 </div>
+<div class="toast" id="toast"></div>
 
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
 <script>
+const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzD9YZNAdY33ugrs-CrLCKrO2adfQrTU427vReaYsue3QdcLhmNppmdKFUFMNAB_Gnv/exec';
+const LINK = 'https://campuschamp.in/challenge';
 const T = {
-  en: { hello: 'Write your first <span class="g">Python program</span> in 10 minutes.', intro: 'Three small pharmacy challenges. On your phone. Nothing to install.',
-    yourName: 'Your name', yourDept: 'Class or department', start: 'Start the challenge', expected: 'Your output should be exactly',
-    run: '▶ Run', hint: 'Hint', next: 'Next challenge →', finish: 'Finish ✓', loading: 'Getting Python ready…', ready: 'Python is ready ✓', fail: 'Python could not load. Check the internet and refresh.',
+  en: { hello: 'Write your first <span class="g">Python program</span> in 10 minutes.', intro: 'Three small pharmacy challenges. On your phone. Nothing to install. Finish them and get your certificate.',
+    yourName: 'Your name (as it should appear on the certificate)', yourPhone: 'Mobile number', yourCollege: 'College', yourPlace: 'Town / city', iAm: 'I am a', student: 'Student', faculty: 'Faculty',
+    consent: 'I agree that Campus Champ may contact me on this number (call, SMS or WhatsApp) about its courses and events.',
+    eName: 'Please enter your name.', ePhone: 'Please enter a valid 10-digit mobile number.', eCollege: 'Please enter your college.', ePlace: 'Please enter your town or city.', eConsent: 'Please tick the box to continue.',
+    start: 'Start the challenge', expected: 'Your output should be exactly',
+    run: '▶ Run', hint: 'Hint', next: 'Next challenge →', finish: 'Get my certificate ✓', loading: 'Getting Python ready…', ready: 'Python is ready ✓', fail: 'Python could not load. Check the internet and refresh.',
     right: 'Correct! 🎉', almost: 'Close! Compare your output with the expected one, character by character.',
-    doneTitle: 'You’re a <span class="g">programmer</span> now.', certTitle: 'Founding Faculty · Champ Lab',
-    certWhat: (n) => `wrote, ran and debugged ${n} real Python programs for pharmacy`, time: (m, s) => `Done in ${m} min ${s} s`,
-    share: 'Take a screenshot and share it with your colleagues. Your students can do this too.', step: (i) => `Challenge ${i} of 3` },
-  kn: { hello: 'ನಿಮ್ಮ ಮೊದಲ <span class="g">Python program</span> ಅನ್ನು 10 ನಿಮಿಷದಲ್ಲಿ ಬರೆಯಿರಿ.', intro: 'ಮೂರು ಚಿಕ್ಕ pharmacy challenges. ನಿಮ್ಮ phone ನಲ್ಲೇ. ಏನೂ install ಮಾಡಬೇಕಿಲ್ಲ.',
-    yourName: 'ನಿಮ್ಮ ಹೆಸರು', yourDept: 'Class ಅಥವಾ ವಿಭಾಗ', start: 'Challenge ಶುರು ಮಾಡಿ', expected: 'ನಿಮ್ಮ output ಸರಿಯಾಗಿ ಹೀಗಿರಬೇಕು',
-    run: '▶ Run', hint: 'ಸುಳಿವು', next: 'ಮುಂದಿನ challenge →', finish: 'ಮುಗಿಸಿ ✓', loading: 'Python ಸಿದ್ಧವಾಗುತ್ತಿದೆ…', ready: 'Python ಸಿದ್ಧ ✓', fail: 'Python load ಆಗಲಿಲ್ಲ. Internet check ಮಾಡಿ refresh ಮಾಡಿ.',
+    keepVar: (v) => `Keep the line that sets <code>${v}</code> at the top. Your program has to use it.`,
+    hardcoded: (setv, got, want) => `Your output is right for this example, but we also tried <code>${setv}</code>: your program printed <code>${got || '(nothing)'}</code> instead of <code>${want}</code>. Let the program decide using the variable, not fixed text.`,
+    doneTitle: 'You’re a <span class="g">programmer</span> now.', doneLead: 'Your certificate is ready. Share it, and challenge your friends to beat your time!',
+    certTitle: 'CERTIFICATE OF ACHIEVEMENT', certFor: 'This certifies that', certWhat: 'wrote and ran 3 Python programs for pharmacy', certTime: (m, s) => `in ${m} min ${s} s`,
+    certChallenge: 'Can you beat this time? Take the challenge:', download: 'Download',
+    shareText: (m, s) => `I just wrote my first Python programs for pharmacy in ${m} min ${s} s on Campus Champ! 💊💻 Can you beat my time? Take the 10-minute challenge:`,
+    copied: 'Post text copied. Paste it in your LinkedIn post and attach your certificate.', igTip: 'Certificate saved. Post it on your Instagram story and tag @campus.champ!',
+    nextTitle: 'Keep going', nextText: 'This was just the start. The full BP101T course, in your language, is waiting on Campus Champ.', nextBtn: 'Continue with Lesson 1 →', step: (i) => `Challenge ${i} of 3` },
+  kn: { hello: 'ನಿಮ್ಮ ಮೊದಲ <span class="g">Python program</span> ಅನ್ನು 10 ನಿಮಿಷದಲ್ಲಿ ಬರೆಯಿರಿ.', intro: 'ಮೂರು ಚಿಕ್ಕ pharmacy challenges. ನಿಮ್ಮ phone ನಲ್ಲೇ. ಏನೂ install ಮಾಡಬೇಕಿಲ್ಲ. ಮುಗಿಸಿದರೆ ನಿಮ್ಮ certificate ಸಿಗುತ್ತೆ.',
+    yourName: 'ನಿಮ್ಮ ಹೆಸರು (certificate ಮೇಲೆ ಬರುವಂತೆ)', yourPhone: 'Mobile number', yourCollege: 'College', yourPlace: 'ಊರು / ನಗರ', iAm: 'ನಾನು', student: 'ವಿದ್ಯಾರ್ಥಿ', faculty: 'ಶಿಕ್ಷಕ / ಶಿಕ್ಷಕಿ',
+    consent: 'Campus Champ ತನ್ನ courses ಮತ್ತು events ಬಗ್ಗೆ ಈ number ಗೆ (call, SMS ಅಥವಾ WhatsApp) ನನ್ನನ್ನು ಸಂಪರ್ಕಿಸಲು ನಾನು ಒಪ್ಪುತ್ತೇನೆ.',
+    eName: 'ದಯವಿಟ್ಟು ನಿಮ್ಮ ಹೆಸರು ಬರೆಯಿರಿ.', ePhone: 'ದಯವಿಟ್ಟು ಸರಿಯಾದ 10 ಅಂಕಿಯ mobile number ಬರೆಯಿರಿ.', eCollege: 'ದಯವಿಟ್ಟು ನಿಮ್ಮ college ಬರೆಯಿರಿ.', ePlace: 'ದಯವಿಟ್ಟು ನಿಮ್ಮ ಊರು ಬರೆಯಿರಿ.', eConsent: 'ಮುಂದುವರೆಯಲು box tick ಮಾಡಿ.',
+    start: 'Challenge ಶುರು ಮಾಡಿ', expected: 'ನಿಮ್ಮ output ಸರಿಯಾಗಿ ಹೀಗಿರಬೇಕು',
+    run: '▶ Run', hint: 'ಸುಳಿವು', next: 'ಮುಂದಿನ challenge →', finish: 'ನನ್ನ certificate ಪಡೆಯಿರಿ ✓', loading: 'Python ಸಿದ್ಧವಾಗುತ್ತಿದೆ…', ready: 'Python ಸಿದ್ಧ ✓', fail: 'Python load ಆಗಲಿಲ್ಲ. Internet check ಮಾಡಿ refresh ಮಾಡಿ.',
     right: 'ಸರಿ! 🎉', almost: 'ಹತ್ತಿರ ಬಂದಿದ್ದೀರಿ! ನಿಮ್ಮ output ಅನ್ನು ನಿರೀಕ್ಷಿತ output ಜೊತೆ ಅಕ್ಷರ ಅಕ್ಷರವಾಗಿ ಹೋಲಿಸಿ.',
-    doneTitle: 'ಈಗ ನೀವು <span class="g">programmer</span>.', certTitle: 'Founding Faculty · Champ Lab',
-    certWhat: (n) => `pharmacy ಗಾಗಿ ${n} ನಿಜವಾದ Python programs ಬರೆದು, run ಮಾಡಿ, ಸರಿ ಮಾಡಿದ್ದಾರೆ`, time: (m, s) => `${m} ನಿಮಿಷ ${s} ಸೆಕೆಂಡ್‌ನಲ್ಲಿ ಮುಗಿಸಿದರು`,
-    share: 'Screenshot ತೆಗೆದು ಸಹೋದ್ಯೋಗಿಗಳ ಜೊತೆ share ಮಾಡಿ. ನಿಮ್ಮ ವಿದ್ಯಾರ್ಥಿಗಳೂ ಇದನ್ನು ಮಾಡಬಹುದು.', step: (i) => `Challenge ${i} / 3` },
-  hi: { hello: 'अपना पहला <span class="g">Python program</span> 10 मिनट में लिखिए।', intro: 'तीन छोटे pharmacy challenges. आपके phone पर. कुछ भी install नहीं करना.',
-    yourName: 'आपका नाम', yourDept: 'Class या विभाग', start: 'Challenge शुरू कीजिए', expected: 'आपका output बिल्कुल ऐसा होना चाहिए',
-    run: '▶ Run', hint: 'संकेत', next: 'अगला challenge →', finish: 'पूरा ✓', loading: 'Python तैयार हो रहा है…', ready: 'Python तैयार ✓', fail: 'Python load नहीं हुआ. Internet जाँचकर refresh कीजिए.',
+    keepVar: (v) => `<code>${v}</code> ಹೊಂದಿಸುವ line ಅನ್ನು ಮೇಲೆಯೇ ಇಡಿ. ನಿಮ್ಮ program ಅದನ್ನು ಬಳಸಬೇಕು.`,
+    hardcoded: (setv, got, want) => `ಈ example ಗೆ ನಿಮ್ಮ output ಸರಿ, ಆದರೆ ನಾವು <code>${setv}</code> ಕೂಡ ಪ್ರಯತ್ನಿಸಿದೆವು: ನಿಮ್ಮ program <code>${want}</code> ಬದಲು <code>${got || '(ಏನೂ ಇಲ್ಲ)'}</code> print ಮಾಡಿತು. ನಿಗದಿತ text ಅಲ್ಲ, variable ಬಳಸಿ program ನಿರ್ಧರಿಸಲಿ.`,
+    doneTitle: 'ಈಗ ನೀವು <span class="g">programmer</span>.', doneLead: 'ನಿಮ್ಮ certificate ಸಿದ್ಧ. Share ಮಾಡಿ, ನಿಮ್ಮ ಸ್ನೇಹಿತರಿಗೆ ನಿಮ್ಮ time ಮೀರಿಸಲು challenge ಮಾಡಿ!',
+    certTitle: 'ಸಾಧನೆಯ ಪ್ರಮಾಣಪತ್ರ', certFor: 'ಇವರು', certWhat: 'pharmacy ಗಾಗಿ 3 Python programs ಬರೆದು run ಮಾಡಿದ್ದಾರೆ', certTime: (m, s) => `${m} ನಿಮಿಷ ${s} ಸೆಕೆಂಡ್‌ನಲ್ಲಿ`,
+    certChallenge: 'ಈ time ಮೀರಿಸಬಲ್ಲಿರಾ? Challenge ತೆಗೆದುಕೊಳ್ಳಿ:', download: 'Download',
+    shareText: (m, s) => `ನಾನು Campus Champ ನಲ್ಲಿ pharmacy ಗಾಗಿ ನನ್ನ ಮೊದಲ Python programs ಅನ್ನು ${m} ನಿಮಿಷ ${s} ಸೆಕೆಂಡ್‌ನಲ್ಲಿ ಬರೆದೆ! 💊💻 ನನ್ನ time ಮೀರಿಸಬಲ್ಲಿರಾ? 10 ನಿಮಿಷದ challenge:`,
+    copied: 'Post text copy ಆಗಿದೆ. LinkedIn post ನಲ್ಲಿ paste ಮಾಡಿ, certificate attach ಮಾಡಿ.', igTip: 'Certificate save ಆಗಿದೆ. Instagram story ಗೆ ಹಾಕಿ @campus.champ ಅನ್ನು tag ಮಾಡಿ!',
+    nextTitle: 'ಮುಂದುವರೆಸಿ', nextText: 'ಇದು ಶುರು ಮಾತ್ರ. ಪೂರ್ಣ BP101T course, ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ, Campus Champ ನಲ್ಲಿ ಕಾಯುತ್ತಿದೆ.', nextBtn: 'Lesson 1 ಮುಂದುವರೆಸಿ →', step: (i) => `Challenge ${i} / 3` },
+  hi: { hello: 'अपना पहला <span class="g">Python program</span> 10 मिनट में लिखिए।', intro: 'तीन छोटे pharmacy challenges. आपके phone पर. कुछ भी install नहीं करना. पूरा कीजिए और certificate पाइए.',
+    yourName: 'आपका नाम (जैसा certificate पर चाहिए)', yourPhone: 'Mobile number', yourCollege: 'College', yourPlace: 'शहर / कस्बा', iAm: 'मैं हूँ', student: 'Student', faculty: 'Faculty',
+    consent: 'मैं सहमत हूँ कि Campus Champ अपने courses और events के बारे में इस number पर (call, SMS या WhatsApp) मुझसे संपर्क कर सकता है.',
+    eName: 'कृपया अपना नाम लिखिए.', ePhone: 'कृपया सही 10 अंकों का mobile number लिखिए.', eCollege: 'कृपया अपना college लिखिए.', ePlace: 'कृपया अपना शहर लिखिए.', eConsent: 'आगे बढ़ने के लिए box पर tick कीजिए.',
+    start: 'Challenge शुरू कीजिए', expected: 'आपका output बिल्कुल ऐसा होना चाहिए',
+    run: '▶ Run', hint: 'संकेत', next: 'अगला challenge →', finish: 'मेरा certificate ✓', loading: 'Python तैयार हो रहा है…', ready: 'Python तैयार ✓', fail: 'Python load नहीं हुआ. Internet जाँचकर refresh कीजिए.',
     right: 'सही! 🎉', almost: 'करीब हैं! अपना output अपेक्षित output से अक्षर-अक्षर मिलाइए.',
-    doneTitle: 'अब आप <span class="g">programmer</span> हैं।', certTitle: 'Founding Faculty · Champ Lab',
-    certWhat: (n) => `pharmacy के लिए ${n} असली Python programs लिखे, चलाए और ठीक किए`, time: (m, s) => `${m} मिनट ${s} सेकंड में पूरा किया`,
-    share: 'Screenshot लेकर साथियों से share कीजिए. आपके students भी यह कर सकते हैं.', step: (i) => `Challenge ${i} / 3` },
+    keepVar: (v) => `<code>${v}</code> वाली line ऊपर ही रखिए. आपके program को उसे use करना है.`,
+    hardcoded: (setv, got, want) => `इस example के लिए आपका output सही है, पर हमने <code>${setv}</code> भी आज़माया: आपके program ने <code>${want}</code> की जगह <code>${got || '(कुछ नहीं)'}</code> print किया. तय text नहीं, variable से program को फ़ैसला करने दीजिए.`,
+    doneTitle: 'अब आप <span class="g">programmer</span> हैं।', doneLead: 'आपका certificate तैयार है. Share कीजिए, और दोस्तों को अपना time हराने की चुनौती दीजिए!',
+    certTitle: 'उपलब्धि प्रमाणपत्र', certFor: 'प्रमाणित किया जाता है कि', certWhat: 'ने pharmacy के लिए 3 Python programs लिखे और चलाए', certTime: (m, s) => `${m} मिनट ${s} सेकंड में`,
+    certChallenge: 'क्या आप यह time हरा सकते हैं? Challenge लीजिए:', download: 'Download',
+    shareText: (m, s) => `मैंने Campus Champ पर pharmacy के लिए अपने पहले Python programs ${m} मिनट ${s} सेकंड में लिखे! 💊💻 क्या आप मेरा time हरा सकते हैं? 10 मिनट का challenge:`,
+    copied: 'Post text copy हो गया. LinkedIn post में paste कीजिए और certificate attach कीजिए.', igTip: 'Certificate save हो गया. Instagram story पर डालिए और @campus.champ को tag कीजिए!',
+    nextTitle: 'आगे बढ़िए', nextText: 'यह तो शुरुआत थी. पूरा BP101T course, आपकी भाषा में, Campus Champ पर इंतज़ार कर रहा है.', nextBtn: 'Lesson 1 से आगे →', step: (i) => `Challenge ${i} / 3` },
 };
+// Each challenge after the first is also run with other values, so printing the answer as fixed text doesn't pass.
 const C = [
   { en: ['Print a medicine label', 'Make the computer show this label. Type print, then the text inside brackets and quotes.'],
     kn: ['Medicine label print ಮಾಡಿ', 'Computer ಈ label ತೋರಿಸುವ ಹಾಗೆ ಮಾಡಿ. print ಬರೆದು, brackets ಮತ್ತು quotes ಒಳಗೆ text ಬರೆಯಿರಿ.'],
     hi: ['Medicine label print कीजिए', 'Computer से यह label दिखवाइए. print लिखिए, फिर brackets और quotes के अंदर text.'],
     expect: 'Paracetamol 500 mg', start: '# Print the label\n', hint: ['print("…") shows whatever is inside the quotes.', 'print("Paracetamol 500 mg")'] },
-  { en: ['Calculate a daily dose', 'The patient takes 500 mg, 3 times a day. Use the variables to print the daily dose.'],
-    kn: ['ದಿನದ dose ಲೆಕ್ಕ ಹಾಕಿ', 'Patient ದಿನಕ್ಕೆ 3 ಸಲ 500 mg ತೆಗೆದುಕೊಳ್ಳುತ್ತಾರೆ. Variables ಬಳಸಿ ದಿನದ dose print ಮಾಡಿ.'],
-    hi: ['रोज़ का dose निकालिए', 'Patient दिन में 3 बार 500 mg लेता है. Variables से रोज़ का dose print कीजिए.'],
-    expect: 'Daily dose: 1500 mg', start: 'dose = 500\ntimes = 3\n# Print the daily dose\n', hint: ['* multiplies: dose * times', 'print("Daily dose:", dose * times, "mg")'] },
-  { en: ['Check for fever', 'If the temperature is 38.0 or more, print "Fever". Otherwise print "No fever". Press ⇥ for the 4 spaces.'],
-    kn: ['ಜ್ವರ check ಮಾಡಿ', 'Temperature 38.0 ಅಥವಾ ಹೆಚ್ಚು ಇದ್ದರೆ "Fever" print ಮಾಡಿ. ಇಲ್ಲದಿದ್ದರೆ "No fever". 4 spaces ಗೆ ⇥ ಒತ್ತಿ.'],
-    hi: ['बुखार जाँचिए', 'Temperature 38.0 या ज़्यादा हो तो "Fever" print कीजिए. वरना "No fever". 4 spaces के लिए ⇥ दबाइए.'],
-    expect: 'Fever', start: 'temp = 38.6\n# If temp is 38.0 or more: Fever, else: No fever\n', hint: ['if temp >= 38.0: then an indented print. Then else:', 'if temp >= 38.0:\n    print("Fever")\nelse:\n    print("No fever")'] },
+  { en: ['Calculate a daily dose', 'The patient takes 500 mg, 3 times a day. Use the variables dose and times to print the daily dose. Your program must work for any dose.'],
+    kn: ['ದಿನದ dose ಲೆಕ್ಕ ಹಾಕಿ', 'Patient ದಿನಕ್ಕೆ 3 ಸಲ 500 mg ತೆಗೆದುಕೊಳ್ಳುತ್ತಾರೆ. dose ಮತ್ತು times variables ಬಳಸಿ ದಿನದ dose print ಮಾಡಿ. ಯಾವುದೇ dose ಗೂ ನಿಮ್ಮ program ಕೆಲಸ ಮಾಡಬೇಕು.'],
+    hi: ['रोज़ का dose निकालिए', 'Patient दिन में 3 बार 500 mg लेता है. dose और times variables से रोज़ का dose print कीजिए. आपका program किसी भी dose के लिए चलना चाहिए.'],
+    expect: 'Daily dose: 1500 mg', start: 'dose = 500\ntimes = 3\n# Print the daily dose\n', hint: ['* multiplies: dose * times', 'print("Daily dose:", dose * times, "mg")'],
+    tests: [{ dose: 250, times: 4 }, { dose: 650, times: 2 }], want: (v) => `Daily dose: ${v.dose * v.times} mg` },
+  { en: ['Check for fever', 'If temp is 38.0 or more, print "Fever". Otherwise print "No fever". Your program must decide using temp. Press ⇥ for the 4 spaces.'],
+    kn: ['ಜ್ವರ check ಮಾಡಿ', 'temp 38.0 ಅಥವಾ ಹೆಚ್ಚು ಇದ್ದರೆ "Fever" print ಮಾಡಿ. ಇಲ್ಲದಿದ್ದರೆ "No fever". ನಿಮ್ಮ program temp ಬಳಸಿ ನಿರ್ಧರಿಸಬೇಕು. 4 spaces ಗೆ ⇥ ಒತ್ತಿ.'],
+    hi: ['बुखार जाँचिए', 'temp 38.0 या ज़्यादा हो तो "Fever" print कीजिए. वरना "No fever". आपका program temp से फ़ैसला करे. 4 spaces के लिए ⇥ दबाइए.'],
+    expect: 'Fever', start: 'temp = 38.6\n# If temp is 38.0 or more: Fever, else: No fever\n', hint: ['if temp >= 38.0: then an indented print. Then else:', 'if temp >= 38.0:\n    print("Fever")\nelse:\n    print("No fever")'],
+    tests: [{ temp: '37.2' }, { temp: '38.0' }, { temp: '36.5' }, { temp: '39.4' }], want: (v) => (parseFloat(v.temp) >= 38 ? 'Fever' : 'No fever') },
 ];
-let L = 'en', cur = 0, hints = 0, py = null, t0 = 0, solved = [false, false, false];
+const q = new URLSearchParams(location.search);
+let L = ['en', 'kn', 'hi'].includes(q.get('lang')) ? q.get('lang') : 'en', cur = 0, hints = 0, py = null, t0 = 0, solved = [false, false, false], role = 'Student';
 const $ = (id) => document.getElementById(id);
 function tr() {
+  document.documentElement.lang = L;
   document.querySelectorAll('[data-t]').forEach((e) => { const v = T[L][e.dataset.t]; if (typeof v === 'string') e.innerHTML = v; });
   document.querySelectorAll('.lang button').forEach((b) => b.classList.toggle('on', b.dataset.l === L));
   if (!$('ch').classList.contains('hide')) paint(false);
-  if (!$('done').classList.contains('hide')) cert();
+  if (!$('done').classList.contains('hide')) drawCert();
   status();
 }
 document.querySelectorAll('.lang button').forEach((b) => (b.onclick = () => { L = b.dataset.l; try { localStorage.setItem('cc-lang', L); } catch (e) {} tr(); }));
-try { L = localStorage.getItem('cc-lang') || 'en'; $('name').value = localStorage.getItem('cc-name') || ''; $('dept').value = localStorage.getItem('cc-dept') || ''; } catch (e) {}
+try { if (!q.get('lang')) L = localStorage.getItem('cc-lang') || L; ['name', 'phone', 'college', 'place'].forEach((k) => ($(k).value = localStorage.getItem('cc-' + k) || '')); } catch (e) {}
+$('roles').onclick = (e) => { const r = e.target.closest('button'); if (!r) return; role = r.dataset.r; document.querySelectorAll('#roles button').forEach((b) => b.classList.toggle('on', b === r)); };
 let pyState = 'loading';
 function status() { $('load').textContent = pyState === 'ready' ? T[L].ready : pyState === 'fail' ? T[L].fail : T[L].loading; }
 (async () => { try { py = await loadPyodide(); pyState = 'ready'; } catch (e) { pyState = 'fail'; } status(); })();
-$('go').onclick = () => {
-  try { localStorage.setItem('cc-name', $('name').value); localStorage.setItem('cc-dept', $('dept').value); } catch (e) {}
-  $('start').classList.add('hide'); $('ch').classList.remove('hide'); t0 = Date.now(); cur = 0; paint(true);
+
+const val = (id) => $(id).value.trim();
+function lead(type, extra = {}) {
+  // Same Google Sheet endpoint the website's forms use; fire-and-forget, never blocks the challenge
+  const body = { type, name: val('name'), phone: '+91' + val('phone').replace(/\D/g, ''), college: val('college'), place: val('place'), role, language: L,
+    consent: 'yes', honeypot: val('hp'), page_url: location.href, utm_source: q.get('utm_source') || 'challenge', utm_medium: q.get('utm_medium') || '', utm_campaign: q.get('utm_campaign') || '', ...extra };
+  try { fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(body), keepalive: true }).catch(() => {}); } catch (e) {}
+}
+$('form').onsubmit = (e) => {
+  e.preventDefault();
+  const phone = val('phone').replace(/\D/g, '');
+  const err = val('name').length < 2 ? T[L].eName : !/^[6-9]\d{9}$/.test(phone) ? T[L].ePhone : val('college').length < 3 ? T[L].eCollege : val('place').length < 2 ? T[L].ePlace : !$('consent').checked ? T[L].eConsent : '';
+  $('ferr').textContent = err;
+  if (err) return;
+  try { ['name', 'phone', 'college', 'place'].forEach((k) => localStorage.setItem('cc-' + k, $(k).value)); } catch (e) {}
+  lead('challenge_start');
+  $('start').classList.add('hide'); $('ch').classList.remove('hide'); t0 = Date.now(); cur = 0; paint(true); window.scrollTo({ top: 0 });
 };
 const KEYS = ['⇥', '"', '(', ')', ':', '=', '*', ',', '>='];
 $('keys').innerHTML = KEYS.map((k) => `<button data-k="${k}">${k}</button>`).join('');
 $('keys').onclick = (ev) => { const k = ev.target.dataset.k; if (!k) return; ins(k === '⇥' ? '    ' : k === '(' ? '()' : k === '"' ? '""' : k, k === '(' || k === '"'); };
-function ins(s, inside) { const a = $('code'); const p = a.selectionStart; a.value = a.value.slice(0, p) + s + a.value.slice(a.selectionEnd); const q = inside ? p + 1 : p + s.length; a.focus(); a.setSelectionRange(q, q); }
+function ins(s, inside) { const a = $('code'); const p = a.selectionStart; a.value = a.value.slice(0, p) + s + a.value.slice(a.selectionEnd); const q2 = inside ? p + 1 : p + s.length; a.focus(); a.setSelectionRange(q2, q2); }
 $('code').addEventListener('keydown', (e) => { if (e.key === 'Tab') { e.preventDefault(); ins('    '); } });
 function paint(reset) {
   const c = C[cur];
@@ -172,14 +244,11 @@ function paint(reset) {
   document.querySelectorAll('.steps b').forEach((b, i) => (b.className = solved[i] ? 'done' : i === cur ? 'on' : ''));
   $('next').textContent = cur === 2 ? T[L].finish : T[L].next;
 }
-const clean = (s) => s.replace(/[“”„]/g, '"').replace(/[‘’]/g, "'").replace(/ /g, ' ').replace(/\t/g, '    ');
-$('run').onclick = async () => {
-  if (!py) { status(); return; }
-  const code = clean($('code').value); $('code').value = code;
+const clean = (s) => s.replace(/[“”„]/g, '"').replace(/[‘’]/g, "'").replace(/ /g, ' ').replace(/\t/g, '    ');
+function runPy(code) {
   py.globals.set('SRC', code);
-  let res;
   try {
-    res = py.runPython(`
+    return py.runPython(`
 import sys, io, traceback
 _o = io.StringIO(); sys.stdout = _o
 _err = ''
@@ -191,26 +260,136 @@ except Exception as e:
     _err = (f"Line {line[-1].lineno}: " if line else '') + type(e).__name__ + ': ' + str(e)
 sys.stdout = sys.__stdout__
 (_o.getvalue(), _err)`).toJs();
-  } catch (e) { res = ['', String(e).split('\n').pop()]; }
-  const [out, err] = res; const o = $('out');
-  o.innerHTML = ''; o.textContent = out;
-  if (err) { const s = document.createElement('div'); s.className = 'err'; s.textContent = err; o.appendChild(s); }
-  const good = !err && out.replace(/\s+$/, '') === C[cur].expect;
-  const ok = $('ok');
-  if (good) { solved[cur] = true; ok.innerHTML = `<b>${T[L].right}</b>`; ok.style.display = 'block'; ok.classList.remove('pop'); void ok.offsetWidth; ok.classList.add('pop'); $('next').classList.remove('hide'); paint(false); }
-  else if (!err && out) { ok.style.display = 'block'; ok.style.background = '#fff7e6'; ok.style.color = '#7a4b00'; ok.innerHTML = T[L].almost; setTimeout(() => { ok.style.background = ''; ok.style.color = ''; }, 50); }
-  else ok.style.display = 'none';
-};
-$('hintb').onclick = () => { const h = C[cur].hint; const i = Math.min(hints, h.length - 1); $('hint').innerHTML = i === 0 ? h[0] : `<code>${h[1].replace(/</g, '&lt;')}</code>`; $('hint').style.display = 'block'; hints++; };
-$('next').onclick = () => { if (cur < 2) { cur++; paint(true); window.scrollTo({ top: 0, behavior: 'smooth' }); } else { $('ch').classList.add('hide'); $('done').classList.remove('hide'); cert(); window.scrollTo({ top: 0 }); } };
-let secs = 0;
-function cert() {
-  if (!secs) secs = Math.round((Date.now() - t0) / 1000);
-  $('cname').textContent = $('name').value.trim() || 'Faculty member';
-  $('cwhat').textContent = T[L].certWhat(3) + ($('dept').value.trim() ? ` · ${$('dept').value.trim()}` : '');
-  $('ctime').textContent = T[L].time(Math.floor(secs / 60), secs % 60);
-  $('cdate').textContent = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+  } catch (e) { return ['', String(e).split('\n').pop()]; }
 }
+// Replace the student's own "name = ..." lines with test values; null if a variable line is missing
+function withValues(code, vals) {
+  let out = code;
+  for (const [k, v] of Object.entries(vals)) {
+    const re = new RegExp(`^(\\s*)${k}\\s*=(?!=).*$`, 'm');
+    if (!re.test(out)) return null;
+    out = out.replace(re, `$1${k} = ${v}`);
+  }
+  return out;
+}
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+function feedback(kind, html) {
+  const ok = $('ok'); ok.className = 'ok' + (kind === 'good' ? '' : ' warn'); ok.innerHTML = html; ok.style.display = 'block';
+  if (kind === 'good') { ok.classList.remove('pop'); void ok.offsetWidth; ok.classList.add('pop'); }
+}
+$('run').onclick = () => {
+  if (!py) { status(); return; }
+  const code = clean($('code').value); $('code').value = code;
+  const [out, err] = runPy(code); const o = $('out');
+  o.innerHTML = ''; o.textContent = out;
+  if (err) { const s = document.createElement('div'); s.className = 'err'; s.textContent = err; o.appendChild(s); $('ok').style.display = 'none'; return; }
+  const c = C[cur];
+  if (out.replace(/\s+$/, '') !== c.expect) { if (out) feedback('warn', T[L].almost); else $('ok').style.display = 'none'; return; }
+  for (const t of c.tests || []) {
+    const varied = withValues(code, t);
+    if (varied === null) { feedback('warn', T[L].keepVar(Object.keys(t).join(' / '))); return; }
+    const [o2, e2] = runPy(varied); const got = (o2 || e2).replace(/\s+$/, ''), want = c.want(t);
+    if (got !== want) { feedback('warn', T[L].hardcoded(esc(Object.entries(t).map(([k, v]) => `${k} = ${v}`).join(', ')), esc(got), esc(want))); return; }
+  }
+  solved[cur] = true; feedback('good', `<b>${T[L].right}</b>`); $('next').classList.remove('hide'); paint(false);
+};
+$('hintb').onclick = () => { const h = C[cur].hint; const i = Math.min(hints, h.length - 1); $('hint').innerHTML = i === 0 ? h[0] : `<code>${esc(h[1])}</code>`; $('hint').style.display = 'block'; hints++; };
+let secs = 0;
+$('next').onclick = () => {
+  if (cur < 2) { cur++; paint(true); window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+  if (!solved.every(Boolean)) return;
+  secs = Math.round((Date.now() - t0) / 1000);
+  lead('challenge_complete', { seconds: secs });
+  $('ch').classList.add('hide'); $('done').classList.remove('hide'); drawCert(); window.scrollTo({ top: 0 });
+};
+
+/* ---------- the certificate: a 1080x1350 image (Instagram portrait size) ---------- */
+let certBlob = null;
+function wrapText(g, text, x, y, maxW, lh) {
+  const words = text.split(' '); let line = '', lines = [];
+  for (const w of words) { const t = line ? line + ' ' + w : w; if (g.measureText(t).width > maxW && line) { lines.push(line); line = w; } else line = t; }
+  lines.push(line); lines.forEach((l, i) => g.fillText(l, x, y + i * lh)); return lines.length;
+}
+async function drawCert() {
+  const m = Math.floor(secs / 60), s = secs % 60, tt = T[L];
+  const F = L === 'kn' ? "'Noto Sans Kannada', Inter" : L === 'hi' ? "'Noto Sans Devanagari', Inter" : 'Inter';
+  try { await Promise.all([document.fonts.load(`900 40px Inter`), document.fonts.load(`800 40px ${F}`), document.fonts.load(`600 40px ${F}`), document.fonts.load(`700 40px 'JetBrains Mono'`)]); } catch (e) {}
+  const W = 1080, H = 1350, cv = document.createElement('canvas'); cv.width = W; cv.height = H; const g = cv.getContext('2d');
+  // background
+  const bg = g.createLinearGradient(0, 0, W, H); bg.addColorStop(0, '#0b1023'); bg.addColorStop(.55, '#1e1b4b'); bg.addColorStop(1, '#3b0764'); g.fillStyle = bg; g.fillRect(0, 0, W, H);
+  const glow = g.createRadialGradient(900, 120, 0, 900, 120, 600); glow.addColorStop(0, 'rgba(99,102,241,.55)'); glow.addColorStop(1, 'rgba(99,102,241,0)'); g.fillStyle = glow; g.fillRect(0, 0, W, H);
+  // card
+  const pad = 56; g.fillStyle = '#ffffff'; roundRect(g, pad, pad, W - 2 * pad, H - 2 * pad, 44); g.fill();
+  const bar = g.createLinearGradient(pad, 0, W - pad, 0); bar.addColorStop(0, '#0071e3'); bar.addColorStop(.5, '#7c3aed'); bar.addColorStop(1, '#e5397a');
+  g.fillStyle = bar; roundRect(g, pad, pad, W - 2 * pad, 22, { tl: 44, tr: 44, br: 0, bl: 0 }); g.fill();
+  // brand row
+  g.fillStyle = bar; roundRect(g, 120, 130, 74, 74, 20); g.fill();
+  g.fillStyle = '#fff'; g.font = "700 28px 'JetBrains Mono'"; g.textAlign = 'center'; g.fillText('</>', 157, 177);
+  g.textAlign = 'left'; g.fillStyle = '#1d1d1f'; g.font = '800 40px Inter'; g.fillText('Campus Champ', 214, 168);
+  g.fillStyle = '#6e6e73'; g.font = '600 24px Inter'; g.fillText('Champ Lab Challenge · Python for Pharmacy', 214, 202);
+  // seal
+  g.save(); g.translate(880, 196); g.fillStyle = '#fbbf24';
+  for (let i = 0; i < 24; i++) { g.rotate(Math.PI / 12); g.beginPath(); g.moveTo(0, -78); g.lineTo(14, -60); g.lineTo(-14, -60); g.closePath(); g.fill(); }
+  g.beginPath(); g.arc(0, 0, 64, 0, Math.PI * 2); g.fill(); g.fillStyle = '#b45309'; g.font = '900 30px Inter'; g.textAlign = 'center'; g.fillText('3/3', 0, -2);
+  g.font = '800 15px Inter'; g.fillText('PYTHON', 0, 24); g.restore();
+  // title
+  g.textAlign = 'center'; g.fillStyle = '#7c3aed'; g.font = `800 ${L === 'en' ? 34 : 40}px ${F}`; g.fillText(tt.certTitle, W / 2, 330);
+  g.fillStyle = '#6e6e73'; g.font = `600 28px ${F}`; g.fillText(tt.certFor, W / 2, 400);
+  // name
+  const name = val('name') || 'Champ'; let size = 84; g.font = `900 ${size}px ${F}`;
+  while (g.measureText(name).width > W - 2 * pad - 120 && size > 40) { size -= 4; g.font = `900 ${size}px ${F}`; }
+  g.fillStyle = '#1d1d1f'; g.fillText(name, W / 2, 500);
+  g.strokeStyle = '#e5e5ea'; g.lineWidth = 3; g.beginPath(); g.moveTo(240, 540); g.lineTo(W - 240, 540); g.stroke();
+  const sub = [role === 'Faculty' ? tt.faculty : tt.student, val('college'), val('place')].filter(Boolean).join(' · ');
+  g.fillStyle = '#3a3a3c'; g.font = `600 28px ${F}`; const sl = wrapText(g, sub, W / 2, 590, W - 2 * pad - 120, 38);
+  // what + time
+  let y = 590 + sl * 38 + 50; g.fillStyle = '#1d1d1f'; g.font = `700 36px ${F}`; const wl = wrapText(g, tt.certWhat, W / 2, y, W - 2 * pad - 140, 48);
+  y += wl * 48 + 30; const tStr = tt.certTime(m, s); g.font = `900 46px ${F}`; const tw = g.measureText(tStr).width + 70;
+  g.fillStyle = '#fef3c7'; roundRect(g, W / 2 - tw / 2, y - 50, tw, 78, 39); g.fill(); g.fillStyle = '#b45309'; g.fillText(tStr, W / 2, y + 4);
+  // signature
+  const sy = Math.min(y + 150, H - pad - 300); g.strokeStyle = '#d1d1d6'; g.lineWidth = 2; g.beginPath(); g.moveTo(W / 2 - 180, sy); g.lineTo(W / 2 + 180, sy); g.stroke();
+  g.fillStyle = '#1d1d1f'; g.font = 'italic 700 34px Inter'; g.fillText('Mahantesh Goudar', W / 2, sy - 14);
+  g.fillStyle = '#6e6e73'; g.font = '600 22px Inter'; g.fillText('Founder, Campus Champ', W / 2, sy + 34);
+  // footer: challenge link + QR
+  const fy = H - pad - 250; g.fillStyle = '#f5f5f7'; roundRect(g, pad + 40, fy, W - 2 * pad - 80, 200, 28); g.fill();
+  g.textAlign = 'left'; g.fillStyle = '#3a3a3c'; g.font = `700 27px ${F}`; wrapText(g, tt.certChallenge, pad + 80, fy + 70, 560, 36);
+  g.fillStyle = '#0071e3'; g.font = '900 36px Inter'; g.fillText('campuschamp.in/challenge', pad + 80, fy + 160);
+  try { const qr = qrcode(0, 'M'); qr.addData(LINK); qr.make(); const n = qr.getModuleCount(), sz = 150, cell = sz / n, qx = W - pad - 80 - sz, qy = fy + 25;
+    g.fillStyle = '#fff'; g.fillRect(qx - 8, qy - 8, sz + 16, sz + 16); g.fillStyle = '#0b0b0f';
+    for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (qr.isDark(r, c)) g.fillRect(qx + c * cell, qy + r * cell, Math.ceil(cell), Math.ceil(cell)); } catch (e) {}
+  g.textAlign = 'center'; g.fillStyle = '#a1a1a6'; g.font = '600 22px Inter';
+  g.fillText(new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' }) + ' · campuschamp.in', W / 2, H - pad - 22);
+  $('certimg').src = cv.toDataURL('image/png');
+  certBlob = await new Promise((r) => cv.toBlob(r, 'image/png'));
+}
+function roundRect(g, x, y, w, h, r) {
+  const R = typeof r === 'number' ? { tl: r, tr: r, br: r, bl: r } : r;
+  g.beginPath(); g.moveTo(x + R.tl, y); g.lineTo(x + w - R.tr, y); g.quadraticCurveTo(x + w, y, x + w, y + R.tr); g.lineTo(x + w, y + h - R.br); g.quadraticCurveTo(x + w, y + h, x + w - R.br, y + h);
+  g.lineTo(x + R.bl, y + h); g.quadraticCurveTo(x, y + h, x, y + h - R.bl); g.lineTo(x, y + R.tl); g.quadraticCurveTo(x, y, x + R.tl, y); g.closePath();
+}
+
+/* ---------- sharing ---------- */
+const shareLink = (src) => `${LINK}?utm_source=${src}&utm_medium=certificate_share`;
+const shareMsg = (src) => `${T[L].shareText(Math.floor(secs / 60), secs % 60)} ${shareLink(src)}`;
+const certFile = () => certBlob && new File([certBlob], 'Campus-Champ-certificate.png', { type: 'image/png' });
+function toast(t) { const e = $('toast'); e.textContent = t; e.classList.add('on'); setTimeout(() => e.classList.remove('on'), 3800); }
+function download() { const a = document.createElement('a'); a.href = $('certimg').src; a.download = 'Campus-Champ-certificate.png'; document.body.appendChild(a); a.click(); a.remove(); }
+async function nativeShare(src) {
+  const f = certFile();
+  if (f && navigator.canShare && navigator.canShare({ files: [f] })) {
+    try { await navigator.share({ files: [f], text: shareMsg(src), title: 'Campus Champ' }); lead('certificate_share', { channel: src, seconds: secs }); return true; } catch (e) { return e.name === 'AbortError'; }
+  }
+  return false;
+}
+$('sh-wa').onclick = async () => { if (await nativeShare('whatsapp')) return; lead('certificate_share', { channel: 'whatsapp', seconds: secs }); location.href = 'https://wa.me/?text=' + encodeURIComponent(shareMsg('whatsapp')); };
+$('sh-li').onclick = async () => {
+  lead('certificate_share', { channel: 'linkedin', seconds: secs });
+  try { await navigator.clipboard.writeText(shareMsg('linkedin')); } catch (e) {}
+  download(); toast(T[L].copied);
+  setTimeout(() => window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareLink('linkedin')), '_blank'), 900);
+};
+$('sh-ig').onclick = async () => { if (await nativeShare('instagram')) return; lead('certificate_share', { channel: 'instagram', seconds: secs }); download(); toast(T[L].igTip); };
+$('sh-dl').onclick = download;
 tr();
 </script>
 </body>
