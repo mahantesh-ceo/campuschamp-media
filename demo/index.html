@@ -65,8 +65,8 @@ textarea{font-variant-ligatures:none;width:100%;min-height:170px;margin-top:14px
     <h1 data-t="hello"></h1>
     <p class="lead" data-t="intro"></p>
     <div class="card">
-      <label data-t="yourName"></label><input id="name" type="text" autocomplete="name" placeholder="Dr. …">
-      <label data-t="yourDept"></label><input id="dept" type="text" placeholder="Pharmaceutics, Ayurveda, …">
+      <label data-t="yourName"></label><input id="name" type="text" autocomplete="name" placeholder="Your full name">
+      <label data-t="yourDept"></label><input id="dept" type="text" placeholder="B.Pharm Sem I, or your department">
       <button class="btn blue" id="go" data-t="start"></button>
       <p class="status" id="load"></p>
     </div>
@@ -107,21 +107,21 @@ textarea{font-variant-ligatures:none;width:100%;min-height:170px;margin-top:14px
 <script>
 const T = {
   en: { hello: 'Write your first <span class="g">Python program</span> in 10 minutes.', intro: 'Three small pharmacy challenges. On your phone. Nothing to install.',
-    yourName: 'Your name', yourDept: 'Department', start: 'Start the challenge', expected: 'Your output should be exactly',
+    yourName: 'Your name', yourDept: 'Class or department', start: 'Start the challenge', expected: 'Your output should be exactly',
     run: '▶ Run', hint: 'Hint', next: 'Next challenge →', finish: 'Finish ✓', loading: 'Getting Python ready…', ready: 'Python is ready ✓', fail: 'Python could not load. Check the internet and refresh.',
     right: 'Correct! 🎉', almost: 'Close! Compare your output with the expected one, character by character.',
     doneTitle: 'You’re a <span class="g">programmer</span> now.', certTitle: 'Founding Faculty · Champ Lab',
     certWhat: (n) => `wrote, ran and debugged ${n} real Python programs for pharmacy`, time: (m, s) => `Done in ${m} min ${s} s`,
     share: 'Take a screenshot and share it with your colleagues. Your students can do this too.', step: (i) => `Challenge ${i} of 3` },
   kn: { hello: 'ನಿಮ್ಮ ಮೊದಲ <span class="g">Python program</span> ಅನ್ನು 10 ನಿಮಿಷದಲ್ಲಿ ಬರೆಯಿರಿ.', intro: 'ಮೂರು ಚಿಕ್ಕ pharmacy challenges. ನಿಮ್ಮ phone ನಲ್ಲೇ. ಏನೂ install ಮಾಡಬೇಕಿಲ್ಲ.',
-    yourName: 'ನಿಮ್ಮ ಹೆಸರು', yourDept: 'ವಿಭಾಗ', start: 'Challenge ಶುರು ಮಾಡಿ', expected: 'ನಿಮ್ಮ output ಸರಿಯಾಗಿ ಹೀಗಿರಬೇಕು',
+    yourName: 'ನಿಮ್ಮ ಹೆಸರು', yourDept: 'Class ಅಥವಾ ವಿಭಾಗ', start: 'Challenge ಶುರು ಮಾಡಿ', expected: 'ನಿಮ್ಮ output ಸರಿಯಾಗಿ ಹೀಗಿರಬೇಕು',
     run: '▶ Run', hint: 'ಸುಳಿವು', next: 'ಮುಂದಿನ challenge →', finish: 'ಮುಗಿಸಿ ✓', loading: 'Python ಸಿದ್ಧವಾಗುತ್ತಿದೆ…', ready: 'Python ಸಿದ್ಧ ✓', fail: 'Python load ಆಗಲಿಲ್ಲ. Internet check ಮಾಡಿ refresh ಮಾಡಿ.',
     right: 'ಸರಿ! 🎉', almost: 'ಹತ್ತಿರ ಬಂದಿದ್ದೀರಿ! ನಿಮ್ಮ output ಅನ್ನು ನಿರೀಕ್ಷಿತ output ಜೊತೆ ಅಕ್ಷರ ಅಕ್ಷರವಾಗಿ ಹೋಲಿಸಿ.',
     doneTitle: 'ಈಗ ನೀವು <span class="g">programmer</span>.', certTitle: 'Founding Faculty · Champ Lab',
     certWhat: (n) => `pharmacy ಗಾಗಿ ${n} ನಿಜವಾದ Python programs ಬರೆದು, run ಮಾಡಿ, ಸರಿ ಮಾಡಿದ್ದಾರೆ`, time: (m, s) => `${m} ನಿಮಿಷ ${s} ಸೆಕೆಂಡ್‌ನಲ್ಲಿ ಮುಗಿಸಿದರು`,
     share: 'Screenshot ತೆಗೆದು ಸಹೋದ್ಯೋಗಿಗಳ ಜೊತೆ share ಮಾಡಿ. ನಿಮ್ಮ ವಿದ್ಯಾರ್ಥಿಗಳೂ ಇದನ್ನು ಮಾಡಬಹುದು.', step: (i) => `Challenge ${i} / 3` },
   hi: { hello: 'अपना पहला <span class="g">Python program</span> 10 मिनट में लिखिए।', intro: 'तीन छोटे pharmacy challenges. आपके phone पर. कुछ भी install नहीं करना.',
-    yourName: 'आपका नाम', yourDept: 'विभाग', start: 'Challenge शुरू कीजिए', expected: 'आपका output बिल्कुल ऐसा होना चाहिए',
+    yourName: 'आपका नाम', yourDept: 'Class या विभाग', start: 'Challenge शुरू कीजिए', expected: 'आपका output बिल्कुल ऐसा होना चाहिए',
     run: '▶ Run', hint: 'संकेत', next: 'अगला challenge →', finish: 'पूरा ✓', loading: 'Python तैयार हो रहा है…', ready: 'Python तैयार ✓', fail: 'Python load नहीं हुआ. Internet जाँचकर refresh कीजिए.',
     right: 'सही! 🎉', almost: 'करीब हैं! अपना output अपेक्षित output से अक्षर-अक्षर मिलाइए.',
     doneTitle: 'अब आप <span class="g">programmer</span> हैं।', certTitle: 'Founding Faculty · Champ Lab',
