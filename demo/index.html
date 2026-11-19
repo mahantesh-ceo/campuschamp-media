@@ -376,6 +376,7 @@ $('next').onclick = () => {
   if (!solved.every(Boolean)) return;
   secs = Math.round((Date.now() - t0) / 1000);
   lead('challenge_complete', { seconds: secs, quiz_score: qscore });
+  try { fetch('https://campuschamp.in/api/leaderboard', { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ name: val('name'), college: val('college'), seconds: secs, quiz: qscore }), keepalive: true }).catch(() => {}); } catch (e) {}
   $('ch').classList.add('hide'); $('done').classList.remove('hide'); drawCert(); window.scrollTo({ top: 0 });
 };
 

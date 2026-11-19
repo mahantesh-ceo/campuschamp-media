@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Champ Leaderboard</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@500;600;700;800&family=JetBrains+Mono:wght@700&family=Noto+Sans+Kannada:wght@600;700;800&display=swap">
+<style>
+:root{--saf:#F97316;--gold:#FBBF24;--ink:#fff;--soft:#C7D2FE;--card:rgba(255,255,255,.07);--line:rgba(255,255,255,.14)}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{font-family:Inter,'Noto Sans Kannada',sans-serif;color:var(--ink);background:radial-gradient(60vw 60vh at 80% 30%,rgba(37,99,235,.45),transparent 70%),linear-gradient(170deg,#0B1437,#060A1F);overflow:hidden}
+.wrap{height:100vh;display:grid;grid-template-columns:1.25fr 1fr;gap:3vw;padding:3.2vh 3.2vw}
+.top{display:flex;align-items:center;gap:1vw;font:800 2.2vw Poppins,sans-serif}
+.top i{width:3.2vw;height:3.2vw;border-radius:.9vw;background:linear-gradient(140deg,#F97316,#EA580C);display:grid;place-items:center;font:700 1.2vw 'JetBrains Mono',monospace;font-style:normal}
+h1{font:800 3.6vw/1.05 Poppins,'Noto Sans Kannada',sans-serif;margin-top:2.6vh}
+h1 b{color:var(--saf)}
+.sub{color:var(--soft);font-size:1.3vw;margin-top:.8vh}
+.list{margin-top:2.4vh;display:grid;gap:1vh}
+.row{display:grid;grid-template-columns:4vw 1fr auto;align-items:center;gap:1.2vw;background:var(--card);border:1px solid var(--line);border-radius:1.2vw;padding:1.2vh 1.4vw;transition:background .6s}
+.row.new{background:rgba(249,115,22,.35)}
+.rank{font:800 2vw Poppins,sans-serif;text-align:center;color:var(--soft)}
+.row:nth-child(1) .rank{color:var(--gold)}.row:nth-child(2) .rank{color:#E5E7EB}.row:nth-child(3) .rank{color:#F59E0B}
+.row:nth-child(-n+3){border-color:rgba(251,191,36,.5)}
+.who b{display:block;font:800 1.7vw/1.2 Poppins,'Noto Sans Kannada',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.who span{display:block;color:var(--soft);font-size:1.05vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:32vw}
+.time{font:800 2vw 'JetBrains Mono',monospace;color:#FDBA74}
+.empty{color:var(--soft);font-size:1.6vw;margin-top:4vh;line-height:1.5}
+.right{display:flex;flex-direction:column;min-height:0}
+.prot{flex:1;min-height:0;position:relative}
+.prot img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 2vw rgba(56,189,248,.4));animation:float 8s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-1.2vh) rotate(2deg)}}
+.beat{background:var(--saf);border-radius:1.6vw;padding:2.2vh 1.8vw;display:grid;grid-template-columns:1fr 13vw;gap:1.6vw;align-items:center}
+.beat h2{font:800 2.4vw/1.15 Poppins,'Noto Sans Kannada',sans-serif}
+.beat p{font-size:1.2vw;margin-top:.8vh;font-weight:600}
+.beat .url{display:inline-block;margin-top:1.2vh;background:#fff;color:#C2410C;font:800 1.35vw Poppins,sans-serif;border-radius:999px;padding:.6vh 1.2vw}
+.qr{background:#fff;border-radius:1vw;padding:.8vw}.qr img{width:100%;display:block}
+.race{margin-top:2.2vh;background:var(--card);border:1px solid var(--line);border-radius:1.4vw;padding:1.8vh 1.6vw}
+.race h3{font:800 1.4vw Poppins,'Noto Sans Kannada',sans-serif;color:#FDBA74}
+.bar{display:grid;grid-template-columns:13vw 1fr 3vw;gap:1vw;align-items:center;margin-top:1vh;font-size:1.05vw;font-weight:700}
+.bar span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar i{display:block;height:1.4vh;border-radius:999px;background:linear-gradient(90deg,#F97316,#FBBF24);min-width:.6vw;transition:width .8s}
+.bar b{text-align:right;font-family:'JetBrains Mono',monospace}
+.foot{display:flex;justify-content:space-between;color:var(--soft);font-size:1vw;margin-top:1.4vh}
+.dot{display:inline-block;width:.7vw;height:.7vw;border-radius:50%;background:#22C55E;margin-right:.5vw;vertical-align:middle}
+.dot.off{background:#EF4444}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section>
+    <div class="top"><i>&lt;/&gt;</i>Campus Champ</div>
+    <h1 id="title"></h1>
+    <p class="sub" id="sub"></p>
+    <div class="list" id="list"></div>
+  </section>
+  <section class="right">
+    <div class="prot"><img src="protein.png" alt=""></div>
+    <div class="beat"><div><h2 id="beat"></h2><p id="beatp"></p><span class="url">campuschamp.in/challenge</span></div><div class="qr"><img src="qr.svg" alt="QR code to the challenge"></div></div>
+    <div class="race"><h3 id="race"></h3><div id="bars"></div></div>
+    <div class="foot"><span><span class="dot" id="dot"></span><span id="status"></span></span><span id="total"></span></div>
+  </section>
+</div>
+<script>
+const API = 'https://campuschamp.in/api/leaderboard';
+const T = {
+  en: { title: 'Today’s <b>fastest</b> Champs', sub: '2 Python programs + a 5-question AI quiz. Fastest finish wins.', beat: (t) => t ? `Can you beat ${t}?` : 'Be the first Champ today!',
+    beatp: 'Scan, write your first Python program, get your certificate.', race: 'College race: most finishers', empty: 'No finishers yet.<br>Scan the QR code and be the first on the board!',
+    live: 'Live · updates every 15 seconds', off: 'Reconnecting…', total: (n) => `${n} finished today`, none: 'Waiting for the first college…' },
+  kn: { title: 'ಇಂದಿನ <b>ಅತಿ ವೇಗದ</b> ಚಾಂಪ್‌ಗಳು', sub: '2 Python ಪ್ರೋಗ್ರಾಂ + 5 ಪ್ರಶ್ನೆಗಳ AI ರಸಪ್ರಶ್ನೆ. ಬೇಗ ಮುಗಿಸಿದವರು ಗೆಲ್ಲುತ್ತಾರೆ.', beat: (t) => t ? `${t} ಅನ್ನು ಮೀರಿಸಬಲ್ಲಿರಾ?` : 'ಇಂದಿನ ಮೊದಲ ಚಾಂಪ್ ನೀವಾಗಿ!',
+    beatp: 'ಸ್ಕ್ಯಾನ್ ಮಾಡಿ, ಮೊದಲ Python ಪ್ರೋಗ್ರಾಂ ಬರೆಯಿರಿ, ಪ್ರಮಾಣಪತ್ರ ಪಡೆಯಿರಿ.', race: 'ಕಾಲೇಜುಗಳ ಸ್ಪರ್ಧೆ: ಹೆಚ್ಚು ಜನ ಮುಗಿಸಿದವರು', empty: 'ಇನ್ನೂ ಯಾರೂ ಮುಗಿಸಿಲ್ಲ.<br>QR ಸ್ಕ್ಯಾನ್ ಮಾಡಿ, ಮೊದಲಿಗರಾಗಿ!',
+    live: 'ಲೈವ್ · ಪ್ರತಿ 15 ಸೆಕೆಂಡಿಗೆ ಅಪ್‌ಡೇಟ್', off: 'ಮರುಸಂಪರ್ಕ…', total: (n) => `ಇಂದು ${n} ಜನ ಮುಗಿಸಿದ್ದಾರೆ`, none: 'ಮೊದಲ ಕಾಲೇಜಿಗಾಗಿ ಕಾಯುತ್ತಿದ್ದೇವೆ…' },
+};
+const L = new URLSearchParams(location.search).get('lang') === 'kn' ? 'kn' : 'en', t = T[L];
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const fmt = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+$('title').innerHTML = t.title; $('sub').textContent = t.sub; $('beatp').textContent = t.beatp; $('race').textContent = t.race;
+document.documentElement.lang = L;
+let seen = null;
+async function load() {
+  try {
+    const r = await fetch(API, { cache: 'no-store' }); if (!r.ok) throw 0;
+    const d = await r.json();
+    const keys = d.top.map((x) => x.name + x.college + x.seconds);
+    $('list').innerHTML = d.top.length ? d.top.map((x, i) => `<div class="row${seen && !seen.includes(keys[i]) ? ' new' : ''}"><span class="rank">${i + 1}</span><span class="who"><b>${esc(x.name)}</b><span>${esc(x.college)}</span></span><span class="time">${fmt(x.seconds)}</span></div>`).join('') : `<p class="empty">${t.empty}</p>`;
+    seen = keys; setTimeout(() => document.querySelectorAll('.row.new').forEach((e) => e.classList.remove('new')), 4000);
+    $('beat').textContent = t.beat(d.top[0] ? fmt(d.top[0].seconds) : '');
+    const max = Math.max(1, ...d.colleges.map((c) => c.count));
+    $('bars').innerHTML = d.colleges.length ? d.colleges.map((c) => `<div class="bar"><span>${esc(c.college)}</span><i style="width:${(c.count / max) * 100}%"></i><b>${c.count}</b></div>`).join('') : `<p class="bar" style="display:block;color:var(--soft)">${t.none}</p>`;
+    $('total').textContent = t.total(d.total); $('status').textContent = t.live; $('dot').className = 'dot';
+  } catch (e) { $('status').textContent = t.off; $('dot').className = 'dot off'; }
+}
+load(); setInterval(load, 15000);
+</script>
+</body>
+</html>
