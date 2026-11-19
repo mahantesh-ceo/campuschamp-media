@@ -51,6 +51,10 @@ textarea{font-variant-ligatures:none;width:100%;min-height:170px;margin-top:14px
 .ok{display:none;margin-top:14px;border-radius:16px;padding:16px;background:#e9f8ef;color:#0f5132;font-weight:600;font-size:16px;line-height:1.45}
 .ok.warn{background:#fff7e6;color:#7a4b00}
 .ok b{display:block;font-size:20px;margin-bottom:4px}
+.qq{margin-top:14px;font:700 19px/1.4 inherit;font-family:inherit}.qn{color:var(--gray);font-size:13px;font-weight:700;margin-top:14px}
+.qo{display:block;width:100%;text-align:left;border:2px solid var(--hair);background:#fff;border-radius:14px;padding:14px 16px;margin-top:10px;font:600 16px/1.35 inherit;font-family:inherit;color:var(--ink)}
+.qo.right{border-color:var(--green);background:#e9f8ef}.qo.wrong{border-color:var(--red);background:#fdecee}.qo:disabled{opacity:1}
+.qf{margin-top:12px;border-radius:14px;padding:14px 16px;background:#eef4ff;color:#1e3a8a;font-size:15px;line-height:1.5}
 .ok code{font-family:'JetBrains Mono',monospace;background:#fff;padding:1px 6px;border-radius:6px}
 .hint{display:none;margin-top:12px;border-radius:14px;padding:14px;background:#fff7e6;color:#7a4b00;font-size:15px;line-height:1.5}
 .hint code{font-family:'JetBrains Mono',monospace;background:#fff;padding:2px 6px;border-radius:6px;white-space:pre-wrap}
@@ -98,12 +102,15 @@ textarea{font-variant-ligatures:none;width:100%;min-height:170px;margin-top:14px
     <p class="eyebrow" id="cnum"></p>
     <h1 id="ctitle" style="font-size:28px;margin-top:6px"></h1>
     <p class="task" id="ctask"></p>
+    <div id="codeui">
     <div class="expect"><small data-t="expected"></small><span id="cexp"></span></div>
     <textarea id="code" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false"></textarea>
     <div class="keys" id="keys"></div>
     <div class="row"><button class="btn ghost" id="hintb" data-t="hint"></button><button class="btn blue" id="run" data-t="run"></button></div>
     <div class="out" id="out"></div>
     <div class="hint" id="hint"></div>
+    </div>
+    <div id="quiz" class="hide"></div>
     <div class="ok" id="ok"></div>
     <button class="btn hide" id="next"></button>
   </section>
@@ -134,7 +141,7 @@ textarea{font-variant-ligatures:none;width:100%;min-height:170px;margin-top:14px
 const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzD9YZNAdY33ugrs-CrLCKrO2adfQrTU427vReaYsue3QdcLhmNppmdKFUFMNAB_Gnv/exec';
 const LINK = 'https://campuschamp.in/challenge';
 const T = {
-  en: { hello: 'Write your first <span class="g">Python program</span> in 10 minutes.', intro: 'Three small pharmacy challenges. On your phone. Nothing to install. Finish them and get your certificate.',
+  en: { hello: 'Write your first <span class="g">Python program</span> in 10 minutes.', intro: 'Two small Python programs and a 5-question fun quiz on AI in pharmacy. On your phone. Nothing to install. Finish and get your certificate.',
     yourName: 'Your name (as it should appear on the certificate)', yourPhone: 'Mobile number', yourCollege: 'College', yourPlace: 'Town / city', iAm: 'I am a', student: 'Student', faculty: 'Faculty',
     consent: 'I agree that Campus Champ may contact me on this number (call, SMS or WhatsApp) about its courses and events.',
     eName: 'Please enter your name.', ePhone: 'Please enter a valid 10-digit mobile number.', eCollege: 'Please enter your college.', ePlace: 'Please enter your town or city.', eConsent: 'Please tick the box to continue.',
@@ -144,12 +151,12 @@ const T = {
     keepVar: (v) => `Keep the line that sets <code>${v}</code> at the top. Your program has to use it.`,
     hardcoded: (setv, got, want) => `Your output is right for this example, but we also tried <code>${setv}</code>: your program printed <code>${got || '(nothing)'}</code> instead of <code>${want}</code>. Let the program decide using the variable, not fixed text.`,
     doneTitle: 'You’re a <span class="g">programmer</span> now.', doneLead: 'Your certificate is ready. Share it, and challenge your friends to beat your time!',
-    certTitle: 'CERTIFICATE OF ACHIEVEMENT', certFor: 'This certifies that', certWhat: 'wrote and ran 3 Python programs for pharmacy', certTime: (m, s) => `in ${m} min ${s} s`,
+    certTitle: 'CERTIFICATE OF ACHIEVEMENT', certFor: 'This certifies that', certWhat: 'wrote and ran Python programs for pharmacy and completed the AI in Pharmacy quiz', certTime: (m, s) => `in ${m} min ${s} s`,
     certChallenge: 'Can you beat this time? Take the challenge:', download: 'Download',
     shareText: (m, s) => `I just wrote my first Python programs for pharmacy in ${m} min ${s} s on Campus Champ! 💊💻 Can you beat my time? Take the 10-minute challenge:`,
     copied: 'Post text copied. Paste it in your LinkedIn post and attach your certificate.', igTip: 'Certificate saved. Post it on your Instagram story and tag @campus.champ!',
     nextTitle: 'Keep going', nextText: 'This was just the start. The full BP101T course, in your language, is waiting on Campus Champ.', nextBtn: 'Continue with Lesson 1 →', step: (i) => `Challenge ${i} of 3` },
-  kn: { hello: 'ನಿಮ್ಮ ಮೊದಲ <span class="g">Python program</span> ಅನ್ನು 10 ನಿಮಿಷದಲ್ಲಿ ಬರೆಯಿರಿ.', intro: 'ಮೂರು ಚಿಕ್ಕ pharmacy challenges. ನಿಮ್ಮ phone ನಲ್ಲೇ. ಏನೂ install ಮಾಡಬೇಕಿಲ್ಲ. ಮುಗಿಸಿದರೆ ನಿಮ್ಮ certificate ಸಿಗುತ್ತೆ.',
+  kn: { hello: 'ನಿಮ್ಮ ಮೊದಲ <span class="g">Python program</span> ಅನ್ನು 10 ನಿಮಿಷದಲ್ಲಿ ಬರೆಯಿರಿ.', intro: 'ಎರಡು ಚಿಕ್ಕ Python programs ಮತ್ತು ಫಾರ್ಮಸಿಯಲ್ಲಿ AI ಬಗ್ಗೆ 5 ಪ್ರಶ್ನೆಗಳ ಮೋಜಿನ quiz. ನಿಮ್ಮ phone ನಲ್ಲೇ. ಏನೂ install ಮಾಡಬೇಕಿಲ್ಲ. ಮುಗಿಸಿದರೆ ನಿಮ್ಮ certificate ಸಿಗುತ್ತೆ.',
     yourName: 'ನಿಮ್ಮ ಹೆಸರು (certificate ಮೇಲೆ ಬರುವಂತೆ)', yourPhone: 'Mobile number', yourCollege: 'College', yourPlace: 'ಊರು / ನಗರ', iAm: 'ನಾನು', student: 'ವಿದ್ಯಾರ್ಥಿ', faculty: 'ಶಿಕ್ಷಕ / ಶಿಕ್ಷಕಿ',
     consent: 'Campus Champ ತನ್ನ courses ಮತ್ತು events ಬಗ್ಗೆ ಈ number ಗೆ (call, SMS ಅಥವಾ WhatsApp) ನನ್ನನ್ನು ಸಂಪರ್ಕಿಸಲು ನಾನು ಒಪ್ಪುತ್ತೇನೆ.',
     eName: 'ದಯವಿಟ್ಟು ನಿಮ್ಮ ಹೆಸರು ಬರೆಯಿರಿ.', ePhone: 'ದಯವಿಟ್ಟು ಸರಿಯಾದ 10 ಅಂಕಿಯ mobile number ಬರೆಯಿರಿ.', eCollege: 'ದಯವಿಟ್ಟು ನಿಮ್ಮ college ಬರೆಯಿರಿ.', ePlace: 'ದಯವಿಟ್ಟು ನಿಮ್ಮ ಊರು ಬರೆಯಿರಿ.', eConsent: 'ಮುಂದುವರೆಯಲು box tick ಮಾಡಿ.',
@@ -159,12 +166,12 @@ const T = {
     keepVar: (v) => `<code>${v}</code> ಹೊಂದಿಸುವ line ಅನ್ನು ಮೇಲೆಯೇ ಇಡಿ. ನಿಮ್ಮ program ಅದನ್ನು ಬಳಸಬೇಕು.`,
     hardcoded: (setv, got, want) => `ಈ example ಗೆ ನಿಮ್ಮ output ಸರಿ, ಆದರೆ ನಾವು <code>${setv}</code> ಕೂಡ ಪ್ರಯತ್ನಿಸಿದೆವು: ನಿಮ್ಮ program <code>${want}</code> ಬದಲು <code>${got || '(ಏನೂ ಇಲ್ಲ)'}</code> print ಮಾಡಿತು. ನಿಗದಿತ text ಅಲ್ಲ, variable ಬಳಸಿ program ನಿರ್ಧರಿಸಲಿ.`,
     doneTitle: 'ಈಗ ನೀವು <span class="g">programmer</span>.', doneLead: 'ನಿಮ್ಮ certificate ಸಿದ್ಧ. Share ಮಾಡಿ, ನಿಮ್ಮ ಸ್ನೇಹಿತರಿಗೆ ನಿಮ್ಮ time ಮೀರಿಸಲು challenge ಮಾಡಿ!',
-    certTitle: 'ಸಾಧನೆಯ ಪ್ರಮಾಣಪತ್ರ', certFor: 'ಇವರು', certWhat: 'pharmacy ಗಾಗಿ 3 Python programs ಬರೆದು run ಮಾಡಿದ್ದಾರೆ', certTime: (m, s) => `${m} ನಿಮಿಷ ${s} ಸೆಕೆಂಡ್‌ನಲ್ಲಿ`,
+    certTitle: 'ಸಾಧನೆಯ ಪ್ರಮಾಣಪತ್ರ', certFor: 'ಇವರು', certWhat: 'ಫಾರ್ಮಸಿಗಾಗಿ Python ಪ್ರೋಗ್ರಾಂಗಳನ್ನು ಬರೆದು ಚಲಾಯಿಸಿ, ಫಾರ್ಮಸಿಯಲ್ಲಿ AI ರಸಪ್ರಶ್ನೆ ಪೂರ್ಣಗೊಳಿಸಿದ್ದಾರೆ', certTime: (m, s) => `${m} ನಿಮಿಷ ${s} ಸೆಕೆಂಡ್‌ನಲ್ಲಿ`,
     certChallenge: 'ಈ time ಮೀರಿಸಬಲ್ಲಿರಾ? Challenge ತೆಗೆದುಕೊಳ್ಳಿ:', download: 'Download',
     shareText: (m, s) => `ನಾನು Campus Champ ನಲ್ಲಿ pharmacy ಗಾಗಿ ನನ್ನ ಮೊದಲ Python programs ಅನ್ನು ${m} ನಿಮಿಷ ${s} ಸೆಕೆಂಡ್‌ನಲ್ಲಿ ಬರೆದೆ! 💊💻 ನನ್ನ time ಮೀರಿಸಬಲ್ಲಿರಾ? 10 ನಿಮಿಷದ challenge:`,
     copied: 'Post text copy ಆಗಿದೆ. LinkedIn post ನಲ್ಲಿ paste ಮಾಡಿ, certificate attach ಮಾಡಿ.', igTip: 'Certificate save ಆಗಿದೆ. Instagram story ಗೆ ಹಾಕಿ @campus.champ ಅನ್ನು tag ಮಾಡಿ!',
     nextTitle: 'ಮುಂದುವರೆಸಿ', nextText: 'ಇದು ಶುರು ಮಾತ್ರ. ಪೂರ್ಣ BP101T course, ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ, Campus Champ ನಲ್ಲಿ ಕಾಯುತ್ತಿದೆ.', nextBtn: 'Lesson 1 ಮುಂದುವರೆಸಿ →', step: (i) => `Challenge ${i} / 3` },
-  hi: { hello: 'अपना पहला <span class="g">Python program</span> 10 मिनट में लिखिए।', intro: 'तीन छोटे pharmacy challenges. आपके phone पर. कुछ भी install नहीं करना. पूरा कीजिए और certificate पाइए.',
+  hi: { hello: 'अपना पहला <span class="g">Python program</span> 10 मिनट में लिखिए।', intro: 'दो छोटे Python programs और pharmacy में AI पर 5 सवालों का मज़ेदार quiz. आपके phone पर. कुछ भी install नहीं करना. पूरा कीजिए और certificate पाइए.',
     yourName: 'आपका नाम (जैसा certificate पर चाहिए)', yourPhone: 'Mobile number', yourCollege: 'College', yourPlace: 'शहर / कस्बा', iAm: 'मैं हूँ', student: 'Student', faculty: 'Faculty',
     consent: 'मैं सहमत हूँ कि Campus Champ अपने courses और events के बारे में इस number पर (call, SMS या WhatsApp) मुझसे संपर्क कर सकता है.',
     eName: 'कृपया अपना नाम लिखिए.', ePhone: 'कृपया सही 10 अंकों का mobile number लिखिए.', eCollege: 'कृपया अपना college लिखिए.', ePlace: 'कृपया अपना शहर लिखिए.', eConsent: 'आगे बढ़ने के लिए box पर tick कीजिए.',
@@ -174,7 +181,7 @@ const T = {
     keepVar: (v) => `<code>${v}</code> वाली line ऊपर ही रखिए. आपके program को उसे use करना है.`,
     hardcoded: (setv, got, want) => `इस example के लिए आपका output सही है, पर हमने <code>${setv}</code> भी आज़माया: आपके program ने <code>${want}</code> की जगह <code>${got || '(कुछ नहीं)'}</code> print किया. तय text नहीं, variable से program को फ़ैसला करने दीजिए.`,
     doneTitle: 'अब आप <span class="g">programmer</span> हैं।', doneLead: 'आपका certificate तैयार है. Share कीजिए, और दोस्तों को अपना time हराने की चुनौती दीजिए!',
-    certTitle: 'उपलब्धि प्रमाणपत्र', certFor: 'प्रमाणित किया जाता है कि', certWhat: 'ने pharmacy के लिए 3 Python programs लिखे और चलाए', certTime: (m, s) => `${m} मिनट ${s} सेकंड में`,
+    certTitle: 'उपलब्धि प्रमाणपत्र', certFor: 'प्रमाणित किया जाता है कि', certWhat: 'ने pharmacy के लिए Python programs लिखे, चलाए और AI in Pharmacy quiz पूरा किया', certTime: (m, s) => `${m} मिनट ${s} सेकंड में`,
     certChallenge: 'क्या आप यह time हरा सकते हैं? Challenge लीजिए:', download: 'Download',
     shareText: (m, s) => `मैंने Campus Champ पर pharmacy के लिए अपने पहले Python programs ${m} मिनट ${s} सेकंड में लिखे! 💊💻 क्या आप मेरा time हरा सकते हैं? 10 मिनट का challenge:`,
     copied: 'Post text copy हो गया. LinkedIn post में paste कीजिए और certificate attach कीजिए.', igTip: 'Certificate save हो गया. Instagram story पर डालिए और @campus.champ को tag कीजिए!',
@@ -191,11 +198,6 @@ const C = [
     hi: ['रोज़ का dose निकालिए', 'Patient दिन में 3 बार 500 mg लेता है. dose और times variables से रोज़ का dose print कीजिए. आपका program किसी भी dose के लिए चलना चाहिए.'],
     expect: 'Daily dose: 1500 mg', start: 'dose = 500\ntimes = 3\n# Print the daily dose\n', hint: ['* multiplies: dose * times', 'print("Daily dose:", dose * times, "mg")'],
     tests: [{ dose: 250, times: 4 }, { dose: 650, times: 2 }], want: (v) => `Daily dose: ${v.dose * v.times} mg` },
-  { en: ['Check for fever', 'If temp is 38.0 or more, print "Fever". Otherwise print "No fever". Your program must decide using temp. Press ⇥ for the 4 spaces.'],
-    kn: ['ಜ್ವರ check ಮಾಡಿ', 'temp 38.0 ಅಥವಾ ಹೆಚ್ಚು ಇದ್ದರೆ "Fever" print ಮಾಡಿ. ಇಲ್ಲದಿದ್ದರೆ "No fever". ನಿಮ್ಮ program temp ಬಳಸಿ ನಿರ್ಧರಿಸಬೇಕು. 4 spaces ಗೆ ⇥ ಒತ್ತಿ.'],
-    hi: ['बुखार जाँचिए', 'temp 38.0 या ज़्यादा हो तो "Fever" print कीजिए. वरना "No fever". आपका program temp से फ़ैसला करे. 4 spaces के लिए ⇥ दबाइए.'],
-    expect: 'Fever', start: 'temp = 38.6\n# If temp is 38.0 or more: Fever, else: No fever\n', hint: ['if temp >= 38.0: then an indented print. Then else:', 'if temp >= 38.0:\n    print("Fever")\nelse:\n    print("No fever")'],
-    tests: [{ temp: '37.2' }, { temp: '38.0' }, { temp: '36.5' }, { temp: '39.4' }], want: (v) => (parseFloat(v.temp) >= 38 ? 'Fever' : 'No fever') },
 ];
 const q = new URLSearchParams(location.search);
 let L = ['en', 'kn', 'hi'].includes(q.get('lang')) ? q.get('lang') : 'en', cur = 0, hints = 0, py = null, t0 = 0, solved = [false, false, false], role = 'Student';
@@ -237,10 +239,84 @@ $('keys').innerHTML = KEYS.map((k) => `<button data-k="${k}">${k}</button>`).joi
 $('keys').onclick = (ev) => { const k = ev.target.dataset.k; if (!k) return; ins(k === '⇥' ? '    ' : k === '(' ? '()' : k === '"' ? '""' : k, k === '(' || k === '"'); };
 function ins(s, inside) { const a = $('code'); const p = a.selectionStart; a.value = a.value.slice(0, p) + s + a.value.slice(a.selectionEnd); const q2 = inside ? p + 1 : p + s.length; a.focus(); a.setSelectionRange(q2, q2); }
 $('code').addEventListener('keydown', (e) => { if (e.key === 'Tab') { e.preventDefault(); ins('    '); } });
+
+/* ---------- step 3: five fun facts about AI in pharmacy ---------- */
+const QZ = [
+  { en: ['The 2024 Nobel Prize in Chemistry was given for…', ['A new antibiotic', 'AI that predicts the 3D shape of proteins, and designing new proteins', 'mRNA vaccines', 'A new painkiller'], 'AlphaFold, an AI from Google DeepMind, predicts how proteins fold. Demis Hassabis and John Jumper shared the prize with David Baker, who designs new proteins on computers.'],
+    kn: ['2024ರ ರಸಾಯನಶಾಸ್ತ್ರ ನೊಬೆಲ್ ಪ್ರಶಸ್ತಿ ಯಾವುದಕ್ಕೆ ಸಿಕ್ಕಿತು?', ['ಹೊಸ ಆ್ಯಂಟಿಬಯಾಟಿಕ್', 'ಪ್ರೋಟೀನ್‌ಗಳ 3D ಆಕಾರ ಊಹಿಸುವ AI ಮತ್ತು ಹೊಸ ಪ್ರೋಟೀನ್ ವಿನ್ಯಾಸ', 'mRNA ಲಸಿಕೆಗಳು', 'ಹೊಸ ನೋವು ನಿವಾರಕ'], 'Google DeepMind ನ AI, AlphaFold, ಪ್ರೋಟೀನ್‌ಗಳು ಹೇಗೆ ಮಡಚಿಕೊಳ್ಳುತ್ತವೆ ಎಂದು ಊಹಿಸುತ್ತದೆ. ಡೆಮಿಸ್ ಹಸಾಬಿಸ್ ಮತ್ತು ಜಾನ್ ಜಂಪರ್ ಅವರು, ಕಂಪ್ಯೂಟರ್‌ನಲ್ಲಿ ಹೊಸ ಪ್ರೋಟೀನ್ ವಿನ್ಯಾಸ ಮಾಡುವ ಡೇವಿಡ್ ಬೇಕರ್ ಜೊತೆ ಪ್ರಶಸ್ತಿ ಹಂಚಿಕೊಂಡರು.'],
+    hi: ['2024 का रसायन विज्ञान नोबेल पुरस्कार किसके लिए मिला?', ['एक नई antibiotic', 'Proteins का 3D आकार बताने वाला AI और नए proteins का design', 'mRNA vaccines', 'एक नई painkiller'], 'Google DeepMind का AI, AlphaFold, बताता है कि proteins कैसे मुड़ते हैं. Demis Hassabis और John Jumper ने यह पुरस्कार David Baker के साथ साझा किया, जो computer पर नए proteins design करते हैं.'], a: 1 },
+  { en: ['About how many protein structures has AlphaFold predicted?', ['About 2,000', 'About 2 lakh', 'Over 200 million', 'Exactly 50'], 'Over 200 million: almost every known protein. Scientists worldwide use these shapes to find new medicines.'],
+    kn: ['AlphaFold ಸುಮಾರು ಎಷ್ಟು ಪ್ರೋಟೀನ್ ಆಕಾರಗಳನ್ನು ಊಹಿಸಿದೆ?', ['ಸುಮಾರು 2,000', 'ಸುಮಾರು 2 ಲಕ್ಷ', '20 ಕೋಟಿಗೂ ಹೆಚ್ಚು', 'ಕೇವಲ 50'], '20 ಕೋಟಿಗೂ ಹೆಚ್ಚು: ಗೊತ್ತಿರುವ ಬಹುತೇಕ ಎಲ್ಲಾ ಪ್ರೋಟೀನ್‌ಗಳು. ಜಗತ್ತಿನ ವಿಜ್ಞಾನಿಗಳು ಈ ಆಕಾರಗಳಿಂದ ಹೊಸ ಔಷಧ ಹುಡುಕುತ್ತಾರೆ.'],
+    hi: ['AlphaFold ने लगभग कितने protein structures predict किए हैं?', ['लगभग 2,000', 'लगभग 2 लाख', '20 करोड़ से ज़्यादा', 'सिर्फ़ 50'], '20 करोड़ से ज़्यादा: लगभग हर ज्ञात protein. दुनिया भर के वैज्ञानिक इन आकारों से नई दवाएँ खोजते हैं.'], a: 2 },
+  { en: ['Where does the name “Python” come from?', ['The snake', 'A British comedy show, Monty Python’s Flying Circus', 'A Greek god', 'A pharma company'], 'Its creator, Guido van Rossum, was a fan of Monty Python. That is why Python examples are often a little funny.'],
+    kn: ['“Python” ಎಂಬ ಹೆಸರು ಎಲ್ಲಿಂದ ಬಂತು?', ['ಹೆಬ್ಬಾವು', 'Monty Python’s Flying Circus ಎಂಬ ಬ್ರಿಟಿಷ್ ಹಾಸ್ಯ ಕಾರ್ಯಕ್ರಮ', 'ಗ್ರೀಕ್ ದೇವರು', 'ಒಂದು ಔಷಧ ಕಂಪನಿ'], 'ಇದನ್ನು ರಚಿಸಿದ ಗೈಡೋ ವ್ಯಾನ್ ರೋಸಮ್ Monty Python ಅಭಿಮಾನಿ. ಅದಕ್ಕೇ Python ಉದಾಹರಣೆಗಳು ಸ್ವಲ್ಪ ತಮಾಷೆಯಾಗಿರುತ್ತವೆ.'],
+    hi: ['“Python” नाम कहाँ से आया?', ['साँप से', 'एक British comedy show, Monty Python’s Flying Circus से', 'एक Greek देवता से', 'एक pharma company से'], 'इसे बनाने वाले Guido van Rossum, Monty Python के fan थे. इसीलिए Python के examples अक्सर थोड़े मज़ेदार होते हैं.'], a: 1 },
+  { en: ['AI reading thousands of side-effect reports to spot a risky medicine early is part of…', ['Pharmacovigilance', 'Tablet coating', 'Billing', 'Packaging'], 'Pharmacovigilance means watching medicines for side effects after they reach patients. AI helps find warning signs in huge numbers of reports.'],
+    kn: ['ಸಾವಿರಾರು ಅಡ್ಡಪರಿಣಾಮ ವರದಿಗಳನ್ನು ಓದಿ ಅಪಾಯಕಾರಿ ಔಷಧವನ್ನು ಬೇಗ ಗುರುತಿಸುವ AI ಯಾವುದರ ಭಾಗ?', ['ಫಾರ್ಮಕೋವಿಜಿಲೆನ್ಸ್', 'ಮಾತ್ರೆಗೆ ಲೇಪನ', 'ಬಿಲ್ಲಿಂಗ್', 'ಪ್ಯಾಕೇಜಿಂಗ್'], 'ಔಷಧ ರೋಗಿಗಳನ್ನು ತಲುಪಿದ ನಂತರ ಅದರ ಅಡ್ಡಪರಿಣಾಮಗಳ ಮೇಲೆ ನಿಗಾ ಇಡುವುದೇ ಫಾರ್ಮಕೋವಿಜಿಲೆನ್ಸ್. ಲಕ್ಷಾಂತರ ವರದಿಗಳಲ್ಲಿ ಎಚ್ಚರಿಕೆಯ ಸೂಚನೆ ಹುಡುಕಲು AI ಸಹಾಯ ಮಾಡುತ್ತದೆ.'],
+    hi: ['हज़ारों side-effect reports पढ़कर किसी खतरनाक दवा को जल्दी पहचानने वाला AI किसका हिस्सा है?', ['Pharmacovigilance', 'Tablet coating', 'Billing', 'Packaging'], 'दवा मरीज़ों तक पहुँचने के बाद उसके side effects पर नज़र रखना pharmacovigilance है. AI बहुत सारी reports में चेतावनी के संकेत ढूँढने में मदद करता है.'], a: 0 },
+  { en: ['Which programming language is in the new PCI B.Pharm Semester I syllabus?', ['Java', 'Python', 'C++', 'COBOL'], 'Python (BP101T). And you have just written your first Python programs!'],
+    kn: ['ಹೊಸ PCI B.Pharm ಸೆಮಿಸ್ಟರ್ 1 ಪಠ್ಯಕ್ರಮದಲ್ಲಿ ಯಾವ ಪ್ರೋಗ್ರಾಮಿಂಗ್ ಭಾಷೆ ಇದೆ?', ['Java', 'Python', 'C++', 'COBOL'], 'Python (BP101T). ನೀವು ಈಗಷ್ಟೇ ನಿಮ್ಮ ಮೊದಲ Python ಪ್ರೋಗ್ರಾಂಗಳನ್ನು ಬರೆದಿದ್ದೀರಿ!'],
+    hi: ['नए PCI B.Pharm Semester I syllabus में कौन सी programming language है?', ['Java', 'Python', 'C++', 'COBOL'], 'Python (BP101T). और आपने अभी-अभी अपने पहले Python programs लिखे हैं!'], a: 1 },
+  { en: ['What does “AI” stand for?', ['Artificial Intelligence', 'Automatic Injection', 'Active Ingredient', 'Advanced Insulin'], 'Artificial Intelligence: computers doing tasks that need human-like thinking, such as reading reports or spotting patterns.'],
+    kn: ['“AI” ಅಂದರೆ ಏನು?', ['Artificial Intelligence (ಕೃತಕ ಬುದ್ಧಿಮತ್ತೆ)', 'Automatic Injection', 'Active Ingredient', 'Advanced Insulin'], 'Artificial Intelligence ಅಂದರೆ ಕೃತಕ ಬುದ್ಧಿಮತ್ತೆ: ವರದಿ ಓದುವುದು, ಮಾದರಿ ಗುರುತಿಸುವುದು ಮುಂತಾದ ಮನುಷ್ಯರಂತೆ ಯೋಚಿಸುವ ಕೆಲಸಗಳನ್ನು ಕಂಪ್ಯೂಟರ್ ಮಾಡುವುದು.'],
+    hi: ['“AI” का मतलब क्या है?', ['Artificial Intelligence (कृत्रिम बुद्धिमत्ता)', 'Automatic Injection', 'Active Ingredient', 'Advanced Insulin'], 'Artificial Intelligence यानी कृत्रिम बुद्धिमत्ता: reports पढ़ना, patterns पहचानना जैसे इंसानों जैसी सोच वाले काम computer से करवाना.'], a: 0 },
+  { en: ['When was Python first released?', ['1991', '2015', '1970', '2008'], '1991, by Guido van Rossum. It is older than most of you, and still one of the most used languages in the world.'],
+    kn: ['Python ಮೊದಲು ಬಿಡುಗಡೆಯಾಗಿದ್ದು ಯಾವಾಗ?', ['1991', '2015', '1970', '2008'], '1991 ರಲ್ಲಿ, ಗೈಡೋ ವ್ಯಾನ್ ರೋಸಮ್ ಅವರಿಂದ. ಇಂದಿಗೂ ಜಗತ್ತಿನಲ್ಲಿ ಹೆಚ್ಚು ಬಳಸುವ ಭಾಷೆಗಳಲ್ಲಿ ಒಂದು.'],
+    hi: ['Python पहली बार कब release हुआ?', ['1991', '2015', '1970', '2008'], '1991 में, Guido van Rossum ने बनाया. आज भी दुनिया की सबसे ज़्यादा इस्तेमाल होने वाली languages में से एक है.'], a: 0 },
+  { en: ['Which of these is a Python library for working with numbers and data?', ['NumPy', 'Photoshop', 'Tally', 'Paint'], 'NumPy. You will use it in Unit III to work with tables of drug and patient data.'],
+    kn: ['ಸಂಖ್ಯೆ ಮತ್ತು ಡೇಟಾ ಜೊತೆ ಕೆಲಸ ಮಾಡಲು ಇವುಗಳಲ್ಲಿ ಯಾವುದು Python ಲೈಬ್ರರಿ?', ['NumPy', 'Photoshop', 'Tally', 'Paint'], 'NumPy. ಘಟಕ 3 ರಲ್ಲಿ ಔಷಧ ಮತ್ತು ರೋಗಿಗಳ ಡೇಟಾ ಕೋಷ್ಟಕಗಳಿಗೆ ನೀವು ಇದನ್ನು ಬಳಸುತ್ತೀರಿ.'],
+    hi: ['Numbers और data के साथ काम करने के लिए इनमें से कौन सी Python library है?', ['NumPy', 'Photoshop', 'Tally', 'Paint'], 'NumPy. Unit III में आप इसे दवा और मरीज़ों के data tables के लिए इस्तेमाल करेंगे.'], a: 0 },
+  { en: ['“Machine learning” means…', ['Computers learn patterns from data', 'Machines that take tablets', 'Robots that repair machines', 'Learning to type faster'], 'The computer studies many examples (data) and learns the pattern, for example which patients may get a side effect.'],
+    kn: ['“ಮಷೀನ್ ಲರ್ನಿಂಗ್” ಅಂದರೆ…', ['ಕಂಪ್ಯೂಟರ್ ಡೇಟಾದಿಂದ ಮಾದರಿಗಳನ್ನು ಕಲಿಯುವುದು', 'ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳುವ ಯಂತ್ರಗಳು', 'ಯಂತ್ರ ರಿಪೇರಿ ಮಾಡುವ ರೋಬೋಟ್', 'ವೇಗವಾಗಿ ಟೈಪ್ ಮಾಡಲು ಕಲಿಯುವುದು'], 'ಕಂಪ್ಯೂಟರ್ ಅನೇಕ ಉದಾಹರಣೆಗಳನ್ನು (ಡೇಟಾ) ನೋಡಿ ಮಾದರಿ ಕಲಿಯುತ್ತದೆ, ಉದಾಹರಣೆಗೆ ಯಾವ ರೋಗಿಗಳಿಗೆ ಅಡ್ಡಪರಿಣಾಮ ಆಗಬಹುದು ಎಂದು.'],
+    hi: ['“Machine learning” का मतलब है…', ['Computer का data से patterns सीखना', 'Tablets लेने वाली machines', 'Machines ठीक करने वाले robots', 'तेज़ typing सीखना'], 'Computer बहुत सारे examples (data) देखकर pattern सीखता है, जैसे किन मरीज़ों को side effect हो सकता है.'], a: 0 },
+  { en: ['Why does the 3D shape of a protein matter for medicines?', ['It decides where and how a drug can bind', 'It decides the colour of the tablet', 'It decides the price of the drug', 'It does not matter'], 'A drug works by fitting into its target protein, like a key in a lock. Know the shape, and you can design a better key.'],
+    kn: ['ಔಷಧಗಳಿಗೆ ಪ್ರೋಟೀನ್‌ನ 3D ಆಕಾರ ಯಾಕೆ ಮುಖ್ಯ?', ['ಔಷಧ ಎಲ್ಲಿ, ಹೇಗೆ ಅಂಟಿಕೊಳ್ಳುತ್ತದೆ ಎಂದು ಅದು ನಿರ್ಧರಿಸುತ್ತದೆ', 'ಮಾತ್ರೆಯ ಬಣ್ಣ ನಿರ್ಧರಿಸುತ್ತದೆ', 'ಔಷಧದ ಬೆಲೆ ನಿರ್ಧರಿಸುತ್ತದೆ', 'ಮುಖ್ಯವಲ್ಲ'], 'ಬೀಗಕ್ಕೆ ಕೀಲಿಯಂತೆ ಔಷಧ ತನ್ನ ಗುರಿ ಪ್ರೋಟೀನ್‌ಗೆ ಕೂರುತ್ತದೆ. ಆಕಾರ ಗೊತ್ತಿದ್ದರೆ ಉತ್ತಮ ಕೀಲಿ ವಿನ್ಯಾಸ ಮಾಡಬಹುದು.'],
+    hi: ['दवाओं के लिए protein का 3D आकार क्यों ज़रूरी है?', ['यही तय करता है कि दवा कहाँ और कैसे जुड़ेगी', 'Tablet का रंग तय करता है', 'दवा की कीमत तय करता है', 'ज़रूरी नहीं है'], 'दवा अपने target protein में ताले में चाबी की तरह फिट होती है. आकार पता हो तो बेहतर चाबी design की जा सकती है.'], a: 0 },
+  { en: ['Celecoxib, a painkiller, works by blocking which enzyme?', ['COX-2', 'Insulin', 'Amylase', 'Lactase'], 'COX-2 makes chemicals that cause pain and swelling. Celecoxib blocks it. AlphaFold has a predicted 3D model of COX-2.'],
+    kn: ['ನೋವು ನಿವಾರಕ ಸೆಲೆಕಾಕ್ಸಿಬ್ ಯಾವ ಕಿಣ್ವವನ್ನು ತಡೆಯುತ್ತದೆ?', ['COX-2', 'ಇನ್ಸುಲಿನ್', 'ಅಮೈಲೇಸ್', 'ಲ್ಯಾಕ್ಟೇಸ್'], 'COX-2 ನೋವು ಮತ್ತು ಊತ ಉಂಟುಮಾಡುವ ರಾಸಾಯನಿಕಗಳನ್ನು ತಯಾರಿಸುತ್ತದೆ. ಸೆಲೆಕಾಕ್ಸಿಬ್ ಅದನ್ನು ತಡೆಯುತ್ತದೆ. AlphaFold ನಲ್ಲಿ COX-2 ನ 3D ಮಾದರಿ ಇದೆ.'],
+    hi: ['Painkiller celecoxib किस enzyme को रोकती है?', ['COX-2', 'Insulin', 'Amylase', 'Lactase'], 'COX-2 दर्द और सूजन पैदा करने वाले chemicals बनाता है. Celecoxib उसे रोकती है. AlphaFold में COX-2 का 3D model है.'], a: 0 },
+  { en: ['AI that reads X-rays and CT scans is used in which field?', ['Medical imaging', 'Pharmacognosy', 'Accounting', 'Botany'], 'Medical imaging. AI helps doctors spot problems in scans faster. Hospital pharmacists work alongside these teams.'],
+    kn: ['X-ray ಮತ್ತು CT ಸ್ಕ್ಯಾನ್ ಓದುವ AI ಯಾವ ಕ್ಷೇತ್ರದಲ್ಲಿ ಬಳಕೆಯಾಗುತ್ತದೆ?', ['ವೈದ್ಯಕೀಯ ಇಮೇಜಿಂಗ್', 'ಫಾರ್ಮಕಾಗ್ನಸಿ', 'ಲೆಕ್ಕಪತ್ರ', 'ಸಸ್ಯಶಾಸ್ತ್ರ'], 'ವೈದ್ಯಕೀಯ ಇಮೇಜಿಂಗ್. ಸ್ಕ್ಯಾನ್‌ಗಳಲ್ಲಿ ಸಮಸ್ಯೆಯನ್ನು ಬೇಗ ಗುರುತಿಸಲು AI ವೈದ್ಯರಿಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ.'],
+    hi: ['X-ray और CT scan पढ़ने वाला AI किस क्षेत्र में इस्तेमाल होता है?', ['Medical imaging', 'Pharmacognosy', 'Accounting', 'Botany'], 'Medical imaging. AI डॉक्टरों को scans में समस्या जल्दी पहचानने में मदद करता है.'], a: 0 },
+  { en: ['In Python, which one stores items in order, like ["Paracetamol", "Ibuprofen"]?', ['List', 'Dictionary', 'Number', 'Comment'], 'A list, written with square brackets. You learn lists in Unit III, Lesson 3.1.'],
+    kn: ['Python ನಲ್ಲಿ ["Paracetamol", "Ibuprofen"] ರೀತಿ ವಸ್ತುಗಳನ್ನು ಕ್ರಮವಾಗಿ ಇಡುವುದು ಯಾವುದು?', ['ಲಿಸ್ಟ್ (List)', 'ಡಿಕ್ಷನರಿ (Dictionary)', 'ಸಂಖ್ಯೆ', 'ಕಾಮೆಂಟ್'], 'ಚೌಕ ಆವರಣದಲ್ಲಿ ಬರೆಯುವ ಲಿಸ್ಟ್. ಇದನ್ನು ಘಟಕ 3, ಪಾಠ 3.1 ರಲ್ಲಿ ಕಲಿಯುತ್ತೀರಿ.'],
+    hi: ['Python में ["Paracetamol", "Ibuprofen"] जैसी चीज़ें क्रम से कौन रखता है?', ['List', 'Dictionary', 'Number', 'Comment'], 'Square brackets में लिखी list. यह आप Unit III, Lesson 3.1 में सीखेंगे.'], a: 0 },
+  { en: ['ChatGPT, Gemini and Claude are examples of…', ['AI chatbots (large language models)', 'Antibiotics', 'Vaccines', 'Tablet machines'], 'They are large language models: AI trained on huge amounts of text. Many pharma teams already use them to read and summarise documents.'],
+    kn: ['ChatGPT, Gemini ಮತ್ತು Claude ಯಾವುದಕ್ಕೆ ಉದಾಹರಣೆ?', ['AI ಚಾಟ್‌ಬಾಟ್‌ಗಳು (ಲಾರ್ಜ್ ಲ್ಯಾಂಗ್ವೇಜ್ ಮಾಡೆಲ್‌ಗಳು)', 'ಆ್ಯಂಟಿಬಯಾಟಿಕ್‌ಗಳು', 'ಲಸಿಕೆಗಳು', 'ಮಾತ್ರೆ ಯಂತ್ರಗಳು'], 'ಅಪಾರ ಪಠ್ಯದಿಂದ ಕಲಿತ AI ಮಾಡೆಲ್‌ಗಳು. ಅನೇಕ ಔಷಧ ತಂಡಗಳು ದಾಖಲೆ ಓದಲು, ಸಾರಾಂಶ ಮಾಡಲು ಇವನ್ನು ಬಳಸುತ್ತವೆ.'],
+    hi: ['ChatGPT, Gemini और Claude किसके उदाहरण हैं?', ['AI chatbots (large language models)', 'Antibiotics', 'Vaccines', 'Tablet machines'], 'ये बहुत सारे text से सीखे AI models हैं. कई pharma teams इन्हें documents पढ़ने और summary बनाने में इस्तेमाल करती हैं.'], a: 0 },
+  { en: ['What does print("Hello") do in Python?', ['Shows Hello on the screen', 'Prints Hello on paper', 'Deletes Hello', 'Saves Hello in a file'], 'print() shows text on the screen. It is the first thing every programmer learns, including you, just now!'],
+    kn: ['Python ನಲ್ಲಿ print("Hello") ಏನು ಮಾಡುತ್ತದೆ?', ['ಪರದೆಯ ಮೇಲೆ Hello ತೋರಿಸುತ್ತದೆ', 'ಕಾಗದದ ಮೇಲೆ Hello ಮುದ್ರಿಸುತ್ತದೆ', 'Hello ಅಳಿಸುತ್ತದೆ', 'Hello ಫೈಲ್‌ನಲ್ಲಿ ಉಳಿಸುತ್ತದೆ'], 'print() ಪರದೆಯ ಮೇಲೆ ಪಠ್ಯ ತೋರಿಸುತ್ತದೆ. ಪ್ರತಿ ಪ್ರೋಗ್ರಾಮರ್ ಮೊದಲು ಕಲಿಯುವುದು ಇದೇ. ನೀವೂ ಈಗಷ್ಟೇ ಕಲಿತಿರಿ!'],
+    hi: ['Python में print("Hello") क्या करता है?', ['Screen पर Hello दिखाता है', 'काग़ज़ पर Hello छापता है', 'Hello मिटाता है', 'Hello को file में save करता है'], 'print() screen पर text दिखाता है. हर programmer सबसे पहले यही सीखता है. आपने भी अभी सीखा!'], a: 0 },
+];
+const QT = { en: { title: 'AI in Pharmacy: 5 fun facts', task: 'Tap the answer you think is right. You learn something either way!', q: (i) => `Question ${i} of 5`, nextQ: 'Next question →', score: (n) => `You got ${n} out of 5. Well done!` },
+  kn: { title: 'ಫಾರ್ಮಸಿಯಲ್ಲಿ AI: 5 ಮೋಜಿನ ಸಂಗತಿಗಳು', task: 'ಸರಿ ಎನಿಸಿದ ಉತ್ತರ ಒತ್ತಿ. ಹೇಗಿದ್ದರೂ ಹೊಸದೊಂದು ಕಲಿಯುತ್ತೀರಿ!', q: (i) => `ಪ್ರಶ್ನೆ ${i} / 5`, nextQ: 'ಮುಂದಿನ ಪ್ರಶ್ನೆ →', score: (n) => `5 ರಲ್ಲಿ ${n} ಸರಿ. ಶಾಭಾಷ್!` },
+  hi: { title: 'Pharmacy में AI: 5 मज़ेदार तथ्य', task: 'जो जवाब सही लगे उसे दबाइए. हर हाल में कुछ नया सीखेंगे!', q: (i) => `सवाल ${i} / 5`, nextQ: 'अगला सवाल →', score: (n) => `5 में से ${n} सही. शाबाश!` } };
+let qi = 0, qscore = 0, QS = [];
+const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+function pickQuiz() {
+  let seen = []; try { seen = JSON.parse(localStorage.getItem('cc_quiz_seen') || '[]'); } catch (e) {}
+  const all = shuffle(QZ.map((_, i) => i)), fresh = all.filter((i) => !seen.includes(i)), old = all.filter((i) => seen.includes(i));
+  const ids = fresh.concat(old).slice(0, 5);
+  try { localStorage.setItem('cc_quiz_seen', JSON.stringify(fresh.length - 5 >= 5 ? seen.concat(ids) : ids)); } catch (e) {}
+  QS = ids.map((id) => ({ id, order: shuffle([0, 1, 2, 3]) }));
+}
+function quiz() {
+  const z = $('quiz'), Q = QZ[QS[qi].id], ord = QS[qi].order, d = Q[L], qt = QT[L];
+  z.innerHTML = `<p class="qn">${qt.q(qi + 1)}</p><p class="qq">${d[0]}</p>` + ord.map((oi) => `<button class="qo" data-i="${oi}">${d[1][oi]}</button>`).join('') + '<div id="qx"></div>';
+  z.querySelectorAll('.qo').forEach((b) => (b.onclick = () => {
+    const pick = +b.dataset.i, a = Q.a; if (pick === a) qscore++;
+    z.querySelectorAll('.qo').forEach((x) => { const i = +x.dataset.i; x.disabled = true; if (i === a) x.classList.add('right'); else if (i === pick) x.classList.add('wrong'); });
+    $('qx').innerHTML = `<div class="qf">${pick === a ? '✓ ' : ''}${d[2]}</div>`;
+    if (qi < QS.length - 1) { const n = document.createElement('button'); n.className = 'btn blue'; n.textContent = qt.nextQ; n.onclick = () => { qi++; quiz(); }; $('qx').appendChild(n); }
+    else { solved[2] = true; feedback('good', `<b>${qt.score(qscore)}</b>`); $('next').classList.remove('hide'); paint(false); }
+  }));
+}
 function paint(reset) {
-  const c = C[cur];
-  $('cnum').textContent = T[L].step(cur + 1); $('ctitle').textContent = c[L][0]; $('ctask').textContent = c[L][1]; $('cexp').textContent = c.expect;
-  if (reset) { $('code').value = c.start; $('out').textContent = ''; $('ok').style.display = 'none'; $('hint').style.display = 'none'; $('next').classList.add('hide'); hints = 0; }
+  const isQ = cur === 2; $('codeui').classList.toggle('hide', isQ); $('quiz').classList.toggle('hide', !isQ);
+  $('cnum').textContent = T[L].step(cur + 1);
+  if (isQ) { $('ctitle').textContent = QT[L].title; $('ctask').textContent = QT[L].task; if (!reset && !solved[2] && !$('quiz').querySelector('.qo:disabled')) quiz(); if (reset) { $('ok').style.display = 'none'; $('next').classList.add('hide'); qi = 0; qscore = 0; pickQuiz(); quiz(); } }
+  else { const c = C[cur]; $('ctitle').textContent = c[L][0]; $('ctask').textContent = c[L][1]; $('cexp').textContent = c.expect; }
+  if (reset && !isQ) { $('code').value = C[cur].start; $('out').textContent = ''; $('ok').style.display = 'none'; $('hint').style.display = 'none'; $('next').classList.add('hide'); hints = 0; }
   document.querySelectorAll('.steps b').forEach((b, i) => (b.className = solved[i] ? 'done' : i === cur ? 'on' : ''));
   $('next').textContent = cur === 2 ? T[L].finish : T[L].next;
 }
@@ -299,7 +375,7 @@ $('next').onclick = () => {
   if (cur < 2) { cur++; paint(true); window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
   if (!solved.every(Boolean)) return;
   secs = Math.round((Date.now() - t0) / 1000);
-  lead('challenge_complete', { seconds: secs });
+  lead('challenge_complete', { seconds: secs, quiz_score: qscore });
   $('ch').classList.add('hide'); $('done').classList.remove('hide'); drawCert(); window.scrollTo({ top: 0 });
 };
 
@@ -330,8 +406,8 @@ async function drawCert() {
   // seal
   g.save(); g.translate(880, 196); g.fillStyle = '#fbbf24';
   for (let i = 0; i < 24; i++) { g.rotate(Math.PI / 12); g.beginPath(); g.moveTo(0, -78); g.lineTo(14, -60); g.lineTo(-14, -60); g.closePath(); g.fill(); }
-  g.beginPath(); g.arc(0, 0, 64, 0, Math.PI * 2); g.fill(); g.fillStyle = '#b45309'; g.font = '900 30px Inter'; g.textAlign = 'center'; g.fillText('3/3', 0, -2);
-  g.font = '800 15px Inter'; g.fillText('PYTHON', 0, 24); g.restore();
+  g.beginPath(); g.arc(0, 0, 64, 0, Math.PI * 2); g.fill(); g.fillStyle = '#b45309'; g.font = '900 30px Inter'; g.textAlign = 'center'; g.fillText('✓', 0, -2);
+  g.font = '800 14px Inter'; g.fillText('PYTHON + AI', 0, 24); g.restore();
   // title
   g.textAlign = 'center'; g.fillStyle = '#7c3aed'; g.font = `800 ${L === 'en' ? 34 : 40}px ${F}`; g.fillText(tt.certTitle, W / 2, 330);
   g.fillStyle = '#6e6e73'; g.font = `600 28px ${F}`; g.fillText(tt.certFor, W / 2, 400);
