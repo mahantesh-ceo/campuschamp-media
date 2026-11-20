@@ -68,6 +68,21 @@ textarea{font-variant-ligatures:none;width:100%;min-height:170px;margin-top:14px
 .toast.on{opacity:1}
 .next{margin-top:22px;border-radius:20px;padding:20px;background:linear-gradient(135deg,#eef2ff,#fdf2f8)}
 .next h3{font-size:20px;letter-spacing:-.02em}.next p{color:#3a3a3c;font-size:15px;line-height:1.45;margin-top:6px}
+.rules{margin-top:18px;border-radius:20px;padding:16px 18px;background:linear-gradient(135deg,#0b1023,#1e1b4b);color:#fff}
+.rules h2{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fdba74}
+.rules ol{list-style:none;margin-top:10px;display:grid;gap:8px}
+.rules li{display:flex;gap:12px;align-items:center;font-size:15px;font-weight:600;line-height:1.35}
+.rules li i{flex:none;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font:800 14px/1 Inter,sans-serif;font-style:normal;color:#1c1300;background:linear-gradient(135deg,#fcd34d,#f97316)}
+.rules a{color:#fdba74;font-weight:700;text-decoration:none;white-space:nowrap}
+.result{margin-top:18px;border-radius:22px;padding:18px;background:linear-gradient(135deg,#0b1023,#1e1b4b 60%,#3b0764);color:#fff;box-shadow:0 14px 40px rgba(30,27,75,.3)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);padding:12px 8px;text-align:center}
+.stat small{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#a5b4fc}
+.stat b{display:block;margin-top:6px;font:800 26px/1 'JetBrains Mono',monospace;color:#fff}
+.stat.score b{color:#86efac}.stat.rank b{color:#fcd34d}
+.stat span{display:block;margin-top:5px;font-size:12px;color:#c7d2fe;font-weight:600;min-height:15px}
+.result p{margin-top:12px;font-size:14px;line-height:1.45;color:#c7d2fe;text-align:center}
+.result a{display:block;margin-top:12px;text-align:center;border-radius:14px;padding:13px;background:#fff;color:#1e1b4b;font-weight:800;font-size:15px;text-decoration:none}
 .hide{display:none}
 @keyframes pop{0%{transform:scale(.9);opacity:0}100%{transform:scale(1);opacity:1}}
 .pop{animation:pop .35s ease-out}
@@ -82,6 +97,7 @@ textarea{font-variant-ligatures:none;width:100%;min-height:170px;margin-top:14px
   <section id="start">
     <h1 data-t="hello"></h1>
     <p class="lead" data-t="intro"></p>
+    <div class="rules"><h2 data-t="rulesTitle"></h2><ol><li><i>1</i><span data-t="rule1"></span></li><li><i>2</i><span data-t="rule2"></span></li><li><i>3</i><span><span data-t="rule3"></span> <a class="boardlink" href="https://campuschamp.in/leaderboard" target="_blank" rel="noopener">campuschamp.in/leaderboard</a></span></li></ol></div>
     <form class="card" id="form" novalidate>
       <label for="name" data-t="yourName"></label><input id="name" type="text" autocomplete="name" maxlength="60">
       <label for="phone" data-t="yourPhone"></label><div class="ph"><span>+91</span><input id="phone" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="10" placeholder="98765 43210"></div>
@@ -119,6 +135,15 @@ textarea{font-variant-ligatures:none;width:100%;min-height:170px;margin-top:14px
   <section id="done" class="hide">
     <h1 data-t="doneTitle"></h1>
     <p class="lead" data-t="doneLead"></p>
+    <div class="result pop">
+      <div class="stats">
+        <div class="stat score"><small data-t="resScore"></small><b id="rScore">–</b><span id="rScoreNote"></span></div>
+        <div class="stat"><small data-t="resTime"></small><b id="rTime">–</b><span data-t="resTimeNote"></span></div>
+        <div class="stat rank"><small data-t="resRank"></small><b id="rRank">…</b><span id="rRankNote"></span></div>
+      </div>
+      <p data-t="resRule"></p>
+      <a class="boardlink" href="https://campuschamp.in/leaderboard" target="_blank" rel="noopener" data-t="resBoard"></a>
+    </div>
     <img id="certimg" alt="Your Champ Lab certificate">
     <div class="share">
       <button class="wa" id="sh-wa"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>WhatsApp</button>
@@ -150,10 +175,13 @@ const T = {
     right: 'Correct! 🎉', almost: 'Close! Compare your output with the expected one, character by character.',
     keepVar: (v) => `Keep the line that sets <code>${v}</code> at the top. Your program has to use it.`,
     hardcoded: (setv, got, want) => `Your output is right for this example, but we also tried <code>${setv}</code>: your program printed <code>${got || '(nothing)'}</code> instead of <code>${want}</code>. Let the program decide using the variable, not fixed text.`,
-    doneTitle: 'You’re a <span class="g">programmer</span> now.', doneLead: 'Your certificate is ready. Share it, and challenge your friends to beat your time!',
+    rulesTitle: 'How to win', rule1: 'Best quiz score wins (out of 5).', rule2: 'Same score? The fastest time wins.', rule3: 'Watch your name go up live:',
+    resScore: 'Score', resTime: 'Time', resTimeNote: 'start to finish', resRank: 'Today', rankOf: (r, n) => `of ${n} finishers`, rankWait: 'saving…', rankNone: 'see the board',
+    scoreNote: (q) => (q >= 5 ? 'perfect!' : q >= 3 ? 'well done' : 'keep learning'), resRule: 'Best quiz score wins. Same score? The fastest time wins.', resBoard: 'See the live leaderboard →',
+    doneTitle: 'You’re a <span class="g">programmer</span> now.', doneLead: 'Your certificate is ready. Share it, and challenge your friends to beat your score!',
     certTitle: 'CERTIFICATE OF ACHIEVEMENT', certFor: 'This certifies that', certWhat: 'wrote and ran Python programs for pharmacy and completed the AI in Pharmacy quiz', certTime: (m, s) => `in ${m} min ${s} s`,
-    certChallenge: 'Can you beat this time? Take the challenge:', download: 'Download',
-    shareText: (m, s) => `I just wrote my first Python programs for pharmacy in ${m} min ${s} s on Campus Champ! 💊💻 Can you beat my time? Take the 10-minute challenge:`,
+    certChallenge: 'Can you beat this score? Take the challenge:', download: 'Download',
+    shareText: (m, s) => `I just wrote my first Python programs for pharmacy in ${m} min ${s} s on Campus Champ! 💊💻 Can you beat my score? Take the 10-minute challenge:`,
     copied: 'Post text copied. Paste it in your LinkedIn post and attach your certificate.', igTip: 'Certificate saved. Post it on your Instagram story and tag @campus.champ!',
     nextTitle: 'Keep going', nextText: 'This was just the start. The full BP101T course, in your language, is waiting on Campus Champ.', nextBtn: 'Continue with Lesson 1 →', step: (i) => `Challenge ${i} of 3` },
   kn: { hello: 'ನಿಮ್ಮ ಮೊದಲ <span class="g">Python program</span> ಅನ್ನು 10 ನಿಮಿಷದಲ್ಲಿ ಬರೆಯಿರಿ.', intro: 'ಎರಡು ಚಿಕ್ಕ Python programs ಮತ್ತು ಫಾರ್ಮಸಿಯಲ್ಲಿ AI ಬಗ್ಗೆ 5 ಪ್ರಶ್ನೆಗಳ ಮೋಜಿನ quiz. ನಿಮ್ಮ phone ನಲ್ಲೇ. ಏನೂ install ಮಾಡಬೇಕಿಲ್ಲ. ಮುಗಿಸಿದರೆ ನಿಮ್ಮ certificate ಸಿಗುತ್ತೆ.',
@@ -165,10 +193,13 @@ const T = {
     right: 'ಸರಿ! 🎉', almost: 'ಹತ್ತಿರ ಬಂದಿದ್ದೀರಿ! ನಿಮ್ಮ output ಅನ್ನು ನಿರೀಕ್ಷಿತ output ಜೊತೆ ಅಕ್ಷರ ಅಕ್ಷರವಾಗಿ ಹೋಲಿಸಿ.',
     keepVar: (v) => `<code>${v}</code> ಹೊಂದಿಸುವ line ಅನ್ನು ಮೇಲೆಯೇ ಇಡಿ. ನಿಮ್ಮ program ಅದನ್ನು ಬಳಸಬೇಕು.`,
     hardcoded: (setv, got, want) => `ಈ example ಗೆ ನಿಮ್ಮ output ಸರಿ, ಆದರೆ ನಾವು <code>${setv}</code> ಕೂಡ ಪ್ರಯತ್ನಿಸಿದೆವು: ನಿಮ್ಮ program <code>${want}</code> ಬದಲು <code>${got || '(ಏನೂ ಇಲ್ಲ)'}</code> print ಮಾಡಿತು. ನಿಗದಿತ text ಅಲ್ಲ, variable ಬಳಸಿ program ನಿರ್ಧರಿಸಲಿ.`,
+    rulesTitle: 'ಗೆಲ್ಲುವುದು ಹೇಗೆ', rule1: 'ರಸಪ್ರಶ್ನೆಯಲ್ಲಿ ಹೆಚ್ಚು ಅಂಕ (5 ರಲ್ಲಿ) ಪಡೆದವರು ಗೆಲ್ಲುತ್ತಾರೆ.', rule2: 'ಅಂಕ ಸಮವಾದರೆ, ಬೇಗ ಮುಗಿಸಿದವರು ಗೆಲ್ಲುತ್ತಾರೆ.', rule3: 'ನಿಮ್ಮ ಹೆಸರನ್ನು ಲೈವ್ ಆಗಿ ನೋಡಿ:',
+    resScore: 'ಅಂಕ', resTime: 'ಸಮಯ', resTimeNote: 'ಆರಂಭದಿಂದ ಅಂತ್ಯ', resRank: 'ಇಂದು', rankOf: (r, n) => `${n} ಜನರಲ್ಲಿ`, rankWait: 'ಉಳಿಸಲಾಗುತ್ತಿದೆ…', rankNone: 'ಬೋರ್ಡ್ ನೋಡಿ',
+    scoreNote: (q) => (q >= 5 ? 'ಅದ್ಭುತ!' : q >= 3 ? 'ಶಾಭಾಷ್' : 'ಕಲಿಯುತ್ತಿರಿ'), resRule: 'ಹೆಚ್ಚು ಅಂಕ ಗೆಲ್ಲುತ್ತದೆ. ಅಂಕ ಸಮವಾದರೆ, ಕಡಿಮೆ ಸಮಯ ಗೆಲ್ಲುತ್ತದೆ.', resBoard: 'ಲೈವ್ ಲೀಡರ್‌ಬೋರ್ಡ್ ನೋಡಿ →',
     doneTitle: 'ಈಗ ನೀವು <span class="g">programmer</span>.', doneLead: 'ನಿಮ್ಮ certificate ಸಿದ್ಧ. Share ಮಾಡಿ, ನಿಮ್ಮ ಸ್ನೇಹಿತರಿಗೆ ನಿಮ್ಮ time ಮೀರಿಸಲು challenge ಮಾಡಿ!',
     certTitle: 'ಸಾಧನೆಯ ಪ್ರಮಾಣಪತ್ರ', certFor: 'ಇವರು', certWhat: 'ಫಾರ್ಮಸಿಗಾಗಿ Python ಪ್ರೋಗ್ರಾಂಗಳನ್ನು ಬರೆದು ಚಲಾಯಿಸಿ, ಫಾರ್ಮಸಿಯಲ್ಲಿ AI ರಸಪ್ರಶ್ನೆ ಪೂರ್ಣಗೊಳಿಸಿದ್ದಾರೆ', certTime: (m, s) => `${m} ನಿಮಿಷ ${s} ಸೆಕೆಂಡ್‌ನಲ್ಲಿ`,
-    certChallenge: 'ಈ time ಮೀರಿಸಬಲ್ಲಿರಾ? Challenge ತೆಗೆದುಕೊಳ್ಳಿ:', download: 'Download',
-    shareText: (m, s) => `ನಾನು Campus Champ ನಲ್ಲಿ pharmacy ಗಾಗಿ ನನ್ನ ಮೊದಲ Python programs ಅನ್ನು ${m} ನಿಮಿಷ ${s} ಸೆಕೆಂಡ್‌ನಲ್ಲಿ ಬರೆದೆ! 💊💻 ನನ್ನ time ಮೀರಿಸಬಲ್ಲಿರಾ? 10 ನಿಮಿಷದ challenge:`,
+    certChallenge: 'ಈ ಅಂಕ ಮೀರಿಸಬಲ್ಲಿರಾ? ಸವಾಲು ಸ್ವೀಕರಿಸಿ:', download: 'Download',
+    shareText: (m, s) => `ನಾನು Campus Champ ನಲ್ಲಿ pharmacy ಗಾಗಿ ನನ್ನ ಮೊದಲ Python programs ಅನ್ನು ${m} ನಿಮಿಷ ${s} ಸೆಕೆಂಡ್‌ನಲ್ಲಿ ಬರೆದೆ! 💊💻 ನನ್ನ ಅಂಕ ಮೀರಿಸಬಲ್ಲಿರಾ? 10 ನಿಮಿಷದ challenge:`,
     copied: 'Post text copy ಆಗಿದೆ. LinkedIn post ನಲ್ಲಿ paste ಮಾಡಿ, certificate attach ಮಾಡಿ.', igTip: 'Certificate save ಆಗಿದೆ. Instagram story ಗೆ ಹಾಕಿ @campus.champ ಅನ್ನು tag ಮಾಡಿ!',
     nextTitle: 'ಮುಂದುವರೆಸಿ', nextText: 'ಇದು ಶುರು ಮಾತ್ರ. ಪೂರ್ಣ BP101T course, ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ, Campus Champ ನಲ್ಲಿ ಕಾಯುತ್ತಿದೆ.', nextBtn: 'Lesson 1 ಮುಂದುವರೆಸಿ →', step: (i) => `Challenge ${i} / 3` },
   hi: { hello: 'अपना पहला <span class="g">Python program</span> 10 मिनट में लिखिए।', intro: 'दो छोटे Python programs और pharmacy में AI पर 5 सवालों का मज़ेदार quiz. आपके phone पर. कुछ भी install नहीं करना. पूरा कीजिए और certificate पाइए.',
@@ -180,10 +211,13 @@ const T = {
     right: 'सही! 🎉', almost: 'करीब हैं! अपना output अपेक्षित output से अक्षर-अक्षर मिलाइए.',
     keepVar: (v) => `<code>${v}</code> वाली line ऊपर ही रखिए. आपके program को उसे use करना है.`,
     hardcoded: (setv, got, want) => `इस example के लिए आपका output सही है, पर हमने <code>${setv}</code> भी आज़माया: आपके program ने <code>${want}</code> की जगह <code>${got || '(कुछ नहीं)'}</code> print किया. तय text नहीं, variable से program को फ़ैसला करने दीजिए.`,
+    rulesTitle: 'कैसे जीतें', rule1: 'Quiz में सबसे ज़्यादा अंक (5 में से) वाला जीतता है।', rule2: 'अंक बराबर? तो सबसे तेज़ समय वाला जीतता है।', rule3: 'अपना नाम लाइव ऊपर जाते देखें:',
+    resScore: 'अंक', resTime: 'समय', resTimeNote: 'शुरू से अंत तक', resRank: 'आज', rankOf: (r, n) => `${n} में से`, rankWait: 'सेव हो रहा है…', rankNone: 'बोर्ड देखें',
+    scoreNote: (q) => (q >= 5 ? 'शानदार!' : q >= 3 ? 'बहुत अच्छे' : 'सीखते रहिए'), resRule: 'सबसे ज़्यादा अंक जीतते हैं। अंक बराबर हों तो सबसे तेज़ समय जीतता है।', resBoard: 'लाइव लीडरबोर्ड देखें →',
     doneTitle: 'अब आप <span class="g">programmer</span> हैं।', doneLead: 'आपका certificate तैयार है. Share कीजिए, और दोस्तों को अपना time हराने की चुनौती दीजिए!',
     certTitle: 'उपलब्धि प्रमाणपत्र', certFor: 'प्रमाणित किया जाता है कि', certWhat: 'ने pharmacy के लिए Python programs लिखे, चलाए और AI in Pharmacy quiz पूरा किया', certTime: (m, s) => `${m} मिनट ${s} सेकंड में`,
-    certChallenge: 'क्या आप यह time हरा सकते हैं? Challenge लीजिए:', download: 'Download',
-    shareText: (m, s) => `मैंने Campus Champ पर pharmacy के लिए अपने पहले Python programs ${m} मिनट ${s} सेकंड में लिखे! 💊💻 क्या आप मेरा time हरा सकते हैं? 10 मिनट का challenge:`,
+    certChallenge: 'क्या आप यह स्कोर हरा सकते हैं? Challenge लीजिए:', download: 'Download',
+    shareText: (m, s) => `मैंने Campus Champ पर pharmacy के लिए अपने पहले Python programs ${m} मिनट ${s} सेकंड में लिखे! 💊💻 क्या आप मेरा स्कोर हरा सकते हैं? 10 मिनट का challenge:`,
     copied: 'Post text copy हो गया. LinkedIn post में paste कीजिए और certificate attach कीजिए.', igTip: 'Certificate save हो गया. Instagram story पर डालिए और @campus.champ को tag कीजिए!',
     nextTitle: 'आगे बढ़िए', nextText: 'यह तो शुरुआत थी. पूरा BP101T course, आपकी भाषा में, Campus Champ पर इंतज़ार कर रहा है.', nextBtn: 'Lesson 1 से आगे →', step: (i) => `Challenge ${i} / 3` },
 };
@@ -206,6 +240,8 @@ function tr() {
   document.documentElement.lang = L;
   document.querySelectorAll('[data-t]').forEach((e) => { const v = T[L][e.dataset.t]; if (typeof v === 'string') e.innerHTML = v; });
   document.querySelectorAll('.lang button').forEach((b) => b.classList.toggle('on', b.dataset.l === L));
+  document.querySelectorAll('a.boardlink').forEach((a) => (a.href = 'https://campuschamp.in/leaderboard' + (L === 'kn' ? '?lang=kn' : '')));
+  if (!$('done').classList.contains('hide')) showResult();
   if (!$('ch').classList.contains('hide')) paint(false);
   if (!$('done').classList.contains('hide')) drawCert();
   status();
@@ -370,14 +406,28 @@ $('run').onclick = () => {
   solved[cur] = true; feedback('good', `<b>${T[L].right}</b>`); $('next').classList.remove('hide'); paint(false);
 };
 $('hintb').onclick = () => { const h = C[cur].hint; const i = Math.min(hints, h.length - 1); $('hint').innerHTML = i === 0 ? h[0] : `<code>${esc(h[1])}</code>`; $('hint').style.display = 'block'; hints++; };
-let secs = 0;
+let secs = 0, rank;
+/** The results card: score, time and today's place on the leaderboard (best score first, then time). */
+function showResult() {
+  const tt = T[L];
+  $('rScore').textContent = `${qscore}/5`; $('rScoreNote').textContent = tt.scoreNote(qscore);
+  $('rTime').textContent = `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, '0')}`;
+  if (rank === undefined) { $('rRank').textContent = '…'; $('rRankNote').textContent = tt.rankWait; }
+  else if (rank) { $('rRank').textContent = `#${rank.r}`; $('rRankNote').textContent = tt.rankOf(rank.r, rank.n); }
+  else { $('rRank').textContent = '–'; $('rRankNote').textContent = tt.rankNone; }
+}
 $('next').onclick = () => {
   if (cur < 2) { cur++; paint(true); window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
   if (!solved.every(Boolean)) return;
   secs = Math.round((Date.now() - t0) / 1000);
   lead('challenge_complete', { seconds: secs, quiz_score: qscore });
-  try { fetch('https://campuschamp.in/api/leaderboard', { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ name: val('name'), college: val('college'), seconds: secs, quiz: qscore }), keepalive: true }).catch(() => {}); } catch (e) {}
-  $('ch').classList.add('hide'); $('done').classList.remove('hide'); drawCert(); window.scrollTo({ top: 0 });
+  rank = undefined;
+  try {
+    fetch('https://campuschamp.in/api/leaderboard', { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ name: val('name'), college: val('college'), seconds: secs, quiz: qscore }), keepalive: true })
+      .then((r) => r.json()).then((d) => { rank = d && d.rank ? { r: d.rank, n: d.total } : null; showResult(); })
+      .catch(() => { rank = null; showResult(); });
+  } catch (e) { rank = null; }
+  $('ch').classList.add('hide'); $('done').classList.remove('hide'); showResult(); drawCert(); window.scrollTo({ top: 0 });
 };
 
 /* ---------- the certificate: a 1080x1350 image (Instagram portrait size) ---------- */
@@ -421,7 +471,7 @@ async function drawCert() {
   g.fillStyle = '#3a3a3c'; g.font = `600 28px ${F}`; const sl = wrapText(g, sub, W / 2, 590, W - 2 * pad - 120, 38);
   // what + time
   let y = 590 + sl * 38 + 50; g.fillStyle = '#1d1d1f'; g.font = `700 36px ${F}`; const wl = wrapText(g, tt.certWhat, W / 2, y, W - 2 * pad - 140, 48);
-  y += wl * 48 + 30; const tStr = tt.certTime(m, s); g.font = `900 46px ${F}`; const tw = g.measureText(tStr).width + 70;
+  y += wl * 48 + 30; const tStr = (qscore >= 3 ? `${qscore}/5 · ` : '') + tt.certTime(m, s); /* a low score stays off the shared image */ g.font = `900 46px ${F}`; const tw = g.measureText(tStr).width + 70;
   g.fillStyle = '#fef3c7'; roundRect(g, W / 2 - tw / 2, y - 50, tw, 78, 39); g.fill(); g.fillStyle = '#b45309'; g.fillText(tStr, W / 2, y + 4);
   // signature
   const sy = Math.min(y + 150, H - pad - 300); g.strokeStyle = '#d1d1d6'; g.lineWidth = 2; g.beginPath(); g.moveTo(W / 2 - 180, sy); g.lineTo(W / 2 + 180, sy); g.stroke();
